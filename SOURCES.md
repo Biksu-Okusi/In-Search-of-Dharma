@@ -1761,7 +1761,7 @@ A note's `[S#]` line points here via `[src:<key>]`. No `[S#]` may point at a `st
 - medium: text
 - cite: ANTARA News (translated, via jawawa.id), "Minister Mendukbangga Visits Baduy Indigenous Community for Family Planning Education" (1 May 2026)
 - kb: `1711684-minister-mendukbangga-visits-baduy-indigenous-community-for-family-planning.md`
-- verified: jawawa DB on okusi3 (/ai/datasets/jawawa/articles/2026/05/01/; Source: ANTARA_ID, Date: 2026-05-01)
+- verified: jawawa article dataset, 2026-05-01 batch (Source: ANTARA_ID, Date: 2026-05-01)
 - note: Minister Wihaji (Mendukbangga/BKKBN head) visiting Kanekes Village, Lebak; KB-programme education delivered in Sundanese via the Family Accompaniment Team and midwives. Sibling of the 1711255 MBG-nutrition visit; cited in 4.6 [S11]. Absent from the local dev jawawa DB, which predates April 2026.
 
 ### jakarta-post-reclusive-baduy-cope-with-tourism-and-materialism
