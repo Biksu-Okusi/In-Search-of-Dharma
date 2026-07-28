@@ -59,7 +59,11 @@ Ordered by severity. Each item names the claim, what the literature actually say
 fix lives. **Nothing here has been applied to any essay or note yet** — this is the ledger for a
 later revision pass, exactly as the Part 1 ledger was.
 
-### Tier A — claims that are wrong as stated
+### Tier A — claims that are wrong as stated  ✓ **all five worked, 2026-07-28**
+
+> Each was re-verified against the acquired full text before editing, and one review finding did not
+> survive that check (see item 2). Files touched: notes 1.2, 2.2, 4.1, 5.1, 5.3 and essay Part 5.
+> No claim was removed without recording what replaced it.
 
 1. **The moralizing-gods finding (note 2.2, essay Part 2).** Whitehouse et al. (2019) was
    **retracted by *Nature* in 2021**. Beheim et al. showed that 61% of the moralizing-gods data
@@ -68,28 +72,66 @@ later revision pass, exactly as the Part 1 ledger was.
    characterisation of their own retraction. The 2022 reworking attributes both variables to
    warfare and agricultural productivity instead. → review 2, Tier 0 #1.
 
+   ✓ **Done.** Retraction note and Beheim preprint read in full; both quoted verbatim in the note.
+   Note 2.2's bullet is rebuilt around a dated correction block carrying the exact figures (61%,
+   n = 490, r = 0.97), the fact that "main finding largely upheld" was the retracting authors' own
+   phrase, and that three co-authors refused to sign. New sources [S8]–[S10]. The note's surviving
+   conclusion — moralizing religion as one tool among several — now rests on the correlational
+   evidence alone, with an explicit instruction that Stage 2 cite the 2019 Letter in **neither**
+   direction. Note 1.2 carried the same neutral gloss and was corrected to match; its "moralising
+   gods are late" claim was already independent of the exchange, so it stands.
+
 2. **Note 4.1's marriage-practices citation (Part 3).** "Rumours and Realities of Marriage
-   Practices in Contemporary Samin Society" is by **Arif Rohman** (*Humaniora* 22(2), 2010), not
-   Amrih Widodo. Worse than a misattribution: Rohman's actual finding — egalitarian marriage
-   practice — **contradicts** the "subordinate" gender claim the note attaches to it.
-   → review 3, Tier 0 #3.
+   Practices in Contemporary Samin Society" is by **Arif Rohman** (*Humaniora* 22(2)), not
+   Amrih Widodo. → review 3, Tier 0 #3.
+
+   ✓ **Done — and the review's second charge did not survive verification.** The misattribution is
+   real, and confirmed two independent ways: the Al-Ihkam article's own footnote 30 cites Rohman,
+   and the OpenAlex record lists him as sole author. But the review also claimed Rohman's finding
+   "contradicts the subordinate gender claim the note attaches to it," and that is wrong twice over.
+   The "subordinate" wording is sourced to a *different* work in the same bundled citation — Mukodi
+   & Burhanuddin's *Al-Tahrir* 15(2) (2015) study, since **read in full**, which supports it in its
+   own fieldwork context. And Rohman's article is a *rumour-refutation* piece examining whether
+   "virginity tests" and "stray marriages" occur, i.e. it addresses slander directed **at** the
+   community, not internal gender hierarchy. [S14] is now split into four separately attributed
+   works, two read in full, with both corrections recorded on the face of the note.
 
 3. **Oxytocin "tend-and-defend" (note 5.1, essay Part 5).** The intranasal literature is
-   underpowered and poorly validated, the trust effects failed to replicate (Nave 2015), and
-   **De Dreu's own 2024 *Science Advances* paper** finds people compete *more* with in-group
-   members under scarcity. The essay states the opposite of its own source's latest finding.
-   → review 5, Tier 0 #6.
+   underpowered and poorly validated, and **De Dreu's own 2024 *Science Advances* paper** finds
+   people compete *more* with in-group members under scarcity. → review 5, Tier 0 #6.
+
+   ✓ **Done.** Three papers read in full and quoted: Leng & Ludwig on the delivery problem (little
+   intranasal oxytocin reaches the brain; peripheral levels driven supraphysiological), Walum,
+   Waldman & Young on power ("generally underpowered," median d = 0.28), and Romano, Gross & De Dreu
+   on the nasty-neighbour effect across 51 nations. Note 5.1's claim is downgraded with a dated block
+   and sources [S9]–[S11]; the essay paragraph is rewritten as an honest retraction of a line the
+   author liked, which suits Part 5's existing self-correction theme. **What survives:** the parochial
+   fence, argued behaviourally rather than neurochemically. ▲ The nasty-neighbour result is a *gain* —
+   it shows the fence can run inside a group, feeding Part 6's "wolf in the flock." (Nave 2015 was not
+   verified and is not cited.)
 
 4. **Moral dumbfounding (essay Part 5).** Royzman, Kim & Leeman (2015) re-ran "Julie and Mark"
-   with the confounds removed and the dumbfounding estimate falls to **approximately zero**. This
-   one reaches the essay's central mechanism claim, not a decorative example. → review 5, Tier 0 #3.
+   with the confounds removed and the estimate falls to **approximately zero**. → review 5, Tier 0 #3.
+
+   ✓ **Done.** Verified verbatim: the procedure "yielded a dumbfounding estimate of about 0." The
+   mechanism matters more than the number and is now recorded — subjects were not reasoning-free,
+   they disbelieved the harm-free stipulation and so held "excellent reasons to disapprove." Note 5.3
+   carries it at [S17] with the explicit limit that this retires the *vignette*, not intuitionism.
 
 5. **The book contradicts itself between Parts 1 and 5.** Part 1 runs on Curry's
    morality-as-cooperation; Part 5 presents Haidt's moral foundations as settled architecture.
-   Curry, Jones Chesters & Van Lissa (2019) ran them head to head: MAC's seven factors fit, the
-   MFQ's five-factor model does not. Additionally the MFQ factor structure fails at
-   *N* = 11,496 (Zakharin & Bates), purity lacks construct validity (Gray et al. 2022), and
-   **MFT's own authors re-specified the foundations** in 2023. → review 5, Tier 0 #4.
+   → review 5, Tier 0 #4.
+
+   ✓ **Done — resolved by disclosure rather than by picking a winner.** Four results verified and
+   added to note 5.3 as [S13]–[S16]: Curry's head-to-head ("support the MAC-Q's seven-factor model
+   … but not the MFQ's five-factor model"), Zakharin & Bates (no theorised MFQ model fits at
+   N = 11,496 — and their repaired model independently lands on **seven** factors, converging with
+   MAC), Gray et al. (purity "is not a coherent construct"), and Atari/Haidt/Graham's own
+   six-foundation MFQ-2. Essay Part 5 gains two paragraphs naming the tension in the reader's
+   hearing and pointing back to Part 1. The reconciliation adopted: foundations as a **vocabulary of
+   moral concerns**, MAC as the better-supported **structural** account. Both frameworks assert the
+   claim the chapter actually needs — a small shared palette, tuned differently by culture — so the
+   argument is undamaged.
 
 ### Tier B — claims resting on sources that cannot carry them
 
