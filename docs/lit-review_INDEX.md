@@ -56,8 +56,9 @@ as designed.
 ## Cross-part corrections ledger
 
 Ordered by severity. Each item names the claim, what the literature actually says, and where the
-fix lives. **Nothing here has been applied to any essay or note yet** — this is the ledger for a
-later revision pass, exactly as the Part 1 ledger was.
+fix lives. **Tiers A and B have now been worked** (2026-07-28); each item carries its outcome inline.
+Tier C remains open. Every finding was re-verified against the acquired full text before any edit,
+and four of the reviews' charges did not survive that check — those corrections are recorded in place.
 
 ### Tier A — claims that are wrong as stated  ✓ **all five worked, 2026-07-28**
 
@@ -133,7 +134,11 @@ later revision pass, exactly as the Part 1 ledger was.
    claim the chapter actually needs — a small shared palette, tuned differently by culture — so the
    argument is undamaged.
 
-### Tier B — claims resting on sources that cannot carry them
+### Tier B — claims resting on sources that cannot carry them  ✓ **seven of eight worked, 2026-07-28; item 12 deferred by the author**
+
+> ▲ **Three of this tier's charges did not survive verification, and the corrections are recorded
+> in place below.** Item 12 (the CPA note) was left **entirely untouched** at the author's explicit
+> instruction: it is his own history, and the sourcing decision is his.
 
 6. **The forest-road catechism that opens Part 3.** Absent from **all three** canonical full texts
    (Benda & Castles 1969, Korver 1976, Shiraishi 1990), confirmed by full-text search. It survives
@@ -142,29 +147,93 @@ later revision pass, exactly as the Part 1 ledger was.
    *patih*'s office, where the answer is "*Wong Sikep* knows no taxes" and the speaker stays calm
    when slapped for it. → review 3, §1.
 
+   ✓ **Done — provenance strengthened, scene kept (author's decision).** The review was right that the
+   exchange is absent from all three canonical studies (re-confirmed by full-text search; their "from
+   the forest" hits concern teak-cutting). But it missed that the corpus holds a **second, independent
+   Indonesian source** which rests on a named book — Anis Sholeh Ba'asin & Muhammad Anis Ba'asin,
+   *Samin: Mistisisme Petani di Tengah Pergolakan* (Semarang, prefaced by Gus Mus and Ganjar Pranowo)
+   — and through it on a **primary colonial record**: *Het Nieuws van den Dag*, 5 March 1907, on the
+   interrogation of the arrested Samin Surosentiko ("My body is my home"). The *patih* slap scene the
+   review credited to Benda & Castles is in fact at Ba'asin p. 63. Note 4.1 gains [S15] carrying both,
+   and states the honest position: **well attested in Indonesian sources and traceable to a 1907
+   record, unattested in the English-language canon** — a gap in that canon as much as in the claim.
+   The essay keeps its opening and now says so in its own Sources section.
+
 7. **The No-True-Scotsman refusal that opens Part 6** — the move that licenses the entire
    dark-twin schema — rests on a YouTube transcript. → review 6.
+
+   ✓ **Done — attribution upgraded; substance was never in doubt.** The transcript is **Harvard
+   Divinity School's Religious Literacy Project**, presented by the religious-studies scholar Joseph
+   Laycock, and "religions are internally diverse" is that programme's published first principle, not
+   one commentator's opinion. Note 7.1's [S1] now cites it institutionally. Two honest caveats added:
+   the Harvard statement 403s all scripted access and still needs one manual fetch, and the transcript
+   file **no longer resolves in the rebuilt corpus** (checked against the 2026-07-27 rebuild), so the
+   quoted wording now survives only in the note.
 
 8. **The Foucault paragraph (note 7.3, Part 6)** rests on an anonymous WordPress blog, and is
    actually about **pastoral** power, which does not appear in the one Foucault text that is
    freely available. → review 6, §on power.
 
+   ✓ **Done — and the substitution exposed a real mismatch.** The anonymous WordPress citation is
+   retired for Foucault's own text: *Discipline and Punish* is now [S9], anchored on "power produces
+   knowledge… there is no power relation without the correlative constitution of a field of knowledge"
+   (p. 27, verified in the scan with the folio offset checked). But full-text search confirms
+   **"pastoral" occurs zero times** in that book, and the note's paragraph — confessional, spiritual
+   director, meditation hall — is a *pastoral*-power argument. New [S21] names the correct source,
+   "Omnes et Singulatim" (Tanner Lectures, 1979), flags it as **not held, browser-only**, and marks the
+   paragraph under-sourced until it is read. One manual download closes it.
+
 9. **The 'Ata narrative (Part 8, note 8.5)** runs entirely through Bregman's popular synthesis.
    Warner's memoir, Willey, Perry and Hamilton are all walled. → review 8, Tier 0 #1.
+
+   ✓ **Done — though "runs entirely through Bregman" was overstated** (Christakis's *Blueprint* is an
+   independent leg). The real gap was the Tongan objection, now added as note 8.5 [S6] and as two new
+   paragraphs in the essay: Meleika Gesa (*The Spinoff*, 2021), who names the six men — Tevita Siola'a,
+   Sione Fataua, Luke Veikoso, Fatai Latu, Kolo Fekitoa and Sione Totau (Mano) — and argues the famous
+   telling "focuses on the white man who rescued them, as interpreted by the white man who 'discovered'
+   their story, who compares their journey to a book by a white author," while the 1863 slave raid that
+   emptied 'Ata is treated as scenery although its victims' abandoned crops helped keep the boys alive.
+   ▲ The objection **strengthens** the finding: what they rebuilt from was not generic goodwill but a
+   named dharma, *anga fakatonga*. Also logged: contemporary reporting says the boys were **gaoled** on
+   return, so "borrowed a fishing boat" is doing gentle work.
 
 10. **"The economists who saw it coming a decade ago noted the grim joke" (Part 8)** traces to a
     corpus podcast transcript that the note itself flags as speaker-merged. **No economist wrote
     it.** → review 8.
 
+    ✓ **Done.** The essay now attributes the quip to Sam Harris by name and rests the underlying
+    reversal on Frey & Osborne, who are already cited in note 8.2 [S15]; the note flags the line as
+    "Sam Harris's line, not an economist's." The speaker-merge caveat [S4] already carried stays.
+
 11. **Ubuntu had zero scholarly sources in the register** — one YouTube video and one dead blog,
     for a cluster Part 4 opens on. → review 4, Tier 0 #4–5.
+
+    ▲ **Partly a false alarm — but acted on.** Note 4.2 itself already cited Menkiti (1984), Metz
+    (2007), Ramose (1999) and *S v Makwanyane*; the "zero scholarly sources" finding applied to the
+    **register**, not the note. `SOURCES.md` now carries four scholarly Ubuntu entries (Metz 2011,
+    Gade 2011, Menkiti 1984, *Makwanyane* 1995), and the weak video entry is marked superseded for
+    load-bearing use. ▲ One nuance the review flattened: Gade offers the 1993–95 dating as an explicit
+    **hypothesis** about the *written* discourse, not as proof about oral tradition — which matters for
+    Part 4's "a village proverb became a principle of constitutional law" sentence.
 
 12. **Note 7.6's CPA fact-check runs on five Wikipedia articles.** O'Lincoln's *Into the
     Mainstream* is complete, free and author-permitted at marxists.org. → review 6, Tier 0 #5.
 
+    ⏸ **Deferred — left entirely untouched at the author's instruction (2026-07-28).** This note
+    concerns the author's own years in the party; the sourcing decision is his to make, and no edit
+    was applied. O'Lincoln's complete text sits in `scratch/sources/part6/8-cpa-history/` whenever he
+    wants it.
+
 13. **Durkheim is nowhere in the project** — although *Elementary Forms* carries the argument Part 7
     depends on (belief installed through the "we", not through the referent of belief).
     → review 7, Tier 0 #6.
+
+    ▲ **Overstated, and corrected.** Durkheim was *not* absent — note 5.4 has always cited *Elementary
+    Forms* — but it hung off a Wikipedia URL. [S8] now quotes the primary text ("it is in the midst of
+    these effervescent social environments and out of this effervescence itself that the religious idea
+    seems to be born," Book II ch. 7, p. 214, verified in the acquired public-domain edition). The true
+    version of the finding is narrower and is recorded there: he is absent from **all four of Part 7's
+    own notes**, which is a real gap for the secular-congregation and grounding material.
 
 ### Tier C — claims to soften, and gaps to disclose
 

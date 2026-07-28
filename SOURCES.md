@@ -1686,7 +1686,35 @@ A note's `[S#]` line points here via `[src:<key>]`. No `[S#]` may point at a `st
 - cite: The HUMSS Guru, "The Ubuntu Philosophy" (YouTube, video ID EaGTzaAsq7Y)
 - kb: `EaGTzaAsq7Y.transcript.txt`
 - verified: video-URL (https://www.youtube.com/watch?v=EaGTzaAsq7Y)
-- note: Educational review-channel video (Filipino HUMSS senior-high curriculum), not a scholarly primary source, but content matches gloss (Nguni/Zulu origins, Mandela/Tutu, TRC).
+- note: Educational review-channel video (Filipino HUMSS senior-high curriculum), not a scholarly primary source, but content matches gloss (Nguni/Zulu origins, Mandela/Tutu, TRC). ▲ **Superseded for all load-bearing use** by the four scholarly entries immediately below, added 2026-07-28 after a source review found the register held no scholarly Ubuntu sources at all — only this video and one blog. Keep for colour; cite Metz, Gade, Menkiti or *Makwanyane* for substance.
+
+### metz-2011-ubuntu-moral-theory-human-rights
+- status: usable
+- medium: text
+- cite: Thaddeus Metz, "Ubuntu as a moral theory and human rights in South Africa," *African Human Rights Law Journal* 11(2) (2011): 532–559
+- verified: acquired (diamond OA; full text at `scratch/sources/part4/1-ubuntu/`, 28 pp.)
+- note: The standard analytic statement of ubuntu as a *moral theory* rather than a slogan, by the philosopher who has done most to formalise it, and the natural first citation for Part 4's Ubuntu cluster. Also treats *S v Makwanyane*, so it covers both the ethics and the constitutional-law strand in one text. Cited by DD note 4.2.
+
+### gade-2011-written-discourses-on-ubuntu
+- status: usable
+- medium: text
+- cite: Christian B. N. Gade, "The historical development of the written discourses on ubuntu," *South African Journal of Philosophy* 30(3) (2011): 303–329
+- verified: acquired (OA via Aarhus PURE; full text at `scratch/sources/part4/1-ubuntu/`, 27 pp.)
+- note: Traces when ubuntu was actually written about and what it was taken to mean at each stage. The load-bearing finding for Part 4: Gade advances as an explicit **hypothesis** — his word, not a demonstration — that it was "between 1993 and 1995" that ubuntu "was defined for the first time as something connected to the proverb '*umuntu ngumuntu ngabantu*'," i.e. contemporaneous with the Interim Constitution's Epilogue and the founding of the TRC, so that "the term 'ubuntu' and the proverb became intimately connected within the space of just a few years." ▲ Cite it as a dated hypothesis about the *written* discourse, not as proof about oral tradition — the distinction matters for Part 4's "a village proverb became a principle of constitutional law" sentence. Cited by DD note 4.2.
+
+### menkiti-1984-person-and-community
+- status: usable
+- medium: text
+- cite: Ifeanyi A. Menkiti, "Person and Community in African Traditional Thought," in Richard A. Wright (ed.), *African Philosophy: An Introduction*, 3rd edn (University Press of America, 1984), 171–181
+- verified: acquired (full text at `scratch/sources/part4/1-ubuntu/`, 6 pp.)
+- note: The foundational statement of relational personhood — that personhood is acquired within community rather than possessed at birth — and the text the whole "I am because we are" literature argues with. Short, primary, and the correct anchor for Part 4's contrast between relational and individualist accounts of the self. Cited by DD note 4.2.
+
+### makwanyane-1995-constitutional-court
+- status: usable
+- medium: text
+- cite: *S v Makwanyane and Another* (CCT3/94) [1995] ZACC 3, Constitutional Court of South Africa, 6 June 1995
+- verified: acquired via Metz 2011 (which quotes and analyses the ubuntu passages); primary judgment on SAFLII is `browser`-only
+- note: The judgment abolishing the death penalty in South Africa, and the case in which *ubuntu* enters constitutional jurisprudence — the documentary basis for the claim that ubuntu became a principle of law. ▲ Read here through Metz's treatment rather than in the primary; SAFLII refuses scripted fetches, so one manual download is outstanding. Cited by DD note 4.2.
 
 ### i-dare-you-define-dharma
 - status: barred

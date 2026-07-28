@@ -3,9 +3,9 @@ part: 3
 title: "The Dharmas of the Samin of Java"
 slug: samin-of-java
 status: done
-words: 5305
+words: 5338
 reading_level: year-12
-updated: 2026-07-18
+updated: 2026-07-28
 draws_on: ["4.1", "1.3", "7.3", "8.1"]
 ---
 
@@ -183,6 +183,7 @@ Research notes used in this essay series are published on [GitHub](https://githu
 - Harry J. Benda & Lance Castles, "The Samin Movement," *Bijdragen tot de Taal-, Land- en Volkenkunde* 125(2) (1969): 207–240 — the canonical scholarly study; the central caution that all accounts derive from outsiders because the Samin were illiterate.
 - Takashi Shiraishi, "Dangir's Testimony: Saminism Reconsidered," *Indonesia* 50 (1990): 95–120 — the 1928 interrogation minutes, the nearest thing to a Samin first-person source; "Samin" as the state's label for the self-named *wong sikep*; the movement as partly an artefact of the colonial file, the millenarian evidence as partly spy-mediated, and the Samin doctrine of language.
 - APE Korver, "The Samin Movement and Millenarism" (1976) — the contested millenarian reading (salvation expectation; the return-of-Samin / *moksha* motif), now weakened at its evidentiary root by Shiraishi's archival work.
+- Anis Sholeh Ba'asin & Muhammad Anis Ba'asin, *Samin: Mistisisme Petani di Tengah Pergolakan* (Semarang) — the Indonesian account behind two scenes in this essay, and the route to a primary record: it quotes the Dutch East Indies newspaper *Het Nieuws van den Dag* of 5 March 1907 on the interrogation of the arrested Samin Surosentiko ("My body is my home"), and reports at p. 63 the *patih*'s interrogation of a follower who answers that he owes the state nothing, is slapped for it, and declines to be angry because the officer has his duty and the Sikep has his. ▲ A note on the opening scene: the forest-road exchange with which this essay begins is widely reported in Indonesian sources but appears in none of the three canonical English-language studies above. It is offered here as what it is — a well-attested Indonesian tradition about how these people spoke to power, not a line from the colonial archive.
 - Amrih Widodo, "Samin in the New Order: The Politics of Encounter and Isolation," in Jim Schiller & Barbara Martin-Schiller (eds.), *Imagining Indonesia: Cultural Politics and Political Culture* (Ohio University Center for International Studies, 1997), 261–287 — the community under Suharto: the religion column, mass marriage registration, and transmigration threats.
 - Nancy Lee Peluso, *Rich Forests, Poor People: Resource Control and Resistance in Java* (University of California Press, 1992) — the three-century political economy of state forestry and criminalised customary access behind the 1897 enclosure.
 - Clifford Geertz, *The Religion of Java* (1960) — the *abangan* / *santri* / *priyayi* map and the *ngoko* / *krama* speech-level hierarchy that the Samin refused.
