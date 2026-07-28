@@ -59,7 +59,12 @@ The flat `filename:seg` form conflates them. The register separates them.
 
 ### Usable vs barred
 
-- **S1 — Usable (scholarly / attributable).** Book, paper, named lecture or interview (`medium: text | transcript`). Full evidential authority. Must be resolved to a proper reference and web-verified. Carries an `[S#]`.
+- **S1 — Usable (scholarly / attributable).** Book, paper, named lecture or interview (`medium: text | text-ocr | transcript`). Full evidential authority. Must be resolved to a proper reference and web-verified. Carries an `[S#]`.
+
+  A `medium: text-ocr` entry is fully usable as evidence — the OCR affects the fidelity of
+  the *string*, not the standing of the *work*. It carries an `[S#]` like any other. The one
+  restriction is quotation: do not lift wording from it verbatim without checking the printed
+  page, since the transcription is ~85% accurate at word level.
 
 - **Barred — no `[S#]`.** A barred source may never carry an `[S#]`, because an `[S#]` asserts external/scholarly provenance the source does not have. Two documented reasons:
   - `barred: self` — corpus-internal self-authored / LLM-cleaned or -expanded prose.
@@ -106,7 +111,8 @@ One entry per cited **work** (a work may span multiple sourcedocs), keyed by a s
 
 - `status:` usable | barred.
 - `barred:` self | ephemera  (present only when status is barred).
-- `medium:` text | transcript.
+- `medium:` text | text-ocr | transcript. `text-ocr` = text recovered by OCR from a page
+  scan; retrievable but not quotable verbatim (see SOURCES.md field notes).
 - `cite:` resolved human-readable reference (usable only). Transcripts: `Speaker, "Talk title" (platform, id/URL, year)`.
 - `kb:` the sourcedoc filename(s) — the retrieval key(s). Multiple when one work has several.
 - `verified:` `web (ISBN…/DOI…)`, `video-URL`, or `unverified`.

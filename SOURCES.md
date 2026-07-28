@@ -8,7 +8,14 @@ One entry per cited **work**. Resolve once, reuse across every note. See `SOURCE
 
 - `barred:` `self` | `ephemera`  (present only when `status: barred`)
 
-- `medium:` `text` | `transcript`
+- `medium:` `text` | `text-ocr` | `transcript`
+
+  ▲ `text-ocr` marks a sourcedoc whose text was recovered by OCR from a page scan,
+  not supplied as digital text. Such a file is sound for retrieval but **unreliable
+  word-for-word**: measured in-vocabulary rates run 79–85% against a 98% baseline for
+  born-digital text in the same corpus, so roughly one word in six is garbled. Treat
+  an OCR'd passage as a pointer to the claim, never as a quotable string — verify any
+  wording against the printed original before it carries an `[S#]` quotation.
 
 - `cite:` resolved human-readable reference (usable only). Transcripts:
   `Speaker, "Talk title" (platform, id/URL, year)`.
@@ -23,6 +30,78 @@ A note's `[S#]` line points here via `[src:<key>]`. No `[S#]` may point at a `st
 
 ---
 
+### alan-barnard-1993-kropotkin-visits-the-bushmen
+- status: usable
+- medium: text
+- cite: Alan Barnard, "Primitive Communism and Mutual Aid: Kropotkin Visits the Bushmen," in C. M. Hann (ed.), *Socialism: Ideals, Ideologies, and Local Practice* (ASA Monographs 31; London: Routledge, 1993), pp. 27–42
+- kb: `Alan-Barnard_Primitive-Communism-and-Mutual-Aid_Kropotkin-Visits-the-Bushmen_1992.md`
+- verified: web-verified (Taylor & Francis chapter page for *Socialism: Ideals, Ideologies and Local Practice*, ASA Monographs 31, ch. 10, DOI 10.4324/9780203392676; Namibia Scientific Society library catalogue record 51105 gives pp. 27–42, Routledge 1993)
+- note: Kalahari specialist auditing Kropotkin's mutual-aid reading against San ethnography — confirms the sharing pattern, qualifies it as theory-laden, bounded to the band cluster, and partly envy-management. The corpus's most nearly neutral check on the cooperative-forager picture. ▲ The KB filename year (1992) is the Anarchist Library posting date; the published chapter is 1993 — cite 1993. Cited by DD notes 2.3, 4.3.
+
+### anarchybooks-corpus-status
+- status: barred
+- barred: ephemera
+- medium: text
+- kb: `anarchybooks-corpus-status.md`
+- verified: unverified
+- note: corpus inventory report (238 epub entries checked against the KB, 2026-07-27). Build metadata about the corpus, not evidence about the world. Surfaces as noise on most anarchism probes; discard from results.
+
+### ancient-minds-autistic-traits-ancient-tribes
+- status: barred
+- barred: ephemera
+- medium: transcript
+- kb: `Ancient-Minds_Did-Autistic-Traits-Help-Ancient-Tribes_2026.md`
+- verified: unverified
+- note: anonymous YouTube video essay (channel "Ancient Minds", youtube.com watch?v=88xZotShpxY). Popular-science gloss on the evolutionary-niche argument for autistic traits, with no named author and no cited primary research. The 2026-07-24 pass deliberately removed this class of source from load-bearing claims in the 5.6 block; it is barred here to keep it out. Anything it asserts must be re-grounded in the peer-reviewed literature already cited by note 5.6.1.
+
+### anna-prouty-2017-anarcho-taoist-manifesto
+- status: usable
+- medium: text
+- cite: Anna Prouty, "An Anarcho-Taoist Manifesto: Emotional Responsibility, Needs, and Amorphous Activism," self-published essay, 23 March 2017 (Medium — author later writing as Anna Mercury; repr. The Anarchist Library)
+- kb: `Anna-Prouty_An-Anarcho-Taoist-Manifesto_Emotional-Responsibility-Needs-and-Amorphous-Activism_2017.md`
+- verified: web-verified (annamercury.medium.com; theanarchistlibrary.org/library/anna-prouty-an-anarcho-taoist-manifesto)
+- note: second fusion specimen — anarchist consent theory fused with *wu wei* and a needs/feelings psychology; explicitly touches Buddhism ("freeing yourself from desire, in a full Buddhist sense"). Same SPECIMEN-GRADE caveat as the Ronan entry.
+
+### anna-ronan-2019-anarchism-as-a-spiritual-practice
+- status: usable
+- medium: text
+- cite: Anna Ronan, "Anarchism as a Spiritual Practice," DSA Libertarian Socialist Caucus Pamphlet Program, 23 May 2019 (repr. The Anarchist Library)
+- kb: `Anna-Ronan_Anarchism-as-a-Spiritual-Practice_2019.md`
+- verified: web-verified (dsa-lsc.org 2019-05-24 posting; theanarchistlibrary.org/library/anna-ronan-anarchism-as-a-spiritual-practice). The caucus's own disclaimer marks it as the author's opinion, not caucus consensus.
+- note: primary specimen of a live anarchist–contemplative fusion ("Anarchism is my religion"; Taoism via *The Tao of Pooh*). SPECIMEN-GRADE ONLY: a self-published movement pamphlet with no scholarly or institutional standing — citable as evidence the fusion is being attempted and for how it assembles, never as authority on whether it works. Cited by DD notes 2.5, 8.3.
+
+### aquinas-summa-treatise-on-law
+- status: usable
+- medium: text
+- cite: Thomas Aquinas, *Summa Theologiae* I-II, qq. 90–97 ("Treatise on Law"), trans. Fathers of the English Dominican Province (2nd rev. ed., 1920)
+- kb: `cicero-aquinas_natural-law-primary-texts.md` (attributed summary, staged at workshops/DD/sources/ — not yet folded into corpus)
+- verified: web (newadvent.org/summa, qq. 90–97 saved to DD archive 2026-07-28)
+- note: attributed summary note with verified page anchors, shared with the Cicero entry. Natural law defined as the rational creature's participation in eternal law, knowable by 'the light of natural reason' (q. 91 a. 2) — the reason-accessible lower storey that weakens Part 1's 'cannot be secularised' contrast. Anchored edition-independently by q./a. Public domain.
+
+### asad-1993-genealogies-of-religion
+- status: usable
+- medium: text-ocr
+- cite: Talal Asad, *Genealogies of Religion: Discipline and Reasons of Power in Christianity and Islam* (Baltimore: Johns Hopkins University Press, 1993)
+- kb: `talal-asad_genealogies-of-religion_1993.md` (attributed summary, staged at workshops/DD/sources/ — not yet folded into corpus)
+- verified: web (ISBN 978-0-8018-4632-8); central quotation confirmed verbatim at p. 29 of the full text
+- note: attributed summary note with verified page anchors of ch. 1, 'The Construction of Religion as an Anthropological Category' (pp. 27–54) — the strongest published opponent of DD's central move, previously cited at blurb level. Full text in DD local archive (scratch/sources/part1/, gitignored); community upload, reading copy only. Cited by DD note 1.3 (S18) and Part 1.
+
+### bakunin-1882-god-and-the-state
+- status: usable
+- medium: text
+- cite: Mikhail Bakunin, *God and the State* (written 1871; pub. posthumously 1882, ed. Carlo Cafiero & Élisée Reclus)
+- kb: `michail-bakunin_god-and-the-state.md` (under ``; pre-existing corpus file, not part of the 2026-07-27 fold)
+- verified: web (composition 1871, publication 1882 by Cafiero & Reclus — Wikipedia, The Anarchist Library, marxists.org; early editions contain Cafiero/Reclus rewrites)
+- note: primary text for "If God is, man is a slave", "the abdication of human reason and justice", "a master… remains none the less always a master", "if God really existed, it would be necessary to abolish him" — all four verified verbatim in the KB file (lines 140–162). Prefer this over the secondary treatments for any Bakunin quotation.
+
+### batchelor-2012-a-secular-buddhism-jgb
+- status: usable
+- medium: text
+- cite: Stephen Batchelor, "A Secular Buddhism," *Journal of Global Buddhism* 13 (2012): 87–107
+- kb: `batchelor-higgins_a-secular-buddhism-and-its-analysis_2012-2017.md` (attributed summary, staged at workshops/DD/sources/ — not yet folded into corpus)
+- verified: web (globalbuddhism.org, diamond OA)
+- note: attributed summary note with verified page anchors, shared with the Higgins entry. The programmatic founding document of 'secular dharma': three senses of 'secular'; Four Noble Truths recast as four tasks; 'Buddhism 2.0' coined here with a 'touch of irony' (p. 91). ▲ Partisan witness the project is personally close to — flag per bias policy. Distinct work from the KB's Batchelor lecture transcripts.
+
 ### boehm-1999-hierarchy
 - status: usable
 - medium: text
@@ -31,6 +110,438 @@ A note's `[S#]` line points here via `[src:<key>]`. No `[S#]` may point at a `st
 - verified: web (ISBN 978-0-674-39031-7)
 - note: reverse dominance hierarchy; foragers as moral communities.
 
+### bookchin-1997-reader
+- status: usable
+- medium: text
+- cite: Murray Bookchin, *The Murray Bookchin Reader*, ed. Janet Biehl (Cassell, 1997)
+- kb: `Murray-Bookchin_The-Murray-Bookchin-Reader_1999.md`
+- verified: web (ISBN 978-0-304-33874-0 pbk / 978-0-304-33873-3 hbk; Cassell, London 1997 — Blackwell's, AbeBooks, WorldCat)
+- note: hierarchy precedes class; gerontocracy/patriarchy/priestly guilds as first hierarchies; domination of nature projected from domination of human by human. ▲ Mixed authorship — Biehl's editorial synopses frame excerpts of Bookchin's own texts; any quotation must be attributed to the right voice (note 7.3 marks this in-text). KB filename says 1999 (Black Rose reprint); first edition Cassell 1997.
+
+### bookchin-brecher-1973-post-affluence-anarchy
+- status: usable
+- medium: text
+- cite: Murray Bookchin & Jeremy Brecher, "Post-Affluence Anarchy: A Dialogue" (1973) — Brecher's review of *Post-Scarcity Anarchism* (Ramparts Press, 1971), Bookchin's reply, and Brecher's rejoinder
+- kb: `Murray-Bookchin+Jeremy-Brecher_Post-Affluence-Anarchy-a-Dialogue_1973.md`
+- verified: partially verified (Ramparts Press 1971 for the book under review is stated in-file; the 1973 dialogue's venue is inferred from in-file internal evidence pointing to *Root & Branch* — Bookchin addresses "the *Root and Branch* people" directly; venue not independently web-confirmed)
+- note: the post-scarcity thesis carried inside its own strongest rebuttal — Brecher: projections are "science fiction," and the youth post-scarcity lifestyle ran "on the basis of parental subsidy, educational advantage, personal connections, and other forms of privilege" ("simulate 'post-scarcity'"). ▲ The thesis-statement quoted in note 6.3 is Brecher's paraphrase of Bookchin, and Bookchin protests "selective quoting" in his reply — cite as dialogue, not as Bookchin's own text. A future pass should check against `Murray-Bookchin_The-Murray-Bookchin-Reader_1999.md` (in-corpus) for Bookchin's own wording. Quotations verified verbatim against the staging.text file (segs 1, 7, 22, 26, 36).
+
+### bookchin-foreman-1991-defending-the-earth
+- status: usable
+- medium: text
+- cite: Murray Bookchin & Dave Foreman, *Defending the Earth: A Dialogue Between Murray Bookchin and Dave Foreman*, ed. Steve Chase (Boston: South End Press, 1991), 147 pp. — transcript of the Learning Alliance public dialogue, New York, November 1989
+- kb: `Murray-Bookchin+Dave-Foreman_Defending-the-Earth-a-Debate_1991.md`
+- verified: web (South End Press 1991, ed. Steve Chase, ISBN 0-89608-383-7 / 0-89608-382-9, 147 pp. — confirmed via the *Bulletin of Science, Technology & Society* review record at https://journals.sagepub.com/doi/abs/10.1177/027046769301300212 and the Internet Archive scan https://archive.org/details/DefendingTheEarth_201809; full text also at https://theanarchistlibrary.org/library/murray-bookchin-and-dave-foreman-defending-the-earth-a-debate. All quotations additionally checked against staging.text.)
+- note: the primary text for the social-ecology vs deep-ecology grounding dispute — whether the ecological crisis follows from human hierarchy or from human numbers and presence as such. Both principals speak at length in their own words; the KB file carries Foreman's own chapter ("Second Thoughts of an Eco-Warrior") including his retraction of the 1986 Ethiopia and immigration remarks, so the deep-ecology side can be quoted *from* rather than only quoted *against*. ▲ Framing caution: the volume is edited by a social ecologist (Steve Chase) and published by a left press; Chase's 30-page introduction argues the social-ecology case before either principal speaks. Treat the deep-ecology position here as reconstructed inside its opponent's book — Naess, Sessions, Devall and Fox are absent from the corpus. Cited in 8.1 [S20].
+
+### brian-morris-1998-anthropology-and-anarchism
+- status: usable
+- medium: text
+- cite: Brian Morris, "Anthropology and Anarchism: Learning from Stateless Societies," *Anarchy: A Journal of Desire Armed* #45, Vol. 16 No. 1 (Spring/Summer 1998); repr. in *Anthropology, Ecology, and Anarchism: A Brian Morris Reader* (PM Press, 2015)
+- kb: `Brian-Morris_Anthropology-and-Anarchism_Learning-from-Stateless-Societies_1998.md`
+- verified: web-verified (Anarchist Library; PM Press reader contents)
+- note: the "elective affinity" of anthropology and anarchism; used in 4.3 solely for the internal anarchist critique of primitivist projection (Zerzan's "illusory images of Green primitivism," via Bookchin and Ellen). Cited by DD notes 2.3, 4.3.
+
+### brian-morris-2007-people-without-government
+- status: usable
+- medium: text
+- cite: Brian Morris, "People Without Government," *Anarchy: A Journal of Desire Armed* #63 (Spring/Summer 2007); repr. in *Anthropology, Ecology, and Anarchism: A Brian Morris Reader* (Oakland: PM Press, 2015)
+- kb: `Brian-Morris_People-Without-Government_2007.md`
+- verified: web-verified (Anarchist Library; PM Press reader contents list "People without Government (2007)")
+- note: anarchist synthesis of Clastres, Silberbauer, Harris, Overing on stateless societies; procedural machinery of unwritten orders (consensus, chief-without-coercion, own-kill taboo); also corrects romanticism (!Kung not "peaceful paragons"; critique of ecofeminist matriarchy myth). Secondary synthesis of others' fieldwork. Cited by DD notes 2.3, 4.3.
+
+### brian-morris-2008-basic-kropotkin
+- status: usable
+- medium: text
+- cite: Brian Morris, *Basic Kropotkin: Kropotkin and the History of Anarchism* (Anarchist Federation, Anarchist Communist Editions pamphlet no. 17, October 2008)
+- kb: `Brian-Morris_Basic-Kropotkin_Kropotkin-and-the-History-of-Anarchism_2008.md`
+- verified: web — publisher and pamphlet number confirmed via The Anarchist Library and libcom.org (AFed ACE #17, Nov 2008 announcement)
+- note: scholarly outside arc — 1871–72 First International split as origin; Marshall's "river"/"libertarian impulse" historiography; afterlife of Kropotkin's ideas in ecology, feminism, Bookchin, Foucault, Deleuze. Sympathetic (anarchist press), not neutral.
+
+### brian-morris-2022-kropotkins-ecology
+- status: usable
+- medium: text
+- cite: Brian Morris, "Kropotkin's ecology" (22 January 2022)
+- kb: `Brian-Morris_Kropotkins-Ecology_2022.md`
+- verified: web (text and date confirmed at https://theanarchistlibrary.org/library/brian-morris-kropotkin-s-ecology and https://www.anarchistfederation.net/brian-morris-kropotkins-ecology-2/; ▲ some listings attribute first publication to *The Ecologist*, 22 January 2022 — the venue is not confirmed by the archived text itself, so the date alone is asserted.)
+- note: short survey of Kropotkin as evolutionary naturalist, geographer and ethicist; mutual aid against the Huxley/Social-Darwinist reading; three tenets of an ecological society. Used in 8.1 only for the anti-statist counter to Green New Deal governance optimism ("the capitalist state rather than being the solution to the ecological crisis was in fact the cause of it"), which is framed as what Kropotkin *would have* insisted — a counterfactual attribution, flagged as such in the note. Cited in 8.1 [S23].
+
+### brian-morris-ecology-recuperation-by-capitalists
+- status: usable
+- medium: text
+- cite: Brian Morris, "Ecology and its recuperation by capitalists," orig. *Freedom* (London); text as archived at libcom.org / The Anarchist Library (retrieved there 25 May 2010)
+- kb: `Brian-Morris_Ecology-and-its-Recuperation-by-Capitalists.md`
+- verified: web (https://theanarchistlibrary.org/library/brian-morris-ecology-and-its-recuperation-by-capitalists — authorship, *Freedom* provenance and text confirmed; ▲ no publication year is given by the source, and none should be asserted. Mirrored at https://libcom.org/article/ecology-and-its-recuperation-capitalists.)
+- note: the named failure mode of a green ethic absorbed by the system it was meant to constrain — corporations "leapt aboard the green bandwagon"; "sustainable development" as sustaining capitalist growth; responsibility relocated onto individual consumers; "global management" and eco-technocracy; Sachs's line that "saving" the planet licenses "a new wave of state interventions." Short piece (4 segments), polemical register, no citations of its own beyond Bookchin, Kovel and Sachs. Cited in 8.1 [S21]. Cited by DD notes 6.3, 8.1.
+
+### cicero-de-re-publica-de-legibus-barham
+- status: usable
+- medium: text
+- cite: Marcus Tullius Cicero, *De Re Publica* (Book 3 'true law' fragment, via Lactantius) and *De Legibus* (Book 1), trans. Francis Barham, *The Political Works of M. T. Cicero* (London: Edmund Spettigue, 1841–42; Online Library of Liberty edition)
+- kb: `cicero-aquinas_natural-law-primary-texts.md` (attributed summary, staged at workshops/DD/sources/ — not yet folded into corpus)
+- verified: web (oll.libertyfund.org; public domain)
+- note: attributed summary note with verified page anchors, shared with the Aquinas entry. ▲ Barham's rendering differs from the modern textbook wording ('There is a true law, a right reason, conformable to nature…') and interpolates 'our own conscience' absent from the Latin — quote Barham as Barham. Full text in DD local archive (scratch/sources/part1/, gitignored).
+
+### colin-ward-1966-theory-of-organization
+- status: usable
+- medium: text
+- cite: Colin Ward, "Anarchism as a Theory of Organization" (1966), first published in Leonard I. Krimerman & Lewis Perry (eds.), *Patterns of Anarchy* (New York: Anchor Books, 1966)
+- kb: `Colin-Ward_Anarchism-as-a-Theory-of-Organization_1966.md`
+- verified: web (theanarchistlibrary.org; panarchy.org; c4ss.org — all give the *Patterns of Anarchy* 1966 provenance; no ISBN checked)
+- note: the explicit anti-institutionalisation design spec — organisations should be "(1) voluntary, (2) functional, (3) temporary, and (4) small", because "permanence is one of those factors which harden the arteries of an organisation". Also the "theory of spontaneous order" and the Peckham/Little Commonwealth cases. Used in 2.4 for designed impermanence as a transmission strategy.
+
+### colin-ward-1973-anarchy-in-action
+- status: usable
+- medium: text
+- cite: Colin Ward, *Anarchy in Action* (London: Allen & Unwin, 1973; corpus text from the Freedom Press second edition, 1996 printing)
+- kb: `Colin-Ward_Anarchy-in-Action_1996.md`
+- verified: web-verified (Allen & Unwin 1973 first edition and Freedom Press second-edition history; already externally pinned as [E9] in note 0.2). The 1996 date is the corpus file's own; the file's introduction is the second-edition text.
+- note: the "seed beneath the snow" thesis — anarchy as "a description of a mode of human organisation, rooted in the experience of everyday life," discovered and extended rather than designed; also the negative evidence (defeat everywhere, "anarchism finally died when Franco's troops entered Barcelona in 1939"; Quail epigraph on growth/decline with popular self-activity). Ward himself concedes the book is open to the charge of "a selective gathering of anecdotal evidence" — advocacy, flagged as such. Cited by DD notes 2.4, 3.1, 8.3.
+
+### crawford-2018-tan-malaka
+- status: usable
+- medium: text
+- cite: Oliver Crawford, *The Political Thought of Tan Malaka* (PhD dissertation, Trinity College, University of Cambridge, 2018)
+- kb: `Oliver-Crawford_The-Political-Thought-of-Tan-Malaka_2018.md`
+- verified: web (University of Cambridge Apollo repository)
+- note: scholarship *about* Tan Malaka, cited by note 7.7 as [S11] — *Madilog* (1943) as a mentality-reconstruction programme, its spread as circulated manuscript rather than by decree, the countermanding of the 1926–27 insurrection and the 1948 Madiun condemnation, plus the honesty items (the racialised *bangsa* theory, "Aslia" expansionism, the prophetic self-image). ▲ Crawford's characterisations are not Tan Malaka's own words. Entry added 2026-07-27 to close a gap left by the 2026-07-24 pass, which cited the file without registering it.
+
+### emma-goldman-1897-marriage
+- status: usable
+- medium: text
+- cite: Emma Goldman, "Marriage," *The Firebrand* (Portland, OR), 18 July 1897
+- kb: `Emma-Goldman_Marriage_1897.md`
+- verified: web (marxists.org Goldman archive; jwa.org — her first published writing on marriage)
+- note: "If we want to accomplish Anarchy, we must first have free women" — women's freedom as precondition, not dividend, of the revolution.
+
+### emma-goldman-1910-end-of-the-odyssey
+- status: usable
+- medium: text
+- cite: Emma Goldman, "The End of the Odyssey", *Mother Earth*, 1910
+- kb: `Emma-Goldman_The-End-of-the-Odyssey_1910.md`
+- verified: unverified
+- note: "Too bad Anarchists have no centralized authority, or we would have to excommunicate her" — orthodoxy-policing pressure satirised inside an anti-doctrinal movement.
+
+### emma-goldman-1911-wollstonecraft
+- status: usable
+- medium: text
+- cite: Emma Goldman, "Mary Wollstonecraft, Her Tragic Life and Her Passionate Struggle for Freedom" (1911 lecture manuscript; first published in Alice Wexler, "Emma Goldman on Mary Wollstonecraft," *Feminist Studies* 7:1 (1981), 113–133)
+- kb: `Emma-Goldman_Mary-Wollstonecraft-Her-Tragic-Life-and-Her-Passionate-Struggle-for-Freedom_1911.md`
+- verified: web (JSTOR 3177674; Feminist Studies 7:1, 1981)
+- note: tells the suffrage movement of "the inadequacy of mere external gain as a means of freeing their sex" — her critique of the emancipation movement itself.
+
+### emma-goldman-1914-marriage-and-love
+- status: usable
+- medium: text
+- cite: Emma Goldman, "Marriage and Love," in *Anarchism and Other Essays* (Mother Earth Publishing Association, New York; 1st edn 1910, 2nd rev. edn 1911; corpus text dated 1914)
+- kb: `Emma-Goldman_Marriage-and-Love_1914.md`
+- verified: web (Wikipedia "Anarchism and Other Essays"; theanarchistlibrary.org full text)
+- note: marriage as "an economic arrangement, an insurance pact"; sardonic critique of emancipation-as-wage-labour. Polemic — cite as her position.
+
+### emma-goldman-1916-jealousy
+- status: usable
+- medium: text
+- cite: Emma Goldman, "Jealousy: Causes and a Possible Cure" (lecture text, c. 1915–16; widely reprinted from the Emma Goldman Papers)
+- kb: `Emma-Goldman_Jealousy-Causes-and-a-Possible-Cure.md`
+- verified: unverified (first-publication venue not pinned down; internal evidence — "as I shall discuss variety and monogamy two weeks from tonight" — confirms a lecture script)
+- note: grounds the anti-jealousy ethic in Morgan/Reclus "primitive" sexual-communism anthropology — dated science doing the work of scripture; attribute, never launder.
+
+### emma-goldman-1923-louise-michel-hirschfeld
+- status: usable
+- medium: text
+- cite: Emma Goldman, "Louise Michel" — refutation of Karl von Levetzow addressed to Dr. Magnus Hirschfeld, *Jahrbuch für sexuelle Zwischenstufen* 23 (1923), 70–92 (German title "Offener Brief an den Herausgeber der Jahrbücher über Louise Michel")
+- kb: `Emma-Goldman_Louise-Michel_Letter-to-Magnus-Hirschfeld_1923.md`
+- verified: web (magnus-hirschfeld.de Gedenken pages for Michel and Goldman; archive.org "emmagoldman1923"; theanarchistlibrary.org)
+- note: ▲ read in period terms (Urning/Uranian, sexual "intermediates"). Explicit 1923 defence of homosexual rights AND refutation of the "masculine woman = invert" premise; her counter-case leans on re-certifying Michel's femininity — do not project modern categories, do not sanitise.
+
+### emma-goldman-1923-my-disillusionment
+- status: usable
+- medium: text
+- cite: Emma Goldman, *My Disillusionment in Russia* (Garden City, NY: Doubleday, Page & Co., 1923)
+- kb: `Emma-Goldman_My-Disillusionment-in-Russia_1923.md`
+- verified: web-verified — Wikipedia and marxists.org Goldman archive confirm publisher, year, and the publisher's unauthorised truncation (last twelve chapters and Afterword cut; title changed from "My Two Years in Russia")
+- note: primary supporter-turned-critic witness to the Soviet case; the prefaces carry the arc (defence tours 1917–18, Kronstadt as "the final wrench", departure December 1921) and the publication history in Goldman's own words. Cited in 7.7 as [S13]. Cited by DD notes 7.6, 7.7.
+
+### emma-goldman-1924-my-further-disillusionment
+- status: usable
+- medium: text
+- cite: Emma Goldman, *My Further Disillusionment in Russia* (Garden City, NY: Doubleday, Page & Co., 1924)
+- kb: `Emma-Goldman_My-Further-Disillusionment-in-Russia_1924.md`
+- verified: web-verified — Wikipedia, Project Gutenberg (#74192) and Wikisource confirm the 1924 Doubleday volume restoring the twelve cut chapters and the Afterword
+- note: contains the Afterword — Goldman's means-determine-ends argument ("presently the aims and means become identical") — the mechanism cited in 7.7 for why Scott's third element (the coercive state) is decisive. Cited in 7.7 as [S14].
+
+### emma-goldman-1925-heroic-women
+- status: usable
+- medium: text
+- cite: Emma Goldman, "Heroic Women of the Russian Revolution" (lecture, Folk House, Bristol, 4 May 1925)
+- kb: `Emma-Goldman_Heroic-Women-of-the-Russian-Revolution_1925.md`
+- verified: web (theanarchistlibrary.org; olebirklaursen.wordpress.com scan of the 1925 text)
+- note: deliberate counter-archive of women revolutionaries (Taratuta, Fanya Baron, Ratner, Kakhovskaia, Izmailovitch, Spiridonova); secular twin of the Therīgāthā's archival function. Also an anti-Bolshevik polemic — her framing throughout.
+
+### emma-goldman-1931-living-my-life
+- status: usable
+- medium: text
+- cite: Emma Goldman, *Living My Life* (Alfred A. Knopf, New York, 1931)
+- kb: `Emma-Goldman_Living-My-Life_1931.md`
+- verified: web (standard bibliography; theanarchistlibrary.org full text)
+- note: autobiography, 1303 KB segments. Self-documented internal contradiction: the movement policing her dancing and her sex-question lectures (dance rebuke; Los Angeles comrades; Kropotkin exchange). Memoir written four decades after some events — treat dialogue as her reconstruction. Cited by DD notes 2.5, 6.4.
+
+### emma-goldman-1933-has-my-life-been-worth-while
+- status: usable
+- medium: text
+- cite: Emma Goldman, "Has My Life Been Worth While?", 30 January 1933
+- kb: `Emma-Goldman_Has-My-Life-Been-Worth-While_1933.md`
+- verified: unverified
+- note: end-of-life retrospective in a frankly religious register — anarchism as "my inspiration and my highest goal", its "light... diminished".
+
+### errico-malatesta-1884-the-economic-question
+- status: usable
+- medium: text
+- cite: Errico Malatesta, "The Economic Question" (29 June 1884; trans. in *The Complete Works of Errico Malatesta*, AK Press)
+- kb: `Errico-Malatesta_The-Economic-Question_1884.md`
+- verified: unverified (date from the KB file header only; original Italian venue not confirmed, so no venue is asserted in the note)
+- note: the materialist inversion — politics and religion "merely its reflections, perhaps even the shadows it casts"; "Economic inequality is the source of all moral, intellectual, political, etc. inequalities"; clergy as "the class of those who have ducked out of their labor obligations." Used in 6.3 as the limit case against the Polanyi embedding frame, reported not endorsed. Quotations verified verbatim against the staging.text file (segs 0, 1, 6).
+
+### errico-malatesta-1889-about-a-strike
+- status: usable
+- medium: text
+- cite: Errico Malatesta, "About a Strike" (1889, on the London dock strike)
+- kb: `Errico-Malatesta_About-a-Strike_1889.md`
+- verified: unverified (date from KB file header; the great London dock strike it describes is August–September 1889, consistent)
+- note: strikers unloading hospital ice unpaid mid-strike; anarchists faulted for weighing the strike only as an "economic weapon" and failing to see it as "an index of moral rebellion" — cited in 6.3 as Malatesta's own evidence of a moral surplus his 1884 reduction cannot account for. Quotations verified verbatim against the staging.text file (segs 4, 7).
+
+### errico-malatesta-1897-anarchisms-evolution
+- status: usable
+- medium: text
+- cite: Errico Malatesta, "Anarchism's Evolution (Apropos of an Interview)", 14 October 1897
+- kb: `Errico-Malatesta_Anarchisms-Evolution_Apropos-of-an-Interview_1897.md`
+- verified: unverified (period essay; standard Malatesta bibliography)
+- note: a founder narrating his movement's change over time; names the inherited "residue of Jacobinism" and Mazzinian illusions — participant testimony for grain and drift.
+
+### errico-malatesta-1909-anarchists-and-the-situation
+- status: usable
+- medium: text
+- cite: Errico Malatesta, "Anarchists and the Situation" (June 1909; written for an English readership, per the text's own coda)
+- kb: `Errico-Malatesta_Anarchists-and-the-Situation_1909.md`
+- verified: kb-file (quotations checked against staging.text; not separately web-verified)
+- note: pre-Michels prediction of movement bureaucratisation: syndicalism "cannot remain stationary" — either towards its ideal or into "a bureaucratic character… a factor in social conservation"; the "self-satisfied bureaucracy which will absorb the most intelligent and active elements among the proletariat." Cited in 7.1 [S14].
+
+### errico-malatesta-1912-capitalists-and-thieves
+- status: usable
+- medium: text
+- cite: Errico Malatesta, "Capitalists and Thieves: Regarding the Tragedies in Houndsditch and Sidney Street" (June 1912)
+- kb: `Errico-Malatesta_Capitalists-and-Thieves_Regarding-the-Tragedies-in-Houndsditch-and-Sidney-Street_1912.md`
+- verified: unverified (date from KB file header; the Houndsditch robbery/Sidney Street siege context is December 1910/January 1911, consistent with a 1912 retrospective)
+- note: collapses the property/theft moral distinction — "The capitalist is a thief who has succeeded… the thief is an aspiring capitalist"; survival-theft as "the most sacred of rights and the most imperious of duties." Quotations verified verbatim against the staging.text file (seg 1).
+
+### errico-malatesta-1914-anarchists-have-forgotten
+- status: usable
+- medium: text
+- cite: Errico Malatesta, "Anarchists Have Forgotten Their Principles," *Freedom* (London) 28:307, November 1914
+- kb: `Errico-Malatesta_Anarchists-Have-Forgotten-Their-Principles_1914.md`
+- verified: web (https://theanarchistlibrary.org/library/errico-malatesta-anarchists-have-forgotten-their-principles — venue *Freedom* vol. 28 no. 307 and the "bankruptcy… forgotten and betrayed" quotation confirmed)
+- note: the clean principles-under-war-pressure case: rejects "revise our formulas" in favour of "forgotten and betrayed"; deeper national feeling is "one more reason for intensifying, not abandoning" the principle. Pairs with kropotkin-1916-manifesto-of-the-sixteen as the two sides of the split. Cited in 7.1 [S15].
+
+### errico-malatesta-1919-fabbri-letter
+- status: usable
+- medium: text
+- cite: Errico Malatesta, "On the Dictatorship of the Proletariat: A Prophetic Letter to Luigi Fabbri" (letter, London, 30 July 1919; English trans. pub. 2005)
+- kb: `Errico-Malatesta_On-the-Dictatorship-of-the-Proletariat_A-Prophetic-Letter-to-Luigi-Fabbri_2005.md`
+- verified: web-verified — full text at The Anarchist Library and marxists.org (Malatesta archive), both dating the letter London, 30 July 1919
+- note: contemporaneous anarchist *prediction* of the Bolshevik dictatorship's outcome, made while explicitly declining to judge the news from Russia — evidence of foreseeability from design, not hindsight. ▲ The corpus also holds the same letter in an earlier English translation (`Errico-Malatesta_The-Dictatorship-of-the-Proletariat-and-Anarchy_1919.md`): one witness, two translations — do not register or count as an independent source. Cited in 7.7 as [S12]. Cited by DD notes 7.6, 7.7.
+
+### errico-malatesta-1920-an-anarchist-programme
+- status: usable
+- medium: text
+- cite: Errico Malatesta (draft), "An Anarchist Programme", adopted by the Unione Anarchica Italiana, Bologna congress, 1920
+- kb: `Errico-Malatesta_An-Anarchist-Programme_1920.md`
+- verified: web-verified (The Anarchist Library / marxists.org confirm the 1920 UAI Bologna congress adoption)
+- note: "equal liberty of everybody" as the sole limit on freedom; ideal achievable only "with the free consent of all". Used in 3.1 as [S12]. Cited by DD notes 2.4, 3.1.
+
+### errico-malatesta-1922-at-the-cafe
+- status: usable
+- medium: text
+- cite: Errico Malatesta, *At the Café: Conversations on Anarchism* [1922], trans. Paul Nursey-Bray (Freedom Press, 2005), ISBN 9781904491064
+- kb: `Errico-Malatesta_At-the-Café_Conversations-on-Anarchism_1922.md`
+- verified: web-verified (Freedom Press product page and Waterstones/AbeBooks listings confirm translator, publisher, year, ISBN)
+- note: constructed dialogue — both voices are Malatesta's; the interlocutor's "submission of the individual to the collective" objection and its answer. Used in 3.1 as [S11].
+
+### errico-malatesta-1926-communism-and-individualism
+- status: usable
+- medium: text
+- cite: Errico Malatesta, "Communism and Individualism", *Pensiero e Volontà*, April 1926; repr. in *The Anarchist Revolution: Polemical Articles 1924–1931*, ed. Vernon Richards (Freedom Press, 1995)
+- kb: `Errico-Malatesta_Communism-and-Individualism_1926.md`
+- verified: web-verified (The Anarchist Library entry confirms April 1926 origin as a reply to Max Nettlau and the Richards/Freedom Press 1995 reprint; <https://theanarchistlibrary.org/library/errico-malatesta-communism-and-individualism>)
+- note: primary text arguing the individual–collective tension directly; source of the "greatest solidarity to enjoy the greatest liberty" formula and the "we are all individualists" premise. Used in 3.1 as [S10].
+
+### errico-malatesta-1930-anarchists-present-time
+- status: usable
+- medium: text
+- cite: Errico Malatesta, "The Anarchists in the Present Time", June 1930
+- kb: `Errico-Malatesta_The-Anarchists-in-the-Present-Time_1930.md`
+- verified: unverified (period essay; standard Malatesta bibliography)
+- note: late-life revision — "the days are gone" when insurrection seemed sufficient; anarchy's triumph "by evolution, gradually".
+
+### errico-malatesta-1931-apropos-of-revisionism
+- status: usable
+- medium: text
+- cite: Errico Malatesta, "Apropos of 'Revisionism'", 1931
+- kb: `Errico-Malatesta_Apropos-of-Revisionism_1931.md`
+- verified: unverified (period essay; standard Malatesta bibliography)
+- note: "no pontiffs in our ranks... the anarchist church"; sixty-year retrospective on founding illusions exposed by "harsh experience".
+
+### errico-malatesta-anarchist-propaganda
+- status: usable
+- medium: text
+- cite: Errico Malatesta, "Anarchist Propaganda" (kb file dated 1925; venue not established — the text discusses the daily *Umanità Nova*, and the piece circulates via Vernon Richards's *Malatesta: Life and Ideas*)
+- kb: `Errico-Malatesta_Anarchist-Propaganda.md`
+- verified: unverified (searched: no reliable web locus for original venue/date; *Umanità Nova* founded 1919, *Pensiero e Volontà* ran 1924–26 — either is possible. Cite the year with the file's caveat, not as established.)
+- note: the movement's positive transmission doctrine — "a question of education for freedom"; the propagandist as the schoolteacher who helps "in such a way that the pupil imagines that he has found the solution unaided"; the party paper disowned as a central organ; and the failure condition, that "isolated, sporadic propaganda… is forgotten and lost before its effect can grow and bear fruit".
+
+### friedrich-nietzsche-1882-the-gay-science
+- status: usable
+- medium: text
+- cite: Friedrich Nietzsche, *The Gay Science* (1882; Book V added 1887). Unattributed English translation; internal evidence (editorial note naming Petre/Cohn for the verse only, "Joyful Wisdom" framing) suggests the Oscar Levy *Complete Works* edition (Thomas Common, 1910), unverified.
+- kb: `Friedrich-Nietzsche_The-Gay-Science_1882.md`
+- verified: unverified
+- note: translator unnamed in file — cite by § only, paraphrase only, no translation-sensitive word choices. Used in 3.4 for §116 (herd-instinct, community-relative moralities), §143 (polytheism as prototype of plural norms), §345 (both consensus→universalism and disagreement→relativism inferences dismissed). ▲ §345 also used by note 3.3 for the grounding question — same section, different claims. Cited by DD notes 3.3, 3.4.
+
+### friedrich-nietzsche-1883-thus-spoke-zarathustra
+- status: usable
+- medium: text
+- cite: Friedrich Nietzsche, *Thus Spoke Zarathustra: A Book for All and None* (1883–1891). Unattributed English translation; archaising register ("hangeth", "valueth") matches the Levy-series Thomas Common rendering, unverified.
+- kb: `Friedrich-Nietzsche_Thus-Spoke-Zarathustra_A-Book-for-All-and-None_1883.md`
+- verified: unverified
+- note: translator unnamed in file — cite by part and chapter title, paraphrase only. Used in 3.4 for Part I, "The Thousand and One Goals" (plural created tables of value; humanity's one goal still lacking). File contains the chapter twice (lines ~1212 and ~7824 — apparent duplicate text block within the file).
+
+### friedrich-nietzsche-1886-beyond-good-and-evil
+- status: usable
+- medium: text
+- cite: Friedrich Nietzsche, *Beyond Good and Evil: Prelude to a Philosophy of the Future* [*Jenseits von Gut und Böse*] (1886)
+- kb: `Friedrich-Nietzsche_Beyond-Good-and-Evil_Prelude-to-a-Philosophy-of-the-Future_1886.md`
+- verified: unverified
+- note: translator unnamed; full-capital emphasis matches Helen Zimmern (Levy edition, Project Gutenberg circulation) — indication, not verification. Cited by § only (§186: the foundation-hunt takes morality as "given"; "the problem of morality itself has been omitted"). Cited by DD notes 3.3, 3.4.
+
+### friedrich-nietzsche-1887-genealogy-of-morals
+- status: usable
+- medium: text
+- cite: Friedrich Nietzsche, *The Genealogy of Morals: A Polemic* (1887). Unattributed English translation; register consistent with the Levy-series Horace B. Samuel rendering (1913), unverified.
+- kb: `Friedrich-Nietzsche_The-Genealogy-of-Morals_A-Polemic_1887.md`
+- verified: unverified
+- note: translator unnamed in file — cite by essay and § only, paraphrase only. Used in 3.4 for Preface §6 (critique of the value of moral values; power-and-splendour-of-the-type standard) and the First Essay's concluding note (rank-order of values as the philosopher's task; majority-good denied intrinsic superiority). ▲ Preface §6 also used by note 3.3 — same section, different claims. Cited by DD notes 3.3, 3.4.
+
+### friedrich-nietzsche-1888-twilight-of-the-idols
+- status: usable
+- medium: text
+- cite: Friedrich Nietzsche, *Twilight of the Idols* [*Götzen-Dämmerung*] (written 1888, pub. 1889)
+- kb: `Friedrich-Nietzsche_Twilight-of-the-Idols_1895.md`
+- verified: unverified
+- note: KB filename misdates the work (1895); frontmatter `year: 1888` is correct — do not reproduce 1895 in citations. Translator unnamed; section titles and phrasing ("Skirmishes of an Untimely Man", "prankishness", the "History of an Error" subtitle) match Walter Kaufmann's 1954 *Portable Nietzsche* rendering rather than the Levy edition (Ludovici's chapter is titled "Skirmishes in a War with the Age") — unverified, and a possible rights question worth the coordinator's attention. Cited by section number only ("Skirmishes" §5, §37; "How the 'True World' Finally Became a Fable"). Cited by DD notes 3.3, 3.4.
+
+### gallie-1956-essentially-contested-concepts
+- status: usable
+- medium: text-ocr
+- cite: W. B. Gallie, "Essentially Contested Concepts," *Proceedings of the Aristotelian Society* 56 (1956): 167–198
+- kb: `wb-gallie_essentially-contested-concepts_1956.md` (attributed summary, staged at workshops/DD/sources/ — not yet folded into corpus)
+- verified: web (JSTOR 4544562; read in full from Columbia Law-hosted scan)
+- note: attributed summary note with verified page anchors. Replaces the abstract-page citation in notes 1.3 (S16) and 3.4 (S8). ▲ Conditions VI–VII (common exemplar; competition develops its achievement) are what separate essential contestedness from radical confusion — DD currently invokes only I–V, and plural dharmas may fail VI. Full text in DD local archive (scratch/sources/part1/, gitignored).
+
+### geertz-1973-religion-as-a-cultural-system
+- status: usable
+- medium: text-ocr
+- cite: Clifford Geertz, "Religion as a Cultural System," in *The Interpretation of Cultures* (New York: Basic Books, 1973), 87–125
+- kb: `clifford-geertz_religion-as-a-cultural-system_1973.md` (attributed summary, staged at workshops/DD/sources/ — not yet folded into corpus)
+- verified: web (ISBN 978-0-465-09719-7); quotations verified against the full book scan
+- note: attributed summary note with verified page anchors. The definition Asad attacks, and the position DD's four-feature test structurally occupies. Geertz himself disclaims essence-hunting ('it is notorious that definitions establish nothing,' p. 90). Distinct work from the KB's *Religion of Java*. Full text in DD local archive (scratch/sources/part1/, gitignored); community upload, reading copy only.
+
+### gellner-curry-cook-alfano-venkatesan-2020-gdat-debate
+- status: usable
+- medium: text
+- cite: David N. Gellner (ed.), Oliver Scott Curry, Joanna Cook, Mark Alfano & Soumhya Venkatesan, "Debate: Morality is fundamentally an evolved solution to problems of social co-operation," *Journal of the Royal Anthropological Institute* 26:2 (2020): 415–427
+- kb: `gellner-curry-cook-alfano-venkatesan_gdat-debate-morality-as-cooperation_2020.md` (attributed summary, staged at workshops/DD/sources/ — not yet folded into corpus)
+- verified: web (Oxford ORA deposit, CC BY-NC)
+- note: attributed summary note with verified page anchors. The formal GDAT motion: Curry proposes, Alfano seconds (needs/capabilities grounding), Cook and Venkatesan oppose. Attribute by speaker — the methodological objections DD needs are Venkatesan's (p. 422). Vote swing 13–6 → 4–24, unreliable per the chair (p. 415). Curry Templeton-funded (TWCF0164, p. 426).
+
+### gethin-2004-he-who-sees-dhamma
+- status: usable
+- medium: text-ocr
+- cite: Rupert Gethin, "He Who Sees Dhamma Sees Dhammas: Dhamma in Early Buddhism," *Journal of Indian Philosophy* 32 (2004): 513–542; repr. in Olivelle (ed.), *Dharma* (Delhi: MLBD, 2009), 91–120
+- kb: `rupert-gethin_he-who-sees-dhamma-sees-dhammas_2004.md` (attributed summary, staged at workshops/DD/sources/ — not yet folded into corpus)
+- verified: web (DOI 10.1007/s10781-004-8633-6 for the JIP original; read from the MLBD reprint scan)
+- note: attributed summary note with verified page anchors (MLBD pagination; +422 for JIP). Argues the senses of dhamma cohere genealogically around 'support/maintain' — against homonymy, cutting against Part 1's rope-not-thread rhetoric for the Buddhist case while vindicating 'that which holds'. ▲ Same incomplete, poor-OCR volume scan as the Olivelle entry; unreliable for verbatim transliterated Pali.
+
+### glenn-roberts-2020-the-dharma-of-dog
+- status: usable
+- medium: text
+- cite: Glenn Roberts, "Dog Dharma: The Dharma of Dog," talk for the final study retreat of the Secular Dharma Course 2018–19, Bodhi College (delivered Nov 2019; finalised Feb 2020)
+- kb: `Glenn-Roberts_The-Dharma-of-Dog.md` (duplicate content: `Glenn-Roberts_Bodhi-Talk-2020-02-08.md`)
+- verified: file-verified only (unpublished; no external record to check)
+- note: practitioner itinerary (post-Christian → Triratna → MBSR → Bodhi College); the "3 jewels" of dog training (trainer, instruction, "comradely community of other dog owners") as spontaneous secular restatement of the practice–ethics–community bundle; "intriguing parallels with what I've previously known as the Path to Recovery". Same course/community milieu as the item above — weaker form of the same circularity caveat; specimen evidence only. The two KB files are the same talk; cite once.
+
+### glenn-roberts-2023-on-the-dharma-of-dharmas
+- status: usable
+- medium: text
+- cite: Glenn Roberts, "On the Dharma of Dharmas," talk for John's group, 20 November 2023
+- kb: `Glenn-Roberts_On-the-dharma-of-dharmas.md`
+- verified: file-verified only (unpublished; no external record to check)
+- note: the presentist strategy in practice — dharmas (plural) as the mind's maps/models; "dark dharmas"; "the Dharmic value of a dharma teaching" defined as "it's helpfulness in living our lives" (the testimony success-criterion note 6.1 flags as insufficient). Same milieu caveat; specimen evidence only.
+
+### glenn-roberts-archie-roberts
+- status: barred
+- barred: ephemera
+- medium: text
+- kb: `Glenn-Roberts_A-day-in-the-life-of-Archie-Roberts.md`
+- verified: unverified
+- note: personal domestic notes about a dog. No evidential weight.
+
+### glenn-roberts-ch19-listening-to-stories-draft
+- status: barred
+- barred: ephemera
+- medium: text
+- kb: `Glenn-Roberts_CH-19-FINAL-draft.md`
+- verified: unverified
+- note: book chapter draft marked "DRAFT IN DEVELOPMENT – NOT FOR CIRCULATION" on every page. Unpublished and explicitly not for circulation; barred on that ground alone.
+
+### glenn-roberts-dharma-is-true-further-thoughts
+- status: usable
+- medium: text
+- cite: Glenn Roberts, "Dharma is true and Buddhism is Not: Some further thoughts from Glenn" (unpublished community paper, undated, c. 2019–20; internal evidence: written "following Gary's presentation on 'why dharma is true and Buddhism not'" at the final retreat of the Bodhi College Secular Dharma Course 2018–19, and mentions a Bodhi College open day in London, 1 Dec)
+- kb: `Glenn-Roberts_Dharma.md`
+- verified: file-verified only (unpublished; no external record to check)
+- note: ▲ CIRCULAR with respect to this project — it is a direct response to the project author's own presentation. May be cited ONLY as a primary specimen of how the secular-dharma community uses and disputes the word (vocabulary dispute, -ism cost analysis, "healthful wisdom" naturalisation proposal), NEVER as independent support for the author's thesis. Note 6.1 states the circularity in Findings and Tensions wherever it is used.
+
+### glenn-roberts-dog-dharma-notes
+- status: barred
+- barred: ephemera
+- medium: text
+- kb: `Glenn-Roberts_Dog-Dharma-Notes.md`
+- verified: unverified
+- note: private working notes in letter form ("Dear Stephen"); superseded by the finished talk in `Glenn-Roberts_The-Dharma-of-Dog.md` and `Glenn-Roberts_Bodhi-Talk-2020-02-08.md`. Cite the finished piece, not the notes.
+
+### goldman-1913-failure-of-christianity
+- status: usable
+- medium: text
+- cite: Emma Goldman, "The Failure of Christianity", *Mother Earth* 8:2 (April 1913), pp. 41–48
+- kb: `Emma-Goldman_The-Failure-of-Christianity_1913.md`
+- verified: web (Mother Earth 8:2, April 1913 — Wikisource, The Anarchist Library, dwardmac.pitzer.edu)
+- note: POLEMIC, cited as such in 7.3 — Christianity "most admirably adapted to the training of slaves"; teachings "a more powerful protection against rebellion and discontent than the club or the gun"; abuses "conditioned in the thing itself". Earns its place solely as the anti-Tolstoy reading of the same gospel (underdetermination-of-text argument); carries no scholarly weight. Cited by DD notes 7.1, 7.3.
+
+### goldman-berkman-1922-bolsheviks-shooting-anarchists
+- status: usable
+- medium: text
+- cite: Emma Goldman and Alexander Berkman, "Bolsheviks Shooting Anarchists" (open letter, Stockholm, 7 January 1922; published in the anarchist press, 1922)
+- kb: `Emma-Goldman+Alexander-Berkman_Bolsheviks-Shooting-Anarchists_1922.md`
+- verified: unverified — text is internally dated (Stockholm, 7 January 1922) with an editorial preface indicating publication in an anarchist/syndicalist paper (likely *Freedom*, London); publication venue not independently confirmed
+- note: documents the manufacture of Scott's fourth element (prostrate civil society): April 1918 machine-gunning of the Moscow Anarchist Club, Lenin's "open and merciless war" declaration at the Tenth Party Congress (April 1921), September 1921 shootings of Fanny Baron and Lev Tchorny. Partisan testimony of the persecuted party — flagged as such in the note's Tensions. Cited in 7.7 as [S15].
+
+### goldman-vazquez-1939-fall-of-barcelona-letters
+- status: usable
+- medium: text
+- cite: Emma Goldman & Mariano R. Vázquez, letters exchanged after the fall of Barcelona, February–March 1939
+- kb: `Emma-Goldman+Mariano-R-Vázquez_The-Fall-of-Barcelona_Letters-Exchanged-by-Emma-Goldman-and-Mariano-R-Vázquez-After-the-Spanish-Civil-War_1939.md`
+- verified: unverified
+- note: a mass movement's death discussed by its participants as it happened; two incompatible post-mortems inside one exchange — contested memory, not causal history.
+
 ### graeber-wengrow-2021-dawn
 - status: usable
 - medium: text
@@ -38,6 +549,282 @@ A note's `[S#]` line points here via `[src:<key>]`. No `[S#]` may point at a `st
 - kb: `Dawn_of_Everything-David_Graeber.md`, `Dawn-of-Everything.md`
 - verified: web (ISBN 978-0-374-15735-7)
 - note: disputes a single "original condition"; egalitarian-forager baseline not uniform.
+
+### gurlesin-2024-implicit-religion-xr
+- status: usable
+- medium: text
+- cite: Ömer F. Gürlesin, "Social Media, Environmental Activism and Implicit Religion: A Case Study of Extinction Rebellion," *Religions* 15 (2024): 1458
+- kb: `omer-gurlesin_social-media-environmental-activism-implicit-religion-xr_2024.md` (attributed summary, staged at workshops/DD/sources/ — not yet folded into corpus)
+- verified: web (DOI 10.3390/rel15121458; CC BY 4.0)
+- note: attributed summary note with verified page anchors. Evidence base for Part 1's environmentalism borderline case. ▲ Method limits: one movement, X/Twitter only, NL 2020–2023, organisational account — public rhetoric, not member self-understanding; Bailey's canonical three markers never appear verbatim in the paper, so do not cite 'Bailey via Gürlesin'.
+
+### guy-debord-1956-theory-of-the-derive
+- status: usable
+- medium: text
+- cite: Guy Debord, "Theory of the Dérive" (November 1956; pub. *Les Lèvres Nues* #9, 1956, rev. *Internationale Situationniste* #2, 1958); English trans. Ken Knabb, *Situationist International Anthology*
+- kb: `Guy-Debord_Theory-of-the-Dérive_1956.md`
+- verified: unverified (Knabb attribution inferred, not web-checked)
+- note: the dérive as attention-environment practice: "drop their relations, their work and leisure activities, and all their other usual motives for movement and action." Cited in 6.2 as a structural ancestor of digital-declutter / re-grounded-attention practices — comparison marked [A], no influence claim.
+
+### guy-debord-1957-report-on-the-construction-of-situations
+- status: usable
+- medium: text
+- cite: Guy Debord, "Report on the Construction of Situations and on the International Situationist Tendency's Conditions of Organization and Action" (July 1957); English trans. in Ken Knabb (ed.), *Situationist International Anthology* (Bureau of Public Secrets)
+- kb: `Guy-Debord_Report-on-the-Construction-of-Situations_And-on-the-International-Situationist-Tendencys-Conditions-of-Organization-and-Action_1957.md`
+- verified: unverified (translation provenance inferred from house style and the Knabb footnote apparatus in the companion 1956 files; not web-checked)
+- note: founding SI manifesto. Source for the recuperation mechanism ("trivialized and sterilized... safely spectacularized"), the "battle of leisure" / "televised imbecilities" passage, and constructed situations (spectators → "livers").
+
+### guy-debord-1967-society-of-the-spectacle
+- status: usable
+- medium: text
+- cite: Guy Debord, *The Society of the Spectacle* (Paris: Buchet-Chastel, 1967); English trans. Ken Knabb (2002; book edn London: Rebel Press, 2005)
+- kb: `guy-debord_the-society-of-the-spectacle.md`
+- verified: translator identified from the file's own translator's note (Ken Knabb, dated Feb 2002, noting the Rebel Press 2005 edition and the prior Nicholson-Smith/Zone 1994 and Perlman-Supak/Black & Red 1977 translations); Knabb's translation is hosted at bopsecrets.org (Bureau of Public Secrets). ISBN not web-checked.
+- note: primary polemical text, 221 numbered theses. Cite by thesis number. Theses used in 6.2: 1, 4, 6, 12, 59. Establishes that the "external industrial adversary" of the attention economy was diagnosed in 1967 — pre-web, pre-smartphone.
+
+### guy-debord-1988-comments-on-the-society-of-the-spectacle
+- status: usable
+- medium: text
+- cite: Guy Debord, *Commentaires sur la société du spectacle* (Paris: Éditions Gérard Lebovici, 1988); standard English trans. Malcolm Imrie (London: Verso, 1990, ISBN 9780860915201) — but the KB file carries a DIFFERENT, unattributed translation
+- kb: `Guy-Debord_Comments-on-the-Society-of-the-Spectacle_1988.md`
+- verified: web (Verso publisher page and AbeBooks confirm Imrie/Verso 1990, ISBN 9780860915201). The KB file names no translator; its phrasing ("the integrated spectacular", "forgeries without reply") does not match Imrie, so quotations from the file cannot be attributed to any published translation.
+- note: Debord's twenty-year self-audit — the "integrated spectacle", the five features, the three-days rule, the death of the agora, the image-flow that leaves no time for reflection. Cite by section number (§I–§XXXIII), prefer paraphrase over quotation because the translation is unattributed; flagged in the note's Tensions.
+
+### guy-debord-gil-wolman-1956-users-guide-to-detournement
+- status: usable
+- medium: text
+- cite: Guy Debord and Gil J. Wolman, "A User's Guide to Détournement" (*Les Lèvres Nues* #8, May 1956); English trans. Ken Knabb, *Situationist International Anthology*
+- kb: `Guy-Debord+Gil-J-Wolman_A-Users-Guide-to-Détournement_1956.md`
+- verified: file-internal (footnote 1 is Knabb's translator note on anglicizing "détournement"); edition not web-checked
+- note: manifesto for the partisan re-use of the dominant culture's material against it; ancestor of culture jamming. Also contains the laws of détournement.
+
+### halbfass-1988-india-and-europe-ch17
+- status: usable
+- medium: text-ocr
+- cite: Wilhelm Halbfass, "Dharma in the Self-Understanding of Traditional Hinduism," ch. 17 of *India and Europe: An Essay in Understanding* (Albany: SUNY Press, 1988), 310–333
+- kb: `wilhelm-halbfass_dharma-in-the-self-understanding-of-traditional-hinduism_1988.md` (attributed summary, staged at workshops/DD/sources/ — not yet folded into corpus)
+- verified: web (SUNY ISBN 978-0-88706-795-8; scan is the MLBD Indian ed., Delhi 1990, ISBN 81-208-0736-7, preserving SUNY pagination)
+- note: attributed summary note with verified page anchors. ▲ Two load-bearing findings: ṛta→dharma linkages 'casual and rare' (pp. 314–15; close-connection claims a Neo-Hindu postulate), and classical dharma emphatically particularist — Indocentric, Veda-indexed, birth-restricted; universalist dharma is the modern reinterpretation (ch. 18). Presses directly on Part 1's two-storey design. Full text in DD local archive (scratch/sources/part1/, gitignored); community upload, reading copy only.
+
+### henry-david-thoreau-1854-walden
+- status: usable
+- medium: text
+- cite: Henry David Thoreau, *Walden; or, Life in the Woods* (Boston: Ticknor and Fields, 1854), "Economy"
+- kb: `Henry-David-Thoreau_Walden_Life-in-the-Woods_1854.md`
+- verified: web-verified (Wikipedia "Walden" — 1854; residence 4 July 1845 – 6 September 1847 on Emerson's woodland)
+- note: sufficiency argued by ledger, not sermon — house $28.12½, food eight months $8.74, "by working about six weeks in a year, I could meet all the expenses of living"; cost redefined as life exchanged. ▲ Always pair with the Lowell/subsidy critique (see lowell entry below): Emerson's land, 26 months, no dependants. Thoreau discloses the borrowing himself ("I borrowed an axe"; "merely a squatter"). Quotations verified verbatim against the staging.text file (segs 5, 31, 43, 53, 60, 66, 76, 101, 102).
+
+### henry-david-thoreau-1863-life-without-principle
+- status: usable
+- medium: text
+- cite: Henry David Thoreau, "Life Without Principle," *The Atlantic Monthly* 12:71 (October 1863), posthumous
+- kb: `Henry-David-Thoreau_Life-Without-Principle_1863.md`
+- verified: web-verified (Wikisource: *The Atlantic Monthly*, Volume 12, Number 71; Wikipedia "Life Without Principle" — first published posthumously October 1863, edited by Thoreau for publication before his death in 1862)
+- note: the moral-livelihood essay — "The ways by which you may get money almost without exception lead downward"; "You are paid for being something less than a man." The canonical secular statement that *how* one earns a living is itself a moral question. All quotations verified verbatim against the staging.text file (segs 3, 6, 7, 12, 19).
+
+### higgins-2017-flexible-appropriation
+- status: usable
+- medium: text
+- cite: Winton Higgins, "The Flexible Appropriation of Tradition: Stephen Batchelor’s Secular Buddhism," *Journal of Global Buddhism* 18 (2017): 51–67
+- kb: `batchelor-higgins_a-secular-buddhism-and-its-analysis_2012-2017.md` (attributed summary, staged at workshops/DD/sources/ — not yet folded into corpus)
+- verified: web (globalbuddhism.org, diamond OA)
+- note: attributed summary note with verified page anchors, shared with the Batchelor entry. Review essay legitimating Batchelor's method via the Chan-acculturation precedent and MacIntyre's 'living tradition'. ▲ Never cites McMahan — source Buddhist modernism separately. Sympathetic analyst, not neutral. Distinct work from the KB's After Buddhism workbook.
+
+### james-russell-lowell-1865-thoreau
+- status: usable
+- medium: text
+- cite: James Russell Lowell, "Thoreau," *North American Review* (October 1865); repr. in *My Study Windows* (Boston: James R. Osgood, 1871)
+- kb: — (external; no KB file)
+- verified: web-verified (Walden Woods Project Lowell page carries the "state's evidence" passage, sourcing it to the 1871 *My Study Windows* reprint; the October 1865 *North American Review* first publication is attested by secondary accounts of the Lowell–Thoreau feud — the American Periodicals literature dates the "vitriolic analysis" to 1865)
+- note: the founding scholarly critique of Walden's dependence — "He squatted on another man's land; he borrows an axe; his boards… all turn state's evidence against him as an accomplice in the sin of that artificial civilization." The scholarly ancestor of the popular "he took his laundry home" jibe; use this, not the jibe.
+
+### karunadasa-1996-dhamma-theory
+- status: usable
+- medium: text
+- cite: Y. Karunadasa, *The Dhamma Theory: Philosophical Cornerstone of the Abhidhamma*, Wheel Publication 412/413 (Kandy: Buddhist Publication Society, 1996)
+- kb: `y-karunadasa_the-dhamma-theory_1996.md` (attributed summary, staged at workshops/DD/sources/ — not yet folded into corpus)
+- verified: web (bps.lk; explicit free-distribution licence)
+- note: attributed summary note with verified page anchors. ▲ Part 1's 'atoms of mind and matter' does not survive: the discrete-entity reading is 'certainly not admissible' (p. 14); dhammas 'cannot be separated from one another like particles of sand' (p. 32) — events, not substances; the tradition legislated against reification. 'Momentary flickers' survives. PDF safe to archive.
+
+### kropotkin-1916-manifesto-of-the-sixteen
+- status: usable
+- medium: text
+- cite: "The Manifesto of the Sixteen" (28 February 1916), signed Jean Grave, Pierre Kropotkine et al. (fifteen initial signatories despite the name)
+- kb: `Pëtr-Kropotkin_The-Manifesto-of-the-Sixteen_1916.md`
+- verified: web (https://www.marxists.org/reference/archive/kropotkin-peter/1916/sixteen.htm — date, "ranged on the side of the resistance" and signatory list incl. Grave and Kropotkine confirmed)
+- note: the pro-war minority's own declaration — the other side of the Malatesta 1914 dispute, in its own words. Cited in 7.1 [S16].
+
+### lichtheim-1992-maat-in-egyptian-autobiographies
+- status: usable
+- medium: text-ocr
+- cite: Miriam Lichtheim, *Maat in Egyptian Autobiographies and Related Studies*, Orbis Biblicus et Orientalis 120 (Fribourg: Universitätsverlag / Göttingen: Vandenhoeck & Ruprecht, 1992)
+- kb: `miriam-lichtheim_maat-in-egyptian-autobiographies_1992.md` (attributed summary, staged at workshops/DD/sources/ — not yet folded into corpus)
+- verified: web (official OA deposit, Zurich Open Repository; ISBN 3-7278-0846-0)
+- note: attributed summary note with verified page anchors. Maat as lived practice-defined ethic (veracity, fairness, beneficence) — cosmic in principle but bottom-weighted ('the Pyramid Texts supply the heavenly dimension of Maat, but just barely,' p. 16); explicitly rejects Assmann's theologised top-down fusion, and her Assmann quotations are DD's only window into that unobtainable book. Replaces the EBSCO starter in note 1.4.
+
+### malatesta-makhno-1927-about-the-platform
+- status: usable
+- medium: text
+- cite: Errico Malatesta & Nestor Makhno, "About the Platform" — exchange over the *Organisational Platform of the General Union of Anarchists*: Malatesta critique (*Il Risveglio*, Geneva, Oct 1927), Makhno letter (1928), Malatesta reply (*Il Risveglio*, Dec 1929), Makhno second letter (*Le Libertaire*, 9 Aug 1930; trans. Nestor McNab)
+- kb: `Errico-Malatesta+Nestor-Makhno_About-the-Platform_1927.md`
+- verified: web (Malatesta's 1927 component at https://theanarchistlibrary.org/library/errico-malatesta-a-project-of-anarchist-organisation — venue and both load-bearing quotations confirmed; the combined-exchange URL guesses 404'd, so the three later letters rest on the kb file)
+- note: the ossification debate in real time, both sides arguing: "a government and a church" / "better that it should die" (Malatesta) vs. without permanent organisation the movement "gets weaker" (Makhno). The documented instance for the form-capture failure mode. Cited in 7.1 [S17]. Cited by DD notes 2.4, 7.1, 7.6.
+
+### mckinnon-2002-sociological-definitions
+- status: usable
+- medium: text
+- cite: Andrew M. McKinnon, "Sociological Definitions, Language Games and the ‘Essence’ of Religion," *Method and Theory in the Study of Religion* 14:1 (2002): 61–83
+- kb: `andrew-mckinnon_sociological-definitions-language-games-essence-of-religion_2002.md` (attributed summary, staged at workshops/DD/sources/ — not yet folded into corpus)
+- verified: web (DOI 10.1163/157006802760198776; green-OA author manuscript, Aberdeen AURA)
+- note: attributed summary note with verified page anchors (▲ anchored to manuscript pages — convert to journal pagination when citing). Concedes the genealogy, keeps the category via Wittgenstein §68 and the usefulness criterion. ▲ His defence requires the term to circulate in ordinary language — 'religion' does, DD's expanded 'dharma' does not; DD must either restrict the strong claim or argue the usage is spreading.
+
+### michels-1911-political-parties
+- status: usable
+- medium: text
+- cite: Robert Michels, *Political Parties: A Sociological Study of the Oligarchical Tendencies of Modern Democracy* (1911; English trans. Eden & Cedar Paul, 1915)
+- kb: —
+- verified: unverified (standard reference; note links https://en.wikipedia.org/wiki/Iron_law_of_oligarchy; no direct quotation used)
+- note: external, not in corpus. The "iron law of oligarchy" — canonical scholarly statement of the mode Malatesta 1909 predicted; cited by paraphrase only. Cited in 7.1 [S19].
+
+### morris-1993-bakunin-historical-materialism
+- status: usable
+- medium: text
+- cite: Brian Morris, "Bakunin, Historical Materialism, and Social Philosophy" (1993; associated with Morris's *Bakunin: The Philosophy of Freedom*, Black Rose Books, 1993)
+- kb: `Brian-Morris_Bakunin-Historical-Materialism-and-Social-Philosophy_1993.md`
+- verified: unverified (1993 date from file frontmatter; Black Rose monograph link plausible but not confirmed this pass)
+- note: secondary treatment used for Bakunin's *ambivalence* on religion ("the first gleam of human truth", a possible "historic necessity", not an "absolute evil"; church-as-pub consolation) — the nuance the slogans omit. Morris's "no refutation has ever been forthcoming" aside is partisan, flagged in 7.3's Tensions.
+
+### morris-tolstoy-and-anarchism
+- status: usable
+- medium: text
+- cite: Brian Morris, "Tolstoy and Anarchism" (essay/review of the Green Classics reissue of *What Then Must We Do?*; undated, early 1990s)
+- kb: `Brian-Morris_Tolstoy-and-Anarchism.md`
+- verified: unverified (original venue not established this pass — likely *Freedom* or an anthologised Morris essay; Morris's Tolstoy essays are collected in his PM Press reader)
+- note: documentary source for Tolstoy's religious anarchism — *The Kingdom of God Is Within You* (1894), the *Government is Violence* anthology (ed. Stephens, 1991), the "our caste"/"get off their backs" argument of *What Then Must We Do?*, and Tolstoy's pre-1917 prediction that Jacobin revolution leads to new oppression. ▲ Advocacy essay (closes: "there really is no alternative to the kind of anarchism he espoused"); use documentarily.
+
+### murray-bookchin-1969-anarchy-and-organization
+- status: usable
+- medium: text
+- cite: Murray Bookchin, "Anarchy and Organization: A Letter to the Left" (1969), written in reply to Huey Newton, "In Defense of Self Defense", *The Black Panther*, 16 November 1968
+- kb: `Murray-Bookchin_Anarchy-and-Organization-a-Letter-to-the-Left_1969.md`
+- verified: partial (the Newton reply provenance is stated in the kb file's own headnote; not independently checked in this pass — the 7.1 agent also used this file)
+- note: ▲ already used by note 7.1. 2.4 quotes a different clause of the same sentence: the self-dissolution design criterion, that a revolutionary organisation must be "structured to dissolve into the popular forms created by the revolution once its function as a catalyst is completed", otherwise it "becomes a vehicle for carrying the forms of the past into the revolution". Cited by DD notes 2.4, 7.1.
+
+## Coordination flags for whoever merges these
+
+- Three of the six (`colin-ward-1996-anarchy-in-action`, `malatesta-makhno-1927-1930-about-the-platform`,
+  `murray-bookchin-1969-anarchy-and-organization`) are also proposed by notes 7.1, 8.3 and/or 2.5.
+  Merge, do not duplicate; keep the union of the `note:` fields.
+- Ward's *Anarchy in Action* may already exist in `SOURCES.md` as `[E9]` via note 0.2.
+
+### murray-bookchin-1971-listen-marxist
+- status: usable
+- medium: text
+- cite: Murray Bookchin, "Listen, Marxist!" (1971; collected in *Post-Scarcity Anarchism*, Ramparts Press)
+- kb: `Murray-Bookchin_Listen-Marxist_1971.md`
+- verified: web (https://theanarchistlibrary.org/library/murray-bookchin-listen-marxist — date, provenance and both load-bearing quotations confirmed)
+- note: "the germ of treachery existed in them from birth"; Bolshevik centralisation as "a counterrevolution of its own against the very social forces it professed to represent"; "the forms replaced the content… means replaced ends." ▲ Partisan historiography of the Russian Revolution (Kronstadt, factory committees) — cite as the movement's self-diagnosis, not as settled history. Cited in 7.1 [S13].
+
+### murray-bookchin-1978-utopia-not-futurism
+- status: usable
+- medium: text
+- cite: Murray Bookchin, "Utopia, Not Futurism: Why Doing the Impossible is the Most Rational Thing We Can Do," lecture at the Toward Tomorrow Fair, Amherst MA, 24 August 1978; transcript published by Uneven Earth, October 2019, by permission of the Bookchin Trust
+- kb: `Murray-Bookchin_Utopia-Not-Futurism_Why-Doing-the-Impossible-is-the-Most-Rational-Thing-We-Can-Do_2019.md`
+- verified: web-verified (unevenearth.org/2019/10/bookchin_doing_the_impossible; mirrored at The Anarchist Library and anarchistfederation.net). Note the transcript is "edited lightly for flow, brevity, and grammar" per the publisher.
+- note: the designed pole of the discover/design question ("Be practical, do the impossible"); the 1978 atomisation diagnosis anticipating the loneliness literature; "People change unconsciously before they change consciously."
+
+### murray-bookchin-2008-free-cities
+- status: usable
+- medium: text
+- cite: Murray Bookchin, *Free Cities: Communalism and the Left*, ed. Eirik Eiglad (Pluto Press, ISBN 978-0-7453-2818-8; editor's preface dated 2008, trade publication 2011)
+- kb: `Murray-Bookchin_Free-Cities_Communalism-and-the-Left_2008.md`
+- verified: web-verified (ISBN 9780745328188 via AbeBooks/Amazon; manuscript held at NYU Tamiment, finding aid TAM 538)
+- note: libertarian municipalism as deliberate institution-building; documents Bookchin's late break with anarchism ("defending anarchism against anarchists") and his founding of communalism. CAVEAT: posthumous anthology assembled by the editor from "letters, lectures, unfinished drafts, and manuscripts," with acknowledged consolidation and revision — quotations carry the editor's hand and should be flagged as editorially mediated.
+
+### murray-bookchin-2015-the-next-revolution
+- status: usable
+- medium: text
+- cite: Murray Bookchin, *The Next Revolution: Popular Assemblies and the Promise of Direct Democracy*, ed. Debbie Bookchin & Blair Taylor, foreword by Ursula K. Le Guin (London: Verso, 2015)
+- kb: `Murray-Bookchin_The-Next-Revolution_Popular-Assemblies-and-the-Promise-of-Direct-Democracy_2015.md`
+- verified: web (Verso 2015, ISBN 978-1-78168-581-5, editors and Le Guin foreword confirmed at https://www.versobooks.com/products/34-the-next-revolution and https://openlibrary.org/books/OL31035172M/The_next_revolution)
+- note: posthumous collection of the libertarian-municipalism / communalism essays. Used in 8.1 for confederalism as an explicitly anti-parochial coordination architecture: confederation "counteract[s] the tendency of decentralized communities to drift toward exclusivity and parochialism"; policymaking reserved to face-to-face assemblies while confederal councils are administrative with mandated, recallable delegates. ▲ Programmatic advocacy, not evidence — no case is made here that the design has been tested above municipal scale. Cited in 8.1 [S22]. Cited by DD notes 3.1, 7.3, 8.1.
+
+### new-inquiry-distracted-by-attention-citton-review
+- status: usable
+- medium: text
+- cite: "Distracted by Attention" (review of Yves Citton, *The Ecology of Attention*), *The New Inquiry*. https://thenewinquiry.com/distracted-by-attention/
+- kb: (none — external web source, folded into the [S10] gloss)
+- verified: web (search-result excerpt confirms the review discusses Citton's engagement with Debord's motto of the spectacle; full text not fetched)
+- note: supports the single lineage claim that Citton's attention-ecology takes up Debord's thesis-12 motto ("What appears is good; what is good appears"). Author name not confirmed, so cited by title only.
+
+### olivelle-2004-semantic-history-of-dharma
+- status: usable
+- medium: text-ocr
+- cite: Patrick Olivelle, "The Semantic History of Dharma: The Middle and Late Vedic Periods," *Journal of Indian Philosophy* 32 (2004): 491–511; repr. in Olivelle (ed.), *Dharma: Studies in its Semantic, Cultural and Religious History* (Delhi: MLBD, 2009), 69–89
+- kb: `patrick-olivelle_the-semantic-history-of-dharma_2004.md` (attributed summary, staged at workshops/DD/sources/ — not yet folded into corpus)
+- verified: web (DOI 10.1007/s10781-004-8629-2 for the JIP original; read from the MLBD reprint scan, which is incomplete — Horsch and Brereton absent)
+- note: attributed summary note with verified page anchors (MLBD pagination; +422 for JIP). ▲ Breaks Part 1's smooth-broadening narrative: dharma marginal and *narrowing* (royal/juridical, Varuṇa and the king) across middle/late Vedic corpora; centrality arrives via Buddhist appropriation and Aśoka, with Dharmaśāstra as Brahmanical response (hypothesis, marked as such). ▲ Scan OCR is poor — dehyphenate before quote-checking; see note's OCR-hazard section.
+
+### parker-1993-basic-bakunin
+- status: usable
+- medium: text
+- cite: Colin Parker, *Basic Bakunin* (Anarchist Communist Federation, 1993; South African ed. Zabalaza Books, 2004, intro. Lucien van der Walt; 2nd SA ed. 2019)
+- kb: `Colin-Parker_Basic-Bakunin_1993.md`
+- verified: web (The Anarchist Library; zabalazabooks.net; van der Walt's 2004 SA introduction confirmed at lucienvanderwalt.com)
+- note: movement primer, partisan register — use only for Bakunin's documented arguments/predictions ("a new class of experts, scientists and professional politicians" legitimated by "the claim to acting in accordance with scientific laws"), never for its own verdicts. Cited by DD notes 7.3, 7.6.
+
+### pokorny-lrc-pie-dher-to-hold-support
+- status: usable
+- medium: text
+- cite: Linguistics Research Center (UT Austin), *Indo-European Lexicon*, s.v. Pokorny etymon *2. dher-, dherə-* 'to hold, support' (master entry 0399), adapting Julius Pokorny, *Indogermanisches etymologisches Wörterbuch* (Bern: Francke, 1959)
+- kb: `pokorny-lrc_pie-dher-to-hold-support.md` (attributed summary, staged at workshops/DD/sources/ — not yet folded into corpus)
+- verified: web (https://lrc.la.utexas.edu/lex/master/0399)
+- note: attributed summary note with verified page anchors. Replaces Wiktionary for the √dhṛ → PIE → *firmus* → *firm* spine in note 1.1 (S7); adds *throne* (Gk. *thronos*) and *Darius* ('upholding the good') as English-visible cognates. ▲ Adjacent entry 0398 is the homophonous '1. dher-' 'dirt, dregs' — do not confuse. Cite for root and reflexes only, never for the meaning of *dharma*; Mayrhofer EWAia remains the citation of record.
+
+### queloz-cueni-2019-genealogical-debunking
+- status: usable
+- medium: text
+- cite: Matthieu Queloz & Damian Cueni, "Nietzsche as a Critic of Genealogical Debunking: Making Room for Naturalism without Subversion," *The Monist* 102:3 (2019), 277–297. doi:10.1093/monist/onz010
+- kb: (none — external)
+- verified: web-verified (Oxford Academic listing and DOI confirmed 2026-07-27; philarchive preprint exists)
+- note: the scholarly anchor for the genetic-fallacy counter-argument — genealogical origins subvert only in conjunction with a further evaluative premise; engages GS §345 directly. Cited via abstract and public preprint, not full journal text (abstract-only access level).
+
+### riesebrodt-2010-promise-of-salvation
+- status: usable
+- medium: text
+- cite: Martin Riesebrodt, *The Promise of Salvation: A Theory of Religion*, trans. Steven Rendall (Chicago: University of Chicago Press, 2010)
+- kb: `martin-riesebrodt_the-promise-of-salvation_2010.md` (attributed summary, staged at workshops/DD/sources/ — not yet folded into corpus)
+- verified: web (ISBN 978-0-226-71391-5)
+- note: attributed summary note with verified page anchors. The closest structural precedent for DD: answers the constructionist objection, then defines religion substantively (interventionist practices toward superhuman powers). ▲ The fork this creates for DD: his universality is empirical and falsifiable *because* the definition is substantive — and the same criterion ejects secular frameworks ('morality does not require religion,' pp. 183–84). DD cannot borrow the universality while keeping non-privileging. Full text in DD local archive (scratch/sources/part1/, gitignored); community upload.
+
+### roberts-wolfson-2004-rediscovery-of-recovery
+- status: usable
+- medium: text
+- cite: Glenn Roberts & Paul Wolfson, "The rediscovery of recovery: open to all," *Advances in Psychiatric Treatment* (2004) 10:37–49
+- kb: `Glenn-Roberts_APT-Article.md`
+- verified: web-verified (Cambridge Core article page for *Advances in Psychiatric Treatment* vol. 10, "The rediscovery of recovery: open to all", Roberts & Wolfson; reported as the journal's most frequently cited article)
+- note: the one milieu-independent Roberts document — predates his secular-dharma involvement and contains zero Buddhist/dharmic/mindfulness vocabulary (grep-checked). Documents psychiatry's redefinition of "recovery" from cure to living well with enduring symptoms (Anthony 1993; Deegan), and the testimony-vs-operationalisation dispute (Liberman & Kopelowicz) — an independent convergence on the dharma-shaped form, and a precedent for 7.4's measurement problem.
+
+### NOT USED (assessed and excluded)
+- `Glenn-Roberts_CH-19-FINAL-draft.md` — marked "DRAFT IN DEVELOPMENT – NOT FOR CIRCULATION"; barred per BRIEF.
+- `Glenn-Roberts_A-day-in-the-life-of-Archie-Roberts.md`, `Glenn-Roberts_Dog-Dharma-Notes.md` — personal notes/letters, barred:ephemera per BRIEF.
+- `Anna-Ronan_Anarchism-as-a-Spiritual-Practice_2019.md`, `Anna-Prouty_An-Anarcho-Taoist-Manifesto_2017.md` — reverse-direction translation specimens; deliberately left to note 8.3 (another agent's assignment) to avoid duplication.
+
+### rosch-mervis-1975-family-resemblances
+- status: usable
+- medium: text-ocr
+- cite: Eleanor Rosch & Carolyn B. Mervis, "Family Resemblances: Studies in the Internal Structure of Categories," *Cognitive Psychology* 7 (1975): 573–605
+- kb: `rosch-mervis_family-resemblances_1975.md` (attributed summary, staged at workshops/DD/sources/ — not yet folded into corpus)
+- verified: web (DOI 10.1016/0010-0285(75)90024-9)
+- note: attributed summary note with verified page anchors. Family-resemblance score predicts prototypicality at ρ = .84–.94 across six categories — a measurable 'textbook case vs blurry rim' for the four-feature test. ▲ *Bird* was not among the tested categories (the robin/penguin norms are Rosch 1975a); object categories, ~1,076 US undergraduates — extension to normative categories is DD's own wager. Full text in DD local archive (scratch/sources/part1/, gitignored).
+
+### san-code-of-research-ethics-2017
+- status: usable
+- medium: text
+- cite: South African San Institute, *San Code of Research Ethics* (Kimberley: SASI / South African San Council, under the EU TRUST project, 2017)
+- kb: — (external web source; candidate for harvesting into `` as an attributed summary note)
+- verified: verified against the published booklet PDF (trust-project.eu; images read directly): four values (respect, honesty, justice and fairness, care) plus process; genomics-research grievances; "come through the door, not the window" (Andries Steenkamp). <https://trust-project.eu/wp-content/uploads/2017/03/San-Code-of-RESEARCH-Ethics-Booklet-final.pdf>
+- note: first research-ethics code issued by an African indigenous people; the indigenous-authored counterweight to the note's otherwise entirely outsider Kalahari sourcing. Access-level: full-text (image PDF, quotations transcribed from page images).
 
 ### sapolsky-behave-2017
 - status: usable
@@ -133,6 +920,110 @@ A note's `[S#]` line points here via `[src:<key>]`. No `[S#]` may point at a `st
 - kb: `repeatedly-excellence-act-habit-aristotle_gpt-4o-mini.md`
 - verified: web (ISBN 9780671201593; Will Durant, The Story of Philosophy, 1926)
 - note: prov=zenquotes; KB text is an LLM (gpt-4o-mini) discourse generated from a Zenquotes quote card, not a summary of a specific parent document. NEEDS-HUMAN: confirm how the note should represent the Aristotle/Durant attribution nuance.
+
+### schilbrack-2022-concept-of-religion-sep
+- status: usable
+- medium: text
+- cite: Kevin Schilbrack, "The Concept of Religion," *Stanford Encyclopedia of Philosophy* (first published 28 March 2022)
+- kb: `kevin-schilbrack_the-concept-of-religion_sep-2022.md` (attributed summary, staged at workshops/DD/sources/ — not yet folded into corpus)
+- verified: web (https://plato.stanford.edu/entries/concept-religion/)
+- note: attributed summary note with verified page anchors (section-anchored). The standard reply to Asad — realism about social structures plus map-against-territory testability. ▲ Does NOT license 'disclosed authorship' as a defence; holds polythetic framings 'equally ethnocentric'; and warns that functionally defined universality 'is not a discovery but a product of one's definition' — the sharpest published pressure on Part 1's 'every society grows one'. Open access.
+
+### schlerath-skjaervo-1987-asa-iranica
+- status: usable
+- medium: text
+- cite: B. Schlerath & P. O. Skjærvø, "AŠA," *Encyclopædia Iranica* II/7 (1987): 694–696 (online ed.)
+- kb: `schlerath-skjaervo_asa_encyclopaedia-iranica.md` (attributed summary, staged at workshops/DD/sources/ — not yet folded into corpus)
+- verified: web (iranicaonline.org/articles/asa-means-truth-in-avestan; consulted via Wayback snapshot 2023-11-17)
+- note: attributed summary note with verified page anchors. Confirms *asha*/*ṛta* as the same Indo-Iranian word (Part 1's 'same word in different mouths' now on bedrock); reconstructs \**ṛtām dhar-* 'to uphold the truth' among the oldest shared formulas (~2000 BCE) — dharma's root formulaically paired with ṛta. ▲ With Lüders and Halbfass, argues the rendering is 'truth', not bare 'cosmic order'. Replaces zoroastrian.org / hinduwebsite.com in note 1.4 (S8).
+
+### sep-friedrich-nietzsche
+- status: usable
+- medium: text
+- cite: "Friedrich Nietzsche," *Stanford Encyclopedia of Philosophy*
+- kb: —
+- verified: web-verified 2026-07-27 (fetched; cited reception-history content confirmed)
+- note: Elisabeth Förster-Nietzsche's control of the literary estate and its antisemitic editorial distortion; the mid-century might-makes-right reception and Kaufmann's recuperation. <https://plato.stanford.edu/entries/nietzsche/>
+
+### sep-nietzsche-moral-political-philosophy
+- status: usable
+- medium: text
+- cite: "Nietzsche's Moral and Political Philosophy," *Stanford Encyclopedia of Philosophy* (first pub. 2004; substantive revision 5 Sep 2024)
+- kb: —
+- verified: web-verified 2026-07-27 (fetched; existence, revision date, and cited content confirmed)
+- note: the critique of morality as thwarting the highest human types; the privilege-readings vs anti-realism dispute over Nietzsche's own evaluative standpoint. <https://plato.stanford.edu/entries/nietzsche-moral-political/>
+
+### shahin-2016-nietzsche-and-anarchy
+- status: usable
+- medium: text
+- cite: Shahin, *Nietzsche and Anarchy* (Elephant Editions / Active Distribution, 2016)
+- kb: `shahin_nietzsche-and-anarchy.md`
+- verified: unverified
+- note: pseudonymous author; publication by Elephant Editions/Active Distribution stated in the file itself. Cited in 3.4 only as reception evidence (anarchist reappropriation of Nietzsche), never as Nietzsche interpretation.
+
+### slingerland-2000-effortless-action
+- status: usable
+- medium: text-ocr
+- cite: Edward Slingerland, "Effortless Action: The Chinese Spiritual Ideal of Wu-wei," *Journal of the American Academy of Religion* 68:2 (2000): 293–328
+- kb: `edward-slingerland_effortless-action-wu-wei_2000.md` (attributed summary, staged at workshops/DD/sources/ — not yet folded into corpus)
+- verified: web (DOI 10.1093/jaarel/68.2.293; author-self-archived PDF)
+- note: attributed summary note with verified page anchors. Wu-wei as pan-Chinese ideal, not Daoist-specific — documented from the *Odes* through Confucius, Mencius, Xunzi, Laozi, Zhuangzi ('counter a common perception of wu-wei as an exclusively Daoist ideal,' p. 297). Upgrades note 1.4 (S10); the paradox of wu-wei cross-links to note 3.1. ▲ ABBYY OCR artifacts in scan; key quotes checked against page images.
+
+### slingerland-etal-2020-coding-culture
+- status: usable
+- medium: text
+- cite: Edward Slingerland, Quentin D. Atkinson, Carol R. Ember, Oliver Sheehan, Michael Muthukrishna, Joseph Bulbulia & Russell D. Gray, "Coding culture: challenges and recommendations for comparative cultural databases," *Evolutionary Human Sciences* 2 (2020): e29
+- kb: `slingerland-et-al_coding-culture_2020.md` (attributed summary, staged at workshops/DD/sources/ — not yet folded into corpus)
+- verified: web (DOI 10.1017/ehs.2020.30; CC BY 4.0)
+- note: attributed summary note with verified page anchors. The eHRAF coding-validity critique by database insiders (Ember is HRAF; authors declare involvement in DRH, eHRAF, Pulotu, D-PLACE). A methods paper, not a debunking — seven recommendations. Bears on every 'coded across N societies' claim behind note 1.2. Safe to archive.
+
+### stenmark-2022-worldview-studies
+- status: usable
+- medium: text
+- cite: Mikael Stenmark, "Worldview studies," *Religious Studies* 58 (2022): 564–582 (online-first 2021)
+- kb: `mikael-stenmark_worldview-studies_2021.md` (attributed summary, staged at workshops/DD/sources/ — not yet folded into corpus)
+- verified: web (DOI 10.1017/S0034412521000135; CC BY 4.0)
+- note: attributed summary note with verified page anchors. The closest published ally to DD's central move: secular and religious outlooks as species of one genus. His worldview = life-orienting constellation of beliefs, values and attitudes, consciously held or not; practice acknowledged but never criterial — DD's dharma ≈ worldview with behaviour and belonging promoted to defining features. ▲ Philosopher on Western materials; cross-cultural claims cannot be outsourced to him.
+
+### stewart-2015-dharma-punx-rebel-dharma
+- status: usable
+- medium: text
+- cite: Francis Stewart, "The anarchist, the punk rocker and the Buddha walk into a bar(n): Dharma Punx and Rebel Dharma," *Punk & Post Punk* 4:1 (2015): 71–89
+- kb: `francis-stewart_dharma-punx-and-rebel-dharma_2015.md` (attributed summary, staged at workshops/DD/sources/ — not yet folded into corpus)
+- verified: web (DOI 10.1386/punk.4.1.71_1; green-OA accepted manuscript, Stirling STORRE)
+- note: attributed summary note with verified page anchors (▲ manuscript pagination — convert when citing; ms is pre-copyedit, e.g. 'Vispanna'). Fieldwork on Dharma Punx (US) and Rebel Dharma (UK). ▲ Verdict for Part 1's borderline case: punk supplies identity, code, community; every transformative practice is imported from Buddhism via Levine — supports the 'two or three out of four' hedge rather than resolving it. Cross-links the corpus's Ronan/Prouty fusion specimens.
+
+### taves-2009-religious-experience-reconsidered
+- status: usable
+- medium: text
+- cite: Ann Taves, *Religious Experience Reconsidered: A Building-Block Approach to the Study of Religion and Other Special Things* (Princeton: Princeton University Press, 2009)
+- kb: `ann-taves_religious-experience-reconsidered_2009.md` (attributed summary, staged at workshops/DD/sources/ — not yet folded into corpus)
+- verified: web (ISBN 978-0-691-14087-2, from the copyright page)
+- note: attributed summary note with verified page anchors. The methodological middle way: composites ('religions') are scholars' aggregates, but comparison rebuilds from smaller units — ascriptions of specialness, 'a deeply rooted human characteristic' (p. 34) offered as a testable hypothesis, not a fiat universal. Her mārga-derived 'special path' is the closest published analogue to dharma-as-path. Model for recasting 'every society grows one'. Full text in DD local archive (scratch/sources/part1/, gitignored); community upload.
+
+### teeter-1997-presentation-of-maat
+- status: usable
+- medium: text-ocr
+- cite: Emily Teeter, *The Presentation of Maat: Ritual and Legitimacy in Ancient Egypt*, Studies in Ancient Oriental Civilization 57 (Chicago: Oriental Institute, 1997)
+- kb: `emily-teeter_the-presentation-of-maat_1997.md` (attributed summary, staged at workshops/DD/sources/ — not yet folded into corpus)
+- verified: web (official OI/ISAC open-access edition, isac.uchicago.edu; ISBN 1-885923-05-1)
+- note: attributed summary note with verified page anchors. 205 catalogued scenes, Thutmose III to Aspelta: presenting maat was a royal monopoly bound to legitimacy — the king upholds a primordial order he never makes. ▲ Structural echo of Olivelle's royal-vocabulary dharma — both orders begin as king-maintained legitimacy machinery. Iconographic study: do not cite for ethical content (that is Lichtheim). Safe to archive.
+
+### waismann-1945-verifiability
+- status: usable
+- medium: text-ocr
+- cite: Friedrich Waismann, "Verifiability," *Proceedings of the Aristotelian Society*, Supp. Vol. 19 (1945): 119–150
+- kb: `friedrich-waismann_verifiability_1945.md` (attributed summary, staged at workshops/DD/sources/ — not yet folded into corpus)
+- verified: web (JSTOR 4106433; symposium with MacKinnon and Kneale)
+- note: attributed summary note with verified page anchors. Replaces the Wikipedia citation in note 1.3 (S15). Open texture ('Porosität der Begriffe', Kneale's translation, p. 121 n.): the impossibility of forestalling unforeseen cases, distinct from remediable vagueness. ▲ Waismann confines it to empirical description — the legal extension is Hart's, the dharma extension is DD's own; 1.3's borderline cases are closer to vagueness than open texture. Full text in DD local archive (scratch/sources/part1/, gitignored).
+
+### wikipedia-walden
+- status: usable
+- medium: text
+- cite: "Walden," Wikipedia (accessed 2026-07-27); scholarly context Laura Dassow Walls, *Henry David Thoreau: A Life* (University of Chicago Press, 2017), ISBN 978-0-226-34469-0
+- kb: — (external; no KB file)
+- verified: web-verified (article fetched 2026-07-27: Emerson's ownership, work-exchange arrangement, 4 July 1845 – 6 September 1847, several-times-weekly Concord trips, in-kind support; Walls 2017 confirmed via University of Chicago Press catalogue)
+- note: the documented facts behind the Lowell critique, used in 6.3 to keep the Thoreau strand honest. Walls is the standing scholarly biography if a deeper treatment is later needed; her text was not itself consulted.
 
 ### zenquotes-2619-aristotle-habit
 - status: barred
@@ -421,6 +1312,7 @@ A note's `[S#]` line points here via `[src:<key>]`. No `[S#]` may point at a `st
 - cite: Oliver Scott Curry, Daniel Austin Mullins and Harvey Whitehouse, "Is It Good to Cooperate? Testing the Theory of Morality-as-Cooperation in 60 Societies," Current Anthropology 60(1) (2019); popularized as "Seven Moral Rules Found All Around the World" (University of Oxford press release, 2019; repr. prosocial.world)
 - kb: `posts_the-seven-moral-rules-found-all-around-the-world.md`
 - verified: web (https://doi.org/10.1086/701478)
+- note: Attributed summary with verified page anchors staged as `curry-mullins-whitehouse_is-it-good-to-cooperate_2019.md` (workshops/DD/sources/), covering the full typeset article INCLUDING the four published Comments (Bloom; Gintis; Smith & Kurzban, 'Morality Is Not Always Good'; Wong) and the authors' Reply — the Oxford ORA deposit of the published version, plus supplement, in the DD local archive. Key figures: 961/962 coded valence observations positive (p. 54); fairness observed in 9/60 societies; coverage confound r = 0.43 (p. 55); fairness κ = 0.14. ▲ 'None was found' is the honest gloss, not 'there are none'; the codebook's rule five has no 'legitimate' qualifier. Prefer this entry over curry-2019-seven-moral-rules (blog gloss) for any [S#] carrying weight.
 
 ### dalai-lama-simple-religion-quote
 - status: usable
