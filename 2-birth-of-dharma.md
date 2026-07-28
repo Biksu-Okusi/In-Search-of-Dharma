@@ -3,9 +3,9 @@ part: 2
 title: "The Genesis of Dharmas"
 slug: birth-of-dharma
 status: done
-words: 4325
+words: 4633
 reading_level: year-12
-updated: 2026-07-11
+updated: 2026-07-28
 draws_on: ["2.1", "2.2", "2.3", "5.2", "1.2", "5.5"]
 ---
 
@@ -83,7 +83,9 @@ A second pressure, less obviously, was prosperity. The evolutionary psychologist
 
 Put these together, and the simultaneity dissolves into something far less mysterious than divine coincidence. When broadly similar conditions arise independently in different places, you should expect broadly similar solutions to arise with them, no copying required, the same way eyes evolved many separate times because seeing is useful wherever there is light. The Axial Age was not a message broadcast to humanity from outside. It was the same problem, worked out in parallel by people facing the same predicament, and arriving at recognisably the same answer: an internalised, reflective, universalising ethic that could bind a stranger as readily as a kinsman.
 
-I should enter one caution, because tidy stories about history deserve suspicion. "The Axial Age" is itself a contested idea. Critics point out that Jaspers drew its borders to take in Greece, Israel, India, and China while quietly leaving out Egypt and Mesopotamia, older civilisations with cosmic-order traditions of their own (Egypt's ma'at among them). They point out, too, that the whole notion of a single spiritual "breakthrough" can smuggle in a Christian story of history marching toward enlightenment. The window is real, and the convergence is striking, but it is a pattern we have drawn on the past, not a switch that flipped. The truth is messier and more gradual than the phrase suggests, which is usually how truth is.
+I should enter one caution, because tidy stories about history deserve suspicion. "The Axial Age" is itself a contested idea, and the objections are more serious than a footnote. Critics point out that Jaspers drew its borders to take in Greece, Israel, India, and China while quietly leaving out Egypt and Mesopotamia, older civilisations with cosmic-order traditions of their own (Egypt's ma'at among them). They point out, too, that the whole notion of a single spiritual "breakthrough" can smuggle in a Christian story of history marching toward enlightenment. Nor was the idea Jaspers's to begin with: the Scottish writer John Stuart-Glennie had described the same supposed turn in 1873, three-quarters of a century earlier, and called it the moral revolution.
+
+The hardest objection is the empirical one. When a team led by Daniel Mullins and Daniel Hoyer took the traits that proponents offer as evidence of an axial transformation and looked for them systematically in the historical record, they found those traits appearing across Afro-Eurasia "hundreds and in some cases thousands of years prior to the proposed Axial Age." If the distinctive features turn up long before the window, the window is not doing the work the name implies. So hold the phrase loosely. The convergence is striking and the problem it responds to is real, but "the Axial Age" is a pattern we have drawn on the past, not a switch that flipped. The truth is messier and more gradual than the phrase suggests, which is usually how truth is. What survives is the part this essay actually needs: similar pressures, arising independently, pushed people toward similar answers. That does not require a magic window, and it is not damaged by losing one.
 
 ## What the codes added, and what they did not
 
@@ -95,7 +97,9 @@ What is on that list matters as much as what is missing from it. Every item is a
 
 There is a complication that keeps the picture from being too neat. I have told this as though crowding came first and codes came second, society creating dharmas to cope. But the arrow can run the other way too. The anthropologist Joseph Henrich and his colleagues have traced how the medieval Western Church, by banning cousin marriage and reshaping the family, actively dissolved the dense webs of kinship that had organised European life, and in doing so helped manufacture the loose, mobile, individualistic, stranger-trusting society we now think of as modern. There the dharma did not merely answer the new world; it helped build it. Codes and the societies that carry them make each other, in a long feedback loop with no clean beginning.
 
-And one shadow falls across all of it. The very machinery that makes a dharma such a powerful glue, the way it turns strangers into brothers, works by drawing a line around the "us" it creates. The same evolutionary studies that show how cooperation bonds a group show, in the same breath, that the bonding and the bordering tend to evolve together: the warmth turned inward and the suspicion turned outward are two faces of one adaptation. A dharma includes by excluding. It is never only a circle of care; it is also, always, a fence. We will spend a whole part, much later, on what happens at that fence.
+And one shadow falls across all of it. The very machinery that makes a dharma such a powerful glue, the way it turns strangers into brothers, works by drawing a line around the "us" it creates. A dharma includes by excluding. It is never only a circle of care; it is also, always, a fence. We will spend a whole part, much later, on what happens at that fence.
+
+There is a stronger version of that claim which I had better not make. Some evolutionary models propose that the warmth turned inward and the suspicion turned outward are two faces of one adaptation, bred together by war between groups. It is an elegant idea and it may yet be right, but it has taken a serious knock. When the anthropologist Mark Dyble re-ran the best-known of those models across a much wider range of conditions, he found the result held only when groups were assumed to differ genetically far more than real hunter-gatherer groups actually do. Set that dial to what we measure in the field, and the altruism stops evolving. The fence is real, and we have plenty of evidence for it in history and in the laboratory. What we do not have is a settled account of it written into our genes by ancient warfare.
 
 ## Made things
 
@@ -133,11 +137,11 @@ Research notes used in this essay series are published on [GitHub](https://githu
 - Christopher Boehm, *Hierarchy in the Forest* (1999) — the "reverse dominance hierarchy" and egalitarian enforcement among foragers, including the last-resort removal of the intimidator who cannot be shamed.
 - Daniel Smith, Andrea Migliano et al., on Agta storytelling — narrative as the pre-literate broadcaster of cooperative norms.
 - Robin Dunbar on the cognitive limit to stable relationships, and Mark Pagel, *Wired for Culture* — why kinship caps group size and humans needed a "scale-free" mechanism.
-- Karl Jaspers, *The Origin and Goal of History* (1949) — the Axial Age thesis; with the Eurocentrism/teleology critiques (Jan Assmann; Boy & Torpey).
+- Karl Jaspers, *The Origin and Goal of History* (1949) — the Axial Age thesis; with the Eurocentrism/teleology critiques (Jan Assmann; Boy & Torpey), Eugene Halton's *From the Axial Age to the Moral Revolution* (2014) on John Stuart-Glennie's prior 1873 formulation, and Daniel Mullins, Daniel Hoyer and colleagues, "A Systematic Assessment of 'Axial Age' Proposals," *American Sociological Review* (2018), who find the diagnostic traits appearing "hundreds and in some cases thousands of years prior to the proposed Axial Age."
 - Nicolas Baumard et al., "Increased Affluence Explains the Emergence of Ascetic Wisdoms and Moralizing Religions," *Current Biology* (2015) — affluence, not empire, as the predictor.
 - David Graeber, *Debt: The First 5,000 Years* (2011) — coinage, the "military-coinage-slavery complex," and world religions as the counter-domain.
 - Jonathan Schulz, Joseph Henrich et al., "The Church, intensive kinship, and global psychological variation," *Science* (2019) — how a code reshaped kinship and helped manufacture stranger-society.
-- Jung-Kyoo Choi & Samuel Bowles, "The Coevolution of Parochial Altruism and War," *Science* (2007) — why in-group altruism and out-group hostility evolve together.
+- Jung-Kyoo Choi & Samuel Bowles, "The Coevolution of Parochial Altruism and War," *Science* (2007) — the model proposing that in-group altruism and out-group hostility evolved together; with Mark Dyble, "The evolution of altruism through war is highly sensitive to population structure and to civilian and fighter mortality," *PNAS* (2021), who re-runs that model across a wider parameter range and finds that when genetic differentiation between groups is set to values actually observed among hunter-gatherers, "altruism does not evolve."
 - Ernst Fehr & Simon Gächter, "Altruistic Punishment in Humans," *Nature* (2002) — third-party punishment, the costly policing that stabilises cooperation.
 - Pascal Boyer, *Religion Explained*, and Justin Barrett on the "hyperactive agency-detection device" — why a watching god is a cognitively catchy, transmissible idea.
 - Richard Sosis & Eric Bressler, "Cooperation and Commune Longevity" (2003); Laurence Iannaccone, "Why Strict Churches Are Strong" (1994); Dimitris Xygalatas on the Thaipusam ritual — costly signalling and credibility-enhancing displays as the commitment engine, and the secular durability problem.

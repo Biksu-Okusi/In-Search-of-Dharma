@@ -235,7 +235,30 @@ and four of the reviews' charges did not survive that check — those correction
     version of the finding is narrower and is recorded there: he is absent from **all four of Part 7's
     own notes**, which is a real gap for the secular-congregation and grounding material.
 
-### Tier C — claims to soften, and gaps to disclose
+### Tier C — claims to soften, and gaps to disclose  ✓ **worked 2026-07-28**
+
+> ▲ **Four of this tier's thirteen charges failed verification**, one of them by misrepresenting a
+> paper held in the archive. Each is marked below with what the source actually says. The author
+> approved every surviving item, plus all three judgement calls.
+
+**Failed verification — do not re-raise:**
+- **#16 (Goyal).** The review claims Goyal et al. 2014 "found no evidence meditation beats *active*
+  controls on any outcome." False. Goyal reports **moderate** evidence for anxiety (ES 0.38),
+  depression and pain (ES 0.33) against active controls, concluding that meditation programs "can
+  result in small to moderate reductions in multiple negative dimensions of psychological stress."
+  The "no evidence" sentence concerns a different comparison — no evidence meditation beats active
+  *treatments* (drugs, exercise, other behavioural therapies). The essay's claim is about brain
+  *function*, which Goyal does not measure.
+- **#22 (Kela).** A misreading of the essay's own sentence. Part 8 says the idleness *objection* "has
+  been tested from Finland to Stockton to Kenya, and largely failed" — the objection failed, not the
+  trial. The prose already matches Kela's finding.
+- **#20 ("for the first time").** The phrase attaches to the pressure arriving "with an instrument
+  panel," i.e. planetary-boundaries science, not to the apocalypse being unprecedented. Whyte's
+  objection targets a claim the essay does not make. (Whyte remains worth citing elsewhere.)
+- **#25 ("the cost is the point").** Conflates two literatures. Kavanagh et al. tested **pain** and
+  cohesion among 605 Brazilian Jiu Jitsu practitioners; the essay's passage is about **costly
+  signalling** (fasts, dress, time), which #23 independently supports. The real target was note 5.4's
+  "martyrdom effect," and that has been qualified.
 
 14. **Smartphone harm (Part 7).** "No natural defences", "an adversary that gets cleverer every
     quarter" — advocacy-sourced. Orben & Przybylski put the effect at ~0.4% of variance; Odgers &
