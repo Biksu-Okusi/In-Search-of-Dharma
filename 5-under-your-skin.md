@@ -3,7 +3,7 @@ part: 5
 title: "How a Dharma Gets Under Your Skin"
 slug: under-your-skin
 status: done
-words: 5342
+words: 5331
 reading_level: year-12
 updated: 2026-07-28
 draws_on: ["5.1", "5.3", "5.4", "5.2", "5.5"]
@@ -93,7 +93,7 @@ And because the brain images are so seductive, it needs to be said plainly: none
 
 The three layers, together, answer the question we started with.
 
-Your dharma lives in your moral taste buds, in the instantaneous flare of approval or disgust that arrives long before any argument and that your reasoning mind merely dresses up afterwards. It lives in your trained habits, in dispositions grooved so deep by repetition that they run on their own, without consulting you, when you are tired or frightened or not paying attention. And it lives in the very tuning of your brain, in circuits worn smooth by years of practice and bathed in a chemistry that bonds you to your own. One thing is missing from that list: your conscious, deliberating, belief-weighing mind, the part of you that could examine a claim and find it wanting, is barely involved in any of it.
+Your dharma lives in your moral taste buds, in the instantaneous flare of approval or disgust that arrives long before any argument and that your reasoning mind merely dresses up afterwards. It lives in your trained habits, in dispositions grooved so deep by repetition that they run on their own, without consulting you, when you are tired or frightened or not paying attention. And it lives in the very tuning of your brain, in circuits worn smooth by years of practice. One thing is missing from that list: your conscious, deliberating, belief-weighing mind, the part of you that could examine a claim and find it wanting, is barely involved in any of it.
 
 That is the whole secret, and it is why a dharma feels the way it does. It does not feel like a belief one holds because it was never installed as a belief in the first place. It was installed *underneath* belief, in the layers that were running long before the reasoning mind woke up and that go on running whether the reasoning mind agrees or not. You did not reason your way in, which is precisely why you cannot be reasoned out, and why the man at the funeral weeps over words he is certain are false. From the inside, a working dharma cannot feel like an opinion about reality. It feels like reality, because it is operating below the level of the self that would be capable of doubting it.
 

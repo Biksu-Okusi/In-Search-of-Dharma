@@ -3,7 +3,7 @@ part: 3
 title: "The Dharmas of the Samin of Java"
 slug: samin-of-java
 status: done
-words: 5338
+words: 5322
 reading_level: year-12
 updated: 2026-07-28
 draws_on: ["4.1", "1.3", "7.3", "8.1"]
@@ -57,7 +57,7 @@ Underneath these everyday rules sits one conviction with real teeth, the one tha
 
 They called their faith *Agama Adam*, "the religion of Adam." The name is a claim: that this was humanity's original religion, the simple thing we all had before the priests and the empires got to us. Its practice was correspondingly bare: prayer at dawn and dusk, and almost none of the elaborate ceremonial apparatus that surrounded Javanese village life. No grand rituals, no professional clergy, just a plain ethic for plain people.
 
-The whole thing was carried by mouth. Samin was illiterate, and so were his followers, so there was no scripture, no holy book to copy, guard, and argue over. The ethic travelled by recitation, by example, and by embodied practice, including a striking discipline called *laku jejek*, days of walking to reach a community gathering. A dharma with no text, held in nothing but memory, habit, and the soles of people's feet.
+The whole thing was carried by mouth. Samin was illiterate, and so were his followers, so there was no scripture, no holy book to copy, guard, and argue over. The ethic travelled by recitation, by example, and by embodied practice, including a striking discipline called *laku jejek*, days of walking to reach a community gathering. A dharma with no text, held in nothing but memory and the soles of people's feet.
 
 That picture needs one qualification, and the exception is revealing. A handful of texts are, in fact, attributed to the tradition (most often a manuscript called the *Serat Jamus Kalimosodo*), and some Samin families keep a *kris*, the wavy ceremonial blade of Java, as an heirloom that carries the teaching down the generations. So the Samin were not quite textless; they were deeply suspicious of the written word as the instrument of the priest, the clerk, and the tax-collector, and inclined to trust instead the things a person keeps in the body.
 
@@ -73,13 +73,13 @@ It is a fair challenge, and the Samin are where our definition gets tested again
 
 First: is it *comprehensive*? Does it govern a whole life, or just one corner of behaviour? The Sikep code clearly does the former. It tells you how to work, how to speak, what you may own, how to treat your neighbours, how to deal with authority, even how to understand death. It is an architecture for living, not a rule about one thing.
 
-Second: is it *identity-constituting*, does it tell people who they are? Unmistakably. To be Sedulur Sikep is to be one of "the honest people." It is not a hobby or an opinion; it is a self. You can hear it in the very name they chose.
+Second: is it *identity-constituting*, does it tell people who they are? Unmistakably. To be Sedulur Sikep is to be one of "the honest people." It is a self; you can hear it in the very name they chose.
 
 Third: is it *oriented toward the good*, rather than toward mere advantage? Yes. The *wong sikep* were not calculating the most profitable way to live. They were after a particular kind of life (autonomous, truthful, harmonious, rooted in the land), and they paid for it in taxes refused and forests lost.
 
 And the fourth feature is the decisive one: is it *reflective and self-aware*? Here is where this dharma and mere custom part company for good. Ordinary village tradition is inherited and unexamined. You do it because it is done, because your parents did it, because that is simply how things are. The Sedulur Sikep did the exact opposite. They *consciously chose* a set of values, lifted them out of the surrounding culture, gave them a name, and defended them deliberately, against the dominant order of their day. They knew they were being different, and they meant to be.
 
-That deliberate lifting is precisely what turned the Sedulur Sikep's folkways into a dharma. And it is why the Samin pass the test where mere custom would fail it. They were not living an old habit. They were practising a chosen way, and they knew it, and they would tell you so, in blunt language, to your face.
+That deliberate lifting is precisely what turned the Sedulur Sikep's folkways into a dharma. And it is why the Samin pass the test where mere custom would fail it. They were practising a chosen way, and they knew it, and they would tell you so, in blunt language, to your face.
 
 Which brings us to the language.
 
