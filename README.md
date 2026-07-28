@@ -65,6 +65,10 @@ per-chapter audio narration (`link` adds hyperlinks to the hosted MP3s; `embed`
 bundles them into the EPUB). The built EPUB and PDF are distributed via GitHub
 Releases rather than tracked in the repository.
 
+Building needs no configuration. Copying the finished files to a web-root, and
+mirroring them to another host, is optional and off by default:
+[`deploy.conf.example`](deploy.conf.example) lists the settings that enable it.
+
 ## Research notes
 
 The evidence base is organised into eight categories, each a directory of cited notes:

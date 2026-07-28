@@ -1,15 +1,15 @@
 #!/bin/bash
 # Sync the In Search of Dharma essay files (0..9) into the `content`
 # field of the matching essays rows — first in the local dev database,
-# then (if dev succeeds) in the production database on okusi3.
+# then (if dev succeeds) in the production database on the remote host.
 #
 # Mapping: <N>-<slug>.md  ->  url '<N>-in-search-of-dharma'
 # The YAML frontmatter block and the leading H1 header are stripped;
 # stored content begins at the first real body line.
 #
-# ⚠ Must be run from the dev machine (host 'okusi'). Production data.db
-#   is updated in place via ok3 — it is excluded from push-to-okusi
-#   because it contains live runtime tables.
+# ⚠ Must be run from the dev machine named in deploy.conf. Production
+#   data.db is updated in place via the remote launcher — it is excluded
+#   from the file sync because it contains live runtime tables.
 set -euo pipefail
 shopt -s inherit_errexit nullglob
 declare -rx PATH=/usr/local/bin:/usr/bin:/bin
@@ -19,9 +19,16 @@ declare -- SCRIPT_DIR
 SCRIPT_DIR=$(dirname -- "$(realpath -- "$0")")
 readonly -- SCRIPT_DIR
 
-declare -r DEV_HOST='okusi'
-declare -r PROD_CMD='ok3'
-declare -r PROD_DB='/var/www/vhosts/garydean.id/data.db'
+# Host identities live in an untracked deploy.conf (copy deploy.conf.example)
+# so no machine name is published with the source. Without it the script stops
+# at the dev-machine check rather than guessing at a target.
+if [[ -r $SCRIPT_DIR/deploy.conf ]]; then
+  #shellcheck source=/dev/null
+  source "$SCRIPT_DIR"/deploy.conf
+fi
+declare -r DEV_HOST=${DEV_HOST:-}
+declare -r PROD_CMD=${PROD_CMD:-}
+declare -r PROD_DB=${PROD_DB:-'/var/www/vhosts/garydean.id/data.db'}
 declare -r URL_GLOB='[0-9]-in-search-of-dharma'
 declare -ri REMOTE_TIMEOUT=120
 
@@ -116,10 +123,16 @@ main() {
   [[ -n $DB ]] || DB="$SCRIPT_DIR/www/data.db"
   readonly -- DB DRY_RUN DEV_ONLY
 
+  [[ -n $DEV_HOST ]] \
+    || die 2 'DEV_HOST unset: create deploy.conf (see deploy.conf.example)'
   [[ $HOSTNAME == "$DEV_HOST" ]] \
     || die 1 "Must be run from the dev machine (host '$DEV_HOST'), not '$HOSTNAME'"
   command -v sqlite3 >/dev/null || die 18 'sqlite3 not installed'
-  ((DEV_ONLY)) || command -v "$PROD_CMD" >/dev/null || die 18 "'$PROD_CMD' launcher not found"
+  if ((!DEV_ONLY)); then
+    [[ -n $PROD_CMD ]] \
+      || die 2 'PROD_CMD unset: create deploy.conf (see deploy.conf.example)'
+    command -v "$PROD_CMD" >/dev/null || die 18 "'$PROD_CMD' launcher not found"
+  fi
   [[ -f $DB ]] || die 3 "Dev database not found: $DB"
 
   trap 'cleanup $?' SIGINT SIGTERM EXIT

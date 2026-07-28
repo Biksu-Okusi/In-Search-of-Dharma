@@ -13,6 +13,10 @@ CLAUDE.md
 # only the underlying research notes and correspondence are withheld.
 0-preface/
 
+# Deployment targets: machine names and server paths, kept out of the public
+# repository. deploy.conf.example is tracked and shows the required keys.
+deploy.conf
+
 # Internal working documents
 FABLE-REVIEW-PROMPT.md
 FABLE-REVIEW.md

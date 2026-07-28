@@ -273,7 +273,7 @@ def text_to_ssml(text):
 
   # NOTE: Chirp 3 HD honours <break> and <prosody> despite Google's docs
   # listing only <phoneme>/<p>/<s>/<sub>/<say-as> as supported. Verified
-  # empirically on okusi3 (2026-06-21) for the English pipeline; see
+  # empirically (2026-06-21) for the English pipeline; see
   # ../www/tts/generate_tts.py. Do not "simplify" these tags away on the
   # strength of the documentation.
   text = text.replace('[PAUSE_XLONG]', '<break time="2000ms"/>')

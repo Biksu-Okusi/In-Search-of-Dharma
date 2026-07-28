@@ -89,6 +89,18 @@ declare -r AUDIO_STEM=mencari-dharma
 declare -r REPO_URL=https://github.com/GaryDean/defining-dharma
 declare -r REPO_BLOB="$REPO_URL"/blob/main
 
+# Publication targets, shared with the English edition: read from the untracked
+# deploy.conf in the repository root (copy deploy.conf.example) so no machine
+# name or server path is published with the source. Building never needs them.
+if [[ -r $BOOK_ROOT/deploy.conf ]]; then
+  #shellcheck source=/dev/null
+  source "$BOOK_ROOT"/deploy.conf
+fi
+declare -r PUBLISH_DIR=${PUBLISH_DIR:-}
+declare -r PUBLISH_OWNER=${PUBLISH_OWNER:-}
+declare -r DEPLOY_HOST=${DEPLOY_HOST:-}
+declare -r DEPLOY_DIR=${DEPLOY_DIR:-$PUBLISH_DIR}
+
 # Speaker glyph for the audio link, as inline SVG (single long line: an accepted
 # line-length exception -- splitting a quoted XML literal would only obscure it).
 # Inline SVG renders identically
@@ -389,7 +401,7 @@ main() {
 
   command -v pandoc >/dev/null 2>&1 || die 'pandoc not found (apt install pandoc)'
   command -v convert >/dev/null 2>&1 || die "ImageMagick 'convert' not found (apt install imagemagick)"
-  # rsync mirrors the finished artefacts to okusi3 in the deploy step.
+  # rsync mirrors the finished artefacts to the remote host in the deploy step.
   command -v rsync >/dev/null 2>&1 || die 'rsync not found (apt install rsync)'
   [[ $target == epub ]] || command -v weasyprint >/dev/null 2>&1 \
     || die 'weasyprint not found, needed for PDF (apt install weasyprint)'
@@ -701,17 +713,26 @@ CSS
   fi
 
   # Deploy beside the English edition (same slug directory; the Indonesian
-  # filenames keep the editions distinct), then mirror to okusi3. The glob is
-  # derived from OUTPUT so a filename change happens in exactly one place.
-  local -r deploy_dir=/var/www/vhosts/garydean.id/html/books/in-search-of-dharma
-  local -- deploy_glob=${OUTPUT##*/}
-  deploy_glob=${deploy_glob%.epub}
-  local -a artefacts=("$SCRIPT_DIR/$deploy_glob"*)
-  cp -- "${artefacts[@]}" "$deploy_dir"/ || die "deploy failed: cp to ${deploy_dir@Q}"
-  chown -R -- sysadmin:www-data "$deploy_dir" || die 'deploy failed: chown'
-  chmod -- 664 "$deploy_dir"/* || die 'deploy failed: chmod'
-  rsync -av -- "${artefacts[@]}" okusi3:"$deploy_dir"/ \
-    || die 'deploy failed: rsync to okusi3'
+  # filenames keep the editions distinct), then mirror to the remote host. The
+  # glob is derived from OUTPUT so a filename change happens in exactly one
+  # place; the targets come from deploy.conf, and without it the artefacts
+  # simply stay in the build directory.
+  local -a artefacts=("${OUTPUT%.epub}"*)
+  if [[ -z $PUBLISH_DIR ]]; then
+    info 'publish skipped: PUBLISH_DIR unset (see deploy.conf.example)'
+    return 0
+  fi
+  cp -- "${artefacts[@]}" "$PUBLISH_DIR"/ || die "deploy failed: cp to ${PUBLISH_DIR@Q}"
+  if [[ -n $PUBLISH_OWNER ]]; then
+    chown -R -- "$PUBLISH_OWNER" "$PUBLISH_DIR" || die 'deploy failed: chown'
+  fi
+  chmod -- 664 "$PUBLISH_DIR"/* || die 'deploy failed: chmod'
+  if [[ -n $DEPLOY_HOST ]]; then
+    rsync -av --timeout=300 -- "${artefacts[@]}" "$DEPLOY_HOST":"$DEPLOY_DIR"/ \
+      || die 'deploy failed: rsync to remote host'
+  else
+    info 'remote mirror skipped: DEPLOY_HOST unset'
+  fi
 }
 
 main "$@"

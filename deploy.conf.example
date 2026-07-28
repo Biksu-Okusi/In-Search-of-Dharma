@@ -1,0 +1,43 @@
+# deploy.conf.example - publication targets for the build and sync scripts.
+#
+# Copy to deploy.conf and fill in your own values. deploy.conf is untracked, so
+# machine names and server paths stay off the public repository:
+#
+#   cp deploy.conf.example deploy.conf
+#
+# Nothing here is needed to *build* the book. mk-book.sh and id/mk-book.sh
+# produce their EPUB and PDF without it and simply skip the publish step;
+# sync-essays-to-db.sh needs DEV_HOST, and PROD_CMD unless run with --dev-only.
+#
+# Sourced by bash, so use shell assignment syntax and no exports.
+
+# Local web-root directory the finished artefacts are copied into.
+# Unset, the artefacts stay in the build directory.
+PUBLISH_DIR=''
+
+# Ownership applied to PUBLISH_DIR after the copy, as user:group.
+# Unset, the chown is skipped (fine when the build user already owns the dir).
+PUBLISH_OWNER=''
+
+# Remote host the artefacts are mirrored to, as an ssh destination
+# (a Host alias from ~/.ssh/config, or user@hostname).
+# Unset, the remote mirror is skipped.
+DEPLOY_HOST=''
+
+# Remote directory on DEPLOY_HOST. Defaults to PUBLISH_DIR when unset, which
+# is right when local and remote share the same web-root layout.
+DEPLOY_DIR=''
+
+# sync-essays-to-db.sh only ------------------------------------------------
+
+# Hostname of the development machine. The sync refuses to run anywhere else.
+DEV_HOST=''
+
+# Launcher command that runs a shell command on the production server
+# (an oknav-style wrapper, or 'ssh <host>').
+PROD_CMD=''
+
+# Production SQLite database updated in place by the sync.
+PROD_DB='/var/www/vhosts/example.com/data.db'
+
+#fin

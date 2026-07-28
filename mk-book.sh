@@ -83,6 +83,19 @@ declare -r AUDIO_STEM=in-search-of-dharma
 declare -r REPO_URL=https://github.com/GaryDean/defining-dharma
 declare -r REPO_BLOB="$REPO_URL"/blob/main
 
+# Publication targets for the finished artefacts. Read from an untracked
+# deploy.conf (copy deploy.conf.example) so no machine name or server path is
+# published with the source. Building never needs them: without the file the
+# build completes normally and only the publish step is skipped.
+if [[ -r $SCRIPT_DIR/deploy.conf ]]; then
+  #shellcheck source=/dev/null
+  source "$SCRIPT_DIR"/deploy.conf
+fi
+declare -r PUBLISH_DIR=${PUBLISH_DIR:-}
+declare -r PUBLISH_OWNER=${PUBLISH_OWNER:-}
+declare -r DEPLOY_HOST=${DEPLOY_HOST:-}
+declare -r DEPLOY_DIR=${DEPLOY_DIR:-$PUBLISH_DIR}
+
 # Speaker glyph for the audio link, as inline SVG. Inline SVG renders identically
 # in EPUB3 and weasyprint and scales with the font (width/height 1em), whereas an
 # emoji would fall back to a missing-glyph box -- the embedded EB Garamond / Lato
@@ -680,13 +693,27 @@ CSS
     info "done: $OUTPUT_PDF ($(du -h --apparent-size "$OUTPUT_PDF" | cut -f1))"
   fi
 
-  # copy to garydean.id/html/book/
-  cp In-Search-of-Dharma_Biksu-Okusi_2026* /var/www/vhosts/garydean.id/html/books/in-search-of-dharma/
-  chown -R sysadmin:www-data /var/www/vhosts/garydean.id/html/books/in-search-of-dharma
-  chmod 664 /var/www/vhosts/garydean.id/html/books/in-search-of-dharma/*
-#  scp -p In-Search-of-Dharma_Biksu-Okusi_2026* okusi3:/var/www/vhosts/garydean.id/html/books/in-search-of-dharma/
-  rsync -av In-Search-of-Dharma_Biksu-Okusi_2026* okusi3:/var/www/vhosts/garydean.id/html/books/in-search-of-dharma/
-
+  # Publish to the local web-root, then mirror to the remote host. Both targets
+  # come from deploy.conf; unset, the artefacts simply stay in the build dir.
+  # The glob is derived from OUTPUT so it stays anchored to the build directory
+  # (main never cd's, so a bare pattern would resolve against the caller's cwd)
+  # and a filename change happens in exactly one place.
+  if [[ -z $PUBLISH_DIR ]]; then
+    info 'publish skipped: PUBLISH_DIR unset (see deploy.conf.example)'
+    return 0
+  fi
+  local -a artefacts=("${OUTPUT%.epub}"*)
+  cp -- "${artefacts[@]}" "$PUBLISH_DIR"/ || die "publish failed: cp to ${PUBLISH_DIR@Q}"
+  if [[ -n $PUBLISH_OWNER ]]; then
+    chown -R -- "$PUBLISH_OWNER" "$PUBLISH_DIR" || die 'publish failed: chown'
+  fi
+  chmod -- 664 "$PUBLISH_DIR"/* || die 'publish failed: chmod'
+  if [[ -n $DEPLOY_HOST ]]; then
+    rsync -av --timeout=300 -- "${artefacts[@]}" "$DEPLOY_HOST":"$DEPLOY_DIR"/ \
+      || die 'publish failed: rsync to remote host'
+  else
+    info 'remote mirror skipped: DEPLOY_HOST unset'
+  fi
 }
 
 main "$@"
