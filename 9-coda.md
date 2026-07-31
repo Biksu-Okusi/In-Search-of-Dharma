@@ -3,9 +3,9 @@ part: 9
 title: "Coda"
 slug: coda
 status: done
-words: 563
+words: 562
 reading_level: year-12
-updated: 2026-07-19
+updated: 2026-07-31
 draws_on: []
 ---
 
@@ -44,7 +44,7 @@ A dharma usually includes:
 - **Identity** — who "we" are, or who "I" am trying to become
 - **Discipline** — how one trains conduct, attention, speech, desire, and response
 
-A dharma is not just an idea. It becomes real through behaviour. It is embodied in how one speaks, works, eats, raises children, handles conflict, treats strangers, responds to suffering, and uses power.
+A dharma is more than an idea: it becomes real through behaviour. It is embodied in how one speaks, works, eats, raises children, handles conflict, treats strangers, responds to suffering, and uses power.
 
 ## Why humans need dharmas
 

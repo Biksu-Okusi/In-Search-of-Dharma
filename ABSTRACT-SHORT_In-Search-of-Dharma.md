@@ -1,6 +1,6 @@
 # ABSTRACT -- *In Search of Dharma*
 
-Biksu Okusi · Preface, eight essays and a coda · c. 51,000 words · Bali, 2026
+Biksu Okusi · Preface, eight essays and a coda · c. 47,000 words · Bali, 2026
 
 A dharma is not a revelation but a technology: an evolved cultural technology worked out by a social animal to solve a permanent problem. Beneath three thousand years of religious accretion lies the Sanskrit root *√dhṛ* -- to hold, support, sustain. *Dharma* is a literal load-bearing word, and "what is a dharma?" is a question about function, not faith: what holds a human life, or a people, together?
 

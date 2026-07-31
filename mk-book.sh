@@ -42,7 +42,8 @@ declare -r SCRIPT_PATH=$(realpath -- "$0")
 declare -r SCRIPT_DIR=${SCRIPT_PATH%/*} SCRIPT_NAME=${SCRIPT_PATH##*/}
 
 declare -r TITLE='In Search of Dharma'
-declare -r SUBTITLE='A natural history of ethics in eight essays'
+declare -r SUBTITLE='What holds a life, a people, a world together'
+declare -r TAGLINE='A natural history of ethics in eight essays'
 declare -r AUTHOR='Biksu Okusi'
 declare -r LANGUAGE=en
 
@@ -58,8 +59,13 @@ declare -r LICENSE_URL='https://creativecommons.org/licenses/by/4.0/'
 declare -r -a SUBJECTS=(Anthropology Philosophy)
 # The lettered cover: the watercolour with title, subtitle and author laid over
 # it by images/defining-dharma-gentitle.sh, which takes the strings below as its
-# source of truth. Re-run that script after changing TITLE, SUBTITLE or AUTHOR.
+# source of truth. Re-run that script after changing TITLE, SUBTITLE, TAGLINE or
+# AUTHOR.
 declare -r COVER_IMAGE="$SCRIPT_DIR"/images/defining-dharma-cover-title.png
+# The lettered back cover: the blurb from BACKCOVER_In-Search-of-Dharma.md laid
+# over the back art by images/defining-dharma-genback.sh. Re-run that script
+# after editing the blurb. It closes the book as its final page.
+declare -r BACK_IMAGE="$SCRIPT_DIR"/images/defining-dharma-back-text.png
 declare -r OUTPUT="$SCRIPT_DIR"/In-Search-of-Dharma_Biksu-Okusi_2026.epub
 declare -r OUTPUT_PDF="${OUTPUT%.epub}".pdf
 declare -r OUTPUT_AUDIO="${OUTPUT%.epub}"_with-audio.epub
@@ -392,6 +398,7 @@ main() {
     command -v unzip >/dev/null 2>&1 || die 'unzip not found (apt install unzip)'
   fi
   [[ -f $COVER_IMAGE ]] || die "cover image missing ${COVER_IMAGE@Q}"
+  [[ -f $BACK_IMAGE ]] || die "back cover image missing ${BACK_IMAGE@Q} (run images/defining-dharma-genback.sh)"
   local -- font
   for font in "${FONT_FILES[@]}"; do
     [[ -f $font ]] \
@@ -454,6 +461,10 @@ main() {
   cover_rel=${cover_rel%.png}.jpg
   local -- cover_jpg="$img_stage"/"$cover_rel"
   [[ -f $cover_jpg ]] || die "staged cover JPEG not produced ${cover_jpg@Q}"
+  # The staged back cover, likewise named relative to $img_stage.
+  local -- back_rel=${BACK_IMAGE#"$SCRIPT_DIR"/}
+  back_rel=${back_rel%.png}.jpg
+  [[ -f "$img_stage"/$back_rel ]] || die "staged back-cover JPEG not produced ${back_rel@Q}"
   # SVGs (the title-page ornament) are copied verbatim; EPUB3 and weasyprint
   # both render them natively, and they are tiny.
   cp -- "$SCRIPT_DIR"/images/*.svg "$img_stage"/images/ \
@@ -519,6 +530,7 @@ main() {
     printf '# Colophon {.unlisted}\n\n'
     printf '*%s*\n\n' "$TITLE"
     printf '%s\n\n' "$SUBTITLE"
+    printf '*%s*\n\n' "$TAGLINE"
     printf 'by **%s**\n\n' "$AUTHOR"
     printf '<br/>\n\n'
     printf 'This ebook was typeset from Markdown with pandoc, in the EB Garamond and Lato typefaces. The cover and chapter illustrations are watercolour-style images generated with AI image models, from prompts written, iterated, and selected by the author.\n\n'
@@ -529,6 +541,21 @@ main() {
   } >"$colophon" || die "failed to write ${colophon@Q}"
   inflect_h1 "$colophon" "backmatter colophon"
   inputs+=("$colophon")
+
+  # The lettered back cover closes the book, mirroring the front. The heading
+  # exists only to give pandoc a split point (its own XHTML page in the EPUB)
+  # and is hidden by both stylesheets; the .pagebreak div starts the page in
+  # the PDF, where a display:none heading cannot carry the break.
+  local -- backcover="$tmp"/backcover.md
+  {
+    printf '# Back Cover {.unlisted .backcover}\n\n'
+    printf '<div class="pagebreak"></div>\n\n'
+    # Trailing backslash (hard line break) stops pandoc's implicit_figures from
+    # dressing the lone image as a <figure> with a visible "Back cover" caption.
+    printf '![Back cover](%s)\\\n' "$back_rel"
+  } >"$backcover" || die "failed to write ${backcover@Q}"
+  inflect_h1 "$backcover" 'backmatter'
+  inputs+=("$backcover")
 
   # EPUB package metadata pandoc will merge in (dc:* elements). A stable
   # identifier, the licence as dc:rights, and the subjects. Accessibility
@@ -571,6 +598,7 @@ p.audio a{text-decoration:none}
 p.audio .audio-url{display:none}
 .audio-icon{vertical-align:-0.12em;margin-right:0.4em}
 .repo-url{display:none}
+h1.backcover{display:none}
 img.ornament{width:25px;height:auto;margin:0 auto;opacity:0.6}
 section.contents h1{font-variant:small-caps;letter-spacing:0.08em}
 section.contents p{margin:0.9em 0}
@@ -665,6 +693,7 @@ p.audio a{text-decoration:none;color:inherit}
 p.audio .audio-listen{display:none}
 .audio-icon{vertical-align:-0.12em;margin-right:0.4em}
 .repo-url{font-family:"Lato","DejaVu Sans",sans-serif;font-size:0.85em;overflow-wrap:break-word}
+h1.backcover{display:none}
 img{max-width:100%}
 img.ornament{width:25px;height:auto;margin:0 auto;opacity:0.6}
 header#title-block-header{display:none}

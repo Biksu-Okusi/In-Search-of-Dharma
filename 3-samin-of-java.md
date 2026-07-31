@@ -3,9 +3,9 @@ part: 3
 title: "The Dharmas of the Samin of Java"
 slug: samin-of-java
 status: done
-words: 5322
+words: 5265
 reading_level: year-12
-updated: 2026-07-28
+updated: 2026-07-31
 draws_on: ["4.1", "1.3", "7.3", "8.1"]
 ---
 
@@ -17,7 +17,7 @@ draws_on: ["4.1", "1.3", "7.3", "8.1"]
 
 Sometime in the first years of the twentieth century, on a dirt road in the teak country of central Java, a Dutch colonial official stops a barefoot farmer and asks him a routine question. *Where are you from?* The farmer answers: from the forest. *Where are you going?* To the forest. Every word is true; every word is useless. The official has learned nothing he can write in a report, and nothing he can punish, because the man has not refused to answer; he has answered perfectly, and said nothing at all.
 
-If you were that official, you would know you were being mocked. You would also know you could not prove it. And if you were patient enough to keep asking (and the records suggest the Dutch asked, and asked) you would slowly realise this was not one stubborn man having a bad morning. It was a method. A whole community, thousands of people across a cluster of villages, had quietly agreed to meet the colonial state with this same deadpan, literal, immovable politeness. They paid no tax they could avoid, registered no marriages, and answered the census with riddles. And they did it all without ever raising a hand.
+If you were that official, you would know you were being mocked. You would also know you could not prove it. And if you were patient enough to keep asking (and the records suggest the Dutch asked, and asked) you would slowly realise this was not one stubborn man having a bad morning. It was a method. A whole community, thousands of people across a cluster of villages, had quietly agreed to meet the colonial state with this same deadpan, literal politeness. They paid no tax they could avoid, registered no marriages, and answered the census with riddles. And they did it all without ever raising a hand.
 
 A hundred years later, in 2017, nine women farmers travelled from those same hills to the gates of the Presidential Palace in Jakarta, sat down on the pavement, and poured wet cement around their feet. They stayed there for hours, locked to the ground they had come to argue about, while the traffic of the capital flowed past. One of them, a woman named Patmi, forty-eight years old, died not long after the protest. They were the heirs, by blood in some cases and by conviction in all, of the man on the forest road.
 
@@ -43,7 +43,7 @@ From about 1890, Samin began teaching in his home village and the surrounding vi
 
 Here the teak returns. In 1897 the Dutch colonial forestry service drew a line around the teak forests that the villagers had always used (for firewood, for building, for grazing, for the thousand small needs of a subsistence life) and declared them restricted: state forest, off limits. At the same time, the colonial taxes pressed down: a land rent, a poll tax, a tax on what little the farmers produced. To a family living at the edge of enough, the fencing of the forest and the demand for cash were not abstractions. They were hunger, made by a distant authority that gave nothing back.
 
-This is the soil in which the Samin dharma grew, and the pattern already has a name that fits perfectly, from the anthropologist James C. Scott: the *moral economy of the peasant*. Scott argued that peasant communities carry a deep value-system "irrevocably linked to subsistence requirements," a shared sense of what people owe each other, and what a community is owed, organised entirely around the basic right to survive. When an outside power, a market or a colonial state, tears up those customary rights of access in the name of profit or order, it is not just taking resources. It is violating a moral world. The Samin response was the defence of that moral world, raised into a creed.
+This is the soil in which the Samin dharma grew, and the pattern already has a name that fits perfectly, from the anthropologist James C. Scott: the *moral economy of the peasant*. Scott argued that peasant communities carry a deep value-system "irrevocably linked to subsistence requirements," a shared sense of what people owe each other, and what a community is owed, organised entirely around the basic right to survive. When an outside power, a market or a colonial state, tears up those customary rights of access in the name of profit or order, it takes more than resources. It violates a moral world. The Samin response was the defence of that moral world, raised into a creed.
 
 The creed spread. From Blora it travelled across an arc of districts (Rembang, Pati, Kudus, Grobogan, Bojonegoro), reaching, by one estimate, somewhere between three and five thousand followers by 1907. That was the year it became too visible to ignore. The Dutch arrested Samin and exiled him to Sawahlunto, in West Sumatra, far across the sea, where he died in 1914. His followers did not accept that he had simply died. They held that he had attained *moksha* (release, liberation) and passed into the spiritual realm, a detail that will matter later.
 
@@ -57,7 +57,7 @@ Underneath these everyday rules sits one conviction with real teeth, the one tha
 
 They called their faith *Agama Adam*, "the religion of Adam." The name is a claim: that this was humanity's original religion, the simple thing we all had before the priests and the empires got to us. Its practice was correspondingly bare: prayer at dawn and dusk, and almost none of the elaborate ceremonial apparatus that surrounded Javanese village life. No grand rituals, no professional clergy, just a plain ethic for plain people.
 
-The whole thing was carried by mouth. Samin was illiterate, and so were his followers, so there was no scripture, no holy book to copy, guard, and argue over. The ethic travelled by recitation, by example, and by embodied practice, including a striking discipline called *laku jejek*, days of walking to reach a community gathering. A dharma with no text, held in nothing but memory and the soles of people's feet.
+The whole thing was carried by mouth. Samin was illiterate, and so were his followers, so there was no scripture, no holy book to copy, guard, and argue over. The ethic travelled by recitation, by example, and by embodied practice, including a discipline called *laku jejek*, days of walking to reach a community gathering. A dharma with no text, held in nothing but memory and the soles of people's feet.
 
 That picture needs one qualification, and the exception is revealing. A handful of texts are, in fact, attributed to the tradition (most often a manuscript called the *Serat Jamus Kalimosodo*), and some Samin families keep a *kris*, the wavy ceremonial blade of Java, as an heirloom that carries the teaching down the generations. So the Samin were not quite textless; they were deeply suspicious of the written word as the instrument of the priest, the clerk, and the tax-collector, and inclined to trust instead the things a person keeps in the body.
 
@@ -97,13 +97,13 @@ They went further. Mainstream Javanese culture prized the ideal of *halus* (the 
 
 They left the religion box blank on their identity cards. They minimised the ceremonial life, the elaborate ritual meals and observances, that gave mainstream Javanese religion its texture. And, following old Samin Sepuh's example, they refused the whole aristocratic-bureaucratic order: no tax, no forced labour, no marriage registration, no census.
 
-But this was not a foreign creed invading Java. The Sedulur Sikep were agrarian, mystical, and rooted in the very same peasant world they were reforming; their suspicion of orthodox Islam was itself steeped in heterodox Javanese mysticism. They took Java's own materials and used them against Java's own hierarchy. The best name for that is not rebellion from without but *heresy from within*: an internal reform that knows the tradition intimately, because it is made of it.
+But this creed was Java's own. The Sedulur Sikep were agrarian, mystical, and rooted in the very same peasant world they were reforming; their suspicion of orthodox Islam was itself steeped in heterodox Javanese mysticism. They took Java's own materials and used them against Java's own hierarchy. The best name for that is not rebellion from without but *heresy from within*: an internal reform that knows the tradition intimately, because it is made of it.
 
-A dharma, in other words, does not have to come from elsewhere. It can be grown at home, out of the same soil, in deliberate argument with the culture that surrounds it.
+A dharma, in other words, can be grown at home, out of the same soil, in deliberate argument with the culture that surrounds it.
 
 ## "From the forest, to the forest"
 
-Return, for a moment, to the deadpan on the road. It would be easy to file it under eccentricity, and it was nothing of the kind. It was the Sikep dharma in action.
+Return, for a moment, to the deadpan on the road. It would be easy to file it under eccentricity. It was the Sikep dharma in action.
 
 James C. Scott, the same scholar who gave us the moral economy, spent much of his career studying how powerless people resist powerful ones without open battle, which they cannot win. He called the result the *weapons of the weak*: foot-dragging, feigned ignorance, false compliance, deliberate misunderstanding, the slow quiet sabotage of people who cannot say no out loud and so say it in a thousand other ways. He called the hidden world of grumbling and mockery, the one the powerful never get to see, the *hidden transcript*, and the whole domain of this everyday, below-the-radar resistance *infra-politics*. (Scott never studied the Samin himself; but his frame describes them exactly.)
 
@@ -111,7 +111,7 @@ Read through Scott, the *wong sikep*'s tactics snap into focus. Answering an off
 
 And beneath the tactics, it turns out, lay something like a philosophy of language. In the recorded testimony of one follower arrested in 1928, to which we will come shortly, the words that truly mattered were the few about work, marriage, and upright conduct; nearly every other word could be hollowed out or repurposed, often by punning, so that "religion" could shade into the word for a weapon and "tax" could, in the right mouth, mean nothing at all. A word, in this thinking, means what its utterer means by it, and an empire's word, spoken by an empire, could be handed back empty. The deadpan on the forest road was not merely feigned ignorance raised to an art. It was doctrine: a quiet claim of sovereignty over meaning itself.
 
-And a deeper current runs underneath, one I can only gesture at here. Drawing on the study of surviving hunter-gatherer bands, the anthropologist Christopher Boehm has argued that human morality may have *begun* as a device against domination: our distant ancestors, living as fierce egalitarians, used ridicule, shaming, and ostracism to cut down anyone who tried to lord it over the group. Boehm calls it a "reverse dominance hierarchy": the weak combining to keep the strong in check. If he is even partly right, then a dharma like the Samin's, defined almost entirely by its refusal of a domineering state, is not some strange late invention. It is morality doing one of the oldest jobs it ever had. The man on the forest road, answering the empire with riddles, was standing in a very long line.
+And a deeper current runs underneath, one I can only gesture at here. Drawing on the study of surviving hunter-gatherer bands, the anthropologist Christopher Boehm has argued that human morality may have *begun* as a device against domination: our distant ancestors, living as fierce egalitarians, used ridicule, shaming, and ostracism to cut down anyone who tried to lord it over the group. Boehm calls it a "reverse dominance hierarchy": the weak combining to keep the strong in check. If he is even partly right, then a dharma like the Samin's, defined almost entirely by its refusal of a domineering state, is morality doing one of the oldest jobs it ever had. The man on the forest road, answering the empire with riddles, was standing in a very long line.
 
 ## An honest pause
 
@@ -125,7 +125,7 @@ The second is sharper, and we have to face it squarely. The *wong sikep* were *n
 
 So why are they here at all when, in the end, the question is whether we can build ethical worlds without the supernatural?
 
-Because they are a *boundary case*, and boundary cases are worth more than tidy examples. The Sedulur Sikep are not a world religion, with scripture, clergy, and empire. But they are not a secular philosophy either, like Stoicism stripped of its gods. They sit in between: a non-scriptural, non-institutional, this-worldly, ethics-first *folk* dharma, with just enough cosmology to give it a backbone and not an ounce more. And precisely by sitting in between, they prove that a dharma need not be *either* a great religion *or* a godless philosophy. There is a whole middle country of ways of living that are neither, and the Sedulur Sikep are its first sure landmark. For an argument that dharmas come in every form, an example that refuses our neat boxes is not an embarrassment. It is the best evidence we have.
+Because they are a *boundary case*, and boundary cases are worth more than tidy examples. The Sedulur Sikep are not a world religion, with scripture, clergy, and empire. But they are not a secular philosophy either, like Stoicism stripped of its gods. They sit in between: a non-scriptural, non-institutional, this-worldly, ethics-first *folk* dharma, with just enough cosmology to give it a backbone and not an ounce more. There is a whole middle country of ways of living that are neither, and the Sedulur Sikep are its first sure landmark. For an argument that dharmas come in every form, an example that refuses our neat boxes is not an embarrassment. It is the best evidence we have.
 
 The third warning I can only post here and honour later, because it needs a standard this book has not yet built. A dharma this admirable still had hard edges, and they pressed on its own people: for most of a century the *wong sikep* kept their children from school, and with it from letters, rather than hand them to the state's classroom; and the same tradition that will shortly give us nine heroic women at a palace gate also prescribed, and largely still prescribes, a wife's place in a plainly patriarchal household. Whether a way of life can hold this well without crushing anyone inside it is a real question, not a rhetorical one, and the final part of this book will put this very dharma through that test, without flinching, as its hardest case.
 
@@ -143,7 +143,7 @@ Why was it women who made that journey, and women whose names the protest still 
 
 The law, for once, sided with the farmers: Indonesia's Supreme Court ruled in their favour in October 2016. And then the governor issued a fresh permit within days, and the plant went ahead anyway: a bleak little lesson in the difference between winning a ruling and winning a fight.
 
-But look at what has happened to the Sikep dharma. The colonial-era creed — common property, non-violence, refusal of an extractive authority — has been quietly recoded for an age its founder could never have imagined. The enemy is no longer a Dutch forester with a tax ledger; it is a cement company with a court-proof permit. The forest has become the watershed. And the deadpan refusal on the road has become a woman with her feet in concrete, refusing to move. Same spine, new century. That is what a living dharma looks like: not a museum piece, but a way of living flexible enough to meet a threat its makers never foresaw, and rigid enough, at the core, to still be recognisably itself.
+But look at what has happened to the Sikep dharma. The colonial-era creed — common property, non-violence, refusal of an extractive authority — has been recoded for an age its founder could never have imagined. The enemy is no longer a Dutch forester with a tax ledger; it is a cement company with a court-proof permit. The forest has become the watershed. And the deadpan refusal on the road has become a woman with her feet in concrete, refusing to move. Same spine, new century. That is what a living dharma looks like: a way of living flexible enough to meet a threat its makers never foresaw, and rigid enough, at the core, to still be recognisably itself.
 
 ## What the *wong sikep* know
 

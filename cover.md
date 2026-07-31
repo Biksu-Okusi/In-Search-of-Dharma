@@ -3,7 +3,7 @@ part: cover
 title: "In Search of Dharma"
 slug: cover
 status: done
-updated: 2026-07-11
+updated: 2026-07-31
 ---
 
 <div align="center">
@@ -33,7 +33,7 @@ May 2026, Bali, Indonesia
 
 <br/>
 
-> *For all of history we built the things that hold us and then knelt before them as if we had received them. That age is ending: not because we grew wiser, but because the concealment wore through.*
+> *For all of history we built the things that hold us and then knelt before them as if we had received them. That age is ending, not because we grew wiser but because the concealment wore through.*
 
 ---
 
