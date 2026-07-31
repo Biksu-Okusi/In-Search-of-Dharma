@@ -3,7 +3,7 @@ part: 9
 title: "Coda"
 slug: coda
 status: done
-words: 562
+words: 711
 reading_level: year-12
 updated: 2026-07-31
 draws_on: []
@@ -13,7 +13,7 @@ draws_on: []
 
 <image r 40 "/images/9-defining-dharma_watercolor.webp" "What is dharma?" "">
 
-> *Eight parts of searching have earned one plain answer. So here it is, stated rather than argued: what a dharma is ...*
+> *Eight parts of searching have earned one plain definition. So here it is, stated rather than argued: what a dharma is ...*
 
 A **dharma** is a way of living that tells a person or group how to act, what to value, what to avoid, and what kind of life is worth trying to become.
 
@@ -21,13 +21,15 @@ A dharma is not necessarily a religion. It is a **living ethical orientation**: 
 
 At its deepest level, a dharma is **that which holds a life, a community, or a world together**.
 
+But holding is not by itself goodness. A dharma is not good merely because it holds; the better ones **hold without crushing**: they give a life its shape without breaking the people inside them or the strangers outside them. Not everything that holds deserves to keep holding.
+
 ## There is no single "the Dharma"
 
 It is better to say **a dharma** than **the Dharma**, because human beings create many dharmas.
 
-A Buddhist dharma, a Hindu dharma, a scientific dharma, a warrior dharma, an environmental dharma, a professional dharma, a family dharma, or a personal dharma can all function as dharmas if they provide a coherent way to live.
+A Buddhist dharma, a Hindu dharma, a scientific-rationalist dharma, a warrior dharma, an environmental dharma, a professional dharma, a family dharma, or a personal dharma can all function as dharmas if they provide a coherent way to live.
 
-Religious dharmas do not have automatic privilege over secular ones. All dharmas are human cultural systems for answering the same practical question:
+Religious dharmas do not have automatic privilege over secular ones. All dharmas can be studied as human cultural systems for answering the same practical question:
 
 > **How should we live?**
 
@@ -60,16 +62,20 @@ And no dharma is built from nothing. New dharmas emerge from within the cultures
 
 ## A personal dharma
 
-A personal dharma is the way an individual consciously chooses to live.
+A personal dharma is the way an individual consciously chooses to live. But it is never made alone: even the most personal dharma is built from inherited language, examples, communities, obligations and refusals, and it needs company, and someone to answer to, if it is to be more than a private mood.
 
-It is not necessarily a mystical destiny or a fixed "life purpose." It is more like a cultivated path: a way of accepting reality, responding to difficulty, reducing unnecessary harm, and leaving some net benefit behind.
+It is not necessarily a mystical destiny or a fixed "life purpose." It is more like a cultivated path: a way of accepting reality, responding to difficulty, reducing unnecessary harm, and leaving the place a little better held than one found it.
 
 A mature personal dharma asks:
 
 > What do I care about above all else?
+>
 > What kind of person do I become through my repeated actions?
+>
 > What do my habits actually serve?
+>
 > Does my way of living reduce suffering or increase it?
+>
 > Does it help only me, or does it help us?
 
 ## A simple definition
