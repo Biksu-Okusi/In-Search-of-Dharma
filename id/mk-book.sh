@@ -567,7 +567,7 @@ main() {
   # their families and apply them. Fonts are embedded under EPUB/fonts/; this
   # CSS lives under EPUB/styles/, so the src url() is one directory up.
   local -- css="$tmp"/book.css
-  cat >"$css" <<'CSS'
+  cat >"$css" <<'CSS' || die "failed to write ${css@Q}"
 @font-face{font-family:"EB Garamond";font-weight:normal;font-style:normal;src:url("../fonts/EBGaramond-Regular.otf")}
 @font-face{font-family:"EB Garamond";font-weight:normal;font-style:italic;src:url("../fonts/EBGaramond-Italic.otf")}
 @font-face{font-family:"EB Garamond";font-weight:bold;font-style:normal;src:url("../fonts/EBGaramond-Bold.otf")}
@@ -664,7 +664,7 @@ CSS
     # resolves image URLs relative to the CWD, so this pandoc runs from the
     # staged image dir.
     local -- pdf_css="$tmp"/pdf.css
-    cat >"$pdf_css" <<CSS
+    cat >"$pdf_css" <<CSS || die "failed to write ${pdf_css@Q}"
 @font-face{font-family:"EB Garamond";font-weight:normal;font-style:normal;src:url("file://$FONT_DIR/EBGaramond-Regular.otf")}
 @font-face{font-family:"EB Garamond";font-weight:normal;font-style:italic;src:url("file://$FONT_DIR/EBGaramond-Italic.otf")}
 @font-face{font-family:"EB Garamond";font-weight:bold;font-style:normal;src:url("file://$FONT_DIR/EBGaramond-Bold.otf")}
@@ -697,7 +697,7 @@ CSS
     # option, so a dedicated cover-plate page is prepended ahead of the title page.
     local -- plate="$tmp"/00-cover-plate.md
     # No explicit pagebreak needed: the title page's own h1 carries break-before:page.
-    printf '![](%s)\n' "$cover_rel" >"$plate"
+    printf '![](%s)\n' "$cover_rel" >"$plate" || die "failed to write ${plate@Q}"
     info "building PDF from $(( ${#inputs[@]} + 1 )) files -> $OUTPUT_PDF"
     ( cd -- "$img_stage" && pandoc \
         --from=markdown-yaml_metadata_block \
