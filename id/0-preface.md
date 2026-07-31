@@ -14,7 +14,7 @@ draws_on: ["0.1", "0.2", "0.3", "0.4", "0.5", "0.6", "0.7"]
 # 0: Kata Pengantar
 
 <!--audio stop-->
-<i><a href="https://garydean.id/audio/Mencari-Dharma_Biksu-Okusi_2026_audiobook.mp3" target=_blank>[Buku Audio Lengkap Versi Ringkas]</a></i>
+<i><a href="https://github.com/Biksu-Okusi/In-Search-of-Dharma/releases/download/v2026/Mencari-Dharma_Biksu-Okusi_2026_audiobook.mp3" target=_blank>[Buku Audio Lengkap Versi Ringkas]</a></i>
 <!--audio start-->
 <image r 40 "/images/0-defining-dharma_watercolor.webp" "Mencari Dharma: Kata Pengantar" "">
 

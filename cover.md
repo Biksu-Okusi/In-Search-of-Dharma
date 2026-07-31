@@ -53,6 +53,6 @@ This work is licensed under the Creative Commons Attribution 4.0 International L
 <br/>
 
 *Audiobook edition (abridged):*
-<https://garydean.id/audio/In-Search-of-Dharma_Biksu-Okusi_2026_audiobook.mp3>
+<https://github.com/Biksu-Okusi/In-Search-of-Dharma/releases/download/v2026/In-Search-of-Dharma_Biksu-Okusi_2026_audiobook.mp3>
 
 </div>
