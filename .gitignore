@@ -49,10 +49,6 @@ scratch/
 # generated Hugging Face dataset export (mk-hf-dataset.py output)
 hf-dataset/
 
-# built EPUB is distributed via GitHub Releases, not tracked inline
-*.epub
-*.pdf
-
 # page-render previews of the built book (spot-check byproduct, regenerable)
 pg-*.png
 9-defining-dharma_watercolor.v*
