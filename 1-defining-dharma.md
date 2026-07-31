@@ -115,7 +115,7 @@ We have a working definition and a plural, unprivileged field to explore. The ve
 
 **Research notes**
 
-Research notes used in this essay series are published on [GitHub](https://github.com/GaryDean/defining-dharma).
+Research notes used in this essay series are published on [GitHub](https://github.com/Biksu-Okusi/In-Search-of-Dharma).
 
 - [1.1 Core Etymology](1-foundational/1.1-etymology.md) — *√dhṛ* "to hold," the Proto-Indo-European root, the *firmus*/*firm* cognate, *ṛta*, and the semantic broadening over three millennia. The spine of the opening.
 - [1.2 Universal Patterns](1-foundational/1.2-universal-patterns.md) — why dharma-shaped frameworks recur independently: the cooperation-without-exploitation problem, and Tinbergen's universal-function / plural-mechanism distinction.

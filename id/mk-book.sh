@@ -86,7 +86,7 @@ declare -r AUDIO_STEM=mencari-dharma
 # the repository, so they are rewritten to absolute GitHub URLs at build time.
 # The notes themselves stay English (the research record is not translated); the
 # URLs are byte-identical to the English edition's.
-declare -r REPO_URL=https://github.com/GaryDean/defining-dharma
+declare -r REPO_URL=https://github.com/Biksu-Okusi/In-Search-of-Dharma
 declare -r REPO_BLOB="$REPO_URL"/blob/main
 
 # Publication targets, shared with the English edition: read from the untracked

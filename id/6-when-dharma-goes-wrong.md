@@ -137,7 +137,7 @@ Namun, satu kerumitan tersisa. Setiap dharma yang kita adili di sini, setiap tat
 
 **Catatan riset**
 
-Catatan riset yang dipakai dalam seri esai ini diterbitkan di [GitHub](https://github.com/GaryDean/defining-dharma).
+Catatan riset yang dipakai dalam seri esai ini diterbitkan di [GitHub](https://github.com/Biksu-Okusi/In-Search-of-Dharma).
 
 - [7.1 Failure Modes](../7-critical/7.1-failure-modes.md) — empat gugus kegagalan, penolakan atas dalih No-True-Scotsman, dan tesis bahwa kecenderungan gagal itu hakiki. Tulang punggung esai ini.
 - [7.3 Dharma & Power](../7-critical/7.3-dharma-and-power.md) — wajah ganda: moralitas sebagai anti-dominasi yang direbut untuk menyucikan dominasi; Gramsci, Bourdieu, dan Ambedkar.

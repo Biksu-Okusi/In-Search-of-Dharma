@@ -171,7 +171,7 @@ But the *wong sikep* are only one. Having seen a dharma assembled this clearly, 
 
 **Research notes**
 
-Research notes used in this essay series are published on [GitHub](https://github.com/GaryDean/defining-dharma).
+Research notes used in this essay series are published on [GitHub](https://github.com/Biksu-Okusi/In-Search-of-Dharma).
 
 - [4.1 Samin of Java](4-cultural/4.1-samin-of-java.md) — origins, the Sikep ethical code and *Agama Adam*, the dharma-fit argument, the break from mainstream Javanese culture, and the Kendeng turn. The spine of this essay.
 - [1.3 Boundary & Definition](1-foundational/1.3-boundary-definition.md) — the four-feature test (comprehensiveness, internalisation/identity, ethical orientation, reflective self-awareness) used to answer "but is it really a dharma?"

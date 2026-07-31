@@ -150,7 +150,7 @@ To answer that, we have to stop looking at what dharmas *say* and start looking 
 
 **Research notes**
 
-Research notes used in this essay series are published on [GitHub](https://github.com/GaryDean/defining-dharma).
+Research notes used in this essay series are published on [GitHub](https://github.com/Biksu-Okusi/In-Search-of-Dharma).
 
 - [4.2 Ubuntu](4-cultural/4.2-ubuntu.md) — relational/achieved personhood, Metz's moral theory, the TRC and *S v Makwanyane*, and the romanticisation/xenophobia critique.
 - [4.3 Indigenous Oral Dharmas](4-cultural/4.3-indigenous-oral-dharmas.md) — the Dreaming/*Tjukurrpa*, songlines, oral fidelity, kincentricity, Seven Generations, place-boundedness, and the "Ecological Indian" caution.

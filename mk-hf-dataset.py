@@ -28,7 +28,7 @@ REPO = Path(__file__).resolve().parent
 LICENCE = 'CC BY 4.0'
 LICENCE_URL = 'https://creativecommons.org/licenses/by/4.0/'
 HOMEPAGE = 'https://garydean.id/works/0-in-search-of-dharma'
-SOURCE_REPO = 'https://github.com/GaryDean/defining-dharma'
+SOURCE_REPO = 'https://github.com/Biksu-Okusi/In-Search-of-Dharma'
 
 FRONTMATTER_RE = re.compile(r'\A---\n(.*?)\n---\n', re.DOTALL)
 NOTE_FILE_RE = re.compile(r'^\d+(\.\d+)*-')

@@ -37,7 +37,7 @@ declare -ri REMOTE_TIMEOUT=120
 # Rewritten to absolute GitHub URLs on the way into the database; the notes are
 # all tracked, so every generated URL is live. main (not a tag) is deliberate:
 # note IDs and filenames are stable, and readers should see current corrections.
-declare -r REPO_BLOB='https://github.com/GaryDean/defining-dharma/blob/main'
+declare -r REPO_BLOB='https://github.com/Biksu-Okusi/In-Search-of-Dharma/blob/main'
 
 declare -i DRY_RUN=1 DEV_ONLY=0
 declare -- DB=''

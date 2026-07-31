@@ -133,7 +133,7 @@ We have spent four parts, in admiration, watching how dharmas hold us together, 
 
 **Research notes**
 
-Research notes used in this essay series are published on [GitHub](https://github.com/GaryDean/defining-dharma).
+Research notes used in this essay series are published on [GitHub](https://github.com/Biksu-Okusi/In-Search-of-Dharma).
 
 - [5.3 Moral Psychology & Development](5-psychological/5.3-moral-psychology-development.md) — Haidt's intuition-first model and moral foundations, the WEIRD critique, and "the guts learn their intuitions." The spine of the first two layers.
 - [5.4 Ritual, Practice & Habituation](5-psychological/5.4-ritual-habituation.md) — Aristotelian habituation, ritual synchrony and collective effervescence, the "ritual stance," and the morally-neutral installation machinery.

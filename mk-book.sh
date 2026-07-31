@@ -86,7 +86,7 @@ declare -r AUDIO_STEM=in-search-of-dharma
 # EPUB or PDF too; the notes are all tracked, so every generated URL is live.
 # main (not a tag) is deliberate: note IDs and filenames are stable, so later
 # corrections reach readers holding an older build.
-declare -r REPO_URL=https://github.com/GaryDean/defining-dharma
+declare -r REPO_URL=https://github.com/Biksu-Okusi/In-Search-of-Dharma
 declare -r REPO_BLOB="$REPO_URL"/blob/main
 
 # Publication targets for the finished artefacts. Read from an untracked

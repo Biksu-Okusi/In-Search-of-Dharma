@@ -123,7 +123,7 @@ Kita telah menghabiskan empat bagian, dengan kekaguman, untuk menyaksikan bagaim
 
 **Catatan riset**
 
-Catatan riset yang dipakai dalam seri esai ini diterbitkan di [GitHub](https://github.com/GaryDean/defining-dharma).
+Catatan riset yang dipakai dalam seri esai ini diterbitkan di [GitHub](https://github.com/Biksu-Okusi/In-Search-of-Dharma).
 
 - [5.3 Moral Psychology & Development](../5-psychological/5.3-moral-psychology-development.md) — model intuisi-dulu Haidt dan fondasi moral, kritik WEIRD, dan "naluri mempelajari intuisinya". Tulang punggung dua lapis pertama.
 - [5.4 Ritual, Practice & Habituation](../5-psychological/5.4-ritual-habituation.md) — pembiasaan ala Aristoteles, keserempakan ritual dan efervesensi kolektif, "sikap ritual", dan mesin penanaman yang netral secara moral.

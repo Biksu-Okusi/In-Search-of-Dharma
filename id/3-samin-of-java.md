@@ -173,7 +173,7 @@ Namun, wong sikep hanyalah satu. Setelah menyaksikan sebuah dharma dirakit sejer
 
 **Catatan riset**
 
-Catatan riset yang dipakai dalam seri esai ini diterbitkan di [GitHub](https://github.com/GaryDean/defining-dharma).
+Catatan riset yang dipakai dalam seri esai ini diterbitkan di [GitHub](https://github.com/Biksu-Okusi/In-Search-of-Dharma).
 
 - [4.1 Samin of Java](../4-cultural/4.1-samin-of-java.md) — asal-usul, kode etis Sikep dan *Agama Adam*, argumen kecocokan dengan dharma, pemutusan dari kebudayaan Jawa arus utama, dan belokan Kendeng. Tulang punggung esai ini.
 - [1.3 Boundary & Definition](../1-foundational/1.3-boundary-definition.md) — ujian berciri empat (sifat menyeluruh, internalisasi/jati diri, arah etis, dan kesadaran diri yang reflektif) yang dipakai untuk menjawab "tetapi apakah ini sungguh dharma?"

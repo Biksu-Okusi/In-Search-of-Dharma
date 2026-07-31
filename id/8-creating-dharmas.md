@@ -135,7 +135,7 @@ Bagian 1 diam-diam menjanjikan penutup ini. Tak seorang pun dari kita bisa memil
 
 **Catatan riset**
 
-Catatan riset yang dipakai dalam seri esai ini diterbitkan di [GitHub](https://github.com/GaryDean/defining-dharma).
+Catatan riset yang dipakai dalam seri esai ini diterbitkan di [GitHub](https://github.com/Biksu-Okusi/In-Search-of-Dharma).
 
 - [8.1 Planetary Dharma](../8-future/8.1-planetary-dharma.md) — masalah tanpa-kelompok-luar; tipis-di-atas-tebal; dikarang, bukan berevolusi; tata kelola polisentris; godaan totalisasi.
 - [8.2 AI & Dharma](../8-future/8.2-ai-and-dharma.md) — ortogonalitas; "nilai siapa"; penyelarasan pluralistik; pelemahan ekonomi, pendapatan dasar universal dan makna yang tak bisa dibelinya; penguncian nilai.

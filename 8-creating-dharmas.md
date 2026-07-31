@@ -141,7 +141,7 @@ them.*
 
 **Research notes**
 
-Research notes used in this essay series are published on [GitHub](https://github.com/GaryDean/defining-dharma).
+Research notes used in this essay series are published on [GitHub](https://github.com/Biksu-Okusi/In-Search-of-Dharma).
 
 - [8.1 Planetary Dharma](8-future/8.1-planetary-dharma.md) — the no-out-group problem; thin-over-thick; authored not evolved; polycentric governance; the totalising temptation.
 - [8.2 AI & Dharma](8-future/8.2-ai-and-dharma.md) — orthogonality; "whose values"; pluralistic alignment; economic disempowerment, UBI and the meaning it cannot buy; value lock-in.

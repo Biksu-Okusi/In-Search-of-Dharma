@@ -139,7 +139,7 @@ But one complication remains. Every dharma we have put on trial here, every cast
 
 **Research notes**
 
-Research notes used in this essay series are published on [GitHub](https://github.com/GaryDean/defining-dharma).
+Research notes used in this essay series are published on [GitHub](https://github.com/Biksu-Okusi/In-Search-of-Dharma).
 
 - [7.1 Failure Modes](7-critical/7.1-failure-modes.md) — the four failure clusters, the No-True-Scotsman refusal, and the thesis that failure-proneness is intrinsic. The spine of this essay.
 - [7.3 Dharma & Power](7-critical/7.3-dharma-and-power.md) — the double face: morality as anti-domination captured to sanctify domination; Gramsci, Bourdieu, and Ambedkar.

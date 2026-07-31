@@ -146,7 +146,7 @@ Untuk menjawabnya, kita harus berhenti memandang apa yang *dikatakan* dharma dan
 
 **Catatan riset**
 
-Catatan riset yang dipakai dalam seri esai ini diterbitkan di [GitHub](https://github.com/GaryDean/defining-dharma).
+Catatan riset yang dipakai dalam seri esai ini diterbitkan di [GitHub](https://github.com/Biksu-Okusi/In-Search-of-Dharma).
 
 - [4.2 Ubuntu](../4-cultural/4.2-ubuntu.md) — status pribadi yang relasional dan harus dicapai, teori moral Metz, Komisi Kebenaran dan Rekonsiliasi serta *S v Makwanyane*, dan kritik romantisasi/xenofobia.
 - [4.3 Indigenous Oral Dharmas](../4-cultural/4.3-indigenous-oral-dharmas.md) — Dreaming/*Tjukurrpa*, *songlines*, ketepatan lisan, *kincentricity*, Tujuh Generasi, keterpancangan pada tempat, dan peringatan "Ecological Indian".

@@ -111,7 +111,7 @@ Kita sudah punya definisi kerja dan medan yang jamak serta tanpa keistimewaan un
 
 **Catatan riset**
 
-Catatan riset yang dipakai dalam seri esai ini diterbitkan di [GitHub](https://github.com/GaryDean/defining-dharma).
+Catatan riset yang dipakai dalam seri esai ini diterbitkan di [GitHub](https://github.com/Biksu-Okusi/In-Search-of-Dharma).
 
 - [1.1 Core Etymology](../1-foundational/1.1-etymology.md) — *√dhṛ* "menyangga", akar Proto-Indo-Eropa, kata sekerabat *firmus*/*firm*, *ṛta*, dan perluasan makna sepanjang tiga milenium. Tulang punggung bagian pembuka.
 - [1.2 Universal Patterns](../1-foundational/1.2-universal-patterns.md) — mengapa kerangka berbentuk dharma berulang secara mandiri: persoalan kerja-sama-tanpa-pengisapan, dan pembedaan Tinbergen antara fungsi universal dan mekanisme yang jamak.

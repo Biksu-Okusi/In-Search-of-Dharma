@@ -112,7 +112,7 @@ Jadi: dari situlah semua ini berasal, merekalah yang membantu mewujudkannya, dan
 
 **Catatan riset**
 
-Catatan riset yang dipakai dalam seri esai ini diterbitkan di [GitHub](https://github.com/GaryDean/defining-dharma).
+Catatan riset yang dipakai dalam seri esai ini diterbitkan di [GitHub](https://github.com/Biksu-Okusi/In-Search-of-Dharma).
 
 - 0.1 Life & Formation — asal-usul Perth, migrasi ke Indonesia dan kewarganegaraan, tabiat, serta riwayat pribadi yang dilukiskan sekilas di sini.
 - 0.2 Politics & Anarchism — tahun-tahun politik sosialis dan anarkisme, serta benang "anarkisme sebagai sejarah alamiah biasa".

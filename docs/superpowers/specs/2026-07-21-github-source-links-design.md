@@ -26,7 +26,7 @@ to the web unchanged and 404. `mk-book.sh:197` deliberately strips the link and
 keeps the link text, to avoid dangling references failing epubcheck (RSC-007).
 
 Every note is tracked in git, so the material a reader wants is publicly
-available at `https://github.com/GaryDean/defining-dharma` — the essays already
+available at `https://github.com/Biksu-Okusi/In-Search-of-Dharma` — the essays already
 say so in a one-line pointer above each list. The links themselves just do not
 point there.
 
@@ -52,7 +52,7 @@ All 116 links share one shape: `](` + optional `../` + `N-category/….md` + `)`
 A single rule covers them:
 
 ```sed
-s#\]\((\.\./)?([0-9]-[^):]*\.md)\)#](https://github.com/GaryDean/defining-dharma/blob/main/\2)#g
+s#\]\((\.\./)?([0-9]-[^):]*\.md)\)#](https://github.com/Biksu-Okusi/In-Search-of-Dharma/blob/main/\2)#g
 ```
 
 - The `(\.\./)?` capture is discarded — the replacement uses `\2`. This is what
@@ -83,7 +83,7 @@ For the print-visible repo URL, a second rule appends a span to the existing
 in both languages:
 
 ```sed
-s#(\[[^]]+\]\(https://github\.com/GaryDean/defining-dharma\))#\1<span class="repo-url"> — https://github.com/GaryDean/defining-dharma</span>#g
+s#(\[[^]]+\]\(https://github\.com/GaryDean/defining-dharma\))#\1<span class="repo-url"> — https://github.com/Biksu-Okusi/In-Search-of-Dharma</span>#g
 ```
 
 `book.css` gains `.repo-url{display:none}`; the PDF shows it by default, so

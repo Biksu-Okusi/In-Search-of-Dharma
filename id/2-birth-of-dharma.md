@@ -121,7 +121,7 @@ Namun, saya sudah berbicara dalam abstraksi besar tentang waktu purba dan perada
 
 **Catatan riset**
 
-Catatan riset yang dipakai dalam seri esai ini diterbitkan di [GitHub](https://github.com/GaryDean/defining-dharma).
+Catatan riset yang dipakai dalam seri esai ini diterbitkan di [GitHub](https://github.com/Biksu-Okusi/In-Search-of-Dharma).
 
 - [2.3 Pre-Axial / Pre-literate Ethics](../2-historical/2.3-pre-axial-ethics.md) — garis dasar moral sebelum ada kode: hierarki dominasi terbalik ala Boehm, bercerita sebagai pengusung norma, dan apa yang ditambahkan pengodean. Tulang punggung bagian tengah.
 - [2.2 Urban Complexity](../2-historical/2.2-urban-complexity.md) — batas atas Dunbar, macetnya kerja sama tatap muka pada skala besar, dan kode tersurat sebagai pengganti yang "bebas skala".

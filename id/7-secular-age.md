@@ -107,7 +107,7 @@ Itu pertanyaan yang membuat gamang. Ia juga pertanyaan paling berbahaya yang ada
 
 **Catatan riset**
 
-Catatan riset yang dipakai dalam seri esai ini diterbitkan di [GitHub](https://github.com/GaryDean/defining-dharma).
+Catatan riset yang dipakai dalam seri esai ini diterbitkan di [GitHub](https://github.com/Biksu-Okusi/In-Search-of-Dharma).
 
 - [3.3 The Grounding Problem](../3-philosophical/3.3-grounding-problem.md) — apakah dharma tanpa tuhan bisa mengikat: pembingkaian ulang Euthyphro, trilema pembenaran pamungkas, dan jangkar yang berpijak di dunia ini. Tulang punggung "Sanggupkah ia mengikat?"
 - [6.1 Secular Translation](../6-contemporary/6.1-secular-translation.md) — pengangkatan versus pembangunan ulang; Batchelor, McMindfulness, Stoisisme-ke-CBT, dan "pemulihan" Hadot. Tulang punggung "Sanggupkah ia menanamkan diri?"

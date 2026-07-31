@@ -125,7 +125,7 @@ But I have been speaking in the grand abstractions of deep time and lost civilis
 
 **Research notes**
 
-Research notes used in this essay series are published on [GitHub](https://github.com/GaryDean/defining-dharma).
+Research notes used in this essay series are published on [GitHub](https://github.com/Biksu-Okusi/In-Search-of-Dharma).
 
 - [2.3 Pre-Axial / Pre-literate Ethics](2-historical/2.3-pre-axial-ethics.md) — the moral baseline before codes: Boehm's reverse dominance hierarchy, storytelling as norm-carrier, and what codification added. The spine of the middle.
 - [2.2 Urban Complexity](2-historical/2.2-urban-complexity.md) — Dunbar's ceiling, the breakdown of face-to-face cooperation at scale, and the explicit code as a "scale-free" substitute.
