@@ -43,7 +43,7 @@ declare -r SCRIPT_DIR=${SCRIPT_PATH%/*} SCRIPT_NAME=${SCRIPT_PATH##*/}
 
 declare -r TITLE='In Search of Dharma'
 declare -r SUBTITLE='What holds a life, a people, a world together'
-declare -r TAGLINE='A natural history of ethics in eight essays'
+declare -r TAGLINE='A natural history of ethics'
 declare -r AUTHOR='Biksu Okusi'
 declare -r LANGUAGE=en
 
@@ -53,7 +53,7 @@ declare -r LANGUAGE=en
 # random UUID on every build). The licence is machine-declared in the OPF via
 # dc:rights and echoed on the title/colophon pages; see LICENSE.
 declare -r IDENTIFIER='https://garydean.id/books/in-search-of-dharma'
-declare -r PUB_DATE=2026-05
+declare -r PUB_DATE=2026-08
 declare -r LICENSE_NAME='Creative Commons Attribution 4.0 International (CC BY 4.0)'
 declare -r LICENSE_URL='https://creativecommons.org/licenses/by/4.0/'
 declare -r -a SUBJECTS=(Anthropology Philosophy)

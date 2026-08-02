@@ -80,13 +80,7 @@ A mature personal dharma asks:
 
 ## A simple definition
 
-A dharma is:
-
-> **An evolving ethical path adopted by a person or group to live coherently, responsibly, and meaningfully within their world.**
-
-Or more simply still:
-
-> **A dharma is the way one lives when one is trying to live appropriately.**
+> **A dharma is an evolving ethical path adopted by a person or group to live coherently, responsibly, and meaningfully within their world.**
 
 <!--audio stop-->
 
