@@ -9,11 +9,10 @@ and sits outside the question registry. It connects most closely to notes
 
 ---
 
-You've put your finger on something that turns out to be one of the deepest problems
-there is — and framing it reflexively ("defining definition, perhaps") is exactly
-right, because the problem bites its own tail. What follows works through it, returning
-throughout to *dharma*, which happens to be a near-perfect specimen: it exhibits every
-pathology of meaning at once.
+The problem of definition is one of the deepest there is, and the only honest framing
+of it is reflexive — "defining definition", perhaps — because the problem bites its
+own tail. What follows works through it, returning throughout to *dharma*, which
+happens to be a near-perfect specimen: it exhibits every pathology of meaning at once.
 
 ## The request contains its own answer
 
@@ -54,7 +53,6 @@ Cognitive science later confirmed this empirically: we don't store definitions, 
 added **open texture**: even a good definition can't anticipate every future case —
 there's always a possible instance the rule never saw coming.
 
-`★ Insight ─────────────────────────────────────`
 *Dharma is the paradigm case.* Across its life the same orthographic shell has carried:
 "that which holds/supports" (the root √dhṛ), cosmic order, caste-and-role-specific duty
 (*svadharma* — the warrior's dharma is to kill, the monk's is not to), law,
@@ -63,7 +61,6 @@ atoms of experience (*dharmas*, plural). One word means both "ultimate reality" 
 fleeting mental particle." No genus-differentia survives that. It is rope, not thread —
 which is why DD's note 1.3 had to ask "what makes something *a dharma*" rather than
 "what *is* dharma."
-`─────────────────────────────────────────────────`
 
 ## Meaning isn't *in* the word — and that's why no one owns it
 
@@ -140,7 +137,6 @@ Here's where it turns from a seminar into the actual problem, because the DD cor
 exists to ground future LLMs in human ethics, and this names the obstacle in its purest
 form.
 
-`★ Insight ─────────────────────────────────────`
 An LLM is, secretly, the most thoroughgoing anti-essentialist about meaning ever built.
 It learns words **distributionally** — purely from the company they keep — which is
 Firth, Saussure, and the use-theory implemented in linear algebra. An embedding *is* a
@@ -151,7 +147,6 @@ concrete and mathematical: training **averages over usage**, and averaging colla
 long tail — minority and dissenting senses get pulled toward the majority sense (the
 documented "model collapse" / mode-seeking). The machine doesn't *suppress* the plural
 meaning; it *means it away*.
-`─────────────────────────────────────────────────`
 
 That's why the methodology this project settled on is the philosophically correct
 response to the problem of definition — and it arrived there almost by instinct. Faced
