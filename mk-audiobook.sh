@@ -11,7 +11,9 @@
 # A spacer is inserted between sections: --gap seconds of silence (default 4,
 # 0 disables). With --gong FILE the gap's silence is followed by the chime,
 # which strikes at the end of the pause and rings into the next section's
-# opening — so each break runs gap + chime length.
+# opening — so each break runs gap + chime length. --gong also bookends the
+# whole audiobook: the chime opens the file (chime, then gap, then the spoken
+# cover) and closes it (gap, then chime, ringing out).
 # The bundled audio-assets/gong-bowl.mp3 is a singing-bowl strike synthesized
 # from inharmonic bell partials (fundamental 196 Hz; ratios 1/2.77/5.18/8.16):
 #   ffmpeg -f lavfi -i "aevalsrc=0.45*(1-exp(-t*180))*(0.5*exp(-t*0.9)\
@@ -32,7 +34,7 @@ shopt -s inherit_errexit
 # locations only.
 declare -rx PATH=/usr/local/bin:/usr/bin:/bin
 
-declare -r VERSION=1.2.0
+declare -r VERSION=1.3.0
 #shellcheck disable=SC2155
 declare -r SCRIPT_PATH=$(realpath -- "$0")
 declare -r SCRIPT_DIR=${SCRIPT_PATH%/*} SCRIPT_NAME=${SCRIPT_PATH##*/}
@@ -59,6 +61,7 @@ declare -i VERBOSE=1
 declare -i GAP=4
 declare -- GONG=''
 declare -- WORK_DIR=''
+declare -a PLAYLIST=()
 
 # ----------------------------------------------------------------------------
 info() { ((VERBOSE)) || return 0; >&2 printf '%s: ◉ %s\n' "$SCRIPT_NAME" "$*"; }
@@ -85,9 +88,12 @@ into $OUTPUT
 with embedded cover art and ID3v2 tags.
 
 Options:
-  -g|--gap SECONDS   silence inserted between sections (default $GAP, 0 disables)
+  -g|--gap SECONDS   silence inserted between sections (default $GAP; 0 disables
+                     the silence — with --gong the chime still sounds)
   -G|--gong FILE     sound this chime at the end of each gap, just before the
-                     next section starts (each break runs gap + chime length)
+                     next section starts (each break runs gap + chime length),
+                     and bookend the audiobook: chime + gap before the opening
+                     cover, gap + chime after the closing section
   -v|--verbose       progress messages (default on)
   -q|--quiet         suppress progress messages
   -h|--help          show this help
@@ -106,54 +112,87 @@ check_prerequisites() {
   done
 }
 
-# Encode the between-sections spacer to the exact source format (24 kHz mono
-# 32 kbps MP3) so it stream-copies cleanly into the join: either bare silence
-# of GAP seconds, or GAP seconds of silence followed by the GONG chime, so
-# the chime sounds just before the next section starts.
+# Encode a spacer to the exact source format (24 kHz mono 32 kbps MP3) so it
+# stream-copies cleanly into the join. $1 selects the shape:
+#   silence    GAP seconds of silence (no gong)
+#   gong-after GAP seconds of silence, then the chime — used between sections
+#              and as the closing bookend, so the chime rings out last
+#   gong-first the chime, then GAP seconds of silence — the opening bookend,
+#              so the chime settles before the spoken cover begins
 make_spacer() {
-  local -- spacer=$WORK_DIR/spacer.mp3
-  if [[ -n $GONG ]]; then
-    ffmpeg -hide_banner -loglevel error -y -i "$GONG" \
-      -af "adelay=$((GAP * 1000)):all=1" -ar 24000 -ac 1 \
-      -c:a libmp3lame -b:a 32k \
-      "$spacer" || die 1 "failed to prepare gong spacer from ${GONG@Q}"
-  else
-    ffmpeg -hide_banner -loglevel error -y \
-      -f lavfi -i anullsrc=r=24000:cl=mono -t "$GAP" \
-      -c:a libmp3lame -b:a 32k \
-      "$spacer" || die 1 'failed to generate silence spacer'
-  fi
+  local -- shape=$1 spacer=$WORK_DIR/spacer-$1.mp3
+  case $shape in
+    silence)
+      ffmpeg -hide_banner -loglevel error -y \
+        -f lavfi -i anullsrc=r=24000:cl=mono -t "$GAP" \
+        -c:a libmp3lame -b:a 32k \
+        "$spacer" || die 1 'failed to generate silence spacer'
+      ;;
+    gong-after)
+      ffmpeg -hide_banner -loglevel error -y -i "$GONG" \
+        -af "adelay=$((GAP * 1000)):all=1" -ar 24000 -ac 1 \
+        -c:a libmp3lame -b:a 32k \
+        "$spacer" || die 1 "failed to prepare gong spacer from ${GONG@Q}"
+      ;;
+    gong-first)
+      ffmpeg -hide_banner -loglevel error -y -i "$GONG" \
+        -af "apad=pad_dur=$GAP" -ar 24000 -ac 1 \
+        -c:a libmp3lame -b:a 32k \
+        "$spacer" || die 1 "failed to prepare gong intro from ${GONG@Q}"
+      ;;
+    *) die 22 "internal: unknown spacer shape ${shape@Q}" ;;
+  esac
   printf '%s' "$spacer"
 }
 
 # The concat demuxer needs a list file; single quotes in entries are escaped
 # per its quoting rules (none occur in these fixed paths, but escape anyway).
-# A non-empty $1 is a spacer file interleaved between sections (never before
-# the first or after the last).
+# Args are the playlist in final order — sources and spacers already
+# interleaved by the caller.
 write_concat_list() {
-  local -- spacer=${1:-} list=$WORK_DIR/concat.txt src
-  local -i idx=0
+  local -a playlist=("$@")
+  local -- list=$WORK_DIR/concat.txt item
   {
-    for src in "${SOURCES[@]}"; do
-      if ((idx > 0)) && [[ -n $spacer ]]; then
-        # static format: 'file ' + literal ' + %s + literal ' + newline
-        printf 'file '\''%s'\''\n' "${spacer//\'/\'\\\'\'}"
-      fi
-      printf 'file '\''%s'\''\n' "${src//\'/\'\\\'\'}"
-      idx+=1
+    for item in "${playlist[@]}"; do
+      # static format: 'file ' + literal ' + %s + literal ' + newline
+      printf 'file '\''%s'\''\n' "${item//\'/\'\\\'\'}"
     done
   } > "$list"
   printf '%s' "$list"
 }
 
-build_audiobook() {
-  local -- list spacer='' gap_desc='no gap' tmp_out=$WORK_DIR/audiobook.mp3
-  if ((GAP > 0)); then
-    spacer=$(make_spacer) || die 1 'failed to create spacer'
-    gap_desc="${GAP}s silence gaps"
-    [[ -z $GONG ]] || gap_desc="${GAP}s gong gaps"
+# Assemble PLAYLIST: optional opening chime, then the sources with a spacer
+# between each pair, then the optional closing chime. The closing bookend
+# reuses the between-sections spacer — both are gap-then-chime. Fills a global
+# rather than echoing, so a make_spacer failure can die in this shell.
+make_playlist() {
+  local -- spacer='' intro='' src
+  local -i idx=0
+  PLAYLIST=()
+  if [[ -n $GONG ]]; then
+    intro=$(make_spacer gong-first) || die 1 'failed to create opening chime'
+    spacer=$(make_spacer gong-after) || die 1 'failed to create gong spacer'
+    PLAYLIST+=("$intro")
+  elif ((GAP > 0)); then
+    spacer=$(make_spacer silence) || die 1 'failed to create silence spacer'
   fi
-  list=$(write_concat_list "$spacer") || die 1 'failed to build concat list'
+  for src in "${SOURCES[@]}"; do
+    ((idx == 0)) || [[ -z $spacer ]] || PLAYLIST+=("$spacer")
+    PLAYLIST+=("$src")
+    idx+=1
+  done
+  [[ -z $GONG ]] || PLAYLIST+=("$spacer")
+}
+
+build_audiobook() {
+  local -- list gap_desc='no gap' tmp_out=$WORK_DIR/audiobook.mp3
+  if [[ -n $GONG ]]; then
+    gap_desc="${GAP}s gong gaps, gong bookends"
+  elif ((GAP > 0)); then
+    gap_desc="${GAP}s silence gaps"
+  fi
+  make_playlist
+  list=$(write_concat_list "${PLAYLIST[@]}") || die 1 'failed to build concat list'
 
   info "joining ${#SOURCES[@]} tracks (stream copy, $gap_desc) with embedded cover"
   ffmpeg -hide_banner -loglevel error -y \
