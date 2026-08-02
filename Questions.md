@@ -15,7 +15,7 @@ This is the **master registry** and **status dashboard** for the DD research pro
 | 2.1 | Axial Age Catalyst                      | done      | [2-historical/2.1-axial-age.md](2-historical/2.1-axial-age.md) |
 | 2.2 | Urban Complexity                        | done      | [2-historical/2.2-urban-complexity.md](2-historical/2.2-urban-complexity.md) |
 | 2.3 | Pre-Axial / Pre-literate Ethics         | done      | [2-historical/2.3-pre-axial-ethics.md](2-historical/2.3-pre-axial-ethics.md) |
-| 2.4 | Transmission & Institutionalization     | done      | [2-historical/2.4-transmission-institutionalization.md](2-historical/2.4-transmission-institutionalization.md) |
+| 2.4 | Transmission & Institutionalisation     | done      | [2-historical/2.4-transmission-institutionalization.md](2-historical/2.4-transmission-institutionalization.md) |
 | 2.5 | The Life-Cycle of a Dharma              | done      | [2-historical/2.5-lifecycle-of-a-dharma.md](2-historical/2.5-lifecycle-of-a-dharma.md) |
 | 3.1 | Tension Resolution                      | done      | [3-philosophical/3.1-tension-resolution.md](3-philosophical/3.1-tension-resolution.md) |
 | 3.2 | Metacognitive Function                  | done      | [3-philosophical/3.2-metacognitive-function.md](3-philosophical/3.2-metacognitive-function.md) |
@@ -47,7 +47,7 @@ This is the **master registry** and **status dashboard** for the DD research pro
 | 6.2 | Digital-Age Dharma                      | done      | [6-contemporary/6.2-digital-age-dharma.md](6-contemporary/6.2-digital-age-dharma.md) |
 | 6.3 | Economics, Work & Inequality            | done      | [6-contemporary/6.3-economics-work-inequality.md](6-contemporary/6.3-economics-work-inequality.md) |
 | 6.4 | Gender & Dharma                         | done      | [6-contemporary/6.4-gender-and-dharma.md](6-contemporary/6.4-gender-and-dharma.md) |
-| 6.5 | Secularization & the "Nones"            | done      | [6-contemporary/6.5-secularization-nones.md](6-contemporary/6.5-secularization-nones.md) |
+| 6.5 | Secularisation & the "Nones"            | done      | [6-contemporary/6.5-secularization-nones.md](6-contemporary/6.5-secularization-nones.md) |
 | 7.1 | Failure Modes                           | done      | [7-critical/7.1-failure-modes.md](7-critical/7.1-failure-modes.md) |
 | 7.2 | Cultural Adaptation & Appropriation     | done      | [7-critical/7.2-appropriation.md](7-critical/7.2-appropriation.md) |
 | 7.3 | Dharma & Power                          | done      | [7-critical/7.3-dharma-and-power.md](7-critical/7.3-dharma-and-power.md) |
@@ -87,7 +87,7 @@ How does dharma compare with cognate ordering concepts from other traditions —
 
 ### 2.1 Axial Age Catalyst
 
-What specific socio-economic and psychological pressures during the Axial Age (800–200 BCE) catalyzed the simultaneous emergence of dharmic thinking across disconnected civilizations?
+What specific socio-economic and psychological pressures during the Axial Age (800–200 BCE) catalysed the simultaneous emergence of dharmic thinking across disconnected civilisations?
 
 ### 2.2 Urban Complexity
 
@@ -97,14 +97,14 @@ How did the transition from kinship-based tribes to anonymous urban societies ne
 
 What was the ethical baseline before codified dharmas? How did pre-Axial, pre-literate societies regulate moral behaviour without explicit doctrine, and what does that baseline tell us about what the Axial codifications actually added?
 
-### 2.4 Transmission & Institutionalization
+### 2.4 Transmission & Institutionalisation
 
-How did dharmas spread, ossify, and get carried across generations — by priesthoods, monastic and philosophical schools, scribes, and states? What happens to a dharma when it becomes institutionalized?
+How did dharmas spread, ossify, and get carried across generations — by priesthoods, monastic and philosophical schools, scribes, and states? What happens to a dharma when it becomes institutionalised?
 
 ### 2.5 The Life-Cycle of a Dharma
 
 How does a dharma form, change, and end over time — is it carved from an existing culture, does it carry that culture's "grain", and does it then die out, season into a movement, or harden into a religion that becomes fresh material for the next dharma?
-*(Extension note under 2.4 — a life-cycle model of dharma-formation that synthesises the project's "wood-carver" parable; sibling to 2.4 Transmission & Institutionalization.)*
+*(Extension note under 2.4 — a life-cycle model of dharma-formation that synthesises the project's "wood-carver" parable; sibling to 2.4 Transmission & Institutionalisation.)*
 
 ---
 
@@ -132,7 +132,7 @@ What is Sumarah — the Javanese practice of total surrender — as a philosophy
 
 ### 3.5.1 Sumarah: Origins and History
 
-How did Sumarah arise and evolve — Sukinohartono's 1935 wahyu, the wartime and revolutionary-period growth, the Paguyuban's organizational history and leadership, its place in national kebatinan politics and state regulation of aliran kepercayaan, and its condition today? *(Extension note under 3.5 — the historical child; sibling to 3.5.2–3.5.4.)*
+How did Sumarah arise and evolve — Sukinohartono's 1935 wahyu, the wartime and revolutionary-period growth, the Paguyuban's organisational history and leadership, its place in national kebatinan politics and state regulation of aliran kepercayaan, and its condition today? *(Extension note under 3.5 — the historical child; sibling to 3.5.2–3.5.4.)*
 
 ### 3.5.2 Sumarah: Practice and Transmission
 
@@ -156,7 +156,7 @@ Explain the origins, beliefs, and dharma of the Samin of Java. How does it diffe
 
 ### 4.2 Ubuntu
 
-Analyze Ubuntu ('I am because we are') as a dharmic framework. How does it differ from individualistic dharmas while serving similar social functions?
+Analyse Ubuntu ('I am because we are') as a dharmic framework. How does it differ from individualistic dharmas while serving similar social functions?
 
 ### 4.3 Indigenous Oral Dharmas
 
@@ -164,7 +164,7 @@ Examine indigenous dharmic systems (e.g. Native American, Aboriginal Australian)
 
 ### 4.4 Abrahamic Ethics as Dharmic Frameworks
 
-Analyze Abrahamic ethical systems — covenant, halakha, sharia, Christian caritas — as dharmic frameworks. What does the non-privileging stance require us to see in them, and how do they function like and unlike Indic / secular dharmas?
+Analyse Abrahamic ethical systems — covenant, halakha, sharia, Christian caritas — as dharmic frameworks. What does the non-privileging stance require us to see in them, and how do they function like and unlike Indic / secular dharmas?
 
 ### 4.5 Subud and Sumarah
 
@@ -242,7 +242,7 @@ How do dharmic frameworks engage material life — work, wealth, debt, and inequ
 
 How do dharmic systems encode, enforce, or contest gender roles? Where have dharmas been used to subordinate, and where to liberate, along gender lines?
 
-### 6.5 Secularization & the "Nones"
+### 6.5 Secularisation & the "Nones"
 
 How large and how fast-growing is the "secular age" the essays invoke — the religiously unaffiliated ("nones") and the "spiritual but not religious" — and is it accurate to call it the fastest-growing religious category? *(Demographic-grounding note for the Part 7 essay; external-sourced from Pew because the shared corpus carries the secularisation thesis but not current measurement.)*
 
