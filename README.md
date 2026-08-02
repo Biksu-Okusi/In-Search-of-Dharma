@@ -19,7 +19,7 @@ The project deliberately separates **gathering evidence** from **writing essays*
 
 - **Stage 1 — Research notes.** For each research question, one cited note whose every
   claim carries a source. The product is *traceable evidence*, not polished prose.
-- **Stage 2 — Essays.** Eight essays and a preface, written *from* the notes. The prose
+- **Stage 2 — Essays.** A preface, eight essays and a coda, written *from* the notes. The prose
   names its sources in the open and hides the citation apparatus; each essay closes with
   a **Sources & further reading** list that preserves the chain back to the notes and
   their original works.
@@ -30,7 +30,7 @@ survive the move from note to essay. The per-note recipe is in
 
 ## The essays
 
-Read in order, the nine parts form one argument: a first-person search from *"what even
+Read in order, the ten parts form one argument: a first-person search from *"what even
 is a dharma?"* through real dharmas in the wild to *"can we build new ones on purpose?"*
 
 | Part | Title |
@@ -44,13 +44,14 @@ is a dharma?"* through real dharmas in the wild to *"can we build new ones on pu
 | 6 | [When Dharmas Go Wrong](6-when-dharma-goes-wrong.md) |
 | 7 | [Dharmas in a Secular Age](7-secular-age.md) |
 | 8 | [Creating Dharmas](8-creating-dharmas.md) |
+| 9 | [Coda](9-coda.md) |
 
 The series blueprint — the arc, the per-part briefs, and the status dashboard — is in
 [`Essays.md`](Essays.md).
 
 ## The book
 
-The nine parts are also assembled into a single book, *In Search of Dharma* —
+The ten parts are also assembled into a single book, *In Search of Dharma* —
 subtitled *The human craft of building ethical worlds: a natural history of ethics in
 eight essays* — built from [`cover.md`](cover.md) and the part files by
 [`mk-book.sh`](mk-book.sh):
@@ -87,13 +88,18 @@ shared note structure is fixed by
 [`1-foundational/_template.md`](1-foundational/_template.md). Every work cited across
 the notes is resolved once in the citation register, [`SOURCES.md`](SOURCES.md).
 
-◉ **Status.** Both stages are complete: all 44 research questions have their cited
-notes, and all nine parts are written. The series is in final pre-publication polish,
+The **Preface (Part 0)** has its own set of research notes, held to the same template
+and citation discipline; they rest substantially on primary self-report and private
+correspondence, and are kept out of the public repository by design — the one
+deliberate exception to the open evidence base.
+
+◉ **Status.** Both stages are complete: all 52 research questions have their cited
+notes, and all ten parts are written. The series is in final pre-publication polish,
 so wording may still shift; the evidence base is stable.
 
 ## Dataset
 
-The full corpus — the 44 cited research notes and the nine essays — is published as a
+The full corpus — the 52 cited research notes and the ten essays — is published as a
 Hugging Face dataset:
 **<https://huggingface.co/datasets/garydean/defining-dharma>** (configs `notes` and
 `essays`), generated from this repository by
