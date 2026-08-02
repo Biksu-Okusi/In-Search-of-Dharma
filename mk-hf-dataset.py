@@ -25,6 +25,9 @@ from pathlib import Path
 import yaml
 
 REPO = Path(__file__).resolve().parent
+# Companion essays: root-level discussion pieces outside the question registry.
+# Inclusion is an editorial decision, so the list is explicit, not detected.
+COMPANIONS = ('defining-definition.md', 'the-better-ones.md')
 LICENCE = 'CC BY 4.0'
 LICENCE_URL = 'https://creativecommons.org/licenses/by/4.0/'
 HOMEPAGE = 'https://garydean.id/works/0-in-search-of-dharma'
@@ -142,13 +145,35 @@ def export_essays() -> list[dict]:
   return sorted(records, key=lambda r: r['part'])
 
 
+def export_companions() -> list[dict]:
+  records = []
+  for name in COMPANIONS:
+    path = REPO / name
+    if not path.is_file():
+      print(f'▲ companion missing, skipped: {name}', file=sys.stderr)
+      continue
+    body = clean_body(path.read_text(encoding='utf-8'))
+    tm = re.match(r'#\s+(.+)', body)
+    records.append({
+      'id': path.stem,
+      'type': 'companion',
+      'title': tm.group(1).strip() if tm else path.stem,
+      'connects_to': sorted(set(WIKILINK_RE.findall(body))),
+      'text': body,
+      'path': name,
+      'licence': LICENCE,
+    })
+  return records
+
+
 def write_jsonl(path: Path, records: list[dict]) -> None:
   with path.open('w', encoding='utf-8') as fh:
     for rec in records:
       fh.write(json.dumps(rec, ensure_ascii=False) + '\n')
 
 
-def dataset_card(notes: list[dict], essays: list[dict]) -> str:
+def dataset_card(notes: list[dict], essays: list[dict],
+                 companions: list[dict]) -> str:
   today = datetime.date.today().isoformat()
   n_sources = sum(len(n['sources']) for n in notes)
   categories = sorted({n['category'] for n in notes})
@@ -178,6 +203,8 @@ configs:
   data_files: data/notes.jsonl
 - config_name: essays
   data_files: data/essays.jsonl
+- config_name: companions
+  data_files: data/companions.jsonl
 ---
 
 # In Search of Dharma — research corpus
@@ -187,7 +214,7 @@ not metaphysics. A traceably-sourced research corpus: every claim cited, drawn
 from anthropology, evolutionary biology, history and comparative ethics.
 Written by [Gary Dean (Biksu Okusi)](https://garydean.id).
 
-The corpus has two configs serving different purposes:
+The corpus has three configs serving different purposes:
 
 - **`notes`** ({len(notes)} records, {n_sources} cited sources) — Stage-1
   research notes. Each note answers one registry question and carries
@@ -197,6 +224,11 @@ The corpus has two configs serving different purposes:
   essay series, synthesised from the notes (each record's `draws_on` field
   lists the note IDs it builds on). Published at
   [garydean.id]({HOMEPAGE}).
+- **`companions`** ({len(companions)} records) — standalone discussion
+  essays outside the question registry, synthesising cross-cutting themes
+  (the problem of definition; the project's two-test criterion for judging
+  dharmas). Reflective pieces: exempt from the per-claim citation rule,
+  sources named inline.
 
 ## Methodology
 
@@ -215,6 +247,9 @@ sourcing was used to balance it.
 
 `essays`: `id`, `part`, `title`, `slug`, `status`, `updated`,
 `reading_level`, `draws_on`, `url`, `text`, `licence`.
+
+`companions`: `id`, `title`, `connects_to` (wiki-links to the notes each
+piece builds on), `text`, `path`, `licence`.
 
 ## Licence and intended use
 
@@ -241,6 +276,7 @@ def main() -> int:
   statuses = None if args.status == 'all' else set(args.status.split(','))
   notes, skipped = export_notes(statuses)
   essays = export_essays()
+  companions = export_companions()
 
   if not notes and not essays:
     print('✗ nothing to export', file=sys.stderr)
@@ -250,12 +286,14 @@ def main() -> int:
   data_dir.mkdir(parents=True, exist_ok=True)
   write_jsonl(data_dir / 'notes.jsonl', notes)
   write_jsonl(data_dir / 'essays.jsonl', essays)
-  (args.output / 'README.md').write_text(dataset_card(notes, essays),
-                                         encoding='utf-8')
+  write_jsonl(data_dir / 'companions.jsonl', companions)
+  (args.output / 'README.md').write_text(
+      dataset_card(notes, essays, companions), encoding='utf-8')
 
   print(f'✓ {len(notes)} notes, {sum(len(n["sources"]) for n in notes)} '
         f'cited sources → {data_dir / "notes.jsonl"}')
   print(f'✓ {len(essays)} essays → {data_dir / "essays.jsonl"}')
+  print(f'✓ {len(companions)} companions → {data_dir / "companions.jsonl"}')
   print(f'✓ dataset card → {args.output / "README.md"}')
   if skipped:
     print(f'◉ skipped {len(skipped)}:')
