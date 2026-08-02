@@ -3,7 +3,7 @@ part: 3
 title: "The Dharmas of the Samin of Java"
 slug: samin-of-java
 status: done
-words: 5416
+words: 5415
 reading_level: year-12
 updated: 2026-07-31
 draws_on: ["4.1", "1.3", "7.3", "8.1"]
@@ -113,7 +113,7 @@ And beneath the tactics, it turns out, lay something like a philosophy of langua
 
 And a deeper current runs underneath, one I can only gesture at here. Drawing on the study of surviving hunter-gatherer bands, the anthropologist Christopher Boehm has argued that human morality may have *begun* as a device against domination: our distant ancestors, living as fierce egalitarians, used ridicule, shaming, and ostracism to cut down anyone who tried to lord it over the group. Boehm calls it a "reverse dominance hierarchy": the weak combining to keep the strong in check. If he is even partly right, then a dharma like the Samin's, defined almost entirely by its refusal of a domineering state, is morality doing one of the oldest jobs it ever had. The man on the forest road, answering the empire with riddles, was standing in a very long line.
 
-## An pause
+## A pause
 
 I have been building a case, and before I finish it, three warnings are in order, because a dharma is exactly the kind of thing it is easy to romanticise, and I have been as charmed by this one as anyone.
 
@@ -133,7 +133,7 @@ The third warning I can only post here and honour later, because it needs a stan
 
 ## Feet in cement
 
-The strongest proof that the *wong sikep* built a real dharma, and not just a one-generation protest, is that it did not die with Samin. It is still being lived, and it has crossed a hundred years and an entire change of subject without losing its spine.
+The strongest proof that the *wong sikep* built a real dharma, and not a one-generation protest, is that it did not die with Samin. It is still being lived, and it has crossed a hundred years and an entire change of subject without losing its spine.
 
 The century in between was not quiet, and it is worth pausing on, because it shows what the refusal was really aimed at. When the Dutch left, the refusal stayed, since the thing being refused had never really been the Dutch; it was the state's claim to name and number people. The anthropologist Amrih Widodo, who has followed the community for decades, records what that meant under Suharto's New Order: pressure to fill in the religion column on the identity card, since the religion of Adam was not on the official list; mass wedding ceremonies arranged to pull unregistered Sikep marriages into the books of the religious bureaucracy; and, for those who declined, the threat of transmigration off Java altogether. The flags had changed and the census came anyway, and the Sedulur Sikep answered the independent republic much as they had answered the empire.
 
