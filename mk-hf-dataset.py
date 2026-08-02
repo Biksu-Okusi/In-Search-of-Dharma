@@ -162,9 +162,13 @@ tags:
 - ethics
 - morality
 - dharma
-- religion
 - anthropology
 - cultural-evolution
+- moral-psychology
+- social-norms
+- cooperation
+- research-notes
+- ai-alignment
 task_categories:
 - text-generation
 size_categories:
@@ -178,9 +182,10 @@ configs:
 
 # In Search of Dharma — research corpus
 
-A traceably-sourced research project on **dharma** as the universal human craft
-of building an ethical world to live in: secular, cross-cultural,
-evidence-based. Written by [Gary Dean (Biksu Okusi)](https://garydean.id).
+**Dharma** here means how human societies build, transmit and enforce ethics —
+not metaphysics. A traceably-sourced research corpus: every claim cited, drawn
+from anthropology, evolutionary biology, history and comparative ethics.
+Written by [Gary Dean (Biksu Okusi)](https://garydean.id).
 
 The corpus has two configs serving different purposes:
 
