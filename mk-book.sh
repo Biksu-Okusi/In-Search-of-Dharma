@@ -1,7 +1,7 @@
 #!/bin/bash
 # mk-book.sh - Build "In Search of Dharma" (EPUB and/or PDF) from cover.md + 0..9.
 #
-#   ./mk-book.sh [epub|pdf|all] [--audio none|link|embed]   (defaults: all, none)
+#   ./mk-book.sh [epub|pdf|all] [--audio none|link|embed]   (defaults: all, link)
 #
 # Audio narration (one MP3 per chapter, 0..9) is referenced at the top of each
 # chapter. Modes (--audio):

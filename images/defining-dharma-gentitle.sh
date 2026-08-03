@@ -38,7 +38,7 @@ declare -r FONT_AUTHOR=/usr/share/fonts/truetype/lato/Lato-Regular.ttf
 declare -ri TITLE_WIDTH=640 TITLE_TOP=205
 declare -ri RULE_WIDTH=104 RULE_GAP=38     # blank space above the hairline rule
 declare -ri SUB_WIDTH=470 SUB_GAP=34       # blank space below it
-declare -ri TAG_WIDTH=380 TAG_GAP=26       # blank space above the tagline
+declare -ri TAG_WIDTH=300 TAG_GAP=26       # blank space above the tagline
 declare -ri AUTHOR_WIDTH=250 AUTHOR_FOOT=104
 
 # Tracking (letter-spacing), as a fraction of the point size. Large display caps
