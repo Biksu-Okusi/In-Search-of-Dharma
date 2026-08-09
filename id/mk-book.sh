@@ -540,13 +540,14 @@ main() {
     printf '%s\n\n' "$SUBTITLE"
     printf 'oleh **%s**\n\n' "$AUTHOR"
     printf '<br/>\n\n'
-    printf 'Buku elektronik ini ditata dari Markdown dengan pandoc, dalam huruf EB Garamond dan Lato. Sampul dan ilustrasi bab adalah gambar bergaya cat air yang dihasilkan dengan model AI, dari prompt yang ditulis, diolah, dan dipilih oleh penulis.\n\n'
+    printf 'Buku elektronik ini ditata dari Markdown dengan pandoc, dalam huruf EB Garamond dan Lato. Sampul dan ilustrasi bab adalah gambar bergaya cat air yang dihasilkan dengan [AI:grok-imagine-image-quality](https://docs.x.ai/developers/models/grok-imagine-image-quality), dari prompt yang ditulis, diolah, dan dipilih oleh penulis.\n\n'
+    printf 'Catatan riset disusun dengan bantuan [AI:fable-5](https://www.anthropic.com/claude-fable-5-mythos-5-system-card), [AI:opus-5](https://www.anthropic.com/claude-opus-5-system-card), [AI:sonnet-5](https://www.anthropic.com/claude-sonnet-5-system-card), [AI:glm-5.2](https://huggingface.co/zai-org/GLM-5.2), [AI:gpt-5.6](https://deploymentsafety.openai.com/gpt-5-6/gpt-5-6.pdf), serta [basis pengetahuan Applied Anthropology](https://github.com/Open-Technology-Foundation/appliedanthropology).\n\n'
     printf '<br/>\n\n'
     printf 'Karya ini dilisensikan di bawah %s.\n\n' "$LICENSE_NAME"
     printf '<%s>\n\n' "$LICENSE_URL"
     printf '</div>\n'
   } >"$colophon" || die "failed to write ${colophon@Q}"
-  inflect_h1 "$colophon" "backmatter colophon"
+  inflect_h1 "$colophon" 'backmatter colophon'
   inputs+=("$colophon")
 
   # EPUB package metadata pandoc will merge in (dc:* elements). A stable
