@@ -53,3 +53,11 @@ hf-dataset/
 # page-render previews of the built book (spot-check byproduct, regenerable)
 pg-*.png
 9-defining-dharma_watercolor.v*
+
+# audio-embedded EPUB (~70 MB of bundled MP3s, over GitHub's 50 MB advisory
+# limit and near its 100 MB hard limit). Binaries do not delta-compress, so
+# every rebuild would add another full copy to the repository. Rebuild it with
+# `./mk-book.sh epub --audio embed` and distribute it as a GitHub Release
+# asset, per the note at the top of mk-book.sh. The plain EPUB and the PDF
+# stay tracked: they are small, and they are what the repository is read for.
+*_with-audio.epub
