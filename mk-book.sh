@@ -533,13 +533,14 @@ main() {
     printf '*%s*\n\n' "$TAGLINE"
     printf 'by **%s**\n\n' "$AUTHOR"
     printf '<br/>\n\n'
-    printf 'This ebook was typeset from Markdown with pandoc, in the EB Garamond and Lato typefaces. The cover and chapter illustrations are watercolour-style images generated with AI image models, from prompts written, iterated, and selected by the author.\n\n'
+    printf 'This ebook was typeset from Markdown with pandoc, in the EB Garamond and Lato typefaces. The cover and chapter illustrations are watercolour-style images generated with [AI:grok-imagine-image-quality](https://docs.x.ai/developers/models/grok-imagine-image-quality), from prompts written, iterated, and selected by the author.\n\n'
+    printf 'Research notes assisted with [AI:fable-5](https://www.anthropic.com/claude-fable-5-mythos-5-system-card), [AI:opus-5](https://www.anthropic.com/claude-opus-5-system-card), [AI:sonnet-5](https://www.anthropic.com/claude-sonnet-5-system-card), [AI:glm-5.2](https://huggingface.co/zai-org/GLM-5.2), [AI:gpt-5.6](https://deploymentsafety.openai.com/gpt-5-6/gpt-5-6.pdf), and the [Applied Anthropology knowledgebase](https://github.com/Open-Technology-Foundation/appliedanthropology).\n\n'
     printf '<br/>\n\n'
     printf 'This work is licensed under the %s.\n\n' "$LICENSE_NAME"
     printf '<%s>\n\n' "$LICENSE_URL"
     printf '</div>\n'
   } >"$colophon" || die "failed to write ${colophon@Q}"
-  inflect_h1 "$colophon" "backmatter colophon"
+  inflect_h1 "$colophon" 'backmatter colophon'
   inputs+=("$colophon")
 
   # The lettered back cover closes the book, mirroring the front. The heading
