@@ -7,6 +7,21 @@ words: 5354
 reading_level: year-12
 updated: 2026-08-08
 draws_on: ["5.1", "5.3", "5.4", "5.2", "5.5"]
+#author: "Biksu Okusi"
+#date: 2026-08-01
+language: en
+audio:
+  # The spoken identity is the published one (essays.url
+  # '0-in-search-of-dharma'), not the book-internal title above.
+  title: "In Search of Dharma"
+  subtitle: "5: How a Dharma Gets Under Your Skin"
+  strip_h1: true
+  provider: google
+  voice: en-AU-Chirp3-HD-Charon
+  lang_code: en-AU
+  # Bare filename: --outdir supplies the directory, so the published
+  # name lives here without a deployment path in the repository.
+  output: 5-in-search-of-dharma.mp3
 ---
 
 # 5: How a Dharma Gets Under Your Skin

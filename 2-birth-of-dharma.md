@@ -7,6 +7,21 @@ words: 4796
 reading_level: year-12
 updated: 2026-08-08
 draws_on: ["2.1", "2.2", "2.3", "5.2", "1.2", "5.5"]
+#author: "Biksu Okusi"
+#date: 2026-08-01
+language: en
+audio:
+  # The spoken identity is the published one (essays.url
+  # '0-in-search-of-dharma'), not the book-internal title above.
+  title: "In Search of Dharma"
+  subtitle: "2: The Genesis of Dharmas"
+  strip_h1: true
+  provider: google
+  voice: en-AU-Chirp3-HD-Charon
+  lang_code: en-AU
+  # Bare filename: --outdir supplies the directory, so the published
+  # name lives here without a deployment path in the repository.
+  output: 2-in-search-of-dharma.mp3
 ---
 
 # 2: The Genesis of Dharmas

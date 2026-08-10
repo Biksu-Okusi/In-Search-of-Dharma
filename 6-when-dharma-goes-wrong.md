@@ -7,6 +7,21 @@ words: 5997
 reading_level: year-12
 updated: 2026-08-08
 draws_on: ["7.1", "7.2", "7.3", "7.6", "7.7", "6.3", "6.4", "5.5"]
+#author: "Biksu Okusi"
+#date: 2026-08-01
+language: en
+audio:
+  # The spoken identity is the published one (essays.url
+  # '0-in-search-of-dharma'), not the book-internal title above.
+  title: "In Search of Dharma"
+  subtitle: "6: When Dharmas Go Wrong"
+  strip_h1: true
+  provider: google
+  voice: en-AU-Chirp3-HD-Charon
+  lang_code: en-AU
+  # Bare filename: --outdir supplies the directory, so the published
+  # name lives here without a deployment path in the repository.
+  output: 6-in-search-of-dharma.mp3
 ---
 
 # 6: When Dharmas Go Wrong

@@ -7,6 +7,21 @@ words: 5366
 reading_level: year-12
 updated: 2026-08-08
 draws_on: ["4.1", "1.3", "7.3", "8.1"]
+#author: "Biksu Okusi"
+#date: 2026-08-01
+language: en
+audio:
+  # The spoken identity is the published one (essays.url
+  # '0-in-search-of-dharma'), not the book-internal title above.
+  title: "In Search of Dharma"
+  subtitle: "3: The Dharmas of the Samin of Java"
+  strip_h1: true
+  provider: google
+  voice: en-AU-Chirp3-HD-Charon
+  lang_code: en-AU
+  # Bare filename: --outdir supplies the directory, so the published
+  # name lives here without a deployment path in the repository.
+  output: 3-in-search-of-dharma.mp3
 ---
 
 # 3: The Dharmas of the Samin of Java

@@ -7,6 +7,21 @@ words: 6492
 reading_level: year-12
 updated: 2026-08-08
 draws_on: ["8.1", "8.2", "8.3", "8.4", "8.5", "3.4", "4.1", "7.4", "7.5", "7.7"]
+#author: "Biksu Okusi"
+#date: 2026-08-01
+language: en
+audio:
+  # The spoken identity is the published one (essays.url
+  # '0-in-search-of-dharma'), not the book-internal title above.
+  title: "In Search of Dharma"
+  subtitle: "8: Creating Dharmas"
+  strip_h1: true
+  provider: google
+  voice: en-AU-Chirp3-HD-Charon
+  lang_code: en-AU
+  # Bare filename: --outdir supplies the directory, so the published
+  # name lives here without a deployment path in the repository.
+  output: 8-in-search-of-dharma.mp3
 ---
 
 # 8: Creating Dharmas

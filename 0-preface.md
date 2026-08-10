@@ -7,6 +7,21 @@ words: 3611
 reading_level: year-12
 updated: 2026-08-08
 draws_on: ["0.1", "0.2", "0.3", "0.4", "0.5", "0.6", "0.7"]
+#author: "Biksu Okusi"
+#date: 2026-08-01
+language: en
+audio:
+  # The spoken identity is the published one (essays.url
+  # '0-in-search-of-dharma'), not the book-internal title above.
+  title: "In Search of Dharma"
+  subtitle: "0: Preface"
+  strip_h1: true
+  provider: google
+  voice: en-AU-Chirp3-HD-Charon
+  lang_code: en-AU
+  # Bare filename: --outdir supplies the directory, so the published
+  # name lives here without a deployment path in the repository.
+  output: 0-in-search-of-dharma.mp3
 ---
 
 # 0: Preface
@@ -47,11 +62,11 @@ Parts of that childhood were genuinely wonderful. A working-class upbringing in 
 
 Between that and Indonesia lies an Australian working life I will pass over, save for the one strand that bears on this book: somewhere in it I taught myself to program, and spent a decade building the Australian Labor Party's first computerised campaign and polling systems (yes, the irony).
 
-In 1996 I moved — migrated, actually — to Indonesia, and I have lived here ever since. I am now an Indonesian citizen, and I make my living running a corporate-services firm (yes, another irony) and, increasingly, building the knowledgebases this book draws on. Three decades inside Indonesian society did the deepest work on the lens. I do not write about dharma as a Westerner reaching for the exotic East. I live in a country whose language and cosmology are saturated with Sanskrit, where *dharma* is an ordinary, slightly worn loanword rather than a sacred mystery, and where the deep Indic substratum beneath a nominally Muslim surface is never very far from view. The word is furniture to me, not incense.
+In 1996 I moved — migrated, actually — to Indonesia, and I have lived here ever since. I am now an Indonesian citizen, and I make my living running a <a href="https://okusiassociates.com">corporate services firm</a> (yes, another irony) and, increasingly, building the knowledgebases this book draws on. Three decades inside Indonesian society did the deepest work on the lens. I do not write about dharma as a Westerner reaching for the exotic East. I live in a country whose language and cosmology are saturated with Sanskrit, where *dharma* is an ordinary, slightly worn loanword rather than a sacred mystery, and where the deep Indic substratum beneath a nominally Muslim surface is never very far from view. The word is furniture to me, not incense.
 
 That immersion had a particular shape, and it holds the oldest root of this whole inquiry. In my late thirties I went back to university for a specialist degree in Indonesian anthropology at Murdoch University, including a year at Universitas Gadjah Mada in Yogyakarta, and it was there that my Asian Studies lecturer, Paul Stange, a scholar of Javanese mysticism, introduced me to Sumarah: a quiet Javanese movement that calls itself not a religion but a philosophy of life, a practice of surrender with no fixed guru, no creed, and no demand that you believe anything at all. It was inevitably bound up with elements of traditional Javanese culture I did not always share, but it gave me something I had no name for at the time: a working example of a contemplative and ethical path carried within a culture rather than a church, mosque or temple. This was, I can see now, my first recognisable "secular dharma", met fully two decades before I ever sat down in a Bodhi College retreat; and I am no detached observer, I built the international movement's English-language [website](https://sumarah.net) back in 1998. It planted early the suspicion I later argue out loud: that a dharma is far harder to prise away from its culture than from its gods.
 
-My personal life has been large and disorderly by any conventional measure: more marriages than is decent, children and grandchildren scattered across three countries, the ordinary share of estrangements and an extraordinary share of complications. Between 2012 and 2015 I lost a son, and then a partner, and it was during and after that stretch that a long, idle interest in dharma turned into something closer to a need. I will not pretend to know whether grief sharpened the search or merely cleared the time for it. But I would be misrepresenting the work if I let you picture it arriving out of serenity. It came, like most things worth having, out of a fair amount of mess.
+My personal life has been large and disorderly by any conventional measure: more marriages than is decent, children and grandchildren scattered across three countries, the ordinary share of estrangements and an extraordinary share of complications. Between 2012 and 2015 I lost a son, and then a partner, and it was during and after that stretch that a long, idle interest in dharmas turned into something closer to a need. I will not pretend to know whether grief sharpened the search or merely cleared the time for it. But I would be misrepresenting the work if I let you picture it arriving out of serenity. It came, like most things worth having, out of a fair amount of mess.
 
 ## The one idea
 
@@ -79,7 +94,7 @@ The discipline underneath all of this is sourcing, and I have come to picture it
 
 Now the part that will make some readers uneasy, so I will be exact about it. Artificial intelligence is built into the foundations of this project, and without it the work could not exist; not because a machine had anything to say about dharma, but because only a machine could make forty years of accumulated reading instantly answerable. Its work was the research: fetching passages from the corpus, assembling the sourced notes, helping check citations against their sources, flagging any broken chain. It is very good at that legwork, and it made no final judgement; but its retrieval did shape what got surfaced and what stayed buried, which is a bias with consequences Part 8 reckons with squarely, and it is why every chain was checked by hand. A machine cannot know what is true or what is worth saying, and a book is nothing but those judgements, made one after another. The writing is mine: the structure and the sentences you are reading, worked up from the notes. Where the machine offered me text, I treated it as I treated every other source: argued with it, overruled it, and caught it fabricating with such fluent confidence that no claim was let stand until I had traced it back to a real source myself. The voice is mine; so are the errors. What I got in exchange is sourcing far more thorough than one writer could manage alone.
 
-One last strangeness needs naming, because it sits at the centre of the whole undertaking. The corpus is both my instrument and, increasingly, my subject. Part 8 asks whether a machine could be taught human ethics at all, and what would be lost in the teaching. I am, in a small and literal way, already running that experiment, feeding a particular, plural, deeply human tradition into a machine and watching what it makes of it. I am not a neutral observer of that question; I'm standing inside it!
+One last strangeness needs naming, because it sits at the centre of the whole undertaking. The applied anthropology corpus is both my instrument and, increasingly, my subject. Part 8 asks whether a machine could be taught human ethics at all, and what would be lost in the teaching. I am, in a small and literal way, already running that experiment, feeding a particular, plural, deeply human tradition into a machine and watching what it makes of it. I am not a neutral observer of that question; I'm standing inside it!
 
 ## What this is, and isn't
 
