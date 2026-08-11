@@ -42,10 +42,10 @@ It is better to say **a dharma** than **the Dharma**, because human beings creat
 
 A Buddhist dharma, a Hindu dharma, a scientific-rationalist dharma, a warrior dharma, an environmental dharma, a professional dharma, a family dharma, a personal dharma: all of these are candidates. But coherence alone does not make a dharma. What marks one off from mere custom, law, or etiquette is a combination of four features:
 
-- **Comprehensive** — it governs a whole life, or a whole domain of one, not a single slice of behaviour
-- **Identity-constituting** — it binds from the inside, by conviction, and works to remake its carrier
-- **Oriented toward the good** — an answer to how one *ought* to live, not a strategy for getting ahead
-- **Reflectively self-aware** — it can be held up and known *as* a path: named, questioned, reformed
+- **Comprehensive** -- it governs a whole life, or a whole domain of one, not a single slice of behaviour
+- **Identity-constituting** -- it binds from the inside, by conviction, and works to remake its carrier
+- **Oriented toward the good** -- an answer to how one *ought* to live, not a strategy for getting ahead
+- **Reflectively self-aware** -- it can be held up and known *as* a path: named, questioned, reformed
 
 The features come in degrees; a profession, a subculture, an environmentalism may carry two or three, and sit near the rim.
 
@@ -57,14 +57,14 @@ Religious dharmas do not have automatic privilege over secular ones. All dharmas
 
 A dharma usually includes:
 
-- **Values** — what matters
-- **Ethics** — what is appropriate or inappropriate
-- **Practices** — what one repeatedly does
-- **Stories** — why life is this way
-- **Duties** — what one owes to self, others, community, or world
-- **Community** — whom one belongs to, and who holds one to the path
-- **Identity** — who "we" are, or who "I" am trying to become
-- **Discipline** — how one trains conduct, attention, speech, desire, and response
+- **Values** -- what matters
+- **Ethics** -- what is appropriate or inappropriate
+- **Practices** -- what one repeatedly does
+- **Stories** -- why life is this way
+- **Duties** -- what one owes to self, others, community, or world
+- **Community** -- whom one belongs to, and who holds one to the path
+- **Identity** -- who "we" are, or who "I" am trying to become
+- **Discipline** -- how one trains conduct, attention, speech, desire, and response
 
 A dharma is more than an idea: it becomes real through behaviour. It is embodied in how one speaks, works, eats, raises children, handles conflict, treats strangers, responds to suffering, and uses power.
 
