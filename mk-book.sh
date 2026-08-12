@@ -500,7 +500,7 @@ main() {
     for dst in "${inputs[@]:1}"; do
       h1=$(grep -m1 '^# ' "$dst") || die "no H1 found in $dst"
       label=${h1#\# }
-      if (( k == 0 )); then
+      if (( k == 0 || k == 9 )); then
         printf '*[%s](#%s)*\n\n' "$label" "$(slugify "$label")"
       else
         printf '[%s](#%s)\n\n' "$label" "$(slugify "$label")"
