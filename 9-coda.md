@@ -3,9 +3,9 @@ part: 9
 title: "Coda"
 slug: coda
 status: done
-words: 1102
+words: 1224
 reading_level: year-12
-updated: 2026-08-08
+updated: 2026-08-13
 draws_on: []
 #author: "Biksu Okusi"
 #date: 2026-08-01
@@ -65,6 +65,7 @@ A dharma usually includes:
 - **Community** -- whom one belongs to, and who holds one to the path
 - **Identity** -- who "we" are, or who "I" am trying to become
 - **Discipline** -- how one trains conduct, attention, speech, desire, and response
+- **Transmission** -- how the way is handed on: by story, example, drill, and correction
 
 A dharma is more than an idea: it becomes real through behaviour. It is embodied in how one speaks, works, eats, raises children, handles conflict, treats strangers, responds to suffering, and uses power.
 
@@ -77,6 +78,8 @@ A dharma helps regulate these forces. It gives structure to conduct, makes peopl
 In this sense, a dharma is a kind of **ethical software** running on human biological hardware.
 
 It does not erase our animal nature. It trains it.
+
+And none of this survives on its own. Every carrier of a dharma dies, so a dharma persists only by reproducing itself in new people: taught by story and example, grooved in by practice and repetition, held in place by a community that notices when it slips. Call it education, in the broadest sense, so long as the word is allowed to include all of that; explicit instruction is the smallest part of it, and most of the teaching happens below argument, which is why a dharma feels inherited rather than chosen. A dharma that cannot reproduce itself dies with the people who hold it, however wise it was.
 
 And no dharma is built from nothing. New dharmas emerge from within the cultures and communities that carry their makers, and they inherit the materials of those cultures, the worse along with the better. The craft lies in choosing what deserves to go on holding.
 
@@ -118,7 +121,7 @@ For readers who came from the secular-dharma world carrying its standing worry (
 
 ## A simple definition
 
-> **A dharma is a way of living that holds a person or a people together. The better ones hold without crushing, and leave the pen in the hands of the held.**
+> **A dharma is a way of living that holds a person or a people together. The better ones hold without crushing, and leave the pen in the hands of those held.**
 
 <!--audio stop-->
 
@@ -128,4 +131,4 @@ For readers who came from the secular-dharma world carrying its standing worry (
 
 ## Sources & further reading
 
-*This coda states in miniature what Parts 1–8 argue and source in full; it introduces no new claims. The four features are Part 1's; the translation rule is Part 7's; the two tests are stated at the end of Part 8 and defended at full length in the companion essay* Dharmas: The Better Ones*, published with the research notes on [GitHub](https://github.com/Biksu-Okusi/In-Search-of-Dharma).*
+*This coda states in miniature what Parts 1–8 argue and source in full; it introduces no new claims. The four features are Part 1's; the point about reproduction condenses Part 2's storytelling and Part 5's installation machinery; the translation rule is Part 7's; the two tests are stated at the end of Part 8 and defended at full length in the companion essay* Dharmas: The Better Ones*, published with the research notes on [GitHub](https://github.com/Biksu-Okusi/In-Search-of-Dharma).*
