@@ -24,7 +24,7 @@ audio:
   output: 9-in-search-of-dharma.mp3
 ---
 
-# 9: Coda
+# Coda
 
 <image r 40 "/images/9-defining-dharma_watercolor.webp" "What is dharma?" "">
 

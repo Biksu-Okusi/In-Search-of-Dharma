@@ -3,9 +3,9 @@ part: 0
 title: "Preface"
 slug: preface
 status: done
-words: 3611
+words: 3983
 reading_level: year-12
-updated: 2026-08-16
+updated: 2026-08-17
 draws_on: ["0.1", "0.2", "0.3", "0.4", "0.5", "0.6", "0.7"]
 #author: "Biksu Okusi"
 #date: 2026-08-01
@@ -24,7 +24,7 @@ audio:
   output: 0-in-search-of-dharma.mp3
 ---
 
-# 0: Preface
+# Preface
 
 <image r 40 "/images/0-defining-dharma_watercolor.webp" "In Search of Dharma: Preface" "">
 
@@ -67,6 +67,10 @@ In 1996 I moved -- migrated, actually -- to Indonesia, and I have lived here eve
 That immersion had a particular shape, and it holds the oldest root of this whole inquiry. In my late thirties I went back to university for a specialist degree in Indonesian anthropology at Murdoch University, including a year at Universitas Gadjah Mada in Yogyakarta, and it was there that my Asian Studies lecturer, Paul Stange, a scholar of Javanese mysticism, brought my attention to Sumarah: a quiet Javanese movement that calls itself a philosophy of life, a practice of surrender with no fixed guru, no creed, and no demand that you believe anything at all. It was inevitably bound up with elements of traditional Javanese culture I did not always share, but it gave me something I had no name for at the time: a working example of a contemplative and ethical path carried within a culture rather than a church, mosque or temple. This was, I can see now, my first recognisable "secular dharma", met fully two decades before I ever sat down in a Bodhi College retreat; and I am no detached observer, I built their international movement's English-language [website](https://sumarah.net) back in 1998. It planted early the suspicion I will later argue: that a dharma is far harder to prise away from its culture than from its gods.
 
 My personal life has been large and disorderly by any conventional measure: more marriages than is decent, children and grandchildren scattered across three countries, the ordinary share of estrangements and an extraordinary share of complications. Between 2012 I lost a son, and in 2015 a partner, and it was during and after that stretch that a long, idle interest in dharmas turned into something closer to a need. I will not pretend to know whether grief sharpened the search or merely cleared the time for it. But I would be misrepresenting the work if I let you picture it arriving out of serenity. It came, like most things worth having, out of a fair amount of mess.
+
+One more disclosure belongs here, because it is printed on the cover. *Biksu* is the Indonesian word for a Buddhist monk, and I am not one: no ordination, no robe, no teacher who ever sanctioned me. Nor did I choose the name. It was given to me, beginning more than a decade ago, by Indonesian friends and colleagues -- all of them, as it happens, Muslims -- who knew that I meditated, knew the kind of thing I read, and watched me withdraw into my office studios in Jakarta, Batam and Bali for weeks and months at a time, running the firm entirely online, avoiding direct contact even with its own clients, doing little but programming and studying anthropology. The withdrawal deepened through the grieving years just described, and after the Jakarta attacks of 2009 and 2016: the second came as three bombs, and the second and largest of those went off in the Starbucks directly below my office windows, where I had bought my coffee every working morning. It was probably meant for me. The name, then, was teasing and serious at once, in the way of most Indonesian nicknames. At first it annoyed me. But given names have a way of sinking in, and over the years I have accepted it as part of my Indonesian identity: my practice and my company, Okusi, welded into a single title by other people's humour and affection.
+
+There is also a second, plainer reason it sits on this book. The pages ahead have things to say about communism and about atheism, and in Indonesia, where every citizen's identity card must state a religion, both words still carry real legal and social weight. Publishing under the given name deflects a little of that attention away from my legal one. It is a screen, not a mask; my legal name is attached to this project's public repository and to everything else I have ever published. And I note the fit without apology: a book about how communities make and hand people their dharmas, sent out under a name a community made and handed to me.
 
 ## The one idea
 
@@ -124,7 +128,7 @@ So: that is where all this comes from, who helped make it, and how it was built.
 
 Research notes used in this book are published on [GitHub](https://github.com/Biksu-Okusi/In-Search-of-Dharma). The Part-0 notes appear there in redacted public editions: what rests on private family records stays in my private records, what draws on other people's correspondence appears with their consent, and every redaction is disclosed where it is made.
 
-- [0.1 Life & Formation](0-preface/0.1-life-and-formation.md) -- Perth origins, the migration to Indonesia and citizenship, the temperament, and the personal history sketched here.
+- [0.1 Life & Formation](0-preface/0.1-life-and-formation.md) -- Perth origins, the migration to Indonesia and citizenship, the temperament, the name on the cover, and the personal history sketched here.
 - [0.2 Politics & Anarchism](0-preface/0.2-politics-and-anarchism.md) -- the Communist Party and anarchist years, and the "anarchism as plain natural history" thread.
 - [0.3 The Sangha & the Retreat](0-preface/0.3-sangha-and-retreat.md) -- Bodhi College, the 2018 retreats, Stephen Batchelor, and the 'a secular dharma?' conversations with Rupert Bozeat and Elfie Klinger.
 - [0.4 Network & Publishing](0-preface/0.4-network-and-publishing.md) -- the secular-dharma publishing network: the Tuwhiri Project, the Secular Buddhist Network and Mike Slott's *Mindful Solidarity*, Winton Higgins, and the lapsed `seculardharma.net`, with Ramsey Margolis as one node.
@@ -140,3 +144,4 @@ Research notes used in this book are published on [GitHub](https://github.com/Bi
 - Robert Sapolsky, *Behave* (2017) -- the human behavioural biology that underpins the frame.
 - Stephen Batchelor, *After Buddhism: Rethinking the Dharma for a Secular Age* (2015) -- the dharma as task-based ethics rather than belief; the book behind the retreat.
 - Christopher Boehm, *Hierarchy in the Forest* (1999); Sarah Blaffer Hrdy, *Mothers and Others* (2009); David Sloan Wilson, *This View of Life* (2019) -- the evolution of cooperation, egalitarianism, and prosociality.
+- Gary Dean, [*Meet Me at the Starbucks That Was Bombed*](https://garydean.id/works/meet-me-at-the-starbucks-that-was-bombed) (2026) -- the Jakarta attacks of 2009 and 2016 behind the preface's account of the name on the cover.
