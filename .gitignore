@@ -8,15 +8,14 @@
 CLAUDE.md
 .claude/
 
-# Part 0 research: the notes are published as redacted public editions; only
-# the private substrate is withheld — the mail archive, the seed correspondence,
-# the unredacted originals, and one note held back pending review (0.4).
+# Part 0 research: all seven notes are published as redacted public editions;
+# only the private substrate is withheld — the mail archive, the seed
+# correspondence, and the unredacted originals.
 # The finished, public-facing preface is 0-preface.md at the repo root.
 0-preface/.mail/
 0-preface/.llms/
 0-preface/.private/
 0-preface/_seed.md
-0-preface/0.4-network-and-publishing.md
 
 # Deployment targets: machine names and server paths, kept out of the public
 # repository. deploy.conf.example is tracked and shows the required keys.
