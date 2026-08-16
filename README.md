@@ -42,7 +42,7 @@ The ten parts are also assembled into a single book, *In Search of Dharma* — s
 ./mk-book.sh [epub|pdf|all] [--audio none|link|embed]   # defaults: all, link
 ```
 
-The script preprocesses each part (frontmatter, image shortcodes), then stitches them into an EPUB3 with pandoc and a PDF via weasyprint, with embedded fonts and optional per-chapter audio narration (`link` adds hyperlinks to the hosted MP3s; `embed` bundles them into the EPUB). The built books are tracked in the repository:
+The script preprocesses each part (frontmatter, image shortcodes), then stitches them into an EPUB3 with pandoc and a PDF via weasyprint, with embedded fonts and optional per-chapter audio narration (`link` adds hyperlinks to the hosted MP3s; `embed` bundles them into the EPUB). The companion essay [`the-better-ones.md`](the-better-ones.md), which states and stress-tests the project's two-test standard for judging dharmas, closes the book as its appendix. The built books are tracked in the repository:
 
 - [`In-Search-of-Dharma_Biksu-Okusi_2026.epub`](In-Search-of-Dharma_Biksu-Okusi_2026.epub) — EPUB3, with links to the hosted chapter narrations (~3.5 MB)
 - [`In-Search-of-Dharma_Biksu-Okusi_2026_with-audio.epub`](In-Search-of-Dharma_Biksu-Okusi_2026_with-audio.epub) — EPUB3 with the narration MP3s embedded (~69 MB)

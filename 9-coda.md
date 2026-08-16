@@ -133,4 +133,4 @@ For readers who came from the secular-dharma world carrying its standing worry (
 
 ## Sources & further reading
 
-*This coda states in miniature what Parts 1–8 argue and source in full; it introduces no new claims. The four features and the placeholder rule are Part 1's; the point about reproduction condenses Part 2's storytelling and Part 5's installation machinery; the translation rule is Part 7's; the two tests are stated at the end of Part 8 and defended at full length in the companion essay* Dharmas: The Better Ones*, published with the research notes on [GitHub](https://github.com/Biksu-Okusi/In-Search-of-Dharma).*
+*This coda states in miniature what Parts 1–8 argue and source in full; it introduces no new claims. The four features and the placeholder rule are Part 1's; the point about reproduction condenses Part 2's storytelling and Part 5's installation machinery; the translation rule is Part 7's; the two tests are stated at the end of Part 8 and defended at full length in the appendix that follows,* Dharmas: The Better Ones, *which is also published with the research notes on [GitHub](https://github.com/Biksu-Okusi/In-Search-of-Dharma).*

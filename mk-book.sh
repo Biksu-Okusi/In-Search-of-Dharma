@@ -1,5 +1,6 @@
 #!/bin/bash
-# mk-book.sh - Build "In Search of Dharma" (EPUB and/or PDF) from cover.md + 0..9.
+# mk-book.sh - Build "In Search of Dharma" (EPUB and/or PDF) from cover.md +
+# essays 0..9 + the companion essay the-better-ones.md as appendix.
 #
 #   ./mk-book.sh [epub|pdf|all] [--audio none|link|embed]   (defaults: all, link)
 #
@@ -420,7 +421,9 @@ main() {
       || info "local MP3s absent (${missing# }); links still resolve via ${AUDIO_BASE_URL@Q}"
   fi
 
-  # Assemble the source list: cover first, then essays 0..9 by numeric prefix.
+  # Assemble the source list: cover first, then essays 0..9 by numeric prefix,
+  # then the companion essay as the book's appendix (after the Coda, before the
+  # colophon). The appendix has no chapter number and no audio narration.
   local -a sources=("$SCRIPT_DIR"/cover.md)
   local -i n
   local -a match
@@ -430,6 +433,9 @@ main() {
     [[ -f ${match[0]} ]] || die "essay $n source not found: ${match[0]}"
     sources+=("${match[0]}")
   done
+  local -r APPENDIX="$SCRIPT_DIR"/the-better-ones.md
+  [[ -f $APPENDIX ]] || die "appendix source not found: ${APPENDIX@Q}"
+  sources+=("$APPENDIX")
 
   # Install the cleanup trap before creating the temp dir, so a signal landing
   # between the two cannot leak it. Single quotes defer expansion to exit time;
@@ -472,14 +478,15 @@ main() {
 
   # Preprocess into ordered temp files (00-, 01-, ...) to preserve chapter order.
   # Chapters are cover(=0), then essays 0..9 at indices 1..10, so essay index i
-  # carries audio number i-1. The cover (i=0) never gets an audio player.
+  # carries audio number i-1. The cover (i=0) never gets an audio player, and
+  # neither does the appendix (i=11): no narration exists for it.
   local -a inputs=()
   local -i i=0
   local -- src dst block
   for src in "${sources[@]}"; do
     printf -v dst '%s/%02d-%s' "$tmp" "$i" "${src##*/}"
     preprocess "$src" >"$dst" || die "preprocessing failed for ${src@Q}"
-    if [[ $audio_mode != none ]] && ((i >= 1)); then
+    if [[ $audio_mode != none ]] && ((i >= 1 && i <= 10)); then
       block=$(audio_block "$((i - 1))" "$audio_mode")
       splice_after_h1 "$dst" "$block"
     fi
@@ -490,8 +497,9 @@ main() {
   # Hand-built contents page, inserted after the title page so the book reads
   # cover -> title -> contents -> chapters. pandoc's --toc cannot do this: it
   # always places the TOC at the very front of the flow. Entries link to each
-  # chapter's H1 via its pandoc auto-identifier (see slugify). The Preface
-  # entry is italic, the rest render in small caps (see .contents CSS).
+  # chapter's H1 via its pandoc auto-identifier (see slugify). The Preface,
+  # Coda and appendix entries are italic, the rest render in small caps (see
+  # .contents CSS).
   local -- contents="$tmp"/contents.md
   {
     printf '<div align="center">\n\n# Contents {.unlisted .contents}\n\n'
@@ -500,7 +508,7 @@ main() {
     for dst in "${inputs[@]:1}"; do
       h1=$(grep -m1 '^# ' "$dst") || die "no H1 found in $dst"
       label=${h1#\# }
-      if (( k == 0 || k == 9 )); then
+      if (( k == 0 || k >= 9 )); then
         printf '*[%s](#%s)*\n\n' "$label" "$(slugify "$label")"
       else
         printf '[%s](#%s)\n\n' "$label" "$(slugify "$label")"
@@ -512,14 +520,19 @@ main() {
   inputs=("${inputs[0]}" "$contents" "${inputs[@]:1}")
 
   # Standard Ebooks-style semantic inflection. inputs is now
-  # [cover(title page), contents, essays 0..9]; tag each so readers and the
-  # landmarks navigation know the cover is the title page, the essays are the
-  # body, and reading begins at essay 0 rather than the cover.
+  # [cover(title page), contents, essays 0..9, appendix]; tag each so readers
+  # and the landmarks navigation know the cover is the title page, the essays
+  # are the body, the companion is an appendix, and reading begins at essay 0
+  # rather than the cover.
   inflect_h1 "${inputs[0]}" 'frontmatter titlepage'
   inflect_h1 "${inputs[1]}" 'frontmatter'
   local -- ch
   for ch in "${inputs[@]:2}"; do
-    inflect_h1 "$ch" 'bodymatter chapter'
+    if [[ $ch == *"${APPENDIX##*/}" ]]; then
+      inflect_h1 "$ch" 'backmatter appendix'
+    else
+      inflect_h1 "$ch" 'bodymatter chapter'
+    fi
   done
 
   # A colophon, closing the book (backmatter), in the same centred house style as

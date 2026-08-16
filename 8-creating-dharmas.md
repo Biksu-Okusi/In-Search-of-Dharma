@@ -200,6 +200,7 @@ Research notes used in this book are published on [GitHub](https://github.com/Bi
 - Isaiah Berlin on value pluralism, and Martha Nussbaum & Amartya Sen, the capabilities approach -- pluralism as the alternative to both relativism and absolutism; the floor with teeth, its exact placement left open.
 - Friedrich Nietzsche, *Thus Spoke Zarathustra* (1883) and *Beyond Good and Evil* (1886) -- the tables of goods created by peoples, not found; the most serious attempt to rank them with no floor at all.
 - Evan Thompson, *Why I Am Not a Buddhist* (2020) -- against Buddhist exceptionalism and naturalised "neural Buddhism"; the nearest published challenge to this book's keeping of a Buddhist-descended word as its master category, answered here only by Part 1's disclosed-placeholder rule.
+- The two-test standard is stated whole, defended, and stress-tested in this book's appendix, *Dharmas: The Better Ones*.
 - Oliver Scott Curry, "Is It Good to Cooperate?" (*Current Anthropology*, 2019) -- seven moral rules across sixty societies; morality as variation on a theme.
 - WB Gallie, "Essentially Contested Concepts" (1956) -- why the argument over dharma never closes.
 - Rutger Bregman, *Humankind: A Hopeful History* (2019) -- the real 'Ata shipwreck of 1965–66 against Golding's fiction; and the Robbers Cave correction (the buried 1953 Middle Grove pre-experiment, and Gina Perry's archival finding that the 1954 hostility was manufactured by the experimenters).
