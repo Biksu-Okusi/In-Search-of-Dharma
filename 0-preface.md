@@ -122,7 +122,7 @@ So: that is where all this comes from, who helped make it, and how it was built.
 
 **Research notes**
 
-Research notes used in this book are published on [GitHub](https://github.com/Biksu-Okusi/In-Search-of-Dharma).
+Research notes used in this book are published on [GitHub](https://github.com/Biksu-Okusi/In-Search-of-Dharma). The Part-0 notes appear there in redacted public editions: what rests on private family records or other people's correspondence stays in my private records, with every redaction disclosed where it is made, and two notes that touch living correspondents will follow once they have seen them.
 
 - 0.1 Life & Formation -- Perth origins, the migration to Indonesia and citizenship, the temperament, and the personal history sketched here.
 - 0.2 Politics & Anarchism -- the Communist Party and anarchist years, and the "anarchism as plain natural history" thread.

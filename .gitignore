@@ -8,10 +8,16 @@
 CLAUDE.md
 .claude/
 
-# Private author & method scaffolding (Part 0 research + mail archive).
-# The finished, public-facing preface is 0-preface.md at the repo root;
-# only the underlying research notes and correspondence are withheld.
-0-preface/
+# Part 0 research: the notes are published as redacted public editions; only
+# the private substrate is withheld — the mail archive, the seed correspondence,
+# the unredacted originals, and two notes held back pending review (0.4, 0.7).
+# The finished, public-facing preface is 0-preface.md at the repo root.
+0-preface/.mail/
+0-preface/.llms/
+0-preface/.private/
+0-preface/_seed.md
+0-preface/0.4-network-and-publishing.md
+0-preface/0.7-influences-and-acknowledgments.md
 
 # Deployment targets: machine names and server paths, kept out of the public
 # repository. deploy.conf.example is tracked and shows the required keys.
