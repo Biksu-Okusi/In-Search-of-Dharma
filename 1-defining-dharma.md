@@ -44,7 +44,7 @@ In one Jain usage the word even names a literal physical substance, the invisibl
 
 So, if a dharma is "that which holds," then the question "what is a dharma?" becomes a question about a *function*, not a faith. We are no longer asking which doctrine is true. We are asking: what holds a person, or a people, together under the weight of fear, conflict, temptation, and sheer confusion about how to live? Every human group, we will see, grows something to do that holding. We are going to spend eight parts looking at the astonishing variety of those somethings.
 
-## There is no *The* Dharma
+## There is no "*The* Dharma"
 
 If the first oddity was that so wispy a word rests on so solid a root, the second undoes the way the word reached us. In English we tend to say "*the* Dharma," with a definite article and a capital D, as though it named one specific thing, usually the teachings of Buddhism. That usage is real, but it is also late, narrow, and mostly a Western convenience. Go back to the traditions that actually gave rise to the word, and the tidy singular dissolves into a bewildering plurality.
 
@@ -52,7 +52,7 @@ In classical Indian thought, there is *svadharma*, your *own* dharma, the right 
 
 This is not a flaw in my research; it is the central fact. There is no single *The* Dharma, in the way there is a single Mount Everest. There are *dharmas*, plural: many of them, suited to many different lives and worlds. The moment this is accepted, a door opens that the rest of this book can walk through. If a dharma is simply a culture's worked-out answer to "how should we live, and what holds us together while we do," then dharmas are not the property of the East, or of religion, or of antiquity. A secular philosophy can be a dharma. A people's unwritten code can be a dharma. So, for that matter, can the great monotheisms, and the ethics of a profession, and the half-conscious creed of a subculture. None of them sits automatically above the others. That refusal to rank them in advance is the stance I take throughout: secular and sacred, written and spoken, all treated as equally real candidates. It falls out directly from the plurality the word has carried all along.
 
-And an important word of housekeeping, because it governs everything that follows. From here on, the word *dharma* is a placeholder. The thing this book is about is the concept: the answer to how-should-we-live that every culture builds and names in its own tongue, or builds and never thinks to name. *Ubuntu* is not a translation of dharma, nor *ma'at*, nor the *Tao*; each is a people's own word for their own instance of the thing. I keep the Sanskrit label because, of all the candidates, it is the one whose root says most plainly what the thing does. Where this project traces the word's history, it is studying a specimen, not consulting an owner.
+And an important word of housekeeping, because it governs everything that follows. **From here on, the word *dharma* is a placeholder.** The thing this book is about is the *concept*: the answer to how-should-we-live that every culture builds and names in its own tongue, or builds and never thinks to name. *Ubuntu* is not a translation of dharma, nor *ma'at*, nor the *Tao*; each is a people's own word for their own instance of the thing. I keep the Sanskrit label because, of all the candidates, it is the one whose root says most plainly what the thing does. Where this project traces the word's history, it is studying a specimen, not consulting an owner.
 
 ## Why everyone has (at least) one
 
