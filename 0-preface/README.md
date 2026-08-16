@@ -31,24 +31,24 @@ it shaped the answer.
 | 0.4 | Network & Publishing                           | held | The transnational secular-dharma network — the Tuwhiri Project, Higgins, Slott's *Mindful Solidarity*, the Batchelors' *What is This?*, and the lapsed `seculardharma.net` | *held — public edition pending correspondent review* |
 | 0.5 | The Thesis: Dharma as Evolved Cultural Technology | done | The series' intellectual core: dharmas as evolved cultural technologies, applied anthropology as substrate and secular dharma as one application, grounded in the influence "cast" | [0.5-thesis-evolved-dharma.md](0.5-thesis-evolved-dharma.md) |
 | 0.6 | The Knowledgebase as Method                    | done | The ~40-year collection made queryable via RAG; the ~14,000-document `appliedanthropology` / `seculardharma` corpus (wah.id / CLI) that is both instrument and subject; Indonesia's Sanskrit substratum | [0.6-knowledgebase-as-method.md](0.6-knowledgebase-as-method.md) |
-| 0.7 | Influences & Acknowledgments                   | held | The real network behind the essays and KB — Irfan Kortschak (KB source-texts), Paul Stange and Sumarah, the Bodhi College teachers, the sangha, the wider secular-dharma cohort, the publishing cluster, and the Evolution Institute / Prosocial.world tie | *held — public edition pending revision* |
+| 0.7 | Influences & Acknowledgments                   | done | The real network behind the essays and KB — Irfan Kortschak (KB source-texts), Paul Stange and Sumarah, the Bodhi College teachers, the sangha, the wider secular-dharma cohort (unnamed in the public edition), the publishing cluster, and the Evolution Institute / Prosocial.world tie | [0.7-influences-and-acknowledgments.md](0.7-influences-and-acknowledgments.md) |
 Together these notes are the cited evidence base for the book's **Preface (Part 0)**
 — the Stage-2 prose that introduces the author, the lineage, and the method to
 readers of the series.
 
 ## Publication status
 
-Five notes are published here as **redacted public editions** (0.1, 0.2, 0.3, 0.5,
-0.6). A public edition excludes personal contact details, private third-party
+Six notes are published here as **redacted public editions** (0.1, 0.2, 0.3, 0.5,
+0.6, 0.7). A public edition excludes personal contact details, private third-party
 specifics, and passages resting on the author's private records; every exclusion is
 disclosed in the note where it is made, and the standing limits hold across all of
-Part 0: the author's children are referred to by relationship only, and no personal
-identifiers are reproduced anywhere.
+Part 0: the author's children are referred to by relationship only, no personal
+identifiers are reproduced anywhere, and — in 0.7 especially — private individuals
+reconstructed from the mail archive are described but not named.
 
-Two notes are **held back for now**: 0.4 (Network & Publishing) rests on private
-correspondence with living colleagues and awaits their review; 0.7 (Influences &
-Acknowledgments) is in revision to remove a roster of private individuals
-reconstructed from the mail archive. Public editions of both will follow.
+One note is **held back for now**: 0.4 (Network & Publishing) rests on private
+correspondence with living colleagues and awaits their review. Its public edition
+will follow.
 
 Permanently private, and not part of this repository: the seed correspondence
 (`_seed.md`), the mail archive (`.mail/`), and the unredacted originals of these

@@ -67,7 +67,7 @@ The evidence base is organised into eight categories, each a directory of cited 
 
 The master question registry and status dashboard is [`Questions.md`](Questions.md); the shared note structure is fixed by [`1-foundational/_template.md`](1-foundational/_template.md). Every work cited across the notes is resolved once in the citation register, [`SOURCES.md`](SOURCES.md).
 
-The **Preface (Part 0)** has its own set of research notes ([`0-preface/`](0-preface/)), held to the same template and citation discipline. Because they rest substantially on primary self-report and private correspondence, they are published as **redacted public editions**: passages resting on private family records or third-party correspondence remain in the author's private records, and every redaction is disclosed in place. Two notes (0.4, 0.7) are held back pending correspondent review and revision; the mail archive and seed correspondence are permanently private.
+The **Preface (Part 0)** has its own set of research notes ([`0-preface/`](0-preface/)), held to the same template and citation discipline. Because they rest substantially on primary self-report and private correspondence, they are published as **redacted public editions**: passages resting on private family records or third-party correspondence remain in the author's private records, and every redaction is disclosed in place. One note (0.4) is held back pending correspondent review; the mail archive and seed correspondence are permanently private.
 
 ◉ **Status.** Both stages are complete: all 52 research questions have their cited notes, and all ten parts are written. The series is in final pre-publication polish, so wording may still shift; the evidence base is stable.
 
