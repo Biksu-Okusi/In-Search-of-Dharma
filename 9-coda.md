@@ -3,9 +3,9 @@ part: 9
 title: "Coda"
 slug: coda
 status: done
-words: 1224
+words: 1278
 reading_level: year-12
-updated: 2026-08-13
+updated: 2026-08-16
 draws_on: []
 #author: "Biksu Okusi"
 #date: 2026-08-01
@@ -39,6 +39,8 @@ At its deepest level, a dharma is **that which holds a life, a community, or a w
 ## There is no single "the Dharma"
 
 It is better to say **a dharma** than **the Dharma**, because human beings create many dharmas.
+
+And the word itself is a placeholder. Every culture builds the thing and names it in its own tongue: *Ubuntu*, *ma'at*, and the *Tao* are not translations of *dharma* but sibling names for sibling instances. The Sanskrit is kept because, of all the candidates, its root says most plainly what the thing does: hold.
 
 A Buddhist dharma, a Hindu dharma, a scientific-rationalist dharma, a warrior dharma, an environmental dharma, a professional dharma, a family dharma, a personal dharma: all of these are candidates. But coherence alone does not make a dharma. What marks one off from mere custom, law, or etiquette is a combination of four features:
 
@@ -131,4 +133,4 @@ For readers who came from the secular-dharma world carrying its standing worry (
 
 ## Sources & further reading
 
-*This coda states in miniature what Parts 1–8 argue and source in full; it introduces no new claims. The four features are Part 1's; the point about reproduction condenses Part 2's storytelling and Part 5's installation machinery; the translation rule is Part 7's; the two tests are stated at the end of Part 8 and defended at full length in the companion essay* Dharmas: The Better Ones*, published with the research notes on [GitHub](https://github.com/Biksu-Okusi/In-Search-of-Dharma).*
+*This coda states in miniature what Parts 1–8 argue and source in full; it introduces no new claims. The four features and the placeholder rule are Part 1's; the point about reproduction condenses Part 2's storytelling and Part 5's installation machinery; the translation rule is Part 7's; the two tests are stated at the end of Part 8 and defended at full length in the companion essay* Dharmas: The Better Ones*, published with the research notes on [GitHub](https://github.com/Biksu-Okusi/In-Search-of-Dharma).*

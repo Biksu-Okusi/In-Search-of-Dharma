@@ -3,9 +3,9 @@ part: 8
 title: "Creating Dharmas"
 slug: creating-dharmas
 status: done
-words: 6492
+words: 6548
 reading_level: year-12
-updated: 2026-08-08
+updated: 2026-08-16
 draws_on: ["8.1", "8.2", "8.3", "8.4", "8.5", "3.4", "4.1", "7.4", "7.5", "7.7"]
 #author: "Biksu Okusi"
 #date: 2026-08-01
@@ -34,7 +34,7 @@ A woman sits on a cushion in a small flat in a large city. A handbook of Stoic s
 
 Elsewhere, a team at an AI company sits down to write what it openly calls a constitution. Not a constitution for a country: a list of values for a machine, governing how it answers when a stranger asks it how to live. The company is Anthropic; the method is called "Constitutional AI." Anthropic trains the model to critique and revise its own responses against an explicit, plain-language list of principles, so its values sit in a document anyone can read, argue with, and rewrite. In October 2023, with the Collective Intelligence Project, it put that last verb to the test: around a thousand US American adults proposed and voted on principles for a public constitution, and the model trained on what they wrote matched the in-house version on capability and came out less biased. A thousand US American adults are not humanity, and the whose-values question never fully closes. Still, ordinary people, asked directly, set out to write a dharma on purpose, and the thing they wrote held its own.
 
-Between those two pictures sits the whole question. The seeker on the cushion and the team at their screens are doing the same thing at wildly different scales: constructing, by hand and on purpose, an answer to how to live. We have been heading here from the start: from the oldest root, *that which holds*, through the teak forests of Java, to the moment the old foundations gave way. For nearly all of history, the question was *which* of the inherited dharmas was true, and how to submit? She cannot ask that any more. Her question, and now ours, is one earlier ages rarely asked so nakedly: not *which dharma do I receive*, but *can we build a better one, knowing exactly what we are doing, on purpose?*
+Between those two pictures sits the whole question. The seeker on the cushion and the team at their screens are doing the same thing at wildly different scales: constructing, by hand and on purpose, an answer to how to live. A reminder from Part 1 is due exactly here, where the word travels farthest from its Indian home: *dharma* remains this book's placeholder, and a company's constitution for a machine qualifies on the same terms Ubuntu and the way of the *wong sikep* did, by what it does rather than by where the word was born. We have been heading here from the start: from the oldest root, *that which holds*, through the teak forests of Java, to the moment the old foundations gave way. For nearly all of history, the question was *which* of the inherited dharmas was true, and how to submit? She cannot ask that any more. Her question, and now ours, is one earlier ages rarely asked so nakedly: not *which dharma do I receive*, but *can we build a better one, knowing exactly what we are doing, on purpose?*
 
 ## The thing we were always doing
 
