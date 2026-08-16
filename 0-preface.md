@@ -5,7 +5,7 @@ slug: preface
 status: done
 words: 3611
 reading_level: year-12
-updated: 2026-08-08
+updated: 2026-08-16
 draws_on: ["0.1", "0.2", "0.3", "0.4", "0.5", "0.6", "0.7"]
 #author: "Biksu Okusi"
 #date: 2026-08-01
@@ -124,13 +124,13 @@ So: that is where all this comes from, who helped make it, and how it was built.
 
 Research notes used in this book are published on [GitHub](https://github.com/Biksu-Okusi/In-Search-of-Dharma). The Part-0 notes appear there in redacted public editions: what rests on private family records stays in my private records, what draws on other people's correspondence appears with their consent, and every redaction is disclosed where it is made.
 
-- 0.1 Life & Formation -- Perth origins, the migration to Indonesia and citizenship, the temperament, and the personal history sketched here.
-- 0.2 Politics & Anarchism -- the Communist Party and anarchist years, and the "anarchism as plain natural history" thread.
-- 0.3 The Sangha & the Retreat -- Bodhi College, the 2018 retreats, Stephen Batchelor, and the 'a secular dharma?' conversations with Rupert Bozeat and Elfie Klinger.
-- 0.4 Network & Publishing -- the secular-dharma publishing network: the Tuwhiri Project, the Secular Buddhist Network and Mike Slott's *Mindful Solidarity*, Winton Higgins, and the lapsed `seculardharma.net`, with Ramsey Margolis as one node.
-- 0.5 The Thesis -- dharma as evolved cultural technology, and the convergence of Batchelor and Graeber.
-- 0.6 The Knowledgebase as Method -- the forty-year collection, the RAG knowledgebase, and the two-stage method.
-- 0.7 Influences & Acknowledgements -- the real network behind the book and the knowledgebase, set in proportion: Irfan Kortschak's source-texts, Paul Stange and Java's Sumarah movement, the Bodhi College teachers and the wider cohort, and the Tuwhiri / Secular Buddhist Network cluster with Ramsey Margolis as one node.
+- [0.1 Life & Formation](0-preface/0.1-life-and-formation.md) -- Perth origins, the migration to Indonesia and citizenship, the temperament, and the personal history sketched here.
+- [0.2 Politics & Anarchism](0-preface/0.2-politics-and-anarchism.md) -- the Communist Party and anarchist years, and the "anarchism as plain natural history" thread.
+- [0.3 The Sangha & the Retreat](0-preface/0.3-sangha-and-retreat.md) -- Bodhi College, the 2018 retreats, Stephen Batchelor, and the 'a secular dharma?' conversations with Rupert Bozeat and Elfie Klinger.
+- [0.4 Network & Publishing](0-preface/0.4-network-and-publishing.md) -- the secular-dharma publishing network: the Tuwhiri Project, the Secular Buddhist Network and Mike Slott's *Mindful Solidarity*, Winton Higgins, and the lapsed `seculardharma.net`, with Ramsey Margolis as one node.
+- [0.5 The Thesis](0-preface/0.5-thesis-evolved-dharma.md) -- dharma as evolved cultural technology, and the convergence of Batchelor and Graeber.
+- [0.6 The Knowledgebase as Method](0-preface/0.6-knowledgebase-as-method.md) -- the forty-year collection, the RAG knowledgebase, and the two-stage method.
+- [0.7 Influences & Acknowledgements](0-preface/0.7-influences-and-acknowledgments.md) -- the real network behind the book and the knowledgebase, set in proportion: Irfan Kortschak's source-texts, Paul Stange and Java's Sumarah movement, the Bodhi College teachers and the wider cohort, and the Tuwhiri / Secular Buddhist Network cluster with Ramsey Margolis as one node.
 
 **Key works**
 

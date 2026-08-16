@@ -114,13 +114,13 @@ Jadi: dari situlah semua ini berasal, merekalah yang membantu mewujudkannya, dan
 
 Catatan riset yang dipakai dalam seri esai ini diterbitkan di [GitHub](https://github.com/Biksu-Okusi/In-Search-of-Dharma). Catatan Bagian 0 terbit di sana dalam edisi publik yang telah disunting: bagian yang bersandar pada catatan keluarga pribadi tetap tersimpan dalam arsip pribadi saya, bagian yang menyangkut korespondensi orang lain terbit dengan persetujuan mereka, dan setiap penyuntingan diungkapkan di tempatnya.
 
-- 0.1 Life & Formation — asal-usul Perth, migrasi ke Indonesia dan kewarganegaraan, tabiat, serta riwayat pribadi yang dilukiskan sekilas di sini.
-- 0.2 Politics & Anarchism — tahun-tahun politik sosialis dan anarkisme, serta benang "anarkisme sebagai sejarah alamiah biasa".
-- 0.3 The Sangha & the Retreat — Bodhi College, retret-retret 2018, Stephen Batchelor, dan percakapan 'a secular dharma?' bersama Rupert Bozeat dan Elfie Klinger.
-- 0.4 Network & Publishing — jaringan penerbitan dharma sekuler: Tuwhiri Project, Secular Buddhist Network dan *Mindful Solidarity* karya Mike Slott, Winton Higgins, serta `seculardharma.net` yang sudah tak aktif, dengan Ramsey Margolis sebagai salah satu simpulnya.
-- 0.5 The Thesis — dharma sebagai teknologi budaya hasil evolusi, dan konvergensi Batchelor dengan Graeber.
-- 0.6 The Knowledgebase as Method — koleksi empat puluh tahun, basis pengetahuan RAG, dan metode dua tahap.
-- 0.7 Influences & Acknowledgements — jaringan nyata di balik esai-esai dan basis pengetahuan ini, ditempatkan menurut porsinya: teks sumber dari Irfan Kortschak, Paul Stange dan gerakan Sumarah di Jawa, para pengajar Bodhi College dan kohort yang lebih luas, serta klaster Tuwhiri / Secular Buddhist Network dengan Ramsey Margolis sebagai salah satu simpulnya.
+- [0.1 Life & Formation](../0-preface/0.1-life-and-formation.md) — asal-usul Perth, migrasi ke Indonesia dan kewarganegaraan, tabiat, serta riwayat pribadi yang dilukiskan sekilas di sini.
+- [0.2 Politics & Anarchism](../0-preface/0.2-politics-and-anarchism.md) — tahun-tahun politik sosialis dan anarkisme, serta benang "anarkisme sebagai sejarah alamiah biasa".
+- [0.3 The Sangha & the Retreat](../0-preface/0.3-sangha-and-retreat.md) — Bodhi College, retret-retret 2018, Stephen Batchelor, dan percakapan 'a secular dharma?' bersama Rupert Bozeat dan Elfie Klinger.
+- [0.4 Network & Publishing](../0-preface/0.4-network-and-publishing.md) — jaringan penerbitan dharma sekuler: Tuwhiri Project, Secular Buddhist Network dan *Mindful Solidarity* karya Mike Slott, Winton Higgins, serta `seculardharma.net` yang sudah tak aktif, dengan Ramsey Margolis sebagai salah satu simpulnya.
+- [0.5 The Thesis](../0-preface/0.5-thesis-evolved-dharma.md) — dharma sebagai teknologi budaya hasil evolusi, dan konvergensi Batchelor dengan Graeber.
+- [0.6 The Knowledgebase as Method](../0-preface/0.6-knowledgebase-as-method.md) — koleksi empat puluh tahun, basis pengetahuan RAG, dan metode dua tahap.
+- [0.7 Influences & Acknowledgements](../0-preface/0.7-influences-and-acknowledgments.md) — jaringan nyata di balik esai-esai dan basis pengetahuan ini, ditempatkan menurut porsinya: teks sumber dari Irfan Kortschak, Paul Stange dan gerakan Sumarah di Jawa, para pengajar Bodhi College dan kohort yang lebih luas, serta klaster Tuwhiri / Secular Buddhist Network dengan Ramsey Margolis sebagai salah satu simpulnya.
 
 **Karya kunci**
 
