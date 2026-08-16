@@ -3,9 +3,9 @@ part: 9
 title: "Coda"
 slug: coda
 status: done
-words: 1278
+words: 1345
 reading_level: year-12
-updated: 2026-08-16
+updated: 2026-08-17
 draws_on: []
 #author: "Biksu Okusi"
 #date: 2026-08-01
@@ -46,7 +46,7 @@ A Buddhist dharma, a Hindu dharma, a scientific-rationalist dharma, a warrior dh
 
 - **Comprehensive** -- it governs a whole life, or a whole domain of one, not a single slice of behaviour
 - **Identity-constituting** -- it binds from the inside, by conviction, and works to remake its carrier
-- **Oriented toward the good** -- an answer to how one *ought* to live, not a strategy for getting ahead
+- **Oriented toward the good** -- an answer to how one *ought* to live, as its carriers conceive it, not a strategy for getting ahead
 - **Reflectively self-aware** -- it can be held up and known *as* a path: named, questioned, reformed
 
 The features come in degrees; a profession, a subculture, an environmentalism may carry two or three, and sit near the rim.

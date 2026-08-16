@@ -3,9 +3,9 @@ part: 1
 title: "Defining Dharma"
 slug: defining-dharma
 status: done
-words: 5341
+words: 5554
 reading_level: year-12
-updated: 2026-08-08
+updated: 2026-08-17
 draws_on: ["1.1", "1.2", "1.3", "1.4", "3.3", "3.4"]
 #author: "Biksu Okusi"
 #date: 2026-08-01
@@ -89,6 +89,8 @@ The second is that it is **identity-constituting**: a dharma binds you from the 
 The third is an **orientation toward the good**: it is about how one *ought* to live. The classical Indian tradition drew that line itself, between *dharma*, the ethical path, and *artha*, the business of getting and keeping worldly advantage.
 
 And the fourth is **reflective self-awareness**, the one that will matter most once we meet dharmas being built on purpose: a dharma can be held up and known *as* a path, something a person or a people can name, examine, and deliberately choose or reform, rather than merely absorbed as the way things obviously are.
+
+Two pieces of fine print belong here, before the test is put to work; both are fingerprints of the kind I defend at this chapter's end. First, the scoring. "Oriented toward the good" means the good as the dharma's own carriers conceive it: the feature marks the register of *ought* off from the register of advantage, the line the Indian tradition itself drew between *dharma* and *artha*. It does not ask whether the conception is in fact any good; that question gets a part of its own much later, and keeping it out of the definition is deliberate, because Part 6 will need to call some genuinely dark things dharmas without the definition ejecting them first. Likewise the fourth feature names a capacity, not a constant exercise: most dharmas are absorbed half-consciously and never feel chosen, and what marks them is that they *can* be held up and examined, not that they daily are. Second, the provenance. The research note behind this chapter carries a different fourth feature, a transformative telos -- the "who to become" -- which this version folds into the second feature, freeing the fourth slot for reflective self-awareness precisely because the end of this book will need it. That is a choice, made by me, for a purpose you can now see coming, and I flag it so that no one following the links mistakes it for a finding.
 
 Run the everyday impostors against those four features, and you can see why they fall short. **Custom**, the way a village does things, supplies rules, but it is usually inherited without reflection and carries no transformative aim; it tells you what *is* done, not what is good and why. **Law** is comprehensive and powerful, but it binds the wrong way: from the outside, by coercion, enforceable by punishment and abolishable by a vote. Repeal a statute, and it is simply gone; a dharma is not undone so easily, because it lives in conviction rather than on a statute book. **Etiquette** governs only the polished surface of conduct (which fork, which form of address) and asks nothing of your soul. The hardest case is **ideology**, which, like a dharma, is comprehensive and fuses values with a story about the world; and plenty of ideologies sincerely offer their adherents transformation, sacrifice, discipline, an identity to grow into. Nor can the difference be purity of motive, since dharmas have served power often enough: the word itself began in the rituals of kingship, and Aśoka carved it across an empire. What separates them is centre of gravity. An ideology is organised first around political mobilisation, the winning and wielding of collective power; a dharma is organised first around the formation of persons, and carries that distinctive layer of inner practice (meditation, prayer, training) that an ideology can do without. The line is real, but it is the blurriest of the four, and traffic crosses it in both directions: a dharma curdles into an ideology when it is captured by power, and an ideology starts to look like a dharma the moment it begins telling its followers who to become.
 
