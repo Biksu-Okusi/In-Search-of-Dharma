@@ -104,7 +104,7 @@ So, in one breath: the better dharmas hold firmly, crush no one -- and keep the 
 - Oliver Scott Curry, Daniel Austin Mullins & Harvey Whitehouse, "Is It Good to Cooperate? Testing the Theory of Morality-as-Cooperation in 60 Societies" (*Current Anthropology*, 2019) -- the sixty-society test behind the floor's shape.
 - Martha Nussbaum, *Women and Human Development* (2000) -- the ten central human capabilities; and Amartya Sen, "Capabilities, Lists, and Public Reason" (*Feminist Economics*, 2004) -- the refusal to fix the list.
 - Mikhail Bakunin, *God and the State* (written 1871, published posthumously 1882) -- the bootmaker passage; authority without tenure over the taught.
-- Friedrich Nietzsche, *Thus Spoke Zarathustra*, "The Thousand and One Goals" (1883), and *Beyond Good and Evil* (1886) -- ranking without a floor; the challenge met here at its stated price.
+- Friedrich Nietzsche, *Thus Spoke Zarathustra*, "The Thousand and One Goals" (1883), and *Beyond Good and Evil* (1886) -- ranking without a floor; the challenge met here at its stated price. The reception history was repaired by Walter Kaufmann, *Nietzsche: Philosopher, Psychologist, Antichrist* (1950), and successors.
 - Karl Popper, *The Open Society and Its Enemies*, vol. 1 (1945) -- the paradox of tolerance; standards that judge states, not pedigrees.
 - Wael B. Hallaq, "Was the Gate of Ijtihad Closed?" (*International Journal of Middle East Studies*, 1984) -- the centuries-long tradition-internal argument over a revision organ.
 - Mette Halskov Hansen, Hongtao Li & Rune Svarverud, "Ecological civilization: Interpreting the Chinese past, projecting the global future" (*Global Environmental Change*, 2018) -- authoritarian environmentalism and the 2018 constitutional amendment.

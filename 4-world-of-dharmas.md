@@ -3,7 +3,7 @@ part: 4
 title: "A World of Dharmas"
 slug: world-of-dharmas
 status: done
-words: 6355
+words: 6353
 reading_level: year-12
 updated: 2026-08-17
 draws_on: ["4.2", "4.3", "4.4", "1.4", "3.5.1", "3.5.2", "3.5.3", "3.5.4", "4.5"]
@@ -110,7 +110,7 @@ It began in 1935, when a palace retainer and bank clerk named Sukinohartono took
 
 Set this beside the Stoic and the tour gains its sharpest contrast. The Stoic drew a line around the one thing that was truly his, the quality of his own choices, and built a fortress on it. Sumarah gives exactly that away. Every other dharma we have visited tells you what to do with your will: bind it to the community, command it with reason, walk it along the songline. This one asks you to open your hand and let the will itself go. It is a fifth answer to what a person most deeply is: not a node in a web, not a citadel of choice, not a singer of country, but an instrument.
 
-And it does this with almost none of the equipment a religion is supposed to need. There is no scripture; a guide named Pak Wondo put it flatly: "In Sumarah we have no sacred book. Our sacred book is Life." There are no temples, no clergy, no fees, and no creed to recite. Above all there is no guru. The only teacher who finally counts is the *guru sejati*, the true teacher within; the person who guides a session, the *pamong*, is understood not as a master but as a function, someone speaking spontaneously out of attunement to the people in the room, with an authority that lasts exactly as long as the attunement does. Even revelation must pass inspection. At the fellowship's 1950 congress its first chairman, Dr Surono, insisted that guidance claiming the highest source still had to be proven before the gathering: "Even Sukino asks us for our agreement," he said, and then drew the boundary that earns Sumarah its place on this tour: "We differ from religions, within which people accept God on faith and without knowledge."
+And it does this with almost none of the equipment a religion is supposed to need. There is no scripture; a guide named Pak Wondo put it flatly: "In Sumarah we have no sacred book. Our sacred book is Life." There are no temples, no clergy, and no creed to recite. Above all there is no guru. The only teacher who finally counts is the *guru sejati*, the true teacher within; the person who guides a session, the *pamong*, is understood not as a master but as a function, someone speaking spontaneously out of attunement to the people in the room, with an authority that lasts exactly as long as the attunement does. Even revelation must pass inspection. At the fellowship's 1950 congress its first chairman, Dr Surono, insisted that guidance claiming the highest source still had to be proven before the gathering: "Even Sukino asks us for our agreement," he said, and then drew the boundary that earns Sumarah its place on this tour: "We differ from religions, within which people accept God on faith and without knowledge."
 
 Nor, finally, is there anywhere to retreat to. The tradition's phrase for its own style is *tapa rame*, asceticism in the crowd: no monastery, no hermitage, just the practice carried on inside ordinary working and family life, the surrender renewed at the desk and the market stall as much as in the meditation hall.
 
