@@ -5,7 +5,7 @@ slug: samin-of-java
 lang: id
 translated_from: ../3-samin-of-java.md
 status: done
-words: 5144
+words: 5154
 reading_level: year-12
 updated: 2026-08-17
 draws_on: ["4.1", "1.3", "7.3", "8.1"]
@@ -37,7 +37,7 @@ Maka bagian ini adalah sorotan jarak dekat. Satu dharma, dalam beberapa ratus ki
 
 ## Seorang petani buta huruf di hutan jati
 
-Lelaki di jalan itu punya nama, atau lebih tepatnya beberapa nama. Ia lahir dengan nama Raden Kohar pada 1859 di wilayah Blora, Jawa Tengah: negeri datar dan panas yang masyhur karena jatinya. Jati itu penting; ia akan kembali. Setelah dewasa ia memakai nama Samin Surosentiko, dan sebagai "Samin"-lah namanya tercatat dalam sejarah, sebagian besar lewat laporan cemas orang-orang yang berusaha memerintahnya.
+Lelaki di jalan itu punya nama, atau lebih tepatnya beberapa nama. Ia lahir dengan nama Raden Kohar, kemungkinan pada 1859, di wilayah Blora, Jawa Tengah: negeri datar dan panas yang masyhur karena jatinya. Jati itu penting; ia akan kembali. Setelah dewasa ia memakai nama Samin Surosentiko, dan sebagai "Samin"-lah namanya tercatat dalam sejarah, sebagian besar lewat laporan cemas orang-orang yang berusaha memerintahnya.
 
 Ada satu cerita tentang ayahnya, dan sekalipun hanya setengahnya benar, cerita itu menyingkapkan dari mana roh gerakan ini berasal. Menurut tradisi, ayahnya, yang dikenang sebagai Samin Sepuh ("Samin yang Tua"), adalah seorang bangsawan dari Ponorogo yang menanggalkan pangkat kebangsawanannya untuk hidup sebagai orang kebanyakan, sebagai penentangan yang disengaja terhadap kekuasaan Belanda. Terlepas dari tepat atau tidaknya garis keturunan itu, langkah simbolik itulah benih seluruh gerakan ini: berpaling dari status, memilih turun alih-alih naik.
 
@@ -131,7 +131,7 @@ Lalu mengapa pula mereka ada di sini, kalau pada akhirnya pertanyaannya adalah a
 
 Karena mereka adalah *kasus batas*, dan kasus batas lebih berharga daripada contoh yang rapi. Sedulur Sikep bukan agama dunia, yang punya kitab suci, rohaniwan, dan imperium. Namun, mereka juga bukan filsafat sekuler, seperti Stoisisme yang ditanggalkan dewa-dewanya. Mereka berada di antara keduanya: dharma *rakyat* yang tanpa kitab, tanpa lembaga, berpijak pada dunia ini, dan mendahulukan etika, dengan kosmologi yang secukupnya saja untuk memberinya tulang punggung, dan tak lebih dari itu sedikit pun. Terbentang satu negeri tengah yang luas berisi beragam cara hidup yang bukan keduanya, dan Sedulur Sikep adalah tetengernya yang pertama dan pasti. Bagi argumen bahwa dharma hadir dalam segala bentuk, contoh yang menolak masuk kotak-kotak rapi kita bukanlah hal memalukan. Ia justru bukti terbaik yang kita punya.
 
-Peringatan ketiga hanya bisa saya pasang di sini dan saya penuhi nanti, sebab peringatan itu menuntut ukuran yang belum lagi dibangun buku ini. Dharma semengagumkan ini pun punya sisi-sisi tajamnya sendiri, dan sisi-sisi itu menekan orang-orangnya sendiri: selama sebagian besar abad itu wong sikep menjauhkan anak-anak mereka dari sekolah, dan dengan begitu dari keberaksaraan, alih-alih menyerahkan mereka ke ruang kelas milik negara; dan tradisi yang sama, yang sebentar lagi akan memberi kita sembilan perempuan pemberani di gerbang istana, juga menggariskan — dan sebagian besar masih menggariskan — tempat seorang istri di dalam rumah tangga yang terang-terangan patriarkal. Apakah sebuah cara hidup bisa menyangga sebaik ini tanpa menggilas siapa pun di dalamnya adalah pertanyaan yang sungguh-sungguh, bukan pertanyaan retoris, dan Bagian 8 akan menghadapkan justru dharma ini pada ujian tersebut, tanpa berkelit, sebagai kasusnya yang paling sulit.
+Peringatan ketiga hanya bisa saya pasang di sini dan saya penuhi nanti, sebab peringatan itu menuntut ukuran yang belum lagi dibangun buku ini. Dharma semengagumkan ini pun punya sisi-sisi tajamnya sendiri, dan sisi-sisi itu menekan orang-orangnya sendiri: selama sebagian besar abad itu wong sikep menjauhkan anak-anak mereka dari sekolah, dan dengan begitu dari keberaksaraan, alih-alih menyerahkan mereka ke ruang kelas milik negara; dan tradisi yang sama, yang sebentar lagi akan memberi kita sembilan perempuan pemberani di gerbang istana, juga menggariskan — dan, di satu desa yang telah diteliti para peneliti lapangan dari dekat, masih menggariskan — tempat seorang istri di dalam rumah tangga yang terang-terangan patriarkal. Apakah sebuah cara hidup bisa menyangga sebaik ini tanpa menggilas siapa pun di dalamnya adalah pertanyaan yang sungguh-sungguh, bukan pertanyaan retoris, dan Bagian 8 akan menghadapkan justru dharma ini pada ujian tersebut, tanpa berkelit, sebagai kasusnya yang paling sulit.
 
 ## Kaki dalam semen
 
