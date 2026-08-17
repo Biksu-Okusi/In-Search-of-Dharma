@@ -5,7 +5,7 @@ slug: preface
 lang: id
 translated_from: ../0-preface.md
 status: done
-words: 4064
+words: 4059
 reading_level: year-12
 updated: 2026-08-17
 draws_on: ["0.1", "0.2", "0.3", "0.4", "0.5", "0.6", "0.7"]
@@ -46,7 +46,7 @@ Saya tidak akan menampilkan seorang pun dari orang atau lembaga ini seolah-olah 
 
 Sekarang bagian yang lebih riskan: kehidupan di balik lensa. Saya menyertakannya karena pembaca berhak tahu bias apa yang tertanam dalam diri seorang penulis, dan bias saya bukan bias standar. Namun, saya akan meringkasnya, dan mengikatnya pada satu-satunya hal yang penting di sini, yaitu bagaimana hidup itu membentuk cara saya melihat.
 
-Saya lahir tahun 1957 di Perth, Australia Barat, yang menurut sebagian besar ukuran merupakan kota besar paling terpencil di planet ini. Perth lebih dekat ke Jakarta ketimbang ke Sydney. Secara geografis, dan kemudian dalam imajinasinya, seorang anak di tepi barat Australia menghadap bukan ke timur ke arah negerinya sendiri, melainkan ke utara, menyeberangi Samudra Hindia, ke arah kepulauan Asia Tenggara maritim yang luas dan padat. Gravitasi budaya masa kecil saya menarik saya ke arah Asia jauh sebelum saya benar-benar paham mengapa.
+Saya lahir tahun 1957 di Perth, Australia Barat, yang menurut sebagian besar ukuran merupakan kota besar paling terpencil di planet ini. Perth lebih dekat ke Jakarta ketimbang ke Sydney. Secara geografis, dan kemudian dalam imajinasinya, seorang anak di tepi barat Australia menghadap menjauhi negerinya sendiri: ke utara, menyeberangi Samudra Hindia, ke arah kepulauan Asia Tenggara maritim yang luas dan padat. Gravitasi budaya masa kecil saya menarik saya ke arah Asia jauh sebelum saya benar-benar paham mengapa.
 
 Sebagian masa kecil itu sungguh membahagiakan. Tumbuh besar sebagai anak kelas pekerja di pinggiran utara Perth berarti mendapat semacam kebebasan tanpa pengawasan yang kini nyaris lenyap: berkilometer-kilometer semak dan rawa untuk dijelajahi, sebuah dunia kecil yang seluruhnya milik kami, sesuatu yang hampir tak dimiliki anak mana pun yang saya kenal sekarang. Namun, saya tidak cocok dengan tempat itu. Perth pada masa itu menganggap dirinya pos terdepan Imperium Britania di kejauhan, dan saya adalah bocah aneh, pembangkang, dengan cara berpikir yang berbeda, yang tak bisa melihat daya tariknya; saya meninggalkan rumah pada usia yang *sangat* muda dan bertahun-tahun mengembara keliling negeri hanya dengan ransel dan sedikit sekali barang lain. Semua itu menyisakan dalam diri saya kecurigaan samar yang tak pernah hilang terhadap otoritas yang diwariskan dan kepercayaan yang diterima begitu saja, yang sejak awal masa remaja mengeras menjadi politik yang sesungguhnya: beberapa tahun sebagai aktivis sebuah partai sosialis di Australia dan waktu yang lebih lama di antara berbagai kelompok anarkis. Itu bukan aib masa muda yang sudah saya tinggalkan. Sebagaimana akan ditunjukkan buku ini, politik itulah benang yang membentang lurus hingga ke dalam argumennya, sebab intuisi anarkis bahwa manusia sepenuhnya sanggup mengatur urusannya sendiri dari bawah ke atas ternyata, begitu Anda menganggap serius biologinya, lebih merupakan pengamatan biasa tentang seekor hewan yang kooperatif ketimbang fantasi politik.
 

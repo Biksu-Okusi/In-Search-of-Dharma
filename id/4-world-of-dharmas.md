@@ -5,7 +5,7 @@ slug: world-of-dharmas
 lang: id
 translated_from: ../4-world-of-dharmas.md
 status: done
-words: 5963
+words: 5982
 reading_level: year-12
 updated: 2026-08-17
 draws_on: ["4.2", "4.3", "4.4", "1.4", "3.5.1", "3.5.2", "3.5.3", "3.5.4", "4.5"]
@@ -131,7 +131,7 @@ Jadi genaplah lima dharma kita, dan semuanya memang berbeda sedalam-dalamnya. Ta
 
 Namun, bila Anda berdiri cukup jauh, kemiripan keluarganya sama tak terbantahkannya dengan perbedaannya. Setiap dharma ini, masing-masing dalam wujud yang kita jumpai di sini, membawa salah satu versi dari aturan tertua yang kita kenal, seruan untuk memperlakukan orang lain sebagaimana Anda ingin diperlakukan, entah diperluas ke desa, ke kosmopolis, ke dunia yang melampaui manusia, entah ke umat perjanjian. Setiap dharma mengikat sebuah "kami", mengubah kerumunan orang asing menjadi satu kaum yang bisa saling percaya, dan setiap dharma menarik lingkaran itu dengan tepi yang keras sekaligus bagian dalam yang hangat. Setiap dharma membentuk watak lewat laku dan kebiasaan, alih-alih lewat persetujuan semata. Dan setiap dharma memperlakukan tatanan moral sebagai sesuatu yang berkesinambungan dengan tatanan kenyataan itu sendiri, sehingga hidup dengan benar berarti menala diri dengan keadaan segala sesuatu yang sebenarnya.
 
-Itulah bentuk yang terus-menerus kita datangi. Keragamannya nyata, pekat, dan tak boleh diratakan, dan di bawahnya mengalir pita tipis kepedulian manusiawi bersama yang rupanya tak sanggup ditanggalkan oleh satu pun dharma yang berfungsi. Perbedaan sampai ke dasar, dan kekerabatan sampai ke dasar, pada saat yang sama. Kelak, ketika kita harus mengajukan pertanyaan berbahaya tentang apakah sebagian dharma memang lebih baik daripada yang lain, pita tipis yang sama-sama dimiliki itulah satu-satunya tempat berpijak yang jujur.
+Itulah bentuk yang terus-menerus kita datangi. Keragamannya nyata, pekat, dan tak boleh diratakan, dan di bawahnya mengalir pita tipis kepedulian manusiawi bersama yang rupanya tak sanggup ditanggalkan oleh satu pun dharma yang berfungsi. Perbedaan sampai ke dasar, dan kekerabatan sampai ke dasar, pada saat yang sama. Satu kejujuran patut disampaikan di sini: kelimanya dipilih karena berima, maka galeri ini memperagakan kemiripan keluarga itu; membuktikannya tidak. Kelak, ketika kita harus mengajukan pertanyaan berbahaya tentang apakah sebagian dharma memang lebih baik daripada yang lain, pita tipis yang sama-sama dimiliki itulah satu-satunya tempat berpijak yang jujur.
 
 ## Terbuat dari kebutuhan yang sama
 
