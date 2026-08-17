@@ -3,7 +3,7 @@ part: 3
 title: "The Dharmas of the Samin of Java"
 slug: samin-of-java
 status: done
-words: 5366
+words: 5357
 reading_level: year-12
 updated: 2026-08-08
 draws_on: ["4.1", "1.3", "7.3", "8.1"]
@@ -56,7 +56,7 @@ There is a story about his father, and even if it is only half true, it tells yo
 
 From about 1890, Samin began teaching in his home village and the surrounding villages. What he taught was not, at first, a revolt. It was a way of living. But it landed in a world that was being squeezed hard, and that is what turned a quiet ethic into a movement.
 
-Here the teak returns. In 1897 the Dutch colonial forestry service drew a line around the teak forests that the villagers had always used -- for firewood, for building, for grazing, for the thousand small needs of a subsistence life -- and declared them restricted: state forest, off limits. At the same time, the colonial taxes pressed down: a land rent, a poll tax, a tax on what little the farmers produced. To a family living at the edge of enough, the fencing of the forest and the demand for cash were not abstractions. They were hunger, made by a distant authority that gave nothing back.
+Here the teak returns. In 1897 the Dutch colonial forestry service drew a line around the teak forests that the villagers had always used -- for firewood, for building, for grazing, for the thousand small needs of a subsistence life -- and declared them restricted: state forest, off limits. At the same time, the colonial taxes pressed down: a land rent, a poll tax, a tax on what little the farmers produced. To a family living at the edge of enough, the fencing of the forest and the demand for cash were hunger, made by a distant authority that gave nothing back.
 
 This is the soil in which the Samin dharma grew, and the pattern already has a name that fits perfectly, from the anthropologist James C Scott: the *moral economy of the peasant*. Scott argued that peasant communities carry a deep value-system "irrevocably linked to subsistence requirements," a shared sense of what people owe each other, and what a community is owed, organised entirely around the basic right to survive. When an outside power, a market or a colonial state, tears up those customary rights of access in the name of profit or order, it takes more than resources. It violates a moral world. The Samin response was the defence of that moral world, raised into a creed.
 
@@ -90,7 +90,7 @@ First: is it *comprehensive*? Does it govern a whole life, or just one corner of
 
 Second: is it *identity-constituting*, does it tell people who they are? Unmistakably. To be Sedulur Sikep is to be one of "the honest people." It is a self; you can hear it in the very name they chose.
 
-Third: is it *oriented toward the good*, rather than toward mere advantage? Yes. The *wong sikep* were not calculating the most profitable way to live. They were after a particular kind of life -- autonomous, truthful, harmonious, rooted in the land -- and they paid for it in taxes refused and forests lost.
+Third: is it *oriented toward the good*, rather than toward mere advantage? Yes. The *wong sikep* were after a particular kind of life, not the most profitable one -- autonomous, truthful, harmonious, rooted in the land -- and they paid for it in taxes refused and forests lost.
 
 And the fourth feature is the decisive one: is it *reflective and self-aware*? Here is where this dharma and mere custom part company for good. Ordinary village tradition is usually inherited and seldom held up for examination. You do it because it is done, because your parents did it, because that is simply how things are. What the Sedulur Sikep did is far rarer, and they did it out loud. They *consciously chose* a set of values, lifted them out of the surrounding culture, gave them a name, and defended them deliberately, against the dominant order of their day. They knew they were being different, and they meant to be.
 
