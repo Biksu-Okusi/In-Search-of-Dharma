@@ -3,7 +3,7 @@ part: 3
 title: "The Dharmas of the Samin of Java"
 slug: samin-of-java
 status: done
-words: 5357
+words: 5350
 reading_level: year-12
 updated: 2026-08-08
 draws_on: ["4.1", "1.3", "7.3", "8.1"]
@@ -156,7 +156,7 @@ Travel to the Kendeng mountains today, and you will find the Sedulur Sikep still
 
 And in 2016, and again in 2017, they made that argument in the most physical way imaginable: nine women at the gates of the Presidential Palace, with wet cement poured around their feet. They are remembered as the *Kartini Kendeng*, after Indonesia's pioneering heroine of women's emancipation. The image is almost unbearably apt: the *wong cilik*, the "little people," literally encased in the very substance the industry wanted to make from their mountains, immobilised in the capital to dramatise the immobilising of their land. They held there in the heat and the noise. Patmi did not long survive the second of those protests: the night after the cement came off her feet, her heart gave out.
 
-Why was it women who made that journey, and women whose names the protest still carries? They named themselves after Raden Ajeng Kartini, the Javanese noblewoman whose letters, written in Samin's own lifetime, became the founding text of Indonesian women's emancipation. And they came not in spite of being mothers and farmers but *because* of it, framing the defence of the water and the soil as one continuous piece with the daily work of keeping a family fed: the mountains were the kitchen, the springs were the tap, and a cement company was proposing to demolish both. A farmer named Sukinah made that argument her own. There is a quiet brilliance in the tactic, because by standing on the most traditional ground available to them (motherhood, the household, the duty to feed) these women advanced a genuinely radical claim about who owns a landscape, and dared the state to be seen hauling mothers in cement away from the palace gate. It is the old Samin move, perfectly intact.
+Why was it women who made that journey, and women whose names the protest still carries? They named themselves after Raden Ajeng Kartini, the Javanese noblewoman whose letters, written in Samin's own lifetime, became the founding text of Indonesian women's emancipation. And they came not in spite of being mothers and farmers but *because* of it, framing the defence of the water and the soil as one continuous piece with the daily work of keeping a family fed: the mountains were the kitchen, the springs were the tap, and a cement company was proposing to demolish both. A farmer named Sukinah made that argument her own. There is a quiet brilliance in the tactic, because by standing on the most traditional ground available to them (motherhood, the household, the duty to feed) these women advanced a genuinely radical claim about who owns a landscape, and dared the state to be seen hauling mothers in cement away from the palace gate. It is the old Samin move, intact.
 
 The law, for once, sided with the farmers: Indonesia's Supreme Court ruled in their favour in October 2016. And then the provincial governor issued a fresh permit within days, and the plant went ahead anyway: a bleak little lesson in the difference between winning a ruling and winning a fight.
 
