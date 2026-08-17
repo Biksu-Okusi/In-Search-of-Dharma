@@ -3,9 +3,9 @@ part: 0
 title: "Preface"
 slug: preface
 status: done
-words: 4243
+words: 4247
 reading_level: year-12
-updated: 2026-08-17
+updated: 2026-08-18
 draws_on: ["0.1", "0.2", "0.3", "0.4", "0.5", "0.6", "0.7"]
 #author: "Biksu Okusi"
 #date: 2026-08-01
@@ -34,7 +34,7 @@ Most books that refer to the word 'dharma' come from one of two places: a monast
 
 A preface is normally a throat-clearing, the part most sensible readers skip on the way to Part 1. I'd ask you not to skip this one; I have made it longer than is fashionable on purpose. The eight parts that follow make fairly bold assertions about where our worldviews and ethics come from, and they reach their conclusions by a route unusual enough to require explanation. I think you can weigh a conclusion better when you can see who helped reach it, and what was standing behind the person doing this reaching; above all, when you can see *how* it was reached.
 
-This preface starts with the people and ideas behind the work, since I did not do it alone. Then comes something of my own life and how it ground the lens. Last, at greatest length, how the book was actually made: the methods, the sources, and the disciplines that kept the process honest. But before any of that, two words need pinning down: *dharma*, and its plural.
+This preface starts with the people and ideas behind the work, since I did not do it alone. Then comes something of my own life and how it ground the lens. Then the one idea the whole book argues. Last, at greatest length, how the book was actually made: the methods, the sources, and the disciplines that kept the process honest. But before any of that, two words need pinning down: *dharma*, and its plural.
 
 ## A note on two words
 
@@ -54,7 +54,7 @@ I will not dress any of these people or organisations as the source of my argume
 
 ## The shape of the lens
 
-Now the warier part: the life behind the lens. I include it because a reader has a right to know the biases built into a writer, and mine are not the standard-issue ones. But I will keep it short, and keep it tied to the only thing that matters here, which is how it shaped the way I see.
+Now the warier part: the life behind the lens. I include it because a reader has a right to know the biases built into a writer, and mine are not the standard-issue ones. But I will keep it tied to the only thing that matters here, which is how it shaped the way I see.
 
 I was born in 1957 in Perth, Western Australia, which is, by most measures, the most isolated major city on this planet. It is closer to Jakarta than to Sydney. A child on the western rim of Australia faces, geographically and then imaginatively, away from the rest of the country: north, across the Indian Ocean, toward the vast and crowded archipelago of maritime Southeast Asia. The cultural gravity of my childhood pulled toward Asia long before I really understood why.
 

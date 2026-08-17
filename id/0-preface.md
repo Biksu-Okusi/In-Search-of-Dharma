@@ -5,9 +5,9 @@ slug: preface
 lang: id
 translated_from: ../0-preface.md
 status: done
-words: 4059
+words: 4065
 reading_level: year-12
-updated: 2026-08-17
+updated: 2026-08-18
 draws_on: ["0.1", "0.2", "0.3", "0.4", "0.5", "0.6", "0.7"]
 ---
 
@@ -24,7 +24,7 @@ Kebanyakan buku yang menyinggung kata 'dharma' berasal dari salah satu di antara
 
 Kata pengantar biasanya sekadar dehem sebelum bicara, bagian yang dilewati oleh pembaca yang berakal sehat dalam perjalanannya menuju Bagian 1. Saya minta Anda tidak melewati yang satu ini; saya sengaja membuatnya lebih panjang daripada yang lazim. Delapan bagian berikutnya melontarkan klaim yang cukup berani tentang dari mana pandangan dunia dan etika kita berasal, dan sampai pada kesimpulannya lewat jalur yang cukup tidak lazim sehingga perlu dijelaskan. Menurut saya, Anda bisa menimbang kesimpulan dengan lebih baik bila Anda dapat melihat siapa saja yang membantu mencapainya, dan apa yang melatari orang yang menempuhnya; yang terutama, bila Anda dapat melihat *bagaimana* kesimpulan itu dicapai.
 
-Kata pengantar ini dimulai dari orang dan gagasan di balik karya ini, sebab saya tidak mengerjakannya sendirian. Lalu sedikit tentang hidup saya sendiri dan bagaimana hidup itu mengasah lensanya. Terakhir, dan paling panjang, bagaimana buku ini sesungguhnya dibuat: metodenya, sumbernya, dan disiplin yang menjaga prosesnya tetap jujur. Namun sebelum semua itu, ada dua kata yang perlu dipancangkan lebih dulu: *dharma* dan bentuk jamaknya.
+Kata pengantar ini dimulai dari orang dan gagasan di balik karya ini, sebab saya tidak mengerjakannya sendirian. Lalu sedikit tentang hidup saya sendiri dan bagaimana hidup itu mengasah lensanya. Lalu satu gagasan yang diusung seluruh buku ini. Terakhir, dan paling panjang, bagaimana buku ini sesungguhnya dibuat: metodenya, sumbernya, dan disiplin yang menjaga prosesnya tetap jujur. Namun sebelum semua itu, ada dua kata yang perlu dipancangkan lebih dulu: *dharma* dan bentuk jamaknya.
 
 ## Catatan tentang dua kata
 
@@ -44,7 +44,7 @@ Saya tidak akan menampilkan seorang pun dari orang atau lembaga ini seolah-olah 
 
 ## Bentuk lensanya
 
-Sekarang bagian yang lebih riskan: kehidupan di balik lensa. Saya menyertakannya karena pembaca berhak tahu bias apa yang tertanam dalam diri seorang penulis, dan bias saya bukan bias standar. Namun, saya akan meringkasnya, dan mengikatnya pada satu-satunya hal yang penting di sini, yaitu bagaimana hidup itu membentuk cara saya melihat.
+Sekarang bagian yang lebih riskan: kehidupan di balik lensa. Saya menyertakannya karena pembaca berhak tahu bias apa yang tertanam dalam diri seorang penulis, dan bias saya bukan bias standar. Namun, saya akan mengikatnya pada satu-satunya hal yang penting di sini, yaitu bagaimana hidup itu membentuk cara saya melihat.
 
 Saya lahir tahun 1957 di Perth, Australia Barat, yang menurut sebagian besar ukuran merupakan kota besar paling terpencil di planet ini. Perth lebih dekat ke Jakarta ketimbang ke Sydney. Secara geografis, dan kemudian dalam imajinasinya, seorang anak di tepi barat Australia menghadap menjauhi negerinya sendiri: ke utara, menyeberangi Samudra Hindia, ke arah kepulauan Asia Tenggara maritim yang luas dan padat. Gravitasi budaya masa kecil saya menarik saya ke arah Asia jauh sebelum saya benar-benar paham mengapa.
 
