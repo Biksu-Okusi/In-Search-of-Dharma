@@ -5,7 +5,7 @@ slug: cover
 lang: id
 translated_from: ../cover.md
 status: done
-updated: 2026-07-20
+updated: 2026-08-17
 ---
 
 <div align="center">
@@ -16,7 +16,7 @@ updated: 2026-07-20
 
 ### Yang menyangga sebuah kehidupan, sebuah bangsa, sebuah dunia agar tetap utuh
 
-*Sejarah alamiah etika dalam delapan esai*
+*Sejarah alamiah etika*
 
 <br/>
 <br/>
@@ -25,7 +25,7 @@ oleh **Biksu Okusi**
 
 <br/>
 
-Bali, Mei 2026
+Bali, Agustus 2026
 
 </div>
 

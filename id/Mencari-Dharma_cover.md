@@ -5,12 +5,12 @@ Mencari Dharma.
 
 Yang menyangga sebuah kehidupan, sebuah bangsa, sebuah dunia agar tetap utuh.
 
-Sejarah alamiah etika dalam delapan esai.
+Sejarah alamiah etika.
 
 
 oleh Biksu Okusi.
 
-Bali, Mei 2026.
+Bali, Agustus 2026.
 
 [PAUSE_MEDIUM]
 
