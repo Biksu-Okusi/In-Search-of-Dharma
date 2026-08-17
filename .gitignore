@@ -67,3 +67,6 @@ pg-*.png
 # asset, per the note at the top of mk-book.sh. The plain EPUB and the PDF
 # stay tracked: they are small, and they are what the repository is read for.
 *_with-audio.epub
+
+# Working critique document, session-local; never publish.
+critical-analysis.md
