@@ -3,9 +3,9 @@ part: 4
 title: "A World of Dharmas"
 slug: world-of-dharmas
 status: done
-words: 5984
+words: 6363
 reading_level: year-12
-updated: 2026-08-08
+updated: 2026-08-17
 draws_on: ["4.2", "4.3", "4.4", "1.4", "3.5.1", "3.5.2", "3.5.3", "3.5.4", "4.5"]
 #author: "Biksu Okusi"
 #date: 2026-08-01
@@ -50,7 +50,11 @@ The *wong sikep* of the last part were one dharma, watched up close. Now pull ba
 
 I am going to end the tour with the one many of you were raised inside, the family of Jewish, Christian, and Muslim ethics, and I should say why. The whole wager here is that we can look at dharmas without privileging any of them, including our own. That is easy to say about somebody else's tradition and hard to do about the water you were swimming in before you could see it. So the Abrahamic covenant comes last, as the real test of whether the non-privileging eye can be turned around to look at itself.
 
-And one absence is deliberate. Buddhism, the tradition through which the word *dharma* reached most of us, is this project's home water (the one I look *with*, not *at*), so it appears throughout as lens and cautionary tale but does not take the witness chair here: I could not cross-examine it with the detachment I am asking of you.
+And one tradition needs different handling, so let me do it here at the door, before the tour proper. Buddhism, the tradition through which the word *dharma* reached most of us, is this project's home water: the one I look *with* more than *at*, the source of half my instruments, and, as the Preface disclosed, the name on this book's cover. I cannot cross-examine it with the detachment I am asking of you, and for most of this project's life I used that as a reason to excuse it from the stand. That was a mistake, or at least a fingerprint pretending to be a courtesy. Partiality disclosed is not exemption earned. So let it take the witness chair like everyone else, briefly, with my hands where you can watch them.
+
+As a dharma it is the textbook case; Part 1 already scored its four features full marks, and no one contests them. The real questions are the ones this book is building toward: does it hold without crushing, and who may revise it? On holding, twenty-five centuries at every scale from forest hermitage to imperial church speak for themselves. On crushing, the record is there like every other great tradition's. The Vinaya's own account has the founder admitting women to ordination while attaching eight "heavy rules" that subordinate every nun, however senior, to any monk, however junior; the women's ordination lineage was then allowed to die out across the Theravada world for most of a millennium, and its modern restoration is still being fought over by hierarchies that hold the keys; and when the holding turned ethno-national, it produced the preaching monk Part 6 will meet. On revision, the founding archive contains one of the most instructive scenes in any tradition: on his deathbed the Buddha explicitly permitted the sangha to abolish the lesser and minor rules after him, a revision hatch built in by the founder himself. At the First Council, months later, the elders, unsure which rules counted as lesser, resolved the doubt by abolishing none of them. The hatch was welded almost before the body was cold, and the great revisions since have mostly come from the margins or the exits: the half-million who will walk out with Ambedkar in Part 6, the modernist remaking Part 8 returns to, Batchelor's secular reconstruction out at the far edge.
+
+So examined, Buddhism stands where the others on this tour will stand: a magnificent holding-system with its pauses on the record, at the women and at the welded hatch. And one fingerprint, stated plainly: the secular dharma this book works in descends from exactly the revisable margin of this tradition, which is surely part of why this book prizes revisability. A lens ground at the margin will find the margin admirable. Now you know that too, and can discount accordingly.
 
 ## Ubuntu: the self is a "we"
 
@@ -179,6 +183,8 @@ Research notes used in this book are published on [GitHub](https://github.com/Bi
 
 **Key works**
 
+- On Buddhism's turn in the witness chair: the *Mahāparinibbāna Sutta* (Dīgha Nikāya 16) for the Buddha's deathbed permission to abolish the lesser and minor rules, with the First Council's refusal to use it in the Vinaya (Cullavagga XI), and Cullavagga X for the eight *garudhamma* and the founding of the nuns' order.
+- Thea Mohr & Jampa Tsedroen (eds.), *Dignity and Discipline: Reviving Full Ordination for Buddhist Nuns* (2010) -- the extinction and contested modern restoration of the bhikkhuni lineage; with Bhikkhu Anālayo's *The Foundation History of the Nuns' Order* (2016), which questions the antiquity of the *garudhamma* account itself.
 - Ifeanyi Menkiti, "Person and Community in African Traditional Thought" (1984), with Kwame Gyekye's moderate-communitarian reply, and Thaddeus Metz, "Toward an African Moral Theory" (2007) -- achieved personhood, the place of individual choice, and the formalised Ubuntu principle.
 - Christian B. N. Gade, "The historical development of the written discourses on ubuntu" (2011) -- when ubuntu and the proverb *umuntu ngumuntu ngabantu* were first written together, which he dates as a hypothesis to 1993–95, alongside the interim constitution and the TRC.
 - *S v Makwanyane* (1995) -- Ubuntu as a foundational constitutional value; with Bernard Matolino & Wenceslaus Kwindingwi, "The End of Ubuntu" (2013), for the critique.
