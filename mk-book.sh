@@ -486,6 +486,16 @@ main() {
   for src in "${sources[@]}"; do
     printf -v dst '%s/%02d-%s' "$tmp" "$i" "${src##*/}"
     preprocess "$src" >"$dst" || die "preprocessing failed for ${src@Q}"
+    if [[ $src == "$APPENDIX" ]]; then
+      # Label the companion as the book's appendix at build time, so the
+      # canonical file keeps its unprefixed title for the repository and
+      # standalone surfaces. Exact-match rewrite + check: a future title
+      # change fails the build loudly instead of shipping unlabelled.
+      sed -i 's/^# Dharmas: The Better Ones$/# Appendix: Dharmas, the Better Ones/' "$dst" \
+        || die "appendix H1 rewrite failed for ${dst@Q}"
+      grep -q '^# Appendix: ' "$dst" \
+        || die "appendix H1 not rewritten in ${dst@Q} (title changed in ${APPENDIX@Q}?)"
+    fi
     if [[ $audio_mode != none ]] && ((i >= 1 && i <= 10)); then
       block=$(audio_block "$((i - 1))" "$audio_mode")
       splice_after_h1 "$dst" "$block"

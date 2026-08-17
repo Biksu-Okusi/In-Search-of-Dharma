@@ -20,7 +20,8 @@ PUBLISH_DIR=''
 PUBLISH_OWNER=''
 
 # Remote host the artefacts are mirrored to, as an ssh destination
-# (a Host alias from ~/.ssh/config, or user@hostname).
+# (a Host alias from ~/.ssh/config, or user@hostname). Also used by
+# mk-audio-all.sh to mirror the narration MP3s.
 # Unset, the remote mirror is skipped.
 DEPLOY_HOST=''
 
