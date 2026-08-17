@@ -94,5 +94,20 @@ So, in one breath: the better dharmas hold firmly, crush no one -- and keep the 
 
 ---
 
-*The research behind this essay: note [3.4 Relativism vs. Universalism](3-philosophical/3.4-relativism-universalism.md) (Berlin, Curry, Nussbaum and Sen, the relativism taxonomy, the Nietzsche challenge); note [7.7 Dharma by Decree](7-critical/7.7-engineered-dharmas.md) (the engineered cases and the "power to unbuild" condition); note [7.4 Measurement & Falsifiability](7-critical/7.4-measurement-falsifiability.md) (the is/ought wall and the project's evidentiary bar). The substantive test is argued in full, with the wong sikep worked case, at the end of [Part 8 of In Search of Dharma](8-creating-dharmas.md). Bakunin's bootmaker passage is in* God and the State *(written 1871, published posthumously 1882). The criterion sentence itself (dharmas are better to the extent they remain revisable by the people bound by them) is the author's, and is offered under the same terms as everything else here: revisable.*
+## Sources & further reading
+
+*A companion essay, not a research note: it argues from cases already presented in* In Search of Dharma *and its research notes, and carries no inline citations. The notes closest to it: [3.4 Relativism vs. Universalism](3-philosophical/3.4-relativism-universalism.md) (Berlin, Curry, Nussbaum and Sen, the relativism taxonomy, the Nietzsche challenge); [7.7 Dharma by Decree](7-critical/7.7-engineered-dharmas.md) (the engineered cases and the "power to unbuild" condition); [7.4 Measurement & Falsifiability](7-critical/7.4-measurement-falsifiability.md) (the is/ought wall and the project's evidentiary bar). The substantive test is argued in full, with the wong sikep worked case, at the end of [Part 8 of In Search of Dharma](8-creating-dharmas.md). The criterion sentence itself (dharmas are better to the extent they remain revisable by the people bound by them) is the author's, and is offered under the same terms as everything else here: revisable.*
+
+**Key works**
+
+- Isaiah Berlin, "Two Concepts of Liberty" (1958) and *The Crooked Timber of Humanity* (1990) -- value pluralism as the alternative to both relativism and absolutism; incommensurable goods above the floor.
+- Oliver Scott Curry, Daniel Austin Mullins & Harvey Whitehouse, "Is It Good to Cooperate? Testing the Theory of Morality-as-Cooperation in 60 Societies" (*Current Anthropology*, 2019) -- the sixty-society test behind the floor's shape.
+- Martha Nussbaum, *Women and Human Development* (2000) -- the ten central human capabilities; and Amartya Sen, "Capabilities, Lists, and Public Reason" (*Feminist Economics*, 2004) -- the refusal to fix the list.
+- Mikhail Bakunin, *God and the State* (written 1871, published posthumously 1882) -- the bootmaker passage; authority without tenure over the taught.
+- Friedrich Nietzsche, *Thus Spoke Zarathustra*, "The Thousand and One Goals" (1883), and *Beyond Good and Evil* (1886) -- ranking without a floor; the challenge met here at its stated price.
+- Karl Popper, *The Open Society and Its Enemies*, vol. 1 (1945) -- the paradox of tolerance; standards that judge states, not pedigrees.
+- Wael B. Hallaq, "Was the Gate of Ijtihad Closed?" (*International Journal of Middle East Studies*, 1984) -- the centuries-long tradition-internal argument over a revision organ.
+- Mette Halskov Hansen, Hongtao Li & Rune Svarverud, "Ecological civilization: Interpreting the Chinese past, projecting the global future" (*Global Environmental Change*, 2018) -- authoritarian environmentalism and the 2018 constitutional amendment.
+- L. Jiang et al., "Can Machines Learn Morality? The Delphi Experiment" (arXiv:2110.07574, 2021) -- the frozen verdict machine.
+- Anthropic & the Collective Intelligence Project, "Collective Constitutional AI: Aligning a Language Model with Public Input" (2023) -- the thousand-citizen constitution trial.
 

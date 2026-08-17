@@ -495,6 +495,14 @@ main() {
         || die "appendix H1 rewrite failed for ${dst@Q}"
       grep -q '^# Appendix: ' "$dst" \
         || die "appendix H1 not rewritten in ${dst@Q} (title changed in ${APPENDIX@Q}?)"
+      # The italic headnote under the H1 (and the rule that closes it) is
+      # repo-surface preamble — registry links, Stage-1 caveats — so it is
+      # stripped here; the canonical file keeps it for the repository and
+      # standalone surfaces.
+      sed -i -e '/^\*A discussion piece /d' -e '0,/^---$/{/^---$/d}' "$dst" \
+        || die "appendix headnote strip failed for ${dst@Q}"
+      ! grep -q 'Stage-1\|question registry' "$dst" \
+        || die "appendix headnote still present in ${dst@Q} (headnote wording changed in ${APPENDIX@Q}?)"
     fi
     if [[ $audio_mode != none ]] && ((i >= 1 && i <= 10)); then
       block=$(audio_block "$((i - 1))" "$audio_mode")
