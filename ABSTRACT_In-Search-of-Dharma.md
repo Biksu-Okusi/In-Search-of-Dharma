@@ -1,6 +1,6 @@
 # ABSTRACT -- *In Search of Dharma*
 
-Biksu Okusi · Preface + eight essays + coda · c. 47,000 words · Bali, 2026
+Biksu Okusi · Preface + eight parts + coda + appendix · c. 56,000 words · Bali, 2026
 
 ## The book in one sentence
 
@@ -16,7 +16,7 @@ Two commitments, both established in **Part 1**, govern the whole book. First, t
 
 **Part 3** takes the whole argument down to one case with the lid off: the Sedulur Sikep (Samin) of Java, a dharma assembled from about 1890 by an illiterate farmer, carried without scripture, and still being lived -- from deadpan refusal on a colonial forest road to nine women with their feet in wet cement at the Presidential Palace in 2017. It is a boundary case by design: neither world religion nor godless philosophy.
 
-**Part 4** widens to five dharmas that disagree all the way down -- Ubuntu, Stoicism, the Dreaming, Sumarah, and the Abrahamic covenant -- and finds the differences real and the family resemblance equally real. The Abrahamic traditions come last deliberately, as the test of whether the non-privileging eye can be turned on the (Western/Modern) reader's own water.
+**Part 4** widens to five dharmas that disagree all the way down -- Ubuntu, Stoicism, the Dreaming, Sumarah, and the Abrahamic covenant -- and finds the differences real and the family resemblance equally real. The tour is bracketed by two disclosures of partiality: at the door, Buddhism -- the tradition through which the word reached most readers, and the author's own home water -- is put briefly in the witness chair rather than excused from it; and the Abrahamic traditions come last deliberately, as the test of whether the non-privileging eye can be turned on the (Western/Modern) reader's own water.
 
 **Part 5** answers why a made thing stops feeling made. A dharma installs below the reasoning mind: in moral intuition (Haidt's elephant, with the WEIRD caveat), in habituated practice and ritual synchrony, and in the brain itself -- with the neuroscience carefully deflated where it has been oversold. The machinery is morally blank: it grooves cruelty as faithfully as kindness, and labels both "obvious truth".
 
@@ -27,6 +27,8 @@ Two commitments, both established in **Part 1**, govern the whole book. First, t
 **Part 8** takes up conscious construction at two scales: a planetary ethic (thin overlapping floor over thick plurality, against China's effective and authoritarian singular version) and the ethics poured into machines (orthogonality, "whose values", value lock-in). Its central danger has a name -- **the flattening** -- and the book turns that charge on itself: the RAG corpus behind these essays is a majority-seeking instrument that already caused one documented error. The answer to relativism is a thin floor (Curry's cooperative rules; Nussbaum and Sen's capabilities) beneath thick diversity, and the criterion is the root word cashed out: a dharma is judged by whether it **holds without crushing**. The book's own hero case is then run through that test and does not pass cleanly -- the Sikep refusal of schooling, and the patriarchal household -- with the later self-correction from inside recorded as what the floor is actually for.
 
 **Part 9** states in miniature, without argument, what the eight parts establish.
+
+An **appendix**, *Dharmas: The Better Ones*, closes the book by promoting Part 8's verdict to a standard: two tests, one substantive -- a dharma holds without crushing -- and one procedural, the keystone -- dharmas are better to the extent they remain revisable by the people bound by them. The first test asks what a dharma does; the second asks who holds the pen.
 
 ## Method
 
