@@ -1,0 +1,9 @@
+# build artefacts (large binaries); the .vtt and .txt outputs stay tracked
+out/*.mp4
+out/*.png
+out/*.jpg
+.venv/
+__pycache__/
+*.log
+out/*.spoken.txt
+out/*.check
