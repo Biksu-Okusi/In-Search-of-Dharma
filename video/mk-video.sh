@@ -1,5 +1,5 @@
 #!/usr/bin/bash
-# Build the YouTube video-audiobook of In Search of Dharma, one video per Part:
+# Build the YouTube video-audiobook of In Search of Dharma, one MOV per Part:
 # a still title frame (Part image + title), the published narration underneath,
 # forced-aligned WebVTT captions, and a paste-ready description file.
 set -euo pipefail
@@ -25,7 +25,10 @@ declare -r AUDIO_BASE_URL=https://garydean.id/audio
 declare -r REPO_URL=https://github.com/Biksu-Okusi/In-Search-of-Dharma
 declare -r DOI_URL=https://doi.org/10.5281/zenodo.21348716
 declare -r AUTHOR='Biksu Okusi'
-declare -r SITE='garydean.id'
+declare -r CHANNEL='www.youtube.com/@aseculardharma'
+# Intro sting played before each Part, then INTRO_GAP seconds of silence
+declare -r INTRO=$BOOK_DIR/audio-assets/dharmic-ai.mp3
+declare -r INTRO_GAP=2
 declare -r SERIES_BLURB='In Search of Dharma asks what a dharma is, how dharmas arise, how they get under the skin, '\
 'how they go wrong, and what survives in a secular age. Preface, eight Parts and a Coda, read in full.'
 
@@ -34,7 +37,7 @@ declare -r BG='#141414' FG='#e8e2d6' ACCENT='#c9b98a' MUTED='#7d786f'
 declare -r FONT_REG='EB-Garamond-12-Regular' FONT_ITAL='EB-Garamond-08-Italic'
 
 declare -i FORCE=0 SPOT_CHECK=5
-declare -- STEPS='frame,vtt,mp4,desc'
+declare -- STEPS='frame,vtt,video,desc'
 declare -- WHISPER_MODEL='large-v3'
 
 # --- Messaging Functions ---
@@ -55,13 +58,15 @@ Build YouTube videos for the given Parts (default 0..9) into $OUT_DIR/:
   N-$AUDIO_STEM.png       1920x1080 title frame (also the thumbnail)
   N-$AUDIO_STEM.vtt       forced-aligned captions
   N-$AUDIO_STEM.chapters  chapter timestamps
-  N-$AUDIO_STEM.mp4       the video
+  N-$AUDIO_STEM.mov       the video (MOV container: some players glitch the sting in MP4)
   N-$AUDIO_STEM.txt       title + description, paste-ready
 
-Outputs are rebuilt only when the MP3, image or Part markdown is newer.
+Each video opens with the intro sting ($INTRO_GAP s gap), then the narration;
+captions and chapters are offset to match. Outputs are rebuilt only when the
+MP3, sting, image or Part markdown is newer.
 
 Options:
-  -s, --steps LIST     comma list of frame,vtt,mp4,desc (default: all)
+  -s, --steps LIST     comma list of frame,vtt,video,desc (default: all)
   -m, --model NAME     whisper model for alignment (default: $WHISPER_MODEL)
   -c, --spot-check N   ASR spot-check N random cues per Part (default: $SPOT_CHECK; 0 = off)
   -f, --force          rebuild even when outputs are current
@@ -139,25 +144,42 @@ build_frame() {
        \( -size 750x70 xc:none \) \
        \( -size 750x -fill "$FG" -font "$FONT_ITAL" -pointsize 46 caption:"$AUTHOR" \) \
        -append \) -gravity west -geometry +1080+0 -composite \
-    \( +size -background none -fill "$MUTED" -font "$FONT_REG" -pointsize 32 label:"$SITE" \) \
+    \( +size -background none -fill "$MUTED" -font "$FONT_REG" -pointsize 32 label:"$CHANNEL" \) \
        -gravity southeast -geometry +90+70 -composite \
     -depth 8 "$png"
 }
 
+# intro_offset -> seconds before the narration starts (intro sting + gap)
+intro_offset() {
+  local -- d
+  d=$(ffprobe -v error -show_entries format=duration -of csv=p=0 "$INTRO") \
+    || die 1 "ffprobe failed on $INTRO"
+  printf '%s\n' "$(bc -l <<< "$d + $INTRO_GAP")"
+}
+
 build_vtt() {
-  local -- stem=$1 md=$2 mp3=$3 language=$4
+  local -- stem=$1 md=$2 mp3=$3 language=$4 offset=$5
   local -- spoken=$stem.spoken.txt
   gentts --dump-text "$spoken" -q "$md"
   [[ -s $spoken ]] || die 1 "gentts produced no spoken text for $md"
   "$PYTHON" "$ALIGNER" --audio "$mp3" --text "$spoken" --md "$md" --out "$stem" \
-    --language "$language" --model "$WHISPER_MODEL" --spot-check "$SPOT_CHECK"
+    --language "$language" --model "$WHISPER_MODEL" --spot-check "$SPOT_CHECK" \
+    --offset "$offset"
 }
 
-build_mp4() {
-  local -- mp4=$1 png=$2 mp3=$3
-  ffmpeg -v error -y -loop 1 -framerate 24 -i "$png" -i "$mp3" \
+# Audio = intro sting, INTRO_GAP seconds of silence, then the narration.
+# MOV rather than MP4: bit-identical MP4s glitch the sting in some desktop
+# players (verified by A/B, 2026-08-21); MOV plays clean and YouTube accepts it.
+build_video() {
+  local -- mov=$1 png=$2 mp3=$3
+  local -i gap_ms=$((INTRO_GAP * 1000))
+  ffmpeg -v error -y -loop 1 -framerate 24 -i "$png" -i "$INTRO" -i "$mp3" \
+    -filter_complex "[1:a]aformat=sample_rates=48000:channel_layouts=stereo[intro];\
+[2:a]aformat=sample_rates=48000:channel_layouts=stereo,adelay=${gap_ms}|${gap_ms}[part];\
+[intro][part]concat=n=2:v=0:a=1[a]" \
+    -map 0:v -map '[a]' \
     -c:v libx264 -tune stillimage -preset slow -crf 28 -pix_fmt yuv420p \
-    -c:a aac -b:a 96k -ar 48000 -shortest -movflags +faststart "$mp4"
+    -c:a aac -b:a 256k -shortest -movflags +faststart "$mov"
 }
 
 build_desc() {
@@ -179,7 +201,7 @@ build_desc() {
 }
 
 build_part() {
-  local -- n=$1 md mp3 image title subtitle language stem
+  local -- n=$1 md mp3 image title subtitle language stem offset
   md=$(part_file "$n")
   mp3=$AUDIO_SRC_DIR/$n-$AUDIO_STEM.mp3
   [[ -f $mp3 ]] || die 2 "narration not found: $mp3"
@@ -189,6 +211,7 @@ build_part() {
   language=$(frontmatter_value lang_code "$md"); language=${language%%-*}; language=${language:-en}
   [[ -n $title && -n $subtitle ]] || die 2 "audio.title/subtitle missing in $md"
   stem=$OUT_DIR/$n-$AUDIO_STEM
+  offset=$(intro_offset)
   info "Part $n: $subtitle"
 
   if has_step frame; then
@@ -200,19 +223,19 @@ build_part() {
     fi
   fi
   if has_step vtt; then
-    if stale "$stem.vtt" "$mp3" "$md" "$ALIGNER"; then
-      build_vtt "$stem" "$md" "$mp3" "$language"
+    if stale "$stem.vtt" "$mp3" "$md" "$ALIGNER" "$INTRO"; then
+      build_vtt "$stem" "$md" "$mp3" "$language" "$offset"
       success "  vtt    $stem.vtt"
     else
       info "  vtt    current"
     fi
   fi
-  if has_step mp4; then
-    if stale "$stem.mp4" "$mp3" "$stem.png"; then
-      build_mp4 "$stem.mp4" "$stem.png" "$mp3"
-      success "  mp4    $stem.mp4 ($(du -h "$stem.mp4" | cut -f1))"
+  if has_step video; then
+    if stale "$stem.mov" "$mp3" "$stem.png" "$INTRO"; then
+      build_video "$stem.mov" "$stem.png" "$mp3"
+      success "  video  $stem.mov ($(du -h "$stem.mov" | cut -f1))"
     else
-      info "  mp4    current"
+      info "  video  current"
     fi
   fi
   if has_step desc; then
@@ -228,9 +251,10 @@ build_part() {
 
 check_dependencies() {
   local -- dep
-  for dep in convert ffmpeg ffprobe gentts; do
+  for dep in convert ffmpeg ffprobe gentts bc; do
     command -v "$dep" >/dev/null || die 1 "missing dependency: $dep"
   done
+  [[ -f $INTRO ]] || die 2 "intro sting not found: $INTRO"
   if has_step vtt; then
     [[ -x $PYTHON ]] || die 1 "no venv at $PYTHON" \
       '(uv venv .venv && uv pip install -p .venv/bin/python stable-ts faster-whisper)'

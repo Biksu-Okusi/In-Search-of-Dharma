@@ -373,20 +373,20 @@ def vtt_escape(line):
   return line.replace('&', '&amp;').replace('<', '&lt;').replace('>', '&gt;')
 
 
-def write_vtt(path, cues, timings):
+def write_vtt(path, cues, timings, offset=0.0):
   with open(path, 'w', encoding='utf-8') as fh:
     fh.write('WEBVTT\n\n')
     for i, (c, (start, end)) in enumerate(zip(cues, timings), 1):
-      fh.write(f'{i}\n{ts(start)} --> {ts(end)}\n')
+      fh.write(f'{i}\n{ts(start + offset)} --> {ts(end + offset)}\n')
       fh.write('\n'.join(vtt_escape(ln) for ln in c['lines']) + '\n\n')
 
 
-def chapters(cues, timings, paragraphs, headings):
+def chapters(cues, timings, paragraphs, headings, offset=0.0):
   """First cue of each heading paragraph -> (start, heading). Always opens at 0:00."""
   out = [(0.0, 'Introduction')]
   para_first = {}
   for c, (start, _) in zip(cues, timings):
-    para_first.setdefault(c['paragraph'], start)
+    para_first.setdefault(c['paragraph'], start + offset)
   for pi, para in enumerate(paragraphs):
     norm = re.sub(r'\s+', ' ', para).strip()
     if norm in headings and pi in para_first:
@@ -436,6 +436,8 @@ def main():
   ap.add_argument('--device', default='cuda')
   ap.add_argument('--compute-type', default='int8_float16',
                   help='ctranslate2 compute type; int8_float16 fits beside other GPU tenants')
+  ap.add_argument('--offset', type=float, default=0.0, metavar='SECONDS',
+                  help='shift every written cue and chapter by this much (intro music lead-in)')
   ap.add_argument('--spot-check', type=int, default=0, metavar='N')
   ap.add_argument('--min-ratio', type=float, default=0.6,
                   help='fail if any spot-check fuzzy ratio is below this')
@@ -461,12 +463,14 @@ def main():
   self_check(cues, timings, duration)
 
   heads = md_headings(args.md)
-  chaps = chapters(cues, timings, paragraphs, heads)
+  chaps = chapters(cues, timings, paragraphs, heads, args.offset)
   missing = set(heads) - {t for _, t in chaps}
   if missing:
     warn(f'headings not found in spoken text: {sorted(missing)}')
 
-  write_vtt(f'{args.out}.vtt', cues, timings)
+  write_vtt(f'{args.out}.vtt', cues, timings, args.offset)
+  if args.offset:
+    info(f'cues and chapters offset by {args.offset:.3f}s')
   write_chapters(f'{args.out}.chapters', chaps)
   info(f'wrote {args.out}.vtt ({len(cues)} cues) and {args.out}.chapters ({len(chaps)} chapters)')
 

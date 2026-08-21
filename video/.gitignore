@@ -1,5 +1,6 @@
 # build artefacts (large binaries); the .vtt and .txt outputs stay tracked
 out/*.mp4
+out/*.mov
 out/*.png
 out/*.jpg
 .venv/
