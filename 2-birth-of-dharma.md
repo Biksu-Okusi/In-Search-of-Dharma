@@ -3,7 +3,7 @@ part: 2
 title: "The Genesis of Dharmas"
 slug: birth-of-dharma
 status: done
-words: 4870
+words: 4871
 reading_level: year-12
 updated: 2026-08-22
 draws_on: ["2.1", "2.2", "2.3", "5.2", "1.2", "5.5"]
@@ -86,7 +86,7 @@ The cognitive scientist Pascal Boyer adds a second ingredient: the supernatural 
 
 Why are so many of the great codes so *demanding*? If a dharma exists to make cooperation easier, why does it so often pile on costly, inconvenient requirements: the dietary laws, the dress codes, the fasts, the long hours of prayer, the renounced pleasures? It looks like waste, but it is in fact the engine.
 
-The logic was worked out by researchers studying why some religious communities thrive while others quietly dissolve, and it turns on the same hard problem we keep encountering: how do you keep out the free rider who wants the warmth of belonging without paying for it? The answer is to make belonging expensive in a way that is hard to fake. Anyone can *say* they are committed; only the genuinely committed will keep the difficult fast, wear the conspicuous garment, sit through the long ritual, and give up the forbidden pleasure year after year. The cost is the point. It screens out the half-hearted and signals to everyone watching that here is a person who can be relied on.
+The logic was worked out by researchers studying why some religious communities thrive while others quietly dissolve, and it comes back to the same hard problem we keep encountering: how do you keep out the free rider who wants the warmth of belonging without paying for it? The answer is to make belonging expensive in a way that is hard to fake. Anyone can *say* they are committed; only the genuinely committed will keep the difficult fast, wear the conspicuous garment, sit through the long ritual, and give up the forbidden pleasure year after year. The cost is the point. It screens out the half-hearted and signals to everyone watching that here is a person who can be relied on.
 
 The evidence is unusually concrete. When anthropologist Richard Sosis studied a large sample of nineteenth-century US American communes, the religious ones survived, on average, several times longer than the secular ones, and among the religious communities, the stricter the demands, the longer they tended to last. Studies of extreme ritual point the same way: at a festival in Mauritius where some devotees pierce their bodies and haul heavy frames through the heat, researchers found that the more painful the ordeal a person underwent, the more generously they later gave to the community, and the more tightly everyone who witnessed it was bound together. Later work adds a caution here too: it may be the felt benefits of the rite, more than its raw costs, that keep such practices alive. Asking a great deal of its followers strengthens a dharma, because the asking is how it sorts the committed from the casual and welds the committed to one another.
 
