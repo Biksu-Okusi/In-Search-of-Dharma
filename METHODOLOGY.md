@@ -86,7 +86,7 @@ Set the question's `status` in both the note frontmatter and the dashboard table
 
 - All five template sections present and non-empty.
 
-- Every factual claim in Findings carries explicit provenance: an `[S#]` (external/ scholarly source) or `[A]` (author's own). No unmarked claim; no `[S#]` pointing at a barred register entry.
+- Every factual claim in Synthesis and Findings carries explicit provenance: an `[S#]` (external/scholarly source) or `[A]` (author's own). No unmarked claim; no `[S#]` pointing at a barred register entry.
 
 - At least one **external** source where step 3 applied (philology, primary texts, oral/indigenous, non-secular angle).
 
