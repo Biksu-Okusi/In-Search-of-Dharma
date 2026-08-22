@@ -3,9 +3,9 @@ part: 2
 title: "The Genesis of Dharmas"
 slug: birth-of-dharma
 status: done
-words: 4861
+words: 4870
 reading_level: year-12
-updated: 2026-08-08
+updated: 2026-08-22
 draws_on: ["2.1", "2.2", "2.3", "5.2", "1.2", "5.5"]
 #author: "Biksu Okusi"
 #date: 2026-08-01
@@ -36,7 +36,7 @@ In the first, a few dozen people move together through a landscape they know by 
 
 In the second world, tens of thousands of people are packed into a single city. Most of them will never meet. The woman who sold you a loaf of bread this morning you may never lay eyes on again; the man three streets over is, for all practical purposes, a stranger to you forever. It is here that the easy morality of the small band, the kind that runs on everyone knowing everyone, simply cannot reach. And yet, for the most part, the city does not dissolve into a war of all against all. Something holds it together.
 
-That something is, in large part, a "dharma", by whatever local name. Every human society grows one; but at this scale it takes a particular and demanding form, an explicit, teachable, portable account of how to live alongside people you do not know.
+That something is, in large part, a "dharma," by whatever local name. Every human society grows one; but at this scale it takes a particular and demanding form, an explicit, teachable, portable account of how to live alongside people you do not know.
 
 ## The puzzle of the simultaneous sages
 
@@ -136,7 +136,7 @@ The birth of dharma, in the end, is not a revelation. It is a response. Strip th
 
 We are taught to imagine ethical wisdom descending from on high, eternal and complete, for us to receive. The deeper history shows the opposite: ethical systems welling up from below, improvised and revised, shaped by coins and cities and harvests and the simple arithmetic of how many people one mind can know. They were built. And anything that was built could have been built differently, and can be built again.
 
-But I have been speaking in the grand abstractions of deep time and lost civilisations, of pressures and centuries and whole continents. It is one thing to argue, from the safe distance of two thousand years, that dharmas are made. It is another to watch it actually happen: to find a dharma whose making is close enough to see, whose founder has a name and a birth date, whose pressures we can reconstruct in detail because they fell within living memory. As it happens, there is one, in the teak forests of Java, built by an illiterate farmer barely a century ago. If dharmas are made, the Samin let us watch the hands at work.
+But I have been speaking in the grand abstractions of deep time and lost civilisations, of pressures and centuries and whole continents. It is one thing to argue, from the safe distance of two thousand years, that dharmas are made. It is another to watch it actually happen: to find a dharma whose making is close enough to see, whose founder has a name and a birth date, whose pressures we can reconstruct in detail because they fell inside the documentary record. As it happens, there is one, in the teak forests of Java, built by an illiterate farmer in the 1890s. If dharmas are made, the Samin let us watch the hands at work.
 
 <!--audio stop-->
 
