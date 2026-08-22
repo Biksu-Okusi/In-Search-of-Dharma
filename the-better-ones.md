@@ -120,8 +120,8 @@ So, in one breath: the better dharmas hold firmly, crush no one -- and keep the 
 - Mikhail Bakunin, *God and the State* (written 1871, published posthumously 1882) -- the bootmaker passage; authority without tenure over the taught.
 - Friedrich Nietzsche, *Thus Spoke Zarathustra*, "The Thousand and One Goals" (1883), and *Beyond Good and Evil* (1886) -- ranking without a floor; the challenge met here at its stated price.
 - Karl Popper, *The Open Society and Its Enemies*, vol. 1 (1945) -- the paradox of tolerance; standards that judge states, not pedigrees.
-- Wael B. Hallaq, "Was the Gate of Ijtihad Closed?" (*International Journal of Middle East Studies*, 1984) -- the centuries-long tradition-internal argument over a revision organ.
+- Wael B Hallaq, "Was the Gate of Ijtihad Closed?" (*International Journal of Middle East Studies*, 1984) -- the centuries-long tradition-internal argument over a revision organ.
 - Mette Halskov Hansen, Hongtao Li & Rune Svarverud, "Ecological civilization: Interpreting the Chinese past, projecting the global future" (*Global Environmental Change*, 2018) -- authoritarian environmentalism and the 2018 constitutional amendment.
-- L. Jiang et al., "Can Machines Learn Morality? The Delphi Experiment" (arXiv:2110.07574, 2021) -- the frozen verdict machine.
+- L Jiang et al., "Can Machines Learn Morality? The Delphi Experiment" (arXiv:2110.07574, 2021) -- the frozen verdict machine.
 - Anthropic & the Collective Intelligence Project, "Collective Constitutional AI: Aligning a Language Model with Public Input" (2023) -- the thousand-citizen constitution trial.
 

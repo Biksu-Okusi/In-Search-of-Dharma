@@ -170,11 +170,11 @@ Research notes used in this book are published on [GitHub](https://github.com/Bi
 - Patrick Olivelle, "The Semantic History of Dharma: The Middle and Late Vedic Periods" (2004) -- dharma's marginality in the middle Vedic centuries and its rise through Buddhist and Aśokan borrowing; the paper behind this part's revised history of the word.
 - Rupert Gethin, "He Who Sees Dhamma Sees Dhammas" (2004) -- the Buddhist senses of dhamma, and the long strand of "support" that runs through nearly all of them.
 - Wilhelm Halbfass, *India and Europe* (1988), ch. 17 -- classical dharma's particularism, and the case against the tidy ṛta-to-dharma staircase.
-- B. Schlerath & P. O. Skjærvø, "AŠA", *Encyclopædia Iranica* -- ṛta and asha as one Indo-Iranian word for "truth", and the four-thousand-year-old formula "to uphold the truth".
-- Y. Karunadasa, *The Dhamma Theory* (1996) -- why Abhidharma dharmas are events, not atoms.
+- B Schlerath & PO Skjærvø, "AŠA", *Encyclopædia Iranica* -- ṛta and asha as one Indo-Iranian word for "truth", and the four-thousand-year-old formula "to uphold the truth".
+- Y Karunadasa, *The Dhamma Theory* (1996) -- why Abhidharma dharmas are events, not atoms.
 - Oliver Scott Curry, Daniel Austin Mullins & Harvey Whitehouse, "Is It Good to Cooperate?" (*Current Anthropology*, 2019) -- the seven cooperative moral rules across sixty societies, read here together with its published critics and the formal anthropological debate that followed (*JRAI*, 2020).
-- Nicholas A. Christakis, *Blueprint: The Evolutionary Origins of a Good Society* (2019) -- the "social suite" of evolved social tendencies (cooperation, friendship, in-group bias, social learning).
-- Donald E. Brown, *Human Universals* (1991) -- reciprocity, fairness, and ethical patterning as features present in every documented culture.
+- Nicholas A Christakis, *Blueprint: The Evolutionary Origins of a Good Society* (2019) -- the "social suite" of evolved social tendencies (cooperation, friendship, in-group bias, social learning).
+- Donald E Brown, *Human Universals* (1991) -- reciprocity, fairness, and ethical patterning as features present in every documented culture.
 - Niko Tinbergen, "On Aims and Methods of Ethology" (1963) -- the four questions, and the function/mechanism distinction this part uses to hold "universal" and "wildly varied" together. David Sloan Wilson applies that split to morality; the project reaches his application through his writing at prosocial.world rather than a peer-reviewed paper, and Tinbergen's own article is listed here as the source of the idea, not as a text the corpus holds.
 - Ludwig Wittgenstein, *Philosophical Investigations* (1953) -- "game," family resemblance, and the rope-not-thread model of meaning.
 - WB Gallie, "Essentially Contested Concepts" (1956) -- why words like *justice*, *democracy*, and *dharma* sustain permanent, internal disagreement.

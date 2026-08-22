@@ -183,10 +183,10 @@ Research notes used in this book are published on [GitHub](https://github.com/Bi
 
 **Key works**
 
-- Y. Bai et al., "Constitutional AI: Harmlessness from AI Feedback" (2022, arXiv:2212.08073) -- the machine's values as an explicit, readable, rewritable document.
+- Y Bai et al., "Constitutional AI: Harmlessness from AI Feedback" (2022, arXiv:2212.08073) -- the machine's values as an explicit, readable, rewritable document.
 - Saffron Huang, Divya Siddarth et al., "Collective Constitutional AI: Aligning a Language Model with Public Input" (ACM FAccT 2024, DOI 10.1145/3630106.3658979) -- the public-constitution experiment of the opening: ~1,000 US Americans, Polis, 1,127 statements, 38,252 votes; the publicly trained model matched on capability with lower bias.
 - Johan Rockström, Katherine Richardson et al., the planetary-boundaries framework (2009; Planetary Health Check, 2025) -- seven of nine boundaries transgressed; ocean acidification the latest to fall.
-- Elinor Ostrom, *Governing the Commons* (1990), and DS Wilson, E. Ostrom & ME Cox, "Generalizing the core design principles" (*JEBO*, 2013) -- polycentric self-governance against Garrett Hardin's "Tragedy of the Commons" (1968); her own warning that the principles do not easily scale to a single fragile planet.
+- Elinor Ostrom, *Governing the Commons* (1990), and DS Wilson, E Ostrom & ME Cox, "Generalizing the core design principles" (*JEBO*, 2013) -- polycentric self-governance against Garrett Hardin's "Tragedy of the Commons" (1968); her own warning that the principles do not easily scale to a single fragile planet.
 - Mette Halskov Hansen, Hongtao Li & Rune Svarverud, "Ecological civilization: Interpreting the Chinese past, projecting the global future" (*Global Environmental Change*, 2018) -- authoritarian environmentalism; with the 2018 constitutional amendment.
 - Kwame Anthony Appiah, *Cosmopolitanism* (2006), and John Rawls, *Political Liberalism* (1993) -- partial cosmopolitanism; the overlapping consensus.
 - The Earth Charter (2000) and Pope Francis, *Laudato Si'* (2015) -- secular and religious frameworks converging on planetary commitments.
@@ -197,7 +197,7 @@ Research notes used in this book are published on [GitHub](https://github.com/Bi
 - Richard Sosis & Eric Bressler, "Cooperation and Commune Longevity" (2003) -- the commune dataset behind Part 2's strictness finding, and its sting for this part: religious strictness bound where secular strictness did not.
 - Iason Gabriel, "Artificial Intelligence, Values, and Alignment" (2020) -- *whose* values, by what fair process.
 - Oliver Klingefjord, Ryan Lowe & Joe Edelman, "What Are Human Values, and How Do We Align AI to Them?" (2024) -- the moral graph; wisdom as knowing "which values apply in which contexts."
-- T. Doctor, M. Levin et al., "Biology, Buddhism, and AI: Care as the Driver of Intelligence" (2022) -- the Bodhisattva vow as a design principle.
+- T Doctor, M Levin et al., "Biology, Buddhism, and AI: Care as the Driver of Intelligence" (2022) -- the Bodhisattva vow as a design principle.
 - Carl Frey & Michael Osborne, "The Future of Employment" (2013), and Daniel Susskind, *A World Without Work* (2020) -- this wave of machines coming first for the educated professions; the argument that this time the automation may be structural.
 - Thomas Paine, *Agrarian Justice* (1797) -- the citizen's dividend as compensation for the enclosed common inheritance.
 - Michael Sandel, *The Tyranny of Merit* (2020), and David Graeber, *Bullshit Jobs* (2018) -- contributive justice; the dignity work was carrying.
@@ -206,7 +206,7 @@ Research notes used in this book are published on [GitHub](https://github.com/Bi
 - Stephen Batchelor, *After Buddhism* (2015), and David McMahan, *The Making of Buddhist Modernism* (2008) -- ultimate concern (a phrase from Paul Tillich) vs. institutional form; tradition already remade by modernity.
 - Robert Bellah et al., *Habits of the Heart* (1985) -- "Sheilaism"; with Steven Katz on the constructed, plural nature of mystical experience against perennialism.
 - David Sloan Wilson, "The New Atheism as a Stealth Religion" -- secular belief systems can be dogmatic too; prosocial.world, "The World Needs a Secular Community Revolution" -- the community deficit.
-- L. Jiang et al., "Delphi" (2021; *Nature Machine Intelligence*, 2025), with the critique pressed by Zeerak Talat and colleagues -- descriptions served as prescriptions; I. Shumailov et al., "AI models collapse when trained on recursively generated data," *Nature* (2024) -- the tails vanish first; keeping human data in the mix is the cure.
+- L Jiang et al., "Delphi" (2021; *Nature Machine Intelligence*, 2025), with the critique pressed by Zeerak Talat and colleagues -- descriptions served as prescriptions; I Shumailov et al., "AI models collapse when trained on recursively generated data," *Nature* (2024) -- the tails vanish first; keeping human data in the mix is the cure.
 - JR Firth (1957) and Ferdinand de Saussure (1916) -- meaning as the company a word keeps, and as "differences without positive terms": why an encoding averages the plural away.
 - Thomas Nagel, *The View from Nowhere* (1986), and Jorge Luis Borges, "On Exactitude in Science" (1946) -- no neutral standpoint; the map that becomes the territory.
 - Isaiah Berlin on value pluralism, and Martha Nussbaum & Amartya Sen, the capabilities approach -- pluralism as the alternative to both relativism and absolutism; the floor with teeth, its exact placement left open.
@@ -217,5 +217,5 @@ Research notes used in this book are published on [GitHub](https://github.com/Bi
 - WB Gallie, "Essentially Contested Concepts" (1956) -- why the argument over dharma never closes.
 - Rutger Bregman, *Humankind: A Hopeful History* (2019) -- the real 'Ata shipwreck of 1965–66 against Golding's fiction; and the Robbers Cave correction (the buried 1953 Middle Grove pre-experiment, and Gina Perry's archival finding that the 1954 hostility was manufactured by the experimenters).
 - Meleika Gesa, "The real Tongan boys of 'Ata were not the real *Lord of the Flies*," *The Spinoff* (2021) -- the Tongan objection to how that story is told: the six survivors unnamed and out of focus, the 1863 slave raid on 'Ata reduced to scenery, and *anga fakatonga* left out of an account of what kept them alive.
-- Nicholas A. Christakis, *Blueprint: The Evolutionary Origins of a Good Society* (2019) -- the "social suite" recurring across stranded and shipwrecked groups, with Pitcairn as the counter-case of collapse.
+- Nicholas A Christakis, *Blueprint: The Evolutionary Origins of a Good Society* (2019) -- the "social suite" recurring across stranded and shipwrecked groups, with Pitcairn as the counter-case of collapse.
 - Gina Perry, *The Lost Boys: Inside Muzafer Sherif's Robbers Cave Experiment* (2018) -- Robbers Cave as "a choreographed enactment"; the staff as agents provocateurs; Middle Grove's forgotten failure.
