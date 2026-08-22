@@ -144,7 +144,7 @@ Research notes used in this book are published on [GitHub](https://github.com/Bi
 
 **Key works**
 
-- Paul Stange, *Kejawen Modern: Hakikat dalam Penghayatan Sumarah* (2009), the Indonesian translation of his *Modern Javanism: The Evolution of Sumarah*, which was never published in English; and "The Logic of Rasa in Java" (*Indonesia*, no. 38, 1984) -- the scholarship on Java's Sumarah movement behind the preface's account of the author's earliest secular-dharma analogue.
+- Paul Stange, *Politik Perhatian: Rasa dalam Kebudayaan Jawa* (LKiS, 1998) -- his essays on Javanese mysticism and Sumarah, reworked in Indonesian translation and published as a book only in that language; its first chapter is "The Logic of Rasa in Java" (*Indonesia*, no. 38, 1984). The scholarship behind the preface's account of the author's earliest secular-dharma analogue.
 - David Graeber, *Fragments of an Anarchist Anthropology* (2004) -- the anthropology of self-organising mutual aid that converges with secular dharma.
 - Peter Kropotkin, *Mutual Aid: A Factor of Evolution* (1902) -- cooperation as a natural force in evolution.
 - Robert Sapolsky, *Behave* (2017) -- the human behavioural biology that underpins the frame.
