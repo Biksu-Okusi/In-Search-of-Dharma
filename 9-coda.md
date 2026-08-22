@@ -40,14 +40,17 @@ At its deepest level, a dharma is **that which holds a life, a community, or a w
 
 It is better to say **a dharma** than **the Dharma**, because human beings create many dharmas.
 
-And the word itself is a placeholder. Every culture builds the thing and names it in its own tongue: *Ubuntu*, *ma'at*, and the *Tao* are not translations of *dharma* but sibling names for sibling instances. The Sanskrit is kept because, of all the candidates, its root says most plainly what the thing does: hold.
+And the word itself is a placeholder. Every culture builds the thing and names it in its own tongue: *Ubuntu*, *ma'at*, and *Tao* are not translations of *dharma* but sibling names for sibling instances. The Sanskrit is kept because, of all the candidates, its root says most plainly what the thing does: hold.
 
 A Buddhist dharma, a Hindu dharma, a scientific-rationalist dharma, a warrior dharma, an environmental dharma, a professional dharma, a family dharma, a personal dharma: all of these are candidates. But coherence alone does not make a dharma. What marks one off from mere custom, law, or etiquette is a combination of four features:
 
-- **Comprehensive** -- it governs a whole life, or a whole domain of one, not a single slice of behaviour
-- **Identity-constituting** -- it binds from the inside, by conviction, and works to remake its carrier
-- **Oriented toward the good** -- an answer to how one *ought* to live, as its carriers conceive it, not a strategy for getting ahead
-- **Reflectively self-aware** -- it can be held up and known *as* a path: named, questioned, reformed
+- **Comprehensive** -- it governs a whole life, or a whole domain of one, not a single slice of behaviour.
+
+- **Identity-constituting** -- it binds from the inside, by conviction, and works to remake its carrier.
+
+- **Oriented toward the good** -- an answer to how one *ought* to live, as its carriers conceive it, not a strategy for getting ahead.
+
+- **Reflectively self-aware** -- it can be held up and known *as* a path: named, questioned, reformed.
 
 The features come in degrees; a profession, a subculture, an environmentalism may carry two or three, and sit near the rim.
 
@@ -59,15 +62,23 @@ Religious dharmas do not have automatic privilege over secular ones. All dharmas
 
 A dharma usually includes:
 
-- **Values** -- what matters
-- **Ethics** -- what is appropriate or inappropriate
-- **Practices** -- what one repeatedly does
-- **Stories** -- why life is this way
-- **Duties** -- what one owes to self, others, community, or world
-- **Community** -- whom one belongs to, and who holds one to the path
-- **Identity** -- who "we" are, or who "I" am trying to become
-- **Discipline** -- how one trains conduct, attention, speech, desire, and response
-- **Transmission** -- how the way is handed on: by story, example, drill, and correction
+- **Values** -- what matters.
+
+- **Ethics** -- what is appropriate or inappropriate.
+
+- **Practices** -- what one repeatedly does.
+
+- **Stories** -- why life is this way.
+
+- **Duties** -- what one owes to self, others, community, or world.
+
+- **Community** -- whom one belongs to, and who holds one to the path.
+
+- **Identity** -- who "we" are, or who "I" am trying to become.
+
+- **Discipline** -- how one trains conduct, attention, speech, desire, and response.
+
+- **Transmission** -- how the way is handed on: by story, example, drill, and correction.
 
 A dharma is more than an idea: it becomes real through behaviour. It is embodied in how one speaks, works, eats, raises children, handles conflict, treats strangers, responds to suffering, and uses power.
 
@@ -120,8 +131,6 @@ A mature personal dharma asks:
 ## The question that dissolves
 
 For readers who came from the secular-dharma world carrying its standing worry (is what we practise still Buddhism? is it really a dharma?): the eight parts behind this page dissolve the question rather than answer it. Dharmas are made, plural, and revisable. The living questions are the ones above: what are we building, does it hold without crushing, and who holds the pen?
-
-## A simple definition
 
 > **A dharma is a way of living that holds a person or a people together. The better ones hold without crushing, and leave the pen in the hands of those held.**
 
