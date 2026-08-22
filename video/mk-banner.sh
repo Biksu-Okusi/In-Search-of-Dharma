@@ -37,7 +37,8 @@ declare -r OUT_DEFAULT=$SCRIPT_DIR/out/channel-banner.png
 declare -r CHANNEL_NAME='a secular dharma?'
 
 # The book's navy, as used for links in the EPUB and PDF stylesheets (mk-book.sh).
-declare -r INK='#0b295a'
+# FITTYPE_INK is read by the shared type library.
+declare -rx FITTYPE_INK='#0b295a'
 
 declare -r FONT_TITLE=/usr/share/fonts/opentype/ebgaramond/EBGaramond12-Regular.otf
 
@@ -89,6 +90,11 @@ cleanup() {
   exit "$exitcode"
 }
 
+declare -r FITTYPE_LIB=$SCRIPT_DIR/../lib/fitted-type.sh
+[[ -f $FITTYPE_LIB ]] || die 3 "missing library ${FITTYPE_LIB@Q}"
+#shellcheck source=/dev/null
+source "$FITTYPE_LIB" || die 1 "failed to source ${FITTYPE_LIB@Q}"
+
 usage() {
   cat <<USAGE
 Usage: $SCRIPT_NAME [OPTIONS]
@@ -110,39 +116,6 @@ USAGE
 }
 
 # --- Helpers ---
-
-draw_line() {
-  local -- font=${1:?} text=${2:?} track=${3:?} out=${5:?}
-  local -i pt=${4:?}
-  local -- kern
-  kern=$(awk -v p="$pt" -v t="$track" 'BEGIN{ printf "%.2f", p * t }')
-  # label: trims to the glyph bounding box, so the tracking leaves no trailing
-  # gap to compensate for and the line centres true as rendered.
-  convert -background none -fill "$INK" \
-      -font "$font" -pointsize "$pt" -kerning "$kern" \
-      label:"$text" "$out"
-}
-
-# Render one line of type to a transparent PNG, fitted to a target width.
-#
-# Point size is derived, not passed in: the line is rendered once at a probe
-# size, measured, and re-rendered at the size that lands on the target. Tracking
-# is a fraction of the point size, so rendered width is linear in point size and
-# a single measurement gives the exact fit.
-render_line() {
-  local -- font=${1:?} text=${2:?} track=${3:?} out=${4:?}
-  local -i target=${5:?}
-  local -i probe=100 pt=0 w=0
-  local -- probe_png=$TMP/probe.png
-
-  draw_line "$font" "$text" "$track" "$probe" "$probe_png"
-  w=$(identify -format '%w' "$probe_png")
-  ((w > 0)) || die 1 "could not measure ${text@Q}"
-
-  pt=$(( probe * target / w ))
-  ((pt > 0)) || die 1 "degenerate point size for ${text@Q}"
-  draw_line "$font" "$text" "$track" "$pt" "$out"
-}
 
 # Fill the canvas with the art (cropping the overflow), then veil it.
 build_ground() {
@@ -226,7 +199,8 @@ main() {
   TMP=$(mktemp -d) || die 1 'could not create temp dir'
   mkdir -p "${OUT%/*}"
 
-  render_line "$FONT_TITLE" "$CHANNEL_NAME" "$TRACK_NAME" "$TMP"/block.png "$NAME_WIDTH"
+  fittype_line "$FONT_TITLE" "$CHANNEL_NAME" "$TRACK_NAME" "$TMP"/block.png "$NAME_WIDTH" \
+    || die 1 'could not set the channel name'
 
   # The line has to clear the safe box, or the type is cropped off on a phone.
   local -i block_w=0 block_h=0

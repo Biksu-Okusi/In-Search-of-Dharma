@@ -33,7 +33,8 @@ declare -r ART_DEFAULT=$BOOK_DIR/images/defining-dharma-cover.png
 declare -r OUT_DEFAULT=$SCRIPT_DIR/out/playlist-thumbnail.png
 
 # The book's navy, as used for links in the EPUB and PDF stylesheets (mk-book.sh).
-declare -r INK='#0b295a'
+# FITTYPE_INK is read by the shared type library.
+declare -rx FITTYPE_INK='#0b295a'
 
 declare -r FONT_TITLE=/usr/share/fonts/opentype/ebgaramond/EBGaramond12-Regular.otf
 declare -r FONT_SUB=/usr/share/fonts/opentype/ebgaramond/EBGaramond12-Italic.otf
@@ -78,6 +79,11 @@ cleanup() {
   exit "$exitcode"
 }
 
+declare -r FITTYPE_LIB=$SCRIPT_DIR/../lib/fitted-type.sh
+[[ -f $FITTYPE_LIB ]] || die 3 "missing library ${FITTYPE_LIB@Q}"
+#shellcheck source=/dev/null
+source "$FITTYPE_LIB" || die 1 "failed to source ${FITTYPE_LIB@Q}"
+
 usage() {
   cat <<USAGE
 Usage: $SCRIPT_NAME [OPTIONS]
@@ -110,39 +116,6 @@ mk_book_value() {
   line=${line%\'}
   [[ -n $line ]] || die 2 "$key is empty in ${MK_BOOK@Q}"
   printf '%s' "$line"
-}
-
-draw_line() {
-  local -- font=${1:?} text=${2:?} track=${3:?} out=${5:?}
-  local -i pt=${4:?}
-  local -- kern
-  kern=$(awk -v p="$pt" -v t="$track" 'BEGIN{ printf "%.2f", p * t }')
-  # label: trims to the glyph bounding box, so the tracking leaves no trailing
-  # gap to compensate for and the line centres true as rendered.
-  convert -background none -fill "$INK" \
-      -font "$font" -pointsize "$pt" -kerning "$kern" \
-      label:"$text" "$out"
-}
-
-# Render one line of type to a transparent PNG, fitted to a target width.
-#
-# Point size is derived, not passed in: the line is rendered once at a probe
-# size, measured, and re-rendered at the size that lands on the target. Tracking
-# is a fraction of the point size, so rendered width is linear in point size and
-# a single measurement gives the exact fit.
-render_line() {
-  local -- font=${1:?} text=${2:?} track=${3:?} out=${4:?}
-  local -i target=${5:?}
-  local -i probe=100 pt=0 w=0
-  local -- probe_png=$TMP/probe.png
-
-  draw_line "$font" "$text" "$track" "$probe" "$probe_png"
-  w=$(identify -format '%w' "$probe_png")
-  ((w > 0)) || die 1 "could not measure ${text@Q}"
-
-  pt=$(( probe * target / w ))
-  ((pt > 0)) || die 1 "degenerate point size for ${text@Q}"
-  draw_line "$font" "$text" "$track" "$pt" "$out"
 }
 
 # Scale the art to WIDTH and cut a WIDTHxHEIGHT band out of it, centred on
@@ -212,14 +185,14 @@ main() {
 
   # Display caps for the title and author; the tagline stays italic, mirroring
   # the title page in cover.md.
-  render_line "$FONT_TITLE"  "${title^^}"  "$TRACK_TITLE"  "$TMP"/title.png  "$TITLE_WIDTH"
-  render_line "$FONT_SUB"    "$tagline"    "$TRACK_TAG"    "$TMP"/tag.png    "$TAG_WIDTH"
-  render_line "$FONT_AUTHOR" "${author^^}" "$TRACK_AUTHOR" "$TMP"/author.png "$AUTHOR_WIDTH"
+  fittype_line "$FONT_TITLE"  "${title^^}"  "$TRACK_TITLE"  "$TMP"/title.png  "$TITLE_WIDTH" \
+    || die 1 'could not set the title'
+  fittype_line "$FONT_SUB"    "$tagline"    "$TRACK_TAG"    "$TMP"/tag.png    "$TAG_WIDTH" \
+    || die 1 'could not set the tagline'
+  fittype_line "$FONT_AUTHOR" "${author^^}" "$TRACK_AUTHOR" "$TMP"/author.png "$AUTHOR_WIDTH" \
+    || die 1 'could not set the author'
 
-  # A hairline rule, held back to 55% so it reads as a pause and not a divider.
-  convert -size "$RULE_WIDTH"x1 "xc:$INK" \
-      -alpha set -channel A -evaluate set 55% +channel "$TMP"/rule.png \
-    || die 1 'could not draw the rule'
+  fittype_rule "$RULE_WIDTH" "$TMP"/rule.png || die 1 'could not draw the rule'
 
   # Stack the block on a transparent strip, then centre the strip on the canvas.
   convert -background none -gravity center \

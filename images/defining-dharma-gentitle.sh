@@ -26,7 +26,8 @@ declare -r COVER_IN="$SCRIPT_DIR"/defining-dharma-cover.png
 declare -r COVER_OUT="$SCRIPT_DIR"/defining-dharma-cover-title.png
 
 # The book's navy, as used for links in the EPUB and PDF stylesheets (mk-book.sh).
-declare -r INK='#0b295a'
+# FITTYPE_INK is read by the shared type library.
+declare -rx FITTYPE_INK='#0b295a'
 
 declare -r FONT_TITLE=/usr/share/fonts/opentype/ebgaramond/EBGaramond12-Regular.otf
 declare -r FONT_SUB=/usr/share/fonts/opentype/ebgaramond/EBGaramond12-Italic.otf
@@ -50,6 +51,11 @@ declare -- TMP=''
 die() { >&2 printf '%s: error: %s\n' "$SCRIPT_NAME" "$*"; exit 1; }
 cleanup() { [[ -n $TMP ]] && rm -rf -- "$TMP"; }
 
+declare -r FITTYPE_LIB=$PROJECT_DIR/lib/fitted-type.sh
+[[ -f $FITTYPE_LIB ]] || die "missing library ${FITTYPE_LIB@Q}"
+#shellcheck source=/dev/null
+source "$FITTYPE_LIB" || die "failed to source ${FITTYPE_LIB@Q}"
+
 # Pull a `declare -r NAME='value'` string out of mk-book.sh, so that the cover
 # and the book cannot drift apart.
 mk_book_value() {
@@ -61,40 +67,6 @@ mk_book_value() {
   line=${line%\'}
   [[ -n $line ]] || die "$key is empty in ${MK_BOOK@Q}"
   printf '%s' "$line"
-}
-
-# Render one line of type to a transparent PNG, fitted to a target width.
-#
-# Point size is not passed in: it is derived. The line is rendered once at a
-# probe size, measured, and re-rendered at the size that lands on the target.
-# Because tracking is a fraction of the point size, rendered width is linear in
-# point size, so a single measurement gives the exact fit.
-render_line() {
-  local -- font="${1:?}" text="${2:?}" track="${3:?}" out="${4:?}"
-  local -i target="${5:?}"
-  local -i probe=100 pt=0 w=0
-  local -- probe_png="$TMP"/probe.png
-
-  draw_line "$font" "$text" "$track" "$probe" "$probe_png"
-  w=$(identify -format '%w' "$probe_png")
-  ((w > 0)) || die "could not measure ${text@Q}"
-
-  pt=$(( probe * target / w ))
-  ((pt > 0)) || die "degenerate point size for ${text@Q}"
-  draw_line "$font" "$text" "$track" "$pt" "$out"
-}
-
-draw_line() {
-  local -- font="${1:?}" text="${2:?}" track="${3:?}" out="${5:?}"
-  local -i pt="${4:?}"
-  local -- kern=''
-  kern=$(awk -v p="$pt" -v t="$track" 'BEGIN{ printf "%.2f", p * t }')
-  # label: trims to the glyph bounding box, so the tracking leaves no trailing
-  # gap to compensate for and the line centres true as rendered.
-  convert -background none -fill "$INK" \
-      -font "$font" -pointsize "$pt" -kerning "$kern" \
-      label:"$text" \
-      "$out"
 }
 
 main() {
@@ -130,14 +102,16 @@ main() {
 
   # Display caps for the title and author; the subtitle and tagline keep their
   # sentence case -- the subtitle upright, the tagline italic, as in cover.md.
-  render_line "$FONT_TITLE" "${title^^}" "$TRACK_TITLE" "$title_png" "$TITLE_WIDTH"
-  render_line "$FONT_TITLE" "$subtitle" "$TRACK_SUB" "$sub_png" "$SUB_WIDTH"
-  render_line "$FONT_SUB" "$tagline" "$TRACK_TAG" "$tag_png" "$TAG_WIDTH"
-  render_line "$FONT_AUTHOR" "${author^^}" "$TRACK_AUTHOR" "$author_png" "$AUTHOR_WIDTH"
+  fittype_line "$FONT_TITLE" "${title^^}" "$TRACK_TITLE" "$title_png" "$TITLE_WIDTH" \
+    || die 'could not set the title'
+  fittype_line "$FONT_TITLE" "$subtitle" "$TRACK_SUB" "$sub_png" "$SUB_WIDTH" \
+    || die 'could not set the subtitle'
+  fittype_line "$FONT_SUB" "$tagline" "$TRACK_TAG" "$tag_png" "$TAG_WIDTH" \
+    || die 'could not set the tagline'
+  fittype_line "$FONT_AUTHOR" "${author^^}" "$TRACK_AUTHOR" "$author_png" "$AUTHOR_WIDTH" \
+    || die 'could not set the author'
 
-  # A hairline rule, held back to 55% so it reads as a pause and not a divider.
-  convert -size "${RULE_WIDTH}"x1 "xc:$INK" \
-      -alpha set -channel A -evaluate set 55% +channel "$rule_png"
+  fittype_rule "$RULE_WIDTH" "$rule_png" || die 'could not draw the rule'
 
   # Stack the block downwards from the measured height of the title.
   title_h=$(identify -format '%h' "$title_png")
