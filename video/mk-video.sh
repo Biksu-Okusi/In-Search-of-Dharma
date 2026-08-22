@@ -6,7 +6,7 @@ set -euo pipefail
 shopt -s inherit_errexit extglob nullglob
 
 # --- Script Metadata ---
-declare -r VERSION='1.0.0'
+declare -r VERSION='1.1.0'
 #shellcheck disable=SC2155
 declare -r SCRIPT_PATH=$(realpath -- "$0")
 declare -r SCRIPT_DIR=${SCRIPT_PATH%/*} SCRIPT_NAME=${SCRIPT_PATH##*/}
@@ -29,6 +29,11 @@ declare -r CHANNEL='www.youtube.com/@aseculardharma'
 # Intro sting played before each Part, then INTRO_GAP seconds of silence
 declare -r INTRO=$BOOK_DIR/audio-assets/dharmic-ai.mp3
 declare -r INTRO_GAP=2
+# Silence after the narration. YouTube's end screen occupies the last 5-20
+# seconds of a video, so without a tail it covers the title frame while the
+# closing sentences are still being read. 20 s gives the end screen a quiet
+# window of its own and matches the longest end screen YouTube allows.
+declare -r OUTRO_GAP=20
 declare -r SERIES_BLURB='In Search of Dharma asks what a dharma is, how dharmas arise, how they get under the skin, '\
 'how they go wrong, and what survives in a secular age. Preface, eight Parts and a Coda, read in full.'
 
@@ -61,9 +66,10 @@ Build YouTube videos for the given Parts (default 0..9) into $OUT_DIR/:
   N-$AUDIO_STEM.mov       the video (MOV container: some players glitch the sting in MP4)
   N-$AUDIO_STEM.txt       title + description, paste-ready
 
-Each video opens with the intro sting ($INTRO_GAP s gap), then the narration;
-captions and chapters are offset to match. Outputs are rebuilt only when the
-MP3, sting, image or Part markdown is newer.
+Each video opens with the intro sting ($INTRO_GAP s gap), then the narration, then
+$OUTRO_GAP s of silence for the YouTube end screen; captions and chapters are offset
+for the intro. Outputs are rebuilt only when the MP3, sting, image, Part
+markdown or this script is newer.
 
 Options:
   -s, --steps LIST     comma list of frame,vtt,video,desc (default: all)
@@ -167,15 +173,19 @@ build_vtt() {
     --offset "$offset"
 }
 
-# Audio = intro sting, INTRO_GAP seconds of silence, then the narration.
+# Audio = intro sting, INTRO_GAP seconds of silence, the narration, then
+# OUTRO_GAP seconds of silence for the end screen to sit over.
 # MOV rather than MP4: bit-identical MP4s glitch the sting in some desktop
 # players (verified by A/B, 2026-08-21); MOV plays clean and YouTube accepts it.
 build_video() {
   local -- mov=$1 png=$2 mp3=$3
   local -i gap_ms=$((INTRO_GAP * 1000))
+  # apad extends the narration with silence; -shortest then ends the looped
+  # still frame on the padded audio, so the tail is real video, not a freeze.
   ffmpeg -v error -y -loop 1 -framerate 24 -i "$png" -i "$INTRO" -i "$mp3" \
     -filter_complex "[1:a]aformat=sample_rates=48000:channel_layouts=stereo[intro];\
-[2:a]aformat=sample_rates=48000:channel_layouts=stereo,adelay=${gap_ms}|${gap_ms}[part];\
+[2:a]aformat=sample_rates=48000:channel_layouts=stereo,adelay=${gap_ms}|${gap_ms},\
+apad=pad_dur=${OUTRO_GAP}[part];\
 [intro][part]concat=n=2:v=0:a=1[a]" \
     -map 0:v -map '[a]' \
     -c:v libx264 -tune stillimage -preset slow -crf 28 -pix_fmt yuv420p \
@@ -231,7 +241,7 @@ build_part() {
     fi
   fi
   if has_step video; then
-    if stale "$stem.mov" "$mp3" "$stem.png" "$INTRO"; then
+    if stale "$stem.mov" "$mp3" "$stem.png" "$INTRO" "$SCRIPT_PATH"; then
       build_video "$stem.mov" "$stem.png" "$mp3"
       success "  video  $stem.mov ($(du -h "$stem.mov" | cut -f1))"
     else
