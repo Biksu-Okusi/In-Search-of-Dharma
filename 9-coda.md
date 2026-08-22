@@ -3,9 +3,9 @@ part: 9
 title: "Coda"
 slug: coda
 status: done
-words: 1345
+words: 1333
 reading_level: year-12
-updated: 2026-08-17
+updated: 2026-08-22
 draws_on: []
 #author: "Biksu Okusi"
 #date: 2026-08-01
@@ -28,9 +28,9 @@ audio:
 
 <image r 40 "/images/9-defining-dharma_watercolor.webp" "What is dharma?" "">
 
-> *Eight parts of searching have earned one plain definition and two tests. So here they are, stated rather than argued: what a dharma is, and how to tell the better ones ...*
+> *Eight parts of searching have earned one plain definition and two tests. So here they are, stated rather than argued: what a dharma is, and how to tell the better ones.*
 
-A **dharma** is a way of living that tells a person or group how to act, what to value, what to avoid, and what kind of life is worth trying to become.
+A **dharma** is a way of living that tells a person or group how to act, what to value, what to avoid, and what kind of person is worth trying to become.
 
 A dharma is not necessarily a religion. It is a **living ethical orientation**: a pattern of values, habits, stories, duties, practices and social expectations that helps humans navigate the world. Most dharmas are inherited half-consciously and never feel chosen at all; a few are examined, reformed, or built on purpose. The word describes what a thing *does*, not how well: gentle and cruel, living and hollowed, all are dharmas. Whether one is any good is a separate question, answered below.
 
@@ -98,7 +98,7 @@ And no dharma is built from nothing. New dharmas emerge from within the cultures
 
 ## How a dharma survives translation
 
-A dharma can be carried out of its old cosmology, and the record holds both successes and husks. The translations that keep their transforming power do three things. They keep the **whole bundle**: practice, ethics and community together, never the soothing technique alone. They put some **this-worldly replacement** in the place the old metaphysics held: something that still binds, still motivates, still endures. And they remain a **way of life one practises**, rather than a worldview one merely holds. Do all three and a dharma can survive the loss of its gods. Do only the first, and the result is a product.
+A dharma can be carried out of its old cosmology, and the record holds both successes and husks. The translations that keep their transforming power do three things. They keep the **whole bundle**: practice, ethics and community together, never the soothing technique alone. They put some **this-worldly replacement** in the place the old metaphysics held: something that still binds, still motivates, still endures. And they remain a **way of life one practises**, rather than a worldview one merely holds. Do all three and a dharma can survive the loss of its gods. Keep only the soothing technique, and the result is a product.
 
 ## The two tests
 
@@ -139,6 +139,8 @@ For readers who came from the secular-dharma world carrying its standing worry (
 [« 8: Creating Dharmas](/works/8-in-search-of-dharma)
 
 ---
+
+<!--\newpage-->
 
 ## Sources & further reading
 
