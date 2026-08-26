@@ -22,10 +22,10 @@ This is the **master registry** and **status dashboard** for the DD research pro
 | 3.3 | The Grounding Problem                   | done      | [3-philosophical/3.3-grounding-problem.md](3-philosophical/3.3-grounding-problem.md) |
 | 3.4 | Relativism vs. Universalism             | done      | [3-philosophical/3.4-relativism-universalism.md](3-philosophical/3.4-relativism-universalism.md) |
 | 3.5 | Sumarah as a Philosophy of Life (umbrella) | done     | [3-philosophical/3.5-sumarah/3.5-sumarah.md](3-philosophical/3.5-sumarah/3.5-sumarah.md) |
-| 3.5.1 | Origins & History                     | done      | [3-philosophical/3.5-sumarah/3.5.1-origins-and-history.md](3-philosophical/3.5-sumarah/3.5.1-origins-and-history.md) |
-| 3.5.2 | Practice & Transmission               | done      | [3-philosophical/3.5-sumarah/3.5.2-practice-and-transmission.md](3-philosophical/3.5-sumarah/3.5.2-practice-and-transmission.md) |
-| 3.5.3 | Rasa Epistemology                     | done      | [3-philosophical/3.5-sumarah/3.5.3-rasa-epistemology.md](3-philosophical/3.5-sumarah/3.5.3-rasa-epistemology.md) |
-| 3.5.4 | The Secular-Dharma Question           | done      | [3-philosophical/3.5-sumarah/3.5.4-secular-dharma-question.md](3-philosophical/3.5-sumarah/3.5.4-secular-dharma-question.md) |
+| 3.5.1 | Sumarah: Origins and History          | done      | [3-philosophical/3.5-sumarah/3.5.1-origins-and-history.md](3-philosophical/3.5-sumarah/3.5.1-origins-and-history.md) |
+| 3.5.2 | Sumarah: Practice and Transmission    | done      | [3-philosophical/3.5-sumarah/3.5.2-practice-and-transmission.md](3-philosophical/3.5-sumarah/3.5.2-practice-and-transmission.md) |
+| 3.5.3 | Sumarah: Rasa Epistemology            | done      | [3-philosophical/3.5-sumarah/3.5.3-rasa-epistemology.md](3-philosophical/3.5-sumarah/3.5.3-rasa-epistemology.md) |
+| 3.5.4 | Sumarah and the Secular-Dharma Question | done      | [3-philosophical/3.5-sumarah/3.5.4-secular-dharma-question.md](3-philosophical/3.5-sumarah/3.5.4-secular-dharma-question.md) |
 | 4.1 | Samin of Java                           | done      | [4-cultural/4.1-samin-of-java.md](4-cultural/4.1-samin-of-java.md) |
 | 4.2 | Ubuntu                                  | done      | [4-cultural/4.2-ubuntu.md](4-cultural/4.2-ubuntu.md) |
 | 4.3 | Indigenous Oral Dharmas                 | done      | [4-cultural/4.3-indigenous-oral-dharmas.md](4-cultural/4.3-indigenous-oral-dharmas.md) |
@@ -42,7 +42,7 @@ This is the **master registry** and **status dashboard** for the DD research pro
 | 5.6.1 | Autism & the Systemising Mind         | done      | [5-psychological/5.6-neurodivergence/5.6.1-autism.md](5-psychological/5.6-neurodivergence/5.6.1-autism.md) |
 | 5.6.2 | The Contemplative Vocation            | done      | [5-psychological/5.6-neurodivergence/5.6.2-contemplative-vocation.md](5-psychological/5.6-neurodivergence/5.6.2-contemplative-vocation.md) |
 | 5.6.3 | The Technical Vocation                | done      | [5-psychological/5.6-neurodivergence/5.6.3-technical-vocation.md](5-psychological/5.6-neurodivergence/5.6.3-technical-vocation.md) |
-| 5.6.4 | Giftedness, Dyslexia & Wider Spectrum | done      | [5-psychological/5.6-neurodivergence/5.6.4-gifted-wider-spectrum.md](5-psychological/5.6-neurodivergence/5.6.4-gifted-wider-spectrum.md) |
+| 5.6.4 | Giftedness, Dyslexia & the Wider Spectrum | done      | [5-psychological/5.6-neurodivergence/5.6.4-gifted-wider-spectrum.md](5-psychological/5.6-neurodivergence/5.6.4-gifted-wider-spectrum.md) |
 | 6.1 | Secular Translation                     | done      | [6-contemporary/6.1-secular-translation.md](6-contemporary/6.1-secular-translation.md) |
 | 6.2 | Digital-Age Dharma                      | done      | [6-contemporary/6.2-digital-age-dharma.md](6-contemporary/6.2-digital-age-dharma.md) |
 | 6.3 | Economics, Work & Inequality            | done      | [6-contemporary/6.3-economics-work-inequality.md](6-contemporary/6.3-economics-work-inequality.md) |
@@ -54,7 +54,7 @@ This is the **master registry** and **status dashboard** for the DD research pro
 | 7.4 | Measurement & Falsifiability            | done      | [7-critical/7.4-measurement-falsifiability.md](7-critical/7.4-measurement-falsifiability.md) |
 | 7.5 | Orientalism                             | done      | [7-critical/7.5-orientalism.md](7-critical/7.5-orientalism.md) |
 | 7.6 | Dogma Undone: The CPA Case              | done      | [7-critical/7.6-cpa-case.md](7-critical/7.6-cpa-case.md) |
-| 7.7 | Dharma by Decree: Engineered-Dharma Failure Mode | done      | [7-critical/7.7-engineered-dharmas.md](7-critical/7.7-engineered-dharmas.md) |
+| 7.7 | Dharma by Decree: The Engineered-Dharma Failure Mode | done      | [7-critical/7.7-engineered-dharmas.md](7-critical/7.7-engineered-dharmas.md) |
 | 8.1 | Planetary Dharma                        | done      | [8-future/8.1-planetary-dharma.md](8-future/8.1-planetary-dharma.md) |
 | 8.2 | AI & Dharma                             | done      | [8-future/8.2-ai-and-dharma.md](8-future/8.2-ai-and-dharma.md) |
 | 8.3 | Post-Traditional Dharmas                | done      | [8-future/8.3-post-traditional-dharmas.md](8-future/8.3-post-traditional-dharmas.md) |
@@ -67,7 +67,7 @@ This is the **master registry** and **status dashboard** for the DD research pro
 
 ### 1.1 Core Etymology
 
-Trace the etymology of 'dharma' beyond Sanskrit to Proto-Indo-European roots. What cognitive and social functions do these linguistic origins reveal about humanity's need for ethical frameworks?
+Trace the etymology of "dharma" beyond Sanskrit to Proto-Indo-European roots. What cognitive and social functions do these linguistic origins reveal about humanity's need for ethical frameworks?
 
 ### 1.2 Universal Patterns
 
@@ -128,23 +128,23 @@ If dharmas are genuinely plural, are some better than others — and by what sta
 
 ### 3.5 Sumarah as a Philosophy of Life (umbrella)
 
-What is Sumarah — the Javanese practice of total surrender — as a philosophy of life, and why does it matter to this project's search for secular dharma? (Umbrella note framing 3.5.1–3.5.4.) *(Umbrella note with children in the subdirectory `3-philosophical/3.5-sumarah/`; sibling extension to 4.5 Subud and Sumarah.)*
+What is Sumarah — the Javanese practice of total surrender — as a philosophy of life, and why does it matter to this project's search for secular dharma? *(Umbrella note framing 3.5.1–3.5.4, with children in the subdirectory `3-philosophical/3.5-sumarah/`; sibling extension to 4.5 Subud and Sumarah.)*
 
 ### 3.5.1 Sumarah: Origins and History
 
-How did Sumarah arise and evolve — Sukinohartono's 1935 wahyu, the wartime and revolutionary-period growth, the Paguyuban's organisational history and leadership, its place in national kebatinan politics and state regulation of aliran kepercayaan, and its condition today? *(Extension note under 3.5 — the historical child; sibling to 3.5.2–3.5.4.)*
+How did Sumarah arise and evolve — Sukinohartono's 1935 *wahyu*, the wartime and revolutionary-period growth, the Paguyuban's organisational history and leadership, its place in national *kebatinan* politics and state regulation of *aliran kepercayaan*, and its condition today? *(Extension note under 3.5 — the historical child; sibling to 3.5.2–3.5.4.)*
 
 ### 3.5.2 Sumarah: Practice and Transmission
 
-What is Sumarah practice — sujud, the pamong's spontaneous tuntunan, the inner 'guru sejati', the deliberate absence of creed, canon, technique, hierarchy and fees, and tapa rame (practice amid ordinary life) — and how is it transmitted, including its westward transmission since the 1970s? *(Extension note under 3.5 — the practice child; sibling to 3.5.1, 3.5.3 and 3.5.4.)*
+What is Sumarah practice — *sujud*, the *pamong*'s spontaneous *tuntunan*, the inner "guru sejati", the deliberate absence of creed, canon, technique, hierarchy and fees, and *tapa rame* (practice amid ordinary life) — and how is it transmitted, including its westward transmission since the 1970s? *(Extension note under 3.5 — the practice child; sibling to 3.5.1, 3.5.3 and 3.5.4.)*
 
 ### 3.5.3 Sumarah: Rasa Epistemology
 
-What is rasa in Javanese culture and in Sumarah practice — and what theory of knowledge does a rasa-grounded path imply? How does Stange's 'logic of rasa' and his praxis-over-text argument challenge text-centred, deconstructionist and orientalist readings of Javanese religion — and what are the limits of an insider epistemology? *(Extension note under 3.5 — the epistemological child; hinges onto 7.5 Orientalism.)*
+What is *rasa* in Javanese culture and in Sumarah practice — and what theory of knowledge does a *rasa*-grounded path imply? How do Stange's "logic of rasa" and his praxis-over-text argument challenge text-centred, deconstructionist and orientalist readings of Javanese religion — and what are the limits of an insider epistemology? *(Extension note under 3.5 — the epistemological child; links onward to 7.5 Orientalism.)*
 
 ### 3.5.4 Sumarah and the Secular-Dharma Question
 
-Is Sumarah a 'secular dharma'? Test it against the project's boundary criteria: its self-description as a philosophy of life rather than a religion, its lack of guru, creed, canon and fee, its theistic core of surrender to God's will, and its regulatory life as an aliran kepercayaan — and assess the claim that Sumarah is a living, non-Western, century-old proof that the 'secular translation' problem has already been solved. *(Extension note under 3.5 — the boundary-test child; hinges onto 1.3 Boundary & Definition and 6.1 Secular Translation.)*
+Is Sumarah a "secular dharma"? Test it against the project's boundary criteria: its self-description as a philosophy of life rather than a religion, its lack of guru, creed, canon and fee, its theistic core of surrender to God's will, and its regulatory life as an *aliran kepercayaan* — and assess the claim that Sumarah is a living, non-Western, century-old proof that the "secular translation" problem has already been solved. *(Extension note under 3.5 — the boundary-test child; links onward to 1.3 Boundary & Definition and 6.1 Secular Translation.)*
 
 ---
 
@@ -156,7 +156,7 @@ Explain the origins, beliefs, and dharma of the Samin of Java. How does it diffe
 
 ### 4.2 Ubuntu
 
-Analyse Ubuntu ('I am because we are') as a dharmic framework. How does it differ from individualistic dharmas while serving similar social functions?
+Analyse Ubuntu ("I am because we are") as a dharmic framework. How does it differ from individualistic dharmas while serving similar social functions?
 
 ### 4.3 Indigenous Oral Dharmas
 
@@ -188,7 +188,7 @@ From an evolutionary psychology perspective, how do dharmic frameworks exploit c
 
 ### 5.3 Moral Psychology & Development
 
-What does moral psychology (e.g. Haidt's moral foundations, Kohlberg's stages of moral development) and the WEIRD-sample critique tell us about how dharmic intuitions form and vary across populations?
+What do moral psychology (e.g. Haidt's moral foundations, Kohlberg's stages of moral development) and the WEIRD-sample critique tell us about how dharmic intuitions form and vary across populations?
 
 ### 5.4 Ritual, Practice & Habituation
 
@@ -220,7 +220,7 @@ Are systemising and autistic minds genuinely over-represented in programming and
 
 ### 5.6.4 Giftedness, Dyslexia & the Wider Spectrum
 
-Beyond autism: giftedness and twice-exceptionality, dyslexia, ADHD, Gardner's multiple intelligences, and benign variants such as synesthesia — how well do "difference not deficit" and "hidden strengths" survive the evidence, and where does the dilution critique ("if everyone is neurodivergent, no one is") bite? *(Extension note under 5.6 — the "and so on" catch-all; the discipline cuts both ways. Hinges onto 7.4 measurement-falsifiability.)*
+Beyond autism: giftedness and twice-exceptionality, dyslexia, ADHD, Gardner's multiple intelligences, and benign variants such as synesthesia — how well do "difference not deficit" and "hidden strengths" survive the evidence, and where does the dilution critique ("if everyone is neurodivergent, no one is") bite? *(Extension note under 5.6 — the "and so on" catch-all; the discipline cuts both ways. Links onward to 7.4 measurement-falsifiability.)*
 
 ---
 
@@ -264,7 +264,7 @@ How do dharmic frameworks both challenge and reinforce existing power structures
 
 ### 7.4 Measurement & Falsifiability
 
-Can the efficacy of a dharma be empirically assessed? What would count as evidence that one dharmic framework 'works' better than another — and what does answering this set as the evidentiary bar for this project itself?
+Can the efficacy of a dharma be empirically assessed? What would count as evidence that one dharmic framework "works" better than another — and what does answering this set as the evidentiary bar for this project itself?
 
 ### 7.5 Orientalism
 
@@ -276,7 +276,7 @@ Constructed ethical-political orders are usually studied through their catastrop
 
 ### 7.7 Dharma by Decree: The Engineered-Dharma Failure Mode
 
-What happens when the capacity to build dharmas deliberately is exercised by a state, at speed, against the inherited substrate — the Jacobin cults, the New Soviet Man, the Khmer Rouge's Year Zero? What distinguishes catastrophic construction from benign construction (Ambedkar's Navayāna, the CPA, secular dharma), and what licence does the answer leave for Part 8? *(Extension note — the sixth twin for Part 6's schema, via Scott's authoritarian high modernism; the stress-test that licenses Part 8's constructive turn.)*
+What happens when the capacity to build dharmas deliberately is exercised by a state, at speed, against the inherited substrate — the Jacobin cults, the New Soviet Man, the Khmer Rouge's Year Zero? What distinguishes catastrophic construction from benign construction (Ambedkar's Navayāna, the CPA, secular dharma), and what licence does the answer leave for Part 8? *(Extension note — the fourth twin for Part 6's schema, via Scott's authoritarian high modernism; the stress-test that licenses Part 8's constructive turn.)*
 
 ---
 
@@ -284,7 +284,7 @@ What happens when the capacity to build dharmas deliberately is exercised by a s
 
 ### 8.1 Planetary Dharma
 
-As humanity faces global challenges (climate change, inequality, technological disruption), what elements of a 'planetary dharma' are emerging?
+As humanity faces global challenges (climate change, inequality, technological disruption), what elements of a "planetary dharma" are emerging?
 
 ### 8.2 AI & Dharma
 
@@ -300,5 +300,5 @@ Reflexive: how should a researched dharma corpus be distilled and encoded to gro
 
 ### 8.5 Dharma from Scratch: The 'Ata Case
 
-When the inherited scaffolding is stripped away, do humans rebuild a functioning ethical order or collapse into "Lord of the Flies" savagery? What does the real 1965 'Ata shipwreck show, and what are its limits as evidence? *(Extension note — the real-world hope-hinge for Part 8's constructive turn; also supplies the evidence that replaces the discredited Robbers Cave citation in [[7.1-failure-modes]].)*
+When the inherited scaffolding is stripped away, do humans rebuild a functioning ethical order or collapse into "Lord of the Flies" savagery? What does the real 1965 'Ata shipwreck show, and what are its limits as evidence? *(Extension note — the real-world case for hope behind Part 8's constructive turn; also supplies the evidence that replaces the discredited Robbers Cave citation in [[7.1-failure-modes]].)*
 
