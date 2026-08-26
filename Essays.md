@@ -1,6 +1,6 @@
 # In Search of Dharma — Series Blueprint
 
-**In Search of Dharma** is an 8-part essay series that takes the word *dharma* away from the yoga studio and shows it as something far larger and stranger: the universal human craft of building an ethical world to live inside. The series is written as a genuine search — a first-person journey from *"what even is a dharma?"* through real dharmas in the wild to *"can we build new ones on purpose?"*
+**In Search of Dharma** is an eight-part essay series that takes the word *dharma* away from the yoga studio and shows it as something far larger and stranger: the universal human craft of building an ethical world to live inside. The series is written as a genuine search — a first-person journey from *"what even is a dharma?"* through real dharmas in the wild to *"can we build new ones on purpose?"*
 
 This file is the **master blueprint and status dashboard** for the essays (Stage 2 of the project). It plays the same role for the essays that [`Questions.md`](Questions.md) plays for the research notes. The essays are written *from* the completed research notes — every essay is downstream of cited evidence (see [Provenance](#provenance--traceability)).
 
@@ -16,7 +16,7 @@ This file is the **master blueprint and status dashboard** for the essays (Stage
 | **Voice & POV** | First-person guide. A curious narrator on a real search: thinking aloud, following the evidence, willing to doubt and to be surprised. |
 | **Length** | ~5,000 words per essay (±1,000). |
 | **Sourcing** | Sources named naturally in the prose ("the anthropologist Christopher Boehm spent years watching…"); **no inline citation marks**. Each essay closes with a **Sources & further reading** list tying back to the DD research notes and the original works. |
-| **Format** | Standalone but sequential. Each essay stands alone; read in order they form one argument. |
+| **Format** | Standalone but sequential. Each essay stands alone; read in order, they form one argument. |
 
 ## The arc
 
@@ -28,7 +28,7 @@ The eight Parts are not eight topics — they are one movement in five beats:
 
 - **Establish (2–5).** Build the three load-bearing claims — dharmas are *universal*, they are *made*, they are *plural* — and show *how* they work on a person. The order matters: the abstract claim (2) is made concrete in a single nameable case (3) *before* the breadth tour (4), so the parade of examples lands as confirmation rather than assertion.
 
-- **Stress-test (6).** The honest reckoning with harm. Placed *before* the constructive finale on purpose: a series that only sells dharma reads as advocacy. Earning the skeptic's trust here is what licenses Part 8.
+- **Stress-test (6).** The honest reckoning with harm. Placed *before* the constructive finale on purpose: a series that only sells dharma reads as advocacy. Earning the sceptic's trust here is what licenses Part 8.
 
 - **Pivot (7).** The contemporary condition — old foundations gone, new dharmas still thin — turns the question from *"which dharma is true?"* to *"can we build a better one?"*
 
@@ -90,11 +90,11 @@ Status vocabulary is identical to the research stage:
 
 - **Opening image:** The small band where everyone knows everyone and no written code is needed — set against the first city full of strangers you will never see again.
 
-- **What it covers:** Morality as, in the corpus's phrase, "always and everywhere a cooperative phenomenon" — Oliver Scott Curry's seven moral rules found across 60 societies with no counter-examples; the evolutionary substrate of reciprocity, reputation and Christopher Boehm's egalitarian bands. The jump from kinship-scale to anonymous urban scale forcing explicit, portable codes. The Axial Age (c. 800–200 BCE) and why dharmic thinking erupted across disconnected civilizations at roughly the same time. The pre-Axial moral baseline the codifications built *on* — what was already there, and what writing it down added.
+- **What it covers:** Morality as, in the corpus's phrase, "always and everywhere a cooperative phenomenon" — Oliver Scott Curry's seven moral rules found across 60 societies with no counter-examples; the evolutionary substrate of reciprocity, reputation and Christopher Boehm's egalitarian bands. The jump from kinship-scale to anonymous urban scale forcing explicit, portable codes. The Axial Age (c. 800–200 BCE) and why dharmic thinking erupted across disconnected civilisations at roughly the same time. The pre-Axial moral baseline the codifications built *on* — what was already there, and what writing it down added.
 
 - **Draws on:** [2.1 Axial Age](2-historical/2.1-axial-age.md), [2.2 Urban Complexity](2-historical/2.2-urban-complexity.md), [2.3 Pre-Axial Ethics](2-historical/2.3-pre-axial-ethics.md), [5.2 Evolutionary Psychology](5-psychological/5.2-evolutionary-psychology.md), [1.2 Universal Patterns](1-foundational/1.2-universal-patterns.md), [5.5 Psychopaths](5-psychological/5.5-psychopaths.md) (the unshameable intimidator planted here).
 
-- **Hands off:** Enough theory — let's watch one dharma actually get built, by people we can name, within living memory.
+- **Hands off:** Enough theory — let's watch one dharma actually get built, by people we can name, inside the documentary record.
 
 ### Part 3 — The Dharmas of the Samin of Java
 
@@ -122,7 +122,7 @@ Status vocabulary is identical to the research stage:
 
 - **What it covers:** Ubuntu ("I am because we are") and relational personhood against Western individualism; the Stoics as a secular-friendly Greco-Roman dharma of what is and isn't in your control — and a familiar on-ramp for Western readers; indigenous oral dharmas (the Aboriginal Australian Dreaming) and what survives without writing — essential versus merely cultural elements; **Sumarah**, the Javanese fellowship of total surrender, the tour's most apparatus-free dharma (no scripture, guru, or creed) and the anti-Stoic answer to what a person is, with the secular-translation verdict held for Part 7; and the hardest test of the non-privileging stance, the **Abrahamic frameworks** (covenant, halakha, sharia, Christian *caritas*) seen as dharmas among dharmas. The throughline: a shared cooperative core, wrapped in very different metaphysics and very different answers to *whom must I cooperate with?*
 
-- **▲ Corpus-bias note:** The shared corpus leans secular / evolutionary / Western-academic and under-weights the Abrahamic traditions. This essay consciously counterweights that lean and should say, lightly, that it is doing so. The Stoics are not a dedicated research note — source them freshly (corpus + external) at draft time.
+- **▲ Corpus-bias note:** The shared corpus leans secular / evolutionary / Western-academic and under-weights the Abrahamic traditions. This essay consciously counterweights that lean and should say, lightly, that it is doing so. The Stoics have no dedicated research note — source them freshly (corpus + external) at draft time.
 
 - **Draws on:** [4.2 Ubuntu](4-cultural/4.2-ubuntu.md), [4.3 Indigenous Oral Dharmas](4-cultural/4.3-indigenous-oral-dharmas.md), [4.4 Abrahamic Frameworks](4-cultural/4.4-abrahamic-frameworks.md), [1.4 Cross-cultural Cognates](1-foundational/1.4-cross-cultural-cognates.md), [3.5.1–3.5.4 Sumarah cluster](3-philosophical/3.5-sumarah/3.5-sumarah.md), [4.5 Subud and Sumarah](4-cultural/4.5-subud-and-sumarah.md).
 
@@ -182,13 +182,13 @@ Status vocabulary is identical to the research stage:
 
 - **Draws on:** [8.1 Planetary Dharma](8-future/8.1-planetary-dharma.md), [8.2 AI & Dharma](8-future/8.2-ai-and-dharma.md), [8.3 Post-Traditional Dharmas](8-future/8.3-post-traditional-dharmas.md), [8.4 Encoding Dharma into Machines](8-future/8.4-encoding-dharma-machines.md), [8.5 Dharma from Scratch: the 'Ata Case](8-future/8.5-ata-case.md), [3.4 Relativism vs. Universalism](3-philosophical/3.4-relativism-universalism.md), [4.1 Samin of Java](4-cultural/4.1-samin-of-java.md) (the floor's hard case), [7.4 Measurement & Falsifiability](7-critical/7.4-measurement-falsifiability.md), [7.5 Orientalism](7-critical/7.5-orientalism.md), [7.7 Dharma by Decree](7-critical/7.7-engineered-dharmas.md).
 
-- **Hands off:** The close. You already practice a dharma — the invitation is to practice it awake.
+- **Hands off:** The close. You already practise a dharma — the invitation is to practise it awake.
 
 ---
 
 ## Writing conventions
 
-These apply to every essay when drafting begins (Stage 2):
+These apply to every essay (Stage 2):
 
 - **Voice.** First-person guide. The narrator is on a real search — curious, evidence-led, willing to say "I was wrong about this." Not a lecturer.
 
@@ -202,7 +202,7 @@ These apply to every essay when drafting begins (Stage 2):
 
 - **Honesty.** Where the corpus leans (secular / evolutionary / Western-academic), the essay says so in passing rather than hiding it — especially Parts 3, 4 and 6.
 
-## File conventions (for when drafting starts)
+## File conventions
 
 - One Markdown file per Part, named `<part>-<slug>.md` — e.g. `1-defining-dharma.md`, `3-samin-of-java.md` — paralleling the research notes' `<id>-<slug>.md`.
 
