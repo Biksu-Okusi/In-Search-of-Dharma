@@ -684,9 +684,18 @@ CSS
     # Validate: epubcheck is the arbiter of EPUB conformance. Fail the build on
     # any error so a broken artefact is never shipped. ace (DAISY accessibility
     # checker) is run only if installed, as an informational pass.
-    if command -v epubcheck >/dev/null 2>&1; then
+    # Prefer the jar via java directly: Debian's /usr/bin/epubcheck is a bare
+    # symlink to the jar and depends on a binfmt_misc handler, which can go
+    # missing after an OS upgrade (bash then tries to run the zip as a script).
+    local -a epubcheck_cmd=()
+    if [[ -r /usr/share/java/epubcheck.jar ]] && command -v java >/dev/null 2>&1; then
+      epubcheck_cmd=(java -jar /usr/share/java/epubcheck.jar)
+    elif command -v epubcheck >/dev/null 2>&1; then
+      epubcheck_cmd=(epubcheck)
+    fi
+    if ((${#epubcheck_cmd[@]})); then
       info 'validating with epubcheck'
-      epubcheck "$epub_out" || die "epubcheck reported errors in ${epub_out@Q}"
+      "${epubcheck_cmd[@]}" "$epub_out" || die "epubcheck reported errors in ${epub_out@Q}"
     else
       info 'epubcheck not found; skipping validation (apt install epubcheck)'
     fi
