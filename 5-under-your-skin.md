@@ -153,10 +153,10 @@ We have spent four parts, in admiration, watching how dharmas hold us together, 
 Research notes used in this book are published on [GitHub](https://github.com/Biksu-Okusi/In-Search-of-Dharma).
 
 - [5.3 Moral Psychology & Development](5-psychological/5.3-moral-psychology-development.md) -- Haidt's intuition-first model and moral foundations, the WEIRD critique, and "the guts learn their intuitions." The spine of the first two layers.
-- [5.4 Ritual, Practice & Habituation](5-psychological/5.4-ritual-habituation.md) -- Aristotelian habituation, ritual synchrony and collective effervescence, the "ritual stance," and the morally-neutral installation machinery.
+- [5.4 Ritual, Practice & Habituation](5-psychological/5.4-ritual-habituation.md) -- Aristotelian habituation, ritual synchrony and collective effervescence, the "ritual stance," and the morally neutral installation machinery.
 - [5.1 Neurological Basis](5-psychological/5.1-neurological-basis.md) -- gamma synchrony, compassion versus empathy, the structural-change non-replication, and the retreat from oxytocin's "tend-and-defend."
 - [5.2 Evolutionary Psychology](5-psychological/5.2-evolutionary-psychology.md) -- the costly-signalling and parochial-altruism background to ritual and the in-group fence.
-- [5.5 Psychopaths & the Exploiter Limit-Case](5-psychological/5.5-psychopaths.md) -- the ~1% in whom the affective substrate is constitutionally muted; the low-fear temperament as morally-blank raw material (fearless rescuer or cold exploiter), and why its "useful" edge is contested.
+- [5.5 Psychopaths & the Exploiter Limit-Case](5-psychological/5.5-psychopaths.md) -- the ~1% in whom the affective substrate is constitutionally muted; the low-fear temperament as morally blank raw material (fearless rescuer or cold exploiter), and why its "useful" edge is contested.
 
 **Key works**
 
