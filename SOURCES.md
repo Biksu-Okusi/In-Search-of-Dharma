@@ -30,6 +30,22 @@ A note's `[S#]` line points here via `[src:<key>]`. No `[S#]` may point at a `st
 
 ---
 
+### abbasi-2021-islam-and-the-invention-of-religion
+- status: usable
+- medium: text
+- cite: Rushain Abbasi, "Islam and the Invention of Religion: A Study of Medieval Muslim Discourses on Dīn," *Studia Islamica* 116 (2021), 1–106, DOI 10.1163/19585705-12341437
+- kb: `Abbasi_Islam-and-the-Invention-of-Religion_StudiaIslamica-2021.md`
+- verified: file (Brill masthead, DOI and page range at seg 0; thesis statement at segs 6–7)
+- note: Counter to the "religion is a modern Western invention" genealogy for the Islamic case — premodern Muslims had a robust concept of *dīn* and a dīn/dunyā distinction.
+
+### adam-bagir-2022-indigenous-politics-of-justice-sedulur-sikep
+- status: usable
+- medium: text
+- cite: Ronald Adam & Zainal Abidin Bagir, "The Indigenous Politics of Justice: The Case of the Sedulur Sikep Movement," *Kawistara* 12:2 (30 August 2022): 181–199, DOI 10.22146/kawistara.67991
+- kb: `Adam-Bagir_The-Indigenous-Politics-of-Justice-Sedulur-Sikep_Kawistara-2022.md`
+- verified: file (abstract at seg 0; volume, pages and DOI at seg 1; running head with authors at seg 3)
+- note: Four months with Wong Sikep households in Pati; redistribution and recognition inseparable in the peasant identity.
+
 ### al-mufakhir-2025-multikulturalisme-ajaran-sumarah
 - status: usable
 - medium: text
@@ -110,6 +126,14 @@ A note's `[S#]` line points here via `[src:<key>]`. No `[S#]` may point at a `st
 - verified: web (newadvent.org/summa, qq. 90–97 saved to DD archive 2026-07-28)
 - note: attributed summary note with verified page anchors, shared with the Cicero entry. Natural law defined as the rational creature's participation in eternal law, knowable by 'the light of natural reason' (q. 91 a. 2) — the reason-accessible lower storey that weakens Part 1's 'cannot be secularised' contrast. Anchored edition-independently by q./a. Public domain.
 
+### asad-1986-the-idea-of-an-anthropology-of-islam
+- status: usable
+- medium: text
+- cite: Talal Asad, *The Idea of an Anthropology of Islam*, Occasional Papers Series (Washington, DC: Center for Contemporary Arab Studies, Georgetown University, 1986); repr. *Qui Parle* 17:2 (2009), 1–30
+- kb: `Asad_The-Idea-of-an-Anthropology-of-Islam_1986.md`
+- verified: file (JSTOR download footer on the pages; the *Qui Parle* editorial headnote at seg 0; the definition of a discursive tradition at seg 22)
+- note: Source of "discursive tradition" — discourses instructing practitioners in the correct form and purpose of an established practice; reasoning intrinsic to tradition.
+
 ### asad-1993-genealogies-of-religion
 - status: usable
 - medium: text-ocr
@@ -118,6 +142,14 @@ A note's `[S#]` line points here via `[src:<key>]`. No `[S#]` may point at a `st
 - verified: web (ISBN 978-0-8018-4632-8); central quotation confirmed verbatim at p. 29 of the full text
 - note: attributed summary note with verified page anchors of ch. 1, 'The Construction of Religion as an Anthropological Category' (pp. 27–54) — the strongest published opponent of DD's central move, previously cited at blurb level. Full text in DD local archive (scratch/sources/part1/, gitignored); community upload, reading copy only. Cited by DD note 1.3 (S18) and Part 1.
 
+### asrawijaya-hudayana-2021-power-of-a-leader-samin-opposition
+- status: usable
+- medium: text
+- cite: Enkin Asrawijaya & Bambang Hudayana, "The Power of a Leader in the Samin People's Opposition Movement to the Development of a Cement Factory in the North Kendeng Mountains," *Humaniora* 33:1 (February 2021)
+- kb: `Asrawijaya-Hudayana_The-Power-of-a-Leader-in-the-Samin-Opposition-Movement_Humaniora-2021.md`
+- verified: file (UGM Humaniora masthead, title and authors at seg 0)
+- note: Gunretno's social-capital leadership contrasted with Samin Surosentiko's charisma and ideology.
+
 ### atari-haidt-et-al-2023-morality-beyond-the-weird
 - status: usable
 - medium: text
@@ -125,6 +157,14 @@ A note's `[S#]` line points here via `[src:<key>]`. No `[S#]` may point at a `st
 - kb: `Atari-Haidt-Graham-et-al_Morality-Beyond-the-WEIRD_JPSP-2023_preprint.md`
 - verified: file (in-press author preprint header with APA copyright line at seg 0; abstract with study Ns and 25 populations at seg 1; volume/pages from the published record)
 - note: MFQ-2 validation; the network of moral foundations varies by cultural context. Preprint, "not the copy of record".
+
+### auda-2008-maqasid-al-shariah-as-philosophy-of-islamic-law
+- status: usable
+- medium: text
+- cite: Jasser Auda, *Maqāṣid al-Sharīʿah as Philosophy of Islamic Law: A Systems Approach* (London/Washington: International Institute of Islamic Thought, 2008; reprint 2021)
+- kb: `Auda_Maqasid-al-Shariah-as-Philosophy-of-Islamic-Law_IIIT-2008.md`
+- verified: file (title page and blurb at seg 0; "REPRINT 2021" running footer; levels of necessity and Chart 1.1 at segs 11–12; diacritics mangled by the PDF font — "maq¥|id" = maqāṣid)
+- note: Insider treatise on the higher objectives of Islamic law; the five necessities, al-Shāṭibī's levels, Auda's own Maslow comparison and the modern additions of justice and freedom.
 
 ### bakunin-1882-god-and-the-state
 - status: usable
@@ -173,6 +213,14 @@ A note's `[S#]` line points here via `[src:<key>]`. No `[S#]` may point at a `st
 - kb: `Bellah_Religion-in-Human-Evolution_2011.md`
 - verified: file (running heads "God and King", "China in the Late First Millennium bce" with page numbers at :326, :356, :557; ligature artefacts "Th e" indicate a digital PDF, not OCR)
 - note: Archaic/axial synthesis; reports Assmann's three-level ma'at and "connective justice," Jacobsen's cosmos-as-state, and the *Analects'* Dao as the Way of the former kings. Likely to serve 2.1 and 2.2 as well.
+
+### benda-castles-1969-the-samin-movement
+- status: usable
+- medium: text
+- cite: Harry J Benda & Lance Castles, "The Samin Movement," *Bijdragen tot de Taal-, Land- en Volkenkunde* 125:2 (1969): 207–240, DOI 10.1163/22134379-90002844
+- kb: `Benda-Castles_The-Samin-Movement_BKI-1969.md`, `H-Benda+L-Castles_The-Samin-Movement.md` (earlier copy under staging.text/samin/)
+- verified: file (KITLV PDF header with journal, volume and pages at seg 0; running heads "HARRY J. BENDA AND LANCE CASTLES" with page numbers)
+- note: The canonical English study; the illiteracy finding, "probably in 1859", the 1897 houtvesterijen, the 1907 arrests and exile ("died in exile at Padang, Sumatra, in 1914"). Born-digital KITLV text with some Dutch-typesetting OCR residue ("economie", "feit").
 
 ### berlin-1958-two-concepts-of-liberty
 - status: usable
@@ -325,6 +373,14 @@ A note's `[S#]` line points here via `[src:<key>]`. No `[S#]` may point at a `st
 - kb: `Burnet_Early-Greek-Philosophy_3rd-ed-1920.md`
 - verified: file (running head "HERAKLEITOS OF EPHESOS 133" at :182; fragment numbering matches Burnet's)
 - note: Burnet renders *logos* as "Word"; fragments cited by his numbers (fr. 2 at :182). Public domain.
+
+### candraningrum-2019-magic-of-dukun-jani-neo-saminism
+- status: usable
+- medium: text-ocr
+- cite: Dewi Candraningrum, "The Magic of Dukun Jani and the Revival of Neo-Saminism in Sedulur Sikep," *Salasika: Indonesian Journal of Gender, Women, Child, and Social Inclusion's Studies* 2:1 (2019)
+- kb: `Candraningrum_The-Magic-of-Dukun-Jani-and-the-Revival-of-Neo-Saminism_Salasika-2019.md`
+- verified: file (OCR provenance header: pages 1 and 28 transcribed only; abstract at seg 0; running head with title and author at segs 2, 5)
+- note: ▲ Partial OCR. JMPPK under Gunretno; ecology defended "extraterritorially"; "humans are the earth, and the earth is humans."
 
 ### cicero-de-re-publica-de-legibus-barham
 - status: usable
@@ -862,6 +918,14 @@ A note's `[S#]` line points here via `[src:<key>]`. No `[S#]` may point at a `st
 - verified: file (footnote 1 is Knabb's translator note on anglicising "détournement"); edition not web-checked
 - note: manifesto for the partisan re-use of the dominant culture's material against it; ancestor of culture jamming. Also contains the laws of détournement.
 
+### gyekye-2010-african-ethics-sep
+- status: usable
+- medium: text
+- cite: Kwame Gyekye, "African Ethics," *The Stanford Encyclopedia of Philosophy* (first published 9 September 2010), https://plato.stanford.edu/entries/african-ethics/
+- kb: `SEP_African-Ethics.md`
+- verified: file (SEP masthead and "First published Thu Sep 9, 2010" at seg 0; section headings §8 "Social, Not Individualistic, Ethics" and §9 "The Ethics of Duty, Not of Rights" at segs 0, 30–31; the Menkiti block quotation at seg 10)
+- note: Gyekye's own survey entry — character, moral personhood (Akan *onnye onipa*), humanistic foundations, the common good, social-not-individualistic ethics; the primary for the "duty, not rights" framing.
+
 ### hadot-1995-philosophy-as-a-way-of-life
 - status: usable
 - medium: text-ocr
@@ -877,6 +941,14 @@ A note's `[S#]` line points here via `[src:<key>]`. No `[S#]` may point at a `st
 - kb: `Halbfass_India-and-Europe_1988.md` (full text, folded into the corpus 2026-08); `wilhelm-halbfass_dharma-in-the-self-understanding-of-traditional-hinduism_1988.md` (attributed summary, in corpus under staging.text/DD/sources/oldsources/)
 - verified: web (SUNY ISBN 978-0-88706-795-8; scan is the MLBD Indian ed., Delhi 1990, ISBN 81-208-0736-7, preserving SUNY pagination)
 - note: attributed summary note with verified page anchors. ▲ Two load-bearing findings: ṛta→dharma linkages 'casual and rare' (pp. 314–15; close-connection claims a Neo-Hindu postulate), and classical dharma emphatically particularist — Indocentric, Veda-indexed, birth-restricted; universalist dharma is the modern reinterpretation (ch. 18). Presses directly on Part 1's two-storey design. Full text in DD local archive (scratch/sources/part1/, gitignored); community upload, reading copy only.
+
+### hallaq-2009-an-introduction-to-islamic-law
+- status: usable
+- medium: text-ocr
+- cite: Wael B Hallaq, *An Introduction to Islamic Law* (Cambridge: Cambridge University Press, 2009)
+- kb: `Hallaq_An-Introduction-to-Islamic-Law_2009.md`
+- verified: file (OCR provenance header at seg 0 lists only six scanned pages, the rest reads as born-digital; chapter plan at segs 1–3; jurists' law at seg 6; Jones/Hastings codification at seg 100)
+- note: Hallaq's abridgement of *Sharīʿa: Theory, Practice, Transformations*; sharia as jurists' law independent of the ruler, dismantled by colonial codification and the modern state.
 
 ### halton-2014-from-the-axial-age-to-the-moral-revolution
 - status: usable
@@ -992,6 +1064,22 @@ Also: existing entry `curry-mullins-whitehouse-2019-seven-moral-rules` should ad
 - verified: file (iTextSharp 2017 PDF metadata at seg 0; chapter running heads "CHAPTER 4", "CHAPTER 9" with 1987 pagination at segs 237, 484; letter-spaced OCR in headings)
 - note: The deconstruction-era ethnography Stange 1991 indicts; ch. 9 on ngelmu, pusaka and potency; the "theosophical prejudices" sentence Stange quotes was not string-locatable in the scan. Filename year is the PDF creation date, not the edition. Cited by DD note 3.5.3.
 
+### kimmerer-2013-braiding-sweetgrass
+- status: usable
+- medium: text
+- cite: Robin Wall Kimmerer, *Braiding Sweetgrass: Indigenous Wisdom, Scientific Knowledge, and the Teachings of Plants* (Minneapolis: Milkweed Editions, 2013), ISBN 978-1-57131-335-5
+- kb: `Kimmerer_Braiding-Sweetgrass_2013.md`
+- verified: file (section headings "Planting Sweetgrass," "Tending Sweetgrass," "Picking Sweetgrass" with original page numbers in-text, e.g. "10 Planting Sweetgrass" at seg 8; born-digital)
+- note: Potawatomi botanist's essays; "the younger brothers of Creation," Skywoman vs Eve, the Honorable Harvest. Indigenous-authored; advocacy register — quote as position.
+
+### king-1973-some-observations-on-the-samin-movement
+- status: usable
+- medium: text
+- cite: Victor T King, "Some Observations on the Samin Movement of North-Central Java: Suggestions for the Theoretical Analysis of the Dynamics of Rural Unrest," *Bijdragen tot de Taal-, Land- en Volkenkunde* 129:4 (1973): 457–481
+- kb: `King_Some-Observations-on-the-Samin-Movement_BKI-1973.md`, `king_observations_samin-movement_1973.md` (earlier copy under staging.text/samin/)
+- verified: file (title at seg 0; running heads "VICTOR T. KING" / "THE SAMIN MOVEMENT OF NORTH-CENTRAL JAVA" with pages 478, 481 at segs 30, 34)
+- note: Relative-deprivation reading (Aberle) against economic monocausality; the poorer peasantry who did not join; caution on Geertz's limited fieldwork area.
+
 ### king-1999-orientalism-and-religion
 - status: usable
 - medium: text-ocr
@@ -1007,6 +1095,14 @@ Also: existing entry `curry-mullins-whitehouse-2019-seven-moral-rules` should ad
 - kb: `Koons_Can-Gods-Goodness-Save-Divine-Command-Theory.md`
 - verified: file (journal masthead, volume, pages in seg 0; running page numbers 192 at seg 18)
 - note: Against Adams/Alston — grounding goodness in God's nature leaves it "a featureless property… completely unintelligible"; an adequate solution may need a standard external to God.
+
+### korver-1976-the-samin-movement-and-millenarism
+- status: usable
+- medium: text
+- cite: A Pieter E Korver, "The Samin Movement and Millenarism," *Bijdragen tot de Taal-, Land- en Volkenkunde* 132:2/3 (1976): 249–266
+- kb: `Korver_The-Samin-Movement-and-Millenarism_BKI-1976.md`, `pieter-e-korver_the-samin-movement-and-millenarism.md` (earlier copy under staging.text/samin/)
+- verified: file (title and introduction at seg 0; running head "THE SAMIN MOVEMENT AND MILLENARISM 251" at seg 2; volume/pages from the published record, not web-checked)
+- note: The millenarian reading (Cohn, Talmon, Hobsbawm); records post-1914 followers "not averse from using violence"; rejects Benda/Castles/King's pacifism argument; warns against King discounting poverty.
 
 ### kral-davidson-et-al-2022-absence-of-structural-brain-changes
 - status: usable
@@ -1049,6 +1145,14 @@ Also: existing entry `curry-mullins-whitehouse-2019-seven-moral-rules` should ad
 - note: Public-domain primary text; OCR has broken headings (`###
 
 ### Tao`) inside sentences, so quote only after reassembly.
+
+### lestari-et-al-2026-resistance-identity-colonial-perspectives-saminism
+- status: usable
+- medium: text
+- cite: Lestari et al, "Resistance, Identity and Colonial Perspectives on Saminism," *Local History & Heritage* 6:1 (2026), DOI 10.57251/lhh.v6i1.2062 (CC BY 4.0)
+- kb: `Lestari-et-al_Resistance-Identity-and-Colonial-Perspectives-Saminism_LHH-2026.md`
+- verified: file (journal header with DOI, ISSN and CC BY licence at seg 0; abstract at seg 1; full author list not recoverable from the ingested text)
+- note: Archival re-reading of colonial discourse on Saminism: authorities "systematically portrayed the Samin community as backward, irrational, and resistant to progress."
 
 ### lichtheim-1992-maat-in-egyptian-autobiographies
 - status: usable
@@ -1122,6 +1226,14 @@ Also: existing entry `curry-mullins-whitehouse-2019-seven-moral-rules` should ad
 - verified: web (Malatesta's 1927 component at https://theanarchistlibrary.org/library/errico-malatesta-a-project-of-anarchist-organisation — venue and both load-bearing quotations confirmed; the combined-exchange URL guesses 404'd, so the three later letters rest on the kb file)
 - note: the ossification debate in real time, both sides arguing: "a government and a church" / "better that it should die" (Malatesta) vs without permanent organisation the movement "gets weaker" (Makhno). The documented instance for the form-capture failure mode. Cited in 7.1 [S17]. Cited by DD note 7.1.
 
+### mann-2005-1491
+- status: usable
+- medium: text
+- cite: Charles C Mann, *1491: New Revelations of the Americas Before Columbus* (New York: Knopf, 2005), ISBN 978-1-4000-4006-3
+- kb: `Mann_1491-New-Revelations-of-the-Americas_2005.md`
+- verified: file (chapter "Holmberg's Mistake" at segs 6–13; Dobyns population discussion at seg 122; born-digital with italics preserved)
+- note: Journalistic synthesis of the revisionist archaeology (Denevan, Erickson, Balée, Dobyns); "Holmberg's Mistake" and the Noble Savage genealogy are the corpus's Americanist counterweight to the ecological-Indian projection.
+
 ### mason-sep-value-pluralism
 - status: usable
 - medium: text
@@ -1129,14 +1241,6 @@ Also: existing entry `curry-mullins-whitehouse-2019-seven-moral-rules` should ad
 - kb: `SEP_Value-Pluralism.md`
 - verified: file (SEP header with first-published and revision dates at seg 0)
 - note: The taxonomy of moral value pluralism (foundational vs non-foundational, incommensurability, the relation to relativism).
-
-### matolino-2022-xenophobia-end-of-ontological-ubuntu
-- status: usable
-- medium: text
-- cite: Bernard Matolino, "Xenophobia and the end of ontological Ubuntu," *South African Journal of Philosophy* 41:2 (2022), 143–155
-- kb: `Matolino_Xenophobia-and-the-End-of-Ontological-Ubuntu_SAJP-2022.md`
-- verified: file (SciELO page structure with abstract and keywords at segs 2–3; volume/pages from the journal record, not re-checked online)
-- note: Internal African critique of "ontological Ubuntu" (Africans-as-communalists); keeps only an axiological, prescriptive Ubuntu. The dissolution strategy's own critic.
 
 ### maulana-et-al-2021-sumarah-interrituality
 - status: usable
@@ -1169,6 +1273,14 @@ Also: existing entry `curry-mullins-whitehouse-2019-seven-moral-rules` should ad
 - kb: `McMahon_Early-Urbanism-in-Northern-Mesopotamia_JAR-2019.md`
 - verified: file (abstract at seg 0; running header "Journal of Archaeological Research (2020) 28:289–337" at seg 47; Brak mass graves at segs 54–55). The kb filename's 2019 is the online-first year.
 - note: Fourth-millennium BCE northern cities with low-density zones; Tell Brak's mass graves read as internal civil conflict generated by urban growth — cities as generators of the problems codes address.
+
+### mediasi-2020-samin-vs-semen-documentary-analysis
+- status: usable
+- medium: text
+- cite: "Dualisme Citra Sedulur Sikep dalam Film Dokumenter: Analisis Film 'Samin vs Semen' dan 'Sikep Samin Semen'," *Mediasi: Jurnal Kajian dan Terapan Media, Bahasa, Komunikasi* 1:2 (May 2020): 124ff (Politeknik Negeri Media Kreatif)
+- kb: `Samin-vs-Semen-documentary-analysis_Mediasi-Polimedia.md`
+- verified: file (journal masthead and abstract at seg 0; author name not recoverable from the ingested text)
+- note: Reception study of the two Kendeng documentaries; the Sikep in *Sikep Samin Semen* hold "demo bukanlah ajaran komunitas mereka" (*ora pamer suara, ora pamer tindak*).
 
 ### michael-2023-laozi-justice
 - status: usable
@@ -1241,6 +1353,14 @@ Also: existing entry `curry-mullins-whitehouse-2019-seven-moral-rules` should ad
 - kb: `Mosse_The-Modernity-of-Caste-and-the-Market-Economy_MAS-2019.md`
 - verified: file (title, author, SOAS affiliation and abstract at seg 0; volume/pages from the published record, not re-checked online)
 - note: Caste effects persisting inside India's market economy; the policy "enclosure" of caste in religion and caste politics.
+
+### mukodi-burhanuddin-2015-domestifikasi-perempuan-samin
+- status: usable
+- medium: text
+- cite: Mukodi & Afid Burhanuddin, "Domestifikasi Perempuan Samin dalam Khasanah Masyarakat Islam Modern," *Al-Tahrir: Jurnal Pemikiran Islam* 15:2 (November 2015): 411–430, DOI 10.21154/al-tahrir.v15i2.271
+- kb: `Mukodi-Burhanuddin_Domestifikasi-Perempuan-Samin_Al-Tahrir-2015.md`
+- verified: file (title, authors and abstract at seg 0; Indonesian abstract with "budaya patriarki" at seg 4)
+- note: Kelopo Dhuwur (Blora) fieldwork; women "still placed as a sub-ordinate of men"; patriarchal culture "dalam tataran tertentu", especially in matchmaking and marriage.
 
 ### mullins-et-al-2018-systematic-assessment-of-axial-age-proposals
 - status: usable
@@ -1401,6 +1521,14 @@ Also: existing entry `curry-mullins-whitehouse-2019-seven-moral-rules` should ad
 - verified: file (2-segment born-digital page; the "extraordinary fidelity over more than twenty centuries" sentence at seg 0)
 - note: Source of the note's long-standing external S8; now in the corpus. Author not named on the page.
 
+### parker-1916-constitution-of-the-five-nations
+- status: usable
+- medium: text-ocr
+- cite: Arthur C Parker, *The Constitution of the Five Nations, or The Iroquois Book of the Great Law*, New York State Museum Bulletin 184 (Albany: University of the State of New York, 1916)
+- kb: `Parker_The-Constitution-of-the-Five-Nations_1916.md`
+- verified: file (tesseract OCR header says 11 pages transcribed; title, introduction and 1898/1908 wampum-custody history at seg 0; the 1900 Six Nations Council dictation preface at seg 36; running heads "NEW YORK STATE MUSEUM")
+- note: Primary edition of the Great Law (Newhouse and Chiefs' versions) with the condolence ceremonies. ▲ "Future generations," not "seven generations," is the text's phrase; partial transcription.
+
 ### parker-1993-basic-bakunin
 - status: usable
 - medium: text
@@ -1457,6 +1585,22 @@ Also: existing entry `curry-mullins-whitehouse-2019-seven-moral-rules` should ad
 - verified: file (full citation block, DOI and dates at seg 1)
 - note: Direct individual-level test of the affluence/life-history mechanism behind Baumard et al. 2015 — no reliable relationship found in 592 individuals across eight societies.
 
+### pustakaswara-philosophy-of-wong-sikep-video
+- status: usable
+- medium: transcript
+- cite: Pustakaswara (presenter "NF"), "The Philosophy of Wong Sikep, Followers of Samin Surosentiko, Feared by the Dutch" (YouTube discussion built on Anis Sholeh Ba'asin & Muhammad Anis Ba'asin, *Samin: Mistisisme Petani di Tengah Pergolakan*, Semarang)
+- kb: `The-Philosophy-of-Wong-Sikep_Followers-of-Samin-Surosentiko_Feared-by-the-Dutch.md`
+- verified: file (5 segments; names the Ba'asin book and quotes *Het Nieuws van den Dag*, 5 March 1907)
+- note: Carries the 1907 interrogation exchange ("My body is my home") and the *patih* slap anecdote (Ba'asin p. 63). Already cited as [S15] in note 4.1 but previously missing from this register. Cited by DD note 4.1.
+
+### putri-2017-meaning-making-environmental-movement-sedulur-sikep
+- status: usable
+- medium: text
+- cite: Primi Suharmadhi Putri, "The Meaning Making of an Environmental Movement: A Perspective on Sedulur Sikep's Narrative in Anti-Cement Movement," *PCD Journal* 5:2 (2017): 297ff
+- kb: `Putri_The-Meaning-Making-of-an-Environmental-Movement_PCD-2017.md`
+- verified: file (journal header, dates and abstract at seg 0)
+- note: Sikep narratives on the anti-cement movement; woman as manifestation of earth; *siji kanggo sak lawase* monogamy.
+
 ### queloz-cueni-2019-genealogical-debunking
 - status: usable
 - medium: text
@@ -1472,6 +1616,14 @@ Also: existing entry `curry-mullins-whitehouse-2019-seven-moral-rules` should ad
 - kb: `Rai-Fiske_Moral-Psychology-is-Relationship-Regulation_2011.md`
 - verified: file (seg 3; title/authors not re-checked against a masthead segment)
 - note: universality in relational motives, diversity in relational models; "morally motivated acts, not simply errors in judgment."
+
+### reid-nunn-2015-ancient-aboriginal-stories-sea-level
+- status: usable
+- medium: text
+- cite: Nick Reid & Patrick Nunn, "Ancient Aboriginal stories preserve history of a rise in sea level," *The Conversation*, 13 January 2015, https://theconversation.com/ancient-aboriginal-stories-preserve-history-of-a-rise-in-sea-level-36010
+- kb: `Nunn-Reid_Ancient-Aboriginal-Stories-Preserve-History-of-Sea-Level-Rise_TheConversation-2015.md`
+- verified: file (URL and publication date in seg 0; web-page boilerplate present; article text segs 5–7)
+- note: Popular precursor to Nunn & Reid, *Australian Geographer* 47:1 (2016): 18 stories (the paper has 21), 10,000–13,000-year Fitzroy Island case, the authenticity argument. Cite the journal article for the calibrated figures.
 
 ### religionforbreakfast-2025-fandoms-are-religions
 - status: usable
@@ -1504,6 +1656,22 @@ Also: existing entry `curry-mullins-whitehouse-2019-seven-moral-rules` should ad
 - kb: `Rosch-Mervis_Family-Resemblances_CognitivePsych-1975.md` (full text, folded into the corpus 2026-08); `rosch-mervis_family-resemblances_1975.md` (attributed summary, in corpus under staging.text/DD/sources/oldsources/)
 - verified: web (DOI 10.1016/0010-0285(75)90024-9)
 - note: attributed summary note with verified page anchors. Family-resemblance score predicts prototypicality at ρ = .84–.94 across six categories — a measurable 'textbook case vs blurry rim' for the four-feature test. ▲ *Bird* was not among the tested categories (the robin/penguin norms are Rosch 1975a); object categories, ~1,076 US undergraduates — extension to normative categories is DD's own wager. Full text in DD local archive (scratch/sources/part1/, gitignored).
+
+### rose-1996-nourishing-terrains
+- status: usable
+- medium: text
+- cite: Deborah Bird Rose, *Nourishing Terrains: Australian Aboriginal Views of Landscape and Wilderness* (Canberra: Australian Heritage Commission, 1996), ISBN 0-642-23561-9
+- kb: `Rose_Nourishing-Terrains_AustralianHeritageCommission-1996.md`
+- verified: file (introduction and "Country" chapter at segs 1–7 with footnote apparatus; born-digital text, clean)
+- note: "Country" as living entity and proper noun; Rose's refusal of the conservation-ethic debate; quoted Aboriginal explanations, songs and song-poems throughout.
+
+### rosyid-2023-komunitas-samin-agama-adam
+- status: usable
+- medium: text
+- cite: Moh Rosyid, "Komunitas Samin: Agama Adam dan Ajarannya," *Hanifiya: Jurnal Studi Agama-Agama* (September 2023)
+- kb: `Rosyid_Komunitas-Samin-Agama-Adam-dan-Ajarannya_Hanifiya-2023.md`
+- verified: file (title, author, IAIN Kudus affiliation and dates at seg 0; volume/issue not in the ingested text)
+- note: Kudus community; Agama Adam transmitted "secara regenerasi dengan bahasa tutur"; classed by the state as *penghayat kepercayaan*.
 
 ### ruiz-collantes-2023-democracy-against-homo-sapiens-alpha
 - status: usable
@@ -1664,6 +1832,22 @@ Also: existing entry `curry-mullins-whitehouse-2019-seven-moral-rules` should ad
 - verified: file (structured abstract at segs 0–1; results with correlation magnitudes at seg 8)
 - note: The Marriage and Family Program dissolving intensive kinship → impersonal prosociality; the case that a code can manufacture stranger-society psychology.
 
+### scott-1976-the-moral-economy-of-the-peasant
+- status: usable
+- medium: text-ocr
+- cite: James C Scott, *The Moral Economy of the Peasant: Rebellion and Subsistence in Southeast Asia* (New Haven: Yale University Press, 1976)
+- kb: `Scott_The-Moral-Economy-of-the-Peasant_1976.md`
+- verified: file (314 segments; subsistence-ethic passages located, e.g. seg 256)
+- note: The subsistence ethic and the "safety-first" peasant; frame for the Samin's defence of customary access. OCR scan — pointer, not quotable.
+
+### scott-1985-weapons-of-the-weak
+- status: usable
+- medium: text-ocr
+- cite: James C Scott, *Weapons of the Weak: Everyday Forms of Peasant Resistance* (New Haven: Yale University Press, 1985)
+- kb: `Scott_Weapons-of-the-Weak_1985.md`
+- verified: file (OCR provenance header at seg 0 lists pages transcribed 1–2, 147, 228, 297, 300, 302 only)
+- note: ▲ Partial scan — title pages and six body pages. Usable to anchor the title and the everyday-resistance vocabulary, not the argument; cite the printed edition for substance.
+
 ### scott-1990-domination-and-the-arts-of-resistance
 - status: usable
 - medium: text-ocr
@@ -1719,6 +1903,14 @@ Also: existing entry `curry-mullins-whitehouse-2019-seven-moral-rules` should ad
 - kb: `Shariff-Norenzayan_God-Is-Watching-You_PsychSci-2007.md`
 - verified: file (abstract at seg 0; journal details from the abstract header)
 - note: The founding priming study for supernatural monitoring; effect comparable to secular-institution primes and unrelated to self-reported religiosity.
+
+### shiraishi-1990-dangirs-testimony
+- status: usable
+- medium: text
+- cite: Takashi Shiraishi, "Dangir's Testimony: Saminism Reconsidered," *Indonesia* 50 (October 1990): 95–120 (Cornell Southeast Asia Program)
+- kb: `Shiraishi_Dangirs-Testimony-Saminism-Reconsidered_Indonesia-1990.md`
+- verified: file (author and two-part structure at seg 0; running head "Dangir's Testimony 115" at seg 41)
+- note: Translation of the 1928 Pati interrogation minutes plus commentary: "doubly alienated"; spies' "fantastic mixture"; the doctrine of language ("It is man who utters the word"); *wong sikep* vs the state's "Samin" label.
 
 ### singh-glowacki-2022-beyond-the-nomadic-egalitarian-model
 - status: usable
@@ -1776,6 +1968,22 @@ Also: existing entry `curry-mullins-whitehouse-2019-seven-moral-rules` should ad
 - verified: file (DOI and running heads "Sosis, Bressler / COMMUNE LONGEVITY 215–222" in segs 0–13; Table 2 at seg 13)
 - note: 83 nineteenth-century US communes, 1,556 commune-years; religious communes mean 35.6 years vs secular 7.7, anarchist 9 (n = 7); costly requirements predict survival.
 
+### stanner-1958-continuity-and-change
+- status: usable
+- medium: text-ocr
+- cite: WEH Stanner, "Continuity and Change among the Aborigines," Presidential Address, Section F, ANZAAS, *Australian Journal of Science* 21:5A (1958); repr. in *White Man Got No Dreaming: Essays 1938–1973* (Canberra: ANU Press, 1979), pp. 41–66
+- kb: `Stanner_Continuity-and-Change_White-Man-Got-No-Dreaming-excerpt_1958.md`
+- verified: file (tesseract OCR of the ANU Press reprint; running head "Continuity and Change (1958)" at seg 32; letter-spaced throughout — quotations reassembled by hand from segs 35 and 50)
+- note: Stanner's own statement of the Dreaming as a set of once-for-all value-doctrines held by a self-regulating society without state instrumentalities; "The Dreaming and The Market are mutually exclusive." Pointer only for wording.
+
+### stanner-1963-on-aboriginal-religion
+- status: usable
+- medium: text-ocr
+- cite: WEH Stanner, *On Aboriginal Religion* (Oceania Monograph 11, 1963; new ed. with introduction by Ian Keen, Sydney: Sydney University Press, 2014)
+- kb: `Stanner_On-Aboriginal-Religion_SydneyUP-2014.md`
+- verified: file (Keen's introduction "On Aboriginal Religion: An Appreciation" at segs 18–20; Murinbata essays with original pagination in running heads, e.g. "On Aboriginal Religion 69" at seg 145)
+- note: The Murinbata essays; Keen's introduction supplies the "once-for-all … everywhen" summary of Stanner's ontology and the Stanner 1965 reference for the coinage.
+
 ### stenmark-2022-worldview-studies
 - status: usable
 - medium: text
@@ -1800,6 +2008,14 @@ Also: existing entry `curry-mullins-whitehouse-2019-seven-moral-rules` should ad
 - verified: file (journal header, volume and ISSN at seg 0; MK 97/PUU-XIV/2016 and the 2018 circular at segs 11–12)
 - note: Population-document discrimination against penghayat and local-religion adherents (Sedulur Sikep, Parmalim) from the 1978 Home Affairs circular to the Adminduk law, and the piecemeal implementation of the 2017 Court ruling. Gives the decision date as 18 October 2017. Cited by DD notes 3.5.1, 3.5.4.
 
+### sule-2022-xenophobia-end-of-ontological-ubuntu
+- status: usable
+- medium: text
+- cite: Peter Echewija Sule, "Xenophobia and the end of ontological Ubuntu," *Acta Academica* 54:2 (2022), art. 4, DOI 10.18820/24150479/aa54i2/4
+- kb: `Matolino_Xenophobia-and-the-End-of-Ontological-Ubuntu_SAJP-2022.md`
+- verified: web (SciELO article page and Acta Academica record, checked 2026-08-27)
+- note: ▲ The corpus filename misattributes this paper to Bernard Matolino; the author is Sule (Federal University of Lafia), responding to Matolino & Kwindingwi 2013. Internal African critique of "ontological Ubuntu" (Africans-as-communalists) via the xenophobia case; keeps only an axiological, prescriptive Ubuntu. The dissolution strategy's own critic.
+
 ### sumarah-net-homepage
 - status: usable
 - medium: text
@@ -1807,6 +2023,14 @@ Also: existing entry `curry-mullins-whitehouse-2019-seven-moral-rules` should ad
 - kb: `Sumarah-net_homepage.md`
 - verified: file (single segment; self-description text)
 - note: Insider self-description of the Western Sumarah network — "a philosophy of life and a form of meditation". Cited by DD notes 3.5, 3.5.1, 3.5.2, 3.5.4.
+
+### supratikno-adi-2023-samin-community-globalization-era
+- status: usable
+- medium: text
+- cite: Supratikno & Suwarto Adi, "The Samin Community in the Globalization Era: Role of the Religion of Adam in the Post-Cement Industry Advocacy" (Satya Wacana Christian University, Salatiga, 2023)
+- kb: `Supratikno-Adi_The-Samin-Community-in-the-Globalization-Era_2023.md`
+- verified: file (title and second author at seg 0; ▲ first author's name and the venue are not recoverable from the ingested text — taken from the filename)
+- note: Sukolilo (Pati) study; Agama Adam glossed by informants as *pangucap* (utterance) — "*mbecikna laku, ngugemi ucap*"; faith as resource against the cement industry.
 
 ### taves-2009-religious-experience-reconsidered
 - status: usable
@@ -1831,6 +2055,22 @@ Also: existing entry `curry-mullins-whitehouse-2019-seven-moral-rules` should ad
 - kb: `Tinbergen_On-Aims-and-Methods-of-Ethology_1963.md`
 - verified: file (segs 11–12; heavily garbled OCR — "survival yvaluc", "Echology")
 - note: origin of the four questions (causation, ontogeny, evolution, survival value). Pointer only; verify any wording against the printed article.
+
+### trc-south-africa-1998-final-report-vol-1
+- status: usable
+- medium: text
+- cite: Truth and Reconciliation Commission of South Africa, *Truth and Reconciliation Commission of South Africa Report*, Volume 1 (Cape Town: TRC, 29 October 1998), incl. the Chairperson's Foreword and ch. 5 "Concepts and Principles"
+- kb: `TRC-South-Africa_Final-Report-Volume-1_1998.md`
+- verified: file (running heads "V O L U M E 1 C H A P T E R 1 Foreword by Chairperson" at seg 6; ch. 5 heading at seg 109)
+- note: The Commission's own account of its mandate; the founding Act's preamble ("a need for ubuntu but not for victimisation") at seg 8.
+
+### trc-south-africa-1998-final-report-vol-5
+- status: usable
+- medium: text
+- cite: Truth and Reconciliation Commission of South Africa, *Truth and Reconciliation Commission of South Africa Report*, Volume 5 (Cape Town: TRC, 29 October 1998), incl. ch. 9 "Reconciliation"
+- kb: `TRC-South-Africa_Final-Report-Volume-5_1998.md`
+- verified: file (reconciliation/restorative-justice paragraphs numbered 145–149 at seg 488; "spirit of ubuntu" and dignity passage at seg 498)
+- note: The report's statement of restorative justice — revenge and impunity both refused; dignity "can only be acknowledged."
 
 ### trivers-1971-evolution-of-reciprocal-altruism
 - status: usable
@@ -1880,6 +2120,14 @@ Also: existing entry `curry-mullins-whitehouse-2019-seven-moral-rules` should ad
 - verified: web (JSTOR 4106433; symposium with MacKinnon and Kneale)
 - note: attributed summary note with verified page anchors. Replaces the Wikipedia citation in note 1.3 (S15). Open texture ('Porosität der Begriffe', Kneale's translation, p. 121 n.): the impossibility of forestalling unforeseen cases, distinct from remediable vagueness. ▲ Waismann confines it to empirical description — the legal extension is Hart's, the dharma extension is DD's own; 1.3's borderline cases are closer to vagueness than open texture. Full text in DD local archive (scratch/sources/part1/, gitignored).
 
+### wakhidah-2024-legal-culture-of-samin-family-law
+- status: usable
+- medium: text
+- cite: Nur Wakhidah et al, "The Legal Culture of Samin Community of Family Law in Central Java," *Al-Ihkam: Jurnal Hukum dan Pranata Sosial* 19:1 (2024): 126–150, DOI 10.19105/al-lhkam.v19i1.10341
+- kb: `The-Legal-Culture-of-Samin-Community-of-Family-Law-in-Central-Java_Al-Ihkam.md`
+- verified: file (journal header with volume, pages and DOI at seg 0; co-authors not recoverable beyond the corresponding author)
+- note: Customary marriage rite and the lifetime-monogamy pledge; "politically, the state does not recognize the existence of the Samin law" (seg 11).
+
 ### waldron-2002-rule-of-law-essentially-contested
 - status: usable
 - medium: text
@@ -1887,6 +2135,14 @@ Also: existing entry `curry-mullins-whitehouse-2019-seven-moral-rules` should ad
 - kb: `Waldron_Is-the-Rule-of-Law-an-Essentially-Contested-Concept_2002.md`
 - verified: file (preprint header "forthcoming in special issue of Law and Philosophy" at seg 0; journal volume/pages not checked against the published version)
 - note: Applies Gallie to the rule of law via the 2000 Florida recount; normativity + complexity as the key to essential contestability; the "upbeat" reading of contestation.
+
+### walzer-1985-exodus-and-revolution
+- status: usable
+- medium: text-ocr
+- cite: Michael Walzer, *Exodus and Revolution* (New York: Basic Books, 1985)
+- kb: `Walzer_Exodus-and-Revolution_1986.md`
+- verified: file (tesseract OCR; Basic Books title page at seg 0; the Sinai covenant chapter "The Covenant: A Free People" at segs 66–72; filename year 1986 is the paperback, first edition 1985)
+- note: The covenant read as informed popular consent and "radical voluntarism" — the feature that most separates Abrahamic grounding from cosmic order. Running heads are interleaved into the text by the OCR.
 
 ### weber-1946-from-max-weber
 - status: usable
@@ -1928,6 +2184,14 @@ Also: existing entry `curry-mullins-whitehouse-2019-seven-moral-rules` should ad
 - verified: file (title/authors at seg 0; running head "Current Anthropology Volume 55, Number 6, December 2014" at seg 24)
 - note: Modes-of-religiosity theory in its field form — routinisation as the hallmark of the doctrinal mode, imagistic fusion via dysphoric ritual; rebel-group mortality datum.
 
+### whyte-2017-indigenous-climate-change-studies
+- status: usable
+- medium: text
+- cite: Kyle Whyte, "Indigenous Climate Change Studies: Indigenizing Futures, Decolonizing the Anthropocene," *English Language Notes* 55:1–2 (2017), 153–162
+- kb: `Whyte_Indigenous-Climate-Change-Studies_2017.md`
+- verified: file (journal header "English Language Notes 55.1-2 Fall 2017" at seg 1; page numbers 155 ff. in-text)
+- note: Potawatomi philosopher; indigenous peoples "already living today in post-apocalyptic situation"; the Anthropocene as rooted in colonisation; anthropogenic change as diverse. Indigenous-authored.
+
 ### wikipedia-walden
 - status: usable
 - medium: text
@@ -1935,6 +2199,22 @@ Also: existing entry `curry-mullins-whitehouse-2019-seven-moral-rules` should ad
 - kb: — (external; no KB file)
 - verified: web (article fetched 2026-07-27: Emerson's ownership, work-exchange arrangement, 4 July 1845 – 6 September 1847, several-times-weekly Concord trips, in-kind support; Walls 2017 confirmed via University of Chicago Press catalogue)
 - note: the documented facts behind the Lowell critique, used in 6.3 to keep the Thoreau strand honest. Walls is the standing scholarly biography if a deeper treatment is later needed; her text was not itself consulted.
+
+### witness-2023-in-the-name-of-mother-earth-kendeng-women
+- status: usable
+- medium: text
+- cite: WITNESS, "In the Name of Mother Earth: The Kendeng Women" (profile of Sukinah, witness.org, 22 June 2023)
+- kb: `WITNESS_In-the-Name-of-Mother-Earth-Kendeng-Women_2023.md`
+- verified: file (profile header and date in seg 0; 5 segments)
+- note: Advocacy-organisation profile of Sukinah and the Kartini Kendeng feet-in-cement protests; places her inside JM-PPK. Advocacy source — use for the activists' self-account, not for contested facts.
+
+### zarkasi-et-al-2021-social-resistance-strategy-samin
+- status: usable
+- medium: text
+- cite: Ibnu Fath Zarkasi, Desiderius Soedibyo, Rina Herlina Haryanti & Ramaditya Rahardian, "Social Resistance Strategy of Indigenous Samin Community," *Politika: Jurnal Ilmu Politik* 12:2 (2021): 194–207, DOI 10.14710/politika.12.1.2021.194-207
+- kb: `Zarkasi-et-al_Social-Resistance-Strategy-of-Indigenous-Samin-Community_Politika-2021.md`
+- verified: file (masthead with DOI and authors at seg 0)
+- note: JMPPK as the coalition vehicle; allies LBH Semarang/Jakarta, WALHI, KRuHA, Desantara, KONTRAS.
 
 ### zenquotes-2619-aristotle-habit
 - status: barred
@@ -4059,7 +4339,7 @@ Also: existing entry `curry-mullins-whitehouse-2019-seven-moral-rules` should ad
 - status: usable
 - medium: text
 - cite: David Sloan Wilson, "The New Atheism as a Stealth Religion, Five Years Later" (This View of Life / prosocial.world)
-- kb: `the-new-atheism-as-a-stealth-religion-five-years-later`
+- kb: `posts_the-new-atheism-as-a-stealth-religion-five-years-later.md`
 - verified: web
 - note: DB confirms prov=prosocial.world (staging.text/prosocial.world/the-new-atheism-as-a-stealth-religion-five-years-later.md). Follows Wilson's earlier "Atheism as a Stealth Religion" essay series; Ayn Rand's Objectivism as exhibit A per gloss.
 
