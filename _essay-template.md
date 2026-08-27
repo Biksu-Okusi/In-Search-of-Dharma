@@ -22,7 +22,7 @@ STRUCTURE (the five beats from the Essays.md blueprint — keep the beats, vary 
   3. The search — follow the evidence; think aloud; allow doubt and correction.
   4. The turn — the insight that reframes what came before.
   5. Hand-off — the closing sentence(s) that point to the next Part.
-Use a handful of light, evocative section subheads (not academic ones) to pace a ~5,000-word read. Standalone but sequential.
+Use a handful of light, evocative section subheads (not academic ones) to pace a 5,000–7,000-word read. Standalone but sequential.
 A multi-topic essay needs ONE named organising schema, not a list (e.g. Part 6 "dark twins", Part 8 "the flattening"): name the frame once and recur to it.
 
 VOICE: first-person guide. Curious, evidence-led, willing to say "I was wrong."
@@ -42,11 +42,11 @@ House quotation convention: the closing full stop sits INSIDE the quotation mark
 
 READING LEVEL: ~year-12. Plain words for hard ideas. Define nothing the reader can infer; patronise nothing. A little difficulty is acceptable; do not flatten a hard idea just to lower the grade.
 
-LENGTH: ~5,000 words (±1,000). The band applies to the arc essays, Parts 1–8, only. The Preface (Part 0) and the Coda (Part 9) sit outside the arc and outside the band: the Preface runs shorter as disclosure rather than argument, the Coda shorter still by design, since it states the answer in a few pages rather than arguing it. Set words: to the MEASURED count of the essay body — everything from the end of the frontmatter up to the `<!--audio stop-->` tag (the title, standfirst, subheads, and running prose all count; the frontmatter and everything from the `<!--audio stop-->` tag onward — Sources, Key works, Chapters — do not). Measure, do not estimate, as guesses run high. Sustained-subject essays tend to overshoot, multi-subject surveys to undershoot.
+LENGTH: a guide, not a bound: roughly 5,000–7,000 words, as the argument needs. The guide applies to the arc essays, Parts 1–8, only. The Preface (Part 0) and the Coda (Part 9) sit outside the arc and outside the guide: the Preface runs shorter as disclosure rather than argument, the Coda shorter still by design, since it states the answer in a few pages rather than arguing it. Set words: to the MEASURED count of the essay body — everything from the end of the frontmatter up to the `<!--audio stop-->` tag (the title, standfirst, subheads, and running prose all count; the frontmatter and everything from the `<!--audio stop-->` tag onward — Sources, Key works, Chapters — do not). Measure, do not estimate, as guesses run high. Sustained-subject essays tend to overshoot, multi-subject surveys to undershoot.
 
 SOURCING: name people and works in the prose ("the anthropologist James C Scott called this…"). NO inline citation marks, NO [S#] tags in the body. Every substantive claim must trace to a draws_on note (which carries the [S#] citations) or to fresh external sourcing flagged at draft time. The chain is preserved in Sources & further reading, below. A concrete opening image taken from a real event must be sourced as tightly as any other claim: name the people, the place, the date. A vague anecdote ("in 2023 one such effort…") reads as invented and forfeits the very trust the opening image was meant to buy.
 
-HONESTY: where the corpus leans (secular / evolutionary / Western-academic), or where the sources are thin or contested, say so in passing rather than hiding it.
+CANDOUR: where the corpus leans (secular / evolutionary / Western-academic), or where the sources are thin or contested, say so in passing rather than hiding it.
 Humility is shown, not announced: it comes from naming the evidence, conceding what the sources cannot settle, and turning the critique on the essay's own method. It does not come from hedges, nor from a grand closing gesture ("it may be the largest task our species has ever faced"). The smaller, truer landing beats the sweeping one.
 -->
 
