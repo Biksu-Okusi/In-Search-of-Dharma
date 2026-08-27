@@ -78,6 +78,14 @@ A note's `[S#]` line points here via `[src:<key>]`. No `[S#]` may point at a `st
 - verified: file (prologue with the 12 December 1935 Sant Ram letter at seg 0; section headings and paragraph numbers of the annotated edition; Chaturvarnya sections at segs 45–49, Manu at seg 52, Shastras at seg 61)
 - note: The tradition-internal reformer's case against caste on grounds of practicability, harm and coercion — the counter to Dumont.
 
+### analayo-2016-foundation-history-of-the-nuns-order
+- status: usable
+- medium: text
+- cite: Bhikkhu Anālayo, *The Foundation History of the Nuns' Order* (Hamburg Buddhist Studies 6; Bochum/Freiburg: projekt verlag, 2016), ISBN 978-3-89733-387-1
+- kb: `Analayo_The-Foundation-History-of-the-Nuns-Order_2016.md`
+- verified: file (imprint with ISBN at seg 0; OCR provenance header lists only pages 1–2, 6, 12, 176, 268 as OCR'd — body is born-digital; Conclusion at segs 225–228)
+- note: Comparative study of the seven canonical versions of the founding of the bhikkhunī order; the garudhammas as later "instruments of submission," the prediction of decline migrating from the first saṅgīti account, the ascetic-brahminical faction's control of transmission. Method explicitly textual, not historical reconstruction.
+
 ### anarchybooks-corpus-status
 - status: barred
 - barred: ephemera
@@ -149,6 +157,14 @@ A note's `[S#]` line points here via `[src:<key>]`. No `[S#]` may point at a `st
 - kb: `Asad_Genealogies-of-Religion_1993.md` (full text, folded into the corpus 2026-08); `talal-asad_genealogies-of-religion_1993.md` (attributed summary, in corpus under staging.text/DD/sources/oldsources/)
 - verified: web (ISBN 978-0-8018-4632-8); central quotation confirmed verbatim at p. 29 of the full text
 - note: attributed summary note with verified page anchors of ch. 1, 'The Construction of Religion as an Anthropological Category' (pp. 27–54) — the strongest published opponent of DD's central move, previously cited at blurb level. Full text in DD local archive (scratch/sources/part1/, gitignored); community upload, reading copy only. Cited by DD note 1.3 (S18) and Part 1.
+
+### asad-2003-formations-of-the-secular
+- status: usable
+- medium: text-ocr
+- cite: Talal Asad, *Formations of the Secular: Christianity, Islam, Modernity* (Stanford: Stanford University Press, 2003)
+- kb: `Asad_Formations-of-the-Secular_2003.md`
+- verified: file (running head "SECULAR" with pagination at seg 114; ch. 7 on Egypt with the Qasim Amin/Leila Ahmed passage and its footnotes at segs 281–282)
+- note: Ch. 7 "Reconfigurations of Law and Ethics in Colonial Egypt": Qasim Amin's "liberation of woman" as the colonizer's attack on native culture (via Leila Ahmed); the family as a new category. OCR — quotations checked against the chunks.
 
 ### asrawijaya-hudayana-2021-power-of-a-leader-samin-opposition
 - status: usable
@@ -222,6 +238,14 @@ A note's `[S#]` line points here via `[src:<key>]`. No `[S#]` may point at a `st
 - verified: web (globalbuddhism.org, diamond OA)
 - note: attributed summary note with verified page anchors, shared with the Higgins entry. The programmatic founding document of 'secular dharma': three senses of 'secular'; Four Noble Truths recast as four tasks; 'Buddhism 2.0' coined here with a 'touch of irony' (p. 91). ▲ Partisan witness the project is personally close to — flag per bias policy. Distinct work from the KB's Batchelor lecture transcripts.
 
+### batchelor-wellington-talk-nirvana-mcmindfulness-ethics
+- status: usable
+- medium: transcript
+- cite: Stephen Batchelor, "Nirvana, McMindfulness and Ethics," talk to One Mindful Breath, Wellington (YouTube, undated; the host dates his previous visit to 2012)
+- kb: `Stephen-Batchelor-on-Nirvana-McMindfulness-and-Ethics.transcript.txt`
+- verified: file (host's introduction in seg 0 names venue and prior 2012 visit; 15 segments; LLM-cleaned transcript)
+- note: Batchelor's rebuttal of the McMindfulness argument as "overly simplistic"; prison chaplaincy and British Army symposium anecdotes; "a secular dharma should be open to the whole world."
+
 ### baumard-hyafil-boyer-2015-what-changed-during-the-axial-age
 - status: usable
 - medium: text
@@ -277,6 +301,14 @@ A note's `[S#]` line points here via `[src:<key>]`. No `[S#]` may point at a `st
 - kb: `Blair_The-Neurobiology-of-Psychopathic-Traits-in-Youths_NatRevNeurosci-2013.md`
 - verified: file (title, author affiliation and abstract at seg 0; volume/pages/DOI from the published record, not web-checked)
 - note: The two-impairment model for CU youth: reduced amygdala responsiveness to distress cues; vmPFC/striatal decision-making deficits.
+
+### bodhi-2011-what-does-mindfulness-really-mean
+- status: usable
+- medium: text
+- cite: Bhikkhu Bodhi, "What Does Mindfulness Really Mean? A Canonical Perspective," *Contemporary Buddhism* 12:1 (2011), 19–39, DOI 10.1080/14639947.2011.564813
+- kb: `Bodhi_What-Does-Mindfulness-Really-Mean-A-Canonical-Perspective_2011.md`
+- verified: file (journal masthead and DOI in seg 1; 26 segments)
+- note: Canonical philology of sati (path factor, "guarantor" of the other factors; reservations about "bare attention") ending with an explicit licence to clinical extraction — "the right to take what they need" — under a reminder of the "sanctuary."
 
 ### bodhi-2015-facing-the-great-divide
 - status: usable
@@ -406,6 +438,22 @@ A note's `[S#]` line points here via `[src:<key>]`. No `[S#]` may point at a `st
 - verified: file (title/author and abstract in seg 0; copyright line "© Donald E. Brown" in seg 7)
 - note: Brown's own restatement of the universals programme; the list (cooperation, reciprocity, exchange, gossip, ethnocentrism) but not the 1991 book's "constant ethical patterns" phrasing.
 
+### brown-et-al-2022-stoic-training-medical-students
+- status: usable
+- medium: text
+- cite: Megan E L Brown, Alexander MacLellan, William Laughey, Usmaan Omer, Ghita Himmi, Tim LeBon & Gabrielle M Finn, "Can stoic training develop medical student empathy and resilience? A mixed-methods study," *BMC Medical Education* 22:340 (2022), DOI 10.1186/s12909-022-03391-x (CC BY)
+- kb: `Brown-et-al_Can-Stoic-Training-Develop-Medical-Student-Empathy-and-Resilience_BMCMedEduc-2022.md`
+- verified: file (journal header, DOI and licence in segs 0–1)
+- note: The one trial of modern Stoic training as practice in the corpus: n = 24, twelve online days, "quantitatively, results were mixed."
+
+### bullivant-et-al-2019-understanding-unbelief
+- status: usable
+- medium: text
+- cite: Stephen Bullivant, Miguel Farias, Jonathan Lanman & Lois Lee, *Understanding Unbelief: Atheists and agnostics around the world — Interim findings from 2019 research in Brazil, China, Denmark, Japan, the United Kingdom and the United States* (St Mary's University, Twickenham, 2019)
+- kb: `Lee-et-al_Atheists-and-Agnostics-Around-the-World_UnderstandingUnbelief-2019.md`
+- verified: file (eight key findings at segs 0–1; methodology and St Mary's attribution at seg 4; the corpus filename leads with Lee, the report's author order is Bullivant, Farias, Lanman, Lee)
+- note: Six-country survey of atheists and agnostics — diversity of unbelief, residual religious affiliation, and endorsement of objective moral values at population rates.
+
 ### burnet-1920-early-greek-philosophy
 - status: usable
 - medium: text-ocr
@@ -533,6 +581,22 @@ A note's `[S#]` line points here via `[src:<key>]`. No `[S#]` may point at a `st
 - kb: `Dhammika_The-Edicts-of-King-Asoka_BPS-Wheel-386-387_1993.md`
 - verified: file (born-digital web page with BPS/Access-to-Insight navigation and "© 1994" in seg 0; preface states dependence on Sen's translation with Sircar and Bhandarkar consulted; Rock Edicts 5, 6, 12, 14 at segs 10, 11, 14, 17)
 - note: Popular but complete English rendering of the Major and Minor Rock and Pillar Edicts; a rendering, not a critical edition — pair with Hultzsch for wording disputes.
+
+### ding-et-al-2023-therapy-of-desire-buddhism-stoicism
+- status: usable
+- medium: text
+- cite: Xiaojun Ding, Yueyao Ma, Feng Yu & Lily M Abadal, "The Therapy of Desire in Times of Crisis: Lessons Learned from Buddhism and Stoicism," *Religions* 14:237 (2023), DOI 10.3390/rel14020237 (CC BY)
+- kb: `Ding-et-al_The-Therapy-of-Desire-in-Times-of-Crisis-Buddhism-and-Stoicism_Religions-2023.md`
+- verified: file (citation block with DOI and dates in seg 0)
+- note: Buddhism and Stoicism paired as "philosophical therapy" for desire, via Hadot's spiritual exercises.
+
+### doctorow-2021-how-to-destroy-surveillance-capitalism
+- status: usable
+- medium: text
+- cite: Cory Doctorow, *How to Destroy Surveillance Capitalism* (Medium/OneZero, 2020; Stonesong Digital, 2021)
+- kb: `Cory-Doctorow_How-to-Destroy-Surveillance-Capitalism_2021.md`
+- verified: file (title and "by Cory Doctorow, 2020" at seg 0; "Domination" section at seg 9)
+- note: The anti-monopoly sceptic of Zuboff's mind-control thesis: "little evidence" of bypassed rationality; monopoly as cause. Counterweight inside the critical camp.
 
 ### dumont-1972-homo-hierarchicus
 - status: usable
@@ -669,6 +733,22 @@ A note's `[S#]` line points here via `[src:<key>]`. No `[S#]` may point at a `st
 - kb: `Epictetus_Discourses-and-Enchiridion-selections_PG10661.txt`
 - verified: file (Long's wording confirmed at seg 75, Discourses 2.18; the complete Discourses in Long's translation is a separate file, `Epictetus_The-Discourses-complete_trans-Long_1890.md`)
 - note: Public-domain primary; Discourses 2.18 "Appearances, wait for me a little" is the Stoic metacognitive exercise.
+
+### epictetus-enchiridion-carter-pg45109
+- status: usable
+- medium: text
+- cite: Epictetus, *The Enchiridion*, trans. Elizabeth Carter (1758); Project Gutenberg #45109
+- kb: `Epictetus_Enchiridion_trans-Carter_PG45109.txt`
+- verified: file (Gutenberg text; §5 at seg 12; 51 segments)
+- note: Public-domain translation; source of "Men are disturbed not by things, but by the views which they take of things."
+
+### ernanda-2023-challenging-the-patriarchal-culture
+- status: usable
+- medium: text
+- cite: Ernanda, "Challenging the patriarchal culture: Feminist critical discourse analysis of the Indonesian environmental heroines," *Wacana: Journal of the Humanities of Indonesia* 24:1 (2023), 58–83
+- kb: `Ernanda_Challenging-the-Patriarchal-Culture-Indonesian-Environmental-Heroines_Wacana-2023.md`
+- verified: file (title, abstract and running head "Wacana Vol. 24 No. 1 (2023)" at seg 0; interview dates at seg 12; page range from the running heads, not web-checked)
+- note: Feminist CDA of the documentary *Tanah Ibu Kami*; Sukinah's "we were just housewives" and the Kendeng women as "the equivalent of Kartini"; State Ibuism and *kodrat* as the patriarchal frame.
 
 ### errico-malatesta-1884-the-economic-question
 - status: usable
@@ -990,6 +1070,14 @@ A note's `[S#]` line points here via `[src:<key>]`. No `[S#]` may point at a `st
 - verified: unverified
 - note: a mass movement's death discussed by its participants as it happened; two incompatible post-mortems inside one exchange — contested memory, not causal history.
 
+### goodyear-et-al-2025-school-phone-policies-smart-schools
+- status: usable
+- medium: text
+- cite: Victoria A Goodyear, Amie Randhawa, Péymane Adab, Hareth Al-Janabi, Sally Fenton, Kirsty Jones, Maria Michail, Breanna Morrison, Paul Patterson, Jonathan Quinlan et al, "School phone policies and their association with mental wellbeing, phone use, and social media use (SMART Schools): a cross-sectional observational study," *The Lancet Regional Health – Europe* (2025), ISRCTN77948572
+- kb: `Goodyear-et-al_School-Phone-Policies-SMART-Schools_LancetRegHealthEurope-2025.md`
+- verified: file (title, authors, registration and Findings at segs 0–1; volume/article number not in the file)
+- note: 30 English schools, 1,227 pupils; restrictive policies cut in-school use, no wellbeing difference. The one policy experiment on the shelf.
+
 ### goyal-et-al-2014-meditation-programs-meta-analysis
 - status: usable
 - medium: text
@@ -1052,7 +1140,7 @@ A note's `[S#]` line points here via `[src:<key>]`. No `[S#]` may point at a `st
 - cite: Guy Debord, "Theory of the Dérive" (November 1956; pub. *Les Lèvres Nues* #9, 1956, rev. *Internationale Situationniste* #2, 1958); English trans. Ken Knabb, *Situationist International Anthology*
 - kb: `Guy-Debord_Theory-of-the-Dérive_1956.md`
 - verified: unverified (Knabb attribution inferred, not web-checked)
-- note: the dérive as attention-environment practice: "drop their relations, their work and leisure activities, and all their other usual motives for movement and action." Cited in 6.2 as a structural ancestor of digital-declutter / re-grounded-attention practices — comparison marked [A], no influence claim.
+- note: the dérive as attention-environment practice: "drop their relations, their work and leisure activities, and all their other usual motives for movement and action." Cited in 6.2 as a structural ancestor of digital-declutter / re-grounded-attention practices — comparison marked [A], no influence claim. Cited by DD note 6.2.
 
 ### guy-debord-1957-report-on-the-construction-of-situations
 - status: usable
@@ -1060,7 +1148,7 @@ A note's `[S#]` line points here via `[src:<key>]`. No `[S#]` may point at a `st
 - cite: Guy Debord, "Report on the Construction of Situations and on the International Situationist Tendency's Conditions of Organization and Action" (July 1957); English trans. in Ken Knabb (ed.), *Situationist International Anthology* (Bureau of Public Secrets)
 - kb: `Guy-Debord_Report-on-the-Construction-of-Situations_And-on-the-International-Situationist-Tendencys-Conditions-of-Organization-and-Action_1957.md`
 - verified: unverified (translation provenance inferred from house style and the Knabb footnote apparatus in the companion 1956 files; not web-checked)
-- note: founding SI manifesto. Source for the recuperation mechanism ("trivialized and sterilized... safely spectacularized"), the "battle of leisure" / "televised imbecilities" passage, and constructed situations (spectators → "livers").
+- note: founding SI manifesto. Source for the recuperation mechanism ("trivialized and sterilized... safely spectacularized"), the "battle of leisure" / "televised imbecilities" passage, and constructed situations (spectators → "livers"). Cited by DD note 6.2.
 
 ### guy-debord-1967-society-of-the-spectacle
 - status: usable
@@ -1068,7 +1156,7 @@ A note's `[S#]` line points here via `[src:<key>]`. No `[S#]` may point at a `st
 - cite: Guy Debord, *The Society of the Spectacle* (Paris: Buchet-Chastel, 1967); English trans. Ken Knabb (2002; book edn London: Rebel Press, 2005)
 - kb: `guy-debord_the-society-of-the-spectacle.md`
 - verified: file (translator identified from the file's own translator's note (Ken Knabb, dated Feb 2002, noting the Rebel Press 2005 edition and the prior Nicholson-Smith/Zone 1994 and Perlman-Supak/Black & Red 1977 translations); Knabb's translation is hosted at bopsecrets.org (Bureau of Public Secrets). ISBN not web-checked.)
-- note: primary polemical text, 221 numbered theses. Cite by thesis number. Theses used in 6.2: 1, 4, 6, 12, 59. Establishes that the "external industrial adversary" of the attention economy was diagnosed in 1967 — pre-web, pre-smartphone.
+- note: primary polemical text, 221 numbered theses. Cite by thesis number. Theses used in 6.2: 1, 4, 6, 12, 59. Establishes that the "external industrial adversary" of the attention economy was diagnosed in 1967 — pre-web, pre-smartphone. Cited by DD note 6.2.
 
 ### guy-debord-1988-comments-on-the-society-of-the-spectacle
 - status: usable
@@ -1076,7 +1164,7 @@ A note's `[S#]` line points here via `[src:<key>]`. No `[S#]` may point at a `st
 - cite: Guy Debord, *Commentaires sur la société du spectacle* (Paris: Éditions Gérard Lebovici, 1988); standard English trans. Malcolm Imrie (London: Verso, 1990, ISBN 9780860915201) — but the KB file carries a DIFFERENT, unattributed translation
 - kb: `Guy-Debord_Comments-on-the-Society-of-the-Spectacle_1988.md`
 - verified: web (Verso publisher page and AbeBooks confirm Imrie/Verso 1990, ISBN 9780860915201). The KB file names no translator; its phrasing ("the integrated spectacular", "forgeries without reply") does not match Imrie, so quotations from the file cannot be attributed to any published translation.
-- note: Debord's twenty-year self-audit — the "integrated spectacle", the five features, the three-days rule, the death of the agora, the image-flow that leaves no time for reflection. Cite by section number (§I–§XXXIII), prefer paraphrase over quotation because the translation is unattributed; flagged in the note's Tensions.
+- note: Debord's twenty-year self-audit — the "integrated spectacle", the five features, the three-days rule, the death of the agora, the image-flow that leaves no time for reflection. Cite by section number (§I–§XXXIII), prefer paraphrase over quotation because the translation is unattributed; flagged in the note's Tensions. Cited by DD note 6.2.
 
 ### guy-debord-gil-wolman-1956-users-guide-to-detournement
 - status: usable
@@ -1084,7 +1172,7 @@ A note's `[S#]` line points here via `[src:<key>]`. No `[S#]` may point at a `st
 - cite: Guy Debord and Gil J. Wolman, "A User's Guide to Détournement" (*Les Lèvres Nues* #8, May 1956); English trans. Ken Knabb, *Situationist International Anthology*
 - kb: `Guy-Debord+Gil-J-Wolman_A-Users-Guide-to-Détournement_1956.md`
 - verified: file (footnote 1 is Knabb's translator note on anglicising "détournement"); edition not web-checked
-- note: manifesto for the partisan re-use of the dominant culture's material against it; ancestor of culture jamming. Also contains the laws of détournement.
+- note: manifesto for the partisan re-use of the dominant culture's material against it; ancestor of culture jamming. Also contains the laws of détournement. Cited by DD note 6.2.
 
 ### gyekye-2010-african-ethics-sep
 - status: usable
@@ -1150,6 +1238,14 @@ A note's `[S#]` line points here via `[src:<key>]`. No `[S#]` may point at a `st
 - verified: file (tesseract OCR of a community-uploaded scan; author's note at seg 0, "2 million psychopaths in North America" at seg 4, serial-killer ratio at seg 78; edition not confirmed beyond the filename)
 - note: Hare's popular statement of the PCL-R construct: prevalence estimates, the intraspecies-predator framing, the separation of psychopathy from serial murder. OCR scan; community upload, provenance unverified.
 
+### harris-raskin-2023-the-ai-dilemma
+- status: usable
+- medium: transcript
+- cite: Tristan Harris & Aza Raskin, "The A.I. Dilemma" (Center for Humane Technology, public talk, 9 March 2023; YouTube transcript)
+- kb: `The-A-I-Dilemma-March-9-2023.transcript.txt`
+- verified: file (title and date in the transcript header; "first contact with social media" at seg 3; engagement business model and LLM companions at seg 16)
+- note: Harris's own statement of the attention-economy thesis; "In this first contact with social media, humanity lost."
+
 ### henrich-heine-norenzayan-2010-weirdest-people
 - status: usable
 - medium: text
@@ -1183,6 +1279,14 @@ Also: existing entry `curry-mullins-whitehouse-2019-seven-moral-rules` should ad
 - kb: `batchelor-higgins_a-secular-buddhism-and-its-analysis_2012-2017.md` (attributed summary, staged at workshops/DD/sources/ — not yet folded into corpus)
 - verified: web (globalbuddhism.org, diamond OA)
 - note: attributed summary note with verified page anchors, shared with the Batchelor entry. Review essay legitimating Batchelor's method via the Chan-acculturation precedent and MacIntyre's 'living tradition'. ▲ Never cites McMahan — source Buddhist modernism separately. Sympathetic analyst, not neutral. Distinct work from the KB's After Buddhism workbook.
+
+### higgins-2017-flexible-appropriation-of-tradition
+- status: usable
+- medium: text
+- cite: Winton Higgins, "The Flexible Appropriation of Tradition: Stephen Batchelor's *After Buddhism*," *Journal of Global Buddhism* 18 (2017), 56–63 (review essay)
+- kb: `Higgins_The-Flexible-Appropriation-of-Tradition-Batchelor_JGB-2017.md`
+- verified: file (running head "JOURNAL OF GLOBAL BUDDHISM | Vol.18 (2017)" and page 57 in seg 9; page range from the running heads, not web-checked)
+- note: Sympathetic insider review; records the First Council recovery narrative and the misplaced Hitchens endorsement.
 
 ### hipp-siegel-2013-dissociating-gamma-from-muscle-activity
 - status: usable
@@ -1562,6 +1666,14 @@ Also: existing entry `curry-mullins-whitehouse-2019-seven-moral-rules` should ad
 - verified: file (journal masthead and abstract at seg 0; author name not recoverable from the ingested text)
 - note: Reception study of the two Kendeng documentaries; the Sikep in *Sikep Samin Semen* hold "demo bukanlah ajaran komunitas mereka" (*ora pamer suara, ora pamer tindak*).
 
+### mercadante-2020-spiritual-struggles-of-nones-and-sbnr
+- status: usable
+- medium: text
+- cite: Linda Mercadante, "Spiritual Struggles of Nones and 'Spiritual but Not Religious' (SBNRs)," *Religions* 11:10 (2020), 513, DOI 10.3390/rel11100513
+- kb: `Mercadante_Spiritual-Struggles-of-Nones-and-SBNR_Religions-2020.md`
+- verified: file (journal masthead, affiliation and received/accepted/published dates at seg 0)
+- note: Interview-based typology of nones and SBNRs and their spiritual struggles; the "None" label as identification by lack.
+
 ### michael-2023-laozi-justice
 - status: usable
 - medium: text
@@ -1721,6 +1833,14 @@ Also: existing entry `curry-mullins-whitehouse-2019-seven-moral-rules` should ad
 - verified: web (search-result excerpt confirms the review discusses Citton's engagement with Debord's motto of the spectacle; full text not fetched)
 - note: supports the single lineage claim that Citton's attention-ecology takes up Debord's thesis-12 motto ("What appears is good; what is good appears"). Author name not confirmed, so cited by title only.
 
+### newport-2019-digital-minimalism
+- status: usable
+- medium: text
+- cite: Cal Newport, *Digital Minimalism: Choosing a Focused Life in a Noisy World* (New York: Portfolio/Penguin, 2019)
+- kb: `Newport_Digital-Minimalism_2019.md`
+- verified: file (full text, 188 segments; "philosophy of technology use" at seg 21; declutter protocol at segs 41–42)
+- note: The individual-practice pole of the digital-age responses, read in full.
+
 ### nussbaum-2003-capabilities-as-fundamental-entitlements
 - status: usable
 - medium: text
@@ -1736,6 +1856,14 @@ Also: existing entry `curry-mullins-whitehouse-2019-seven-moral-rules` should ad
 - kb: `Nyanaponika_Abhidhamma-Studies_1965.md`
 - verified: file (tesseract OCR, pages transcribed 3, 6; introduction in sid 0 names the Dhammasaṅgaṇī/Atthasālinī translation project)
 - note: Reads the grammarians' "bearer of own nature" definition against the atomist misreading (sids 42–43). Edition/date of the scan not confirmed beyond the filename.
+
+### odgers-2024-the-great-rewiring-review-of-haidt
+- status: usable
+- medium: text
+- cite: Candice L Odgers, "The great rewiring: is social media really behind an epidemic of teenage mental illness?" (review of Jonathan Haidt, *The Anxious Generation*), *Nature* 628 (2024), 29–30, DOI 10.1038/d41586-024-00902-2
+- kb: `Odgers_The-Great-Rewiring-Review-of-Haidt_Nature-2024.md`
+- verified: file (citation line and DOI at the foot of seg 9)
+- note: ▲ Scraped nature.com page — segs 0–8 and 10 are navigation; the review text is seg 9 only. "No evidence… rewiring children's brains"; reforms still required; bans may backfire.
 
 ### olivelle-1999-dharmasutras
 - status: usable
@@ -1769,6 +1897,22 @@ Also: existing entry `curry-mullins-whitehouse-2019-seven-moral-rules` should ad
 - verified: file (running heads "ORALITY AND LITERACY" with pagination, e.g. p. 74 at seg 82, "WRITING RESTRUCTURES CONSCIOUSNESS 85" at seg 93; clean digital text)
 - note: Writing as "context-free"/"autonomous" discourse detached from its author; "There is no way directly to refute a text." Full text now backs the Goody/Ong/Street placeholder.
 
+### orben-2020-teenagers-screens-social-media-narrative-review
+- status: usable
+- medium: text
+- cite: Amy Orben, "Teenagers, screens and social media: a narrative review of reviews and key studies," *Social Psychiatry and Psychiatric Epidemiology* 55 (2020), 407–414, DOI 10.1007/s00127-019-01825-4
+- kb: `Orben_Teenagers-Screens-and-Social-Media-A-Narrative-Review_SocPsychiatry-2020.md`
+- verified: file (title, author, received/accepted/published dates and CC notice at seg 0; volume/pages from the published record)
+- note: Review of >80 reviews; "no scientific consensus" on screen-based lifestyles and youth mental health.
+
+### orben-przybylski-2019-adolescent-well-being-digital-technology
+- status: usable
+- medium: text
+- cite: Amy Orben & Andrew K Przybylski, "The association between adolescent well-being and digital technology use," *Nature Human Behaviour* 3 (2019), 173–182, DOI 10.1038/s41562-018-0506-1
+- kb: `Orben-Przybylski_Adolescent-Well-Being-and-Digital-Technology-Use_NatureHumBehav-2019_typeset.md`, `Orben-Przybylski_Adolescent-Well-Being-and-Digital-Technology-Use_NatureHumBehav-2019_AAM.md` (accepted manuscript)
+- verified: file (abstract at seg 2 of the typeset copy; Table 3 comparison specifications at seg 22)
+- note: Specification-curve analysis, n = 355,358; association "at most 0.4% of the variation," comparable to eating potatoes; "too small to warrant policy change." The null-leaning side of the dispute. Cited by DD note 6.2.
+
 ### ortman-et-al-2014-pre-history-of-urban-scaling
 - status: usable
 - medium: text
@@ -1785,6 +1929,14 @@ Also: existing entry `curry-mullins-whitehouse-2019-seven-moral-rules` should ad
 - verified: file (title and author line at seg 0; superlinear-costs caveat at seg 17)
 - note: Increasing returns to scale in an ancient settlement system; disease and violence also scale superlinearly.
 
+### ortner-1974-is-female-to-male-as-nature-is-to-culture
+- status: usable
+- medium: text
+- cite: Sherry B Ortner, "Is Female to Male as Nature Is to Culture?", in Michelle Zimbalist Rosaldo & Louise Lamphere (eds), *Woman, Culture, and Society* (Stanford: Stanford University Press, 1974), pp. 68–87
+- kb: `Ortner_Is-Female-to-Male-as-Nature-is-to-Culture_1974.md`
+- verified: file (citation line and title at seg 0; running head "74 SHERRY B. ORTNER" at seg 8; conclusions at segs 24–25)
+- note: The classic structural account of the universal devaluation of women — woman read as "closer to nature"; "a construct of culture rather than a fact of nature"; the feedback loop between symbol and institution.
+
 ### ostrom-2009-beyond-markets-and-states-nobel-lecture
 - status: usable
 - medium: text
@@ -1793,6 +1945,14 @@ Also: existing entry `curry-mullins-whitehouse-2019-seven-moral-rules` should ad
 - verified: file (lecture header with date and affiliations at seg 0; design-principles list at segs 21–22)
 - note: Ostrom's own late restatement of the CPR design principles with the Cox et al 2009 revisions and the "best practices" concession.
 
+### owen-2020-stoic-epicurean-training-dpr-model
+- status: usable
+- medium: text
+- cite: Owen (first name not recoverable from the file), "Understanding Stoic and Epicurean ethical 'training' in light of the DPR model" (2020; journal not stated in the file)
+- kb: `Owen_Stoic-and-Epicurean-Ethical-Training-and-the-DPR-Model_2020.md`
+- verified: file (title and Hadot epigraph in seg 0; 32 segments; venue and author details need a web check)
+- note: Reads ancient ethical training through the CBT therapist-training DPR model; names the Modern Stoicism project.
+
 ### oxford-humanities-vedas-scriptless-texts
 - status: usable
 - medium: text
@@ -1800,6 +1960,14 @@ Also: existing entry `curry-mullins-whitehouse-2019-seven-moral-rules` should ad
 - kb: `OxfordHumanities_The-Vedas-Once-and-Future-Scriptless-Texts.md`
 - verified: file (2-segment born-digital page; the "extraordinary fidelity over more than twenty centuries" sentence at seg 0)
 - note: Source of the note's long-standing external S8; now in the corpus. Author not named on the page.
+
+### paine-1797-agrarian-justice
+- status: usable
+- medium: text
+- cite: Thomas Paine, *Agrarian Justice* (Paris/London, 1797), in Moncure Daniel Conway (ed.), *The Writings of Thomas Paine*, vol. III (New York: Putnam, 1895), Project Gutenberg 31270
+- kb: `Paine_Agrarian-Justice-in-The-Writings-of-Thomas-Paine_Gutenberg-31270.txt`
+- verified: file (Gutenberg 31270 plain text; the *Agrarian Justice* essay runs from about seg 888; the fund proposal at seg 898; the file is the whole vol. III — 1,238 segments — so most of it is other Paine writings)
+- note: The 1797 proposal of a national fund paying fifteen pounds at twenty-one and an old-age annuity as compensation for the loss of natural inheritance in land — the ancestor of universal basic income. Cited here only for the floor-without-subsidy point; UBI proper belongs to 8.2.
 
 ### parker-1916-constitution-of-the-five-nations
 - status: usable
@@ -1824,6 +1992,30 @@ Also: existing entry `curry-mullins-whitehouse-2019-seven-moral-rules` should ad
 - kb: `PMC7612818-no-universals-in-the-cultural-evolution-of-kinship-terminolo.md`
 - verified: file (PMC7612818 header, journal/year/licence in seg 0; conclusion in seg 19)
 - note: phylogenetic test finding no universal link between kin terminology and social structure — a documented non-universal and a caveat on tallied cross-cultural regularities.
+
+### pew-2023-spirituality-among-americans
+- status: usable
+- medium: text
+- cite: Pew Research Center (Becka A Alper, Chip Rotolo et al), *Spirituality Among Americans* (7 December 2023)
+- kb: `Pew_Spirituality-Among-Americans_2023.md`
+- verified: file (title, authors and headline at seg 0; SBNR portrait at segs 6–7)
+- note: 70% spiritual in some way; 22% spiritual but not religious; SBNR beliefs and attitudes to organised religion.
+
+### pew-2025-how-the-global-religious-landscape-changed-2010-2020
+- status: usable
+- medium: text
+- cite: Pew Research Center (Conrad Hackett, Marcin Stonawski et al), *How the Global Religious Landscape Changed From 2010 to 2020* (9 June 2025)
+- kb: `Pew_How-the-Global-Religious-Landscape-Changed-2010-2020_2025.md`
+- verified: file (authors at seg 0; 24.2% at seg 3; fertility/switching at segs 4, 8–9; country figures at segs 6–7; the 2010 baseline is in the web edition, not the ingested summary)
+- note: Global unaffiliated share and its switching-driven growth against a low-fertility base; unaffiliated-majority countries.
+
+### pew-2025-religious-landscape-study-executive-summary
+- status: usable
+- medium: text
+- cite: Pew Research Center (Gregory A Smith, Alan Cooperman et al), *2023–24 Religious Landscape Study: Executive Summary* (26 February 2025)
+- kb: `Pew_Religious-Landscape-Study-Executive-Summary_2025.md`
+- verified: file (authors and table of contents at segs 0–2; headline figures at seg 3; the 2007/2014 trend line is not in the ingested summary)
+- note: The plateau finding — unaffiliated "has leveled off – at least temporarily"; 29% unaffiliated (5/6/19).
 
 ### pizarro-et-al-2022-collective-effervescence-meta-analysis
 - status: usable
@@ -1857,6 +2049,14 @@ Also: existing entry `curry-mullins-whitehouse-2019-seven-moral-rules` should ad
 - verified: web (https://lrc.la.utexas.edu/lex/master/0399)
 - note: attributed summary note with verified page anchors. Replaces Wiktionary for the √dhṛ → PIE → *firmus* → *firm* spine in note 1.1 (S7); adds *throne* (Gk. *thronos*) and *Darius* ('upholding the good') as English-visible cognates. ▲ Adjacent entry 0398 is the homophonous '1. dher-' 'dirt, dregs' — do not confuse. Cite for root and reflexes only, never for the meaning of *dharma*; Mayrhofer EWAia remains the citation of record. Cited by DD note 1.1.
 
+### polanyi-1944-the-great-transformation
+- status: usable
+- medium: text-ocr
+- cite: Karl Polanyi, *The Great Transformation: The Political and Economic Origins of Our Time* (1944; 2nd Beacon Press ed., Boston, 2001, with foreword by Joseph Stiglitz and introduction by Fred Block)
+- kb: `Polanyi_The-Great-Transformation_1944.md`
+- verified: file (Block's introduction at segs 18–34 with the 2001 edition's footnotes; running head "The Self-Regulating Market and the Fictitious Commodities [ 79 ]" at seg 120 matches the Beacon pagination; 373 segments)
+- note: The embeddedness thesis in Polanyi's own words — "submerged in his social relationships" (seg 86), the fictitious commodities (seg 116), the countermove (seg 186). Segs 0–34 are Stiglitz/Block front matter, not Polanyi; cite from seg 35 on. OCR splits words mid-line ("so cieties") — quote after reassembly.
+
 ### postgate-wang-wilkinson-1995-early-writing
 - status: usable
 - medium: text
@@ -1872,6 +2072,30 @@ Also: existing entry `curry-mullins-whitehouse-2019-seven-moral-rules` should ad
 - kb: `Prinz_Is-Morality-Innate_2008.md`
 - verified: file ("Forthcoming in W. Sinnott-Armstrong (ed.), Moral Psychology. Oxford University Press" header in seg 0 — preprint; the chapter appeared from MIT Press, so page numbers are the printed volume's, not the file's)
 - note: innateness sceptic — morality "ecumenical" but a byproduct of faculties evolved for other purposes; the counterweight to nativist readings of universals.
+
+### prri-2024-religious-change-in-america
+- status: usable
+- medium: text
+- cite: PRRI, *Religious Change in America* (27 March 2024)
+- kb: `PRRI_Religious-Change-in-America_2024.md`
+- verified: file (date and executive summary at seg 0; affiliation trend at seg 7)
+- note: Independent US series — 26% unaffiliated in 2023 vs 21% in 2013; atheists and agnostics doubled while "nothing in particular" stayed flat; retention and switching by tradition.
+
+### purser-2019-the-mindfulness-conspiracy
+- status: usable
+- medium: text
+- cite: Ronald Purser, "The mindfulness conspiracy," *The Guardian*, 14 June 2019 (extract from *McMindfulness*, Repeater Books, 2019)
+- kb: `Purser_The-Mindfulness-Conspiracy_Guardian-2019.md`
+- verified: file (byline and date in seg 0; 14 segments)
+- note: Mindfulness as "a religion of the self," "anchored in the ethos of the market"; the political critique in Purser's own words.
+
+### purser-loy-2013-beyond-mcmindfulness
+- status: usable
+- medium: text
+- cite: Ronald Purser & David Loy, "Beyond McMindfulness," *HuffPost*, 1 July 2013
+- kb: `Purser-Loy_Beyond-McMindfulness_HuffPost-2013.md`
+- verified: file (byline, author bios and date in seg 0; 5 segments)
+- note: The essay that coined "McMindfulness"; uncoupling mindfulness from its ethical context as "denaturing"; sammā vs micchā sati.
 
 ### purzycki-et-al-2018-material-security-life-history-moralistic-religions
 - status: usable
@@ -1944,6 +2168,14 @@ Also: existing entry `curry-mullins-whitehouse-2019-seven-moral-rules` should ad
 - kb: `Rennung-Goeritz_Prosocial-Consequences-of-Interpersonal-Synchrony-Meta-Analysis_2016.md`
 - verified: file (journal, volume and pages in the running footer at seg 17; abstract at seg 0; experimenter-awareness moderation at seg 24)
 - note: 60 experiments; medium effect of synchrony on prosociality, inflated by g = 0.29 when experimenters were unblinded. The counterweight to the synchrony literature's headline.
+
+### rhys-davids-1909-psalms-of-the-sisters
+- status: usable
+- medium: text-ocr
+- cite: Caroline AF Rhys Davids (trans.), *Psalms of the Early Buddhists, I: Psalms of the Sisters* (Pali Text Society Translation Series 1; London: Henry Frowde/OUP, 1909)
+- kb: `RhysDavids_Psalms-of-the-Early-Buddhists-Psalms-of-the-Sisters_1909.md`
+- verified: file (OCR provenance header, pages 1–742; introduction contents at seg 0; Muttā's verse at seg 45; Sumaṅgala's mother at seg 53)
+- note: ▲ Full tesseract scan with heavy garble ("Am Tin freedom" for "Am I in freedom") — a pointer to the Therīgāthā, not a quotable string; verify verses against the PTS printing. Introduction carries her 23 vs 13 per cent emancipation-theme count.
 
 ### riesebrodt-2010-promise-of-salvation
 - status: usable
@@ -2191,6 +2423,22 @@ Also: existing entry `curry-mullins-whitehouse-2019-seven-moral-rules` should ad
 - kb: `Schulz-et-al_The-Church-Intensive-Kinship-and-Global-Psychological-Variation_Science-2019.md`
 - verified: file (structured abstract at segs 0–1; results with correlation magnitudes at seg 8)
 - note: The Marriage and Family Program dissolving intensive kinship → impersonal prosociality; the case that a code can manufacture stranger-society psychology.
+
+### schumacher-1966-buddhist-economics
+- status: usable
+- medium: text
+- cite: EF Schumacher, "Buddhist Economics," in Guy Wint (ed.), *Asia: A Handbook* (London: Anthony Blond, 1966); repr. in *Small Is Beautiful: Economics as if People Mattered* (London: Blond & Briggs, 1973), ch. 4
+- kb: `Schumacher_Buddhist-Economics_1973.md`
+- verified: file (publication history in seg 0 — 1966 first printing, Resurgence 1968, MANAS 1969, Small Is Beautiful 1973; born-digital web text with footnote anchors; 10 segments)
+- note: The threefold function of work, the Middle Way on wealth ("not wealth… but the attachment to wealth"), "simplicity and non-violence," local production; Coomaraswamy's tool/machine distinction.
+
+### schwerk-2022-review-payne-secularizing-buddhism
+- status: usable
+- medium: text
+- cite: Dagmar Schwerk, review of Richard K Payne (ed.), *Secularizing Buddhism: New Perspectives on a Dynamic Tradition* (Shambhala, 2021), *Journal of Global Buddhism* 23:1 (2022), 87–94, DOI 10.26034/lu.jgb.2022.2331
+- kb: `Schwerk_Review-of-Payne-Secularizing-Buddhism_JGB-2022.md`
+- verified: file (journal header with volume, pages and DOI in seg 0)
+- note: Reports Bodhi's "cut off the bloodline" and Turenne's three criticisms of Batchelor with the volume's page numbers; the chapters themselves are not in the corpus.
 
 ### scott-1976-the-moral-economy-of-the-peasant
 - status: usable
@@ -2440,6 +2688,14 @@ Also: existing entry `curry-mullins-whitehouse-2019-seven-moral-rules` should ad
 - verified: web (ISBN 978-0-691-14087-2, from the copyright page)
 - note: attributed summary note with verified page anchors. The methodological middle way: composites ('religions') are scholars' aggregates, but comparison rebuilds from smaller units — ascriptions of specialness, 'a deeply rooted human characteristic' (p. 34) offered as a testable hypothesis, not a fiat universal. Her mārga-derived 'special path' is the closest published analogue to dharma-as-path. Model for recasting 'every society grows one'. Full text in DD local archive (scratch/sources/part1/, gitignored); community upload. Cited by DD note 3.5.3.
 
+### taylor-2007-a-secular-age
+- status: usable
+- medium: text-ocr
+- cite: Charles Taylor, *A Secular Age* (Cambridge, MA: Belknap Press of Harvard University Press, 2007)
+- kb: `Taylor_A-Secular-Age_2007.md`
+- verified: file (contents page at seg 1 with part/chapter pagination; "subtraction stories" definition at seg 32 = p. 22; tesseract OCR with letter-spaced running heads)
+- note: Full text of the book; the subtraction-story polemic, exclusive humanism, the nova effect and the fragilisation of all positions. Pointer only for quotation — verify wording against print.
+
 ### teeter-1997-presentation-of-maat
 - status: usable
 - medium: text-ocr
@@ -2495,6 +2751,22 @@ Also: existing entry `curry-mullins-whitehouse-2019-seven-moral-rules` should ad
 - kb: `Tutu_No-Future-Without-Forgiveness_1999.md`
 - verified: file (tesseract OCR provenance header; title page and Kirkus blurb at seg 0; the ubuntu definition passage at segs 24–25 checked)
 - note: The TRC chair's own statement of ubuntu — "A person is a person through other persons"; "the best form of self-interest." Quotable only after checking against print.
+
+### twenge-campbell-2018-screen-time-psychological-well-being
+- status: usable
+- medium: text
+- cite: Jean M Twenge & W Keith Campbell, "Associations between screen time and lower psychological well-being among children and adolescents: Evidence from a population-based study," *Preventive Medicine Reports* 12 (2018), 271–283
+- kb: `Twenge-Campbell_Associations-Between-Screen-Time-and-Lower-Psychological-Well-Being_PrevMedRep-2018.md`
+- verified: file (title, authors, abstract at seg 0; volume/pages from the published record)
+- note: n = 40,337 NSCH 2016; after 1 h/day, more screen time associated with lower wellbeing.
+
+### twenge-et-al-2018-depressive-symptoms-new-media-screen-time
+- status: usable
+- medium: text
+- cite: Jean M Twenge, Thomas E Joiner, Megan L Rogers & Gabrielle N Martin, "Increases in Depressive Symptoms, Suicide-Related Outcomes, and Suicide Rates Among U.S. Adolescents After 2010 and Links to Increased New Media Screen Time," *Clinical Psychological Science* 6:1 (2018), 3–17
+- kb: `Twenge-et-al_Increases-in-Depressive-Symptoms-and-Suicide-Related-Outcomes_ClinPsychSci-2018.md`
+- verified: file (title, authors, abstract at seg 1; received/accepted dates present; volume/pages from the published record)
+- note: The alarm side of the adolescent-wellbeing dispute; N = 506,820.
 
 ### van-dam-et-al-2018-mind-the-hype
 - status: usable
@@ -2647,6 +2919,22 @@ Also: existing entry `curry-mullins-whitehouse-2019-seven-moral-rules` should ad
 - kb: `WITNESS_In-the-Name-of-Mother-Earth-Kendeng-Women_2023.md`
 - verified: file (profile header and date in seg 0; 5 segments)
 - note: Advocacy-organisation profile of Sukinah and the Kartini Kendeng feet-in-cement protests; places her inside JM-PPK. Advocacy source — use for the activists' self-account, not for contested facts.
+
+### woodhead-2016-intensified-religious-pluralism
+- status: usable
+- medium: text
+- cite: Linda Woodhead, "Intensified Religious Pluralism and De-differentiation: the British Example," *Society* 53:1 (2016), 41–46 (open access)
+- kb: `Woodhead_Intensified-Religious-Pluralism-and-De-differentiation_Society-2016.md`
+- verified: file (symposium header and abstract at seg 0; secularists figure at seg 5; volume/pages from the published record, not web-checked)
+- note: A third pluralism beyond Berger's two — the breakdown of the religious/secular boundary; secularists only 13% of nones and not growing.
+
+### woodhead-2016-rise-of-no-religion-in-britain
+- status: usable
+- medium: text-ocr
+- cite: Linda Woodhead, "The rise of 'no religion' in Britain: The emergence of a new cultural majority," *Journal of the British Academy* 4 (2016), 245–261 (British Academy Lecture, 19 January 2016)
+- kb: `Woodhead_The-Rise-of-No-Religion-in-Britain_JBA-2016.md`
+- verified: file (tesseract OCR, 18 pages; lecture title and abstract at seg 0; running page numbers 246–248 at segs 1–4)
+- note: "No religion" passing half of GB adults by 2015; the age gradient; "most are not straightforwardly secular."
 
 ### xygalatas-2023-culture-cognition-and-ritual
 - status: usable
@@ -4899,6 +5187,14 @@ Also: existing entry `curry-mullins-whitehouse-2019-seven-moral-rules` should ad
 - verified: web (https://theanarchistlibrary.org/library/john-zerzan-the-catastrophe-of-postmodernism)
 
 ---
+
+### zuboff-2019-age-of-surveillance-capitalism
+- status: usable
+- medium: text
+- cite: Shoshana Zuboff, *The Age of Surveillance Capitalism: The Fight for a Human Future at the New Frontier of Power* (New York: PublicAffairs, 2019)
+- kb: `Zuboff_The-Age-of-Surveillance-Capitalism_2019.md`
+- verified: file (eight-part definition at seg 0; "Discovery of Behavioral Surplus" chapter at segs 60–73; born-digital body, tesseract header covers front matter only)
+- note: The economic account of the attention adversary — behavioral surplus, prediction products, behavioral futures markets, instrumentarian power.
 
 ### zuckerman-2009-atheism-secularity-and-well-being
 - status: usable
