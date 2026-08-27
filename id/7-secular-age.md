@@ -121,7 +121,7 @@ Catatan riset yang dipakai dalam buku ini diterbitkan di [GitHub](https://github
 - [6.2 Digital-Age Dharma](../6-contemporary/6.2-digital-age-dharma.md) — ekonomi perhatian sebagai lawan eksternal dan industrial; rangsangan supernormal; dan pergeseran dari penggarapan diri ke perancangan lingkungan.
 - [3.1 Tension Resolution](../3-philosophical/3.1-tension-resolution.md) — diri modern yang teratomisasi dan komunitas yang dibutuhkan dharma tetapi ditipiskan zaman sekuler.
 - [7.2 Cultural Adaptation & Appropriation](../7-critical/7.2-appropriation.md) — dharma sebagai produk konsumen; kritik pengangkatan yang dipertajam "McMindfulness".
-- [6.5 Secularization & the "Nones"](../6-contemporary/6.5-secularization-nones.md) — demografi Pew di balik pembukaan: kaum "nones" AS pada 29% (dan melandai), "spiritual tetapi tidak religius" pada 22%, angka global 1,9 miliar; mengapa "tumbuh tercepat" membutuhkan catatan waktu dan tempatnya; dan koreksi Taylor–Asad atas kerangka pengurangan (sekularitas sebagai konstruksi, dan perapuhan setiap kedudukan) yang dinyatakan dalam bagian "mengadili kerangka" pada bagian ini.
+- [6.5 Secularisation & the "Nones"](../6-contemporary/6.5-secularization-nones.md) — demografi Pew di balik pembukaan: kaum "nones" AS pada 29% (dan melandai), "spiritual tetapi tidak religius" pada 22%, angka global 1,9 miliar; mengapa "tumbuh tercepat" membutuhkan catatan waktu dan tempatnya; dan koreksi Taylor–Asad atas kerangka pengurangan (sekularitas sebagai konstruksi, dan perapuhan setiap kedudukan) yang dinyatakan dalam bagian "mengadili kerangka" pada bagian ini.
 
 **Karya kunci**
 

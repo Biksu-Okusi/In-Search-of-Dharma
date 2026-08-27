@@ -104,7 +104,7 @@ review supplies the missing hostile half.
 
 ---
 
-## 1 · Secularization & the nones  (note 6.5)
+## 1 · Secularisation & the nones  (note 6.5)
 
 ### The theory shelf
 - **Taylor, *A Secular Age*** — see Tier 0.

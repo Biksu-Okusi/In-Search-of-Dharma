@@ -158,7 +158,7 @@ Research notes used in this book are published on [GitHub](https://github.com/Bi
 - [6.2 Digital-Age Dharma](6-contemporary/6.2-digital-age-dharma.md) -- the attention economy as an external, industrial adversary; the supernormal stimulus; and the move from self-cultivation to environment-design.
 - [3.1 Tension Resolution](3-philosophical/3.1-tension-resolution.md) -- the atomised modern self and the community a dharma needs but the secular age has thinned.
 - [7.2 Cultural Adaptation & Appropriation](7-critical/7.2-appropriation.md) -- dharma-as-consumer-product; the extraction critique that "McMindfulness" sharpens.
-- [6.5 Secularization & the "Nones"](6-contemporary/6.5-secularization-nones.md) -- the Pew demographics behind the opening: the US "nones" at 29% (and plateaued), SBNR at 22%, the global 1.9 billion; why "fastest-growing" needs its time-and-place qualifier; and the Taylor–Asad correction to the subtraction frame (secularity as construction, and the fragilisation of every position) that this part's "on trial" passage states.
+- [6.5 Secularisation & the "Nones"](6-contemporary/6.5-secularization-nones.md) -- the Pew demographics behind the opening: the US "nones" at 29% (and plateaued), SBNR at 22%, the global 1.9 billion; why "fastest-growing" needs its time-and-place qualifier; and the Taylor–Asad correction to the subtraction frame (secularity as construction, and the fragilisation of every position) that this part's "on trial" passage states.
 
 **Key works**
 

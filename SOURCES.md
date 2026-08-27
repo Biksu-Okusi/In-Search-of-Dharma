@@ -1687,6 +1687,7 @@ A note's `[S#]` line points here via `[src:<key>]`. No `[S#]` may point at a `st
 - status: usable
 - medium: text
 - cite: Thaddeus Metz, "Ubuntu as a moral theory and human rights in South Africa," *African Human Rights Law Journal* 11(2) (2011): 532–559
+- kb: `Metz_Ubuntu-as-a-Moral-Theory-and-Human-Rights-in-South-Africa_AHRLJ-2011.md` (staged at staging.text/DD/sources/1-ubuntu/, folded into the corpus 2026-08)
 - verified: acquired (diamond OA; full text at `scratch/sources/part4/1-ubuntu/`, 28 pp.)
 - note: The standard analytic statement of ubuntu as a *moral theory* rather than a slogan, by the philosopher who has done most to formalise it, and the natural first citation for Part 4's Ubuntu cluster. Also treats *S v Makwanyane*, so it covers both the ethics and the constitutional-law strand in one text. Cited by DD note 4.2.
 
@@ -1694,6 +1695,7 @@ A note's `[S#]` line points here via `[src:<key>]`. No `[S#]` may point at a `st
 - status: usable
 - medium: text
 - cite: Christian B. N. Gade, "The historical development of the written discourses on ubuntu," *South African Journal of Philosophy* 30(3) (2011): 303–329
+- kb: `Gade_The-Historical-Development-of-the-Written-Discourses-on-Ubuntu_SAJP-2011.md` (staged at staging.text/DD/sources/1-ubuntu/, folded into the corpus 2026-08)
 - verified: acquired (OA via Aarhus PURE; full text at `scratch/sources/part4/1-ubuntu/`, 27 pp.)
 - note: Traces when ubuntu was actually written about and what it was taken to mean at each stage. The load-bearing finding for Part 4: Gade advances as an explicit **hypothesis** — his word, not a demonstration — that it was "between 1993 and 1995" that ubuntu "was defined for the first time as something connected to the proverb '*umuntu ngumuntu ngabantu*'," i.e. contemporaneous with the Interim Constitution's Epilogue and the founding of the TRC, so that "the term 'ubuntu' and the proverb became intimately connected within the space of just a few years." ▲ Cite it as a dated hypothesis about the *written* discourse, not as proof about oral tradition — the distinction matters for Part 4's "a village proverb became a principle of constitutional law" sentence. Cited by DD note 4.2.
 
@@ -1701,6 +1703,7 @@ A note's `[S#]` line points here via `[src:<key>]`. No `[S#]` may point at a `st
 - status: usable
 - medium: text
 - cite: Ifeanyi A. Menkiti, "Person and Community in African Traditional Thought," in Richard A. Wright (ed.), *African Philosophy: An Introduction*, 3rd edn (University Press of America, 1984), 171–181
+- kb: `Menkiti_Person-and-Community-in-African-Traditional-Thought_1984.md` (staged at staging.text/DD/sources/1-ubuntu/, folded into the corpus 2026-08)
 - verified: acquired (full text at `scratch/sources/part4/1-ubuntu/`, 6 pp.)
 - note: The foundational statement of relational personhood — that personhood is acquired within community rather than possessed at birth — and the text the whole "I am because we are" literature argues with. Short, primary, and the correct anchor for Part 4's contrast between relational and individualist accounts of the self. Cited by DD note 4.2.
 

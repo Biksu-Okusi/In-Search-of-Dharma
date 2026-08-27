@@ -60,11 +60,7 @@ The corpus has a **known secular / evolutionary / Western-academic lean** (curat
 
 - non-secular perspectives the corpus under-weights (e.g. Abrahamic, theological).
 
-Use, in increasing order of weight:
-
-- `WebSearch` for a quick fact or source check,
-
-- the **deep-research** skill for a wide, adversarially verified multi-source pass when a question genuinely needs it.
+Use `WebSearch` for a quick fact or source check and `WebFetch` to pull the source page itself. When a question genuinely needs a wide multi-source pass, run several independent searches from different angles and cross-check them against one another before anything is cited.
 
 ### 4. Synthesise into the template
 

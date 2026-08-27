@@ -16,7 +16,7 @@ The legs are ranked strongest first. The author's own words *define* the target;
 
 2. **Knowledgebase.** Scholarly framing from the shared corpus via `yatti-api` (query the corpus **once** — see the shared-corpus fact in METHODOLOGY.md; `prosocial` is a separate corpus). Capture source ids.
 
-3. **Web.** Philology, primary texts, and cross-tradition comparison where the corpus is thin or slanted — `WebSearch` or `deep-research`. Capture URLs.
+3. **Web.** Philology, primary texts, and cross-tradition comparison where the corpus is thin or slanted — `WebSearch` and `WebFetch`. Capture URLs.
 
 4. **Model knowledge (flagged).** A no-tools synthesis from training data, used **only where legs 1–3 corroborate it**. Every claim marked unverified.
 
