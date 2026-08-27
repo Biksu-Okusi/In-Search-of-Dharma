@@ -44,8 +44,8 @@ The ten parts are also assembled into a single book, *In Search of Dharma* — s
 
 The script preprocesses each part (frontmatter, image shortcodes), then stitches them into an EPUB3 with pandoc and a PDF via weasyprint, with embedded fonts and optional per-chapter audio narration (`link` adds hyperlinks to the hosted MP3s; `embed` bundles them into the EPUB). The companion essay [`the-better-ones.md`](the-better-ones.md), which states and stress-tests the project's two-test standard for judging dharmas, closes the book as its appendix. The built books are tracked in the repository (`--audio embed` also produces a self-contained EPUB with the MP3s bundled in, about 75 MB, which is built locally and not tracked):
 
-- [`In-Search-of-Dharma_Biksu-Okusi_2026.epub`](In-Search-of-Dharma_Biksu-Okusi_2026.epub) — EPUB3, with links to the hosted chapter narrations (~3.5 MB)
-- [`In-Search-of-Dharma_Biksu-Okusi_2026.pdf`](In-Search-of-Dharma_Biksu-Okusi_2026.pdf) — print-styled PDF (~2.3 MB)
+- [`In-Search-of-Dharma_Biksu-Okusi_2026.epub`](In-Search-of-Dharma_Biksu-Okusi_2026.epub) — EPUB3, with links to the hosted chapter narrations (~3.6 MB)
+- [`In-Search-of-Dharma_Biksu-Okusi_2026.pdf`](In-Search-of-Dharma_Biksu-Okusi_2026.pdf) — print-styled PDF (~2.4 MB)
 
 An Indonesian edition, *Mencari Dharma*, is built the same way in [`id/`](id/): [`Mencari-Dharma_Biksu-Okusi_2026.epub`](id/Mencari-Dharma_Biksu-Okusi_2026.epub) and [`Mencari-Dharma_Biksu-Okusi_2026.pdf`](id/Mencari-Dharma_Biksu-Okusi_2026.pdf). Milestone versions of the books are also published via [GitHub Releases](https://github.com/Biksu-Okusi/In-Search-of-Dharma/releases).
 
