@@ -2,7 +2,7 @@
 
 This is the **master registry** and **status dashboard** for the DD research project. Each question has a stable ID (`category.question`), maps to exactly one research note (`N-<category>/<id>-<slug>.md`), and moves through the status vocabulary `todo` → `in-progress` → `review` → `done`. The per-question workflow is in [`METHODOLOGY.md`](METHODOLOGY.md); the note structure is [`1-foundational/_template.md`](1-foundational/_template.md).
 
-32 core questions (4 per category), plus extension notes where a topic merits its own cited note (e.g. `4.5`).
+32 core questions (4 per category), plus extension notes where a topic merits its own cited note (e.g. `4.5`). Fifty-two notes in all.
 
 ## Status dashboard
 
@@ -20,7 +20,7 @@ This is the **master registry** and **status dashboard** for the DD research pro
 | 3.1 | Tension Resolution                      | done      | [3-philosophical/3.1-tension-resolution.md](3-philosophical/3.1-tension-resolution.md) |
 | 3.2 | Metacognitive Function                  | done      | [3-philosophical/3.2-metacognitive-function.md](3-philosophical/3.2-metacognitive-function.md) |
 | 3.3 | The Grounding Problem                   | done      | [3-philosophical/3.3-grounding-problem.md](3-philosophical/3.3-grounding-problem.md) |
-| 3.4 | Relativism vs. Universalism             | done      | [3-philosophical/3.4-relativism-universalism.md](3-philosophical/3.4-relativism-universalism.md) |
+| 3.4 | Relativism vs Universalism             | done      | [3-philosophical/3.4-relativism-universalism.md](3-philosophical/3.4-relativism-universalism.md) |
 | 3.5 | Sumarah as a Philosophy of Life (umbrella) | done     | [3-philosophical/3.5-sumarah/3.5-sumarah.md](3-philosophical/3.5-sumarah/3.5-sumarah.md) |
 | 3.5.1 | Sumarah: Origins and History          | done      | [3-philosophical/3.5-sumarah/3.5.1-origins-and-history.md](3-philosophical/3.5-sumarah/3.5.1-origins-and-history.md) |
 | 3.5.2 | Sumarah: Practice and Transmission    | done      | [3-philosophical/3.5-sumarah/3.5.2-practice-and-transmission.md](3-philosophical/3.5-sumarah/3.5.2-practice-and-transmission.md) |
@@ -122,7 +122,7 @@ What role does dharma play in human metacognition — our ability to think about
 
 Can a secular dharma be normatively binding without metaphysical foundations? How do dharmic frameworks confront the is/ought gap, and what grounds their authority once divine command is removed?
 
-### 3.4 Relativism vs. Universalism
+### 3.4 Relativism vs Universalism
 
 If dharmas are genuinely plural, are some better than others — and by what standard? How do dharmic frameworks avoid collapsing into relativism while resisting a single imposed universalism?
 
@@ -160,7 +160,7 @@ Analyse Ubuntu ("I am because we are") as a dharmic framework. How does it diffe
 
 ### 4.3 Indigenous Oral Dharmas
 
-Examine indigenous dharmic systems (e.g. Native American, Aboriginal Australian) that predate written traditions. What can oral dharmas teach us about essential vs. cultural elements?
+Examine indigenous dharmic systems (e.g. Native American, Aboriginal Australian) that predate written traditions. What can oral dharmas teach us about essential vs cultural elements?
 
 ### 4.4 Abrahamic Ethics as Dharmic Frameworks
 
@@ -220,7 +220,7 @@ Are systemising and autistic minds genuinely over-represented in programming and
 
 ### 5.6.4 Giftedness, Dyslexia & the Wider Spectrum
 
-Beyond autism: giftedness and twice-exceptionality, dyslexia, ADHD, Gardner's multiple intelligences, and benign variants such as synesthesia — how well do "difference not deficit" and "hidden strengths" survive the evidence, and where does the dilution critique ("if everyone is neurodivergent, no one is") bite? *(Extension note under 5.6 — the "and so on" catch-all; the discipline cuts both ways. Links onward to 7.4 measurement-falsifiability.)*
+Beyond autism: giftedness and twice-exceptionality, dyslexia, ADHD, Gardner's multiple intelligences, and benign variants such as synaesthesia — how well do "difference not deficit" and "hidden strengths" survive the evidence, and where does the dilution critique ("if everyone is neurodivergent, no one is") bite? *(Extension note under 5.6 — the "and so on" catch-all; the discipline cuts both ways. Links onward to 7.4 measurement-falsifiability.)*
 
 ---
 
@@ -260,7 +260,7 @@ How can Western adoption of Eastern dharmic concepts avoid superficial appropria
 
 ### 7.3 Dharma & Power
 
-How do dharmic frameworks both challenge and reinforce existing power structures? When do they liberate vs. oppress? Are they inclusive or exclusive?
+How do dharmic frameworks both challenge and reinforce existing power structures? When do they liberate vs oppress? Are they inclusive or exclusive?
 
 ### 7.4 Measurement & Falsifiability
 
