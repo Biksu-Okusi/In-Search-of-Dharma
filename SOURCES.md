@@ -126,6 +126,14 @@ A note's `[S#]` line points here via `[src:<key>]`. No `[S#]` may point at a `st
 - verified: web (newadvent.org/summa, qq. 90–97 saved to DD archive 2026-07-28)
 - note: attributed summary note with verified page anchors, shared with the Cicero entry. Natural law defined as the rational creature's participation in eternal law, knowable by 'the light of natural reason' (q. 91 a. 2) — the reason-accessible lower storey that weakens Part 1's 'cannot be secularised' contrast. Anchored edition-independently by q./a. Public domain.
 
+### aristotle-nicomachean-ethics-ross
+- status: usable
+- medium: text
+- cite: Aristotle, *Nicomachean Ethics*, trans. WD Ross (Oxford, 1908), electronic text at MIT Internet Classics Archive; also Gutenberg #8438 (trans. FH Peters)
+- kb: `Aristotle_Nicomachean-Ethics_trans-Ross_classics-MIT.txt`, `Aristotle_Nicomachean-Ethics_Gutenberg-8438.txt`
+- verified: file (Ross text; Book II.1 habituation passage at segs 29–30; born-digital plain text, not OCR)
+- note: Primary for virtue as habituation — "we become just by doing just acts"; the same means produce and destroy every virtue. Not to be confused with the barred Durant paraphrase ("we are what we repeatedly do"). Cited by DD note 5.4.
+
 ### asad-1986-the-idea-of-an-anthropology-of-islam
 - status: usable
 - medium: text
@@ -166,6 +174,22 @@ A note's `[S#]` line points here via `[src:<key>]`. No `[S#]` may point at a `st
 - verified: file (title page and blurb at seg 0; "REPRINT 2021" running footer; levels of necessity and Chart 1.1 at segs 11–12; diacritics mangled by the PDF font — "maq¥|id" = maqāṣid)
 - note: Insider treatise on the higher objectives of Islamic law; the five necessities, al-Shāṭibī's levels, Auda's own Maslow comparison and the modern additions of justice and freedom.
 
+### autor-2014-polanyis-paradox
+- status: usable
+- medium: text
+- cite: David H Autor, "Polanyi's Paradox and the Shape of Employment Growth," NBER Working Paper 20485 (September 2014), DOI 10.3386/w20485
+- kb: `Autor_Polanyis-Paradox-and-the-Shape-of-Employment-Growth_NBER-w20485-2014.md`
+- verified: file (abstract at seg 0 with the Polanyi quotation; "overstate the extent of machine substitution" at seg 2)
+- note: The standing counterweight to automation alarm — tacit knowledge, complementarities, employment polarisation. Paired with Frey & Osborne as a bracket, not a verdict.
+
+### bahna-2022-review-of-whitehouse-ritual-animal
+- status: usable
+- medium: text
+- cite: Vladimír Bahna, review of Harvey Whitehouse, *The Ritual Animal: Imitation and Cohesion in the Evolution of Social Complexity* (OUP 2021), *Slovenský národopis* 70:2 (2022), 305–309, DOI 10.61577/SN.2022.2.25
+- kb: `Bahna_Review-of-Whitehouse-The-Ritual-Animal_SlovenskyNarodopis-2022.md`
+- verified: file (bibliographic header with DOI and CC licence at seg 0; page numbers in running text)
+- note: Sympathetic but sceptical review of the modes theory's applied turn ("realistic, exaggerated or naive"); notes the Seshat retraction.
+
 ### bakunin-1882-god-and-the-state
 - status: usable
 - medium: text
@@ -181,6 +205,14 @@ A note's `[S#]` line points here via `[src:<key>]`. No `[S#]` may point at a `st
 - kb: `SEP_Stoicism.md`
 - verified: file (section numbering §2.7 "God" at :16 matches the live entry)
 - note: Stoic physics/theology — God as active principle and eternal *logos*.
+
+### baron-cohen-2026-we-need-to-change-how-we-view-autism
+- status: usable
+- medium: transcript
+- cite: Simon Baron-Cohen, "We need to change how we view autism," interview, Institute of Art and Ideas (How the Light Gets In), 14 August 2026
+- kb: `Simon-Baren-Cohen_We-need-to-change-how-we-view-autism.md`
+- verified: file (IAI header, date and speaker bio in seg 0; 7 segments; corpus filename misspells the surname "Baren")
+- note: The E-S / Pattern Seekers author in his own voice: "if-and-then" pattern-seeking and the STEM link, the affective/cognitive empathy split, the "male brain / female brain" headlines called "totally misleading," masking in girls and women. Interview transcript, not peer-reviewed.
 
 ### batchelor-2012-a-secular-buddhism-jgb
 - status: usable
@@ -237,6 +269,14 @@ A note's `[S#]` line points here via `[src:<key>]`. No `[S#]` may point at a `st
 - kb: `Berlin_The-Pursuit-of-the-Ideal_1988.md`
 - verified: file (headnote at seg 0 gives the 1988 Turin occasion and "second edition" provenance; running heads "THE PURSUIT OF THE IDEAL"; the pluralism-vs-relativism passage at seg 10)
 - note: Berlin's own statement of value pluralism against relativism — "a world of objective values… many. But not infinitely many".
+
+### blair-2013-neurobiology-of-psychopathic-traits-in-youths
+- status: usable
+- medium: text
+- cite: R James R Blair, "The neurobiology of psychopathic traits in youths," *Nature Reviews Neuroscience* 14 (2013), 786–799, DOI 10.1038/nrn3577
+- kb: `Blair_The-Neurobiology-of-Psychopathic-Traits-in-Youths_NatRevNeurosci-2013.md`
+- verified: file (title, author affiliation and abstract at seg 0; volume/pages/DOI from the published record, not web-checked)
+- note: The two-impairment model for CU youth: reduced amygdala responsiveness to distress cues; vmPFC/striatal decision-making deficits.
 
 ### bodhi-2015-facing-the-great-divide
 - status: usable
@@ -348,7 +388,7 @@ A note's `[S#]` line points here via `[src:<key>]`. No `[S#]` may point at a `st
 - cite: Willoughby B Britton, "Can mindfulness be too much of a good thing? The value of a middle way," *Current Opinion in Psychology* 28 (2019), 159–165, DOI 10.1016/j.copsyc.2018.12.011
 - kb: `Britton_Can-Mindfulness-Be-Too-Much-of-a-Good-Thing_CurrOpinPsychol-2019.md`
 - verified: file (accepted-manuscript header and abstract at segs 0–1; volume/pages from the published record)
-- note: Non-monotonic (inverted-U) model of mindfulness processes, decentering included.
+- note: Non-monotonic (inverted-U) model of mindfulness processes, decentering included. Cited by DD note 5.1.
 
 ### britton-et-al-2021-meditation-related-adverse-effects
 - status: usable
@@ -356,7 +396,7 @@ A note's `[S#]` line points here via `[src:<key>]`. No `[S#]` may point at a `st
 - cite: Willoughby B Britton, Jared R Lindahl, David J Cooper, Nicholas K Canby & Roman Palitsky, "Defining and Measuring Meditation-Related Adverse Effects in Mindfulness-Based Programs," *Clinical Psychological Science* 9:6 (2021), 1185–1201, DOI 10.1177/2167702621996340
 - kb: `Britton-et-al_Defining-and-Measuring-Meditation-Related-Adverse-Effects_CPS-2021.md`
 - verified: file (abstract with MedEx-I figures at seg 0; journal/volume/pages from the published record, not web-checked)
-- note: The measured side-effect rates after an 8-week MBP (83% / 58% / 37% / 6–14% lasting).
+- note: The measured side-effect rates after an 8-week MBP (83% / 58% / 37% / 6–14% lasting). Cited by DD note 5.1.
 
 ### brown-2004-human-universals-daedalus
 - status: usable
@@ -382,6 +422,14 @@ A note's `[S#]` line points here via `[src:<key>]`. No `[S#]` may point at a `st
 - verified: file (OCR provenance header: pages 1 and 28 transcribed only; abstract at seg 0; running head with title and author at segs 2, 5)
 - note: ▲ Partial OCR. JMPPK under Gunretno; ecology defended "extraterritorially"; "humans are the earth, and the earth is humans."
 
+### choi-bowles-2007-coevolution-of-parochial-altruism-and-war
+- status: usable
+- medium: text
+- cite: Jung-Kyoo Choi & Samuel Bowles, "The Coevolution of Parochial Altruism and War," *Science* 318:5850 (2007), 636–640, DOI 10.1126/science.1144237
+- kb: `Choi-Bowles_The-Coevolution-of-Parochial-Altruism-and-War_Science-2007.md`
+- verified: file (abstract and opening at seg 3; ▲ segs 0–2 are a page-bleed from an unrelated Science article on thermokarst-lake methane — cite from seg 3 onward)
+- note: Game-theoretic and agent-based model: parochialism and altruism coevolve via intergroup conflict; the source of the "dark twin" claim.
+
 ### cicero-de-re-publica-de-legibus-barham
 - status: usable
 - medium: text
@@ -397,6 +445,14 @@ A note's `[S#]` line points here via `[src:<key>]`. No `[S#]` may point at a `st
 - kb: `Pierre-Clastres_Society-Against-the-State_Essays-in-Political-Anthropology_1989.md`
 - verified: file (clean digital text; chieftainship essay at segs 24–40, Aché own-kill taboo at seg 116, closing "Society Against the State" essay at seg 211; edition/translator not re-checked against a title-page segment)
 - note: The primary behind Morris's synthesis — chief "has no authority at his disposal, no power of coercion, no means of giving an order"; generosity as "bondage"; the Huxley fewest-possessions line is reported, not Clastres's own.
+
+### cleckley-1988-mask-of-sanity
+- status: usable
+- medium: text-ocr
+- cite: Hervey Cleckley, *The Mask of Sanity: An Attempt to Clarify Some Issues About the So-Called Psychopathic Personality*, 5th ed. (Augusta, GA: privately printed / Emily S Cleckley, 1988; 1st ed. St Louis: Mosby, 1941)
+- kb: `Cleckley_The-Mask-of-Sanity_5th-ed-1988.md`
+- verified: file (tesseract OCR; title page at seg 0 names the fifth edition; the sixteen-criterion list at segs 407–408 matches the printed §44)
+- note: Origin of the clinical construct; the sixteen criteria in the author's own list and the "looks like the real thing" mask description. OCR scan — pointer, verify wording against print before quoting.
 
 ### colin-ward-1966-theory-of-organization
 - status: usable
@@ -422,6 +478,22 @@ A note's `[S#]` line points here via `[src:<key>]`. No `[S#]` may point at a `st
 - verified: file (title, authors, abstract at seg 0; running page numbers 214, 217, 219 in segs 5, 9, 12 match the JPI pagination)
 - note: Systematic review of Gallie's seven criteria as a framework, with the over-aggregation/disaggregation test and Freeden's decontestation; applications to democracy and rule of law.
 
+### coronado-montoya-et-al-2016-reporting-of-positive-results-mindfulness-rcts
+- status: usable
+- medium: text
+- cite: Stephanie Coronado-Montoya, Alexander W Levis, Linda Kwakkenbos, Russell J Steele, Erick H Turner & Brett D Thombs, "Reporting of positive results in randomized controlled trials of mindfulness-based mental health interventions," *PLoS ONE* 11:4 (2016), e0153220
+- kb: `CoronadoMontoya-et-al_Reporting-of-Positive-Results-in-RCTs-of-Mindfulness_PLoSONE-2016.md`
+- verified: file (results at seg 1: 108 of 124 trials positive, 1.6× expected; 13 of 21 registrations unpublished; article number from the published record, not web-checked)
+- note: Publication and reporting bias in the mindfulness RCT literature; the 108-of-124 figure.
+
+### corr-et-al-2015-no-connection-individual-altruism-parochialism
+- status: usable
+- medium: text
+- cite: Philip J Corr, Shaun P Hargreaves Heap, Charles R Seger & Kei Tsutsui, "An experiment on individual 'parochial altruism' revealing no connection between individual 'altruism' and individual 'parochialism'," *Frontiers in Psychology* 6 (2015), 1261, DOI 10.3389/fpsyg.2015.01261
+- kb: `Corr-et-al_No-Connection-Between-Individual-Altruism-and-Parochialism_FrontPsych-2015.md`
+- verified: file (title, authors, affiliations and abstract at seg 0; volume/article number from the published record)
+- note: Public-goods and trust games: in-group pro-sociality does not predict in-group bias; Big-5 predictors differ — parochial altruism is a population pattern, not an individual trait.
+
 ### crawford-2018-tan-malaka
 - status: usable
 - medium: text
@@ -429,6 +501,30 @@ A note's `[S#]` line points here via `[src:<key>]`. No `[S#]` may point at a `st
 - kb: `Oliver-Crawford_The-Political-Thought-of-Tan-Malaka_2018.md`
 - verified: web (University of Cambridge Apollo repository)
 - note: scholarship *about* Tan Malaka, cited by note 7.7 as [S11] — *Madilog* (1943) as a mentality-reconstruction programme, its spread as circulated manuscript rather than by decree, the countermanding of the 1926–27 insurrection and the 1948 Madiun condemnation, plus the honesty items (the racialised *bangsa* theory, "Aslia" expansionism, the prophetic self-image). ▲ Crawford's characterisations are not Tan Malaka's own words. Entry added 2026-07-27 to close a gap left by the 2026-07-24 pass, which cited the file without registering it. Cited by DD note 7.7.
+
+### curry-jones-chesters-van-lissa-2019-mapping-morality-with-a-compass
+- status: usable
+- medium: text
+- cite: Oliver Scott Curry, Matthew Jones Chesters & Caspar J Van Lissa, "Mapping morality with a compass: Testing the theory of morality-as-cooperation with a new questionnaire," *Journal of Research in Personality* 78 (2019), 106–124, DOI 10.1016/j.jrp.2018.10.008
+- kb: `Curry-JonesChesters-VanLissa_Mapping-Morality-with-a-Compass_JRP-2019.md`
+- verified: file (JRP header at seg 0; Study 2 MFQ test at seg 24; CFA fit at seg 22). ▲ The ingested file begins mid-introduction — the abstract's "MAC emerges as superior" is not in the chunks.
+- note: The MAC-Q vs MFQ head-to-head; the direct test between the framework Part 1 runs on and the one Part 5 runs on.
+
+### decety-cowell-2014-is-empathy-necessary-for-moral-behavior
+- status: usable
+- medium: text
+- cite: Jean Decety & Jason M Cowell, "Friends or Foes: Is Empathy Necessary for Moral Behavior?", *Perspectives on Psychological Science* 9:4 (2014), 525–537
+- kb: `Decety-Cowell_Friends-or-Foes-Is-Empathy-Necessary-for-Moral-Behavior_PPS-2014.md`
+- verified: file (abstract at seg 0; "Published in final edited form as: Perspect Psychol Sci. 2014 September; 9(4): 525–537" at seg 1)
+- note: Distinguishes emotional sharing, empathic concern and perspective taking; ties moral conduct to concern, not sharing — the empathy-literature version of Bloom's correction.
+
+### deming-koenigs-2020-functional-neural-correlates-of-psychopathy
+- status: usable
+- medium: text
+- cite: Philip Deming & Michael Koenigs, "Functional neural correlates of psychopathy: a meta-analysis of MRI data," *Translational Psychiatry* 10:133 (2020), DOI 10.1038/s41398-020-0816-8
+- kb: `Deming-Koenigs_Functional-Neural-Correlates-of-Psychopathy-Meta-Analysis_TranslPsychiatry-2020.md`
+- verified: file (journal header with DOI at seg 0)
+- note: 25 fMRI studies / 460 foci; increased default-mode and medial-temporal (incl. amygdala) task activity, decreased dACC — "challenge predominant theories of amygdala hypoactivity."
 
 ### dhammika-1993-edicts-of-king-asoka
 - status: usable
@@ -461,6 +557,22 @@ A note's `[S#]` line points here via `[src:<key>]`. No `[S#]` may point at a `st
 - kb: `Durkheim_The-Elementary-Forms-of-the-Religious-Life_Swain-trans-1915.md`, `Durkheim_The-Elementary-Forms-of-the-Religious-Life_Gutenberg-41360.txt` (born-digital Gutenberg text of the same translation), `Durkheim_The-Elementary-Forms-of-the-Religious-Life_trans-Swain_1915_OCR.md` (second OCR under 3-ritual-habituation/)
 - verified: file (Introduction at seg 0; Book II ch. 7 §ii "society… is what a god is to his worshippers" at seg 205; Conclusion at seg 429)
 - note: Society as the source of moral authority and the sacred; three copies in the corpus — prefer the Gutenberg text for quotation.
+
+### dyble-2021-evolution-of-altruism-through-war-sensitive
+- status: usable
+- medium: text
+- cite: Mark Dyble, "The evolution of altruism through war is highly sensitive to population structure and to civilian and fighter mortality," *PNAS* 118:23 (2021), e2011142118
+- kb: `Dyble_Evolution-of-Altruism-Through-War-Sensitive-to-Population-Structure_PNAS-2021.md`
+- verified: file (masthead, editor line and abstract at seg 0; FST result at seg 8)
+- note: Re-runs Choi & Bowles under a wide parameter range; altruism does not evolve at empirically observed hunter-gatherer FST. A sensitivity critique, not a refutation of observed parochialism.
+
+### efferson-lalive-fehr-2008-coevolution-cultural-groups-ingroup-favoritism
+- status: usable
+- medium: text
+- cite: Charles Efferson, Rafael Lalive & Ernst Fehr, "The Coevolution of Cultural Groups and Ingroup Favoritism," *Science* 321:5897 (2008), 1844–1849, DOI 10.1126/science.1155805
+- kb: `Efferson-Lalive-Fehr_The-Coevolution-of-Cultural-Groups-and-Ingroup-Favoritism_Science-2008.md`
+- verified: file (title, authors and abstract at seg 0; volume/pages from the published record)
+- note: Experimental: arbitrary symbolic markers become predictors of behaviour by solving coordination problems, generating in-group favouritism without conflict.
 
 ### emma-goldman-1897-marriage
 - status: usable
@@ -662,6 +774,22 @@ A note's `[S#]` line points here via `[src:<key>]`. No `[S#]` may point at a `st
 - verified: unverified (searched: no reliable web locus for original venue/date; *Umanità Nova* founded 1919, *Pensiero e Volontà* ran 1924–26 — either is possible. Cite the year with the file's caveat, not as established.)
 - note: the movement's positive transmission doctrine — "a question of education for freedom"; the propagandist as the schoolteacher who helps "in such a way that the pupil imagines that he has found the solution unaided"; the party paper disowned as a central organ; and the failure condition, that "isolated, sporadic propaganda… is forgotten and lost before its effect can grow and bear fruit".
 
+### fischer-xygalatas-et-al-2014-fire-walkers-high
+- status: usable
+- medium: text
+- cite: Ronald Fischer, Dimitris Xygalatas, Panagiotis Mitkidis, Paul Reddish, Penny Tok, Ivana Konvalinka & Joseph Bulbulia, "The Fire-Walker's High: Affect and Physiological Responses in an Extreme Collective Ritual," *PLoS ONE* 9:2 (2014), e88355, DOI 10.1371/journal.pone.0088355
+- kb: `Fischer-Xygalatas-et-al_The-Fire-Walkers-High_PLoSONE-2014.md`, `Fischer-Xygalatas-et-al_The-Fire-Walkers-High_PLOSONE-2014.md` (duplicate copy under 6-costly-signalling)
+- verified: file (title and author list at seg 0; the two copies are the same paper)
+- note: Affect and physiology in the firewalk; companion to Konvalinka 2011. Duplicate ingestion — cite the 3-ritual-habituation copy.
+
+### fitouchi-andre-baumard-2023-moral-disciplining-puritanical-morality
+- status: usable
+- medium: text
+- cite: Léo Fitouchi, Jean-Baptiste André & Nicolas Baumard, "Moral disciplining: The cognitive and evolutionary foundations of puritanical morality," *Behavioral and Brain Sciences* 46 (2023), e293 (HAL preprint hal-03899979, December 2022)
+- kb: `Fitouchi-Andre-Baumard_Moral-Disciplining-Puritanical-Morality_BBS-2023.md`
+- verified: file (HAL deposit header at seg 0; short and long abstracts at segs 1–2; BBS article number from the published record)
+- note: Puritanical purity norms as pre-emptive moralisation of self-control risks to cooperation — morality-as-cooperation's answer to the "harmless wrongs" problem. Sibling files (RBB 2021, the 2022 clarification, the BBS response) sit under `6-costly-signalling/`.
+
 ### fitouchi-singh-andre-baumard-2023-mutual-policing
 - status: usable
 - medium: text
@@ -677,6 +805,14 @@ A note's `[S#]` line points here via `[src:<key>]`. No `[S#]` may point at a `st
 - kb: `Frankfort-et-al_The-Intellectual-Adventure-of-Ancient-Man_1946.md`
 - verified: file (preface and chapter list at :1; "oi.uchicago.edu" running footer; Jacobsen "The Cosmos as a State" header at :131)
 - note: The classic cross-civilisation treatment of cosmic order; Jacobsen's Egypt/Mesopotamia mood contrast and "cosmos as a state." OCR: Wilson's *ma'at* is not recoverable by string search — locate via "justice"/"order" context.
+
+### frey-osborne-2013-the-future-of-employment
+- status: usable
+- medium: text
+- cite: Carl Benedikt Frey & Michael A Osborne, *The Future of Employment: How Susceptible Are Jobs to Computerisation?* (Oxford Martin School working paper, 17 September 2013); published in *Technological Forecasting and Social Change* 114 (2017), 254–280, DOI 10.1016/j.techfore.2016.08.019
+- kb: `Frey-Osborne_The-Future-of-Employment_OxfordMartin-2013.md`
+- verified: file (title page and date at seg 0; 702-occupation appendix table with SOC codes and probabilities at segs 55–70; Computer Programmers 0.48 at seg 62)
+- note: The 47-percent-at-risk study; its appendix gives the per-occupation computerisation probabilities used to show the technical niche's own precarity. Journal volume/pages from the published record, not web-checked.
 
 ### friedrich-nietzsche-1882-the-gay-science
 - status: usable
@@ -717,6 +853,14 @@ A note's `[S#]` line points here via `[src:<key>]`. No `[S#]` may point at a `st
 - kb: `Friedrich-Nietzsche_Twilight-of-the-Idols_1895.md`
 - verified: unverified
 - note: KB filename misdates the work (1895); frontmatter `year: 1888` is correct — do not reproduce 1895 in citations. Translator unnamed; section titles and phrasing ("Skirmishes of an Untimely Man", "prankishness", the "History of an Error" subtitle) match Walter Kaufmann's 1954 *Portable Nietzsche* rendering rather than the Levy edition (Ludovici's chapter is titled "Skirmishes in a War with the Age") — unverified, and a possible rights question worth the coordinator's attention. Cited by section number only ("Skirmishes" §5, §37; "How the 'True World' Finally Became a Fable"). Cited by DD note 3.4.
+
+### galante-et-al-2021-mindfulness-based-programmes-nonclinical
+- status: usable
+- medium: text
+- cite: Julieta Galante, Claire Friedrich, Anna F Dawson, Marta Modrego-Alarcón, Pia Gebbing, Irene Delgado-Suárez, Radhika Gupta, Lydia Dean, Tim Dalgleish, Ian R White & Peter B Jones, "Mindfulness-based programmes for mental health promotion in adults in nonclinical settings: A systematic review and meta-analysis of randomised controlled trials," *PLoS Medicine* 18:1 (2021), e1003481
+- kb: `Galante-et-al_Mindfulness-Based-Programmes-in-Nonclinical-Settings_PLoSMedicine-2021.md`
+- verified: file (results and prediction intervals at seg 2; data-availability statement names Cambridge; author list from the published record, not web-checked)
+- note: Benefits against passive controls (distress SMD −0.45, well-being 0.33) but no evidence of superiority over specific active controls; USA trials report smaller effects.
 
 ### gallie-1956-essentially-contested-concepts
 - status: usable
@@ -814,6 +958,14 @@ A note's `[S#]` line points here via `[src:<key>]`. No `[S#]` may point at a `st
 - verified: unverified
 - note: private working notes in letter form ("Dear Stephen"); superseded by the finished talk in `Glenn-Roberts_The-Dharma-of-Dog.md` and `Glenn-Roberts_Bodhi-Talk-2020-02-08.md`. Cite the finished piece, not the notes. Cited by DD note 6.1.
 
+### goldberg-et-al-2017-is-mindfulness-research-methodology-improving
+- status: usable
+- medium: text
+- cite: Simon B Goldberg, Raymond P Tucker, Preston A Greene, Tracy L Simpson, David J Kearney & Richard J Davidson, "Is mindfulness research methodology improving over time? A systematic review," *PLoS ONE* 12:10 (2017), e0187298, DOI 10.1371/journal.pone.0187298
+- kb: `Goldberg-et-al_Is-Mindfulness-Research-Methodology-Improving-Over-Time_PLoSONE-2017.md`
+- verified: file (title and authors at seg 0; DOI and results at seg 1; 142 samples / 12,005 participants at seg 8)
+- note: No evidence that any study-quality indicator improved across 142 mindfulness-intervention samples, 2000–2016; a Davidson-lab audit of its own field.
+
 ### goldman-1913-failure-of-christianity
 - status: usable
 - medium: text
@@ -861,6 +1013,22 @@ A note's `[S#]` line points here via `[src:<key>]`. No `[S#]` may point at a `st
 - kb: `Dawn_of_Everything-David_Graeber.md`, `Dawn-of-Everything.md`
 - verified: web (ISBN 978-0-374-15735-7)
 - note: disputes a single "original condition"; egalitarian-forager baseline not uniform.
+
+### graham-haidt-et-al-2013-mft-pragmatic-validity
+- status: usable
+- medium: text
+- cite: Jesse Graham, Jonathan Haidt, Sena Koleva, Matt Motyl, Ravi Iyer, Sean P Wojcik & Peter H Ditto, "Moral Foundations Theory: The Pragmatic Validity of Moral Pluralism," *Advances in Experimental Social Psychology* 47 (2013), 55–130
+- kb: `Graham-Haidt-et-al_Moral-Foundations-Theory-Pragmatic-Validity_AESP-2013.md`
+- verified: file (Elsevier author's-copy header with volume, pages and ISBN at seg 0; contents at seg 1)
+- note: MFT's canonical restatement — nativism as "organized in advance of experience," the four claims, foundationhood criteria, Liberty as candidate sixth foundation.
+
+### gray-dimaggio-schein-kachanoff-2022-problem-of-purity
+- status: usable
+- medium: text
+- cite: Kurt Gray, Nicholas DiMaggio, Chelsea Schein & Frank Kachanoff, "The Problem of Purity in Moral Psychology," *Personality and Social Psychology Review* 27:3 (2023), 272–308, DOI 10.1177/10888683221124741 (online 2022)
+- kb: `Gray-DiMaggio-Schein-Kachanoff_The-Problem-of-Purity-in-Moral-Psychology_PSPR-2022.md`
+- verified: file (journal header with DOI, volume and pages at seg 0; abstract at seg 1)
+- note: Systematic review dissolving purity as a distinct moral construct; the dyadic-morality programme's case against the sanctity foundation.
 
 ### gulenc-2016-physis-nomos-sophists
 - status: usable
@@ -934,6 +1102,14 @@ A note's `[S#]` line points here via `[src:<key>]`. No `[S#]` may point at a `st
 - verified: file (running head "Spiritual Exercises 85" at seg 102; OCR with hyphenation artefacts)
 - note: *Prosochē* as the fundamental Stoic spiritual exercise ("Spiritual Exercises" chapter, segs 101–102).
 
+### haidt-2001-emotional-dog-rational-tail
+- status: usable
+- medium: text
+- cite: Jonathan Haidt, "The Emotional Dog and Its Rational Tail: A Social Intuitionist Approach to Moral Judgment," *Psychological Review* 108:4 (2001), 814–834
+- kb: `Haidt_The-Emotional-Dog-and-Its-Rational-Tail_PsychReview-2001.md`
+- verified: file (abstract, four reasons and the Julie-and-Mark vignette at segs 0–3; Haidt–Hersh dumbfounding report at seg 9; journal/pages from the published record)
+- note: The social intuitionist model in its original statement, including Haidt's own "plausible alternative… not an established fact" hedge.
+
 ### halbfass-1988-india-and-europe-ch17
 - status: usable
 - medium: text-ocr
@@ -965,6 +1141,14 @@ A note's `[S#]` line points here via `[src:<key>]`. No `[S#]` may point at a `st
 - kb: `Avalon_The-Code-of-Hammurabi_trans-King.md` (Harper's 1904 edition is `Harper_The-Code-of-Hammurabi-King-of-Babylon_1904.md`)
 - verified: file (prologue at seg 0; §§176–177 at seg 19; King's 1910 rendering, section numbering standard)
 - note: Primary code text; prologue self-describes the law's purpose ("so that the strong should not harm the weak"). Old translation — check wording against Roth 1997 before quoting for philological weight.
+
+### hare-1999-without-conscience
+- status: usable
+- medium: text-ocr
+- cite: Robert D Hare, *Without Conscience: The Disturbing World of the Psychopaths Among Us* (New York: Guilford Press, 1999; orig. Pocket Books, 1993)
+- kb: `Hare_Without-Conscience_1999_community-upload.md`
+- verified: file (tesseract OCR of a community-uploaded scan; author's note at seg 0, "2 million psychopaths in North America" at seg 4, serial-killer ratio at seg 78; edition not confirmed beyond the filename)
+- note: Hare's popular statement of the PCL-R construct: prevalence estimates, the intraspecies-predator framing, the separation of psychopathy from serial murder. OCR scan; community upload, provenance unverified.
 
 ### henrich-heine-norenzayan-2010-weirdest-people
 - status: usable
@@ -999,6 +1183,14 @@ Also: existing entry `curry-mullins-whitehouse-2019-seven-moral-rules` should ad
 - kb: `batchelor-higgins_a-secular-buddhism-and-its-analysis_2012-2017.md` (attributed summary, staged at workshops/DD/sources/ — not yet folded into corpus)
 - verified: web (globalbuddhism.org, diamond OA)
 - note: attributed summary note with verified page anchors, shared with the Batchelor entry. Review essay legitimating Batchelor's method via the Chan-acculturation precedent and MacIntyre's 'living tradition'. ▲ Never cites McMahan — source Buddhist modernism separately. Sympathetic analyst, not neutral. Distinct work from the KB's After Buddhism workbook.
+
+### hipp-siegel-2013-dissociating-gamma-from-muscle-activity
+- status: usable
+- medium: text
+- cite: Joerg F Hipp & Markus Siegel, "Dissociating neuronal gamma-band activity from cranial and ocular muscle activity in EEG," *Frontiers in Human Neuroscience* 7 (2013), art. 338
+- kb: `Hipp-Siegel_Dissociating-Neuronal-Gamma-from-Muscle-Activity-in-EEG_FrontHumNeurosci-2013.md`
+- verified: file (title, authors, editors and reviewers at seg 0; discussion at segs 22–23; article number from the published record, not web-checked)
+- note: Cranial-muscle artefacts occupy the gamma band and can produce false conclusions unless cleaned; the technical caveat on scalp-gamma meditation findings.
 
 ### hultzsch-1925-inscriptions-of-asoka
 - status: usable
@@ -1056,6 +1248,14 @@ Also: existing entry `curry-mullins-whitehouse-2019-seven-moral-rules` should ad
 - verified: file (tesseract OCR of the BPS Wheel; title page in sid 0; the summary file records full-text reading against the BPS Online Edition 2011)
 - note: Standard concise account of the Theravāda dhamma theory; *attano sabhāvaṃ dhārentī ti dhammā* and its provisional (*kattu-sādhana*) status, sids 11–12.
 
+### kavanagh-et-al-2018-high-arousal-martial-arts-rituals
+- status: usable
+- medium: text
+- cite: Christopher M Kavanagh, Jonathan Jong, Ryan McKay & Harvey Whitehouse, "Positive experiences of high arousal martial arts rituals are linked to identity fusion and costly pro-group actions," *European Journal of Social Psychology* 48:4 (2018), 461–481, DOI 10.1002/ejsp.2514
+- kb: `Kavanagh-et-al_High-Arousal-Martial-Arts-Rituals-Identity-Fusion_EJSP-2018.md`
+- verified: file (title and author list with affiliations at seg 0; 59 segments)
+- note: 605 Brazilian Jiu Jitsu practitioners; no pain–cohesion correlation; positive affect predicts fusion. The imagistic-mode literature correcting itself.
+
 ### keeler-1987-javanese-shadow-plays-javanese-selves
 - status: usable
 - medium: text-ocr
@@ -1063,6 +1263,14 @@ Also: existing entry `curry-mullins-whitehouse-2019-seven-moral-rules` should ad
 - kb: `Ward-Keeler_Javanese-Shadow-Plays-Javanese-Selves_2017.md`
 - verified: file (iTextSharp 2017 PDF metadata at seg 0; chapter running heads "CHAPTER 4", "CHAPTER 9" with 1987 pagination at segs 237, 484; letter-spaced OCR in headings)
 - note: The deconstruction-era ethnography Stange 1991 indicts; ch. 9 on ngelmu, pusaka and potency; the "theosophical prejudices" sentence Stange quotes was not string-locatable in the scan. Filename year is the PDF creation date, not the edition. Cited by DD note 3.5.3.
+
+### kiehl-hoffman-2011-the-criminal-psychopath
+- status: usable
+- medium: text-ocr
+- cite: Kent A Kiehl & Morris B Hoffman, "The Criminal Psychopath: History, Neuroscience, Treatment, and Economics," *Jurimetrics* 51:4 (2011), 355–397
+- kb: `Kiehl-Hoffman_The-Criminal-Psychopath-History-Neuroscience-Treatment_Jurimetrics-2011.md`
+- verified: file (abstract at seg 0; prevalence, recidivism and $460bn cost figures at segs 1, 23, 25, 27; volume/pages from the published record, not web-checked)
+- note: Forensic review by a neuroscientist and a judge: <1% of adult males, 15–25% of prisoners, ~80% three-year recidivism for high scorers, Caldwell decompression treatment. Carceral-paradigm source; read with the Skeem–Cooke critique.
 
 ### kimmerer-2013-braiding-sweetgrass
 - status: usable
@@ -1088,6 +1296,30 @@ Also: existing entry `curry-mullins-whitehouse-2019-seven-moral-rules` should ad
 - verified: file (tesseract OCR provenance header at seg 0; running head "The politics of privatization" with pages 167–173 at segs 213–221)
 - note: Reports and criticises Katz's constructivism; the modern experiential definition of "the mystical" as itself a Western construction. Cited by DD note 3.5.3.
 
+### klimecki-et-al-2013-compassion-training-positive-affect
+- status: usable
+- medium: text
+- cite: Olga M Klimecki, Susanne Leiberg, Claus Lamm & Tania Singer, "Functional neural plasticity and associated changes in positive affect after compassion training," *Cerebral Cortex* 23:7 (2013), 1552–1561
+- kb: `Klimecki-Leiberg-Lamm-Singer_Functional-Neural-Plasticity-After-Compassion-Training_CerebCortex-2013.md`
+- verified: file (title, authors and affiliations at seg 0; volume/pages from the published record, not web-checked)
+- note: Sibling study to the 2014 paper; compassion training increases positive affect and recruits the reward/affiliation network. Named in 5.1's S16 line as a sibling, not separately cited. Cited by DD note 5.1.
+
+### klimecki-et-al-2014-compassion-vs-empathy-training
+- status: usable
+- medium: text
+- cite: Olga M Klimecki, Susanne Leiberg, Matthieu Ricard & Tania Singer, "Differential pattern of functional brain plasticity after compassion and empathy training," *Social Cognitive and Affective Neuroscience* 9:6 (2014), 873–879
+- kb: `Klimecki-Leiberg-Ricard-Singer_Differential-Brain-Plasticity-Compassion-vs-Empathy_SCAN-2014.md`
+- verified: file (title, authors, affiliations and abstract at seg 0; volume/pages from the published record, not web-checked)
+- note: The primary behind Sapolsky's Ricard empathy-vs-compassion story: empathy training raises negative affect and insula/aMCC activation, compassion training reverses it via ventral striatum / pgACC / mOFC.
+
+### konvalinka-xygalatas-et-al-2011-synchronized-arousal-fire-walking
+- status: usable
+- medium: text
+- cite: Ivana Konvalinka, Dimitris Xygalatas, Joseph Bulbulia, Uffe Schjødt, Else-Marie Jegindø, Sebastian Wallot, Guy Van Orden & Andreas Roepstorff, "Synchronized arousal between performers and related spectators in a fire-walking ritual," *PNAS* 108:20 (2011), 8514–8519, DOI 10.1073/pnas.1016955108
+- kb: `Konvalinka-Xygalatas-et-al_Synchronized-Arousal-in-a-Fire-Walking-Ritual_PNAS-2011.md`
+- verified: file (masthead, author list and abstract at seg 0; "received for review December 14, 2010")
+- note: The primary San Pedro Manrique firewalk report: 38 participants, heart-rate synchrony between walkers and related spectators only.
+
 ### koons-2012-can-gods-goodness-save-divine-command-theory
 - status: usable
 - medium: text
@@ -1112,6 +1344,14 @@ Also: existing entry `curry-mullins-whitehouse-2019-seven-moral-rules` should ad
 - verified: file (journal masthead "Sci. Adv. 8, eabk3316 (2022) 20 May 2022" and full author list at seg 0)
 - note: The largest controlled test of MBSR neuroplasticity — null on grey matter, density and thickness; from Davidson's own lab.
 
+### kral-et-al-2018-mindfulness-training-amygdala-reactivity
+- status: usable
+- medium: text
+- cite: Tammi RA Kral, Brianna S Schuyler, Jeanette A Mumford, Melissa A Rosenkranz, Antoine Lutz & Richard J Davidson, "Impact of short- and long-term mindfulness meditation training on amygdala reactivity to emotional stimuli," *NeuroImage* 181 (2018), 301–313
+- kb: `Kral-Davidson-et-al_Mindfulness-Training-and-Amygdala-Reactivity_NeuroImage-2018.md`
+- verified: file (abstract with group sizes at seg 0; Davidson conflict-of-interest statement at seg 1; author list and pagination from the published record, not web-checked)
+- note: RCT (MBSR N = 32 vs active control N = 35) plus long-term meditators (N = 30, mean 9,081 h): less amygdala reactivity to positive pictures; the modest functional result beside the 2022 structural null.
+
 ### kreplin-farias-brazil-2018-limited-prosocial-effects-of-meditation
 - status: usable
 - medium: text
@@ -1127,6 +1367,14 @@ Also: existing entry `curry-mullins-whitehouse-2019-seven-moral-rules` should ad
 - kb: `Pëtr-Kropotkin_The-Manifesto-of-the-Sixteen_1916.md`
 - verified: web (https://www.marxists.org/reference/archive/kropotkin-peter/1916/sixteen.htm — date, "ranged on the side of the resistance" and signatory list incl. Grave and Kropotkine confirmed)
 - note: the pro-war minority's own declaration — the other side of the Malatesta 1914 dispute, in its own words. Cited in 7.1 [S16]. Cited by DD note 7.1.
+
+### landy-goodwin-2015-does-incidental-disgust-amplify-moral-judgment
+- status: usable
+- medium: text
+- cite: Justin F Landy & Geoffrey P Goodwin, "Does Incidental Disgust Amplify Moral Judgment? A Meta-Analytic Review of Experimental Evidence," *Perspectives on Psychological Science* 10:4 (2015), 518–536
+- kb: `Landy-Goodwin_Does-Incidental-Disgust-Amplify-Moral-Judgment_PPS-2015.md`
+- verified: file ("in press at Perspectives on Psychological Science" preprint header and abstract at seg 0; volume/pages from the published record)
+- note: k = 50; d = .11 shrinking to −.01 after publication-bias correction — the disgust mechanism behind the sanctity foundation loses its support.
 
 ### lang-purzycki-et-al-2019-moralizing-gods-impartiality-parochialism
 - status: usable
@@ -1145,6 +1393,14 @@ Also: existing entry `curry-mullins-whitehouse-2019-seven-moral-rules` should ad
 - note: Public-domain primary text; OCR has broken headings (`###
 
 ### Tao`) inside sentences, so quote only after reassembly.
+
+### leng-ludwig-2016-intranasal-oxytocin-myths-and-delusions
+- status: usable
+- medium: text
+- cite: Gareth Leng & Mike Ludwig, "Intranasal Oxytocin: Myths and Delusions," *Biological Psychiatry* 79:3 (2016), 243–250, DOI 10.1016/j.biopsych.2015.05.003
+- kb: `Leng-Ludwig_Intranasal-Oxytocin-Myths-and-Delusions_BiolPsychiatry-2016.md`
+- verified: file (Edinburgh author manuscript, title and authors at seg 1; blood–brain-barrier argument at seg 9; pagination from the published record, not web-checked)
+- note: The pharmacokinetic objection to the intranasal-oxytocin literature; supraphysiological peripheral levels, little central delivery.
 
 ### lestari-et-al-2026-resistance-identity-colonial-perspectives-saminism
 - status: usable
@@ -1202,6 +1458,14 @@ Also: existing entry `curry-mullins-whitehouse-2019-seven-moral-rules` should ad
 - verified: file (running head "28 Epictetus in his Time and Place" at seg 31; heavy OCR garbling in footnotes, e.g. seg 87)
 - note: The judgement-mediation reading of Epictetus ("we do not experience the world without the mediation of our own assessments").
 
+### lutz-et-al-2004-gamma-synchrony
+- status: usable
+- medium: text
+- cite: Antoine Lutz, Lawrence L Greischar, Nancy B Rawlings, Matthieu Ricard & Richard J Davidson, "Long-term meditators self-induce high-amplitude gamma synchrony during mental practice," *PNAS* 101:46 (2004), 16369–16373, DOI 10.1073/pnas.0407401101
+- kb: `Lutz-Greischar-Ricard-Davidson_Long-Term-Meditators-Self-Induce-Gamma-Synchrony_PNAS-2004.md`
+- verified: file (masthead, DOI and pagination in segs 0 and 3; eight practitioners / ten controls at seg 1)
+- note: The founding contemplative-neuroscience result; eight expert subjects; the paper's own 80–120 Hz muscle adjustment is at seg 3.
+
 ### macintyre-1981-after-virtue
 - status: usable
 - medium: text-ocr
@@ -1234,6 +1498,14 @@ Also: existing entry `curry-mullins-whitehouse-2019-seven-moral-rules` should ad
 - verified: file (chapter "Holmberg's Mistake" at segs 6–13; Dobyns population discussion at seg 122; born-digital with italics preserved)
 - note: Journalistic synthesis of the revisionist archaeology (Denevan, Erickson, Balée, Dobyns); "Holmberg's Mistake" and the Noble Savage genealogy are the corpus's Americanist counterweight to the ecological-Indian projection.
 
+### mann-et-al-2016-withdraw-or-affiliate-humiliation-initiation
+- status: usable
+- medium: text
+- cite: Liesbeth Mann, Allard R Feddes, Bertjan Doosje & Agneta H Fischer, "Withdraw or affiliate? The role of humiliation during initiation rituals," *Cognition and Emotion* 30:1 (2016), 80–100, DOI 10.1080/02699931.2015.1050358
+- kb: `Mann-et-al_Withdraw-or-Affiliate-Humiliation-During-Initiation-Rituals_CognEmotion-2016.md`
+- verified: file (UvA-DARE header, author list and received/accepted dates at seg 0; hypotheses summary at seg 7)
+- note: Three studies: initiation severity and humiliation reduce novices' affiliation, least when initiated as a group. Counterweight to the ordeal-bonds reading.
+
 ### mason-sep-value-pluralism
 - status: usable
 - medium: text
@@ -1249,6 +1521,14 @@ Also: existing entry `curry-mullins-whitehouse-2019-seven-moral-rules` should ad
 - kb: `Maulana-et-al_Paguyuban-Sumarah-and-Interrituality_Walisongo-2021.md`
 - verified: file (journal masthead with DOI and page range at seg 0)
 - note: Sujud Sumarah as interreligious ritual participation; members keep their Muslim/Catholic/Buddhist identity; names of God under the Sesanggeman. Cited by DD notes 3.5, 3.5.1, 3.5.2, 3.5.3, 3.5.4.
+
+### mccullough-churchland-mendez-2013-problems-measuring-peripheral-oxytocin
+- status: usable
+- medium: text
+- cite: Michael E McCullough, Patricia Smith Churchland & Armando J Mendez, "Problems with measuring peripheral oxytocin: Can the data on oxytocin and human behavior be trusted?", *Neuroscience & Biobehavioral Reviews* 37 (2013), 1485–1492
+- kb: `McCullough-Churchland-Mendez_Problems-with-Measuring-Peripheral-Oxytocin_NBR-2013.md`
+- verified: file (authors, affiliations and article history at seg 0; running head with volume and pages at seg 10)
+- note: Unextracted-plasma immunoassays overstate oxytocin by orders of magnitude; the measurement critique beneath the correlational oxytocin literature.
 
 ### mckinnon-2002-sociological-definitions
 - status: usable
@@ -1545,6 +1825,14 @@ Also: existing entry `curry-mullins-whitehouse-2019-seven-moral-rules` should ad
 - verified: file (PMC7612818 header, journal/year/licence in seg 0; conclusion in seg 19)
 - note: phylogenetic test finding no universal link between kin terminology and social structure — a documented non-universal and a caveat on tallied cross-cultural regularities.
 
+### pizarro-et-al-2022-collective-effervescence-meta-analysis
+- status: usable
+- medium: text
+- cite: José J Pizarro, Larraitz N Zumeta, Pierre Bouchat, Anna Włodarczyk, Bernard Rimé, Nekane Basabe, Alberto Amutio & Darío Páez, "Emotional processes, collective behavior, and social movements: A meta-analytic review of collective effervescence outcomes during collective gatherings and demonstrations," *Frontiers in Psychology* 13 (2022), 974683, DOI 10.3389/fpsyg.2022.974683
+- kb: `Pizarro-Zumeta-et-al_Collective-Effervescence-Outcomes-Meta-Analysis_FrontPsychol-2022.md`, `Pizarro-et-al_Collective-Effervescence-Outcomes-Meta-Analytic-Review_FrontiersPsychology-2022.md` (duplicate copy under 3-grounding-durkheim)
+- verified: file (DOI and publication date at seg 0; k = 50, N = 182,738 at seg 1)
+- note: Meta-analytic construct validation of Durkheim's collective effervescence; associations with fusion, wellbeing (r = 0.32) and the "instrument of persuasion" question. Duplicate ingestion.
+
 ### plato-euthyphro-jowett
 - status: usable
 - medium: text
@@ -1552,6 +1840,14 @@ Also: existing entry `curry-mullins-whitehouse-2019-seven-moral-rules` should ad
 - kb: `Plato_Euthyphro_trans-Jowett_Gutenberg-1642.txt`
 - verified: file (Gutenberg header seg 0; the 10a–11a exchange at seg 22)
 - note: Primary text of the dilemma — "It is loved because it is holy, not holy because it is loved?"
+
+### poeppl-et-al-2019-view-behind-the-mask-of-sanity
+- status: usable
+- medium: text
+- cite: Timm B Poeppl, Maximilian Donges, Andreas Mokros, Rainer Rupprecht, Peter T Fox, Angela R Laird, Danilo Bzdok, Berthold Langguth & Simon B Eickhoff, "A View Behind the Mask of Sanity: Meta-Analysis of Aberrant Brain Activity in Psychopaths," *Molecular Psychiatry* 24 (2019), 463–470
+- kb: `Poeppl-et-al_A-View-Behind-the-Mask-of-Sanity-Meta-Analysis_MolPsychiatry-2019.md`
+- verified: file (title and full author block at seg 0; 28 eligible studies at seg 4; volume/pages from the published record, not web-checked)
+- note: Coordinate-based meta-analysis; opens by conceding no reliable pattern of altered activity had been established; reports robust frontoinsular increase.
 
 ### pokorny-lrc-pie-dher-to-hold-support
 - status: usable
@@ -1617,6 +1913,14 @@ Also: existing entry `curry-mullins-whitehouse-2019-seven-moral-rules` should ad
 - verified: file (seg 3; title/authors not re-checked against a masthead segment)
 - note: universality in relational motives, diversity in relational models; "morally motivated acts, not simply errors in judgment."
 
+### reed-ikigai-podcast-18-nanba-walking
+- status: usable
+- medium: transcript
+- cite: William Reed (guest), "The Art of Nanba Walking," *Ikigai Podcast* ep. 18 (YouTube transcript)
+- kb: `The-Art-of-Nanba-Walking.transcript.txt`
+- verified: file (episode number and guest named in seg 0; host not named in the transcript, no date)
+- note: Reed reports Yano Tatsuhiko's conservatory students finding yoga, Feldenkrais and the Alexander Technique relaxing in session but not carrying over into playing — a second-hand anecdote on transfer, used only as such.
+
 ### reid-nunn-2015-ancient-aboriginal-stories-sea-level
 - status: usable
 - medium: text
@@ -1633,6 +1937,14 @@ Also: existing entry `curry-mullins-whitehouse-2019-seven-moral-rules` should ad
 - verified: file (transcript header carries channel, title and date; 12 segments)
 - note: Functionalist-turn survey (Tylor, Otto, the Turners, Brakke, Dalton, JZ Smith) run through fandom; also the Athanasius 367 CE festal-letter canon detail. Cited by DD note 2.4; discussed in the companion essay defining-definition.md. Cited by DD note 2.4.
 
+### rennung-goeritz-2016-prosocial-consequences-of-interpersonal-synchrony
+- status: usable
+- medium: text
+- cite: Miriam Rennung & Anja S Göritz, "Prosocial Consequences of Interpersonal Synchrony: A Meta-Analysis," *Zeitschrift für Psychologie* 224:3 (2016), 168–189, DOI 10.1027/2151-2604/a000252
+- kb: `Rennung-Goeritz_Prosocial-Consequences-of-Interpersonal-Synchrony-Meta-Analysis_2016.md`
+- verified: file (journal, volume and pages in the running footer at seg 17; abstract at seg 0; experimenter-awareness moderation at seg 24)
+- note: 60 experiments; medium effect of synchrony on prosociality, inflated by g = 0.29 when experimenters were unblinded. The counterweight to the synchrony literature's headline.
+
 ### riesebrodt-2010-promise-of-salvation
 - status: usable
 - medium: text
@@ -1648,6 +1960,14 @@ Also: existing entry `curry-mullins-whitehouse-2019-seven-moral-rules` should ad
 - kb: `Glenn-Roberts_APT-Article.md`
 - verified: web (Cambridge Core article page for *Advances in Psychiatric Treatment* vol. 10, "The rediscovery of recovery: open to all", Roberts & Wolfson; reported as the journal's most frequently cited article)
 - note: the one milieu-independent Roberts document — predates his secular-dharma involvement and contains zero Buddhist/dharmic/mindfulness vocabulary (grep-checked). Documents psychiatry's redefinition of "recovery" from cure to living well with enduring symptoms (Anthony 1993; Deegan), and the testimony-vs-operationalisation dispute (Liberman & Kopelowicz) — an independent convergence on the dharma-shaped form, and a precedent for 7.4's measurement problem. Cited by DD note 6.1.
+
+### romano-gross-dedreu-2024-nasty-neighbor-effect
+- status: usable
+- medium: text
+- cite: Angelo Romano, Jörg Gross & Carsten KW De Dreu, "The nasty neighbor effect in humans," *Science Advances* 10, eadm7968 (26 June 2024)
+- kb: `Romano-Gross-DeDreu_The-Nasty-Neighbor-Effect-in-Humans_ScienceAdvances-2024.md`
+- verified: file (masthead with volume, article id and date at seg 0; study design at seg 5)
+- note: People compete more with in-group members than with out-group members or strangers under perceived within-group scarcity; by the senior author of the "tend-and-defend" papers — complication, not recantation.
 
 ### rosch-mervis-1975-family-resemblances
 - status: usable
@@ -1673,6 +1993,14 @@ Also: existing entry `curry-mullins-whitehouse-2019-seven-moral-rules` should ad
 - verified: file (title, author, IAIN Kudus affiliation and dates at seg 0; volume/issue not in the ingested text)
 - note: Kudus community; Agama Adam transmitted "secara regenerasi dengan bahasa tutur"; classed by the state as *penghayat kepercayaan*.
 
+### royzman-kim-leeman-2015-curious-tale-of-julie-and-mark
+- status: usable
+- medium: text
+- cite: Edward B Royzman, Kwanwoo Kim & Robert F Leeman, "The curious tale of Julie and Mark: Unraveling the moral dumbfounding effect," *Judgment and Decision Making* 10:4 (2015), 296–313
+- kb: `Royzman-Kim-Leeman_The-Curious-Tale-of-Julie-and-Mark_JDM-2015.md`
+- verified: file (journal header with volume, issue and pages at seg 0)
+- note: Re-runs Haidt's incest vignette with harm beliefs factored in — "a dumbfounding estimate of about 0."
+
 ### ruiz-collantes-2023-democracy-against-homo-sapiens-alpha
 - status: usable
 - medium: text
@@ -1680,6 +2008,14 @@ Also: existing entry `curry-mullins-whitehouse-2019-seven-moral-rules` should ad
 - kb: `RuizCollantes_Democracy-Against-Homo-Sapiens-Alpha-Reverse-Dominance_Constellations-2023.md`
 - verified: file (DOI, Wiley copyright line and CC BY notice at segs 0–1; conclusion at segs 33–34)
 - note: Political theory reading Boehm's reverse dominance as the Palaeolithic "original democracies." ▲ Advocacy built on the nomadic-egalitarian model.
+
+### rybanska-et-al-2018-rituals-improve-childrens-delay-of-gratification
+- status: usable
+- medium: text
+- cite: Veronika Rybanska, Ryan McKay, Jonathan Jong & Harvey Whitehouse, "Rituals Improve Children's Ability to Delay Gratification," *Child Development* 89:2 (2018), 349–359, DOI 10.1111/cdev.12762
+- kb: `Rybanska-McKay-Jong-Whitehouse_Rituals-Improve-Childrens-Ability-to-Delay-Gratification_ChildDev-2017.md`
+- verified: file (accepted-manuscript text: title at seg 0, protocol at seg 7, ritual vs instrumental instruction wording at seg 8; the filename year 2017 is the acceptance date)
+- note: 210 children, Slovakia and Vanuatu; circle-time games with ritual cues improve executive function and delay of gratification. Corpus copy is the accepted manuscript without the published abstract.
 
 ### san-code-of-research-ethics-2017
 - status: usable
@@ -1792,6 +2128,22 @@ Also: existing entry `curry-mullins-whitehouse-2019-seven-moral-rules` should ad
 - verified: web (ISBN 9780671201593; Will Durant, The Story of Philosophy, 1926)
 - note: prov=zenquotes; KB text is an LLM (gpt-4o-mini) discourse generated from a Zenquotes quote card, not a summary of a specific parent document. NEEDS-HUMAN: confirm how the note should represent the Aristotle/Durant attribution nuance.
 
+### sapolsky-father-offspring-61-asd-genetics
+- status: usable
+- medium: transcript
+- cite: Robert Sapolsky, "#61: De-extinction, Jen Aniston Neurons, ASD Vaccines," Robert Sapolsky | Father-Offspring Interviews (YouTube, video ID WWyBslf98XE)
+- kb: `sapolsky-061-de-extinction-jen-aniston-neurons-asd-vaccines.txt`
+- verified: video-URL (https://www.youtube.com/watch?v=WWyBslf98XE; manual subtitles per header)
+- note: Lay account of autism genetics in reply to the 2025 US HHS "not genetic" claim: heritability "50, 60%," de novo mutations, polygenic architecture, copy-number variants, small-effect prenatal exposures, parenting excluded.
+
+### sapolsky-father-offspring-85-history-of-asd
+- status: usable
+- medium: transcript
+- cite: Robert Sapolsky, "#85: Obesity, Deja Vu, History of ASD," Robert Sapolsky | Father-Offspring Interviews (YouTube, video ID k4tOF47_K8A)
+- kb: `sapolsky-085-obesity-deja-vu-history-of-asd.txt`
+- verified: video-URL (https://www.youtube.com/watch?v=k4tOF47_K8A; manual subtitles per header)
+- note: Sapolsky relays Baron-Cohen's The Pattern Seekers (systemising as a ~100,000-year human novelty; frequency-dependent selection) with his own brakes — "I wish he had backed this up with a little bit more" and the unaddressed Neanderthal-introgression timing problem.
+
 ### schein-gray-2018-theory-of-dyadic-morality
 - status: usable
 - medium: text
@@ -1808,6 +2160,14 @@ Also: existing entry `curry-mullins-whitehouse-2019-seven-moral-rules` should ad
 - verified: web (https://plato.stanford.edu/entries/concept-religion/)
 - note: attributed summary note with verified page anchors (section-anchored). The standard reply to Asad — realism about social structures plus map-against-territory testability. ▲ Does NOT license 'disclosed authorship' as a defence; holds polythetic framings 'equally ethnocentric'; and warns that functionally defined universality 'is not a discovery but a product of one's definition' — the sharpest published pressure on Part 1's 'every society grows one'. Open access.
 
+### schimmelpfennig-et-al-2022-paradox-of-diversity
+- status: usable
+- medium: text
+- cite: Robin Schimmelpfennig, Layla Razek, Eric Schnell & Michael Muthukrishna, "Paradox of diversity in the collective brain," *Philosophical Transactions of the Royal Society B* 377 (2022), 20200316, DOI 10.1098/rstb.2020.0316 (PMC8666911)
+- kb: `PMC8666911-paradox-of-diversity-in-the-collective-brain.md`
+- verified: file (PMC header with journal, year and PMCID at seg 0; only abstract, introduction and conclusion ingested — 3 segments)
+- note: Cultural-trait diversity as fuel for recombination and a cost to coordination and trust; "cultural evolvability" as the resolving frame. Cultural, not neuro-cognitive, diversity — use by analogy only.
+
 ### schlerath-skjaervo-1987-asa-iranica
 - status: usable
 - medium: text
@@ -1822,7 +2182,7 @@ Also: existing entry `curry-mullins-whitehouse-2019-seven-moral-rules` should ad
 - cite: Marco Schlosser, Terje Sparby, Sebastjan Vörös, Rebecca Jones & Natalie L Marchant, "Unpleasant meditation-related experiences in regular meditators: Prevalence, predictors, and conceptual considerations," *PLoS ONE* 14:5 (2019), e0216643, DOI 10.1371/journal.pone.0216643
 - kb: `Schlosser-et-al_Unpleasant-Meditation-Related-Experiences-in-Regular-Meditators_PLoSONE-2019.md`
 - verified: file (PLoS ONE DOI and date "May 9, 2019" in running footer at segs 1, 8)
-- note: Regular-meditator survey; unpleasant experiences unrelated to practice dose; fewer than 25% of trials assess adverse events.
+- note: Regular-meditator survey; unpleasant experiences unrelated to practice dose; fewer than 25% of trials assess adverse events. Cited by DD note 5.1.
 
 ### schulz-et-al-2019-church-intensive-kinship
 - status: usable
@@ -1920,6 +2280,22 @@ Also: existing entry `curry-mullins-whitehouse-2019-seven-moral-rules` should ad
 - verified: file (accepted-manuscript header and abstract in seg 0, "last updated July 19, 2022")
 - note: the diverse-Pleistocene model against the nomadic-egalitarian baseline; names Boehm, Migliano, Tooby & Cosmides as work built on the model it challenges.
 
+### skeem-cooke-2010-is-criminal-behavior-central-to-psychopathy
+- status: usable
+- medium: text
+- cite: Jennifer L Skeem & David J Cooke, "Is Criminal Behavior a Central Component of Psychopathy? Conceptual Directions for Resolving the Debate," *Psychological Assessment* 22:2 (2010), 433–445, DOI 10.1037/a0008512
+- kb: `SkeemCooke_Is-Criminal-Behavior-a-Central-Component-of-Psychopathy_PsychAssess-2010.md`
+- verified: file (APA masthead with volume, pages and DOI at seg 3)
+- note: The construct-validity critique of the PCL-R paradigm: measure conflated with construct; criminal behaviour a downstream correlate, not the core. The internal counterweight to Hare.
+
+### skeem-cooke-2010-one-measure-does-not-a-construct-make
+- status: usable
+- medium: text
+- cite: Jennifer L Skeem & David J Cooke, "One Measure Does Not a Construct Make: Directions Toward Reinvigorating Psychopathy Research — Reply to Hare and Neumann (2010)," *Psychological Assessment* 22:2 (2010), 455–459
+- kb: `SkeemCooke_One-Measure-Does-Not-a-Construct-Make-Reply-to-Hare-Neumann_PsychAssess-2010.md`
+- verified: file (title and author block at seg 0; page range from the published record, not web-checked)
+- note: Rejoinder recording Hare & Neumann's partial concession that criminal behaviour is not central to psychopathy; the "gold standard" slip.
+
 ### slingerland-2000-effortless-action
 - status: usable
 - medium: text-ocr
@@ -1944,6 +2320,14 @@ Also: existing entry `curry-mullins-whitehouse-2019-seven-moral-rules` should ad
 - verified: file (the closing "not a native term … theirs to define" paragraph quoted verbatim in Taylor's introduction at seg 9, attributed "(Chap. 15)"; the chapter's own text not located by keyword in the file — letter-spaced OCR in places; McKinnon 2002 gives the same passage as 1998:281–2)
 - note: The whole edited volume is in the corpus under this filename; the register entry is for Smith's chapter, the one DD cites. Religion as a scholar-made second-order generic concept.
 
+### smith-2017-communal-secularity-sunday-assembly
+- status: usable
+- medium: text
+- cite: Jesse M Smith, "Communal Secularity: Congregational Work at the Sunday Assembly," in Ryan T Cragun, Christel Manning & Lori L Fazzino (eds), *Organized Secularism in the United States: New Directions in Research* (Berlin: De Gruyter, 2017), pp. 151–170
+- kb: `Smith_Communal-Secularity-Congregational-Work-at-the-Sunday-Assembly_2017.md`
+- verified: file (chapter title and introduction at seg 0; volume and page range from the published record, not web-checked)
+- note: The one ethnography of a secular congregation in the corpus: services "sacralize the secular"; without a core faith message the Assembly places little demand on members.
+
 ### smith-et-al-2017-hunter-gatherer-storytelling
 - status: usable
 - medium: text
@@ -1967,6 +2351,14 @@ Also: existing entry `curry-mullins-whitehouse-2019-seven-moral-rules` should ad
 - kb: `Sosis-Bressler_Cooperation-and-Commune-Longevity_CCR-2003.md`
 - verified: file (DOI and running heads "Sosis, Bressler / COMMUNE LONGEVITY 215–222" in segs 0–13; Table 2 at seg 13)
 - note: 83 nineteenth-century US communes, 1,556 commune-years; religious communes mean 35.6 years vs secular 7.7, anarchist 9 (n = 7); costly requirements predict survival.
+
+### stanley-yin-sinnott-armstrong-2019-reason-based-explanation-moral-dumbfounding
+- status: usable
+- medium: text
+- cite: Matthew L Stanley, Siyuan Yin & Walter Sinnott-Armstrong, "A reason-based explanation for moral dumbfounding," *Judgment and Decision Making* 14:2 (2019), 120–129, DOI 10.1017/S1930297500003351
+- kb: `Stanley-Yin-SinnottArmstrong_A-Reason-Based-Explanation-for-Moral-Dumbfounding_JDM-2019.md`
+- verified: file (journal header and DOI at segs 0–2)
+- note: Follow-up to Royzman et al: the residue of unreversed judgments explained by unstated harm-related reasons (80% initially not OK; 32% OK after failing to justify).
 
 ### stanner-1958-continuity-and-change
 - status: usable
@@ -1999,6 +2391,14 @@ Also: existing entry `curry-mullins-whitehouse-2019-seven-moral-rules` should ad
 - kb: `francis-stewart_dharma-punx-and-rebel-dharma_2015.md` (attributed summary, staged at workshops/DD/sources/ — not yet folded into corpus)
 - verified: web (DOI 10.1386/punk.4.1.71_1; green-OA accepted manuscript, Stirling STORRE)
 - note: attributed summary note with verified page anchors (▲ manuscript pagination — convert when citing; ms is pre-copyedit, e.g. 'Vispanna'). Fieldwork on Dharma Punx (US) and Rebel Dharma (UK). ▲ Verdict for Part 1's borderline case: punk supplies identity, code, community; every transformative practice is imported from Buddhism via Levine — supports the 'two or three out of four' hedge rather than resolving it. Cross-links the corpus's Ronan/Prouty fusion specimens.
+
+### suhler-churchland-2011-can-innate-modular-foundations-explain-morality
+- status: usable
+- medium: text-ocr
+- cite: Christopher L Suhler & Patricia Churchland, "Can Innate, Modular 'Foundations' Explain Morality? Challenges for Haidt's Moral Foundations Theory," *Journal of Cognitive Neuroscience* 23:9 (2011), 2103–2116
+- kb: `Suhler-Churchland_Can-Innate-Modular-Foundations-Explain-Morality_2011.md`
+- verified: file (tesseract OCR, 21 pages; abstract at seg 0 with author garbled to "Subler"; conclusion at seg 25; journal/pages from the published record)
+- note: The innateness/modularity critique of MFT; "neither modules nor innateness in any explanatorily useful sense." OCR — pointer, verify wording against print before quoting.
 
 ### sukirno-2018-diskriminasi-hak-sipil-agama-lokal
 - status: usable
@@ -2102,7 +2502,7 @@ Also: existing entry `curry-mullins-whitehouse-2019-seven-moral-rules` should ad
 - cite: Nicholas T Van Dam, Marieke K van Vugt, David R Vago, Laura Schmalzl, Clifford D Saron, Andrew Olendzki, Ted Meissner, Sara W Lazar, Catherine E Kerr, Jolie Gorchov, Kieran C R Fox, Brent A Field, Willoughby B Britton, Julie A Brefczynski-Lewis & David E Meyer, "Mind the Hype: A Critical Evaluation and Prescriptive Agenda for Research on Mindfulness and Meditation," *Perspectives on Psychological Science* 13:1 (2018), 36–61, DOI 10.1177/1745691617709589
 - kb: `VanDam-et-al_Mind-the-Hype_PPS-2018_published-version.md`, `VanDam-et-al_Mind-the-Hype_PPS-2018.md`
 - verified: file (published-version file: section headings and reference list at segs 0–13, 44; author list and DOI not re-checked online)
-- note: Self-report and construct-validity problems in mindfulness research; the retreat to neurobehavioural proxies. Cited by DD notes 3.2, 3.5.3.
+- note: Self-report and construct-validity problems in mindfulness research; the retreat to neurobehavioural proxies. Cited by DD notes 3.2, 3.5.3, 5.1.
 
 ### varshney-2024-decolonial-ai-alignment-visesa-dharma
 - status: usable
@@ -2111,6 +2511,22 @@ Also: existing entry `curry-mullins-whitehouse-2019-seven-moral-rules` should ad
 - kb: `Varshney_Decolonial-AI-Alignment-Openness-Visesa-Dharma_AIES-2024.md`
 - verified: file (title, IBM Research affiliation and "Copyright © 2024, Association for the Advancement of Artificial Intelligence" at segs 0–1)
 - note: Sādhāraṇa- vs viśeṣa-dharma deployed as a non-absolutist alternative to universal LLM harm taxonomies; the bridge from 1.3's boundary problem to 8.4.
+
+### viding-mccrory-2012-genetic-and-neurocognitive-contributions-to-psychopathy
+- status: usable
+- medium: text-ocr
+- cite: Essi Viding & Eamon J McCrory, "Genetic and neurocognitive contributions to the development of psychopathy," *Development and Psychopathology* 24:3 (2012), 969–983, DOI 10.1017/S095457941200048X
+- kb: `Viding-McCrory_Genetic-and-Neurocognitive-Contributions-to-Psychopathy_DevPsychopathol-2012.md`
+- verified: file (tesseract OCR; title and authors at seg 0; heritability passage at segs 4–5; volume/pages/DOI from the published record, not web-checked)
+- note: CU-trait heritability 40–78% across twin studies; nonshared environment dominant; developmental-psychopathology framing (equifinality/multifinality).
+
+### viding-mccrory-2018-understanding-the-development-of-psychopathy
+- status: usable
+- medium: text
+- cite: Essi Viding & Eamon McCrory, "Understanding the development of psychopathy: progress and challenges," *Psychological Medicine* 48:4 (2018), 566–577, DOI 10.1017/S0033291717002847
+- kb: `Viding-McCrory_Understanding-the-Development-of-Psychopathy_PsychMed-2018.md`
+- verified: file (accepted-manuscript header with authors and affiliation at seg 0; volume/pages/DOI from the published record, not web-checked)
+- note: "Children cannot present with psychopathy"; CU traits as risk marker; protective environments counter heritable risk.
 
 ### waismann-1945-verifiability
 - status: usable
@@ -2135,6 +2551,14 @@ Also: existing entry `curry-mullins-whitehouse-2019-seven-moral-rules` should ad
 - kb: `Waldron_Is-the-Rule-of-Law-an-Essentially-Contested-Concept_2002.md`
 - verified: file (preprint header "forthcoming in special issue of Law and Philosophy" at seg 0; journal volume/pages not checked against the published version)
 - note: Applies Gallie to the rule of law via the 2000 Florida recount; normativity + complexity as the key to essential contestability; the "upbeat" reading of contestation.
+
+### walum-waldman-young-2016-intranasal-oxytocin-statistical-considerations
+- status: usable
+- medium: text
+- cite: Hasse Walum, Irwin D Waldman & Larry J Young, "Statistical and Methodological Considerations for the Interpretation of Intranasal Oxytocin Studies," *Biological Psychiatry* 79:3 (2016), 251–257, DOI 10.1016/j.biopsych.2015.06.016
+- kb: `Walum-Waldman-Young_Statistical-and-Methodological-Considerations-Intranasal-Oxytocin_BiolPsychiatry-2016.md`
+- verified: file (abstract at seg 0; d = 0.28 and median n = 49 at seg 3; pagination from the published record, not web-checked)
+- note: Power analysis of the intranasal-oxytocin field: underpowered, low positive predictive value, characteristically non-replicating.
 
 ### walzer-1985-exodus-and-revolution
 - status: usable
@@ -2167,6 +2591,22 @@ Also: existing entry `curry-mullins-whitehouse-2019-seven-moral-rules` should ad
 - kb: `Welwood_Principles-of-Inner-Work-Psychological-and-Spiritual_JTP-1984.md`
 - verified: file (running head "Principles of Inner Work 65" at seg 3; OCR noise, e.g. "i-re suit")
 - note: Origin of "spiritual bypassing" — using practice to bypass personal "unfinished business".
+
+### weng-et-al-2013-compassion-training-alters-altruism
+- status: usable
+- medium: text
+- cite: Helen Y Weng, Andrew S Fox, Alexander J Shackman, Diane E Stodola, Jessica ZK Caldwell, Matthew C Olson, Gregory M Rogers & Richard J Davidson, "Compassion training alters altruism and neural responses to suffering," *Psychological Science* 24:7 (2013), 1171–1180
+- kb: `Weng-Davidson-et-al_Compassion-Training-Alters-Altruism-and-Neural-Responses_PsychSci-2013.md`
+- verified: file (abstract at seg 0; NIH author-manuscript watermark at seg 1; author list and pagination from the published record, not web-checked)
+- note: Short-term compassion training increases altruistic redistribution to a victim outside the training context; the behavioural link for the compassion-circuitry claim.
+
+### whitehouse-et-al-2017-extreme-cooperation-shared-dysphoric-experiences
+- status: usable
+- medium: text
+- cite: Harvey Whitehouse, Jonathan Jong, Michael D Buhrmester, Ángel Gómez, Brock Bastian, Christopher M Kavanagh, Martha Newson, Miriam Matthews, Jonathan A Lanman, Ryan McKay & Sergey Gavrilets, "The evolution of extreme cooperation via shared dysphoric experiences," *Scientific Reports* 7 (2017), 44292, DOI 10.1038/srep44292
+- kb: `Whitehouse-et-al_The-Evolution-of-Extreme-Cooperation-via-Shared-Dysphoric-Experiences_SciRep-2017.md`
+- verified: file (journal masthead with DOI, authors and abstract at seg 0)
+- note: Model plus empirical tests (veterans, fraternities, football fans, martial artists, twins): shared painful experience → identity fusion → willingness to fight and die for the group.
 
 ### whitehouse-et-al-2021-retraction-note-complex-societies-moralizing-gods
 - status: usable
@@ -2208,6 +2648,22 @@ Also: existing entry `curry-mullins-whitehouse-2019-seven-moral-rules` should ad
 - verified: file (profile header and date in seg 0; 5 segments)
 - note: Advocacy-organisation profile of Sukinah and the Kartini Kendeng feet-in-cement protests; places her inside JM-PPK. Advocacy source — use for the activists' self-account, not for contested facts.
 
+### xygalatas-2023-culture-cognition-and-ritual
+- status: usable
+- medium: text
+- cite: Dimitris Xygalatas, "Culture, Cognition, and Ritual," chapter preprint for *Advances in Culture and Psychology* (2023)
+- kb: `Xygalatas_Culture-Cognition-and-Ritual_2023_chapter-preprint.md`
+- verified: file (title, affiliation and abstract at seg 0; Mauritius Thaipusam experiment at segs 22–23)
+- note: Review chapter with the author's field experiments (Mauritius prayer vs kavadi donations; Power's Tamil Nadu signalling studies). Preprint — page numbers unavailable.
+
+### zakharin-bates-2021-remapping-the-foundations-of-morality
+- status: usable
+- medium: text
+- cite: Michael Zakharin & Timothy C Bates, "Remapping the foundations of morality: Well-fitting structural model of the Moral Foundations Questionnaire," *PLoS ONE* 16:10 (2021), e0258910
+- kb: `Zakharin-Bates_Remapping-the-Foundations-of-Morality_PLoSONE-2021.md`
+- verified: file (title, authors and abstract at seg 0; article number from the published record)
+- note: Five studies, N = 11,496; no theorised MFQ model fits; seven-factor solution with the binding foundations re-cut. Note 5.3 previously named the first author "Kirill" — the file gives Michael.
+
 ### zarkasi-et-al-2021-social-resistance-strategy-samin
 - status: usable
 - medium: text
@@ -2230,7 +2686,7 @@ Also: existing entry `curry-mullins-whitehouse-2019-seven-moral-rules` should ad
 - cite: Matthew James Bailey, "Inventing World 3.0: Evolutionary Ethics for Artificial Intelligence" (London Futurists talk, chaired by David Wood, YouTube, ZbiQns2n0qI)
 - kb: `ZbiQns2n0qI.transcript.txt`
 - verified: video-URL (https://www.youtube.com/watch?v=ZbiQns2n0qI)
-- note: File located at appliedanthropology/workshops/transcripts/ (not indexed in the shared DB at query time); content peeked directly to identify speaker/host/title.
+- note: File located at appliedanthropology/workshops/transcripts/ (not indexed in the shared DB at query time); content peeked directly to identify speaker/host/title. Cited by DD note 8.2.
 
 ### barrett-2017-how-emotions-are-made
 - status: usable
@@ -2275,7 +2731,7 @@ Also: existing entry `curry-mullins-whitehouse-2019-seven-moral-rules` should ad
 - cite: Stephen Batchelor, interviewed by Mike Slott (Secular Buddhist Network) with Ayda Duroux, Saskia Graf & Jochen Weber (Buddha-Stiftung), "An Interview with Stephen Batchelor on Mindfulness Based Ethical Living (MBEL)" (Secular Buddhist Network, 22 Feb 2023)
 - kb: `Interview_with_Stephen_Batchelor_on_Mindfulness_Based_Ethical_Living_MBEL.txt`, `NiqN03KBSME.transcript.txt`
 - verified: web (secularbuddhistnetwork.org)
-- note: prov=Bodhi (general Buddhism-topic dir, not necessarily Bhikkhu Bodhi). `NiqN03KBSME.transcript.txt` is the video transcript of the same interview (YouTube id NiqN03KBSME; same participants and content) — one work, two corpus forms.
+- note: prov=Bodhi (general Buddhism-topic dir, not necessarily Bhikkhu Bodhi). `NiqN03KBSME.transcript.txt` is the video transcript of the same interview (YouTube id NiqN03KBSME; same participants and content) — one work, two corpus forms. Cited by DD note 6.1.
 
 ### batchelor-a-secular-buddhism-lecture
 - status: usable
@@ -2822,7 +3278,7 @@ Also: existing entry `curry-mullins-whitehouse-2019-seven-moral-rules` should ad
 - cite: Sam Harris, interviewed by Steven Bartlett, "WARNING: ChatGPT Could Be The Start Of The End! Sam Harris," The Diary Of A CEO (YouTube, 7 August 2023)
 - kb: `GmlrEgLGozw.transcript.txt`
 - verified: video-URL (https://www.youtube.com/watch?v=GmlrEgLGozw)
-- note: not found in current local DB (removed/moved since citation); identified via YouTube id lookup
+- note: not found in current local DB (removed/moved since citation); identified via YouTube id lookup. Cited by DD note 8.2.
 
 ### harris-sapolsky-psychology-of-evil
 - status: usable
@@ -3076,7 +3532,7 @@ Also: existing entry `curry-mullins-whitehouse-2019-seven-moral-rules` should ad
 - cite: "Bill Gates Shocking New 2024 AI Prediction (AGI + AI Agents)" (YouTube, video ID k63-eElwz2k, 2024; channel not identifiable from the video page)
 - kb: `k63-eElwz2k.transcript.txt`
 - verified: video-URL (https://www.youtube.com/watch?v=k63-eElwz2k)
-- note: anonymous AI-news channel narrating Bill Gates's 2024 AI-agent predictions — second-hand commentary, not Gates verbatim. Registered usable by author decision (2026-07-19); weight accordingly. Cited in 8.2 [S4] alongside the Harris/Bartlett transcript.
+- note: anonymous AI-news channel narrating Bill Gates's 2024 AI-agent predictions — second-hand commentary, not Gates verbatim. Registered usable by author decision (2026-07-19); weight accordingly. Cited in 8.2 [S4] alongside the Harris/Bartlett transcript. Cited by DD note 8.2.
 
 ### kalkhoff-serpe-pollock-2020-video-chat-proxy
 - status: usable
@@ -3170,7 +3626,7 @@ Also: existing entry `curry-mullins-whitehouse-2019-seven-moral-rules` should ad
 - cite: Meaning Alignment Institute, "Moral Graphs: Interview with OpenAI Grant Winners! Meaning Alignment Institute: Aligning Humanity!" (YouTube)
 - kb: `bC2pQ78o754.transcript.txt`
 - verified: video-URL (https://www.youtube.com/watch?v=bC2pQ78o754)
-- note: filename is the bare YouTube video ID; not present in local corpus DB (path empty) but resolved via web search
+- note: filename is the bare YouTube video ID; not present in local corpus DB (path empty) but resolved via web search. Cited by DD notes 8.2, 8.4.
 
 ### melton-baumann-2010-religions-of-the-world-sumarah
 - status: usable
@@ -3582,7 +4038,7 @@ Also: existing entry `curry-mullins-whitehouse-2019-seven-moral-rules` should ad
 - cite: ReligionForBreakfast, "The Ancient Greeks Who Converted to Buddhism" (YouTube)
 - kb: `aA0wB3d7MgE.transcript.txt`
 - verified: video-URL (https://www.youtube.com/watch?v=aA0wB3d7MgE)
-- note: Confirmed via oEmbed. Matches gloss (Menander/Milinda, Dharmachakra, Halkias, Gandhāran art).
+- note: Confirmed via oEmbed. Matches gloss (Menander/Milinda, Dharmachakra, Halkias, Gandhāran art). Cited by DD note 7.2.
 
 ### religionforbreakfast-christianity-judaism-part-ways
 - status: usable
@@ -3840,7 +4296,7 @@ Also: existing entry `curry-mullins-whitehouse-2019-seven-moral-rules` should ad
 - cite: Robert Sapolsky et al., Stanford "Human Behavioral Biology" course lecture transcripts (Stanford University / YouTube)
 - kb: `Robert_Sapolsky_Lectures.txt`, `8-Recognizing-Relatives.transcript.txt`
 - verified: video-URL (https://www.youtube.com/playlist?list=PL848F2368C90DDC3D)
-- note: Peeked content: file is a compilation of VTT-derived lecture transcripts (e.g. header "10-Introduction-to-Neuroscience-I-5031rWXgdYo.vtt"); the first segment shown is delivered by a teaching assistant (Nathan), not Sapolsky himself. Cite the course generally; verify per-claim which segment/speaker underlies a specific citation.
+- note: Peeked content: file is a compilation of VTT-derived lecture transcripts (e.g. header "10-Introduction-to-Neuroscience-I-5031rWXgdYo.vtt"); the first segment shown is delivered by a teaching assistant (Nathan), not Sapolsky himself. Cite the course generally; verify per-claim which segment/speaker underlies a specific citation. Cited by DD notes 0.6, 6.4.
 
 ### scott-2009-art-of-not-being-governed
 - status: usable
@@ -4287,7 +4743,7 @@ Also: existing entry `curry-mullins-whitehouse-2019-seven-moral-rules` should ad
 - cite: Chris Williamson interviewing Nicholas Eberstadt, "How Are 7 Million Unemployed Men Actually Surviving? - Nicholas Eberstadt" (Modern Wisdom, YouTube, video ID vknKvG3yrYM)
 - kb: `vknKvG3yrYM.transcript.txt`
 - verified: video-URL (https://www.youtube.com/watch?v=vknKvG3yrYM)
-- note: Content matches gloss (pandemic transfers as UBI "dress rehearsal"); Eberstadt is a labour-economics/demography scholar (AEI).
+- note: Content matches gloss (pandemic transfers as UBI "dress rehearsal"); Eberstadt is a labour-economics/demography scholar (AEI). Cited by DD note 8.2.
 
 ### wilson-2013-is-religion-useful
 - status: usable
@@ -4417,7 +4873,7 @@ Also: existing entry `curry-mullins-whitehouse-2019-seven-moral-rules` should ad
 - cite: "Aliran Kepercayaan dan Kebatinan Paguyuban Sumarah" (YouTube, Indonesian-language explainer on Paguyuban Sumarah)
 - kb: `Aliran-Kepercayaan-dan-Kebatinan-Paguyuban-Sumarah.transcript.txt`
 - verified: unverified
-- note: transcript carries no channel/URL metadata and the video was not resolvable via web search; treat factual claims as low-weight popular-source corroboration only.
+- note: transcript carries no channel/URL metadata and the video was not resolvable via web search; treat factual claims as low-weight popular-source corroboration only. Cited by DD notes 3.5.1, 3.5.4.
 
 ### yt-cara-meditasi-sumarah-kakang-cahyo
 - status: usable
@@ -4433,7 +4889,7 @@ Also: existing entry `curry-mullins-whitehouse-2019-seven-moral-rules` should ad
 - cite: "Sekilas tentang Paguyuban Sumarah Yogyakarta" (YouTube, Indonesian-language overview of the Yogyakarta Paguyuban Sumarah)
 - kb: `SEKILAS-TENTANG-PAGUYUBAN-SUMARAH-YOGYAKARTA.transcript.txt`
 - verified: unverified
-- note: transcript carries no channel/URL metadata and the video was not resolvable via web search; treat factual claims as low-weight popular-source corroboration only.
+- note: transcript carries no channel/URL metadata and the video was not resolvable via web search; treat factual claims as low-weight popular-source corroboration only. Cited by DD notes 3.5.1, 3.5.4.
 
 ### zerzan-1991-catastrophe-of-postmodernism
 - status: usable
