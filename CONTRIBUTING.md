@@ -13,7 +13,7 @@ prose, which hides its citations, still rests on evidence anyone can follow back
 note is built.
 
 It is a *curated, authored* work — one person looking hard at one large question — not an
-open wiki or a collaborative encyclopedia. The argument, the voice, and the editorial
+open wiki or a collaborative encyclopaedia. The argument, the voice, and the editorial
 direction are the author's. Within that, outside eyes are genuinely valuable: a series
 that argues about where our ethics come from should be checkable by the people reading it.
 
@@ -50,8 +50,8 @@ This is the project's whole reason for existing, so it is not negotiable.
   the note's **Sources** list. A claim with no capturable source does not belong in a
   note. The note's shape is fixed by
   [`1-foundational/_template.md`](1-foundational/_template.md).
-- In an **essay**, sources are named in the running prose ("the anthropologist Christopher
-  Boehm spent years watching…") with **no** inline citation marks; the chain back to the
+- In an **essay**, sources are named in the running prose ("Boehm spent a career on the question, and his answer is
+  bracing…") with **no** inline citation marks; the chain back to the
   notes and the original works is preserved in the closing **Sources & further reading**
   list. The essay shape and house style are fixed by
   [`_essay-template.md`](_essay-template.md).
@@ -60,15 +60,15 @@ If you add or change a claim, add or change its source in the same edit.
 
 ## Conventions to respect
 
-- **Research notes** live under the eight numbered category directories and are tracked in
+- **Research notes** live under the numbered directories (`0-preface/` and the eight categories) and are tracked in
   the registry [`Questions.md`](Questions.md). They use the five-section template, `[S#]`
   citations, and `[[id-slug]]` wiki-links between related notes.
-- **Essays** are the `N-<slug>.md` files at the repository root; the blueprint and status
-  dashboard is [`Essays.md`](Essays.md). Voice is first-person and evidence-led; a firm
+- **Essays** are the `N-<slug>.md` files at the repository root; the blueprint, with its status
+  dashboard, is [`Essays.md`](Essays.md). Voice is first-person and evidence-led; a firm
   claim should read as confident, not superior.
 - **Status vocabulary** (in note/essay frontmatter and both dashboards):
   `todo → in-progress → review → done`.
-- **Honesty about bias.** The sourcing has a known secular / evolutionary /
+- **Candour about bias.** The sourcing has a known secular / evolutionary /
   Western-academic lean, and the notes name it where it shapes an answer. If your
   contribution touches a place where that lean is doing work — or helps balance it with a
   perspective the corpus under-weights — say so plainly.
