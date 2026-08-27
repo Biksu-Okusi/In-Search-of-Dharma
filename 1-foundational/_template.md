@@ -46,10 +46,10 @@ or unsupported.>
 **Knowledgebase (yatti-api)**
 - [S1] <kbname> · `<sourcedoc>:<seg>` — <one-line note on what it supports>
   <Canonical form. The backticked filename is the register linkage: it MUST resolve
-  to a `status: usable` entry in SOURCES.md (a cited corpus file with no entry is a verification error).
-  Optional precision upgrades, recommended when the filename alone is ambiguous
-  (multi-file or multi-entry): prefix a resolved short cite and/or append the
-  register key — [S1] <Author year, *Title*> · kb:`<sourcedoc>:<seg>`
+  to a `status: usable` entry in SOURCES.md (a cited corpus file with no entry is a
+  verification error). Optional precision upgrades, recommended when the filename
+  alone is ambiguous (multi-file or multi-entry): prefix a resolved short cite and/or
+  append the register key — [S1] <Author year, *Title*> · kb:`<sourcedoc>:<seg>`
   [src:<register-key>] — <note>. The 3.5.x Sumarah notes use this full form.>
 
 **External**
