@@ -38,7 +38,7 @@ The turn comes with its own discipline, and it is the piece this project has bee
 
 And the objection the functionalist turn invites -- if everything that binds and means is a religion, or a dharma, is anything *not*? -- is answered the way Rosch answered it above: membership is graded, categories have centres rather than edges. The project's four features (comprehensive, identity-constituting, oriented toward the good, reflectively self-aware) are not a recovered essence; they are functional criteria, admitted to come in degrees. Fandom sits exactly where that model predicts: high on identity, community, ritual, canon, even pilgrimage, and low on precisely one feature, an answer to how one ought to live -- near the rim, not at the centre. A borderline case that the criteria *place* rather than embarrass is the best evidence a graded scheme can ask for.
 
-*(The transcript of ReligionForBreakfast's "Fandoms are Religions" (September 2025) is staged in the corpus at `appliedanthropology/workshops/`; the scholarly apparatus it reports -- Tylor, Otto, the Turners, Brakke, Dalton, Smith -- is named there.)*
+*(The transcript of ReligionForBreakfast's "Fandoms are Religions" (September 2025) is in the corpus as `ReligionForBreakfast_Fandoms-are-Religions_2025.md`; the scholarly apparatus it reports -- Tylor, Otto, the Turners, Brakke, Dalton, Smith -- is named there.)*
 
 ## Meaning isn't *in* the word -- and that's why no one owns it
 
