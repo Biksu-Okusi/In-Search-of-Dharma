@@ -15,7 +15,7 @@ proposition under test. Keep the registry question recognisable inside it, and n
 let the expansion drift into a *different* question.>
 
 ## Synthesis
-<3-6 sentence evidence-based answer — the "so what". This is the distilled claim
+<3–6 sentence evidence-based answer — the "so what". This is the distilled claim
 a Stage-2 essay can build on. Every substantive assertion here must be backed in
 Findings; an epistemic caveat (a contested-status or limitation claim) may instead
 be backed in Tensions — either way it carries its [S#] here.>
@@ -46,7 +46,7 @@ or unsupported.>
 **Knowledgebase (yatti-api)**
 - [S1] <kbname> · `<sourcedoc>:<seg>` — <one-line note on what it supports>
   <Canonical form. The backticked filename is the register linkage: it MUST resolve
-  to a `status: usable` entry in SOURCES.md (the verifier errors otherwise).
+  to a `status: usable` entry in SOURCES.md (a cited corpus file with no entry is a verification error).
   Optional precision upgrades, recommended when the filename alone is ambiguous
   (multi-file or multi-entry): prefix a resolved short cite and/or append the
   register key — [S1] <Author year, *Title*> · kb:`<sourcedoc>:<seg>`
