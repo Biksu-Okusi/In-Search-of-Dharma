@@ -18,7 +18,7 @@ Consequences for research:
 
 - For **raw context retrieval** (`-c`, context-only), query the shared corpus **once**. Do not run the same context-only query against both KBs — you get the same chunks back.
 
-- Query **both personas** only when you want a *synthesised* answer and the two lenses (secular-dharma vs. applied-anthropology) would frame it differently.
+- Query **both personas** only when you want a *synthesised* answer and the two lenses (secular-dharma vs applied-anthropology) would frame it differently.
 
 - `prosocial` (a.k.a. `prosocial.world`) is a **separate** corpus — query it independently for cooperation / prosociality / group-selection material.
 
@@ -64,9 +64,7 @@ Use, in increasing order of weight:
 
 - `WebSearch` for a quick fact or source check,
 
-- the **firecrawl** skills (`firecrawl-search`, `firecrawl-scrape`) to pull full source pages for citation,
-
-- the **deep-research** skill for a wide, adversarially-verified multi-source pass when a question genuinely needs it.
+- the **deep-research** skill for a wide, adversarially verified multi-source pass when a question genuinely needs it.
 
 ### 4. Synthesise into the template
 
@@ -100,10 +98,10 @@ Set the question's `status` in both the note frontmatter and the dashboard table
 
 The shared corpus mixes published scholarship, recorded speech, community ephemera, and the author's own prose (some LLM-cleaned). A bare `filename:seg` is a *retrieval key*, not a citation. Each cited source is typed once in [`SOURCES.md`](SOURCES.md):
 
-- **Usable (`[S#]`)** — scholarly / attributable work (book, paper, named lecture or interview). Resolve to a proper reference and web-verify. Notes cite it canonically as `[S#] <kbname> · <file>:<seg> — gloss`; the backticked filename is the register linkage and must resolve to a `usable` entry (the verifier errors on a cited corpus file with no entry). Optional precision upgrades — a resolved short cite and/or an explicit `[src:<key>]` — are recommended where the filename alone is ambiguous (the 3.5.x notes carry the full form).
+- **Usable (`[S#]`)** — scholarly / attributable work (book, paper, named lecture or interview). Resolve to a proper reference and web-verify. Notes cite it canonically as `[S#] <kbname> · <file>:<seg> — gloss`; the backticked filename is the register linkage and must resolve to a `usable` entry (a cited corpus file with no entry is a verification error). Optional precision upgrades — a resolved short cite and/or an explicit `[src:<key>]` — are recommended where the filename alone is ambiguous (the 3.5.x notes carry the full form).
 
 - **Author's own (`[A]`)** — the author's position, synthesis or hypothesis. Marked `[A]` inline, NO Sources entry, outside the `[S#]` bijection. **Never dropped for lack of an external source**; external grounding is *sought*, not required. If found, it gains an `[S#]`.
 
 - **Barred (no `[S#]`)** — a corpus file may never carry an `[S#]`. `barred:self` (self-authored/LLM prose) → its author-originated ideas become `[A]`. `barred:ephemera` (newsletters, event notices) → re-ground in a usable/external source or drop.
 
-A note may still *discuss* a barred source as its subject via a plain-text pointer (never an `[S#]`) — "the corpus itself hosts …" — because "the corpus contains X" is self-evidencing. It becomes barred only when the note leans on the source's *content* as evidence about the world.
+A note may still *discuss* a barred source as its subject via a plain-text pointer (never an `[S#]`) — "the corpus itself hosts …" — because "the corpus contains X" is self-evidencing. Such a pointer becomes an illicit citation only when the note leans on the source's *content* as evidence about the world.
