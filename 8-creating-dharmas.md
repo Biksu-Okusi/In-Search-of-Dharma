@@ -166,9 +166,7 @@ None of us gets to opt out of having a dharma; each of us is running one right n
 
 ## Sources & further reading
 
-*This part is built from the project's research notes, which carry the full
-inline citations. Listed here: the notes it draws on, and the key works behind
-them.*
+*This part is built from the project's research notes, which carry the full inline citations. Listed here: the notes it draws on, and the key works behind them.*
 
 **Research notes**
 
