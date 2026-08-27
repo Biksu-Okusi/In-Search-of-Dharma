@@ -962,7 +962,7 @@ A note's `[S#]` line points here via `[src:<key>]`. No `[S#]` may point at a `st
 - cite: Edward Slingerland, "Effortless Action: The Chinese Spiritual Ideal of Wu-wei," *Journal of the American Academy of Religion* 68:2 (2000): 293–328
 - kb: `edward-slingerland_effortless-action-wu-wei_2000.md` (attributed summary, staged at workshops/DD/sources/ — not yet folded into corpus)
 - verified: web (DOI 10.1093/jaarel/68.2.293; author-self-archived PDF)
-- note: attributed summary note with verified page anchors. Wu-wei as pan-Chinese ideal, not Daoist-specific — documented from the *Odes* through Confucius, Mencius, Xunzi, Laozi, Zhuangzi ('counter a common perception of wu-wei as an exclusively Daoist ideal,' p. 297). Upgrades note 1.4 (S10); the paradox of wu-wei cross-links to note 3.1. ▲ ABBYY OCR artifacts in scan; key quotes checked against page images.
+- note: attributed summary note with verified page anchors. Wu-wei as pan-Chinese ideal, not Daoist-specific — documented from the *Odes* through Confucius, Mencius, Xunzi, Laozi, Zhuangzi ('counter a common perception of wu-wei as an exclusively Daoist ideal,' p. 297). Upgrades note 1.4 (S10); the paradox of wu-wei cross-links to note 3.1. ▲ ABBYY OCR artefacts in scan; key quotes checked against page images.
 
 ### slingerland-etal-2020-coding-culture
 - status: usable
@@ -1165,7 +1165,7 @@ A note's `[S#]` line points here via `[src:<key>]`. No `[S#]` may point at a `st
 - cite: Stefano Davide Bettera, Secondo natura: Critica dell'ideologia liberal progressista (Solferino, 2024)
 - kb: `Secondo_Natura`, `Secondo_Natura.it.md`
 - verified: web (ISBN 9788828215592)
-- note: truncated filename; corpus holds 4 variant files (it, gpt-4o-latest.en, chatgpt-4o-latest.en, gpt-4o-mini.en) -- machine-translated/summarized renderings of this Italian book; verify which variant was actually cited against the original
+- note: truncated filename; corpus holds 4 variant files (it, gpt-4o-latest.en, chatgpt-4o-latest.en, gpt-4o-mini.en) -- machine-translated/summarised renderings of this Italian book; verify which variant was actually cited against the original
 
 ### bettera-2024-secondo-natura-2
 - status: usable
