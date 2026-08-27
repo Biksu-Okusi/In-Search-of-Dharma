@@ -38,6 +38,14 @@ A note's `[S#]` line points here via `[src:<key>]`. No `[S#]` may point at a `st
 - verified: web (Taylor & Francis chapter page for *Socialism: Ideals, Ideologies and Local Practice*, ASA Monographs 31, ch. 10, DOI 10.4324/9780203392676; Namibia Scientific Society library catalogue record 51105 gives pp. 27–42, Routledge 1993)
 - note: Kalahari specialist auditing Kropotkin's mutual-aid reading against San ethnography — confirms the sharing pattern, qualifies it as theory-laden, bounded to the band cluster, and partly envy-management. The corpus's most nearly neutral check on the cooperative-forager picture. ▲ The KB filename year (1992) is the Anarchist Library posting date; the published chapter is 1993 — cite 1993. Cited by DD notes 2.3, 4.3.
 
+### alfano-cheong-curry-2024-moral-universals-256-societies
+- status: usable
+- medium: text
+- cite: Mark Alfano, Marc Cheong & Oliver Scott Curry, "Moral universals: A machine-reading analysis of 256 societies," *Heliyon* 10 (2024) e25940, DOI 10.1016/j.heliyon.2024.e25940 (CC BY-NC-ND)
+- kb: `Alfano-Cheong-Curry_Moral-Universals-256-societies_Heliyon-2024.md`
+- verified: file (masthead, DOI, received/accepted dates and CC licence in seg 0; Table 6 in seg 21; limitations in segs 25–27)
+- note: MAC-D/LIWC machine-coded extension of the 60-society study to the full eHRAF ethics corpus; authors report over-detection (κ 0.08–0.25) and no valence measurement. Cited by DD note 1.2.
+
 ### anarchybooks-corpus-status
 - status: barred
 - barred: ephemera
@@ -74,7 +82,7 @@ A note's `[S#]` line points here via `[src:<key>]`. No `[S#]` may point at a `st
 - status: usable
 - medium: text
 - cite: Thomas Aquinas, *Summa Theologiae* I-II, qq. 90–97 ("Treatise on Law"), trans. Fathers of the English Dominican Province (2nd rev. ed., 1920)
-- kb: `cicero-aquinas_natural-law-primary-texts.md` (attributed summary, staged at workshops/DD/sources/ — not yet folded into corpus)
+- kb: `Aquinas_ST-I-II_qq90-97_2090.md` … `Aquinas_ST-I-II_qq90-97_2097.md` (one file per quaestio) (full text, folded into the corpus 2026-08); `cicero-aquinas_natural-law-primary-texts.md` (attributed summary, in corpus under staging.text/DD/sources/oldsources/)
 - verified: web (newadvent.org/summa, qq. 90–97 saved to DD archive 2026-07-28)
 - note: attributed summary note with verified page anchors, shared with the Cicero entry. Natural law defined as the rational creature's participation in eternal law, knowable by 'the light of natural reason' (q. 91 a. 2) — the reason-accessible lower storey that weakens Part 1's 'cannot be secularised' contrast. Anchored edition-independently by q./a. Public domain.
 
@@ -82,7 +90,7 @@ A note's `[S#]` line points here via `[src:<key>]`. No `[S#]` may point at a `st
 - status: usable
 - medium: text-ocr
 - cite: Talal Asad, *Genealogies of Religion: Discipline and Reasons of Power in Christianity and Islam* (Baltimore: Johns Hopkins University Press, 1993)
-- kb: `talal-asad_genealogies-of-religion_1993.md` (attributed summary, staged at workshops/DD/sources/ — not yet folded into corpus)
+- kb: `Asad_Genealogies-of-Religion_1993.md` (full text, folded into the corpus 2026-08); `talal-asad_genealogies-of-religion_1993.md` (attributed summary, in corpus under staging.text/DD/sources/oldsources/)
 - verified: web (ISBN 978-0-8018-4632-8); central quotation confirmed verbatim at p. 29 of the full text
 - note: attributed summary note with verified page anchors of ch. 1, 'The Construction of Religion as an Anthropological Category' (pp. 27–54) — the strongest published opponent of DD's central move, previously cited at blurb level. Full text in DD local archive (scratch/sources/part1/, gitignored); community upload, reading copy only. Cited by DD note 1.3 (S18) and Part 1.
 
@@ -94,6 +102,14 @@ A note's `[S#]` line points here via `[src:<key>]`. No `[S#]` may point at a `st
 - verified: web (composition 1871, publication 1882 by Cafiero & Reclus — Wikipedia, The Anarchist Library, marxists.org; early editions contain Cafiero/Reclus rewrites)
 - note: primary text for "If God is, man is a slave", "the abdication of human reason and justice", "a master… remains none the less always a master", "if God really existed, it would be necessary to abolish him" — all four verified verbatim in the KB file (lines 140–162). Prefer this over the secondary treatments for any Bakunin quotation.
 
+### baltzly-sep-stoicism
+- status: usable
+- medium: text
+- cite: Dirk Baltzly, "Stoicism," *The Stanford Encyclopedia of Philosophy*, https://plato.stanford.edu/entries/stoicism/
+- kb: `SEP_Stoicism.md`
+- verified: file (section numbering §2.7 "God" at :16 matches the live entry)
+- note: Stoic physics/theology — God as active principle and eternal *logos*. Cited by DD note 1.4.
+
 ### batchelor-2012-a-secular-buddhism-jgb
 - status: usable
 - medium: text
@@ -101,6 +117,14 @@ A note's `[S#]` line points here via `[src:<key>]`. No `[S#]` may point at a `st
 - kb: `batchelor-higgins_a-secular-buddhism-and-its-analysis_2012-2017.md` (attributed summary, staged at workshops/DD/sources/ — not yet folded into corpus)
 - verified: web (globalbuddhism.org, diamond OA)
 - note: attributed summary note with verified page anchors, shared with the Higgins entry. The programmatic founding document of 'secular dharma': three senses of 'secular'; Four Noble Truths recast as four tasks; 'Buddhism 2.0' coined here with a 'touch of irony' (p. 91). ▲ Partisan witness the project is personally close to — flag per bias policy. Distinct work from the KB's Batchelor lecture transcripts.
+
+### bellah-2011-religion-in-human-evolution
+- status: usable
+- medium: text
+- cite: Robert N Bellah, *Religion in Human Evolution: From the Paleolithic to the Axial Age* (Cambridge, MA: Belknap/Harvard, 2011), ISBN 978-0-674-06143-9
+- kb: `Bellah_Religion-in-Human-Evolution_2011.md`
+- verified: file (running heads "God and King", "China in the Late First Millennium bce" with page numbers at :326, :356, :557; ligature artefacts "Th e" indicate a digital PDF, not OCR)
+- note: Archaic/axial synthesis; reports Assmann's three-level ma'at and "connective justice," Jacobsen's cosmos-as-state, and the *Analects'* Dao as the Way of the former kings. Likely to serve 2.1 and 2.2 as well. Cited by DD note 1.4.
 
 ### boehm-1999-hierarchy
 - status: usable
@@ -174,11 +198,27 @@ A note's `[S#]` line points here via `[src:<key>]`. No `[S#]` may point at a `st
 - verified: web (https://theanarchistlibrary.org/library/brian-morris-ecology-and-its-recuperation-by-capitalists — authorship, *Freedom* provenance and text confirmed; ▲ no publication year is given by the source, and none should be asserted. Mirrored at https://libcom.org/article/ecology-and-its-recuperation-capitalists.)
 - note: the named failure mode of a green ethic absorbed by the system it was meant to constrain — corporations "leapt aboard the green bandwagon"; "sustainable development" as sustaining capitalist growth; responsibility relocated onto individual consumers; "global management" and eco-technocracy; Sachs's line that "saving" the planet licenses "a new wave of state interventions." Short piece (4 segments), polemical register, no citations of its own beyond Bookchin, Kovel and Sachs. Cited in 8.1 [S21]. Cited by DD notes 6.3, 8.1.
 
+### brown-2004-human-universals-daedalus
+- status: usable
+- medium: text
+- cite: Donald E Brown, "Human Universals, Human Nature, Human Culture," *Daedalus* 133:4 (2004): 47–54
+- kb: `Brown_Human-Universals-Human-Nature-Human-Culture_Daedalus-2004.md`
+- verified: file (title/author and abstract in seg 0; copyright line "© Donald E. Brown" in seg 7)
+- note: Brown's own restatement of the universals programme; the list (cooperation, reciprocity, exchange, gossip, ethnocentrism) but not the 1991 book's "constant ethical patterns" phrasing. Cited by DD note 1.2.
+
+### burnet-1920-early-greek-philosophy
+- status: usable
+- medium: text-ocr
+- cite: John Burnet, *Early Greek Philosophy*, 3rd ed. (London: A & C Black, 1920)
+- kb: `Burnet_Early-Greek-Philosophy_3rd-ed-1920.md`
+- verified: file (running head "HERAKLEITOS OF EPHESOS 133" at :182; fragment numbering matches Burnet's)
+- note: Burnet renders *logos* as "Word"; fragments cited by his numbers (fr. 2 at :182). Public domain. Cited by DD note 1.4.
+
 ### cicero-de-re-publica-de-legibus-barham
 - status: usable
 - medium: text
 - cite: Marcus Tullius Cicero, *De Re Publica* (Book 3 'true law' fragment, via Lactantius) and *De Legibus* (Book 1), trans. Francis Barham, *The Political Works of M. T. Cicero* (London: Edmund Spettigue, 1841–42; Online Library of Liberty edition)
-- kb: `cicero-aquinas_natural-law-primary-texts.md` (attributed summary, staged at workshops/DD/sources/ — not yet folded into corpus)
+- kb: `Cicero_De-Re-Publica_trans-Barham_OLL.md`, `Cicero_De-Legibus_trans-Barham_OLL.md` (full text, folded into the corpus 2026-08); `cicero-aquinas_natural-law-primary-texts.md` (attributed summary, in corpus under staging.text/DD/sources/oldsources/)
 - verified: web (oll.libertyfund.org; public domain)
 - note: attributed summary note with verified page anchors, shared with the Aquinas entry. ▲ Barham's rendering differs from the modern textbook wording ('There is a true law, a right reason, conformable to nature…') and interpolates 'our own conscience' absent from the Latin — quote Barham as Barham. Full text in DD local archive (scratch/sources/part1/, gitignored).
 
@@ -197,6 +237,14 @@ A note's `[S#]` line points here via `[src:<key>]`. No `[S#]` may point at a `st
 - kb: `Colin-Ward_Anarchy-in-Action_1996.md`
 - verified: web (Allen & Unwin 1973 first edition and Freedom Press second-edition history; already externally pinned as [E9] in note 0.2). The 1996 date is the corpus file's own; the file's introduction is the second-edition text.
 - note: the "seed beneath the snow" thesis — anarchy as "a description of a mode of human organisation, rooted in the experience of everyday life," discovered and extended rather than designed; also the negative evidence (defeat everywhere, "anarchism finally died when Franco's troops entered Barcelona in 1939"; Quail epigraph on growth/decline with popular self-activity). Ward himself concedes the book is open to the charge of "a selective gathering of anecdotal evidence" — advocacy, flagged as such. Cited by DD notes 2.4, 3.1, 8.3.
+
+### collier-hidalgo-maciuceanu-2006-essentially-contested-concepts
+- status: usable
+- medium: text
+- cite: David Collier, Fernando Daniel Hidalgo & Andra Olivia Maciuceanu, "Essentially Contested Concepts: Debates and Applications," *Journal of Political Ideologies* 11:3 (2006), 211–246, DOI 10.1080/13569310600923782
+- kb: `Collier-Hidalgo-Maciuceanu_Essentially-Contested-Concepts_2006.md`
+- verified: file (title, authors, abstract at seg 0; running page numbers 214, 217, 219 in segs 5, 9, 12 match the JPI pagination)
+- note: Systematic review of Gallie's seven criteria as a framework, with the over-aggregation/disaggregation test and Freeden's decontestation; applications to democracy and rule of law. Cited by DD note 1.3.
 
 ### crawford-2018-tan-malaka
 - status: usable
@@ -398,6 +446,14 @@ A note's `[S#]` line points here via `[src:<key>]`. No `[S#]` may point at a `st
 - verified: unverified (searched: no reliable web locus for original venue/date; *Umanità Nova* founded 1919, *Pensiero e Volontà* ran 1924–26 — either is possible. Cite the year with the file's caveat, not as established.)
 - note: the movement's positive transmission doctrine — "a question of education for freedom"; the propagandist as the schoolteacher who helps "in such a way that the pupil imagines that he has found the solution unaided"; the party paper disowned as a central organ; and the failure condition, that "isolated, sporadic propaganda… is forgotten and lost before its effect can grow and bear fruit".
 
+### frankfort-et-al-1946-intellectual-adventure
+- status: usable
+- medium: text-ocr
+- cite: H Frankfort, HA Frankfort, JA Wilson, T Jacobsen & WA Irwin, *The Intellectual Adventure of Ancient Man: An Essay on Speculative Thought in the Ancient Near East* (Chicago: University of Chicago Press, 1946); OI open-access scan
+- kb: `Frankfort-et-al_The-Intellectual-Adventure-of-Ancient-Man_1946.md`
+- verified: file (preface and chapter list at :1; "oi.uchicago.edu" running footer; Jacobsen "The Cosmos as a State" header at :131)
+- note: The classic cross-civilisation treatment of cosmic order; Jacobsen's Egypt/Mesopotamia mood contrast and "cosmos as a state." OCR: Wilson's *ma'at* is not recoverable by string search — locate via "justice"/"order" context. Cited by DD note 1.4.
+
 ### friedrich-nietzsche-1882-the-gay-science
 - status: usable
 - medium: text
@@ -442,7 +498,7 @@ A note's `[S#]` line points here via `[src:<key>]`. No `[S#]` may point at a `st
 - status: usable
 - medium: text-ocr
 - cite: W. B. Gallie, "Essentially Contested Concepts," *Proceedings of the Aristotelian Society* 56 (1956): 167–198
-- kb: `wb-gallie_essentially-contested-concepts_1956.md` (attributed summary, staged at workshops/DD/sources/ — not yet folded into corpus)
+- kb: `Gallie_Essentially-Contested-Concepts_PAS-1956.md` (full text, folded into the corpus 2026-08); `wb-gallie_essentially-contested-concepts_1956.md` (attributed summary, in corpus under staging.text/DD/sources/oldsources/)
 - verified: web (JSTOR 4544562; read in full from Columbia Law-hosted scan)
 - note: attributed summary note with verified page anchors. Replaces the abstract-page citation in notes 1.3 (S16) and 3.4 (S8). ▲ Conditions VI–VII (common exemplar; competition develops its achievement) are what separate essential contestedness from radical confusion — DD currently invokes only I–V, and plural dharmas may fail VI. Full text in DD local archive (scratch/sources/part1/, gitignored).
 
@@ -466,9 +522,9 @@ A note's `[S#]` line points here via `[src:<key>]`. No `[S#]` may point at a `st
 - status: usable
 - medium: text-ocr
 - cite: Rupert Gethin, "He Who Sees Dhamma Sees Dhammas: Dhamma in Early Buddhism," *Journal of Indian Philosophy* 32 (2004): 513–542; repr. in Olivelle (ed.), *Dharma* (Delhi: MLBD, 2009), 91–120
-- kb: `rupert-gethin_he-who-sees-dhamma-sees-dhammas_2004.md` (attributed summary, staged at workshops/DD/sources/ — not yet folded into corpus)
+- kb: `Olivelle-ed_Dharma-Semantic-Cultural-Religious-History_2009_INCOMPLETE-SCAN.md` (full text, folded into the corpus 2026-08); `rupert-gethin_he-who-sees-dhamma-sees-dhammas_2004.md` (attributed summary, in corpus under staging.text/DD/sources/oldsources/)
 - verified: web (DOI 10.1007/s10781-004-8633-6 for the JIP original; read from the MLBD reprint scan)
-- note: attributed summary note with verified page anchors (MLBD pagination; +422 for JIP). Argues the senses of dhamma cohere genealogically around 'support/maintain' — against homonymy, cutting against Part 1's rope-not-thread rhetoric for the Buddhist case while vindicating 'that which holds'. ▲ Same incomplete, poor-OCR volume scan as the Olivelle entry; unreliable for verbatim transliterated Pali.
+- note: ▲ Full text is an incomplete tesseract scan of the 2009 MLBD volume (preface letter-spaced; Brereton/Horsch articles absent). attributed summary note with verified page anchors (MLBD pagination; +422 for JIP). Argues the senses of dhamma cohere genealogically around 'support/maintain' — against homonymy, cutting against Part 1's rope-not-thread rhetoric for the Buddhist case while vindicating 'that which holds'. ▲ Same incomplete, poor-OCR volume scan as the Olivelle entry; unreliable for verbatim transliterated Pali.
 
 ### glenn-roberts-2020-the-dharma-of-dog
 - status: usable
@@ -550,6 +606,14 @@ A note's `[S#]` line points here via `[src:<key>]`. No `[S#]` may point at a `st
 - verified: web (ISBN 978-0-374-15735-7)
 - note: disputes a single "original condition"; egalitarian-forager baseline not uniform.
 
+### gulenc-2016-physis-nomos-sophists
+- status: usable
+- medium: text
+- cite: N Petek Boyacı Gülenç, "An Enquiry on Physis–Nomos Debate: Sophists," *Synthesis Philosophica* 61 (1/2016), 39–53, DOI 10.21464/sp31103
+- kb: `Gulenc_Physis-Nomos-Debate-Sophists_2016.md`
+- verified: file (journal header, DOI and page range in chunks :0 and :11)
+- note: Review article; supplies the Antiphon F44 quotation and the Antiphon/Callicles split on what physis grounds. Cited by DD note 1.4.
+
 ### gurlesin-2024-implicit-religion-xr
 - status: usable
 - medium: text
@@ -602,9 +666,19 @@ A note's `[S#]` line points here via `[src:<key>]`. No `[S#]` may point at a `st
 - status: usable
 - medium: text-ocr
 - cite: Wilhelm Halbfass, "Dharma in the Self-Understanding of Traditional Hinduism," ch. 17 of *India and Europe: An Essay in Understanding* (Albany: SUNY Press, 1988), 310–333
-- kb: `wilhelm-halbfass_dharma-in-the-self-understanding-of-traditional-hinduism_1988.md` (attributed summary, staged at workshops/DD/sources/ — not yet folded into corpus)
+- kb: `Halbfass_India-and-Europe_1988.md` (full text, folded into the corpus 2026-08); `wilhelm-halbfass_dharma-in-the-self-understanding-of-traditional-hinduism_1988.md` (attributed summary, in corpus under staging.text/DD/sources/oldsources/)
 - verified: web (SUNY ISBN 978-0-88706-795-8; scan is the MLBD Indian ed., Delhi 1990, ISBN 81-208-0736-7, preserving SUNY pagination)
 - note: attributed summary note with verified page anchors. ▲ Two load-bearing findings: ṛta→dharma linkages 'casual and rare' (pp. 314–15; close-connection claims a Neo-Hindu postulate), and classical dharma emphatically particularist — Indocentric, Veda-indexed, birth-restricted; universalist dharma is the modern reinterpretation (ch. 18). Presses directly on Part 1's two-storey design. Full text in DD local archive (scratch/sources/part1/, gitignored); community upload, reading copy only.
+
+### henrich-heine-norenzayan-2010-weirdest-people
+- status: usable
+- medium: text
+- cite: Joseph Henrich, Steven J Heine & Ara Norenzayan, "The weirdest people in the world?", *Behavioral and Brain Sciences* 33:2–3 (2010): 61–83 (with commentary to 135)
+- kb: `Henrich-Heine-Norenzayan_The-Weirdest-People-in-the-World_2010.md`
+- verified: file (authors, affiliations and abstract in seg 0)
+- note: primary for the WEIRD sampling caveat — WEIRD subjects "frequent outliers" on fairness, cooperation, moral reasoning. Cited by DD note 1.2.
+
+Also: existing entry `curry-mullins-whitehouse-2019-seven-moral-rules` should add to its `kb:` line `Curry-Mullins-Whitehouse_Is-It-Good-to-Cooperate_CurrentAnthropology-2019_with-commentaries.md` and `Curry-Mullins-Whitehouse_2019_SUPPLEMENT-coding-tables.md` (now in the corpus under `3-cooperation/`), with a note that the first is the published abstract plus the attributed summary, not the full typeset article.
 
 ### henry-david-thoreau-1854-walden
 - status: usable
@@ -646,6 +720,14 @@ A note's `[S#]` line points here via `[src:<key>]`. No `[S#]` may point at a `st
 - verified: web (bps.lk; explicit free-distribution licence)
 - note: attributed summary note with verified page anchors. ▲ Part 1's 'atoms of mind and matter' does not survive: the discrete-entity reading is 'certainly not admissible' (p. 14); dhammas 'cannot be separated from one another like particles of sand' (p. 32) — events, not substances; the tradition legislated against reification. 'Momentary flickers' survives. PDF safe to archive.
 
+### karunadasa-1996-the-dhamma-theory
+- status: usable
+- medium: text-ocr
+- cite: Y Karunadasa, *The Dhamma Theory: Philosophical Cornerstone of the Abhidhamma*, The Wheel Publication 412/413 (Kandy: Buddhist Publication Society, 1996)
+- kb: `Karunadasa_The-Dhamma-Theory_BPS-Wheel-412-413_1996.md`, `y-karunadasa_the-dhamma-theory_1996.md` (attributed summary, oldsources/)
+- verified: file (tesseract OCR of the BPS Wheel; title page in sid 0; the summary file records full-text reading against the BPS Online Edition 2011)
+- note: Standard concise account of the Theravāda dhamma theory; *attano sabhāvaṃ dhārentī ti dhammā* and its provisional (*kattu-sādhana*) status, sids 11–12. Cited by DD note 1.1.
+
 ### kropotkin-1916-manifesto-of-the-sixteen
 - status: usable
 - medium: text
@@ -654,13 +736,37 @@ A note's `[S#]` line points here via `[src:<key>]`. No `[S#]` may point at a `st
 - verified: web (https://www.marxists.org/reference/archive/kropotkin-peter/1916/sixteen.htm — date, "ranged on the side of the resistance" and signatory list incl. Grave and Kropotkine confirmed)
 - note: the pro-war minority's own declaration — the other side of the Malatesta 1914 dispute, in its own words. Cited in 7.1 [S16].
 
+### legge-1891-texts-of-taoism-sbe39
+- status: usable
+- medium: text-ocr
+- cite: James Legge (trans.), *The Texts of Taoism, Part I: The Tâo Teh King; The Writings of Kwang-dze (Books I–XVII)*, Sacred Books of the East 39 (Oxford: Clarendon, 1891)
+- kb: `Legge_The-Texts-of-Taoism_SBE-39_1891.md` (Part II is `Legge_The-Texts-of-Taoism_SBE-40_1891.md`)
+- verified: file (running head "THE TEXTS OF TAOISM. pt. I" with pagination at :92; chapter numerals 25 and 37 located)
+- note: Public-domain primary text; OCR has broken headings (`###### Tao`) inside sentences, so quote only after reassembly. Cited by DD note 1.4.
+
 ### lichtheim-1992-maat-in-egyptian-autobiographies
 - status: usable
 - medium: text-ocr
 - cite: Miriam Lichtheim, *Maat in Egyptian Autobiographies and Related Studies*, Orbis Biblicus et Orientalis 120 (Fribourg: Universitätsverlag / Göttingen: Vandenhoeck & Ruprecht, 1992)
-- kb: `miriam-lichtheim_maat-in-egyptian-autobiographies_1992.md` (attributed summary, staged at workshops/DD/sources/ — not yet folded into corpus)
+- kb: `Lichtheim_Maat-in-Egyptian-Autobiographies_OBO-120_1992.md` (full text, folded into the corpus 2026-08); `miriam-lichtheim_maat-in-egyptian-autobiographies_1992.md` (attributed summary, in corpus under staging.text/DD/sources/oldsources/)
 - verified: web (official OA deposit, Zurich Open Repository; ISBN 3-7278-0846-0)
 - note: attributed summary note with verified page anchors. Maat as lived practice-defined ethic (veracity, fairness, beneficence) — cosmic in principle but bottom-weighted ('the Pyramid Texts supply the heavenly dimension of Maat, but just barely,' p. 16); explicitly rejects Assmann's theologised top-down fusion, and her Assmann quotations are DD's only window into that unobtainable book. Replaces the EBSCO starter in note 1.4.
+
+### llano-alonso-2012-cicero-natural-law
+- status: usable
+- medium: text
+- cite: Fernando H Llano Alonso, "Cicero and Natural Law," *Archiv für Rechts- und Sozialphilosophie* 98:2 (2012), 157–168
+- kb: `LlanoAlonso_Cicero-and-Natural-Law_ARSP-2012.md`
+- verified: file (Latin tags *cui qui non parebit…* and Ulpian's *ius naturale* definition present at :9)
+- note: Argues Cicero's *natura* is inward rationality (*recta ratio*), not Ulpian's external physical order — man as "autonomous legislator." Volume/issue/pages taken from the corpus filename and body; not web-checked. Cited by DD note 1.4.
+
+### mahmoudi-2024-rta-and-asa
+- status: usable
+- medium: text
+- cite: Abolfazl Mahmoudi, "Ṛta and Aša: The Metaphysical Foundation of Happiness in Classical Hindu-Iranian Texts (Rigveda and Gatha)," *Ethics and Normativity* 1:1 (2024), 83–94, DOI 10.22034/EAN.2024.200158 (CC BY)
+- kb: `Mahmoudi_Rta-and-Asa_EthicsAndNormativity-2024.md`
+- verified: file (header carries journal, DOI, dates and CC BY licence; body chunks :0, :3, :5 checked)
+- note: Comparative reading of ṛta and aša as the earliest "criterion of good" — cosmic order spanning cosmos, morality and ritual; Y 30.4/30.10 as the two commands. Opens on a perennialist premise (belief in good/evil "almost universally shared") — quote it as the position, not the finding. Cited by DD notes 1.1., 1.4..
 
 ### malatesta-makhno-1927-about-the-platform
 - status: usable
@@ -674,9 +780,17 @@ A note's `[S#]` line points here via `[src:<key>]`. No `[S#]` may point at a `st
 - status: usable
 - medium: text
 - cite: Andrew M. McKinnon, "Sociological Definitions, Language Games and the ‘Essence’ of Religion," *Method and Theory in the Study of Religion* 14:1 (2002): 61–83
-- kb: `andrew-mckinnon_sociological-definitions-language-games-essence-of-religion_2002.md` (attributed summary, staged at workshops/DD/sources/ — not yet folded into corpus)
+- kb: `McKinnon_Sociological-Definitions-Language-Games-Essence-of-Religion_2002.md` (full text, folded into the corpus 2026-08); `andrew-mckinnon_sociological-definitions-language-games-essence-of-religion_2002.md` (attributed summary, in corpus under staging.text/DD/sources/oldsources/)
 - verified: web (DOI 10.1163/157006802760198776; green-OA author manuscript, Aberdeen AURA)
 - note: attributed summary note with verified page anchors (▲ anchored to manuscript pages — convert to journal pagination when citing). Concedes the genealogy, keeps the category via Wittgenstein §68 and the usefulness criterion. ▲ His defence requires the term to circulate in ordinary language — 'religion' does, DD's expanded 'dharma' does not; DD must either restrict the strong claim or argue the usage is spreading.
+
+### michael-2023-laozi-justice
+- status: usable
+- medium: text
+- cite: Thomas Michael, "Laozi's Conception of Justice in the Daodejing: Distinguishing the Constant Dao from the Dao of Heaven," *Religions* 14:6 (2023), 771, DOI 10.3390/rel14060771 (CC BY)
+- kb: `Michael_Laozis-Conception-of-Justice_Religions-2023.md`
+- verified: file (citation block with DOI and dates at :0)
+- note: Two Daos in the *Daodejing* — the Constant Dao (only *wuwei*) and the Dao of Heaven (retribution); justice as "natural equality" (*zijun*, DDJ 32). Cited by DD note 1.4.
 
 ### michels-1911-political-parties
 - status: usable
@@ -685,6 +799,14 @@ A note's `[S#]` line points here via `[src:<key>]`. No `[S#]` may point at a `st
 - kb: —
 - verified: unverified (standard reference; note links https://en.wikipedia.org/wiki/Iron_law_of_oligarchy; no direct quotation used)
 - note: external, not in corpus. The "iron law of oligarchy" — canonical scholarly statement of the mode Malatesta 1909 predicted; cited by paraphrase only. Cited in 7.1 [S19].
+
+### mills-1887-yasna-avesta-org
+- status: usable
+- medium: text
+- cite: *The Zend-Avesta, Part III: The Yasna, Visparad, Âfrînagân, Gâhs and Miscellaneous Fragments*, trans. LH Mills, Sacred Books of the East 31 (Oxford, 1887); electronic text at avesta.org (Yasna incl. Gāthās)
+- kb: `Yasna-incl-Gathas_trans-Mills_avesta-org.md`
+- verified: file (avesta.org page structure with "Adapted from Mills" headers; Y 30 at chunk :72 checked against SBE 31 wording)
+- note: Primary text for the aša/druj dualism (Y 30.1–3 twin Spirits). Chapter headings are bare numerals (`## 30.`), so search by content not by "Yasna 43". Cited by DD note 1.4.
 
 ### morris-1993-bakunin-historical-materialism
 - status: usable
@@ -749,6 +871,14 @@ A note's `[S#]` line points here via `[src:<key>]`. No `[S#]` may point at a `st
 - verified: web (Verso 2015, ISBN 978-1-78168-581-5, editors and Le Guin foreword confirmed at https://www.versobooks.com/products/34-the-next-revolution and https://openlibrary.org/books/OL31035172M/The_next_revolution)
 - note: posthumous collection of the libertarian-municipalism / communalism essays. Used in 8.1 for confederalism as an explicitly anti-parochial coordination architecture: confederation "counteract[s] the tendency of decentralized communities to drift toward exclusivity and parochialism"; policymaking reserved to face-to-face assemblies while confederal councils are administrative with mandated, recallable delegates. ▲ Programmatic advocacy, not evidence — no case is made here that the design has been tested above municipal scale. Cited in 8.1 [S22]. Cited by DD notes 3.1, 7.3, 8.1.
 
+### nesse-2019-tinbergens-four-questions
+- status: usable
+- medium: text
+- cite: Randolph M Nesse, "Tinbergen's four questions: Two proximate, two evolutionary," *Evolution, Medicine, and Public Health* 2019(1): 2, DOI 10.1093/emph/eoy035
+- kb: `Nesse_Tinbergens-Four-Questions_EMPH-2019.md`
+- verified: file (masthead and DOI in seg 0)
+- note: one-page primer; modern labels and the proximate/evolutionary split after Mayr 1951. Cited by DD note 1.2.
+
 ### new-inquiry-distracted-by-attention-citton-review
 - status: usable
 - medium: text
@@ -757,13 +887,37 @@ A note's `[S#]` line points here via `[src:<key>]`. No `[S#]` may point at a `st
 - verified: web (search-result excerpt confirms the review discusses Citton's engagement with Debord's motto of the spectacle; full text not fetched)
 - note: supports the single lineage claim that Citton's attention-ecology takes up Debord's thesis-12 motto ("What appears is good; what is good appears"). Author name not confirmed, so cited by title only.
 
+### nyanaponika-1965-abhidhamma-studies
+- status: usable
+- medium: text-ocr
+- cite: Nyanaponika Thera, *Abhidhamma Studies: Researches in Buddhist Psychology*, 2nd ed. (Kandy: Buddhist Publication Society, 1965; 1st ed. Colombo 1949)
+- kb: `Nyanaponika_Abhidhamma-Studies_1965.md`
+- verified: file (tesseract OCR, pages transcribed 3, 6; introduction in sid 0 names the Dhammasaṅgaṇī/Atthasālinī translation project)
+- note: Reads the grammarians' "bearer of own nature" definition against the atomist misreading (sids 42–43). Edition/date of the scan not confirmed beyond the filename. Cited by DD note 1.1.
+
+### olivelle-1999-dharmasutras
+- status: usable
+- medium: text
+- cite: Patrick Olivelle (trans.), *Dharmasūtras: The Law Codes of Āpastamba, Gautama, Baudhāyana, and Vasiṣṭha* (Oxford World's Classics; Oxford: Oxford University Press, 1999)
+- kb: `Olivelle_Dharmasutras_OUP-1999.md`
+- verified: file (bibliography segs 7–8 list Kangle's Arthaśāstra and Bühler; explanatory note to Āpastamba 2.24.23 on the puruṣārthas at seg 511)
+- note: Primary translation of the four early Dharmasūtras with Olivelle's apparatus; the puruṣārtha note supplies the tradition's own dharma/artha/kāma ranking. Cited by DD note 1.3.
+
 ### olivelle-2004-semantic-history-of-dharma
 - status: usable
 - medium: text-ocr
 - cite: Patrick Olivelle, "The Semantic History of Dharma: The Middle and Late Vedic Periods," *Journal of Indian Philosophy* 32 (2004): 491–511; repr. in Olivelle (ed.), *Dharma: Studies in its Semantic, Cultural and Religious History* (Delhi: MLBD, 2009), 69–89
-- kb: `patrick-olivelle_the-semantic-history-of-dharma_2004.md` (attributed summary, staged at workshops/DD/sources/ — not yet folded into corpus)
+- kb: `Olivelle-ed_Dharma-Semantic-Cultural-Religious-History_2009_INCOMPLETE-SCAN.md` (full text, folded into the corpus 2026-08); `patrick-olivelle_the-semantic-history-of-dharma_2004.md` (attributed summary, in corpus under staging.text/DD/sources/oldsources/)
 - verified: web (DOI 10.1007/s10781-004-8629-2 for the JIP original; read from the MLBD reprint scan, which is incomplete — Horsch and Brereton absent)
-- note: attributed summary note with verified page anchors (MLBD pagination; +422 for JIP). ▲ Breaks Part 1's smooth-broadening narrative: dharma marginal and *narrowing* (royal/juridical, Varuṇa and the king) across middle/late Vedic corpora; centrality arrives via Buddhist appropriation and Aśoka, with Dharmaśāstra as Brahmanical response (hypothesis, marked as such). ▲ Scan OCR is poor — dehyphenate before quote-checking; see note's OCR-hazard section.
+- note: ▲ Full text is an incomplete tesseract scan of the 2009 MLBD volume (preface letter-spaced; Brereton/Horsch articles absent). attributed summary note with verified page anchors (MLBD pagination; +422 for JIP). ▲ Breaks Part 1's smooth-broadening narrative: dharma marginal and *narrowing* (royal/juridical, Varuṇa and the king) across middle/late Vedic corpora; centrality arrives via Buddhist appropriation and Aśoka, with Dharmaśāstra as Brahmanical response (hypothesis, marked as such). ▲ Scan OCR is poor — dehyphenate before quote-checking; see note's OCR-hazard section.
+
+### olivelle-2005-manus-code-of-law
+- status: usable
+- medium: text-ocr
+- cite: Patrick Olivelle (ed. & trans.), with Suman Olivelle, *Manu's Code of Law: A Critical Edition and Translation of the Mānava-Dharmaśāstra* (South Asia Research; New York: Oxford University Press, 2005)
+- kb: `Olivelle_Manus-Code-of-Law_OUP-2005.md`
+- verified: file (tesseract OCR provenance header at seg 0; title page and acknowledgements at segs 0–3; ch. 7 daṇḍa verses 7.2–22 at segs 276–278 with Olivelle's verse numbering)
+- note: Critical edition and translation of Manu; ch. 7 on the king and Punishment (daṇḍa) is the primary counter-text to "dharma is beyond daṇḍa". Cited by DD note 1.3.
 
 ### parker-1993-basic-bakunin
 - status: usable
@@ -773,13 +927,29 @@ A note's `[S#]` line points here via `[src:<key>]`. No `[S#]` may point at a `st
 - verified: web (The Anarchist Library; zabalazabooks.net; van der Walt's 2004 SA introduction confirmed at lucienvanderwalt.com)
 - note: movement primer, partisan register — use only for Bakunin's documented arguments/predictions ("a new class of experts, scientists and professional politicians" legitimated by "the claim to acting in accordance with scientific laws"), never for its own verdicts. Cited by DD notes 7.3, 7.6.
 
+### passmore-jordan-2020-no-universals-kinship-terminology
+- status: usable
+- medium: text
+- cite: Sam Passmore & Fiona M Jordan, "No universals in the cultural evolution of kinship terminology," *Evolutionary Human Sciences* 2 (2020): e42, DOI 10.1017/ehs.2020.41 (CC BY 4.0)
+- kb: `PMC7612818-no-universals-in-the-cultural-evolution-of-kinship-terminolo.md`
+- verified: file (PMC7612818 header, journal/year/licence in seg 0; conclusion in seg 19)
+- note: phylogenetic test finding no universal link between kin terminology and social structure — a documented non-universal and a caveat on tallied cross-cultural regularities. Cited by DD note 1.2.
+
 ### pokorny-lrc-pie-dher-to-hold-support
 - status: usable
 - medium: text
 - cite: Linguistics Research Center (UT Austin), *Indo-European Lexicon*, s.v. Pokorny etymon *2. dher-, dherə-* 'to hold, support' (master entry 0399), adapting Julius Pokorny, *Indogermanisches etymologisches Wörterbuch* (Bern: Francke, 1959)
-- kb: `pokorny-lrc_pie-dher-to-hold-support.md` (attributed summary, staged at workshops/DD/sources/ — not yet folded into corpus)
+- kb: `Pokorny-IEW_dher-to-hold-support_LRC-UT-Austin.md` (full text, folded into the corpus 2026-08); `pokorny-lrc_pie-dher-to-hold-support.md` (attributed summary, in corpus under staging.text/DD/sources/oldsources/)
 - verified: web (https://lrc.la.utexas.edu/lex/master/0399)
 - note: attributed summary note with verified page anchors. Replaces Wiktionary for the √dhṛ → PIE → *firmus* → *firm* spine in note 1.1 (S7); adds *throne* (Gk. *thronos*) and *Darius* ('upholding the good') as English-visible cognates. ▲ Adjacent entry 0398 is the homophonous '1. dher-' 'dirt, dregs' — do not confuse. Cite for root and reflexes only, never for the meaning of *dharma*; Mayrhofer EWAia remains the citation of record.
+
+### prinz-2008-is-morality-innate
+- status: usable
+- medium: text
+- cite: Jesse J Prinz, "Is Morality Innate?", in Walter Sinnott-Armstrong (ed.), *Moral Psychology*, vol. 1: *The Evolution of Morality* (MIT Press, 2008), pp. 367–406
+- kb: `Prinz_Is-Morality-Innate_2008.md`
+- verified: file ("Forthcoming in W. Sinnott-Armstrong (ed.), Moral Psychology. Oxford University Press" header in seg 0 — preprint; the chapter appeared from MIT Press, so page numbers are the printed volume's, not the file's)
+- note: innateness sceptic — morality "ecumenical" but a byproduct of faculties evolved for other purposes; the counterweight to nativist readings of universals. Cited by DD note 1.2.
 
 ### queloz-cueni-2019-genealogical-debunking
 - status: usable
@@ -789,11 +959,19 @@ A note's `[S#]` line points here via `[src:<key>]`. No `[S#]` may point at a `st
 - verified: web (Oxford Academic listing and DOI confirmed 2026-07-27; philarchive preprint exists)
 - note: the scholarly anchor for the genetic-fallacy counter-argument — genealogical origins subvert only in conjunction with a further evaluative premise; engages GS §345 directly. Cited via abstract and public preprint, not full journal text (abstract-only access level).
 
+### rai-fiske-2011-moral-psychology-is-relationship-regulation
+- status: usable
+- medium: text
+- cite: Tage Shakti Rai & Alan Page Fiske, "Moral Psychology Is Relationship Regulation: Moral Motives for Unity, Hierarchy, Equality, and Proportionality," *Psychological Review* 118:1 (2011): 57–75
+- kb: `Rai-Fiske_Moral-Psychology-is-Relationship-Regulation_2011.md`
+- verified: file (seg 3; title/authors not re-checked against a masthead segment)
+- note: universality in relational motives, diversity in relational models; "morally motivated acts, not simply errors in judgment." Cited by DD note 1.2.
+
 ### riesebrodt-2010-promise-of-salvation
 - status: usable
 - medium: text
 - cite: Martin Riesebrodt, *The Promise of Salvation: A Theory of Religion*, trans. Steven Rendall (Chicago: University of Chicago Press, 2010)
-- kb: `martin-riesebrodt_the-promise-of-salvation_2010.md` (attributed summary, staged at workshops/DD/sources/ — not yet folded into corpus)
+- kb: `Riesebrodt_The-Promise-of-Salvation_2010.md` (full text, folded into the corpus 2026-08); `martin-riesebrodt_the-promise-of-salvation_2010.md` (attributed summary, in corpus under staging.text/DD/sources/oldsources/)
 - verified: web (ISBN 978-0-226-71391-5)
 - note: attributed summary note with verified page anchors. The closest structural precedent for DD: answers the constructionist objection, then defines religion substantively (interventionist practices toward superhuman powers). ▲ The fork this creates for DD: his universality is empirical and falsifiable *because* the definition is substantive — and the same criterion ejects secular frameworks ('morality does not require religion,' pp. 183–84). DD cannot borrow the universality while keeping non-privileging. Full text in DD local archive (scratch/sources/part1/, gitignored); community upload.
 
@@ -809,7 +987,7 @@ A note's `[S#]` line points here via `[src:<key>]`. No `[S#]` may point at a `st
 - status: usable
 - medium: text-ocr
 - cite: Eleanor Rosch & Carolyn B. Mervis, "Family Resemblances: Studies in the Internal Structure of Categories," *Cognitive Psychology* 7 (1975): 573–605
-- kb: `rosch-mervis_family-resemblances_1975.md` (attributed summary, staged at workshops/DD/sources/ — not yet folded into corpus)
+- kb: `Rosch-Mervis_Family-Resemblances_CognitivePsych-1975.md` (full text, folded into the corpus 2026-08); `rosch-mervis_family-resemblances_1975.md` (attributed summary, in corpus under staging.text/DD/sources/oldsources/)
 - verified: web (DOI 10.1016/0010-0285(75)90024-9)
 - note: attributed summary note with verified page anchors. Family-resemblance score predicts prototypicality at ρ = .84–.94 across six categories — a measurable 'textbook case vs blurry rim' for the four-feature test. ▲ *Bird* was not among the tested categories (the robin/penguin norms are Rosch 1975a); object categories, ~1,076 US undergraduates — extension to normative categories is DD's own wager. Full text in DD local archive (scratch/sources/part1/, gitignored).
 
@@ -916,11 +1094,19 @@ A note's `[S#]` line points here via `[src:<key>]`. No `[S#]` may point at a `st
 - verified: web (ISBN 9780671201593; Will Durant, The Story of Philosophy, 1926)
 - note: prov=zenquotes; KB text is an LLM (gpt-4o-mini) discourse generated from a Zenquotes quote card, not a summary of a specific parent document. NEEDS-HUMAN: confirm how the note should represent the Aristotle/Durant attribution nuance.
 
+### schein-gray-2018-theory-of-dyadic-morality
+- status: usable
+- medium: text
+- cite: Chelsea Schein & Kurt Gray, "The Theory of Dyadic Morality: Reinventing Moral Judgment by Redefining Harm," *Personality and Social Psychology Review* 22:1 (2018), 32–70, DOI 10.1177/1088868317698288
+- kb: `Schein-Gray_The-Theory-of-Dyadic-Morality_PSPR-2018_author-copy.md`
+- verified: file (journal header with DOI and page range at seg 0; author copy)
+- note: Harm as the fundamental basis of moral judgement; the monothetic rival to the family-resemblance treatment of the moral/conventional line. Cited by DD note 1.3.
+
 ### schilbrack-2022-concept-of-religion-sep
 - status: usable
 - medium: text
 - cite: Kevin Schilbrack, "The Concept of Religion," *Stanford Encyclopedia of Philosophy* (first published 28 March 2022)
-- kb: `kevin-schilbrack_the-concept-of-religion_sep-2022.md` (attributed summary, staged at workshops/DD/sources/ — not yet folded into corpus)
+- kb: `Schilbrack_The-Concept-of-Religion_SEP-2022.md` (full text, folded into the corpus 2026-08); `kevin-schilbrack_the-concept-of-religion_sep-2022.md` (attributed summary, in corpus under staging.text/DD/sources/oldsources/)
 - verified: web (https://plato.stanford.edu/entries/concept-religion/)
 - note: attributed summary note with verified page anchors (section-anchored). The standard reply to Asad — realism about social structures plus map-against-territory testability. ▲ Does NOT license 'disclosed authorship' as a defence; holds polythetic framings 'equally ethnocentric'; and warns that functionally defined universality 'is not a discovery but a product of one's definition' — the sharpest published pressure on Part 1's 'every society grows one'. Open access.
 
@@ -928,7 +1114,7 @@ A note's `[S#]` line points here via `[src:<key>]`. No `[S#]` may point at a `st
 - status: usable
 - medium: text
 - cite: B. Schlerath & P. O. Skjærvø, "AŠA," *Encyclopædia Iranica* II/7 (1987): 694–696 (online ed.)
-- kb: `schlerath-skjaervo_asa_encyclopaedia-iranica.md` (attributed summary, staged at workshops/DD/sources/ — not yet folded into corpus)
+- kb: `Iranica_ASA_Schlerath-Skjaervo_wayback.md` (full text, folded into the corpus 2026-08); `schlerath-skjaervo_asa_encyclopaedia-iranica.md` (attributed summary, in corpus under staging.text/DD/sources/oldsources/)
 - verified: web (iranicaonline.org/articles/asa-means-truth-in-avestan; consulted via Wayback snapshot 2023-11-17)
 - note: attributed summary note with verified page anchors. Confirms *asha*/*ṛta* as the same Indo-Iranian word (Part 1's 'same word in different mouths' now on bedrock); reconstructs \**ṛtām dhar-* 'to uphold the truth' among the oldest shared formulas (~2000 BCE) — dharma's root formulaically paired with ṛta. ▲ With Lüders and Halbfass, argues the rendering is 'truth', not bare 'cosmic order'. Replaces zoroastrian.org / hinduwebsite.com in note 1.4 (S8).
 
@@ -956,11 +1142,19 @@ A note's `[S#]` line points here via `[src:<key>]`. No `[S#]` may point at a `st
 - verified: unverified
 - note: pseudonymous author; publication by Elephant Editions/Active Distribution stated in the file itself. Cited in 3.4 only as reception evidence (anarchist reappropriation of Nietzsche), never as Nietzsche interpretation.
 
+### singh-glowacki-2022-beyond-the-nomadic-egalitarian-model
+- status: usable
+- medium: text
+- cite: Manvir Singh & Luke Glowacki, "Human social organization during the Late Pleistocene: Beyond the nomadic-egalitarian model," *Evolution and Human Behavior* 43:5 (2022): 418–431
+- kb: `Singh-Glowacki_Beyond-the-Nomadic-Egalitarian-Model_EHB-2022.md`
+- verified: file (accepted-manuscript header and abstract in seg 0, "last updated July 19, 2022")
+- note: the diverse-Pleistocene model against the nomadic-egalitarian baseline; names Boehm, Migliano, Tooby & Cosmides as work built on the model it challenges. Cited by DD note 1.2.
+
 ### slingerland-2000-effortless-action
 - status: usable
 - medium: text-ocr
 - cite: Edward Slingerland, "Effortless Action: The Chinese Spiritual Ideal of Wu-wei," *Journal of the American Academy of Religion* 68:2 (2000): 293–328
-- kb: `edward-slingerland_effortless-action-wu-wei_2000.md` (attributed summary, staged at workshops/DD/sources/ — not yet folded into corpus)
+- kb: `Slingerland_Effortless-Action-Wu-wei_JAAR-2000.md` (full text, folded into the corpus 2026-08); `edward-slingerland_effortless-action-wu-wei_2000.md` (attributed summary, in corpus under staging.text/DD/sources/oldsources/)
 - verified: web (DOI 10.1093/jaarel/68.2.293; author-self-archived PDF)
 - note: attributed summary note with verified page anchors. Wu-wei as pan-Chinese ideal, not Daoist-specific — documented from the *Odes* through Confucius, Mencius, Xunzi, Laozi, Zhuangzi ('counter a common perception of wu-wei as an exclusively Daoist ideal,' p. 297). Upgrades note 1.4 (S10); the paradox of wu-wei cross-links to note 3.1. ▲ ABBYY OCR artefacts in scan; key quotes checked against page images.
 
@@ -971,6 +1165,14 @@ A note's `[S#]` line points here via `[src:<key>]`. No `[S#]` may point at a `st
 - kb: `slingerland-et-al_coding-culture_2020.md` (attributed summary, staged at workshops/DD/sources/ — not yet folded into corpus)
 - verified: web (DOI 10.1017/ehs.2020.30; CC BY 4.0)
 - note: attributed summary note with verified page anchors. The eHRAF coding-validity critique by database insiders (Ember is HRAF; authors declare involvement in DRH, eHRAF, Pulotu, D-PLACE). A methods paper, not a debunking — seven recommendations. Bears on every 'coded across N societies' claim behind note 1.2. Safe to archive.
+
+### smith-1998-religion-religions-religious
+- status: usable
+- medium: text-ocr
+- cite: Jonathan Z Smith, "Religion, Religions, Religious," in Mark C Taylor (ed.), *Critical Terms for Religious Studies* (Chicago: University of Chicago Press, 1998), ch. 15, pp. 269–284
+- kb: `Taylor-ed_Critical-Terms-for-Religious-Studies_1998_incl-JZSmith.md`
+- verified: file (the closing "not a native term … theirs to define" paragraph quoted verbatim in Taylor's introduction at seg 9, attributed "(Chap. 15)"; the chapter's own text not located by keyword in the file — letter-spaced OCR in places; McKinnon 2002 gives the same passage as 1998:281–2)
+- note: The whole edited volume is in the corpus under this filename; the register entry is for Smith's chapter, the one DD cites. Religion as a scholar-made second-order generic concept. Cited by DD note 1.3.
 
 ### stenmark-2022-worldview-studies
 - status: usable
@@ -992,7 +1194,7 @@ A note's `[S#]` line points here via `[src:<key>]`. No `[S#]` may point at a `st
 - status: usable
 - medium: text
 - cite: Ann Taves, *Religious Experience Reconsidered: A Building-Block Approach to the Study of Religion and Other Special Things* (Princeton: Princeton University Press, 2009)
-- kb: `ann-taves_religious-experience-reconsidered_2009.md` (attributed summary, staged at workshops/DD/sources/ — not yet folded into corpus)
+- kb: `Taves_Religious-Experience-Reconsidered_2009.md` (full text, folded into the corpus 2026-08); `ann-taves_religious-experience-reconsidered_2009.md` (attributed summary, in corpus under staging.text/DD/sources/oldsources/)
 - verified: web (ISBN 978-0-691-14087-2, from the copyright page)
 - note: attributed summary note with verified page anchors. The methodological middle way: composites ('religions') are scholars' aggregates, but comparison rebuilds from smaller units — ascriptions of specialness, 'a deeply rooted human characteristic' (p. 34) offered as a testable hypothesis, not a fiat universal. Her mārga-derived 'special path' is the closest published analogue to dharma-as-path. Model for recasting 'every society grows one'. Full text in DD local archive (scratch/sources/part1/, gitignored); community upload.
 
@@ -1000,17 +1202,57 @@ A note's `[S#]` line points here via `[src:<key>]`. No `[S#]` may point at a `st
 - status: usable
 - medium: text-ocr
 - cite: Emily Teeter, *The Presentation of Maat: Ritual and Legitimacy in Ancient Egypt*, Studies in Ancient Oriental Civilization 57 (Chicago: Oriental Institute, 1997)
-- kb: `emily-teeter_the-presentation-of-maat_1997.md` (attributed summary, staged at workshops/DD/sources/ — not yet folded into corpus)
+- kb: `Teeter_The-Presentation-of-Maat_SAOC-57_1997.md` (full text, folded into the corpus 2026-08); `emily-teeter_the-presentation-of-maat_1997.md` (attributed summary, in corpus under staging.text/DD/sources/oldsources/)
 - verified: web (official OI/ISAC open-access edition, isac.uchicago.edu; ISBN 1-885923-05-1)
 - note: attributed summary note with verified page anchors. 205 catalogued scenes, Thutmose III to Aspelta: presenting maat was a royal monopoly bound to legitimacy — the king upholds a primordial order he never makes. ▲ Structural echo of Olivelle's royal-vocabulary dharma — both orders begin as king-maintained legitimacy machinery. Iconographic study: do not cite for ethical content (that is Lichtheim). Safe to archive.
+
+### tinbergen-1963-on-aims-and-methods-of-ethology
+- status: usable
+- medium: text-ocr
+- cite: Niko Tinbergen, "On Aims and Methods of Ethology," *Zeitschrift für Tierpsychologie* 20 (1963): 410–433
+- kb: `Tinbergen_On-Aims-and-Methods-of-Ethology_1963.md`
+- verified: file (segs 11–12; heavily garbled OCR — "survival yvaluc", "Echology")
+- note: origin of the four questions (causation, ontogeny, evolution, survival value). Pointer only; verify any wording against the printed article. Cited by DD note 1.2.
+
+### trivers-1971-evolution-of-reciprocal-altruism
+- status: usable
+- medium: text
+- cite: Robert L Trivers, "The Evolution of Reciprocal Altruism," *Quarterly Review of Biology* 46:1 (1971): 35–57
+- kb: `Trivers_The-Evolution-of-Reciprocal-Altruism_1971.md`
+- verified: file (abstract in seg 0; running head "MARCH 1971 RECIPROCAL ALTRUISM 49" in seg 29)
+- note: founding model for selection against the cheater; moralistic aggression, gratitude, guilt as regulators of the altruistic system. Cited by DD note 1.2.
+
+### varshney-2024-decolonial-ai-alignment-visesa-dharma
+- status: usable
+- medium: text
+- cite: Kush R Varshney, "Decolonial AI Alignment: Openness, Viśeṣa-Dharma, and Including Excluded Knowledges," *Proceedings of the Seventh AAAI/ACM Conference on AI, Ethics, and Society (AIES 2024)*, AAAI Press, 2024
+- kb: `Varshney_Decolonial-AI-Alignment-Openness-Visesa-Dharma_AIES-2024.md`
+- verified: file (title, IBM Research affiliation and "Copyright © 2024, Association for the Advancement of Artificial Intelligence" at segs 0–1)
+- note: Sādhāraṇa- vs viśeṣa-dharma deployed as a non-absolutist alternative to universal LLM harm taxonomies; the bridge from 1.3's boundary problem to 8.4. Cited by DD note 1.3.
 
 ### waismann-1945-verifiability
 - status: usable
 - medium: text-ocr
 - cite: Friedrich Waismann, "Verifiability," *Proceedings of the Aristotelian Society*, Supp. Vol. 19 (1945): 119–150
-- kb: `friedrich-waismann_verifiability_1945.md` (attributed summary, staged at workshops/DD/sources/ — not yet folded into corpus)
+- kb: `Waismann_Verifiability_PAS-Supp-1945.md` (full text, folded into the corpus 2026-08); `friedrich-waismann_verifiability_1945.md` (attributed summary, in corpus under staging.text/DD/sources/oldsources/)
 - verified: web (JSTOR 4106433; symposium with MacKinnon and Kneale)
 - note: attributed summary note with verified page anchors. Replaces the Wikipedia citation in note 1.3 (S15). Open texture ('Porosität der Begriffe', Kneale's translation, p. 121 n.): the impossibility of forestalling unforeseen cases, distinct from remediable vagueness. ▲ Waismann confines it to empirical description — the legal extension is Hart's, the dharma extension is DD's own; 1.3's borderline cases are closer to vagueness than open texture. Full text in DD local archive (scratch/sources/part1/, gitignored).
+
+### waldron-2002-rule-of-law-essentially-contested
+- status: usable
+- medium: text
+- cite: Jeremy Waldron, "Is the Rule of Law an Essentially Contested Concept (in Florida)?," *Law and Philosophy* 21:2 (2002), 137–164
+- kb: `Waldron_Is-the-Rule-of-Law-an-Essentially-Contested-Concept_2002.md`
+- verified: file (preprint header "forthcoming in special issue of Law and Philosophy" at seg 0; journal volume/pages not checked against the published version)
+- note: Applies Gallie to the rule of law via the 2000 Florida recount; normativity + complexity as the key to essential contestability; the "upbeat" reading of contestation. Cited by DD note 1.3.
+
+### weber-1978-economy-and-society
+- status: usable
+- medium: text-ocr
+- cite: Max Weber, *Economy and Society: An Outline of Interpretive Sociology*, ed. Guenther Roth & Claus Wittich, trans. Ephraim Fischoff et al. (Berkeley: University of California Press, 1978; German orig. 1921–22)
+- kb: `Weber_Economy-and-Society_Roth-Wittich-ed.md`
+- verified: file (Roth–Wittich edition confirmed from the kb file's front matter and running heads "BASIC SOCIOLOGICAL TERMS [Ch. I"; §§4–6 custom/convention/law/ethics located at segs 185–194, Part Two ch. I at seg 589; visible OCR noise, e.g. "caned" for "called")
+- note: Part One ch. 1 typology of usage, custom, convention and law by kind of guarantee, plus the "ethical" order valid without external guarantee — the contrastive apparatus for the custom/etiquette/law boundary. Cited by DD note 1.3.
 
 ### wikipedia-walden
 - status: usable
@@ -1305,7 +1547,7 @@ A note's `[S#]` line points here via `[src:<key>]`. No `[S#]` may point at a `st
 - status: usable
 - medium: text
 - cite: Oliver Scott Curry, Daniel Austin Mullins and Harvey Whitehouse, "Is It Good to Cooperate? Testing the Theory of Morality-as-Cooperation in 60 Societies," Current Anthropology 60(1) (2019); popularized as "Seven Moral Rules Found All Around the World" (University of Oxford press release, 2019; repr. prosocial.world)
-- kb: `posts_the-seven-moral-rules-found-all-around-the-world.md`
+- kb: `posts_the-seven-moral-rules-found-all-around-the-world.md`, `Curry-Mullins-Whitehouse_Is-It-Good-to-Cooperate_CurrentAnthropology-2019_with-commentaries.md`, `Curry-Mullins-Whitehouse_2019_SUPPLEMENT-coding-tables.md` (2019 paper: published abstract plus attributed summary, and the supplementary coding tables)
 - verified: web (https://doi.org/10.1086/701478)
 - note: Attributed summary with verified page anchors staged as `curry-mullins-whitehouse_is-it-good-to-cooperate_2019.md` (workshops/DD/sources/), covering the full typeset article INCLUDING the four published Comments (Bloom; Gintis; Smith & Kurzban, 'Morality Is Not Always Good'; Wong) and the authors' Reply — the Oxford ORA deposit of the published version, plus supplement, in the DD local archive. Key figures: 961/962 coded valence observations positive (p. 54); fairness observed in 9/60 societies; coverage confound r = 0.43 (p. 55); fairness κ = 0.14. ▲ 'None was found' is the honest gloss, not 'there are none'; the codebook's rule five has no 'legitimate' qualifier. Prefer this entry over curry-2019-seven-moral-rules (blog gloss) for any [S#] carrying weight.
 
