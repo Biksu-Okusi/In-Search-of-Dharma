@@ -70,6 +70,14 @@ A note's `[S#]` line points here via `[src:<key>]`. No `[S#]` may point at a `st
 - verified: file (masthead, DOI, received/accepted dates and CC licence in seg 0; Table 6 in seg 21; limitations in segs 25–27)
 - note: MAC-D/LIWC machine-coded extension of the 60-society study to the full eHRAF ethics corpus; authors report over-detection (κ 0.08–0.25) and no valence measurement.
 
+### almond-1988-british-discovery-of-buddhism
+- status: usable
+- medium: text-ocr
+- cite: Philip C Almond, *The British Discovery of Buddhism* (Cambridge: Cambridge University Press, 1988)
+- kb: `Almond_The-British-Discovery-of-Buddhism_1988.md`
+- verified: file (tesseract OCR provenance header at seg 0; preface and introduction at segs 0–7; "textual object" chapter at segs 15–32; letter-spaced passages e.g. seg 45)
+- note: Buddhism as a Victorian textual object "materially owned… ideologically controlled" by the West; Said applied to Buddhism. The "c. 1800" coining date often attributed to Almond is a summary gloss, not located in the scan.
+
 ### ambedkar-1936-annihilation-of-caste
 - status: usable
 - medium: text
@@ -182,6 +190,14 @@ A note's `[S#]` line points here via `[src:<key>]`. No `[S#]` may point at a `st
 - verified: file (in-press author preprint header with APA copyright line at seg 0; abstract with study Ns and 25 populations at seg 1; volume/pages from the published record)
 - note: MFQ-2 validation; the network of moral foundations varies by cultural context. Preprint, "not the copy of record".
 
+### atkinson-et-al-2015-big-questions-about-big-gods-symposium
+- status: usable
+- medium: text
+- cite: Quentin D Atkinson, Andrew J Latham, Joseph Watts et al, with Ara Norenzayan's response, "Big questions about Big Gods: response and discussion" (book symposium), *Religion, Brain & Behavior* 5:4 (2015), 266–342
+- kb: `Norenzayan_Big-Questions-About-Big-Gods-Response-and-Discussion_RBB-2015.md`
+- verified: file (T&F header with journal code rrbb20 and download date at seg 0; Atkinson lead commentary from seg 1; 164 segments)
+- note: The book symposium on *Big Gods*; the Atkinson commentary states Galton's problem against the moralising-high-god cross-cultural analyses. Author list beyond Atkinson and page range from the published record, not web-checked.
+
 ### auda-2008-maqasid-al-shariah-as-philosophy-of-islamic-law
 - status: usable
 - medium: text
@@ -222,6 +238,14 @@ A note's `[S#]` line points here via `[src:<key>]`. No `[S#]` may point at a `st
 - verified: file (section numbering §2.7 "God" at :16 matches the live entry)
 - note: Stoic physics/theology — God as active principle and eternal *logos*.
 
+### barker-2001-watching-for-violence
+- status: usable
+- medium: text
+- cite: Eileen Barker, "Watching for Violence: A Comparative Analysis of the Roles of Five Types of Cult-Watching Groups," paper, CESNUR 2001 conference (London); published in David G Bromley & J Gordon Melton (eds), *Cults, Religion and Violence* (Cambridge UP, 2002)
+- kb: `Barker_Watching-for-Violence_CESNUR-2001.md`
+- verified: file (title page and "preliminary draft" notice at seg 0; 37 segments)
+- note: Sociologist of NRMs: violence "the exception rather than the rule"; can come "from either direction"; cult-watching groups as intervening variables. The base-rate brake on the cults-equal-violence equation. ▲ Draft marked "not to be quoted without permission"; quote from the published chapter where possible.
+
 ### baron-cohen-2026-we-need-to-change-how-we-view-autism
 - status: usable
 - medium: transcript
@@ -261,6 +285,14 @@ A note's `[S#]` line points here via `[src:<key>]`. No `[S#]` may point at a `st
 - kb: `Beheim-et-al_Treatment-of-Missing-Data-Seshat-Critique_preprint-2020.md`
 - verified: file (title and author list at seg 0; published venue from the *Nature* retraction note's reference 1, not re-checked online)
 - note: The Matters Arising showing that recoding unknowns as absences produced the "complex societies precede moralizing gods" result.
+
+### bellah-1967-civil-religion-in-america
+- status: usable
+- medium: text
+- cite: Robert N Bellah, "Civil Religion in America," *Daedalus* 96:1 (Winter 1967), 1–21; reprinted with the author's 1968 headnote
+- kb: `Bellah_Civil-Religion-in-America_Daedalus-1967.md`
+- verified: file (headnote at seg 0 references the May 1966 Daedalus conference and *The Religious Situation: 1968*; Kennedy inaugural analysis at seg 2; Rousseau at seg 5)
+- note: Civil religion defended as "the subordination of the nation to ethical principles that transcend it in terms of which it should be judged"; the author's own "danger of national self-idolization" concession.
 
 ### bellah-2011-religion-in-human-evolution
 - status: usable
@@ -357,6 +389,14 @@ A note's `[S#]` line points here via `[src:<key>]`. No `[S#]` may point at a `st
 - kb: `Botero-et-al_The-Ecology-of-Religious-Beliefs_PNAS-2014.md`
 - verified: file (authors and affiliations at seg 0; n = 583 and result sentences at segs 0 and 4)
 - note: Cross-sectional ecological analysis: moralizing high gods more prevalent under ecological duress and in politically complex, property-recognising societies. Not a longitudinal secularisation finding.
+
+### bourdieu-1991-language-and-symbolic-power
+- status: usable
+- medium: text-ocr
+- cite: Pierre Bourdieu, *Language and Symbolic Power*, ed. and intro. John B Thompson, trans. Gino Raymond & Matthew Adamson (Cambridge: Polity, 1991; from *Ce que parler veut dire*, 1982)
+- kb: `Bourdieu_Language-and-Symbolic-Power_1991.md`
+- verified: file (preface at seg 0 names the French original and the added essays; "monopoly of legitimate naming" at seg 454)
+- note: ▲ Heavily letter-spaced tesseract OCR throughout; usable for retrieval and pointer, quotations must be reassembled and checked against print. Symbolic power as the monopoly of legitimate naming.
 
 ### boy-torpey-2013-inventing-the-axial-age
 - status: usable
@@ -598,6 +638,22 @@ A note's `[S#]` line points here via `[src:<key>]`. No `[S#]` may point at a `st
 - verified: file (title and "by Cory Doctorow, 2020" at seg 0; "Domination" section at seg 9)
 - note: The anti-monopoly sceptic of Zuboff's mind-control thesis: "little evidence" of bypassed rationality; monopoly as cause. Counterweight inside the critical camp.
 
+### dubrovsky-graeber-2019-another-art-world-part-1
+- status: usable
+- medium: text
+- cite: Nika Dubrovsky & David Graeber, "Another Art World, Part 1: Art Communism and Artificial Scarcity," *e-flux journal* 102 (September 2019); Anarchist Library text
+- kb: `nika-dubrovsky+david-graeber_another-art-world-part-1-art-communism-and-artificial-scarcity.md`
+- verified: file (title and authors in seg 0; e-flux venue from the published record, not web-checked)
+- note: The Stalinist "new man" and the leader as heroic genius reshaping life to a single aesthetic vision; Todorov on revolutionary remakers; Malevich's rival premise. Pre-existing citation in 7.7 that lacked a register entry.
+
+### dubuisson-2003-western-construction-of-religion
+- status: usable
+- medium: text-ocr
+- cite: Daniel Dubuisson, *The Western Construction of Religion: Myths, Knowledge, and Ideology*, trans. William Sayers (Baltimore: Johns Hopkins University Press, 2003; French orig. 1998)
+- kb: `Dubuisson_The-Western-Construction-of-Religion_2003.md`
+- verified: file (tesseract OCR provenance header at seg 0: eleven pages transcribed; title page and introduction present; "cosmographic formations" at segs 16–17)
+- note: The radical constructivist pole — "religion" replaced by "cosmographic formations." ▲ Partial scan.
+
 ### dumont-1972-homo-hierarchicus
 - status: usable
 - medium: text-ocr
@@ -629,6 +685,14 @@ A note's `[S#]` line points here via `[src:<key>]`. No `[S#]` may point at a `st
 - kb: `Dyble_Evolution-of-Altruism-Through-War-Sensitive-to-Population-Structure_PNAS-2021.md`
 - verified: file (masthead, editor line and abstract at seg 0; FST result at seg 8)
 - note: Re-runs Choi & Bowles under a wide parameter range; altruism does not evolve at empirically observed hunter-gatherer FST. A sensitivity critique, not a refutation of observed parochialism.
+
+### earp-trafimow-2015-replication-falsification-crisis-of-confidence
+- status: usable
+- medium: text
+- cite: Brian D Earp & David Trafimow, "Replication, falsification, and the crisis of confidence in social psychology," *Frontiers in Psychology* 6 (2015), art. 621, DOI 10.3389/fpsyg.2015.00621
+- kb: `OpenScienceCollaboration_Estimating-the-Reproducibility-of-Psychological-Science_Science-2015.md`
+- verified: file (title, authors, affiliations at seg 0; running head "Frontiers in Psychology | www.frontiersin.org 3 May 2015 | Volume 6 | Article 621" at seg 8)
+- note: ▲ The corpus filename is wrong — this file is Earp & Trafimow, not the Open Science Collaboration's *Science* paper, which is not in the corpus. Popperian reading of the replication crisis: negative results never compel abandoning a hypothesis; direct vs conceptual replication; loosely constructed predictions. Rename on re-harvest.
 
 ### efferson-lalive-fehr-2008-coevolution-cultural-groups-ingroup-favoritism
 - status: usable
@@ -878,6 +942,14 @@ A note's `[S#]` line points here via `[src:<key>]`. No `[S#]` may point at a `st
 - verified: file (accepted-manuscript header with citation instruction at seg 0; abstract at seg 1; journal volume/pages not checked)
 - note: Supernatural punishment beliefs as a folk technology of mutual policing, endorsed while believed necessary for others' cooperation; nine predictions reviewed.
 
+### foucault-1995-discipline-and-punish
+- status: usable
+- medium: text-ocr
+- cite: Michel Foucault, *Discipline and Punish: The Birth of the Prison*, trans. Alan Sheridan (New York: Vintage, 1995; French orig. 1975; Eng. 1977)
+- kb: `Foucault_Discipline-and-Punish_1977-1995.md`
+- verified: file ("power produces knowledge" at seg 29; "power produces; it produces reality" at seg 216 with Part Three "Panopticism" heading following)
+- note: Primary for productive/disciplinary power. Does not contain the pastoral-power argument (the word "pastoral" is absent), which remains with the unheld 1979 Tanner lecture.
+
 ### frankfort-et-al-1946-intellectual-adventure
 - status: usable
 - medium: text-ocr
@@ -933,6 +1005,14 @@ A note's `[S#]` line points here via `[src:<key>]`. No `[S#]` may point at a `st
 - kb: `Friedrich-Nietzsche_Twilight-of-the-Idols_1895.md`
 - verified: unverified
 - note: KB filename misdates the work (1895); frontmatter `year: 1888` is correct — do not reproduce 1895 in citations. Translator unnamed; section titles and phrasing ("Skirmishes of an Untimely Man", "prankishness", the "History of an Error" subtitle) match Walter Kaufmann's 1954 *Portable Nietzsche* rendering rather than the Levy edition (Ludovici's chapter is titled "Skirmishes in a War with the Age") — unverified, and a possible rights question worth the coordinator's attention. Cited by section number only ("Skirmishes" §5, §37; "How the 'True World' Finally Became a Fable"). Cited by DD note 3.4.
+
+### frydenlund-2021-protecting-buddhist-women-love-jihad-myanmar
+- status: usable
+- medium: text
+- cite: Iselin Frydenlund, "Protecting Buddhist Women from Muslim Men: 'Love Jihad' and the Rise of Islamophobia in Myanmar," *Religions* 12:12 (2021), 1082, DOI 10.3390/rel12121082 (CC BY)
+- kb: `Frydenlund_Protecting-Buddhist-Women-from-Muslim-Men-Love-Jihad-Myanmar_Religions-2021.md`
+- verified: file (MDPI citation block with DOI, dates and licence at seg 0)
+- note: Peer-reviewed mechanism for Buddhist protectionism in Myanmar — fear of sāsana decline and amyo deracination, the love-jihad trope, colonial-era anti-Indian legacies. The lethal boundary drawn around the group's women.
 
 ### galante-et-al-2021-mindfulness-based-programmes-nonclinical
 - status: usable
@@ -1109,6 +1189,14 @@ A note's `[S#]` line points here via `[src:<key>]`. No `[S#]` may point at a `st
 - kb: `Graham-Haidt-et-al_Moral-Foundations-Theory-Pragmatic-Validity_AESP-2013.md`
 - verified: file (Elsevier author's-copy header with volume, pages and ISBN at seg 0; contents at seg 1)
 - note: MFT's canonical restatement — nativism as "organized in advance of experience," the four claims, foundationhood criteria, Liberty as candidate sixth foundation.
+
+### gramsci-1971-selections-from-the-prison-notebooks
+- status: usable
+- medium: text-ocr
+- cite: Antonio Gramsci, *Selections from the Prison Notebooks*, ed. and trans. Quintin Hoare & Geoffrey Nowell Smith (London: Lawrence & Wishart, 1971)
+- kb: `Gramsci_Selections-from-the-Prison-Notebooks_1971.md`
+- verified: file (editors' introduction and running heads "GRAMSCI: PRISON NOTEBOOKS"; "The Intellectuals" hegemony/coercion passage at seg 125; religion as "multiplicity" at seg 681)
+- note: Primary for hegemony as organised consent with coercion in reserve, and for religion as internally stratified. 787 segments, OCR with stray hyphenation; segs 0–~120 are the editors' biographical introduction.
 
 ### gray-dimaggio-schein-kachanoff-2022-problem-of-purity
 - status: usable
@@ -1562,6 +1650,14 @@ Also: existing entry `curry-mullins-whitehouse-2019-seven-moral-rules` should ad
 - verified: file (running head "28 Epictetus in his Time and Place" at seg 31; heavy OCR garbling in footnotes, e.g. seg 87)
 - note: The judgement-mediation reading of Epictetus ("we do not experience the world without the mediation of our own assessments").
 
+### lorenzen-1999-who-invented-hinduism
+- status: usable
+- medium: text
+- cite: David N Lorenzen, "Who Invented Hinduism?", *Comparative Studies in Society and History* 41:4 (1999), 630–659
+- kb: `Lorenzen_Who-Invented-Hinduism_CSSH-1999.md`
+- verified: file (title, author and date at seg 0; thesis statement at seg 1; volume/pages from the published record, not web-checked)
+- note: The Indological rebuttal of the constructionist thesis — Hindu identity sharpened 1200–1500, established "long before 1800"; the counterweight to King/Almond on the category level.
+
 ### lutz-et-al-2004-gamma-synchrony
 - status: usable
 - medium: text
@@ -1609,6 +1705,14 @@ Also: existing entry `curry-mullins-whitehouse-2019-seven-moral-rules` should ad
 - kb: `Mann-et-al_Withdraw-or-Affiliate-Humiliation-During-Initiation-Rituals_CognEmotion-2016.md`
 - verified: file (UvA-DARE header, author list and received/accepted dates at seg 0; hypotheses summary at seg 7)
 - note: Three studies: initiation severity and humiliation reduce novices' affiliation, least when initiated as a group. Counterweight to the ordeal-bonds reading.
+
+### marx-1843-critique-of-hegels-philosophy-of-right-introduction
+- status: usable
+- medium: text
+- cite: Karl Marx, "A Contribution to the Critique of Hegel's Philosophy of Right: Introduction" (written 1843; *Deutsch-Französische Jahrbücher*, February 1844), trans. from the Marxists Internet Archive edition
+- kb: `Marx_Critique-of-Hegels-Philosophy-of-Right-Introduction_1843.md`
+- verified: file (the "opium of the people" passage at seg 1 with its surrounding sentences; 18 segments, born-digital)
+- note: The legitimation-ideology primary: religion as "the sigh of the oppressed creature" and the "opium of the people," expression of and protest against real suffering.
 
 ### mason-sep-value-pluralism
 - status: usable
@@ -1689,14 +1793,6 @@ Also: existing entry `curry-mullins-whitehouse-2019-seven-moral-rules` should ad
 - kb: `Michalopoulos-Xue_Folklore_QJE-2021_published.md`, `Michalopoulos-Xue_Folklore_QJE-2021_NBER-WP-25430.md` (working-paper version)
 - verified: file (OUP copyright line, DOI and pagination "1993–2046" at seg 1)
 - note: Berezkin's catalogue of oral-tradition motifs for ~1,000 societies; motifs predict present-day trust, gender and risk attitudes, including in second-generation immigrants — measured cultural persistence.
-
-### michels-1911-political-parties
-- status: usable
-- medium: text
-- cite: Robert Michels, *Political Parties: A Sociological Study of the Oligarchical Tendencies of Modern Democracy* (1911; English trans. Eden & Cedar Paul, 1915)
-- kb: —
-- verified: unverified (standard reference; note links https://en.wikipedia.org/wiki/Iron_law_of_oligarchy; no direct quotation used)
-- note: external, not in corpus. The "iron law of oligarchy" — canonical scholarly statement of the mode Malatesta 1909 predicted; cited by paraphrase only. Cited in 7.1 [S19].
 
 ### michels-1915-political-parties
 - status: usable
@@ -2057,6 +2153,14 @@ Also: existing entry `curry-mullins-whitehouse-2019-seven-moral-rules` should ad
 - verified: file (Block's introduction at segs 18–34 with the 2001 edition's footnotes; running head "The Self-Regulating Market and the Fictitious Commodities [ 79 ]" at seg 120 matches the Beacon pagination; 373 segments)
 - note: The embeddedness thesis in Polanyi's own words — "submerged in his social relationships" (seg 86), the fictitious commodities (seg 116), the countermove (seg 186). Segs 0–34 are Stiglitz/Block front matter, not Polanyi; cite from seg 35 on. OCR splits words mid-line ("so cieties") — quote after reassembly.
 
+### ponchaud-1978-cambodia-year-zero
+- status: usable
+- medium: text
+- cite: François Ponchaud, *Cambodia: Year Zero*, trans. Nancy Amphoux (New York: Holt, Rinehart & Winston, 1978; French original *Cambodge, année zéro*, Paris: Julliard, 1977)
+- kb: `Ponchaud_Cambodia-Year-Zero_1977.md`
+- verified: file (foreword dated "Paris, 20 September 1977" at seg 6; the author's account of his evidence at segs 1–5; 224 segments)
+- note: The book that named Year Zero; the author's own statement of method (fifty-six written accounts plus face-to-face meetings, refugee exaggeration discounted) replaces the "94 interviews" figure. PDF-extracted text with soft-hyphen artefacts ("re ­ locating"); quotations checked against chunks. Translator and US edition from the published record, not web-checked.
+
 ### postgate-wang-wilkinson-1995-early-writing
 - status: usable
 - medium: text
@@ -2217,6 +2321,14 @@ Also: existing entry `curry-mullins-whitehouse-2019-seven-moral-rules` should ad
 - verified: file (introduction and "Country" chapter at segs 1–7 with footnote apparatus; born-digital text, clean)
 - note: "Country" as living entity and proper noun; Rose's refusal of the conservation-ethic debate; quoted Aboriginal explanations, songs and song-poems throughout.
 
+### rosenthal-lionsroar-buddhism-ethnic-cleansing-myanmar
+- status: usable
+- medium: text
+- cite: Randy Rosenthal, "What's the connection between Buddhism and ethnic cleansing in Myanmar?", *Lion's Roar* (online; article page scraped 2023 — original publication c. 2018)
+- kb: `LionsRoar_What-does-Buddhism-have-to-do-with-the-ethnic-cleansing-in-Myanmar.md`
+- verified: file (title and byline at seg 0; body from seg 2; segs 0–1 are site navigation)
+- note: Buddhist-press journalism on Wirathu and monastic promotion of the anti-Rohingya narrative; use for the description, not for contested facts. Publication date not recoverable from the scrape.
+
 ### rosyid-2023-komunitas-samin-agama-adam
 - status: usable
 - medium: text
@@ -2248,6 +2360,14 @@ Also: existing entry `curry-mullins-whitehouse-2019-seven-moral-rules` should ad
 - kb: `Rybanska-McKay-Jong-Whitehouse_Rituals-Improve-Childrens-Ability-to-Delay-Gratification_ChildDev-2017.md`
 - verified: file (accepted-manuscript text: title at seg 0, protocol at seg 7, ritual vs instrumental instruction wording at seg 8; the filename year 2017 is the acceptance date)
 - note: 210 children, Slovakia and Vanuatu; circle-time games with ritual cues improve executive function and delay of gratification. Corpus copy is the accepted manuscript without the published abstract.
+
+### said-1978-orientalism
+- status: usable
+- medium: text-ocr
+- cite: Edward W Said, *Orientalism* (New York: Pantheon, 1978; Vintage, 1979)
+- kb: `Said_Orientalism_1979.md`
+- verified: file (introduction at segs 1–3 with the "almost a European invention" and "style of thought" passages; 464 segments; headings broken into sentences by the OCR)
+- note: The primary text behind the project's "such as orientalism"; page-anchored treatment belongs to note 7.5, which owns Said. Quote only after checking against print.
 
 ### san-code-of-research-ethics-2017
 - status: usable
@@ -2464,6 +2584,14 @@ Also: existing entry `curry-mullins-whitehouse-2019-seven-moral-rules` should ad
 - verified: file (tesseract OCR header; preface at seg 1, hidden-transcript definition at seg 3)
 - note: Hidden transcripts — offstage dissent as the standpoint that survives where open dissent is denied.
 
+### scott-1998-seeing-like-a-state
+- status: usable
+- medium: text-ocr
+- cite: James C Scott, *Seeing Like a State: How Certain Schemes to Improve the Human Condition Have Failed* (New Haven: Yale University Press, 1998; Veritas paperback 2020)
+- kb: `Scott_Seeing-Like-a-State_1998.md`, `james-c-scott_seeing-like-a-state.md` (second copy, anarchy/md/, different segmentation)
+- verified: file (tesseract provenance header and Veritas 2020 copyright page at seg 0 of the DD/sources copy; four-element passages at segs 4–6 and 92, mētis at 339–340, checked against the printed text's wording)
+- note: The four-element diagnosis of authoritarian high modernism and the mētis concept; Scott credits Kropotkin, Bakunin, Malatesta and Proudhon for the mutuality idea (seg 8). OCR text reads cleanly but re-check before quoting in Stage 2. Cited by DD note 7.7.
+
 ### scott-2017-against-the-grain
 - status: usable
 - medium: text
@@ -2556,7 +2684,7 @@ Also: existing entry `curry-mullins-whitehouse-2019-seven-moral-rules` should ad
 - status: usable
 - medium: text
 - cite: Edward Slingerland, Quentin D. Atkinson, Carol R. Ember, Oliver Sheehan, Michael Muthukrishna, Joseph Bulbulia & Russell D. Gray, "Coding culture: challenges and recommendations for comparative cultural databases," *Evolutionary Human Sciences* 2 (2020): e29
-- kb: `slingerland-et-al_coding-culture_2020.md` (attributed summary, staged at workshops/DD/sources/ — not yet folded into corpus)
+- kb: `slingerland-et-al_coding-culture_2020.md` (attributed summary, in corpus under staging.text/DD/sources/oldsources/), `Slingerland-et-al_Coding-Culture_EvolHumSci-2020.md` (full text, folded into the corpus 2026-08)
 - verified: web (DOI 10.1017/ehs.2020.30; CC BY 4.0)
 - note: attributed summary note with verified page anchors. The eHRAF coding-validity critique by database insiders (Ember is HRAF; authors declare involvement in DRH, eHRAF, Pulotu, D-PLACE). A methods paper, not a debunking — seven recommendations. Bears on every 'coded across N societies' claim behind note 1.2. Safe to archive. Cited by DD note 1.2.
 
@@ -2735,6 +2863,14 @@ Also: existing entry `curry-mullins-whitehouse-2019-seven-moral-rules` should ad
 - kb: `Trivers_The-Evolution-of-Reciprocal-Altruism_1971.md`
 - verified: file (abstract in seg 0; running head "MARCH 1971 RECIPROCAL ALTRUISM 49" in seg 29)
 - note: founding model for selection against the cheater; moralistic aggression, gratitude, guilt as regulators of the altruistic system.
+
+### truschke-2023-hindu-a-history
+- status: usable
+- medium: text
+- cite: Audrey Truschke, "Hindu: A History," *Comparative Studies in Society and History* 65:2 (2023), 246–271, DOI 10.1017/S0010417522000524 (CC BY-NC 4.0)
+- kb: `Truschke_Hindu-A-History_CSSH-2023.md`
+- verified: file (journal citation block with DOI and licence at seg 1; 64 segments)
+- note: 2,500-year multilingual history of the word "hindu"; the religious sense is recent but the term and the identity are not colonial inventions; Savarkar's "Hindutva" as a calque of "Hinduism."
 
 ### turchin-whitehouse-et-al-2022-explaining-rise-of-moralizing-religions
 - status: usable
@@ -5149,7 +5285,7 @@ Also: existing entry `curry-mullins-whitehouse-2019-seven-moral-rules` should ad
 
 ### wrangham-2019-goodness-paradox
 - status: usable
-- medium: text
+- medium: text-ocr
 - cite: Richard Wrangham, *The Goodness Paradox: The Strange Relationship Between Virtue and Violence in Human Evolution* (Pantheon Books, 2019)
 - kb: `the-goodness-paradox-the-strange-relationship-between-virtue-and-violence-in-human-evolution-2018028837-9781101870907-9781101870914_compress.md`
 - verified: web (ISBN 978-1-101-87090-7)
