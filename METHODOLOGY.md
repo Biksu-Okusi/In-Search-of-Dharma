@@ -72,7 +72,7 @@ Copy `1-foundational/_template.md` to `<category-dir>/<id>-<slug>.md`. Fill **Sy
 
 ### 5. Flag bias & gaps
 
-Fill **Tensions, gaps & corpus bias** honestly: where sources disagree, where the corpus lean shaped the answer, what external sourcing was needed and why, what is still unresolved. This section is not optional — it is how Stage 2 knows how far to trust the note.
+Fill **Tensions, gaps & corpus bias** candidly: where sources disagree, where the corpus lean shaped the answer, what external sourcing was needed and why, what is still unresolved. This section is not optional — it is how Stage 2 knows how far to trust the note.
 
 ### 6. Update the registry
 
@@ -102,6 +102,6 @@ The shared corpus mixes published scholarship, recorded speech, community epheme
 
 - **Author's own (`[A]`)** — the author's position, synthesis or hypothesis. Marked `[A]` inline, NO Sources entry, outside the `[S#]` bijection. **Never dropped for lack of an external source**; external grounding is *sought*, not required. If found, it gains an `[S#]`.
 
-- **Barred (no `[S#]`)** — a corpus file may never carry an `[S#]`. `barred:self` (self-authored/LLM prose) → its author-originated ideas become `[A]`. `barred:ephemera` (newsletters, event notices) → re-ground in a usable/external source or drop.
+- **Barred (no `[S#]`)** — such a corpus file may never carry an `[S#]`. `barred:self` (self-authored/LLM prose) → its author-originated ideas become `[A]`. `barred:ephemera` (newsletters, event notices) → re-ground in a usable/external source or drop.
 
 A note may still *discuss* a barred source as its subject via a plain-text pointer (never an `[S#]`) — "the corpus itself hosts …" — because "the corpus contains X" is self-evidencing. Such a pointer becomes an illicit citation only when the note leans on the source's *content* as evidence about the world.
