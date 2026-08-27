@@ -50,19 +50,19 @@ This is the project's whole reason for existing, so it is not negotiable.
   the note's **Sources** list. A claim with no capturable source does not belong in a
   note. The note's shape is fixed by
   [`1-foundational/_template.md`](1-foundational/_template.md).
-- In an **essay**, sources are named in the running prose ("Boehm spent a career on the question, and his answer is
-  bracing…") with **no** inline citation marks; the chain back to the
-  notes and the original works is preserved in the closing **Sources & further reading**
-  list. The essay shape and house style are fixed by
+- In an **essay**, sources are named in the running prose ("Boehm spent a career on the
+  question, and his answer is bracing…") with **no** inline citation marks; the chain back
+  to the notes and the original works is preserved in the closing **Sources & further
+  reading** list. The essay shape and house style are fixed by
   [`_essay-template.md`](_essay-template.md).
 
 If you add or change a claim, add or change its source in the same edit.
 
 ## Conventions to respect
 
-- **Research notes** live under the numbered directories (`0-preface/` and the eight categories) and are tracked in
-  the registry [`Questions.md`](Questions.md). They use the five-section template, `[S#]`
-  citations, and `[[id-slug]]` wiki-links between related notes.
+- **Research notes** live under the numbered directories (`0-preface/` and the eight
+  categories) and are tracked in the registry [`Questions.md`](Questions.md). They use the
+  five-section template, `[S#]` citations, and `[[id-slug]]` wiki-links between related notes.
 - **Essays** are the `N-<slug>.md` files at the repository root; the blueprint, with its status
   dashboard, is [`Essays.md`](Essays.md). Voice is first-person and evidence-led; a firm
   claim should read as confident, not superior.
