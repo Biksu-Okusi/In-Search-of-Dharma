@@ -72,7 +72,7 @@ The trick to holding "universal" and "wildly varied" together at once comes from
 
 ## Written across the sky
 
-You can even see the same impulse manifest on the scale of the cosmos. Many great civilisations, often independently, reached for a grand idea of *order*, a single principle fusing the heavens, society, and right conduct. India had *ṛta*, the deep rightness of things, a word the philologists prefer to render as "truth". Ancient Egypt had *ma'at*, truth and balance set against chaos, weighed against your heart after death. The Zoroastrians of Persia had *asha*, so close a cousin of *ṛta* that the two are, in effect, the same word in different mouths; and in the oldest poetry the two peoples share, reaching back some four thousand years, what one did to that truth was hold it up.
+You can even see the same impulse manifest on the scale of the cosmos. Many great civilisations, often independently, reached for a grand idea of *order*, a single principle fusing the heavens, society, and right conduct. India had *ṛta*, the deep rightness of things, a word the philologists prefer to render as "truth." Ancient Egypt had *ma'at*, truth and balance set against chaos, weighed against your heart after death. The Zoroastrians of Persia had *asha*, so close a cousin of *ṛta* that the two are, in effect, the same word in different mouths; and in the oldest poetry the two peoples share, reaching back some four thousand years, what one did to that truth was hold it up.
 
 The upholding of *ṛta* is among the most ancient formulas we can recover, and the verb in it is dharma's own root. The Greeks had *logos*, the rational order of things; the Chinese had the *Tao*, the Way; the Romans and the Christians after them had *natural law*. The cosmologies could hardly be more different. The underlying intuition reads the same every time: that reality has a grain, and that the good life means going with it rather than against it. It is the intuition from which the very word *dharma* was built. That which holds, written across the sky.
 
@@ -173,7 +173,7 @@ Research notes used in this book are published on [GitHub](https://github.com/Bi
 - [1.3 Boundary & Definition](1-foundational/1.3-boundary-definition.md) -- the four-feature test and the contrasts with custom, law, etiquette, ideology, and *artha*; dharma as a family-resemblance, essentially contested concept; and the Asad engagement (the genealogical power-objection, met with the disclosed tool).
 - [1.4 Cross-cultural Cognates](1-foundational/1.4-cross-cultural-cognates.md) -- *ṛta*, *ma'at*, *asha*, *logos*, *Tao*, and natural law as the cosmic-scale recurrence of "that which holds."
 - [3.3 The Grounding Problem](3-philosophical/3.3-grounding-problem.md) -- the planted question of whether a godless dharma can bind (paid off in Part 7).
-- [3.4 Relativism vs. Universalism](3-philosophical/3.4-relativism-universalism.md) -- the planted question of whether some dharmas are better than others (paid off in Part 8).
+- [3.4 Relativism vs Universalism](3-philosophical/3.4-relativism-universalism.md) -- the planted question of whether some dharmas are better than others (paid off in Part 8).
 - Companion essay: *Defining Definition*, published with the research notes on GitHub -- definition as a family-resemblance, power-laden, drifting tool; "map, not territory."
 
 **Key works**
