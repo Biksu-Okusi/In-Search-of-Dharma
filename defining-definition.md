@@ -4,11 +4,11 @@
 
 ---
 
-The problem of definition is one of the deepest there is, and the only honest framing of it is reflexive -- "defining definition", perhaps -- because the problem bites its own tail. What follows works through it, returning throughout to *dharma*, which happens to be a near-perfect specimen: it exhibits every pathology of meaning at once.
+The problem of definition is one of the deepest there is, and the only workable framing of it is reflexive -- "defining definition", perhaps -- because the problem bites its own tail. What follows works through it, returning throughout to *dharma*, which happens to be a near-perfect specimen: it exhibits every pathology of meaning at once.
 
 ## The request contains its own answer
 
-Ask "what is a definition?" and you immediately discover there isn't *one* thing called definition. There are at least a dozen distinct operations we file under that word:
+Ask "what is a definition?" and you immediately discover there isn't *one* thing called definition. There are at least half a dozen distinct operations we file under that word:
 
 - **Lexical/reportive**: describes how a word *is* used (can be right or wrong about usage).
 - **Stipulative**: assigns a meaning by decree ("let *X* mean…"); can't be false, only useful or useless.
@@ -38,7 +38,7 @@ The turn comes with its own discipline, and it is the piece this project has bee
 
 And the objection the functionalist turn invites -- if everything that binds and means is a religion, or a dharma, is anything *not*? -- is answered the way Rosch answered it above: membership is graded, categories have centres rather than edges. The project's four features (comprehensive, identity-constituting, oriented toward the good, reflectively self-aware) are not a recovered essence; they are functional criteria, admitted to come in degrees. Fandom sits exactly where that model predicts: high on identity, community, ritual, canon, even pilgrimage, and low on precisely one feature, an answer to how one ought to live -- near the rim, not at the centre. A borderline case that the criteria *place* rather than embarrass is the best evidence a graded scheme can ask for.
 
-*(The transcript of ReligionForBreakfast's "Fandoms are Religions" (Sept 2025) is staged in the corpus at `appliedanthropology/workshops/`; the scholarly apparatus it reports -- Tylor, Otto, the Turners, Brakke, Dalton, Smith -- is named there.)*
+*(The transcript of ReligionForBreakfast's "Fandoms are Religions" (September 2025) is staged in the corpus at `appliedanthropology/workshops/`; the scholarly apparatus it reports -- Tylor, Otto, the Turners, Brakke, Dalton, Smith -- is named there.)*
 
 ## Meaning isn't *in* the word -- and that's why no one owns it
 
@@ -48,7 +48,7 @@ If definition is hard, it's because we keep looking for meaning in the wrong pla
 
 *In the world.* Putnam and Kripke pushed the other way: "meaning ain't in the head." Whether "water" means H₂O was settled by the world, not our beliefs; we defer to a *division of linguistic labour* (I use "elm" correctly without being able to tell an elm from a beech; I'm trusting botanists). Reference gets fixed by an initial baptism and a causal chain of transmission, not by descriptions in anyone's mind.
 
-*In use, within a system.* Wittgenstein: "the meaning of a word is its use in the language." Saussure: a sign has no positive content: its value is purely its *difference* from neighbouring signs (which is why "*mouton*" ≠ "sheep/mutton" and translation always leaks). Firth: "you shall know a word by the company it keeps."
+*In use, within a system.* Wittgenstein: "the meaning of a word is its use in the language." Saussure: a sign has no positive content; its value is purely its *difference* from neighbouring signs (which is why "*mouton*" ≠ "sheep/mutton" and translation always leaks). Firth: "you shall know a word by the company it keeps."
 
 The upshot is that meaning is *relational and social*: distributed across a community, the world, and a whole web of contrasts. That is precisely why definition can never be a private act of fixing: *no individual stands outside the practice with the authority to freeze it.* Including us, with our corpus.
 
@@ -72,9 +72,9 @@ Second, *to define is to exercise power.* Drawing a boundary includes and exclud
 
 Here's where it turns from a seminar into the actual problem, because the DD corpus exists to ground future LLMs in human ethics, and this names the obstacle in its purest form.
 
-An LLM is, secretly, the most thoroughgoing anti-essentialist about meaning ever built. It learns words *distributionally*, purely from the company they keep, which is Firth, Saussure, and the use-theory implemented in linear algebra. An embedding *is* a Saussurean value: a position defined entirely by contrast with every other position. The model holds *no definitions at all*, only usage geometry. So when DD worried (note 8.4) about "flattening plural dharmas into a single machine-readable ethic," the danger is concrete and mathematical: training *averages over usage*, and averaging collapses the long tail: minority and dissenting senses get pulled toward the majority sense (the documented "model collapse" / mode-seeking). The machine doesn't *suppress* the plural meaning; it *means it away*.
+An LLM is, secretly, the most thoroughgoing anti-essentialist about meaning ever built. It learns words *distributionally*, purely from the company they keep, which is Firth, Saussure, and the use-theory implemented in linear algebra. An embedding *is* a Saussurean value: a position defined entirely by contrast with every other position. The model holds *no definitions at all*, only usage geometry. So when DD worried (note 8.4) about "flattening plural dharmas into a single machine-readable ethic," the danger is concrete and mathematical: training *averages over usage*, and averaging collapses the long tail; minority and dissenting senses get pulled toward the majority sense (the documented "model collapse" / mode-seeking). The machine doesn't *suppress* the plural meaning; it *means it away*.
 
-That's why the methodology this project settled on is the philosophically correct response to the problem of definition, and it arrived there almost by instinct. Faced with an essentially contested, drifting, family-resemblance word, the wrong move is to *define* dharma; the right move is to *map its uses, with their contexts, provenance, and tensions preserved*, which is exactly what 32 cited notes do instead of one authoritative entry. We built a *descriptive lexicon of a practice*, not a *real definition of an essence*. That instinct (don't resolve to a verdict; hold the plurality; disclose the wager) is the only honest stance once you accept that meaning lives in use.
+That's why the methodology this project settled on is the philosophically correct response to the problem of definition, and it arrived there almost by instinct. Faced with an essentially contested, drifting, family-resemblance word, the wrong move is to *define* dharma; the right move is to *map its uses, with their contexts, provenance, and tensions preserved*, which is exactly what 52 cited notes do instead of one authoritative entry. We built a *descriptive lexicon of a practice*, not a *real definition of an essence*. That instinct (don't resolve to a verdict; hold the plurality; disclose the wager) is the only honest stance once you accept that meaning lives in use.
 
 Which leaves the genuinely useful reframing. The classical question -- "what does *dharma really* mean?" -- has no answer and never did. The tractable question is the *pragmatic* one: *for what work, for whom, do we need to stabilise this word, and what plurality do we destroy by doing so?* A definition is not a truth-claim about an essence; it is a *tool*, judged like any tool by fitness for a purpose, and every act of defining is a wager that the coordination gained is worth the difference forgotten. Maps, not territory; and you choose the map by where you intend to walk.
 
