@@ -30,13 +30,21 @@ A note's `[S#]` line points here via `[src:<key>]`. No `[S#]` may point at a `st
 
 ---
 
+### al-mufakhir-2025-multikulturalisme-ajaran-sumarah
+- status: usable
+- medium: text
+- cite: Al-Mufakhir, *Multikulturalisme dalam Ajaran Sumarah: Tuntunan Wewarah dan Ritual Sujud Sumarah di Pendopo Agung Sumarah, Wirobrajan, Yogyakarta* (skripsi, UIN Sunan Kalijaga Yogyakarta, 2025), Bab I–IV
+- kb: `AlMufakhir_Multikulturalisme-dalam-Ajaran-Sumarah_UINSuka-2025_BAB-I-IV.md`
+- verified: file (abstract at seg 0; fieldwork interview dated 18 November 2024 at seg 10; author's given name and exact title not recoverable from the ingested chapters — check the UIN repository record)
+- note: Indonesian field study (Bikhu Parekh multiculturalism frame) of the Wewarah (compiled dhawuh) and Sujud at the Yogyakarta Pendopo; documents the textual dimension, the 1980 AD/ART, and the dominant/minority split over revelation. Non-Stange witness. Cited by DD notes 3.5, 3.5.1, 3.5.2, 3.5.3, 3.5.4.
+
 ### alan-barnard-1993-kropotkin-visits-the-bushmen
 - status: usable
 - medium: text
 - cite: Alan Barnard, "Primitive Communism and Mutual Aid: Kropotkin Visits the Bushmen," in C. M. Hann (ed.), *Socialism: Ideals, Ideologies, and Local Practice* (ASA Monographs 31; London: Routledge, 1993), pp. 27–42
 - kb: `Alan-Barnard_Primitive-Communism-and-Mutual-Aid_Kropotkin-Visits-the-Bushmen_1992.md`
 - verified: web (Taylor & Francis chapter page for *Socialism: Ideals, Ideologies and Local Practice*, ASA Monographs 31, ch. 10, DOI 10.4324/9780203392676; Namibia Scientific Society library catalogue record 51105 gives pp. 27–42, Routledge 1993)
-- note: Kalahari specialist auditing Kropotkin's mutual-aid reading against San ethnography — confirms the sharing pattern, qualifies it as theory-laden, bounded to the band cluster, and partly envy-management. The corpus's most nearly neutral check on the cooperative-forager picture. ▲ The KB filename year (1992) is the Anarchist Library posting date; the published chapter is 1993 — cite 1993. Cited by DD notes 2.3, 4.3.
+- note: Kalahari specialist auditing Kropotkin's mutual-aid reading against San ethnography — confirms the sharing pattern, qualifies it as theory-laden, bounded to the band cluster, and partly envy-management. The corpus's most nearly neutral check on the cooperative-forager picture. ▲ The KB filename year (1992) is the Anarchist Library posting date; the published chapter is 1993 — cite 1993.
 
 ### alfano-cheong-curry-2024-moral-universals-256-societies
 - status: usable
@@ -44,7 +52,15 @@ A note's `[S#]` line points here via `[src:<key>]`. No `[S#]` may point at a `st
 - cite: Mark Alfano, Marc Cheong & Oliver Scott Curry, "Moral universals: A machine-reading analysis of 256 societies," *Heliyon* 10 (2024) e25940, DOI 10.1016/j.heliyon.2024.e25940 (CC BY-NC-ND)
 - kb: `Alfano-Cheong-Curry_Moral-Universals-256-societies_Heliyon-2024.md`
 - verified: file (masthead, DOI, received/accepted dates and CC licence in seg 0; Table 6 in seg 21; limitations in segs 25–27)
-- note: MAC-D/LIWC machine-coded extension of the 60-society study to the full eHRAF ethics corpus; authors report over-detection (κ 0.08–0.25) and no valence measurement. Cited by DD note 1.2.
+- note: MAC-D/LIWC machine-coded extension of the 60-society study to the full eHRAF ethics corpus; authors report over-detection (κ 0.08–0.25) and no valence measurement.
+
+### ambedkar-1936-annihilation-of-caste
+- status: usable
+- medium: text
+- cite: BR Ambedkar, *Annihilation of Caste* (undelivered presidential address to the Jat-Pat-Todak Mandal, Lahore, 1936; 3rd ed. 1944), annotated edition ed. Frances W Pritchett (Columbia University, 2004)
+- kb: `Ambedkar_Annihilation-of-Caste_annotated-2004.md`
+- verified: file (prologue with the 12 December 1935 Sant Ram letter at seg 0; section headings and paragraph numbers of the annotated edition; Chaturvarnya sections at segs 45–49, Manu at seg 52, Shastras at seg 61)
+- note: The tradition-internal reformer's case against caste on grounds of practicability, harm and coercion — the counter to Dumont.
 
 ### anarchybooks-corpus-status
 - status: barred
@@ -68,7 +84,7 @@ A note's `[S#]` line points here via `[src:<key>]`. No `[S#]` may point at a `st
 - cite: Anna Prouty, "An Anarcho-Taoist Manifesto: Emotional Responsibility, Needs, and Amorphous Activism," self-published essay, 23 March 2017 (Medium — author later writing as Anna Mercury; repr. The Anarchist Library)
 - kb: `Anna-Prouty_An-Anarcho-Taoist-Manifesto_Emotional-Responsibility-Needs-and-Amorphous-Activism_2017.md`
 - verified: web (annamercury.medium.com; theanarchistlibrary.org/library/anna-prouty-an-anarcho-taoist-manifesto)
-- note: second fusion specimen — anarchist consent theory fused with *wu wei* and a needs/feelings psychology; explicitly touches Buddhism ("freeing yourself from desire, in a full Buddhist sense"). Same SPECIMEN-GRADE caveat as the Ronan entry.
+- note: second fusion specimen — anarchist consent theory fused with *wu wei* and a needs/feelings psychology; explicitly touches Buddhism ("freeing yourself from desire, in a full Buddhist sense"). Same SPECIMEN-GRADE caveat as the Ronan entry. Cited by DD note 8.3.
 
 ### anna-ronan-2019-anarchism-as-a-spiritual-practice
 - status: usable
@@ -76,7 +92,15 @@ A note's `[S#]` line points here via `[src:<key>]`. No `[S#]` may point at a `st
 - cite: Anna Ronan, "Anarchism as a Spiritual Practice," DSA Libertarian Socialist Caucus Pamphlet Program, 23 May 2019 (repr. The Anarchist Library)
 - kb: `Anna-Ronan_Anarchism-as-a-Spiritual-Practice_2019.md`
 - verified: web (dsa-lsc.org 2019-05-24 posting; theanarchistlibrary.org/library/anna-ronan-anarchism-as-a-spiritual-practice). The caucus's own disclaimer marks it as the author's opinion, not caucus consensus.
-- note: primary specimen of a live anarchist–contemplative fusion ("Anarchism is my religion"; Taoism via *The Tao of Pooh*). SPECIMEN-GRADE ONLY: a self-published movement pamphlet with no scholarly or institutional standing — citable as evidence the fusion is being attempted and for how it assembles, never as authority on whether it works. Cited by DD notes 2.5, 8.3.
+- note: primary specimen of a live anarchist–contemplative fusion ("Anarchism is my religion"; Taoism via *The Tao of Pooh*). SPECIMEN-GRADE ONLY: a self-published movement pamphlet with no scholarly or institutional standing — citable as evidence the fusion is being attempted and for how it assembles, never as authority on whether it works. Cited by DD note 8.3.
+
+### anscombe-1958-modern-moral-philosophy
+- status: usable
+- medium: text-ocr
+- cite: GEM Anscombe, "Modern Moral Philosophy," *Philosophy* 33:124 (January 1958), 1–19
+- kb: `Anscombe_Modern-Moral-Philosophy_Philosophy-1958.md`
+- verified: file (masthead "Philosophy 33, No. 124 January 1958" and the three theses at seg 0; tesseract OCR, 37 low-confidence words marked `[?]`, seg 8 scrambled)
+- note: The law-conception argument — moral "ought" as a survival from divine law, now "a word of mere mesmeric force"; moral philosophy to wait on a philosophy of psychology. Pointer for wording; check print before quoting.
 
 ### aquinas-summa-treatise-on-law
 - status: usable
@@ -94,13 +118,21 @@ A note's `[S#]` line points here via `[src:<key>]`. No `[S#]` may point at a `st
 - verified: web (ISBN 978-0-8018-4632-8); central quotation confirmed verbatim at p. 29 of the full text
 - note: attributed summary note with verified page anchors of ch. 1, 'The Construction of Religion as an Anthropological Category' (pp. 27–54) — the strongest published opponent of DD's central move, previously cited at blurb level. Full text in DD local archive (scratch/sources/part1/, gitignored); community upload, reading copy only. Cited by DD note 1.3 (S18) and Part 1.
 
+### atari-haidt-et-al-2023-morality-beyond-the-weird
+- status: usable
+- medium: text
+- cite: Mohammad Atari, Jonathan Haidt, Jesse Graham, Sena Koleva, Sean T Stevens & Morteza Dehghani, "Morality Beyond the WEIRD: How the Nomological Network of Morality Varies Across Cultures," *Journal of Personality and Social Psychology* 125:5 (2023), 1157–1188, DOI 10.1037/pspp0000470
+- kb: `Atari-Haidt-Graham-et-al_Morality-Beyond-the-WEIRD_JPSP-2023_preprint.md`
+- verified: file (in-press author preprint header with APA copyright line at seg 0; abstract with study Ns and 25 populations at seg 1; volume/pages from the published record)
+- note: MFQ-2 validation; the network of moral foundations varies by cultural context. Preprint, "not the copy of record".
+
 ### bakunin-1882-god-and-the-state
 - status: usable
 - medium: text
 - cite: Mikhail Bakunin, *God and the State* (written 1871; pub. posthumously 1882, ed. Carlo Cafiero & Élisée Reclus)
 - kb: `michail-bakunin_god-and-the-state.md` (under ``; pre-existing corpus file, not part of the 2026-07-27 fold)
 - verified: web (composition 1871, publication 1882 by Cafiero & Reclus — Wikipedia, The Anarchist Library, marxists.org; early editions contain Cafiero/Reclus rewrites)
-- note: primary text for "If God is, man is a slave", "the abdication of human reason and justice", "a master… remains none the less always a master", "if God really existed, it would be necessary to abolish him" — all four verified verbatim in the KB file (lines 140–162). Prefer this over the secondary treatments for any Bakunin quotation.
+- note: primary text for "If God is, man is a slave", "the abdication of human reason and justice", "a master… remains none the less always a master", "if God really existed, it would be necessary to abolish him" — all four verified verbatim in the KB file (lines 140–162). Prefer this over the secondary treatments for any Bakunin quotation. Cited by DD note 7.3.
 
 ### baltzly-sep-stoicism
 - status: usable
@@ -108,7 +140,7 @@ A note's `[S#]` line points here via `[src:<key>]`. No `[S#]` may point at a `st
 - cite: Dirk Baltzly, "Stoicism," *The Stanford Encyclopedia of Philosophy*, https://plato.stanford.edu/entries/stoicism/
 - kb: `SEP_Stoicism.md`
 - verified: file (section numbering §2.7 "God" at :16 matches the live entry)
-- note: Stoic physics/theology — God as active principle and eternal *logos*. Cited by DD note 1.4.
+- note: Stoic physics/theology — God as active principle and eternal *logos*.
 
 ### batchelor-2012-a-secular-buddhism-jgb
 - status: usable
@@ -124,7 +156,7 @@ A note's `[S#]` line points here via `[src:<key>]`. No `[S#]` may point at a `st
 - cite: Nicolas Baumard, Alexandre Hyafil & Pascal Boyer, "What changed during the axial age: Cognitive styles or reward systems?", *Communicative & Integrative Biology* 8:5 (2015), e1046657 — addendum to Baumard, Hyafil, Morris & Boyer, *Current Biology* 25 (2015), 10–15
 - kb: `Baumard-Hyafil-Boyer_What-Changed-During-the-Axial-Age_CIB-2015.md`
 - verified: file (journal masthead, volume and article number at seg 2; reference list segs 6–8)
-- note: The authors' own framing of the affluence hypothesis as a rival *definition* of the Axial Age (reward orientation vs cognitive style) and their scope restriction to an elite interest. Cited by DD note 2.1.
+- note: The authors' own framing of the affluence hypothesis as a rival *definition* of the Axial Age (reward orientation vs cognitive style) and their scope restriction to an elite interest.
 
 ### beheim-et-al-2021-treatment-of-missing-data-moralizing-gods
 - status: usable
@@ -132,7 +164,7 @@ A note's `[S#]` line points here via `[src:<key>]`. No `[S#]` may point at a `st
 - cite: Bret Beheim, Quentin D Atkinson, Joseph Bulbulia, Will Gervais, Russell D Gray, Joseph Henrich, Martin Lang, M Willis Monroe, Michael Muthukrishna, Ara Norenzayan, Benjamin Grant Purzycki, Azim Shariff, Edward Slingerland, Rachel Spicer & Aiyana K Willard, "Treatment of missing data determined conclusions regarding moralizing gods," *Nature* 595 (2021), E29–E34 — corpus holds the 2020 preprint
 - kb: `Beheim-et-al_Treatment-of-Missing-Data-Seshat-Critique_preprint-2020.md`
 - verified: file (title and author list at seg 0; published venue from the *Nature* retraction note's reference 1, not re-checked online)
-- note: The Matters Arising showing that recoding unknowns as absences produced the "complex societies precede moralizing gods" result. Cited by DD note 2.1.
+- note: The Matters Arising showing that recoding unknowns as absences produced the "complex societies precede moralizing gods" result.
 
 ### bellah-2011-religion-in-human-evolution
 - status: usable
@@ -140,7 +172,23 @@ A note's `[S#]` line points here via `[src:<key>]`. No `[S#]` may point at a `st
 - cite: Robert N Bellah, *Religion in Human Evolution: From the Paleolithic to the Axial Age* (Cambridge, MA: Belknap/Harvard, 2011), ISBN 978-0-674-06143-9
 - kb: `Bellah_Religion-in-Human-Evolution_2011.md`
 - verified: file (running heads "God and King", "China in the Late First Millennium bce" with page numbers at :326, :356, :557; ligature artefacts "Th e" indicate a digital PDF, not OCR)
-- note: Archaic/axial synthesis; reports Assmann's three-level ma'at and "connective justice," Jacobsen's cosmos-as-state, and the *Analects'* Dao as the Way of the former kings. Likely to serve 2.1 and 2.2 as well. Cited by DD notes 1, 2, 2.5.1.4.
+- note: Archaic/axial synthesis; reports Assmann's three-level ma'at and "connective justice," Jacobsen's cosmos-as-state, and the *Analects'* Dao as the Way of the former kings. Likely to serve 2.1 and 2.2 as well.
+
+### berlin-1958-two-concepts-of-liberty
+- status: usable
+- medium: text
+- cite: Isaiah Berlin, *Two Concepts of Liberty* (Oxford: Clarendon Press, 1958); Isaiah Berlin Virtual Library text with original pagination
+- kb: `Berlin_Two-Concepts-of-Liberty_1958.md`
+- verified: file (Virtual Library header and bracketed page numbers at seg 0; negative-liberty definition seg 3, "real self" passages segs 15–16)
+- note: The classic defence of negative liberty and the anatomy of positive liberty's slide into collective coercion.
+
+### berlin-1988-the-pursuit-of-the-ideal
+- status: usable
+- medium: text
+- cite: Isaiah Berlin, "The Pursuit of the Ideal" (Agnelli Prize address, Turin, 15 February 1988), in *The Crooked Timber of Humanity: Chapters in the History of Ideas*, ed. Henry Hardy, 2nd ed. (Princeton University Press, 2013), pp. 1–20
+- kb: `Berlin_The-Pursuit-of-the-Ideal_1988.md`
+- verified: file (headnote at seg 0 gives the 1988 Turin occasion and "second edition" provenance; running heads "THE PURSUIT OF THE IDEAL"; the pluralism-vs-relativism passage at seg 10)
+- note: Berlin's own statement of value pluralism against relativism — "a world of objective values… many. But not infinitely many".
 
 ### bodhi-2015-facing-the-great-divide
 - status: usable
@@ -148,7 +196,7 @@ A note's `[S#]` line points here via `[src:<key>]`. No `[S#]` may point at a `st
 - cite: Bhikkhu Bodhi, "Facing the Great Divide," *Inquiring Mind* 31:2 (Spring 2015)
 - kb: `Bodhi_Facing-the-Great-Divide_InquiringMind-2015.md`
 - verified: file (masthead "Spring 2015 Vol. 31 #2" and byline at seg 0; born-digital web capture)
-- note: The Theravāda traditionalist statement of the Classical/Secular divide — secular Buddhism as "a rupture with Buddhist tradition"; the counterweight to Batchelor on grain vs accretion. Cited by DD note 2.5.
+- note: The Theravāda traditionalist statement of the Classical/Secular divide — secular Buddhism as "a rupture with Buddhist tradition"; the counterweight to Batchelor on grain vs accretion. Cited by DD note 3.5.4.
 
 ### boehm-1999-hierarchy
 - status: usable
@@ -156,13 +204,15 @@ A note's `[S#]` line points here via `[src:<key>]`. No `[S#]` may point at a `st
 - cite: Christopher Boehm, *Hierarchy in the Forest: The Evolution of Egalitarian Behavior* (Harvard University Press, 1999)
 - kb: `Christopher-Boehm_Hierarchy-in-the-Forest_The-Evolution-of-Egalitarian-Behavior_HarvardUP-1999.md`, `04-chapter.md`
 - verified: web (ISBN 978-0-674-39031-7)
-- note: reverse dominance hierarchy; foragers as moral communities. Cited by DD note 2.3.### bookchin-1997-reader
+- note: reverse dominance hierarchy; foragers as moral communities. Cited by DD note 7.3.
+
+### bookchin-1997-reader
 - status: usable
 - medium: text
 - cite: Murray Bookchin, *The Murray Bookchin Reader*, ed. Janet Biehl (Cassell, 1997)
 - kb: `Murray-Bookchin_The-Murray-Bookchin-Reader_1999.md`
 - verified: web (ISBN 978-0-304-33874-0 pbk / 978-0-304-33873-3 hbk; Cassell, London 1997 — Blackwell's, AbeBooks, WorldCat)
-- note: hierarchy precedes class; gerontocracy/patriarchy/priestly guilds as first hierarchies; domination of nature projected from domination of human by human. ▲ Mixed authorship — Biehl's editorial synopses frame excerpts of Bookchin's own texts; any quotation must be attributed to the right voice (note 7.3 marks this in-text). KB filename says 1999 (Black Rose reprint); first edition Cassell 1997.
+- note: hierarchy precedes class; gerontocracy/patriarchy/priestly guilds as first hierarchies; domination of nature projected from domination of human by human. ▲ Mixed authorship — Biehl's editorial synopses frame excerpts of Bookchin's own texts; any quotation must be attributed to the right voice (note 7.3 marks this in-text). KB filename says 1999 (Black Rose reprint); first edition Cassell 1997. Cited by DD note 7.3.
 
 ### bookchin-brecher-1973-post-affluence-anarchy
 - status: usable
@@ -170,7 +220,7 @@ A note's `[S#]` line points here via `[src:<key>]`. No `[S#]` may point at a `st
 - cite: Murray Bookchin & Jeremy Brecher, "Post-Affluence Anarchy: A Dialogue" (1973) — Brecher's review of *Post-Scarcity Anarchism* (Ramparts Press, 1971), Bookchin's reply, and Brecher's rejoinder
 - kb: `Murray-Bookchin+Jeremy-Brecher_Post-Affluence-Anarchy-a-Dialogue_1973.md`
 - verified: partial (Ramparts Press 1971 for the book under review is stated in-file; the 1973 dialogue's venue is inferred from in-file internal evidence pointing to *Root & Branch* — Bookchin addresses "the *Root and Branch* people" directly; venue not independently web-confirmed)
-- note: the post-scarcity thesis carried inside its own strongest rebuttal — Brecher: projections are "science fiction," and the youth post-scarcity lifestyle ran "on the basis of parental subsidy, educational advantage, personal connections, and other forms of privilege" ("simulate 'post-scarcity'"). ▲ The thesis-statement quoted in note 6.3 is Brecher's paraphrase of Bookchin, and Bookchin protests "selective quoting" in his reply — cite as dialogue, not as Bookchin's own text. A future pass should check against `Murray-Bookchin_The-Murray-Bookchin-Reader_1999.md` (in-corpus) for Bookchin's own wording. Quotations verified verbatim against the staging.text file (segs 1, 7, 22, 26, 36).
+- note: the post-scarcity thesis carried inside its own strongest rebuttal — Brecher: projections are "science fiction," and the youth post-scarcity lifestyle ran "on the basis of parental subsidy, educational advantage, personal connections, and other forms of privilege" ("simulate 'post-scarcity'"). ▲ The thesis-statement quoted in note 6.3 is Brecher's paraphrase of Bookchin, and Bookchin protests "selective quoting" in his reply — cite as dialogue, not as Bookchin's own text. A future pass should check against `Murray-Bookchin_The-Murray-Bookchin-Reader_1999.md` (in-corpus) for Bookchin's own wording. Quotations verified verbatim against the staging.text file (segs 1, 7, 22, 26, 36). Cited by DD note 7.3.
 
 ### bookchin-foreman-1991-defending-the-earth
 - status: usable
@@ -186,7 +236,7 @@ A note's `[S#]` line points here via `[src:<key>]`. No `[S#]` may point at a `st
 - cite: Carlos A Botero, Beth Gardner, Kathryn R Kirby, Joseph Bulbulia, Michael C Gavin & Russell D Gray, "The ecology of religious beliefs," *PNAS* 111:47 (2014), 16784–16789, DOI 10.1073/pnas.1408701111
 - kb: `Botero-et-al_The-Ecology-of-Religious-Beliefs_PNAS-2014.md`
 - verified: file (authors and affiliations at seg 0; n = 583 and result sentences at segs 0 and 4)
-- note: Cross-sectional ecological analysis: moralizing high gods more prevalent under ecological duress and in politically complex, property-recognising societies. Not a longitudinal secularisation finding. Cited by DD note 2.2.
+- note: Cross-sectional ecological analysis: moralizing high gods more prevalent under ecological duress and in politically complex, property-recognising societies. Not a longitudinal secularisation finding.
 
 ### boy-torpey-2013-inventing-the-axial-age
 - status: usable
@@ -194,7 +244,7 @@ A note's `[S#]` line points here via `[src:<key>]`. No `[S#]` may point at a `st
 - cite: John D Boy & John Torpey, "Inventing the Axial Age: The Origins and Uses of a Historical Concept," *Theory and Society* 42:3 (2013), 241–259
 - kb: `Boy-Torpey_Inventing-the-Axial-Age_2013.md`
 - verified: file (running head "Theor Soc" at seg 13; Jaspers 1953 p. 23 citation and Assmann 1989/1990 citations in-text; volume/pages from the published article, not re-checked online)
-- note: Sociology-of-knowledge history of the concept — Weber's world-religions studies as precursor, Jaspers's anti-Hegelian motive, Eurasiancentrism and diffusionism, the Assmanns' critiques, Morris's "second-wave" axiality. Cited by DD note 2.1.
+- note: Sociology-of-knowledge history of the concept — Weber's world-religions studies as precursor, Jaspers's anti-Hegelian motive, Eurasiancentrism and diffusionism, the Assmanns' critiques, Morris's "second-wave" axiality.
 
 ### boyer-2001-religion-explained
 - status: usable
@@ -202,7 +252,7 @@ A note's `[S#]` line points here via `[src:<key>]`. No `[S#]` may point at a `st
 - cite: Pascal Boyer, *Religion Explained: The Evolutionary Origins of Religious Thought* (New York: Basic Books, 2001), ISBN 0-465-00695-7
 - kb: `Boyer_Religion-Explained_2001.md`
 - verified: file (tesseract OCR provenance header and subtitle at seg 0; chapter structure matches the printed edition)
-- note: Cognitive science of religion — selection among concept variants "inside each individual mind"; counterintuitive ("counterontological") concepts as the transmissible ones. OCR: the label "minimally counterintuitive" is not string-locatable; cite print for it. Cited by DD note 2.5.
+- note: Cognitive science of religion — selection among concept variants "inside each individual mind"; counterintuitive ("counterontological") concepts as the transmissible ones. OCR: the label "minimally counterintuitive" is not string-locatable; cite print for it.
 
 ### brian-morris-1998-anthropology-and-anarchism
 - status: usable
@@ -210,7 +260,7 @@ A note's `[S#]` line points here via `[src:<key>]`. No `[S#]` may point at a `st
 - cite: Brian Morris, "Anthropology and Anarchism: Learning from Stateless Societies," *Anarchy: A Journal of Desire Armed* #45, Vol. 16 No. 1 (Spring/Summer 1998); repr. in *Anthropology, Ecology, and Anarchism: A Brian Morris Reader* (PM Press, 2015)
 - kb: `Brian-Morris_Anthropology-and-Anarchism_Learning-from-Stateless-Societies_1998.md`
 - verified: web (Anarchist Library; PM Press reader contents)
-- note: the "elective affinity" of anthropology and anarchism; used in 4.3 solely for the internal anarchist critique of primitivist projection (Zerzan's "illusory images of Green primitivism," via Bookchin and Ellen). Cited by DD notes 2.3, 4.3.
+- note: the "elective affinity" of anthropology and anarchism; used in 4.3 solely for the internal anarchist critique of primitivist projection (Zerzan's "illusory images of Green primitivism," via Bookchin and Ellen).
 
 ### brian-morris-2007-people-without-government
 - status: usable
@@ -218,7 +268,7 @@ A note's `[S#]` line points here via `[src:<key>]`. No `[S#]` may point at a `st
 - cite: Brian Morris, "People Without Government," *Anarchy: A Journal of Desire Armed* #63 (Spring/Summer 2007); repr. in *Anthropology, Ecology, and Anarchism: A Brian Morris Reader* (Oakland: PM Press, 2015)
 - kb: `Brian-Morris_People-Without-Government_2007.md`
 - verified: web (Anarchist Library; PM Press reader contents list "People without Government (2007)")
-- note: anarchist synthesis of Clastres, Silberbauer, Harris, Overing on stateless societies; procedural machinery of unwritten orders (consensus, chief-without-coercion, own-kill taboo); also corrects romanticism (!Kung not "peaceful paragons"; critique of ecofeminist matriarchy myth). Secondary synthesis of others' fieldwork. Cited by DD notes 2.3, 4.3.
+- note: anarchist synthesis of Clastres, Silberbauer, Harris, Overing on stateless societies; procedural machinery of unwritten orders (consensus, chief-without-coercion, own-kill taboo); also corrects romanticism (!Kung not "peaceful paragons"; critique of ecofeminist matriarchy myth). Secondary synthesis of others' fieldwork.
 
 ### brian-morris-2008-basic-kropotkin
 - status: usable
@@ -242,7 +292,23 @@ A note's `[S#]` line points here via `[src:<key>]`. No `[S#]` may point at a `st
 - cite: Brian Morris, "Ecology and its recuperation by capitalists," orig. *Freedom* (London); text as archived at libcom.org / The Anarchist Library (retrieved there 25 May 2010)
 - kb: `Brian-Morris_Ecology-and-its-Recuperation-by-Capitalists.md`
 - verified: web (https://theanarchistlibrary.org/library/brian-morris-ecology-and-its-recuperation-by-capitalists — authorship, *Freedom* provenance and text confirmed; ▲ no publication year is given by the source, and none should be asserted. Mirrored at https://libcom.org/article/ecology-and-its-recuperation-capitalists.)
-- note: the named failure mode of a green ethic absorbed by the system it was meant to constrain — corporations "leapt aboard the green bandwagon"; "sustainable development" as sustaining capitalist growth; responsibility relocated onto individual consumers; "global management" and eco-technocracy; Sachs's line that "saving" the planet licenses "a new wave of state interventions." Short piece (4 segments), polemical register, no citations of its own beyond Bookchin, Kovel and Sachs. Cited in 8.1 [S21]. Cited by DD notes 6.3, 8.1.
+- note: the named failure mode of a green ethic absorbed by the system it was meant to constrain — corporations "leapt aboard the green bandwagon"; "sustainable development" as sustaining capitalist growth; responsibility relocated onto individual consumers; "global management" and eco-technocracy; Sachs's line that "saving" the planet licenses "a new wave of state interventions." Short piece (4 segments), polemical register, no citations of its own beyond Bookchin, Kovel and Sachs. Cited in 8.1 [S21].
+
+### britton-2019-too-much-of-a-good-thing
+- status: usable
+- medium: text
+- cite: Willoughby B Britton, "Can mindfulness be too much of a good thing? The value of a middle way," *Current Opinion in Psychology* 28 (2019), 159–165, DOI 10.1016/j.copsyc.2018.12.011
+- kb: `Britton_Can-Mindfulness-Be-Too-Much-of-a-Good-Thing_CurrOpinPsychol-2019.md`
+- verified: file (accepted-manuscript header and abstract at segs 0–1; volume/pages from the published record)
+- note: Non-monotonic (inverted-U) model of mindfulness processes, decentering included.
+
+### britton-et-al-2021-meditation-related-adverse-effects
+- status: usable
+- medium: text
+- cite: Willoughby B Britton, Jared R Lindahl, David J Cooper, Nicholas K Canby & Roman Palitsky, "Defining and Measuring Meditation-Related Adverse Effects in Mindfulness-Based Programs," *Clinical Psychological Science* 9:6 (2021), 1185–1201, DOI 10.1177/2167702621996340
+- kb: `Britton-et-al_Defining-and-Measuring-Meditation-Related-Adverse-Effects_CPS-2021.md`
+- verified: file (abstract with MedEx-I figures at seg 0; journal/volume/pages from the published record, not web-checked)
+- note: The measured side-effect rates after an 8-week MBP (83% / 58% / 37% / 6–14% lasting).
 
 ### brown-2004-human-universals-daedalus
 - status: usable
@@ -250,7 +316,7 @@ A note's `[S#]` line points here via `[src:<key>]`. No `[S#]` may point at a `st
 - cite: Donald E Brown, "Human Universals, Human Nature, Human Culture," *Daedalus* 133:4 (2004): 47–54
 - kb: `Brown_Human-Universals-Human-Nature-Human-Culture_Daedalus-2004.md`
 - verified: file (title/author and abstract in seg 0; copyright line "© Donald E. Brown" in seg 7)
-- note: Brown's own restatement of the universals programme; the list (cooperation, reciprocity, exchange, gossip, ethnocentrism) but not the 1991 book's "constant ethical patterns" phrasing. Cited by DD note 1.2.
+- note: Brown's own restatement of the universals programme; the list (cooperation, reciprocity, exchange, gossip, ethnocentrism) but not the 1991 book's "constant ethical patterns" phrasing.
 
 ### burnet-1920-early-greek-philosophy
 - status: usable
@@ -258,7 +324,7 @@ A note's `[S#]` line points here via `[src:<key>]`. No `[S#]` may point at a `st
 - cite: John Burnet, *Early Greek Philosophy*, 3rd ed. (London: A & C Black, 1920)
 - kb: `Burnet_Early-Greek-Philosophy_3rd-ed-1920.md`
 - verified: file (running head "HERAKLEITOS OF EPHESOS 133" at :182; fragment numbering matches Burnet's)
-- note: Burnet renders *logos* as "Word"; fragments cited by his numbers (fr. 2 at :182). Public domain. Cited by DD note 1.4.
+- note: Burnet renders *logos* as "Word"; fragments cited by his numbers (fr. 2 at :182). Public domain.
 
 ### cicero-de-re-publica-de-legibus-barham
 - status: usable
@@ -274,7 +340,7 @@ A note's `[S#]` line points here via `[src:<key>]`. No `[S#]` may point at a `st
 - cite: Pierre Clastres, *Society Against the State: Essays in Political Anthropology*, trans. Robert Hurley with Abe Stein (New York: Zone Books, 1989; French orig. *La Société contre l'État*, Minuit, 1974)
 - kb: `Pierre-Clastres_Society-Against-the-State_Essays-in-Political-Anthropology_1989.md`
 - verified: file (clean digital text; chieftainship essay at segs 24–40, Aché own-kill taboo at seg 116, closing "Society Against the State" essay at seg 211; edition/translator not re-checked against a title-page segment)
-- note: The primary behind Morris's synthesis — chief "has no authority at his disposal, no power of coercion, no means of giving an order"; generosity as "bondage"; the Huxley fewest-possessions line is reported, not Clastres's own. Cited by DD note 2.3.
+- note: The primary behind Morris's synthesis — chief "has no authority at his disposal, no power of coercion, no means of giving an order"; generosity as "bondage"; the Huxley fewest-possessions line is reported, not Clastres's own.
 
 ### colin-ward-1966-theory-of-organization
 - status: usable
@@ -290,7 +356,7 @@ A note's `[S#]` line points here via `[src:<key>]`. No `[S#]` may point at a `st
 - cite: Colin Ward, *Anarchy in Action* (London: Allen & Unwin, 1973; corpus text from the Freedom Press second edition, 1996 printing)
 - kb: `Colin-Ward_Anarchy-in-Action_1996.md`
 - verified: web (Allen & Unwin 1973 first edition and Freedom Press second-edition history; already externally pinned as [E9] in note 0.2). The 1996 date is the corpus file's own; the file's introduction is the second-edition text.
-- note: the "seed beneath the snow" thesis — anarchy as "a description of a mode of human organisation, rooted in the experience of everyday life," discovered and extended rather than designed; also the negative evidence (defeat everywhere, "anarchism finally died when Franco's troops entered Barcelona in 1939"; Quail epigraph on growth/decline with popular self-activity). Ward himself concedes the book is open to the charge of "a selective gathering of anecdotal evidence" — advocacy, flagged as such. Cited by DD notes 2.4, 3.1, 8.3.
+- note: the "seed beneath the snow" thesis — anarchy as "a description of a mode of human organisation, rooted in the experience of everyday life," discovered and extended rather than designed; also the negative evidence (defeat everywhere, "anarchism finally died when Franco's troops entered Barcelona in 1939"; Quail epigraph on growth/decline with popular self-activity). Ward himself concedes the book is open to the charge of "a selective gathering of anecdotal evidence" — advocacy, flagged as such. Cited by DD note 8.3.
 
 ### collier-hidalgo-maciuceanu-2006-essentially-contested-concepts
 - status: usable
@@ -298,7 +364,7 @@ A note's `[S#]` line points here via `[src:<key>]`. No `[S#]` may point at a `st
 - cite: David Collier, Fernando Daniel Hidalgo & Andra Olivia Maciuceanu, "Essentially Contested Concepts: Debates and Applications," *Journal of Political Ideologies* 11:3 (2006), 211–246, DOI 10.1080/13569310600923782
 - kb: `Collier-Hidalgo-Maciuceanu_Essentially-Contested-Concepts_2006.md`
 - verified: file (title, authors, abstract at seg 0; running page numbers 214, 217, 219 in segs 5, 9, 12 match the JPI pagination)
-- note: Systematic review of Gallie's seven criteria as a framework, with the over-aggregation/disaggregation test and Freeden's decontestation; applications to democracy and rule of law. Cited by DD note 1.3.
+- note: Systematic review of Gallie's seven criteria as a framework, with the over-aggregation/disaggregation test and Freeden's decontestation; applications to democracy and rule of law.
 
 ### crawford-2018-tan-malaka
 - status: usable
@@ -306,7 +372,7 @@ A note's `[S#]` line points here via `[src:<key>]`. No `[S#]` may point at a `st
 - cite: Oliver Crawford, *The Political Thought of Tan Malaka* (PhD dissertation, Trinity College, University of Cambridge, 2018)
 - kb: `Oliver-Crawford_The-Political-Thought-of-Tan-Malaka_2018.md`
 - verified: web (University of Cambridge Apollo repository)
-- note: scholarship *about* Tan Malaka, cited by note 7.7 as [S11] — *Madilog* (1943) as a mentality-reconstruction programme, its spread as circulated manuscript rather than by decree, the countermanding of the 1926–27 insurrection and the 1948 Madiun condemnation, plus the honesty items (the racialised *bangsa* theory, "Aslia" expansionism, the prophetic self-image). ▲ Crawford's characterisations are not Tan Malaka's own words. Entry added 2026-07-27 to close a gap left by the 2026-07-24 pass, which cited the file without registering it.
+- note: scholarship *about* Tan Malaka, cited by note 7.7 as [S11] — *Madilog* (1943) as a mentality-reconstruction programme, its spread as circulated manuscript rather than by decree, the countermanding of the 1926–27 insurrection and the 1948 Madiun condemnation, plus the honesty items (the racialised *bangsa* theory, "Aslia" expansionism, the prophetic self-image). ▲ Crawford's characterisations are not Tan Malaka's own words. Entry added 2026-07-27 to close a gap left by the 2026-07-24 pass, which cited the file without registering it. Cited by DD note 7.7.
 
 ### dhammika-1993-edicts-of-king-asoka
 - status: usable
@@ -314,7 +380,15 @@ A note's `[S#]` line points here via `[src:<key>]`. No `[S#]` may point at a `st
 - cite: Ven. S Dhammika, *The Edicts of King Asoka: An English Rendering*, The Wheel Publication 386/387 (Kandy: Buddhist Publication Society, 1993; web edition © 1994)
 - kb: `Dhammika_The-Edicts-of-King-Asoka_BPS-Wheel-386-387_1993.md`
 - verified: file (born-digital web page with BPS/Access-to-Insight navigation and "© 1994" in seg 0; preface states dependence on Sen's translation with Sircar and Bhandarkar consulted; Rock Edicts 5, 6, 12, 14 at segs 10, 11, 14, 17)
-- note: Popular but complete English rendering of the Major and Minor Rock and Pillar Edicts; a rendering, not a critical edition — pair with Hultzsch for wording disputes. Cited by DD note 2.4.
+- note: Popular but complete English rendering of the Major and Minor Rock and Pillar Edicts; a rendering, not a critical edition — pair with Hultzsch for wording disputes.
+
+### dumont-1972-homo-hierarchicus
+- status: usable
+- medium: text-ocr
+- cite: Louis Dumont, *Homo Hierarchicus: The Caste System and Its Implications*, trans. Mark Sainsbury (London: Paladin, 1972; French orig. Gallimard 1966)
+- kb: `Dumont_Homo-Hierarchicus_1972-Paladin.md`
+- verified: file (tesseract OCR provenance header, pages 1–438, 5,010 low-confidence words marked; preface and introduction passages on hierarchy vs egalitarian ideology at segs 1, 5, 25, 27, 48)
+- note: Hierarchy as a coherent value system and modern egalitarianism as "a declaration of faith" — the corpus's principal anthropological challenge to a universal floor. ▲ Low-quality scan; pointer only, verify any wording against print.
 
 ### dunbar-1993-coevolution-neocortex-group-size-language
 - status: usable
@@ -322,7 +396,15 @@ A note's `[S#]` line points here via `[src:<key>]`. No `[S#]` may point at a `st
 - cite: RIM Dunbar, "Coevolution of neocortical size, group size and language in humans," *Behavioral and Brain Sciences* 16:4 (1993), 681–735
 - kb: `Dunbar_Coevolution-of-Neocortical-Size-Group-Size-and-Language_BBS-1993.md`
 - verified: file (header states it is the unedited BBS preprint with the printed reference; ~150 group-size examples at segs 11–12)
-- note: Origin of "Dunbar's number"; the human figure is a regression extrapolation illustrated by ~150-sized communities, not a measured ceiling. Preprint, not the final typeset text. Cited by DD note 2.2.
+- note: Origin of "Dunbar's number"; the human figure is a regression extrapolation illustrated by ~150-sized communities, not a measured ceiling. Preprint, not the final typeset text.
+
+### durkheim-1915-elementary-forms-swain
+- status: usable
+- medium: text-ocr
+- cite: Émile Durkheim, *The Elementary Forms of the Religious Life*, trans. Joseph Ward Swain (London: George Allen & Unwin, 1915; French orig. 1912)
+- kb: `Durkheim_The-Elementary-Forms-of-the-Religious-Life_Swain-trans-1915.md`, `Durkheim_The-Elementary-Forms-of-the-Religious-Life_Gutenberg-41360.txt` (born-digital Gutenberg text of the same translation), `Durkheim_The-Elementary-Forms-of-the-Religious-Life_trans-Swain_1915_OCR.md` (second OCR under 3-ritual-habituation/)
+- verified: file (Introduction at seg 0; Book II ch. 7 §ii "society… is what a god is to his worshippers" at seg 205; Conclusion at seg 429)
+- note: Society as the source of moral authority and the sacred; three copies in the corpus — prefer the Gutenberg text for quotation.
 
 ### emma-goldman-1897-marriage
 - status: usable
@@ -330,7 +412,7 @@ A note's `[S#]` line points here via `[src:<key>]`. No `[S#]` may point at a `st
 - cite: Emma Goldman, "Marriage," *The Firebrand* (Portland, OR), 18 July 1897
 - kb: `Emma-Goldman_Marriage_1897.md`
 - verified: web (marxists.org Goldman archive; jwa.org — her first published writing on marriage)
-- note: "If we want to accomplish Anarchy, we must first have free women" — women's freedom as precondition, not dividend, of the revolution.
+- note: "If we want to accomplish Anarchy, we must first have free women" — women's freedom as precondition, not dividend, of the revolution. Cited by DD note 6.4.
 
 ### emma-goldman-1910-end-of-the-odyssey
 - status: usable
@@ -346,7 +428,7 @@ A note's `[S#]` line points here via `[src:<key>]`. No `[S#]` may point at a `st
 - cite: Emma Goldman, "Mary Wollstonecraft, Her Tragic Life and Her Passionate Struggle for Freedom" (1911 lecture manuscript; first published in Alice Wexler, "Emma Goldman on Mary Wollstonecraft," *Feminist Studies* 7:1 (1981), 113–133)
 - kb: `Emma-Goldman_Mary-Wollstonecraft-Her-Tragic-Life-and-Her-Passionate-Struggle-for-Freedom_1911.md`
 - verified: web (JSTOR 3177674; Feminist Studies 7:1, 1981)
-- note: tells the suffrage movement of "the inadequacy of mere external gain as a means of freeing their sex" — her critique of the emancipation movement itself.
+- note: tells the suffrage movement of "the inadequacy of mere external gain as a means of freeing their sex" — her critique of the emancipation movement itself. Cited by DD note 6.4.
 
 ### emma-goldman-1914-marriage-and-love
 - status: usable
@@ -354,7 +436,7 @@ A note's `[S#]` line points here via `[src:<key>]`. No `[S#]` may point at a `st
 - cite: Emma Goldman, "Marriage and Love," in *Anarchism and Other Essays* (Mother Earth Publishing Association, New York; 1st edn 1910, 2nd rev. edn 1911; corpus text dated 1914)
 - kb: `Emma-Goldman_Marriage-and-Love_1914.md`
 - verified: web (Wikipedia "Anarchism and Other Essays"; theanarchistlibrary.org full text)
-- note: marriage as "an economic arrangement, an insurance pact"; sardonic critique of emancipation-as-wage-labour. Polemic — cite as her position.
+- note: marriage as "an economic arrangement, an insurance pact"; sardonic critique of emancipation-as-wage-labour. Polemic — cite as her position. Cited by DD note 6.4.
 
 ### emma-goldman-1916-jealousy
 - status: usable
@@ -362,7 +444,7 @@ A note's `[S#]` line points here via `[src:<key>]`. No `[S#]` may point at a `st
 - cite: Emma Goldman, "Jealousy: Causes and a Possible Cure" (lecture text, c. 1915–16; widely reprinted from the Emma Goldman Papers)
 - kb: `Emma-Goldman_Jealousy-Causes-and-a-Possible-Cure.md`
 - verified: unverified (first-publication venue not pinned down; internal evidence — "as I shall discuss variety and monogamy two weeks from tonight" — confirms a lecture script)
-- note: grounds the anti-jealousy ethic in Morgan/Reclus "primitive" sexual-communism anthropology — dated science doing the work of scripture; attribute, never launder.
+- note: grounds the anti-jealousy ethic in Morgan/Reclus "primitive" sexual-communism anthropology — dated science doing the work of scripture; attribute, never launder. Cited by DD note 6.4.
 
 ### emma-goldman-1923-louise-michel-hirschfeld
 - status: usable
@@ -370,7 +452,7 @@ A note's `[S#]` line points here via `[src:<key>]`. No `[S#]` may point at a `st
 - cite: Emma Goldman, "Louise Michel" — refutation of Karl von Levetzow addressed to Dr. Magnus Hirschfeld, *Jahrbuch für sexuelle Zwischenstufen* 23 (1923), 70–92 (German title "Offener Brief an den Herausgeber der Jahrbücher über Louise Michel")
 - kb: `Emma-Goldman_Louise-Michel_Letter-to-Magnus-Hirschfeld_1923.md`
 - verified: web (magnus-hirschfeld.de Gedenken pages for Michel and Goldman; archive.org "emmagoldman1923"; theanarchistlibrary.org)
-- note: ▲ read in period terms (Urning/Uranian, sexual "intermediates"). Explicit 1923 defence of homosexual rights AND refutation of the "masculine woman = invert" premise; her counter-case leans on re-certifying Michel's femininity — do not project modern categories, do not sanitise.
+- note: ▲ read in period terms (Urning/Uranian, sexual "intermediates"). Explicit 1923 defence of homosexual rights AND refutation of the "masculine woman = invert" premise; her counter-case leans on re-certifying Michel's femininity — do not project modern categories, do not sanitise. Cited by DD note 6.4.
 
 ### emma-goldman-1923-my-disillusionment
 - status: usable
@@ -378,7 +460,7 @@ A note's `[S#]` line points here via `[src:<key>]`. No `[S#]` may point at a `st
 - cite: Emma Goldman, *My Disillusionment in Russia* (Garden City, NY: Doubleday, Page & Co., 1923)
 - kb: `Emma-Goldman_My-Disillusionment-in-Russia_1923.md`
 - verified: web — Wikipedia and marxists.org Goldman archive confirm publisher, year, and the publisher's unauthorised truncation (last twelve chapters and Afterword cut; title changed from "My Two Years in Russia")
-- note: primary supporter-turned-critic witness to the Soviet case; the prefaces carry the arc (defence tours 1917–18, Kronstadt as "the final wrench", departure December 1921) and the publication history in Goldman's own words. Cited in 7.7 as [S13]. Cited by DD notes 7.6, 7.7.
+- note: primary supporter-turned-critic witness to the Soviet case; the prefaces carry the arc (defence tours 1917–18, Kronstadt as "the final wrench", departure December 1921) and the publication history in Goldman's own words. Cited in 7.7 as [S13].
 
 ### emma-goldman-1924-my-further-disillusionment
 - status: usable
@@ -394,7 +476,7 @@ A note's `[S#]` line points here via `[src:<key>]`. No `[S#]` may point at a `st
 - cite: Emma Goldman, "Heroic Women of the Russian Revolution" (lecture, Folk House, Bristol, 4 May 1925)
 - kb: `Emma-Goldman_Heroic-Women-of-the-Russian-Revolution_1925.md`
 - verified: web (theanarchistlibrary.org; olebirklaursen.wordpress.com scan of the 1925 text)
-- note: deliberate counter-archive of women revolutionaries (Taratuta, Fanya Baron, Ratner, Kakhovskaia, Izmailovitch, Spiridonova); secular twin of the Therīgāthā's archival function. Also an anti-Bolshevik polemic — her framing throughout.
+- note: deliberate counter-archive of women revolutionaries (Taratuta, Fanya Baron, Ratner, Kakhovskaia, Izmailovitch, Spiridonova); secular twin of the Therīgāthā's archival function. Also an anti-Bolshevik polemic — her framing throughout. Cited by DD note 6.4.
 
 ### emma-goldman-1931-living-my-life
 - status: usable
@@ -402,7 +484,7 @@ A note's `[S#]` line points here via `[src:<key>]`. No `[S#]` may point at a `st
 - cite: Emma Goldman, *Living My Life* (Alfred A. Knopf, New York, 1931)
 - kb: `Emma-Goldman_Living-My-Life_1931.md`
 - verified: web (standard bibliography; theanarchistlibrary.org full text)
-- note: autobiography, 1303 KB segments. Self-documented internal contradiction: the movement policing her dancing and her sex-question lectures (dance rebuke; Los Angeles comrades; Kropotkin exchange). Memoir written four decades after some events — treat dialogue as her reconstruction. Cited by DD notes 2.5, 6.4.
+- note: autobiography, 1303 KB segments. Self-documented internal contradiction: the movement policing her dancing and her sex-question lectures (dance rebuke; Los Angeles comrades; Kropotkin exchange). Memoir written four decades after some events — treat dialogue as her reconstruction. Cited by DD note 6.4.
 
 ### emma-goldman-1933-has-my-life-been-worth-while
 - status: usable
@@ -411,6 +493,14 @@ A note's `[S#]` line points here via `[src:<key>]`. No `[S#]` may point at a `st
 - kb: `Emma-Goldman_Has-My-Life-Been-Worth-While_1933.md`
 - verified: unverified
 - note: end-of-life retrospective in a frankly religious register — anarchism as "my inspiration and my highest goal", its "light... diminished".
+
+### epictetus-discourses-enchiridion-long-pg10661
+- status: usable
+- medium: text
+- cite: Epictetus, *The Discourses of Epictetus, with the Encheiridion and Fragments*, trans. George Long (1877; Project Gutenberg 10661 selections)
+- kb: `Epictetus_Discourses-and-Enchiridion-selections_PG10661.txt`
+- verified: file (Long's wording confirmed at seg 75, Discourses 2.18; the complete Discourses in Long's translation is a separate file, `Epictetus_The-Discourses-complete_trans-Long_1890.md`)
+- note: Public-domain primary; Discourses 2.18 "Appearances, wait for me a little" is the Stoic metacognitive exercise.
 
 ### errico-malatesta-1884-the-economic-question
 - status: usable
@@ -442,7 +532,7 @@ A note's `[S#]` line points here via `[src:<key>]`. No `[S#]` may point at a `st
 - cite: Errico Malatesta, "Anarchists and the Situation" (June 1909; written for an English readership, per the text's own coda)
 - kb: `Errico-Malatesta_Anarchists-and-the-Situation_1909.md`
 - verified: file (quotations checked against staging.text; not separately web-verified)
-- note: pre-Michels prediction of movement bureaucratisation: syndicalism "cannot remain stationary" — either towards its ideal or into "a bureaucratic character… a factor in social conservation"; the "self-satisfied bureaucracy which will absorb the most intelligent and active elements among the proletariat." Cited in 7.1 [S14].
+- note: pre-Michels prediction of movement bureaucratisation: syndicalism "cannot remain stationary" — either towards its ideal or into "a bureaucratic character… a factor in social conservation"; the "self-satisfied bureaucracy which will absorb the most intelligent and active elements among the proletariat." Cited in 7.1 [S14]. Cited by DD note 7.1.
 
 ### errico-malatesta-1912-capitalists-and-thieves
 - status: usable
@@ -458,7 +548,7 @@ A note's `[S#]` line points here via `[src:<key>]`. No `[S#]` may point at a `st
 - cite: Errico Malatesta, "Anarchists Have Forgotten Their Principles," *Freedom* (London) 28:307, November 1914
 - kb: `Errico-Malatesta_Anarchists-Have-Forgotten-Their-Principles_1914.md`
 - verified: web (https://theanarchistlibrary.org/library/errico-malatesta-anarchists-have-forgotten-their-principles — venue *Freedom* vol. 28 no. 307 and the "bankruptcy… forgotten and betrayed" quotation confirmed)
-- note: the clean principles-under-war-pressure case: rejects "revise our formulas" in favour of "forgotten and betrayed"; deeper national feeling is "one more reason for intensifying, not abandoning" the principle. Pairs with kropotkin-1916-manifesto-of-the-sixteen as the two sides of the split. Cited in 7.1 [S15].
+- note: the clean principles-under-war-pressure case: rejects "revise our formulas" in favour of "forgotten and betrayed"; deeper national feeling is "one more reason for intensifying, not abandoning" the principle. Pairs with kropotkin-1916-manifesto-of-the-sixteen as the two sides of the split. Cited in 7.1 [S15]. Cited by DD note 7.1.
 
 ### errico-malatesta-1919-fabbri-letter
 - status: usable
@@ -466,7 +556,7 @@ A note's `[S#]` line points here via `[src:<key>]`. No `[S#]` may point at a `st
 - cite: Errico Malatesta, "On the Dictatorship of the Proletariat: A Prophetic Letter to Luigi Fabbri" (letter, London, 30 July 1919; English trans. pub. 2005)
 - kb: `Errico-Malatesta_On-the-Dictatorship-of-the-Proletariat_A-Prophetic-Letter-to-Luigi-Fabbri_2005.md`
 - verified: web — full text at The Anarchist Library and marxists.org (Malatesta archive), both dating the letter London, 30 July 1919
-- note: contemporaneous anarchist *prediction* of the Bolshevik dictatorship's outcome, made while explicitly declining to judge the news from Russia — evidence of foreseeability from design, not hindsight. ▲ The corpus also holds the same letter in an earlier English translation (`Errico-Malatesta_The-Dictatorship-of-the-Proletariat-and-Anarchy_1919.md`): one witness, two translations — do not register or count as an independent source. Cited in 7.7 as [S12]. Cited by DD notes 7.6, 7.7.
+- note: contemporaneous anarchist *prediction* of the Bolshevik dictatorship's outcome, made while explicitly declining to judge the news from Russia — evidence of foreseeability from design, not hindsight. ▲ The corpus also holds the same letter in an earlier English translation (`Errico-Malatesta_The-Dictatorship-of-the-Proletariat-and-Anarchy_1919.md`): one witness, two translations — do not register or count as an independent source. Cited in 7.7 as [S12]. Cited by DD note 7.7.
 
 ### errico-malatesta-1920-an-anarchist-programme
 - status: usable
@@ -474,7 +564,7 @@ A note's `[S#]` line points here via `[src:<key>]`. No `[S#]` may point at a `st
 - cite: Errico Malatesta (draft), "An Anarchist Programme", adopted by the Unione Anarchica Italiana, Bologna congress, 1920
 - kb: `Errico-Malatesta_An-Anarchist-Programme_1920.md`
 - verified: web (The Anarchist Library / marxists.org confirm the 1920 UAI Bologna congress adoption)
-- note: "equal liberty of everybody" as the sole limit on freedom; ideal achievable only "with the free consent of all". Used in 3.1 as [S12]. Cited by DD notes 2.4, 3.1.
+- note: "equal liberty of everybody" as the sole limit on freedom; ideal achievable only "with the free consent of all". Used in 3.1 as [S12].
 
 ### errico-malatesta-1922-at-the-cafe
 - status: usable
@@ -522,7 +612,7 @@ A note's `[S#]` line points here via `[src:<key>]`. No `[S#]` may point at a `st
 - cite: Léo Fitouchi, Manvir Singh, Jean-Baptiste André & Nicolas Baumard, "Prosocial religions as folk-technologies of mutual policing," *Psychological Review* (accepted manuscript, 2023; published 2024)
 - kb: `Fitouchi-Singh-Andre-Baumard_Prosocial-Religions-as-Folk-Technologies-of-Mutual-Policing_2023.md`
 - verified: file (accepted-manuscript header with citation instruction at seg 0; abstract at seg 1; journal volume/pages not checked)
-- note: Supernatural punishment beliefs as a folk technology of mutual policing, endorsed while believed necessary for others' cooperation; nine predictions reviewed. Cited by DD note 2.4.
+- note: Supernatural punishment beliefs as a folk technology of mutual policing, endorsed while believed necessary for others' cooperation; nine predictions reviewed.
 
 ### frankfort-et-al-1946-intellectual-adventure
 - status: usable
@@ -530,7 +620,7 @@ A note's `[S#]` line points here via `[src:<key>]`. No `[S#]` may point at a `st
 - cite: H Frankfort, HA Frankfort, JA Wilson, T Jacobsen & WA Irwin, *The Intellectual Adventure of Ancient Man: An Essay on Speculative Thought in the Ancient Near East* (Chicago: University of Chicago Press, 1946); OI open-access scan
 - kb: `Frankfort-et-al_The-Intellectual-Adventure-of-Ancient-Man_1946.md`
 - verified: file (preface and chapter list at :1; "oi.uchicago.edu" running footer; Jacobsen "The Cosmos as a State" header at :131)
-- note: The classic cross-civilisation treatment of cosmic order; Jacobsen's Egypt/Mesopotamia mood contrast and "cosmos as a state." OCR: Wilson's *ma'at* is not recoverable by string search — locate via "justice"/"order" context. Cited by DD note 1.4.
+- note: The classic cross-civilisation treatment of cosmic order; Jacobsen's Egypt/Mesopotamia mood contrast and "cosmos as a state." OCR: Wilson's *ma'at* is not recoverable by string search — locate via "justice"/"order" context.
 
 ### friedrich-nietzsche-1882-the-gay-science
 - status: usable
@@ -538,7 +628,7 @@ A note's `[S#]` line points here via `[src:<key>]`. No `[S#]` may point at a `st
 - cite: Friedrich Nietzsche, *The Gay Science* (1882; Book V added 1887). Unattributed English translation; internal evidence (editorial note naming Petre/Cohn for the verse only, "Joyful Wisdom" framing) suggests the Oscar Levy *Complete Works* edition (Thomas Common, 1910), unverified.
 - kb: `Friedrich-Nietzsche_The-Gay-Science_1882.md`
 - verified: unverified
-- note: translator unnamed in file — cite by § only, paraphrase only, no translation-sensitive word choices. Used in 3.4 for §116 (herd-instinct, community-relative moralities), §143 (polytheism as prototype of plural norms), §345 (both consensus→universalism and disagreement→relativism inferences dismissed). ▲ §345 also used by note 3.3 for the grounding question — same section, different claims. Cited by DD notes 3.3, 3.4.
+- note: translator unnamed in file — cite by § only, paraphrase only, no translation-sensitive word choices. Used in 3.4 for §116 (herd-instinct, community-relative moralities), §143 (polytheism as prototype of plural norms), §345 (both consensus→universalism and disagreement→relativism inferences dismissed). ▲ §345 also used by note 3.3 for the grounding question — same section, different claims. Cited by DD note 3.4.
 
 ### friedrich-nietzsche-1883-thus-spoke-zarathustra
 - status: usable
@@ -546,7 +636,7 @@ A note's `[S#]` line points here via `[src:<key>]`. No `[S#]` may point at a `st
 - cite: Friedrich Nietzsche, *Thus Spoke Zarathustra: A Book for All and None* (1883–1891). Unattributed English translation; archaising register ("hangeth", "valueth") matches the Levy-series Thomas Common rendering, unverified.
 - kb: `Friedrich-Nietzsche_Thus-Spoke-Zarathustra_A-Book-for-All-and-None_1883.md`
 - verified: unverified
-- note: translator unnamed in file — cite by part and chapter title, paraphrase only. Used in 3.4 for Part I, "The Thousand and One Goals" (plural created tables of value; humanity's one goal still lacking). File contains the chapter twice (lines ~1212 and ~7824 — apparent duplicate text block within the file).
+- note: translator unnamed in file — cite by part and chapter title, paraphrase only. Used in 3.4 for Part I, "The Thousand and One Goals" (plural created tables of value; humanity's one goal still lacking). File contains the chapter twice (lines ~1212 and ~7824 — apparent duplicate text block within the file). Cited by DD note 3.4.
 
 ### friedrich-nietzsche-1886-beyond-good-and-evil
 - status: usable
@@ -554,7 +644,7 @@ A note's `[S#]` line points here via `[src:<key>]`. No `[S#]` may point at a `st
 - cite: Friedrich Nietzsche, *Beyond Good and Evil: Prelude to a Philosophy of the Future* [*Jenseits von Gut und Böse*] (1886)
 - kb: `Friedrich-Nietzsche_Beyond-Good-and-Evil_Prelude-to-a-Philosophy-of-the-Future_1886.md`
 - verified: unverified
-- note: translator unnamed; full-capital emphasis matches Helen Zimmern (Levy edition, Project Gutenberg circulation) — indication, not verification. Cited by § only (§186: the foundation-hunt takes morality as "given"; "the problem of morality itself has been omitted"). Cited by DD notes 3.3, 3.4.
+- note: translator unnamed; full-capital emphasis matches Helen Zimmern (Levy edition, Project Gutenberg circulation) — indication, not verification. Cited by § only (§186: the foundation-hunt takes morality as "given"; "the problem of morality itself has been omitted"). Cited by DD note 3.4.
 
 ### friedrich-nietzsche-1887-genealogy-of-morals
 - status: usable
@@ -562,7 +652,7 @@ A note's `[S#]` line points here via `[src:<key>]`. No `[S#]` may point at a `st
 - cite: Friedrich Nietzsche, *The Genealogy of Morals: A Polemic* (1887). Unattributed English translation; register consistent with the Levy-series Horace B. Samuel rendering (1913), unverified.
 - kb: `Friedrich-Nietzsche_The-Genealogy-of-Morals_A-Polemic_1887.md`
 - verified: unverified
-- note: translator unnamed in file — cite by essay and § only, paraphrase only. Used in 3.4 for Preface §6 (critique of the value of moral values; power-and-splendour-of-the-type standard) and the First Essay's concluding note (rank-order of values as the philosopher's task; majority-good denied intrinsic superiority). ▲ Preface §6 also used by note 3.3 — same section, different claims. Cited by DD notes 3.3, 3.4.
+- note: translator unnamed in file — cite by essay and § only, paraphrase only. Used in 3.4 for Preface §6 (critique of the value of moral values; power-and-splendour-of-the-type standard) and the First Essay's concluding note (rank-order of values as the philosopher's task; majority-good denied intrinsic superiority). ▲ Preface §6 also used by note 3.3 — same section, different claims. Cited by DD note 3.4.
 
 ### friedrich-nietzsche-1888-twilight-of-the-idols
 - status: usable
@@ -570,7 +660,7 @@ A note's `[S#]` line points here via `[src:<key>]`. No `[S#]` may point at a `st
 - cite: Friedrich Nietzsche, *Twilight of the Idols* [*Götzen-Dämmerung*] (written 1888, pub. 1889)
 - kb: `Friedrich-Nietzsche_Twilight-of-the-Idols_1895.md`
 - verified: unverified
-- note: KB filename misdates the work (1895); frontmatter `year: 1888` is correct — do not reproduce 1895 in citations. Translator unnamed; section titles and phrasing ("Skirmishes of an Untimely Man", "prankishness", the "History of an Error" subtitle) match Walter Kaufmann's 1954 *Portable Nietzsche* rendering rather than the Levy edition (Ludovici's chapter is titled "Skirmishes in a War with the Age") — unverified, and a possible rights question worth the coordinator's attention. Cited by section number only ("Skirmishes" §5, §37; "How the 'True World' Finally Became a Fable"). Cited by DD notes 3.3, 3.4.
+- note: KB filename misdates the work (1895); frontmatter `year: 1888` is correct — do not reproduce 1895 in citations. Translator unnamed; section titles and phrasing ("Skirmishes of an Untimely Man", "prankishness", the "History of an Error" subtitle) match Walter Kaufmann's 1954 *Portable Nietzsche* rendering rather than the Levy edition (Ludovici's chapter is titled "Skirmishes in a War with the Age") — unverified, and a possible rights question worth the coordinator's attention. Cited by section number only ("Skirmishes" §5, §37; "How the 'True World' Finally Became a Fable"). Cited by DD note 3.4.
 
 ### gallie-1956-essentially-contested-concepts
 - status: usable
@@ -588,13 +678,29 @@ A note's `[S#]` line points here via `[src:<key>]`. No `[S#]` may point at a `st
 - verified: web (ISBN 978-0-465-09719-7); quotations verified against the full book scan
 - note: attributed summary note with verified page anchors. The definition Asad attacks, and the position DD's four-feature test structurally occupies. Geertz himself disclaims essence-hunting ('it is notorious that definitions establish nothing,' p. 90). Distinct work from the KB's *Religion of Java*. Full text in DD local archive (scratch/sources/part1/, gitignored); community upload, reading copy only.
 
+### geertz-1973-impact-of-the-concept-of-culture
+- status: usable
+- medium: text
+- cite: Clifford Geertz, "The Impact of the Concept of Culture on the Concept of Man," in *The Interpretation of Cultures: Selected Essays* (New York: Basic Books, 1973), ch. 2, pp. 33–54
+- kb: `Geertz_Impact-of-the-Concept-of-Culture-on-the-Concept-of-Man_1973.md`
+- verified: file (book title, publisher, ©1973 and "Chapter 2" at seg 0; consensus gentium critique segs 6–8; "unfinished animals" seg 19)
+- note: The classic anthropological case against consensus-gentium universals ("fake universals") and for culture as constitutive of the human.
+
+### geertz-1973-interpretation-of-cultures
+- status: usable
+- medium: text-ocr
+- cite: Clifford Geertz, *The Interpretation of Cultures: Selected Essays* (New York: Basic Books, 1973)
+- kb: `Geertz_The-Interpretation-of-Cultures_1973.md`
+- verified: file (essay text of "Ethos, World View, and the Analysis of Sacred Symbols" at segs 175–180 and "Religion as a Cultural System" earlier; hyphenation artefacts "artic­ ulate" indicate a scanned PDF)
+- note: Whole collection in the corpus under this filename; DD cites the rasa passage of "Ethos, World View" (1957). Cited by DD note 3.5.3.
+
 ### gellner-curry-cook-alfano-venkatesan-2020-gdat-debate
 - status: usable
 - medium: text
 - cite: David N. Gellner (ed.), Oliver Scott Curry, Joanna Cook, Mark Alfano & Soumhya Venkatesan, "Debate: Morality is fundamentally an evolved solution to problems of social co-operation," *Journal of the Royal Anthropological Institute* 26:2 (2020): 415–427
 - kb: `gellner-curry-cook-alfano-venkatesan_gdat-debate-morality-as-cooperation_2020.md` (attributed summary, staged at workshops/DD/sources/ — not yet folded into corpus)
 - verified: web (Oxford ORA deposit, CC BY-NC)
-- note: attributed summary note with verified page anchors. The formal GDAT motion: Curry proposes, Alfano seconds (needs/capabilities grounding), Cook and Venkatesan oppose. Attribute by speaker — the methodological objections DD needs are Venkatesan's (p. 422). Vote swing 13–6 → 4–24, unreliable per the chair (p. 415). Curry Templeton-funded (TWCF0164, p. 426).
+- note: attributed summary note with verified page anchors. The formal GDAT motion: Curry proposes, Alfano seconds (needs/capabilities grounding), Cook and Venkatesan oppose. Attribute by speaker — the methodological objections DD needs are Venkatesan's (p. 422). Vote swing 13–6 → 4–24, unreliable per the chair (p. 415). Curry Templeton-funded (TWCF0164, p. 426). Cited by DD note 1.2.
 
 ### gethin-2004-he-who-sees-dhamma
 - status: usable
@@ -602,7 +708,7 @@ A note's `[S#]` line points here via `[src:<key>]`. No `[S#]` may point at a `st
 - cite: Rupert Gethin, "He Who Sees Dhamma Sees Dhammas: Dhamma in Early Buddhism," *Journal of Indian Philosophy* 32 (2004): 513–542; repr. in Olivelle (ed.), *Dharma* (Delhi: MLBD, 2009), 91–120
 - kb: `Olivelle-ed_Dharma-Semantic-Cultural-Religious-History_2009_INCOMPLETE-SCAN.md` (full text, folded into the corpus 2026-08); `rupert-gethin_he-who-sees-dhamma-sees-dhammas_2004.md` (attributed summary, in corpus under staging.text/DD/sources/oldsources/)
 - verified: web (DOI 10.1007/s10781-004-8633-6 for the JIP original; read from the MLBD reprint scan)
-- note: ▲ Full text is an incomplete tesseract scan of the 2009 MLBD volume (preface letter-spaced; Brereton/Horsch articles absent). attributed summary note with verified page anchors (MLBD pagination; +422 for JIP). Argues the senses of dhamma cohere genealogically around 'support/maintain' — against homonymy, cutting against Part 1's rope-not-thread rhetoric for the Buddhist case while vindicating 'that which holds'. ▲ Same incomplete, poor-OCR volume scan as the Olivelle entry; unreliable for verbatim transliterated Pali.
+- note: ▲ Full text is an incomplete tesseract scan of the 2009 MLBD volume (preface letter-spaced; Brereton/Horsch articles absent). attributed summary note with verified page anchors (MLBD pagination; +422 for JIP). Argues the senses of dhamma cohere genealogically around 'support/maintain' — against homonymy, cutting against Part 1's rope-not-thread rhetoric for the Buddhist case while vindicating 'that which holds'. ▲ Same incomplete, poor-OCR volume scan as the Olivelle entry; unreliable for verbatim transliterated Pali. Cited by DD note 1.4.
 
 ### glenn-roberts-2020-the-dharma-of-dog
 - status: usable
@@ -610,7 +716,7 @@ A note's `[S#]` line points here via `[src:<key>]`. No `[S#]` may point at a `st
 - cite: Glenn Roberts, "Dog Dharma: The Dharma of Dog," talk for the final study retreat of the Secular Dharma Course 2018–19, Bodhi College (delivered Nov 2019; finalised Feb 2020)
 - kb: `Glenn-Roberts_The-Dharma-of-Dog.md` (duplicate content: `Glenn-Roberts_Bodhi-Talk-2020-02-08.md`)
 - verified: file (unpublished; no external record to check)
-- note: practitioner itinerary (post-Christian → Triratna → MBSR → Bodhi College); the "3 jewels" of dog training (trainer, instruction, "comradely community of other dog owners") as spontaneous secular restatement of the practice–ethics–community bundle; "intriguing parallels with what I've previously known as the Path to Recovery". Same course/community milieu as the item above — weaker form of the same circularity caveat; specimen evidence only. The two KB files are the same talk; cite once.
+- note: practitioner itinerary (post-Christian → Triratna → MBSR → Bodhi College); the "3 jewels" of dog training (trainer, instruction, "comradely community of other dog owners") as spontaneous secular restatement of the practice–ethics–community bundle; "intriguing parallels with what I've previously known as the Path to Recovery". Same course/community milieu as the item above — weaker form of the same circularity caveat; specimen evidence only. The two KB files are the same talk; cite once. Cited by DD note 6.1.
 
 ### glenn-roberts-2023-on-the-dharma-of-dharmas
 - status: usable
@@ -618,7 +724,7 @@ A note's `[S#]` line points here via `[src:<key>]`. No `[S#]` may point at a `st
 - cite: Glenn Roberts, "On the Dharma of Dharmas," talk for John's group, 20 November 2023
 - kb: `Glenn-Roberts_On-the-dharma-of-dharmas.md`
 - verified: file (unpublished; no external record to check)
-- note: the presentist strategy in practice — dharmas (plural) as the mind's maps/models; "dark dharmas"; "the Dharmic value of a dharma teaching" defined as "it's helpfulness in living our lives" (the testimony success-criterion note 6.1 flags as insufficient). Same milieu caveat; specimen evidence only.
+- note: the presentist strategy in practice — dharmas (plural) as the mind's maps/models; "dark dharmas"; "the Dharmic value of a dharma teaching" defined as "it's helpfulness in living our lives" (the testimony success-criterion note 6.1 flags as insufficient). Same milieu caveat; specimen evidence only. Cited by DD note 6.1.
 
 ### glenn-roberts-archie-roberts
 - status: barred
@@ -642,7 +748,7 @@ A note's `[S#]` line points here via `[src:<key>]`. No `[S#]` may point at a `st
 - cite: Glenn Roberts, "Dharma is true and Buddhism is Not: Some further thoughts from Glenn" (unpublished community paper, undated, c. 2019–20; internal evidence: written "following Gary's presentation on 'why dharma is true and Buddhism not'" at the final retreat of the Bodhi College Secular Dharma Course 2018–19, and mentions a Bodhi College open day in London, 1 Dec)
 - kb: `Glenn-Roberts_Dharma.md`
 - verified: file (unpublished; no external record to check)
-- note: ▲ CIRCULAR with respect to this project — it is a direct response to the project author's own presentation. May be cited ONLY as a primary specimen of how the secular-dharma community uses and disputes the word (vocabulary dispute, -ism cost analysis, "healthful wisdom" naturalisation proposal), NEVER as independent support for the author's thesis. Note 6.1 states the circularity in Findings and Tensions wherever it is used.
+- note: ▲ CIRCULAR with respect to this project — it is a direct response to the project author's own presentation. May be cited ONLY as a primary specimen of how the secular-dharma community uses and disputes the word (vocabulary dispute, -ism cost analysis, "healthful wisdom" naturalisation proposal), NEVER as independent support for the author's thesis. Note 6.1 states the circularity in Findings and Tensions wherever it is used. Cited by DD note 6.1.
 
 ### glenn-roberts-dog-dharma-notes
 - status: barred
@@ -650,7 +756,7 @@ A note's `[S#]` line points here via `[src:<key>]`. No `[S#]` may point at a `st
 - medium: text
 - kb: `Glenn-Roberts_Dog-Dharma-Notes.md`
 - verified: unverified
-- note: private working notes in letter form ("Dear Stephen"); superseded by the finished talk in `Glenn-Roberts_The-Dharma-of-Dog.md` and `Glenn-Roberts_Bodhi-Talk-2020-02-08.md`. Cite the finished piece, not the notes.
+- note: private working notes in letter form ("Dear Stephen"); superseded by the finished talk in `Glenn-Roberts_The-Dharma-of-Dog.md` and `Glenn-Roberts_Bodhi-Talk-2020-02-08.md`. Cite the finished piece, not the notes. Cited by DD note 6.1.
 
 ### goldman-1913-failure-of-christianity
 - status: usable
@@ -676,13 +782,21 @@ A note's `[S#]` line points here via `[src:<key>]`. No `[S#]` may point at a `st
 - verified: unverified
 - note: a mass movement's death discussed by its participants as it happened; two incompatible post-mortems inside one exchange — contested memory, not causal history.
 
+### goyal-et-al-2014-meditation-programs-meta-analysis
+- status: usable
+- medium: text
+- cite: Madhav Goyal et al., "Meditation Programs for Psychological Stress and Well-being: A Systematic Review and Meta-analysis," *JAMA Internal Medicine* 174:3 (2014), 357–368, DOI 10.1001/jamainternmed.2013.13018
+- kb: `Goyal-et-al_Meditation-Programs-for-Psychological-Stress-and-Well-being_JAMAIM-2014.md`
+- verified: file (NIH author-manuscript header "JAMA Intern Med. Author manuscript; available in PMC 2015 March 01" at seg 10; findings at segs 1, 8)
+- note: AHRQ-commissioned review, 47 trials; small effects with moderate evidence, insufficient evidence on attention.
+
 ### graeber-2011-debt-the-first-5000-years
 - status: usable
 - medium: text-ocr
 - cite: David Graeber, *Debt: The First 5,000 Years* (Brooklyn: Melville House, 2011)
 - kb: `Graeber_Debt-The-First-5000-Years_2011.md`
 - verified: file (letter-spaced running heads "T H E A X I AL A G E 2 2 9" at seg 280, "C R E D I T V E R S US B ULL I O N 2 1 3" at seg 262 match the Melville House pagination; ch. 9 spans segs ~274–308)
-- note: The book itself, distinct from the 2009 Mute essay carried as `graeber-2009-debt-first-five-thousand-years`; ch. 9 "The Axial Age" is the source of the military-coinage-slavery complex and the markets/world-religions complementarity. Cited by DD note 2.1.
+- note: The book itself, distinct from the 2009 Mute essay carried as `graeber-2009-debt-first-five-thousand-years`; ch. 9 "The Axial Age" is the source of the military-coinage-slavery complex and the markets/world-religions complementarity.
 
 ### graeber-wengrow-2021-dawn
 - status: usable
@@ -690,13 +804,15 @@ A note's `[S#]` line points here via `[src:<key>]`. No `[S#]` may point at a `st
 - cite: David Graeber & David Wengrow, *The Dawn of Everything: A New History of Humanity* (Farrar, Straus and Giroux, 2021)
 - kb: `Dawn_of_Everything-David_Graeber.md`, `Dawn-of-Everything.md`
 - verified: web (ISBN 978-0-374-15735-7)
-- note: disputes a single "original condition"; egalitarian-forager baseline not uniform. Cited by DD note 2.3.### gulenc-2016-physis-nomos-sophists
+- note: disputes a single "original condition"; egalitarian-forager baseline not uniform.
+
+### gulenc-2016-physis-nomos-sophists
 - status: usable
 - medium: text
 - cite: N Petek Boyacı Gülenç, "An Enquiry on Physis–Nomos Debate: Sophists," *Synthesis Philosophica* 61 (1/2016), 39–53, DOI 10.21464/sp31103
 - kb: `Gulenc_Physis-Nomos-Debate-Sophists_2016.md`
 - verified: file (journal header, DOI and page range in chunks :0 and :11)
-- note: Review article; supplies the Antiphon F44 quotation and the Antiphon/Callicles split on what physis grounds. Cited by DD note 1.4.
+- note: Review article; supplies the Antiphon F44 quotation and the Antiphon/Callicles split on what physis grounds.
 
 ### gurlesin-2024-implicit-religion-xr
 - status: usable
@@ -746,6 +862,14 @@ A note's `[S#]` line points here via `[src:<key>]`. No `[S#]` may point at a `st
 - verified: file (footnote 1 is Knabb's translator note on anglicising "détournement"); edition not web-checked
 - note: manifesto for the partisan re-use of the dominant culture's material against it; ancestor of culture jamming. Also contains the laws of détournement.
 
+### hadot-1995-philosophy-as-a-way-of-life
+- status: usable
+- medium: text-ocr
+- cite: Pierre Hadot, *Philosophy as a Way of Life: Spiritual Exercises from Socrates to Foucault*, ed. Arnold I Davidson, trans. Michael Chase (Oxford: Blackwell, 1995), ISBN 0-631-18033-8
+- kb: `Hadot_Philosophy-as-a-Way-of-Life_1995.md`
+- verified: file (running head "Spiritual Exercises 85" at seg 102; OCR with hyphenation artefacts)
+- note: *Prosochē* as the fundamental Stoic spiritual exercise ("Spiritual Exercises" chapter, segs 101–102).
+
 ### halbfass-1988-india-and-europe-ch17
 - status: usable
 - medium: text-ocr
@@ -760,7 +884,7 @@ A note's `[S#]` line points here via `[src:<key>]`. No `[S#]` may point at a `st
 - cite: Eugene Halton, *From the Axial Age to the Moral Revolution: John Stuart-Glennie, Karl Jaspers, and a New Understanding of the Idea* (New York: Palgrave Macmillan, 2014)
 - kb: `Halton_From-the-Axial-Age-to-the-Moral-Revolution_2014.md`
 - verified: file (tesseract OCR header at seg 0; title and preface; Stuart-Glennie's 1873 dating at seg 2)
-- note: Recovers Stuart-Glennie's 1873 "Moral Revolution" as a precursor to Jaspers; frames the shift as conscience over custom. Cited by DD note 2.1.
+- note: Recovers Stuart-Glennie's 1873 "Moral Revolution" as a precursor to Jaspers; frames the shift as conscience over custom.
 
 ### hammurabi-code-trans-king-1910-avalon
 - status: usable
@@ -768,7 +892,7 @@ A note's `[S#]` line points here via `[src:<key>]`. No `[S#]` may point at a `st
 - cite: *The Code of Hammurabi*, trans. LW King (1910), Avalon Project, Yale Law School, https://avalon.law.yale.edu/ancient/hamframe.asp
 - kb: `Avalon_The-Code-of-Hammurabi_trans-King.md` (Harper's 1904 edition is `Harper_The-Code-of-Hammurabi-King-of-Babylon_1904.md`)
 - verified: file (prologue at seg 0; §§176–177 at seg 19; King's 1910 rendering, section numbering standard)
-- note: Primary code text; prologue self-describes the law's purpose ("so that the strong should not harm the weak"). Old translation — check wording against Roth 1997 before quoting for philological weight. Cited by DD note 2.2.
+- note: Primary code text; prologue self-describes the law's purpose ("so that the strong should not harm the weak"). Old translation — check wording against Roth 1997 before quoting for philological weight.
 
 ### henrich-heine-norenzayan-2010-weirdest-people
 - status: usable
@@ -812,6 +936,22 @@ Also: existing entry `curry-mullins-whitehouse-2019-seven-moral-rules` should ad
 - verified: file (tesseract OCR provenance headers in seg 0 of both files; the compact IGNCA file carries the translations only, Rock Edicts 5 and 12 at segs 35 and 40)
 - note: The scholarly edition of the edicts with texts, translations and apparatus; OCR quality uneven — pointer only, verify wording against print. Cited by DD note 2.4.
 
+### hume-1739-treatise-of-human-nature
+- status: usable
+- medium: text
+- cite: David Hume, *A Treatise of Human Nature* (1739–40), Project Gutenberg eBook #4705
+- kb: `Hume_A-Treatise-of-Human-Nature_Gutenberg-4705.txt`
+- verified: file (table of contents segs 3–4; the is/ought passage T3.1.1.27 at seg 501)
+- note: Primary text for the is/ought passage and Book III's sentimentalism.
+
+### iep-stoicism
+- status: usable
+- medium: text
+- cite: Massimo Pigliucci, "Stoicism," *Internet Encyclopedia of Philosophy*, https://iep.utm.edu/stoicism/
+- kb: `IEP_Stoicism.md`
+- verified: file (entry text and glossary at segs 0, 24, 42; authorship from the live IEP entry, not re-checked)
+- note: Accessible summary of oikeiôsis and Hierocles' expanding circles; used alongside SEP_Stoicism.
+
 ### james-russell-lowell-1865-thoreau
 - status: usable
 - medium: text
@@ -826,7 +966,7 @@ Also: existing entry `curry-mullins-whitehouse-2019-seven-moral-rules` should ad
 - cite: Karl Jaspers, *The Origin and Goal of History*, trans. Michael Bullock (London: Routledge & Kegan Paul, 1953; German *Vom Ursprung und Ziel der Geschichte*, 1949); Routledge Revivals reprint
 - kb: `Jaspers_The-Origin-and-Goal-of-History_1953.md`
 - verified: file (tesseract OCR header at seg 0; Routledge Revivals blurb; "Axial Period" definition at seg 7, characterisation at seg 8; contents pages garbled — "rif" for "of")
-- note: The primary text for *Achsenzeit*; Part I ch. 1 gives the 800–200 BCE bracket, "depths of selfhood," "thinking became its own object," "the step into universality." Pointer, not quotable without checking the printed translation. Cited by DD note 2.1.
+- note: The primary text for *Achsenzeit*; Part I ch. 1 gives the 800–200 BCE bracket, "depths of selfhood," "thinking became its own object," "the step into universality." Pointer, not quotable without checking the printed translation.
 
 ### karunadasa-1996-dhamma-theory
 - status: usable
@@ -842,7 +982,47 @@ Also: existing entry `curry-mullins-whitehouse-2019-seven-moral-rules` should ad
 - cite: Y Karunadasa, *The Dhamma Theory: Philosophical Cornerstone of the Abhidhamma*, The Wheel Publication 412/413 (Kandy: Buddhist Publication Society, 1996)
 - kb: `Karunadasa_The-Dhamma-Theory_BPS-Wheel-412-413_1996.md`, `y-karunadasa_the-dhamma-theory_1996.md` (attributed summary, oldsources/)
 - verified: file (tesseract OCR of the BPS Wheel; title page in sid 0; the summary file records full-text reading against the BPS Online Edition 2011)
-- note: Standard concise account of the Theravāda dhamma theory; *attano sabhāvaṃ dhārentī ti dhammā* and its provisional (*kattu-sādhana*) status, sids 11–12. Cited by DD note 1.1.
+- note: Standard concise account of the Theravāda dhamma theory; *attano sabhāvaṃ dhārentī ti dhammā* and its provisional (*kattu-sādhana*) status, sids 11–12.
+
+### keeler-1987-javanese-shadow-plays-javanese-selves
+- status: usable
+- medium: text-ocr
+- cite: Ward Keeler, *Javanese Shadow Plays, Javanese Selves* (Princeton: Princeton University Press, 1987; Princeton Legacy Library reprint)
+- kb: `Ward-Keeler_Javanese-Shadow-Plays-Javanese-Selves_2017.md`
+- verified: file (iTextSharp 2017 PDF metadata at seg 0; chapter running heads "CHAPTER 4", "CHAPTER 9" with 1987 pagination at segs 237, 484; letter-spaced OCR in headings)
+- note: The deconstruction-era ethnography Stange 1991 indicts; ch. 9 on ngelmu, pusaka and potency; the "theosophical prejudices" sentence Stange quotes was not string-locatable in the scan. Filename year is the PDF creation date, not the edition. Cited by DD note 3.5.3.
+
+### king-1999-orientalism-and-religion
+- status: usable
+- medium: text-ocr
+- cite: Richard King, *Orientalism and Religion: Postcolonial Theory, India and "The Mystic East"* (London: Routledge, 1999), ch. 8 "The politics of privatization: Indian religion and the study of mysticism"
+- kb: `King_Orientalism-and-Religion_1999.md`
+- verified: file (tesseract OCR provenance header at seg 0; running head "The politics of privatization" with pages 167–173 at segs 213–221)
+- note: Reports and criticises Katz's constructivism; the modern experiential definition of "the mystical" as itself a Western construction. Cited by DD note 3.5.3.
+
+### koons-2012-can-gods-goodness-save-divine-command-theory
+- status: usable
+- medium: text
+- cite: Jeremy Koons, "Can God's Goodness Save the Divine Command Theory from Euthyphro?," *European Journal for Philosophy of Religion* 4:1 (Spring 2012), 177–195
+- kb: `Koons_Can-Gods-Goodness-Save-Divine-Command-Theory.md`
+- verified: file (journal masthead, volume, pages in seg 0; running page numbers 192 at seg 18)
+- note: Against Adams/Alston — grounding goodness in God's nature leaves it "a featureless property… completely unintelligible"; an adequate solution may need a standard external to God.
+
+### kral-davidson-et-al-2022-absence-of-structural-brain-changes
+- status: usable
+- medium: text
+- cite: Tammi RA Kral, Kaley Davis, Cole Korponay, Matthew J Hirshberg, Rachel Hoel, Lawrence Y Tello, Robin I Goldman, Melissa A Rosenkranz, Antoine Lutz & Richard J Davidson, "Absence of structural brain changes from mindfulness-based stress reduction: Two combined randomized controlled trials," *Science Advances* 8:20 (2022), eabk3316, DOI 10.1126/sciadv.abk3316
+- kb: `Kral-Davidson-et-al_Absence-of-Structural-Brain-Changes-from-MBSR_ScienceAdvances-2022.md`
+- verified: file (journal masthead "Sci. Adv. 8, eabk3316 (2022) 20 May 2022" and full author list at seg 0)
+- note: The largest controlled test of MBSR neuroplasticity — null on grey matter, density and thickness; from Davidson's own lab.
+
+### kreplin-farias-brazil-2018-limited-prosocial-effects-of-meditation
+- status: usable
+- medium: text
+- cite: Ute Kreplin, Miguel Farias & Inti A Brazil, "The limited prosocial effects of meditation: A systematic review and meta-analysis," *Scientific Reports* 8 (2018), 2403, DOI 10.1038/s41598-018-20299-z
+- kb: `Kreplin-Farias-Brazil_The-Limited-Prosocial-Effects-of-Meditation_SciRep-2018.md`
+- verified: file (journal masthead with DOI on every page, seg 0)
+- note: Prosocial effects qualified by type and quality; compassion gains only with author-teachers and passive controls.
 
 ### kropotkin-1916-manifesto-of-the-sixteen
 - status: usable
@@ -850,7 +1030,7 @@ Also: existing entry `curry-mullins-whitehouse-2019-seven-moral-rules` should ad
 - cite: "The Manifesto of the Sixteen" (28 February 1916), signed Jean Grave, Pierre Kropotkine et al. (fifteen initial signatories despite the name)
 - kb: `Pëtr-Kropotkin_The-Manifesto-of-the-Sixteen_1916.md`
 - verified: web (https://www.marxists.org/reference/archive/kropotkin-peter/1916/sixteen.htm — date, "ranged on the side of the resistance" and signatory list incl. Grave and Kropotkine confirmed)
-- note: the pro-war minority's own declaration — the other side of the Malatesta 1914 dispute, in its own words. Cited in 7.1 [S16].
+- note: the pro-war minority's own declaration — the other side of the Malatesta 1914 dispute, in its own words. Cited in 7.1 [S16]. Cited by DD note 7.1.
 
 ### lang-purzycki-et-al-2019-moralizing-gods-impartiality-parochialism
 - status: usable
@@ -858,7 +1038,7 @@ Also: existing entry `curry-mullins-whitehouse-2019-seven-moral-rules` should ad
 - cite: Martin Lang, Benjamin G Purzycki et al., "Moralizing gods, impartiality and religious parochialism across 15 societies," *Proceedings of the Royal Society B* 286 (2019), 20190202, DOI 10.1098/rspb.2019.0202
 - kb: `Lang-Purzycki-et-al_Moralizing-Gods-Impartiality-and-Religious-Parochialism_PRSB-2019.md`
 - verified: file (author manuscript headed "Published in Proceedings of the Royal Society B"; abstract with n = 2,228 / 15 populations at segs 1–2)
-- note: Cross-cultural experimental support for punishing/monitoring gods reducing local favouritism and extending sharing to distant co-religionists; outgroup effects vary by site. Cited by DD note 2.2.
+- note: Cross-cultural experimental support for punishing/monitoring gods reducing local favouritism and extending sharing to distant co-religionists; outgroup effects vary by site.
 
 ### legge-1891-texts-of-taoism-sbe39
 - status: usable
@@ -866,7 +1046,9 @@ Also: existing entry `curry-mullins-whitehouse-2019-seven-moral-rules` should ad
 - cite: James Legge (trans.), *The Texts of Taoism, Part I: The Tâo Teh King; The Writings of Kwang-dze (Books I–XVII)*, Sacred Books of the East 39 (Oxford: Clarendon, 1891)
 - kb: `Legge_The-Texts-of-Taoism_SBE-39_1891.md` (Part II is `Legge_The-Texts-of-Taoism_SBE-40_1891.md`)
 - verified: file (running head "THE TEXTS OF TAOISM. pt. I" with pagination at :92; chapter numerals 25 and 37 located)
-- note: Public-domain primary text; OCR has broken headings (`###### Tao`) inside sentences, so quote only after reassembly. Cited by DD note 1.4.
+- note: Public-domain primary text; OCR has broken headings (`###
+
+### Tao`) inside sentences, so quote only after reassembly.
 
 ### lichtheim-1992-maat-in-egyptian-autobiographies
 - status: usable
@@ -882,7 +1064,7 @@ Also: existing entry `curry-mullins-whitehouse-2019-seven-moral-rules` should ad
 - cite: Robert Jay Lifton, *Thought Reform and the Psychology of Totalism: A Study of "Brainwashing" in China* (New York: Norton, 1961; reprint with new preface, University of North Carolina Press, 1989)
 - kb: `Lifton_Thought-Reform-and-the-Psychology-of-Totalism_1961.md`
 - verified: file (tesseract OCR provenance and title page "with a new preface by the author" at seg 0; ch. 22 "sacred science" and loaded-language passages at segs 442, 444)
-- note: The eight criteria of ideological totalism; the clinical description of orthodoxy at its coercive limit. Cited by DD note 2.4.
+- note: The eight criteria of ideological totalism; the clinical description of orthodoxy at its coercive limit.
 
 ### lightner-bendixen-purzycki-2022-datasets-underestimate-moralizing-gods
 - status: usable
@@ -890,7 +1072,7 @@ Also: existing entry `curry-mullins-whitehouse-2019-seven-moral-rules` should ad
 - cite: Aaron D Lightner, Theiss Bendixen & Benjamin Grant Purzycki, "Cross-cultural datasets systematically underestimate the presence of moralizing gods," preprint (2022); published in *Religion, Brain & Behavior* (2023), DOI 10.1080/2153599X.2022.2137575
 - kb: `Lightner-Bendixen-Purzycki_Datasets-Underestimate-Moralizing-Gods_2022-preprint.md`
 - verified: file (abstract at seg 0; §3.1 on false negatives at seg 6; published venue and DOI not checked against the file)
-- note: The SCCS "moralizing high gods" variable keys on creator status and produces false negatives at low complexity, biasing toward a spurious complexity–moralizing-gods association. Cited by DD notes 1.2, 2.2.
+- note: The SCCS "moralizing high gods" variable keys on creator status and produces false negatives at low complexity, biasing toward a spurious complexity–moralizing-gods association. Cited by DD note 1.2.
 
 ### lindenfors-wartel-lind-2021-dunbars-number-deconstructed
 - status: usable
@@ -898,7 +1080,7 @@ Also: existing entry `curry-mullins-whitehouse-2019-seven-moral-rules` should ad
 - cite: Patrik Lindenfors, Andreas Wartel & Johan Lind, "'Dunbar's number' deconstructed," *Biology Letters* 17 (2021), 20210158, DOI 10.1098/rsbl.2021.0158
 - kb: `Lindenfors-Wartel-Lind_Dunbars-Number-Deconstructed_BiolLett-2021.md`
 - verified: file (journal masthead, DOI, received/accepted dates at seg 0; results table at seg 3)
-- note: Phylogenetic re-estimates of 69–109 / 16–42 with 95% CIs 4–520 / 2–336; "a cognitive limit on human group size cannot be derived in this manner." Cited by DD note 2.2.
+- note: Phylogenetic re-estimates of 69–109 / 16–42 with 95% CIs 4–520 / 2–336; "a cognitive limit on human group size cannot be derived in this manner."
 
 ### llano-alonso-2012-cicero-natural-law
 - status: usable
@@ -906,7 +1088,23 @@ Also: existing entry `curry-mullins-whitehouse-2019-seven-moral-rules` should ad
 - cite: Fernando H Llano Alonso, "Cicero and Natural Law," *Archiv für Rechts- und Sozialphilosophie* 98:2 (2012), 157–168
 - kb: `LlanoAlonso_Cicero-and-Natural-Law_ARSP-2012.md`
 - verified: file (Latin tags *cui qui non parebit…* and Ulpian's *ius naturale* definition present at :9)
-- note: Argues Cicero's *natura* is inward rationality (*recta ratio*), not Ulpian's external physical order — man as "autonomous legislator." Volume/issue/pages taken from the corpus filename and body; not web-checked. Cited by DD note 1.4.
+- note: Argues Cicero's *natura* is inward rationality (*recta ratio*), not Ulpian's external physical order — man as "autonomous legislator." Volume/issue/pages taken from the corpus filename and body; not web-checked.
+
+### long-2002-epictetus-stoic-and-socratic-guide
+- status: usable
+- medium: text-ocr
+- cite: AA Long, *Epictetus: A Stoic and Socratic Guide to Life* (Oxford: Clarendon Press, 2002), ISBN 0-19-924556-8
+- kb: `Long_Epictetus-A-Stoic-and-Socratic-Guide-to-Life_2002.md`
+- verified: file (running head "28 Epictetus in his Time and Place" at seg 31; heavy OCR garbling in footnotes, e.g. seg 87)
+- note: The judgement-mediation reading of Epictetus ("we do not experience the world without the mediation of our own assessments").
+
+### macintyre-1981-after-virtue
+- status: usable
+- medium: text-ocr
+- cite: Alasdair MacIntyre, *After Virtue: A Study in Moral Theory*, 3rd edn (Notre Dame: University of Notre Dame Press, 2007; 1st edn 1981)
+- kb: `MacIntyre_After-Virtue_1981.md`
+- verified: file (tesseract OCR header; 2007 prologue "After Virtue after a Quarter of a Century" at seg 0, so the scan is the 3rd edition; ch. 15 narrative-self passage at segs 289–290 checked)
+- note: The communitarian "narrative self" primary; "I am born with a past." OCR noise ("dear" for "clear", "1" for "I").
 
 ### mahmoudi-2024-rta-and-asa
 - status: usable
@@ -914,7 +1112,7 @@ Also: existing entry `curry-mullins-whitehouse-2019-seven-moral-rules` should ad
 - cite: Abolfazl Mahmoudi, "Ṛta and Aša: The Metaphysical Foundation of Happiness in Classical Hindu-Iranian Texts (Rigveda and Gatha)," *Ethics and Normativity* 1:1 (2024), 83–94, DOI 10.22034/EAN.2024.200158 (CC BY)
 - kb: `Mahmoudi_Rta-and-Asa_EthicsAndNormativity-2024.md`
 - verified: file (header carries journal, DOI, dates and CC BY licence; body chunks :0, :3, :5 checked)
-- note: Comparative reading of ṛta and aša as the earliest "criterion of good" — cosmic order spanning cosmos, morality and ritual; Y 30.4/30.10 as the two commands. Opens on a perennialist premise (belief in good/evil "almost universally shared") — quote it as the position, not the finding. Cited by DD notes 1.1., 1.4..
+- note: Comparative reading of ṛta and aša as the earliest "criterion of good" — cosmic order spanning cosmos, morality and ritual; Y 30.4/30.10 as the two commands. Opens on a perennialist premise (belief in good/evil "almost universally shared") — quote it as the position, not the finding.
 
 ### malatesta-makhno-1927-about-the-platform
 - status: usable
@@ -922,7 +1120,31 @@ Also: existing entry `curry-mullins-whitehouse-2019-seven-moral-rules` should ad
 - cite: Errico Malatesta & Nestor Makhno, "About the Platform" — exchange over the *Organisational Platform of the General Union of Anarchists*: Malatesta critique (*Il Risveglio*, Geneva, Oct 1927), Makhno letter (1928), Malatesta reply (*Il Risveglio*, Dec 1929), Makhno second letter (*Le Libertaire*, 9 Aug 1930; trans. Nestor McNab)
 - kb: `Errico-Malatesta+Nestor-Makhno_About-the-Platform_1927.md`
 - verified: web (Malatesta's 1927 component at https://theanarchistlibrary.org/library/errico-malatesta-a-project-of-anarchist-organisation — venue and both load-bearing quotations confirmed; the combined-exchange URL guesses 404'd, so the three later letters rest on the kb file)
-- note: the ossification debate in real time, both sides arguing: "a government and a church" / "better that it should die" (Malatesta) vs without permanent organisation the movement "gets weaker" (Makhno). The documented instance for the form-capture failure mode. Cited in 7.1 [S17]. Cited by DD notes 2.4, 7.1, 7.6.
+- note: the ossification debate in real time, both sides arguing: "a government and a church" / "better that it should die" (Malatesta) vs without permanent organisation the movement "gets weaker" (Makhno). The documented instance for the form-capture failure mode. Cited in 7.1 [S17]. Cited by DD note 7.1.
+
+### mason-sep-value-pluralism
+- status: usable
+- medium: text
+- cite: Elinor Mason, "Value Pluralism," *The Stanford Encyclopedia of Philosophy* (first published 20 June 2006; substantive revision 4 June 2023), https://plato.stanford.edu/entries/value-pluralism/
+- kb: `SEP_Value-Pluralism.md`
+- verified: file (SEP header with first-published and revision dates at seg 0)
+- note: The taxonomy of moral value pluralism (foundational vs non-foundational, incommensurability, the relation to relativism).
+
+### matolino-2022-xenophobia-end-of-ontological-ubuntu
+- status: usable
+- medium: text
+- cite: Bernard Matolino, "Xenophobia and the end of ontological Ubuntu," *South African Journal of Philosophy* 41:2 (2022), 143–155
+- kb: `Matolino_Xenophobia-and-the-End-of-Ontological-Ubuntu_SAJP-2022.md`
+- verified: file (SciELO page structure with abstract and keywords at segs 2–3; volume/pages from the journal record, not re-checked online)
+- note: Internal African critique of "ontological Ubuntu" (Africans-as-communalists); keeps only an axiological, prescriptive Ubuntu. The dissolution strategy's own critic.
+
+### maulana-et-al-2021-sumarah-interrituality
+- status: usable
+- medium: text
+- cite: Abdullah Muslich Rizal Maulana, Mohammad Muttaqin & Anisa Nur Fitriyani, "Paguyuban Sumarah and Interrituality: An Enquiry to the Practice of Interreligious Ritual Participation in Sujud Sumarah," *Walisongo: Jurnal Penelitian Sosial Keagamaan* 29:1 (2021), 27–54, DOI 10.21580/ws.29.1.7364
+- kb: `Maulana-et-al_Paguyuban-Sumarah-and-Interrituality_Walisongo-2021.md`
+- verified: file (journal masthead with DOI and page range at seg 0)
+- note: Sujud Sumarah as interreligious ritual participation; members keep their Muslim/Catholic/Buddhist identity; names of God under the Sesanggeman. Cited by DD notes 3.5, 3.5.1, 3.5.2, 3.5.3, 3.5.4.
 
 ### mckinnon-2002-sociological-definitions
 - status: usable
@@ -938,7 +1160,7 @@ Also: existing entry `curry-mullins-whitehouse-2019-seven-moral-rules` should ad
 - cite: David L McMahan, *The Making of Buddhist Modernism* (New York: Oxford University Press, 2008), ISBN 978-0-19-518327-6
 - kb: `McMahan_The-Making-of-Buddhist-Modernism_2008.md`
 - verified: file (tesseract OCR provenance header at seg 0; running heads "the making of buddhist modernism" / "from modern to postmodern? 245" at segs 0, 297)
-- note: Standard scholarly history of Buddhist modernism as a hybrid co-created by Asian modernisers and Western enthusiasts under colonial conditions; names Batchelor among the detraditionalisers. OCR — verify quotations against print. Cited by DD note 2.5.
+- note: Standard scholarly history of Buddhist modernism as a hybrid co-created by Asian modernisers and Western enthusiasts under colonial conditions; names Batchelor among the detraditionalisers. OCR — verify quotations against print. Cited by DD note 3.5.4.
 
 ### mcmahon-2020-early-urbanism-northern-mesopotamia
 - status: usable
@@ -946,7 +1168,7 @@ Also: existing entry `curry-mullins-whitehouse-2019-seven-moral-rules` should ad
 - cite: Augusta McMahon, "Early Urbanism in Northern Mesopotamia," *Journal of Archaeological Research* 28 (2020), 289–337, DOI 10.1007/s10814-019-09136-7
 - kb: `McMahon_Early-Urbanism-in-Northern-Mesopotamia_JAR-2019.md`
 - verified: file (abstract at seg 0; running header "Journal of Archaeological Research (2020) 28:289–337" at seg 47; Brak mass graves at segs 54–55). The kb filename's 2019 is the online-first year.
-- note: Fourth-millennium BCE northern cities with low-density zones; Tell Brak's mass graves read as internal civil conflict generated by urban growth — cities as generators of the problems codes address. Cited by DD note 2.2.
+- note: Fourth-millennium BCE northern cities with low-density zones; Tell Brak's mass graves read as internal civil conflict generated by urban growth — cities as generators of the problems codes address.
 
 ### michael-2023-laozi-justice
 - status: usable
@@ -954,7 +1176,7 @@ Also: existing entry `curry-mullins-whitehouse-2019-seven-moral-rules` should ad
 - cite: Thomas Michael, "Laozi's Conception of Justice in the Daodejing: Distinguishing the Constant Dao from the Dao of Heaven," *Religions* 14:6 (2023), 771, DOI 10.3390/rel14060771 (CC BY)
 - kb: `Michael_Laozis-Conception-of-Justice_Religions-2023.md`
 - verified: file (citation block with DOI and dates at :0)
-- note: Two Daos in the *Daodejing* — the Constant Dao (only *wuwei*) and the Dao of Heaven (retribution); justice as "natural equality" (*zijun*, DDJ 32). Cited by DD note 1.4.
+- note: Two Daos in the *Daodejing* — the Constant Dao (only *wuwei*) and the Dao of Heaven (retribution); justice as "natural equality" (*zijun*, DDJ 32).
 
 ### michalopoulos-xue-2021-folklore
 - status: usable
@@ -962,7 +1184,7 @@ Also: existing entry `curry-mullins-whitehouse-2019-seven-moral-rules` should ad
 - cite: Stelios Michalopoulos & Melanie Meng Xue, "Folklore," *Quarterly Journal of Economics* 136:4 (2021), 1993–2046, DOI 10.1093/qje/qjab003
 - kb: `Michalopoulos-Xue_Folklore_QJE-2021_published.md`, `Michalopoulos-Xue_Folklore_QJE-2021_NBER-WP-25430.md` (working-paper version)
 - verified: file (OUP copyright line, DOI and pagination "1993–2046" at seg 1)
-- note: Berezkin's catalogue of oral-tradition motifs for ~1,000 societies; motifs predict present-day trust, gender and risk attitudes, including in second-generation immigrants — measured cultural persistence. Cited by DD note 2.5.
+- note: Berezkin's catalogue of oral-tradition motifs for ~1,000 societies; motifs predict present-day trust, gender and risk attitudes, including in second-generation immigrants — measured cultural persistence.
 
 ### michels-1911-political-parties
 - status: usable
@@ -978,7 +1200,15 @@ Also: existing entry `curry-mullins-whitehouse-2019-seven-moral-rules` should ad
 - cite: Robert Michels, *Political Parties: A Sociological Study of the Oligarchical Tendencies of Modern Democracy*, trans. Eden & Cedar Paul (New York: Hearst's International Library, 1915; German orig. *Zur Soziologie des Parteiwesens*, 1911)
 - kb: `Michels_Political-Parties_1915.md`
 - verified: file (tesseract OCR provenance and title page at seg 0; "Democracy and the Iron Law of Oligarchy" chapter head at seg 454; passages at segs 40, 483)
-- note: The iron law of oligarchy — organisation's "tactical and technical necessities" produce stable, irremovable professional leaders. OCR pointer; quote from print. Cited by DD note 2.4.
+- note: The iron law of oligarchy — organisation's "tactical and technical necessities" produce stable, irremovable professional leaders. OCR pointer; quote from print.
+
+### miller-euthyphro-dilemma-iee
+- status: usable
+- medium: text
+- cite: Christian Miller, "Euthyphro Dilemma," in Hugh LaFollette (ed.), *The International Encyclopedia of Ethics* (Wiley-Blackwell, 2013); preprint "forthcoming"
+- kb: `Miller_Euthyphro-Dilemma_encyclopedia-entry.md`
+- verified: file (author, Wake Forest affiliation and "Blackwell International Encyclopedia of Ethics (forthcoming)" in seg 0; Plato 10a quotation)
+- note: Standard statement of the dilemma against theological voluntarism, with the "God's nature" rescue and its regress.
 
 ### mills-1887-yasna-avesta-org
 - status: usable
@@ -986,7 +1216,7 @@ Also: existing entry `curry-mullins-whitehouse-2019-seven-moral-rules` should ad
 - cite: *The Zend-Avesta, Part III: The Yasna, Visparad, Âfrînagân, Gâhs and Miscellaneous Fragments*, trans. LH Mills, Sacred Books of the East 31 (Oxford, 1887); electronic text at avesta.org (Yasna incl. Gāthās)
 - kb: `Yasna-incl-Gathas_trans-Mills_avesta-org.md`
 - verified: file (avesta.org page structure with "Adapted from Mills" headers; Y 30 at chunk :72 checked against SBE 31 wording)
-- note: Primary text for the aša/druj dualism (Y 30.1–3 twin Spirits). Chapter headings are bare numerals (`## 30.`), so search by content not by "Yasna 43". Cited by DD note 1.4.
+- note: Primary text for the aša/druj dualism (Y 30.1–3 twin Spirits). Chapter headings are bare numerals (`## 30.`), so search by content not by "Yasna 43".
 
 ### morris-1993-bakunin-historical-materialism
 - status: usable
@@ -994,7 +1224,7 @@ Also: existing entry `curry-mullins-whitehouse-2019-seven-moral-rules` should ad
 - cite: Brian Morris, "Bakunin, Historical Materialism, and Social Philosophy" (1993; associated with Morris's *Bakunin: The Philosophy of Freedom*, Black Rose Books, 1993)
 - kb: `Brian-Morris_Bakunin-Historical-Materialism-and-Social-Philosophy_1993.md`
 - verified: unverified (1993 date from file frontmatter; Black Rose monograph link plausible but not confirmed this pass)
-- note: secondary treatment used for Bakunin's *ambivalence* on religion ("the first gleam of human truth", a possible "historic necessity", not an "absolute evil"; church-as-pub consolation) — the nuance the slogans omit. Morris's "no refutation has ever been forthcoming" aside is partisan, flagged in 7.3's Tensions.
+- note: secondary treatment used for Bakunin's *ambivalence* on religion ("the first gleam of human truth", a possible "historic necessity", not an "absolute evil"; church-as-pub consolation) — the nuance the slogans omit. Morris's "no refutation has ever been forthcoming" aside is partisan, flagged in 7.3's Tensions. Cited by DD note 7.3.
 
 ### morris-tolstoy-and-anarchism
 - status: usable
@@ -1002,7 +1232,15 @@ Also: existing entry `curry-mullins-whitehouse-2019-seven-moral-rules` should ad
 - cite: Brian Morris, "Tolstoy and Anarchism" (essay/review of the Green Classics reissue of *What Then Must We Do?*; undated, early 1990s)
 - kb: `Brian-Morris_Tolstoy-and-Anarchism.md`
 - verified: unverified (original venue not established this pass — likely *Freedom* or an anthologised Morris essay; Morris's Tolstoy essays are collected in his PM Press reader)
-- note: documentary source for Tolstoy's religious anarchism — *The Kingdom of God Is Within You* (1894), the *Government is Violence* anthology (ed. Stephens, 1991), the "our caste"/"get off their backs" argument of *What Then Must We Do?*, and Tolstoy's pre-1917 prediction that Jacobin revolution leads to new oppression. ▲ Advocacy essay (closes: "there really is no alternative to the kind of anarchism he espoused"); use documentarily.
+- note: documentary source for Tolstoy's religious anarchism — *The Kingdom of God Is Within You* (1894), the *Government is Violence* anthology (ed. Stephens, 1991), the "our caste"/"get off their backs" argument of *What Then Must We Do?*, and Tolstoy's pre-1917 prediction that Jacobin revolution leads to new oppression. ▲ Advocacy essay (closes: "there really is no alternative to the kind of anarchism he espoused"); use documentarily. Cited by DD note 7.3.
+
+### mosse-2020-modernity-of-caste-and-the-market-economy
+- status: usable
+- medium: text
+- cite: David Mosse, "The Modernity of Caste and the Market Economy," *Modern Asian Studies* 54:4 (2020), 1225–1271 (published online 2019), DOI 10.1017/S0026749X19000039
+- kb: `Mosse_The-Modernity-of-Caste-and-the-Market-Economy_MAS-2019.md`
+- verified: file (title, author, SOAS affiliation and abstract at seg 0; volume/pages from the published record, not re-checked online)
+- note: Caste effects persisting inside India's market economy; the policy "enclosure" of caste in religion and caste politics.
 
 ### mullins-et-al-2018-systematic-assessment-of-axial-age-proposals
 - status: usable
@@ -1010,7 +1248,15 @@ Also: existing entry `curry-mullins-whitehouse-2019-seven-moral-rules` should ad
 - cite: Daniel Austin Mullins, Daniel Hoyer, Christina Collins, Thomas Currie, Kevin Feeney, Pieter François, Patrick E Savage, Harvey Whitehouse & Peter Turchin, "A Systematic Assessment of 'Axial Age' Proposals Using Global Comparative Historical Evidence," *American Sociological Review* 83:3 (2018), 596–626 — corpus holds the Oxford preprint
 - kb: `Mullins-et-al_Systematic-Assessment-of-Axial-Age-Proposals_ASR-2018_preprint.md`
 - verified: file (Oxford preprint header and author list at seg 0; abstract; conclusion segs 35–41; journal volume/pages not re-checked online)
-- note: The Seshat test of the Axial Age across five axial and five "non-axial" regions — no circumscribed age, traits earlier and elsewhere, "in fits and starts"; the principal empirical counterweight to Jaspers. Cited by DD note 2.1.
+- note: The Seshat test of the Axial Age across five axial and five "non-axial" regions — no circumscribed age, traits earlier and elsewhere, "in fits and starts"; the principal empirical counterweight to Jaspers.
+
+### munt-2012-sumarah-meditation-cognitive-emotional
+- status: usable
+- medium: text
+- cite: Melanie Munt, *Sumarah Meditation in Cognitive-Emotional Perspective: Participant Motivation and Effects and Their Link with Personal- and Background Determinants* (Master's thesis in clinical psychology, Vrije Universiteit Brussel, 2012; promoter S Celestin-Westreich)
+- kb: `Munt_Sumarah-Meditation-Cognitive-Emotional-Perspective_2012.md`
+- verified: file (header note and abstract at seg 0–1; method segs 27–33; results segs 41–48; limitations seg 61)
+- note: The only quantitative study of Sumarah practice — 42 Western practitioners around German (2010) and Italian (2011) workshops, uncontrolled repeated measures; effects on emotion regulation and behaviour; "Spiritual themes (0)" in reported relational effects. Names Klein 2003 and Howe 1980 as practice sources. Cited by DD note 3.5.2.
 
 ### murray-bookchin-1969-anarchy-and-organization
 - status: usable
@@ -1018,7 +1264,7 @@ Also: existing entry `curry-mullins-whitehouse-2019-seven-moral-rules` should ad
 - cite: Murray Bookchin, "Anarchy and Organization: A Letter to the Left" (1969), written in reply to Huey Newton, "In Defense of Self Defense", *The Black Panther*, 16 November 1968
 - kb: `Murray-Bookchin_Anarchy-and-Organization-a-Letter-to-the-Left_1969.md`
 - verified: partial (the Newton reply provenance is stated in the kb file's own headnote; not independently checked in this pass — the 7.1 agent also used this file)
-- note: ▲ already used by note 7.1. 2.4 quotes a different clause of the same sentence: the self-dissolution design criterion, that a revolutionary organisation must be "structured to dissolve into the popular forms created by the revolution once its function as a catalyst is completed", otherwise it "becomes a vehicle for carrying the forms of the past into the revolution". Cited by DD notes 2.4, 7.1.
+- note: ▲ already used by note 7.1. 2.4 quotes a different clause of the same sentence: the self-dissolution design criterion, that a revolutionary organisation must be "structured to dissolve into the popular forms created by the revolution once its function as a catalyst is completed", otherwise it "becomes a vehicle for carrying the forms of the past into the revolution". Cited by DD note 7.1.
 
 ## Coordination flags for whoever merges these
 
@@ -1033,7 +1279,7 @@ Also: existing entry `curry-mullins-whitehouse-2019-seven-moral-rules` should ad
 - cite: Murray Bookchin, "Listen, Marxist!" (1971; collected in *Post-Scarcity Anarchism*, Ramparts Press)
 - kb: `Murray-Bookchin_Listen-Marxist_1971.md`
 - verified: web (https://theanarchistlibrary.org/library/murray-bookchin-listen-marxist — date, provenance and both load-bearing quotations confirmed)
-- note: "the germ of treachery existed in them from birth"; Bolshevik centralisation as "a counterrevolution of its own against the very social forces it professed to represent"; "the forms replaced the content… means replaced ends." ▲ Partisan historiography of the Russian Revolution (Kronstadt, factory committees) — cite as the movement's self-diagnosis, not as settled history. Cited in 7.1 [S13].
+- note: "the germ of treachery existed in them from birth"; Bolshevik centralisation as "a counterrevolution of its own against the very social forces it professed to represent"; "the forms replaced the content… means replaced ends." ▲ Partisan historiography of the Russian Revolution (Kronstadt, factory committees) — cite as the movement's self-diagnosis, not as settled history. Cited in 7.1 [S13]. Cited by DD note 7.1.
 
 ### murray-bookchin-1978-utopia-not-futurism
 - status: usable
@@ -1041,7 +1287,7 @@ Also: existing entry `curry-mullins-whitehouse-2019-seven-moral-rules` should ad
 - cite: Murray Bookchin, "Utopia, Not Futurism: Why Doing the Impossible is the Most Rational Thing We Can Do," lecture at the Toward Tomorrow Fair, Amherst MA, 24 August 1978; transcript published by Uneven Earth, October 2019, by permission of the Bookchin Trust
 - kb: `Murray-Bookchin_Utopia-Not-Futurism_Why-Doing-the-Impossible-is-the-Most-Rational-Thing-We-Can-Do_2019.md`
 - verified: web (unevenearth.org/2019/10/bookchin_doing_the_impossible; mirrored at The Anarchist Library and anarchistfederation.net). Note the transcript is "edited lightly for flow, brevity, and grammar" per the publisher.
-- note: the designed pole of the discover/design question ("Be practical, do the impossible"); the 1978 atomisation diagnosis anticipating the loneliness literature; "People change unconsciously before they change consciously."
+- note: the designed pole of the discover/design question ("Be practical, do the impossible"); the 1978 atomisation diagnosis anticipating the loneliness literature; "People change unconsciously before they change consciously.". Cited by DD note 8.3.
 
 ### murray-bookchin-2008-free-cities
 - status: usable
@@ -1049,7 +1295,7 @@ Also: existing entry `curry-mullins-whitehouse-2019-seven-moral-rules` should ad
 - cite: Murray Bookchin, *Free Cities: Communalism and the Left*, ed. Eirik Eiglad (Pluto Press, ISBN 978-0-7453-2818-8; editor's preface dated 2008, trade publication 2011)
 - kb: `Murray-Bookchin_Free-Cities_Communalism-and-the-Left_2008.md`
 - verified: web (ISBN 9780745328188 via AbeBooks/Amazon; manuscript held at NYU Tamiment, finding aid TAM 538)
-- note: libertarian municipalism as deliberate institution-building; documents Bookchin's late break with anarchism ("defending anarchism against anarchists") and his founding of communalism. CAVEAT: posthumous anthology assembled by the editor from "letters, lectures, unfinished drafts, and manuscripts," with acknowledged consolidation and revision — quotations carry the editor's hand and should be flagged as editorially mediated.
+- note: libertarian municipalism as deliberate institution-building; documents Bookchin's late break with anarchism ("defending anarchism against anarchists") and his founding of communalism. CAVEAT: posthumous anthology assembled by the editor from "letters, lectures, unfinished drafts, and manuscripts," with acknowledged consolidation and revision — quotations carry the editor's hand and should be flagged as editorially mediated. Cited by DD note 8.3.
 
 ### murray-bookchin-2015-the-next-revolution
 - status: usable
@@ -1057,7 +1303,7 @@ Also: existing entry `curry-mullins-whitehouse-2019-seven-moral-rules` should ad
 - cite: Murray Bookchin, *The Next Revolution: Popular Assemblies and the Promise of Direct Democracy*, ed. Debbie Bookchin & Blair Taylor, foreword by Ursula K. Le Guin (London: Verso, 2015)
 - kb: `Murray-Bookchin_The-Next-Revolution_Popular-Assemblies-and-the-Promise-of-Direct-Democracy_2015.md`
 - verified: web (Verso 2015, ISBN 978-1-78168-581-5, editors and Le Guin foreword confirmed at https://www.versobooks.com/products/34-the-next-revolution and https://openlibrary.org/books/OL31035172M/The_next_revolution)
-- note: posthumous collection of the libertarian-municipalism / communalism essays. Used in 8.1 for confederalism as an explicitly anti-parochial coordination architecture: confederation "counteract[s] the tendency of decentralized communities to drift toward exclusivity and parochialism"; policymaking reserved to face-to-face assemblies while confederal councils are administrative with mandated, recallable delegates. ▲ Programmatic advocacy, not evidence — no case is made here that the design has been tested above municipal scale. Cited in 8.1 [S22]. Cited by DD notes 3.1, 7.3, 8.1.
+- note: posthumous collection of the libertarian-municipalism / communalism essays. Used in 8.1 for confederalism as an explicitly anti-parochial coordination architecture: confederation "counteract[s] the tendency of decentralized communities to drift toward exclusivity and parochialism"; policymaking reserved to face-to-face assemblies while confederal councils are administrative with mandated, recallable delegates. ▲ Programmatic advocacy, not evidence — no case is made here that the design has been tested above municipal scale. Cited in 8.1 [S22]. Cited by DD note 7.3.
 
 ### nesse-2019-tinbergens-four-questions
 - status: usable
@@ -1065,7 +1311,7 @@ Also: existing entry `curry-mullins-whitehouse-2019-seven-moral-rules` should ad
 - cite: Randolph M Nesse, "Tinbergen's four questions: Two proximate, two evolutionary," *Evolution, Medicine, and Public Health* 2019(1): 2, DOI 10.1093/emph/eoy035
 - kb: `Nesse_Tinbergens-Four-Questions_EMPH-2019.md`
 - verified: file (masthead and DOI in seg 0)
-- note: one-page primer; modern labels and the proximate/evolutionary split after Mayr 1951. Cited by DD note 1.2.
+- note: one-page primer; modern labels and the proximate/evolutionary split after Mayr 1951.
 
 ### new-inquiry-distracted-by-attention-citton-review
 - status: usable
@@ -1075,13 +1321,21 @@ Also: existing entry `curry-mullins-whitehouse-2019-seven-moral-rules` should ad
 - verified: web (search-result excerpt confirms the review discusses Citton's engagement with Debord's motto of the spectacle; full text not fetched)
 - note: supports the single lineage claim that Citton's attention-ecology takes up Debord's thesis-12 motto ("What appears is good; what is good appears"). Author name not confirmed, so cited by title only.
 
+### nussbaum-2003-capabilities-as-fundamental-entitlements
+- status: usable
+- medium: text
+- cite: Martha C Nussbaum, "Capabilities as Fundamental Entitlements: Sen and Social Justice," *Feminist Economics* 9:2–3 (2003), 33–59, DOI 10.1080/1354570022000077926
+- kb: `Nussbaum_Capabilities-as-Fundamental-Entitlements_2003.md`
+- verified: file (Routledge download header and title at seg 0; list passage seg 11, overlapping-consensus passage seg 25)
+- note: The capabilities list as a threshold of entitlements endorsable across comprehensive doctrines without autonomy as an end.
+
 ### nyanaponika-1965-abhidhamma-studies
 - status: usable
 - medium: text-ocr
 - cite: Nyanaponika Thera, *Abhidhamma Studies: Researches in Buddhist Psychology*, 2nd ed. (Kandy: Buddhist Publication Society, 1965; 1st ed. Colombo 1949)
 - kb: `Nyanaponika_Abhidhamma-Studies_1965.md`
 - verified: file (tesseract OCR, pages transcribed 3, 6; introduction in sid 0 names the Dhammasaṅgaṇī/Atthasālinī translation project)
-- note: Reads the grammarians' "bearer of own nature" definition against the atomist misreading (sids 42–43). Edition/date of the scan not confirmed beyond the filename. Cited by DD note 1.1.
+- note: Reads the grammarians' "bearer of own nature" definition against the atomist misreading (sids 42–43). Edition/date of the scan not confirmed beyond the filename.
 
 ### olivelle-1999-dharmasutras
 - status: usable
@@ -1089,7 +1343,7 @@ Also: existing entry `curry-mullins-whitehouse-2019-seven-moral-rules` should ad
 - cite: Patrick Olivelle (trans.), *Dharmasūtras: The Law Codes of Āpastamba, Gautama, Baudhāyana, and Vasiṣṭha* (Oxford World's Classics; Oxford: Oxford University Press, 1999)
 - kb: `Olivelle_Dharmasutras_OUP-1999.md`
 - verified: file (bibliography segs 7–8 list Kangle's Arthaśāstra and Bühler; explanatory note to Āpastamba 2.24.23 on the puruṣārthas at seg 511)
-- note: Primary translation of the four early Dharmasūtras with Olivelle's apparatus; the puruṣārtha note supplies the tradition's own dharma/artha/kāma ranking. Cited by DD note 1.3.
+- note: Primary translation of the four early Dharmasūtras with Olivelle's apparatus; the puruṣārtha note supplies the tradition's own dharma/artha/kāma ranking.
 
 ### olivelle-2004-semantic-history-of-dharma
 - status: usable
@@ -1097,7 +1351,7 @@ Also: existing entry `curry-mullins-whitehouse-2019-seven-moral-rules` should ad
 - cite: Patrick Olivelle, "The Semantic History of Dharma: The Middle and Late Vedic Periods," *Journal of Indian Philosophy* 32 (2004): 491–511; repr. in Olivelle (ed.), *Dharma: Studies in its Semantic, Cultural and Religious History* (Delhi: MLBD, 2009), 69–89
 - kb: `Olivelle-ed_Dharma-Semantic-Cultural-Religious-History_2009_INCOMPLETE-SCAN.md` (full text, folded into the corpus 2026-08); `patrick-olivelle_the-semantic-history-of-dharma_2004.md` (attributed summary, in corpus under staging.text/DD/sources/oldsources/)
 - verified: web (DOI 10.1007/s10781-004-8629-2 for the JIP original; read from the MLBD reprint scan, which is incomplete — Horsch and Brereton absent)
-- note: ▲ Full text is an incomplete tesseract scan of the 2009 MLBD volume (preface letter-spaced; Brereton/Horsch articles absent). attributed summary note with verified page anchors (MLBD pagination; +422 for JIP). ▲ Breaks Part 1's smooth-broadening narrative: dharma marginal and *narrowing* (royal/juridical, Varuṇa and the king) across middle/late Vedic corpora; centrality arrives via Buddhist appropriation and Aśoka, with Dharmaśāstra as Brahmanical response (hypothesis, marked as such). ▲ Scan OCR is poor — dehyphenate before quote-checking; see note's OCR-hazard section.
+- note: ▲ Full text is an incomplete tesseract scan of the 2009 MLBD volume (preface letter-spaced; Brereton/Horsch articles absent). attributed summary note with verified page anchors (MLBD pagination; +422 for JIP). ▲ Breaks Part 1's smooth-broadening narrative: dharma marginal and *narrowing* (royal/juridical, Varuṇa and the king) across middle/late Vedic corpora; centrality arrives via Buddhist appropriation and Aśoka, with Dharmaśāstra as Brahmanical response (hypothesis, marked as such). ▲ Scan OCR is poor — dehyphenate before quote-checking; see note's OCR-hazard section. Cited by DD note 1.4.
 
 ### olivelle-2005-manus-code-of-law
 - status: usable
@@ -1105,7 +1359,7 @@ Also: existing entry `curry-mullins-whitehouse-2019-seven-moral-rules` should ad
 - cite: Patrick Olivelle (ed. & trans.), with Suman Olivelle, *Manu's Code of Law: A Critical Edition and Translation of the Mānava-Dharmaśāstra* (South Asia Research; New York: Oxford University Press, 2005)
 - kb: `Olivelle_Manus-Code-of-Law_OUP-2005.md`
 - verified: file (tesseract OCR provenance header at seg 0; title page and acknowledgements at segs 0–3; ch. 7 daṇḍa verses 7.2–22 at segs 276–278 with Olivelle's verse numbering)
-- note: Critical edition and translation of Manu; ch. 7 on the king and Punishment (daṇḍa) is the primary counter-text to "dharma is beyond daṇḍa". Cited by DD note 1.3.
+- note: Critical edition and translation of Manu; ch. 7 on the king and Punishment (daṇḍa) is the primary counter-text to "dharma is beyond daṇḍa".
 
 ### ong-2002-orality-and-literacy
 - status: usable
@@ -1113,7 +1367,7 @@ Also: existing entry `curry-mullins-whitehouse-2019-seven-moral-rules` should ad
 - cite: Walter J Ong, *Orality and Literacy: The Technologizing of the Word*, 2nd ed. (London: Routledge, 2002; 1st ed. Methuen, 1982)
 - kb: `Ong_Orality-and-Literacy_2nd-ed-2002.md`
 - verified: file (running heads "ORALITY AND LITERACY" with pagination, e.g. p. 74 at seg 82, "WRITING RESTRUCTURES CONSCIOUSNESS 85" at seg 93; clean digital text)
-- note: Writing as "context-free"/"autonomous" discourse detached from its author; "There is no way directly to refute a text." Full text now backs the Goody/Ong/Street placeholder. Cited by DD note 2.3.
+- note: Writing as "context-free"/"autonomous" discourse detached from its author; "There is no way directly to refute a text." Full text now backs the Goody/Ong/Street placeholder.
 
 ### ortman-et-al-2014-pre-history-of-urban-scaling
 - status: usable
@@ -1121,7 +1375,7 @@ Also: existing entry `curry-mullins-whitehouse-2019-seven-moral-rules` should ad
 - cite: Scott G Ortman, Andrew HF Cabaniss, Jennie O Sturm & Luís MA Bettencourt, "The Pre-History of Urban Scaling," *PLoS ONE* 9:2 (2014), e87902, DOI 10.1371/journal.pone.0087902
 - kb: `Ortman-et-al_The-Pre-History-of-Urban-Scaling_PLOSONE-2014.md`
 - verified: file (abstract at seg 0; "social reactors" passage at seg 3)
-- note: Settlement-scaling theory applied to pre-Hispanic central Mexico; cities magnify social interaction rates as modern cities do. Cited by DD note 2.2.
+- note: Settlement-scaling theory applied to pre-Hispanic central Mexico; cities magnify social interaction rates as modern cities do.
 
 ### ortman-et-al-2015-settlement-scaling-increasing-returns
 - status: usable
@@ -1129,7 +1383,15 @@ Also: existing entry `curry-mullins-whitehouse-2019-seven-moral-rules` should ad
 - cite: Scott G Ortman, Andrew HF Cabaniss, Jennie O Sturm & Luís MA Bettencourt, "Settlement scaling and increasing returns in an ancient society," *Science Advances* 1:1 (2015), e1400066, DOI 10.1126/sciadv.1400066
 - kb: `Ortman-et-al_Settlement-Scaling-and-Increasing-Returns-in-an-Ancient-Society_SciAdv-2015.md`
 - verified: file (title and author line at seg 0; superlinear-costs caveat at seg 17)
-- note: Increasing returns to scale in an ancient settlement system; disease and violence also scale superlinearly. Cited by DD note 2.2.
+- note: Increasing returns to scale in an ancient settlement system; disease and violence also scale superlinearly.
+
+### ostrom-2009-beyond-markets-and-states-nobel-lecture
+- status: usable
+- medium: text
+- cite: Elinor Ostrom, "Beyond Markets and States: Polycentric Governance of Complex Economic Systems," Prize Lecture, 8 December 2009 (Nobel Foundation), repr. *American Economic Review* 100:3 (2010), 641–672
+- kb: `Ostrom_Beyond-Markets-and-States_Nobel-Lecture-2009.md`
+- verified: file (lecture header with date and affiliations at seg 0; design-principles list at segs 21–22)
+- note: Ostrom's own late restatement of the CPR design principles with the Cox et al 2009 revisions and the "best practices" concession.
 
 ### oxford-humanities-vedas-scriptless-texts
 - status: usable
@@ -1137,7 +1399,7 @@ Also: existing entry `curry-mullins-whitehouse-2019-seven-moral-rules` should ad
 - cite: Oxford Humanities (University of Oxford, TORCH), "The Vedas: the Once and Future Scriptless Texts" (web essay, undated)
 - kb: `OxfordHumanities_The-Vedas-Once-and-Future-Scriptless-Texts.md`
 - verified: file (2-segment born-digital page; the "extraordinary fidelity over more than twenty centuries" sentence at seg 0)
-- note: Source of the note's long-standing external S8; now in the corpus. Author not named on the page. Cited by DD note 2.4.
+- note: Source of the note's long-standing external S8; now in the corpus. Author not named on the page.
 
 ### parker-1993-basic-bakunin
 - status: usable
@@ -1145,7 +1407,7 @@ Also: existing entry `curry-mullins-whitehouse-2019-seven-moral-rules` should ad
 - cite: Colin Parker, *Basic Bakunin* (Anarchist Communist Federation, 1993; South African ed. Zabalaza Books, 2004, intro. Lucien van der Walt; 2nd SA ed. 2019)
 - kb: `Colin-Parker_Basic-Bakunin_1993.md`
 - verified: web (The Anarchist Library; zabalazabooks.net; van der Walt's 2004 SA introduction confirmed at lucienvanderwalt.com)
-- note: movement primer, partisan register — use only for Bakunin's documented arguments/predictions ("a new class of experts, scientists and professional politicians" legitimated by "the claim to acting in accordance with scientific laws"), never for its own verdicts. Cited by DD notes 7.3, 7.6.
+- note: movement primer, partisan register — use only for Bakunin's documented arguments/predictions ("a new class of experts, scientists and professional politicians" legitimated by "the claim to acting in accordance with scientific laws"), never for its own verdicts. Cited by DD note 7.3.
 
 ### passmore-jordan-2020-no-universals-kinship-terminology
 - status: usable
@@ -1153,7 +1415,15 @@ Also: existing entry `curry-mullins-whitehouse-2019-seven-moral-rules` should ad
 - cite: Sam Passmore & Fiona M Jordan, "No universals in the cultural evolution of kinship terminology," *Evolutionary Human Sciences* 2 (2020): e42, DOI 10.1017/ehs.2020.41 (CC BY 4.0)
 - kb: `PMC7612818-no-universals-in-the-cultural-evolution-of-kinship-terminolo.md`
 - verified: file (PMC7612818 header, journal/year/licence in seg 0; conclusion in seg 19)
-- note: phylogenetic test finding no universal link between kin terminology and social structure — a documented non-universal and a caveat on tallied cross-cultural regularities. Cited by DD note 1.2.
+- note: phylogenetic test finding no universal link between kin terminology and social structure — a documented non-universal and a caveat on tallied cross-cultural regularities.
+
+### plato-euthyphro-jowett
+- status: usable
+- medium: text
+- cite: Plato, *Euthyphro*, trans. Benjamin Jowett, Project Gutenberg eBook #1642
+- kb: `Plato_Euthyphro_trans-Jowett_Gutenberg-1642.txt`
+- verified: file (Gutenberg header seg 0; the 10a–11a exchange at seg 22)
+- note: Primary text of the dilemma — "It is loved because it is holy, not holy because it is loved?"
 
 ### pokorny-lrc-pie-dher-to-hold-support
 - status: usable
@@ -1161,7 +1431,7 @@ Also: existing entry `curry-mullins-whitehouse-2019-seven-moral-rules` should ad
 - cite: Linguistics Research Center (UT Austin), *Indo-European Lexicon*, s.v. Pokorny etymon *2. dher-, dherə-* 'to hold, support' (master entry 0399), adapting Julius Pokorny, *Indogermanisches etymologisches Wörterbuch* (Bern: Francke, 1959)
 - kb: `Pokorny-IEW_dher-to-hold-support_LRC-UT-Austin.md` (full text, folded into the corpus 2026-08); `pokorny-lrc_pie-dher-to-hold-support.md` (attributed summary, in corpus under staging.text/DD/sources/oldsources/)
 - verified: web (https://lrc.la.utexas.edu/lex/master/0399)
-- note: attributed summary note with verified page anchors. Replaces Wiktionary for the √dhṛ → PIE → *firmus* → *firm* spine in note 1.1 (S7); adds *throne* (Gk. *thronos*) and *Darius* ('upholding the good') as English-visible cognates. ▲ Adjacent entry 0398 is the homophonous '1. dher-' 'dirt, dregs' — do not confuse. Cite for root and reflexes only, never for the meaning of *dharma*; Mayrhofer EWAia remains the citation of record.
+- note: attributed summary note with verified page anchors. Replaces Wiktionary for the √dhṛ → PIE → *firmus* → *firm* spine in note 1.1 (S7); adds *throne* (Gk. *thronos*) and *Darius* ('upholding the good') as English-visible cognates. ▲ Adjacent entry 0398 is the homophonous '1. dher-' 'dirt, dregs' — do not confuse. Cite for root and reflexes only, never for the meaning of *dharma*; Mayrhofer EWAia remains the citation of record. Cited by DD note 1.1.
 
 ### postgate-wang-wilkinson-1995-early-writing
 - status: usable
@@ -1169,7 +1439,7 @@ Also: existing entry `curry-mullins-whitehouse-2019-seven-moral-rules` should ad
 - cite: Nicholas Postgate, Tao Wang & Toby Wilkinson, "The evidence for early writing: utilitarian or ceremonial?", *Antiquity* 69:264 (1995), 459–480
 - kb: `Postgate-Wang-Wilkinson_The-Evidence-for-Early-Writing-Utilitarian-or-Ceremonial_Antiquity-1995.md`
 - verified: file (title, authors and abstract at seg 0; conclusion at seg 6; volume/pages not checked online)
-- note: Comparative argument that earliest scripts were utilitarian/administrative everywhere and the ceremonial preponderance is a preservation artefact. Cited by DD note 2.4.
+- note: Comparative argument that earliest scripts were utilitarian/administrative everywhere and the ceremonial preponderance is a preservation artefact.
 
 ### prinz-2008-is-morality-innate
 - status: usable
@@ -1177,7 +1447,7 @@ Also: existing entry `curry-mullins-whitehouse-2019-seven-moral-rules` should ad
 - cite: Jesse J Prinz, "Is Morality Innate?", in Walter Sinnott-Armstrong (ed.), *Moral Psychology*, vol. 1: *The Evolution of Morality* (MIT Press, 2008), pp. 367–406
 - kb: `Prinz_Is-Morality-Innate_2008.md`
 - verified: file ("Forthcoming in W. Sinnott-Armstrong (ed.), Moral Psychology. Oxford University Press" header in seg 0 — preprint; the chapter appeared from MIT Press, so page numbers are the printed volume's, not the file's)
-- note: innateness sceptic — morality "ecumenical" but a byproduct of faculties evolved for other purposes; the counterweight to nativist readings of universals. Cited by DD note 1.2.
+- note: innateness sceptic — morality "ecumenical" but a byproduct of faculties evolved for other purposes; the counterweight to nativist readings of universals.
 
 ### purzycki-et-al-2018-material-security-life-history-moralistic-religions
 - status: usable
@@ -1185,7 +1455,7 @@ Also: existing entry `curry-mullins-whitehouse-2019-seven-moral-rules` should ad
 - cite: Benjamin Grant Purzycki, Cody T Ross, Coren Apicella, Quentin D Atkinson, Emma Cohen, Rita Anne McNamara, Aiyana K Willard, Dimitris Xygalatas, Ara Norenzayan & Joseph Henrich, "Material security, life history, and moralistic religions: A cross-cultural examination," *PLoS ONE* 13:3 (2018), e0193856, DOI 10.1371/journal.pone.0193856 (CC BY)
 - kb: `Purzycki-et-al_Material-Security-Life-History-and-Moralistic-Religions_PLOSONE-2018.md`
 - verified: file (full citation block, DOI and dates at seg 1)
-- note: Direct individual-level test of the affluence/life-history mechanism behind Baumard et al. 2015 — no reliable relationship found in 592 individuals across eight societies. Cited by DD note 2.1.
+- note: Direct individual-level test of the affluence/life-history mechanism behind Baumard et al. 2015 — no reliable relationship found in 592 individuals across eight societies.
 
 ### queloz-cueni-2019-genealogical-debunking
 - status: usable
@@ -1201,7 +1471,7 @@ Also: existing entry `curry-mullins-whitehouse-2019-seven-moral-rules` should ad
 - cite: Tage Shakti Rai & Alan Page Fiske, "Moral Psychology Is Relationship Regulation: Moral Motives for Unity, Hierarchy, Equality, and Proportionality," *Psychological Review* 118:1 (2011): 57–75
 - kb: `Rai-Fiske_Moral-Psychology-is-Relationship-Regulation_2011.md`
 - verified: file (seg 3; title/authors not re-checked against a masthead segment)
-- note: universality in relational motives, diversity in relational models; "morally motivated acts, not simply errors in judgment." Cited by DD note 1.2.
+- note: universality in relational motives, diversity in relational models; "morally motivated acts, not simply errors in judgment."
 
 ### religionforbreakfast-2025-fandoms-are-religions
 - status: usable
@@ -1209,7 +1479,7 @@ Also: existing entry `curry-mullins-whitehouse-2019-seven-moral-rules` should ad
 - cite: ReligionForBreakfast (Andrew M Henry), "Fandoms are Religions" (YouTube video essay, 12 September 2025)
 - kb: `ReligionForBreakfast_Fandoms-are-Religions_2025.md`
 - verified: file (transcript header carries channel, title and date; 12 segments)
-- note: Functionalist-turn survey (Tylor, Otto, the Turners, Brakke, Dalton, JZ Smith) run through fandom; also the Athanasius 367 CE festal-letter canon detail. Cited by DD note 2.4; discussed in the companion essay defining-definition.md.
+- note: Functionalist-turn survey (Tylor, Otto, the Turners, Brakke, Dalton, JZ Smith) run through fandom; also the Athanasius 367 CE festal-letter canon detail. Cited by DD note 2.4; discussed in the companion essay defining-definition.md. Cited by DD note 2.4.
 
 ### riesebrodt-2010-promise-of-salvation
 - status: usable
@@ -1225,7 +1495,7 @@ Also: existing entry `curry-mullins-whitehouse-2019-seven-moral-rules` should ad
 - cite: Glenn Roberts & Paul Wolfson, "The rediscovery of recovery: open to all," *Advances in Psychiatric Treatment* (2004) 10:37–49
 - kb: `Glenn-Roberts_APT-Article.md`
 - verified: web (Cambridge Core article page for *Advances in Psychiatric Treatment* vol. 10, "The rediscovery of recovery: open to all", Roberts & Wolfson; reported as the journal's most frequently cited article)
-- note: the one milieu-independent Roberts document — predates his secular-dharma involvement and contains zero Buddhist/dharmic/mindfulness vocabulary (grep-checked). Documents psychiatry's redefinition of "recovery" from cure to living well with enduring symptoms (Anthony 1993; Deegan), and the testimony-vs-operationalisation dispute (Liberman & Kopelowicz) — an independent convergence on the dharma-shaped form, and a precedent for 7.4's measurement problem.
+- note: the one milieu-independent Roberts document — predates his secular-dharma involvement and contains zero Buddhist/dharmic/mindfulness vocabulary (grep-checked). Documents psychiatry's redefinition of "recovery" from cure to living well with enduring symptoms (Anthony 1993; Deegan), and the testimony-vs-operationalisation dispute (Liberman & Kopelowicz) — an independent convergence on the dharma-shaped form, and a precedent for 7.4's measurement problem. Cited by DD note 6.1.
 
 ### rosch-mervis-1975-family-resemblances
 - status: usable
@@ -1241,7 +1511,7 @@ Also: existing entry `curry-mullins-whitehouse-2019-seven-moral-rules` should ad
 - cite: Xavier Ruiz Collantes, "Democracy against Homo sapiens alpha: Reverse dominance and political equality in human history," *Constellations* (2023), 1–19, DOI 10.1111/1467-8675.12680 (CC BY)
 - kb: `RuizCollantes_Democracy-Against-Homo-Sapiens-Alpha-Reverse-Dominance_Constellations-2023.md`
 - verified: file (DOI, Wiley copyright line and CC BY notice at segs 0–1; conclusion at segs 33–34)
-- note: Political theory reading Boehm's reverse dominance as the Palaeolithic "original democracies." ▲ Advocacy built on the nomadic-egalitarian model. Cited by DD note 2.3.
+- note: Political theory reading Boehm's reverse dominance as the Palaeolithic "original democracies." ▲ Advocacy built on the nomadic-egalitarian model.
 
 ### san-code-of-research-ethics-2017
 - status: usable
@@ -1257,7 +1527,7 @@ Also: existing entry `curry-mullins-whitehouse-2019-seven-moral-rules` should ad
 - cite: Pisith San, Wolfgang Drechsler & Shobhit Shakya, "Buddhism, Wealth, and Privilege: Ambedkar and Habermas," *Religions* 14:8 (2023), 1057, DOI 10.3390/rel14081057 (CC BY)
 - kb: `San-Drechsler-Shakya_Buddhism-Wealth-and-Privilege-Ambedkar-and-Habermas_Religions-2023.md`
 - verified: file (MDPI citation block with DOI at seg 0)
-- note: Reads Ambedkar's Navayāna and Habermas's late essay on Buddhism against Theravāda; Navayāna as deliberate filtering of the tradition for twentieth-century communities. Cited by DD note 2.5.
+- note: Reads Ambedkar's Navayāna and Habermas's late essay on Buddhism against Theravāda; Navayāna as deliberate filtering of the tradition for twentieth-century communities.
 
 ### sapolsky-behave-2017
 - status: usable
@@ -1265,7 +1535,7 @@ Also: existing entry `curry-mullins-whitehouse-2019-seven-moral-rules` should ad
 - cite: Robert M. Sapolsky, *Behave: The Biology of Humans at Our Best and Worst* (Penguin Press, 2017)
 - kb: `Behave_the-biology-of-humans-at-our-best-and-worst.md`
 - verified: web (ISBN 978-1-59420-507-1)
-- note: neurobiology of behaviour; frontal cortex, amygdala, gene-effect-size caveats.
+- note: neurobiology of behaviour; frontal cortex, amygdala, gene-effect-size caveats. Cited by DD note 6.4.
 
 ### dharma-sangha-reunion-2020
 - status: barred
@@ -1273,7 +1543,7 @@ Also: existing entry `curry-mullins-whitehouse-2019-seven-moral-rules` should ad
 - medium: text
 - kb: `dharma-sangha-reunion-2020.md`
 - verified: unverified
-- note: secular-Buddhist community event notice; no evidential weight.
+- note: secular-Buddhist community event notice; no evidential weight. Cited by DD note 0.7.
 
 ### is-rationalism-a-form-of-autism-expanded
 - status: barred
@@ -1360,7 +1630,7 @@ Also: existing entry `curry-mullins-whitehouse-2019-seven-moral-rules` should ad
 - cite: Chelsea Schein & Kurt Gray, "The Theory of Dyadic Morality: Reinventing Moral Judgment by Redefining Harm," *Personality and Social Psychology Review* 22:1 (2018), 32–70, DOI 10.1177/1088868317698288
 - kb: `Schein-Gray_The-Theory-of-Dyadic-Morality_PSPR-2018_author-copy.md`
 - verified: file (journal header with DOI and page range at seg 0; author copy)
-- note: Harm as the fundamental basis of moral judgement; the monothetic rival to the family-resemblance treatment of the moral/conventional line. Cited by DD note 1.3.
+- note: Harm as the fundamental basis of moral judgement; the monothetic rival to the family-resemblance treatment of the moral/conventional line.
 
 ### schilbrack-2022-concept-of-religion-sep
 - status: usable
@@ -1376,7 +1646,15 @@ Also: existing entry `curry-mullins-whitehouse-2019-seven-moral-rules` should ad
 - cite: B. Schlerath & P. O. Skjærvø, "AŠA," *Encyclopædia Iranica* II/7 (1987): 694–696 (online ed.)
 - kb: `Iranica_ASA_Schlerath-Skjaervo_wayback.md` (full text, folded into the corpus 2026-08); `schlerath-skjaervo_asa_encyclopaedia-iranica.md` (attributed summary, in corpus under staging.text/DD/sources/oldsources/)
 - verified: web (iranicaonline.org/articles/asa-means-truth-in-avestan; consulted via Wayback snapshot 2023-11-17)
-- note: attributed summary note with verified page anchors. Confirms *asha*/*ṛta* as the same Indo-Iranian word (Part 1's 'same word in different mouths' now on bedrock); reconstructs \**ṛtām dhar-* 'to uphold the truth' among the oldest shared formulas (~2000 BCE) — dharma's root formulaically paired with ṛta. ▲ With Lüders and Halbfass, argues the rendering is 'truth', not bare 'cosmic order'. Replaces zoroastrian.org / hinduwebsite.com in note 1.4 (S8).
+- note: attributed summary note with verified page anchors. Confirms *asha*/*ṛta* as the same Indo-Iranian word (Part 1's 'same word in different mouths' now on bedrock); reconstructs \**ṛtām dhar-* 'to uphold the truth' among the oldest shared formulas (~2000 BCE) — dharma's root formulaically paired with ṛta. ▲ With Lüders and Halbfass, argues the rendering is 'truth', not bare 'cosmic order'. Replaces zoroastrian.org / hinduwebsite.com in note 1.4 (S8). Cited by DD note 1.1.
+
+### schlosser-et-al-2019-unpleasant-meditation-related-experiences
+- status: usable
+- medium: text
+- cite: Marco Schlosser, Terje Sparby, Sebastjan Vörös, Rebecca Jones & Natalie L Marchant, "Unpleasant meditation-related experiences in regular meditators: Prevalence, predictors, and conceptual considerations," *PLoS ONE* 14:5 (2019), e0216643, DOI 10.1371/journal.pone.0216643
+- kb: `Schlosser-et-al_Unpleasant-Meditation-Related-Experiences-in-Regular-Meditators_PLoSONE-2019.md`
+- verified: file (PLoS ONE DOI and date "May 9, 2019" in running footer at segs 1, 8)
+- note: Regular-meditator survey; unpleasant experiences unrelated to practice dose; fewer than 25% of trials assess adverse events.
 
 ### schulz-et-al-2019-church-intensive-kinship
 - status: usable
@@ -1384,7 +1662,15 @@ Also: existing entry `curry-mullins-whitehouse-2019-seven-moral-rules` should ad
 - cite: Jonathan F Schulz, Duman Bahrami-Rad, Jonathan P Beauchamp & Joseph Henrich, "The Church, intensive kinship, and global psychological variation," *Science* 366:6466 (2019), eaau5141, DOI 10.1126/science.aau5141
 - kb: `Schulz-et-al_The-Church-Intensive-Kinship-and-Global-Psychological-Variation_Science-2019.md`
 - verified: file (structured abstract at segs 0–1; results with correlation magnitudes at seg 8)
-- note: The Marriage and Family Program dissolving intensive kinship → impersonal prosociality; the case that a code can manufacture stranger-society psychology. Cited by DD note 2.2.
+- note: The Marriage and Family Program dissolving intensive kinship → impersonal prosociality; the case that a code can manufacture stranger-society psychology.
+
+### scott-1990-domination-and-the-arts-of-resistance
+- status: usable
+- medium: text-ocr
+- cite: James C Scott, *Domination and the Arts of Resistance: Hidden Transcripts* (New Haven: Yale University Press, 1990)
+- kb: `Scott_Domination-and-the-Arts-of-Resistance_1990.md`
+- verified: file (tesseract OCR header; preface at seg 1, hidden-transcript definition at seg 3)
+- note: Hidden transcripts — offstage dissent as the standpoint that survives where open dissent is denied.
 
 ### scott-2017-against-the-grain
 - status: usable
@@ -1392,7 +1678,15 @@ Also: existing entry `curry-mullins-whitehouse-2019-seven-moral-rules` should ad
 - cite: James C Scott, *Against the Grain: A Deep History of the Earliest States* (New Haven: Yale University Press, 2017)
 - kb: `james-c-scott_against-the-grain.md`
 - verified: file (title page, 2017, preface naming the 2011 Tanner Lectures at seg 0; Anarchist Library-style transcription with PDF source URL)
-- note: State-sceptical deep history of Mesopotamian state formation: the early state as "wobbly," flight to the periphery recorded only in legal codes, stateness as a continuum. Cited by DD note 2.2.
+- note: State-sceptical deep history of Mesopotamian state formation: the early state as "wobbly," flight to the periphery recorded only in legal codes, stateness as a continuum.
+
+### sen-1979-equality-of-what
+- status: usable
+- medium: text
+- cite: Amartya Sen, "Equality of What?", The Tanner Lecture on Human Values, Stanford University, 22 May 1979; in *The Tanner Lectures on Human Values* I (1980), 195–220
+- kb: `Sen_Equality-of-What_Tanner-Lecture-1979.md`
+- verified: file (running heads "The Tanner Lectures on Human Values" with pages 218–219 at segs 20–21; the "basic capabilities" passage at seg 20)
+- note: The origin of the capabilities approach — "basic capabilities: a person being able to do certain basic things" against utility and primary-goods metrics.
 
 ### sep-friedrich-nietzsche
 - status: usable
@@ -1416,7 +1710,7 @@ Also: existing entry `curry-mullins-whitehouse-2019-seven-moral-rules` should ad
 - cite: Shahin, *Nietzsche and Anarchy* (Elephant Editions / Active Distribution, 2016)
 - kb: `shahin_nietzsche-and-anarchy.md`
 - verified: unverified
-- note: pseudonymous author; publication by Elephant Editions/Active Distribution stated in the file itself. Cited in 3.4 only as reception evidence (anarchist reappropriation of Nietzsche), never as Nietzsche interpretation.
+- note: pseudonymous author; publication by Elephant Editions/Active Distribution stated in the file itself. Cited in 3.4 only as reception evidence (anarchist reappropriation of Nietzsche), never as Nietzsche interpretation. Cited by DD note 3.4.
 
 ### shariff-norenzayan-2007-god-is-watching-you
 - status: usable
@@ -1424,7 +1718,7 @@ Also: existing entry `curry-mullins-whitehouse-2019-seven-moral-rules` should ad
 - cite: Azim F Shariff & Ara Norenzayan, "God Is Watching You: Priming God Concepts Increases Prosocial Behavior in an Anonymous Economic Game," *Psychological Science* 18:9 (2007), 803–809, DOI 10.1111/j.1467-9280.2007.01983.x
 - kb: `Shariff-Norenzayan_God-Is-Watching-You_PsychSci-2007.md`
 - verified: file (abstract at seg 0; journal details from the abstract header)
-- note: The founding priming study for supernatural monitoring; effect comparable to secular-institution primes and unrelated to self-reported religiosity. Cited by DD note 2.2.
+- note: The founding priming study for supernatural monitoring; effect comparable to secular-institution primes and unrelated to self-reported religiosity.
 
 ### singh-glowacki-2022-beyond-the-nomadic-egalitarian-model
 - status: usable
@@ -1432,7 +1726,7 @@ Also: existing entry `curry-mullins-whitehouse-2019-seven-moral-rules` should ad
 - cite: Manvir Singh & Luke Glowacki, "Human social organization during the Late Pleistocene: Beyond the nomadic-egalitarian model," *Evolution and Human Behavior* 43:5 (2022): 418–431
 - kb: `Singh-Glowacki_Beyond-the-Nomadic-Egalitarian-Model_EHB-2022.md`
 - verified: file (accepted-manuscript header and abstract in seg 0, "last updated July 19, 2022")
-- note: the diverse-Pleistocene model against the nomadic-egalitarian baseline; names Boehm, Migliano, Tooby & Cosmides as work built on the model it challenges. Cited by DD notes 1, 2.3.2.
+- note: the diverse-Pleistocene model against the nomadic-egalitarian baseline; names Boehm, Migliano, Tooby & Cosmides as work built on the model it challenges.
 
 ### slingerland-2000-effortless-action
 - status: usable
@@ -1448,7 +1742,7 @@ Also: existing entry `curry-mullins-whitehouse-2019-seven-moral-rules` should ad
 - cite: Edward Slingerland, Quentin D. Atkinson, Carol R. Ember, Oliver Sheehan, Michael Muthukrishna, Joseph Bulbulia & Russell D. Gray, "Coding culture: challenges and recommendations for comparative cultural databases," *Evolutionary Human Sciences* 2 (2020): e29
 - kb: `slingerland-et-al_coding-culture_2020.md` (attributed summary, staged at workshops/DD/sources/ — not yet folded into corpus)
 - verified: web (DOI 10.1017/ehs.2020.30; CC BY 4.0)
-- note: attributed summary note with verified page anchors. The eHRAF coding-validity critique by database insiders (Ember is HRAF; authors declare involvement in DRH, eHRAF, Pulotu, D-PLACE). A methods paper, not a debunking — seven recommendations. Bears on every 'coded across N societies' claim behind note 1.2. Safe to archive.
+- note: attributed summary note with verified page anchors. The eHRAF coding-validity critique by database insiders (Ember is HRAF; authors declare involvement in DRH, eHRAF, Pulotu, D-PLACE). A methods paper, not a debunking — seven recommendations. Bears on every 'coded across N societies' claim behind note 1.2. Safe to archive. Cited by DD note 1.2.
 
 ### smith-1998-religion-religions-religious
 - status: usable
@@ -1456,7 +1750,7 @@ Also: existing entry `curry-mullins-whitehouse-2019-seven-moral-rules` should ad
 - cite: Jonathan Z Smith, "Religion, Religions, Religious," in Mark C Taylor (ed.), *Critical Terms for Religious Studies* (Chicago: University of Chicago Press, 1998), ch. 15, pp. 269–284
 - kb: `Taylor-ed_Critical-Terms-for-Religious-Studies_1998_incl-JZSmith.md`
 - verified: file (the closing "not a native term … theirs to define" paragraph quoted verbatim in Taylor's introduction at seg 9, attributed "(Chap. 15)"; the chapter's own text not located by keyword in the file — letter-spaced OCR in places; McKinnon 2002 gives the same passage as 1998:281–2)
-- note: The whole edited volume is in the corpus under this filename; the register entry is for Smith's chapter, the one DD cites. Religion as a scholar-made second-order generic concept. Cited by DD note 1.3.
+- note: The whole edited volume is in the corpus under this filename; the register entry is for Smith's chapter, the one DD cites. Religion as a scholar-made second-order generic concept.
 
 ### smith-et-al-2017-hunter-gatherer-storytelling
 - status: usable
@@ -1464,7 +1758,15 @@ Also: existing entry `curry-mullins-whitehouse-2019-seven-moral-rules` should ad
 - cite: Daniel Smith, Philip Schlaepfer, Katie Major, Mark Dyble, Abigail E Page, James Thompson, Nikhil Chaudhary, Gul Deniz Salali, Ruth Mace, Leonora Astete, Marilyn Ngales, Lucio Vinicius & Andrea Bamberg Migliano, "Cooperation and the evolution of hunter-gatherer storytelling," *Nature Communications* 8 (2017), 1853, DOI 10.1038/s41467-017-02036-8 (CC BY 4.0)
 - kb: `Smith-et-al_Cooperation-and-the-Evolution-of-Hunter-Gatherer-Storytelling_NatComms-2017.md`
 - verified: file (results, Table 1 and discussion at segs 2–15; reference list at seg 32 cites Purzycki 2016 and Watts 2015; heading fragments from PDF superscripts scattered through the text)
-- note: The Agta storytelling study itself; replaces the prosocial.world write-up as the anchor. "'Broadcasting' cooperative norms"; coordination via meta-knowledge; storytellers preferred over foragers as camp-mates. Cited by DD note 2.3.
+- note: The Agta storytelling study itself; replaces the prosocial.world write-up as the anchor. "'Broadcasting' cooperative norms"; coordination via meta-knowledge; storytellers preferred over foragers as camp-mates.
+
+### sorensen-et-al-2024-roadmap-to-pluralistic-alignment
+- status: usable
+- medium: text
+- cite: Taylor Sorensen, Jared Moore, Jillian Fisher, Mitchell Gordon, Niloofar Mireshghallah, Christopher Michael Rytting, Andre Ye, Liwei Jiang, Ximing Lu, Nouha Dziri, Tim Althoff & Yejin Choi, "Position: A Roadmap to Pluralistic Alignment," *Proceedings of the 41st International Conference on Machine Learning* (PMLR 235, 2024); arXiv:2402.05070
+- kb: `Sorensen-et-al_A-Roadmap-to-Pluralistic-Alignment_arXiv-2402.05070.md`
+- verified: file (title, twelve authors and abstract at seg 0; arXiv id from the filename)
+- note: Overton / steerable / distributional pluralism; evidence that standard alignment reduces distributional pluralism.
 
 ### sosis-bressler-2003-commune-longevity
 - status: usable
@@ -1472,7 +1774,7 @@ Also: existing entry `curry-mullins-whitehouse-2019-seven-moral-rules` should ad
 - cite: Richard Sosis & Eric R Bressler, "Cooperation and Commune Longevity: A Test of the Costly Signaling Theory of Religion," *Cross-Cultural Research* 37:2 (2003), 211–239, DOI 10.1177/1069397103251426
 - kb: `Sosis-Bressler_Cooperation-and-Commune-Longevity_CCR-2003.md`
 - verified: file (DOI and running heads "Sosis, Bressler / COMMUNE LONGEVITY 215–222" in segs 0–13; Table 2 at seg 13)
-- note: 83 nineteenth-century US communes, 1,556 commune-years; religious communes mean 35.6 years vs secular 7.7, anarchist 9 (n = 7); costly requirements predict survival. Cited by DD note 2.4.
+- note: 83 nineteenth-century US communes, 1,556 commune-years; religious communes mean 35.6 years vs secular 7.7, anarchist 9 (n = 7); costly requirements predict survival.
 
 ### stenmark-2022-worldview-studies
 - status: usable
@@ -1490,13 +1792,29 @@ Also: existing entry `curry-mullins-whitehouse-2019-seven-moral-rules` should ad
 - verified: web (DOI 10.1386/punk.4.1.71_1; green-OA accepted manuscript, Stirling STORRE)
 - note: attributed summary note with verified page anchors (▲ manuscript pagination — convert when citing; ms is pre-copyedit, e.g. 'Vispanna'). Fieldwork on Dharma Punx (US) and Rebel Dharma (UK). ▲ Verdict for Part 1's borderline case: punk supplies identity, code, community; every transformative practice is imported from Buddhism via Levine — supports the 'two or three out of four' hedge rather than resolving it. Cross-links the corpus's Ronan/Prouty fusion specimens.
 
-### taves-2009-religious-experience-reconsidered
+### sukirno-2018-diskriminasi-hak-sipil-agama-lokal
 - status: usable
 - medium: text
+- cite: Sukirno, "Diskriminasi Pemenuhan Hak Sipil Bagi Penganut Agama Lokal," *Administrative Law & Governance Journal* 1:3 (August 2018), 231–, Universitas Diponegoro
+- kb: `Sukirno_Diskriminasi-Pemenuhan-Hak-Sipil-Penganut-Agama-Lokal_ALJ-2018.md`
+- verified: file (journal header, volume and ISSN at seg 0; MK 97/PUU-XIV/2016 and the 2018 circular at segs 11–12)
+- note: Population-document discrimination against penghayat and local-religion adherents (Sedulur Sikep, Parmalim) from the 1978 Home Affairs circular to the Adminduk law, and the piecemeal implementation of the 2017 Court ruling. Gives the decision date as 18 October 2017. Cited by DD notes 3.5.1, 3.5.4.
+
+### sumarah-net-homepage
+- status: usable
+- medium: text
+- cite: sumarah.net, front page ("Life is but a stop along the path to drink a glass of tea"), accessed 2026
+- kb: `Sumarah-net_homepage.md`
+- verified: file (single segment; self-description text)
+- note: Insider self-description of the Western Sumarah network — "a philosophy of life and a form of meditation". Cited by DD notes 3.5, 3.5.1, 3.5.2, 3.5.4.
+
+### taves-2009-religious-experience-reconsidered
+- status: usable
+- medium: text-ocr
 - cite: Ann Taves, *Religious Experience Reconsidered: A Building-Block Approach to the Study of Religion and Other Special Things* (Princeton: Princeton University Press, 2009)
 - kb: `Taves_Religious-Experience-Reconsidered_2009.md` (full text, folded into the corpus 2026-08); `ann-taves_religious-experience-reconsidered_2009.md` (attributed summary, in corpus under staging.text/DD/sources/oldsources/)
 - verified: web (ISBN 978-0-691-14087-2, from the copyright page)
-- note: attributed summary note with verified page anchors. The methodological middle way: composites ('religions') are scholars' aggregates, but comparison rebuilds from smaller units — ascriptions of specialness, 'a deeply rooted human characteristic' (p. 34) offered as a testable hypothesis, not a fiat universal. Her mārga-derived 'special path' is the closest published analogue to dharma-as-path. Model for recasting 'every society grows one'. Full text in DD local archive (scratch/sources/part1/, gitignored); community upload.
+- note: attributed summary note with verified page anchors. The methodological middle way: composites ('religions') are scholars' aggregates, but comparison rebuilds from smaller units — ascriptions of specialness, 'a deeply rooted human characteristic' (p. 34) offered as a testable hypothesis, not a fiat universal. Her mārga-derived 'special path' is the closest published analogue to dharma-as-path. Model for recasting 'every society grows one'. Full text in DD local archive (scratch/sources/part1/, gitignored); community upload. Cited by DD note 3.5.3.
 
 ### teeter-1997-presentation-of-maat
 - status: usable
@@ -1512,7 +1830,7 @@ Also: existing entry `curry-mullins-whitehouse-2019-seven-moral-rules` should ad
 - cite: Niko Tinbergen, "On Aims and Methods of Ethology," *Zeitschrift für Tierpsychologie* 20 (1963): 410–433
 - kb: `Tinbergen_On-Aims-and-Methods-of-Ethology_1963.md`
 - verified: file (segs 11–12; heavily garbled OCR — "survival yvaluc", "Echology")
-- note: origin of the four questions (causation, ontogeny, evolution, survival value). Pointer only; verify any wording against the printed article. Cited by DD note 1.2.
+- note: origin of the four questions (causation, ontogeny, evolution, survival value). Pointer only; verify any wording against the printed article.
 
 ### trivers-1971-evolution-of-reciprocal-altruism
 - status: usable
@@ -1520,7 +1838,7 @@ Also: existing entry `curry-mullins-whitehouse-2019-seven-moral-rules` should ad
 - cite: Robert L Trivers, "The Evolution of Reciprocal Altruism," *Quarterly Review of Biology* 46:1 (1971): 35–57
 - kb: `Trivers_The-Evolution-of-Reciprocal-Altruism_1971.md`
 - verified: file (abstract in seg 0; running head "MARCH 1971 RECIPROCAL ALTRUISM 49" in seg 29)
-- note: founding model for selection against the cheater; moralistic aggression, gratitude, guilt as regulators of the altruistic system. Cited by DD note 1.2.
+- note: founding model for selection against the cheater; moralistic aggression, gratitude, guilt as regulators of the altruistic system.
 
 ### turchin-whitehouse-et-al-2022-explaining-rise-of-moralizing-religions
 - status: usable
@@ -1528,7 +1846,23 @@ Also: existing entry `curry-mullins-whitehouse-2019-seven-moral-rules` should ad
 - cite: Peter Turchin, Harvey Whitehouse et al., "Explaining the rise of moralizing religions: a test of competing hypotheses using the Seshat Databank," *Religion, Brain & Behavior* 13:2 (2023, online 2022), 167–194, DOI 10.1080/2153599X.2022.2065345 (CC BY)
 - kb: `Turchin-Whitehouse-et-al_Explaining-the-Rise-of-Moralizing-Religions_RBB-2022_published.md`, `Turchin-Whitehouse-et-al_Explaining-the-Rise-of-Moralizing-Religions_2019-preprint.md`
 - verified: file (abstract, Taylor & Francis open-access notice and © 2022 line at seg 0 of the published file; volume/issue/pages not checked against the journal page)
-- note: The Seshat team's reworked analysis after the retraction: warfare and resource availability as common drivers of both social complexity and moralizing religion. Cite for what replaced the retracted claim, never as its vindication. Cited by DD note 2.2.
+- note: The Seshat team's reworked analysis after the retraction: warfare and resource availability as common drivers of both social complexity and moralizing religion. Cite for what replaced the retracted claim, never as its vindication.
+
+### tutu-1999-no-future-without-forgiveness
+- status: usable
+- medium: text-ocr
+- cite: Desmond Tutu, *No Future Without Forgiveness* (New York: Doubleday, 1999)
+- kb: `Tutu_No-Future-Without-Forgiveness_1999.md`
+- verified: file (tesseract OCR provenance header; title page and Kirkus blurb at seg 0; the ubuntu definition passage at segs 24–25 checked)
+- note: The TRC chair's own statement of ubuntu — "A person is a person through other persons"; "the best form of self-interest." Quotable only after checking against print.
+
+### van-dam-et-al-2018-mind-the-hype
+- status: usable
+- medium: text
+- cite: Nicholas T Van Dam, Marieke K van Vugt, David R Vago, Laura Schmalzl, Clifford D Saron, Andrew Olendzki, Ted Meissner, Sara W Lazar, Catherine E Kerr, Jolie Gorchov, Kieran C R Fox, Brent A Field, Willoughby B Britton, Julie A Brefczynski-Lewis & David E Meyer, "Mind the Hype: A Critical Evaluation and Prescriptive Agenda for Research on Mindfulness and Meditation," *Perspectives on Psychological Science* 13:1 (2018), 36–61, DOI 10.1177/1745691617709589
+- kb: `VanDam-et-al_Mind-the-Hype_PPS-2018_published-version.md`, `VanDam-et-al_Mind-the-Hype_PPS-2018.md`
+- verified: file (published-version file: section headings and reference list at segs 0–13, 44; author list and DOI not re-checked online)
+- note: Self-report and construct-validity problems in mindfulness research; the retreat to neurobehavioural proxies. Cited by DD notes 3.2, 3.5.3.
 
 ### varshney-2024-decolonial-ai-alignment-visesa-dharma
 - status: usable
@@ -1536,7 +1870,7 @@ Also: existing entry `curry-mullins-whitehouse-2019-seven-moral-rules` should ad
 - cite: Kush R Varshney, "Decolonial AI Alignment: Openness, Viśeṣa-Dharma, and Including Excluded Knowledges," *Proceedings of the Seventh AAAI/ACM Conference on AI, Ethics, and Society (AIES 2024)*, AAAI Press, 2024
 - kb: `Varshney_Decolonial-AI-Alignment-Openness-Visesa-Dharma_AIES-2024.md`
 - verified: file (title, IBM Research affiliation and "Copyright © 2024, Association for the Advancement of Artificial Intelligence" at segs 0–1)
-- note: Sādhāraṇa- vs viśeṣa-dharma deployed as a non-absolutist alternative to universal LLM harm taxonomies; the bridge from 1.3's boundary problem to 8.4. Cited by DD note 1.3.
+- note: Sādhāraṇa- vs viśeṣa-dharma deployed as a non-absolutist alternative to universal LLM harm taxonomies; the bridge from 1.3's boundary problem to 8.4.
 
 ### waismann-1945-verifiability
 - status: usable
@@ -1552,7 +1886,7 @@ Also: existing entry `curry-mullins-whitehouse-2019-seven-moral-rules` should ad
 - cite: Jeremy Waldron, "Is the Rule of Law an Essentially Contested Concept (in Florida)?," *Law and Philosophy* 21:2 (2002), 137–164
 - kb: `Waldron_Is-the-Rule-of-Law-an-Essentially-Contested-Concept_2002.md`
 - verified: file (preprint header "forthcoming in special issue of Law and Philosophy" at seg 0; journal volume/pages not checked against the published version)
-- note: Applies Gallie to the rule of law via the 2000 Florida recount; normativity + complexity as the key to essential contestability; the "upbeat" reading of contestation. Cited by DD note 1.3.
+- note: Applies Gallie to the rule of law via the 2000 Florida recount; normativity + complexity as the key to essential contestability; the "upbeat" reading of contestation.
 
 ### weber-1946-from-max-weber
 - status: usable
@@ -1560,7 +1894,7 @@ Also: existing entry `curry-mullins-whitehouse-2019-seven-moral-rules` should ad
 - cite: Max Weber, *From Max Weber: Essays in Sociology*, trans. and ed. HH Gerth & C Wright Mills (New York: Oxford University Press, 1946)
 - kb: `Weber_From-Max-Weber-Essays-in-Sociology_1946.md`
 - verified: file (tesseract OCR provenance at seg 0; "Bureaucracy" §10 "The Permanent Character of the Bureaucratic Machine" at seg 261)
-- note: Gerth–Mills selection incl. "Politics as a Vocation," "Bureaucracy," "The Social Psychology of the World Religions." Cited by DD note 2.4.
+- note: Gerth–Mills selection incl. "Politics as a Vocation," "Bureaucracy," "The Social Psychology of the World Religions."
 
 ### weber-1978-economy-and-society
 - status: usable
@@ -1568,7 +1902,15 @@ Also: existing entry `curry-mullins-whitehouse-2019-seven-moral-rules` should ad
 - cite: Max Weber, *Economy and Society: An Outline of Interpretive Sociology*, ed. Guenther Roth & Claus Wittich, trans. Ephraim Fischoff et al. (Berkeley: University of California Press, 1978; German orig. 1921–22)
 - kb: `Weber_Economy-and-Society_Roth-Wittich-ed.md`
 - verified: file (Roth–Wittich edition confirmed from the kb file's front matter and running heads "BASIC SOCIOLOGICAL TERMS [Ch. I"; §§4–6 custom/convention/law/ethics located at segs 185–194, Part Two ch. I at seg 589; visible OCR noise, e.g. "caned" for "called")
-- note: Part One ch. 1 typology of usage, custom, convention and law by kind of guarantee, plus the "ethical" order valid without external guarantee — the contrastive apparatus for the custom/etiquette/law boundary. Cited by DD notes 1, 2, 2.5.4.3.
+- note: Part One ch. 1 typology of usage, custom, convention and law by kind of guarantee, plus the "ethical" order valid without external guarantee — the contrastive apparatus for the custom/etiquette/law boundary.
+
+### welwood-1984-principles-of-inner-work
+- status: usable
+- medium: text-ocr
+- cite: John Welwood, "Principles of Inner Work: Psychological and Spiritual," *The Journal of Transpersonal Psychology* 16:1 (1984), 63–73
+- kb: `Welwood_Principles-of-Inner-Work-Psychological-and-Spiritual_JTP-1984.md`
+- verified: file (running head "Principles of Inner Work 65" at seg 3; OCR noise, e.g. "i-re suit")
+- note: Origin of "spiritual bypassing" — using practice to bypass personal "unfinished business".
 
 ### whitehouse-et-al-2021-retraction-note-complex-societies-moralizing-gods
 - status: usable
@@ -1576,7 +1918,7 @@ Also: existing entry `curry-mullins-whitehouse-2019-seven-moral-rules` should ad
 - cite: Harvey Whitehouse, Pieter François, Patrick E Savage, Thomas E Currie, Kevin C Feeney, Enrico Cioni, Rosalind Purcell, Robert M Ross, Jennifer Larson, John Baines, Barend ter Haar, Alan Covey & Peter Turchin, "Retraction Note: Complex societies precede moralizing gods throughout world history," *Nature* 595 (8 July 2021), 320, DOI 10.1038/s41586-021-03656-3
 - kb: `Whitehouse-et-al_Retraction-Note-Complex-Societies-Precede-Moralizing-Gods_Nature-2021.md`
 - verified: file (journal, volume, page, DOI and date at seg 0)
-- note: The retraction itself, with the authors' admission on the 'absent'/'unknown' coding; the project rule that the 2019 Letter is not cited in either direction rests on it. Cited by DD note 2.1.
+- note: The retraction itself, with the authors' admission on the 'absent'/'unknown' coding; the project rule that the 2019 Letter is not cited in either direction rests on it.
 
 ### whitehouse-lanman-2014-the-ties-that-bind-us
 - status: usable
@@ -1584,7 +1926,7 @@ Also: existing entry `curry-mullins-whitehouse-2019-seven-moral-rules` should ad
 - cite: Harvey Whitehouse & Jonathan A Lanman, "The Ties That Bind Us: Ritual, Fusion, and Identification," *Current Anthropology* 55:6 (2014), 674–695, DOI 10.1086/678698
 - kb: `Whitehouse-Lanman_The-Ties-That-Bind-Us-Ritual-Fusion-Identification_CurrAnthro-2014.md`
 - verified: file (title/authors at seg 0; running head "Current Anthropology Volume 55, Number 6, December 2014" at seg 24)
-- note: Modes-of-religiosity theory in its field form — routinisation as the hallmark of the doctrinal mode, imagistic fusion via dysphoric ritual; rebel-group mortality datum. Cited by DD note 2.5.
+- note: Modes-of-religiosity theory in its field form — routinisation as the hallmark of the doctrinal mode, imagistic fusion via dysphoric ritual; rebel-group mortality datum.
 
 ### wikipedia-walden
 - status: usable
@@ -1630,7 +1972,7 @@ Also: existing entry `curry-mullins-whitehouse-2019-seven-moral-rules` should ad
 - cite: Stephen Batchelor, Secular Buddhism: Imagining Dharma in an Uncertain World (Yale University Press, 2017)
 - kb: `secular-buddhism.md`
 - verified: web (Google Books entry, confirmed via DB content peek: 'Stephen Batchelor, Yale University Press, 1 Jan 2017')
-- note: Item is a Google Books metadata/blurb page archived under staging.text/websearch_data/, not a bare-domain ephemera page - it documents a real, citable book.
+- note: Item is a Google Books metadata/blurb page archived under staging.text/websearch_data/, not a bare-domain ephemera page - it documents a real, citable book. Cited by DD notes 0.3, 6.1.
 
 ### batchelor-2017-secular-buddhism-imagining-the-dharma
 - status: usable
@@ -1699,7 +2041,7 @@ Also: existing entry `curry-mullins-whitehouse-2019-seven-moral-rules` should ad
 - cite: Tommaso Batistoni, Pat Barclay & Nichola J. Raihani, "Third-party punishers do not compete to be chosen as partners in an experimental game", *Proceedings of the Royal Society B* 289 (2022), PMCID PMC8753170
 - kb: `PMC8753170-third-party-punishers-do-not-compete-to-be-chosen-as-partner.md`
 - verified: web (PMC8753170; authors confirmed via Europe PMC authorString "Batistoni T, Barclay P, Raihani NJ")
-- note: experimental test of punishment-as-costly-signal; no partner-choice escalation; punishment "a more ambiguous signal of cooperative intent compared to help". ▲ Partly falsifies 5.5's peacock's-tail claim.
+- note: experimental test of punishment-as-costly-signal; no partner-choice escalation; punishment "a more ambiguous signal of cooperative intent compared to help". ▲ Partly falsifies 5.5's peacock's-tail claim. Cited by DD notes 2.3, 5.5.
 
 ### baum-richerson-2025-lab-cultural-evolution-punishing
 - status: usable
@@ -1707,7 +2049,7 @@ Also: existing entry `curry-mullins-whitehouse-2019-seven-moral-rules` should ad
 - cite: William M. Baum & Peter J. Richerson, "Cultural evolution in the laboratory: evolution of cooperative altruistic punishing", *Evolutionary Human Sciences* 7 (2025), PMCID PMC12645323
 - kb: `PMC12645323-cultural-evolution-in-the-laboratory-evolution-of-cooperativ.md`
 - verified: web (PMC12645323; authors confirmed via Europe PMC authorString "Baum WM, Richerson PJ")
-- note: multi-generation public-goods experiments; cooperative altruistic punishing evolves only when punishment is cheap; "canny defectors achieved the highest payoffs, always by a small margin". Live-human anchor for the "exploiter held down, never eliminated" claim, replacing a Behave gloss.
+- note: multi-generation public-goods experiments; cooperative altruistic punishing evolves only when punishment is cheap; "canny defectors achieved the highest payoffs, always by a small margin". Live-human anchor for the "exploiter held down, never eliminated" claim, replacing a Behave gloss. Cited by DD note 5.5.
 
 ### ben-oren-2023-specialization-double-edged
 - status: usable
@@ -1715,7 +2057,7 @@ Also: existing entry `curry-mullins-whitehouse-2019-seven-moral-rules` should ad
 - cite: Yotam Ben-Oren, Oren Kolodny & Nicole Creanza, "Cultural specialization as a double-edged sword: division into specialized guilds might promote cultural complexity at the cost of higher susceptibility to cultural loss", *Philosophical Transactions of the Royal Society B* (2023), PMCID PMC9869445
 - kb: `PMC9869445-cultural-specialization-as-a-double-edged-sword-division-int.md`
 - verified: web (PMC9869445; authors confirmed via Europe PMC authorString "Ben-Oren Y, Kolodny O, Creanza N")
-- note: specialist custodianship raises attainable cultural complexity but concentrates knowledge, amplifying loss under demographic/environmental shock — the transmission-theoretic form of note 2.4's institutionalisation paradox, independent of Batchelor.
+- note: specialist custodianship raises attainable cultural complexity but concentrates knowledge, amplifying loss under demographic/environmental shock — the transmission-theoretic form of note 2.4's institutionalisation paradox, independent of Batchelor. Cited by DD note 2.4.
 
 ### berkman-1929-what-is-communist-anarchism
 - status: usable
@@ -1731,7 +2073,7 @@ Also: existing entry `curry-mullins-whitehouse-2019-seven-moral-rules` should ad
 - cite: Richard E.W. Berl, Alarna N. Samarasinghe, Seán G. Roberts, Fiona M. Jordan & Michael C. Gavin, "Prestige and content biases together shape the cultural transmission of narratives", *Evolutionary Human Sciences* (2021), PMCID PMC10427335
 - kb: `PMC10427335-prestige-and-content-biases-together-shape-the-cultural-tran.md`
 - verified: web (PMC10427335; authors confirmed via Europe PMC authorString "Berl REW, Samarasinghe AN, Roberts SG, Jordan FM, Gavin MC")
-- note: transmission-chain experiment; prestige bias real but the *smallest* measured effect (+15% recall); content biases (social, survival, negative-emotional, counterintuitive) dominate. ▲ Qualifies rather than supports the standard prestige-led account.
+- note: transmission-chain experiment; prestige bias real but the *smallest* measured effect (+15% recall); content biases (social, survival, negative-emotional, counterintuitive) dominate. ▲ Qualifies rather than supports the standard prestige-led account. Cited by DD notes 2.4, 5.2.
 
 ### bettera-2024-secondo-natura
 - status: usable
@@ -1747,7 +2089,7 @@ Also: existing entry `curry-mullins-whitehouse-2019-seven-moral-rules` should ad
 - cite: Stefano Davide Bettera, *Secondo natura: Critica dell'ideologia liberal progressista* (Solferino, 2024)
 - kb: `Secondo_Natura.*.md`
 - verified: web (ISBN 9788828215592)
-- note: NEEDS-HUMAN: input filename is literally "Secondo_Natura.\*.md" (unexpanded glob, not a real file). DB has four variants under staging.text/Stefano_Bettera/ (chatgpt-4o-latest.en, gpt-4o-latest.en, gpt-4o-mini.en, it) -- confirm which specific file/language was actually cited; the .en variants are LLM translations/summaries of the Italian original.
+- note: NEEDS-HUMAN: input filename is literally "Secondo_Natura.\*.md" (unexpanded glob, not a real file). DB has four variants under staging.text/Stefano_Bettera/ (chatgpt-4o-latest.en, gpt-4o-latest.en, gpt-4o-mini.en, it) -- confirm which specific file/language was actually cited; the .en variants are LLM translations/summaries of the Italian original. Cited by DD note 7.1.
 
 ### bhagavad-gita-oevortex
 - status: usable
@@ -1755,7 +2097,7 @@ Also: existing entry `curry-mullins-whitehouse-2019-seven-moral-rules` should ad
 - cite: *Bhagavad Gītā*, chs. 1–18, anonymous English rendering — corpus copy extracted (700 verses → 18 chapter files) from the HuggingFace dataset `OEvortex/Bhagavad_Gita` (MIT licence); underlying scripture public domain. Cite **by chapter.verse**, never by page.
 - kb: `bhagavad-gita-ch01.md`, `bhagavad-gita-ch02.md`, `bhagavad-gita-ch03.md`, `bhagavad-gita-ch04.md`, `bhagavad-gita-ch05.md`, `bhagavad-gita-ch06.md`, `bhagavad-gita-ch07.md`, `bhagavad-gita-ch08.md`, `bhagavad-gita-ch09.md`, `bhagavad-gita-ch10.md`, `bhagavad-gita-ch11.md`, `bhagavad-gita-ch12.md`, `bhagavad-gita-ch13.md`, `bhagavad-gita-ch14.md`, `bhagavad-gita-ch15.md`, `bhagavad-gita-ch16.md`, `bhagavad-gita-ch17.md`, `bhagavad-gita-ch18.md`
 - verified: unverified
-- note: ▲ TRANSLATOR/EDITION UNRESOLVED. Chapter-file headers state only "Source: OEvortex/Bhagavad_Gita (MIT). English translation." — no translator, publisher, year or base edition (confirmed in `$VECTORDBS/appliedanthropology/workshops/hf/bhagavad-gita/README.md`). The English is a loose, expansive paraphrase with typos and interpolated glosses; it renders the key term inconsistently (3.35 "one's own duty (Dharma)"; 18.47 "one's own tasks") and at 18.66 renders *sarva-dharmān parityajya* ("abandoning all dharmas") as "Detach yourself from all worldly things" — the word *dharma* vanishes; 3.35 also carries an uncorrected typo ("filles with menace"). **Usable only for citing the STRUCTURE of the text's argument, by chapter.verse; NOT usable for word-level or philological claims, and no wording may be quoted as authoritative, until cross-checked against a named scholarly edition (van Buitenen, Zaehner, Miller, or public-domain Telang/SBE vol. 8).** Chapter-file frontmatter categories are `myth-religion-culture` / `philosophy-ethics` (not `secular-dharma`), consistent with the dataset README's "traditional, not secular-dharma canon". Enters notes per the non-privileging stance as one tradition's self-theorisation to be tested against the checklist, never as an authority over it. Reconciles three keys three review agents proposed independently (`bhagavad-gita-hf-oevortex`, `bhagavad-gita-primary-text`, `bhagavad-gita-oevortex`). Note 3.1 additionally cites the Gita's *argument* via secondary web commentary (wisdomlib/TIJER) at its own [S6]; that secondary citation stands separately and is not this entry.
+- note: ▲ TRANSLATOR/EDITION UNRESOLVED. Chapter-file headers state only "Source: OEvortex/Bhagavad_Gita (MIT). English translation." — no translator, publisher, year or base edition (confirmed in `$VECTORDBS/appliedanthropology/workshops/hf/bhagavad-gita/README.md`). The English is a loose, expansive paraphrase with typos and interpolated glosses; it renders the key term inconsistently (3.35 "one's own duty (Dharma)"; 18.47 "one's own tasks") and at 18.66 renders *sarva-dharmān parityajya* ("abandoning all dharmas") as "Detach yourself from all worldly things" — the word *dharma* vanishes; 3.35 also carries an uncorrected typo ("filles with menace"). **Usable only for citing the STRUCTURE of the text's argument, by chapter.verse; NOT usable for word-level or philological claims, and no wording may be quoted as authoritative, until cross-checked against a named scholarly edition (van Buitenen, Zaehner, Miller, or public-domain Telang/SBE vol. 8).** Chapter-file frontmatter categories are `myth-religion-culture` / `philosophy-ethics` (not `secular-dharma`), consistent with the dataset README's "traditional, not secular-dharma canon". Enters notes per the non-privileging stance as one tradition's self-theorisation to be tested against the checklist, never as an authority over it. Reconciles three keys three review agents proposed independently (`bhagavad-gita-hf-oevortex`, `bhagavad-gita-primary-text`, `bhagavad-gita-oevortex`). Note 3.1 additionally cites the Gita's *argument* via secondary web commentary (wisdomlib/TIJER) at its own [S6]; that secondary citation stands separately and is not this entry. Cited by DD notes 1.3, 3.1, 3.4, 7.3.
 
 ### biglan-2020-big-pharma-death-of-americans
 - status: usable
@@ -1795,7 +2137,7 @@ Also: existing entry `curry-mullins-whitehouse-2019-seven-moral-rules` should ad
 - cite: Rutger Bregman, *Humankind: A Hopeful History*, trans. Elizabeth Manton & Erica Moore (Bloomsbury, 2020)
 - kb: `rutger-bregman_humankind_a-hopeful-history.md`
 - verified: web (ISBN 978-1-4088-9893-2)
-- note: anchor source of note 8.5 — the 1965–66 'Ata shipwreck ("real Lord of the Flies") and the Robbers Cave / Middle Grove correction (via Gina Perry's archive work). Reviewers have criticised Bregman's use of sources; weigh popular-synthesis claims accordingly.
+- note: anchor source of note 8.5 — the 1965–66 'Ata shipwreck ("real Lord of the Flies") and the Robbers Cave / Middle Grove correction (via Gina Perry's archive work). Reviewers have criticised Bregman's use of sources; weigh popular-synthesis claims accordingly. Cited by DD note 8.5.
 
 ### bretl-goering-2022-moral-intuitions
 - status: usable
@@ -1803,7 +2145,7 @@ Also: existing entry `curry-mullins-whitehouse-2019-seven-moral-rules` should ad
 - cite: Brandon L. Bretl & Marlon Goering, "Age- and sex-based differences in the moral intuitions of American early adolescents", *Evolutionary Human Sciences* 4 (2022), PMCID PMC10426028
 - kb: `PMC10426028-age-and-sex-based-differences-in-the-moral-intuitions-of-ame.md`
 - verified: web (PMC10426028; authors confirmed via Europe PMC authorString "Bretl BL, Goering M")
-- note: within-population (age/sex) variation in autonomy, loyalty and empathy/animal-harm intuitions among US American early adolescents, with a pubertal-onset hypothesis; also states the is/ought guard explicitly — evolutionary functional fitness "does not necessarily have anything to say about how beneficial these… mechanisms are in the contexts of modern-day societies". Descriptive psychology only — must not license any normative "better/worse" claim.
+- note: within-population (age/sex) variation in autonomy, loyalty and empathy/animal-harm intuitions among US American early adolescents, with a pubertal-onset hypothesis; also states the is/ought guard explicitly — evolutionary functional fitness "does not necessarily have anything to say about how beneficial these… mechanisms are in the contexts of modern-day societies". Descriptive psychology only — must not license any normative "better/worse" claim. Cited by DD notes 3.4, 5.3.
 
 ### bryant-smaldino-2025-distortion-music
 - status: usable
@@ -1811,7 +2153,7 @@ Also: existing entry `curry-mullins-whitehouse-2019-seven-moral-rules` should ad
 - cite: Gregory A. Bryant & Paul E. Smaldino, "The cultural evolution of distortion in music (and other norms of mixed appeal)", *Philosophical Transactions of the Royal Society B* 380(1923):20240014 (2025), PMCID PMC11966159
 - kb: `PMC11966159-the-cultural-evolution-of-distortion-in-music-and-other-norm.md`
 - verified: web (PMC11966159; authors confirmed via Europe PMC authorString "Bryant GA, Smaldino PE" and UCLA faculty page)
-- note: norms of mixed appeal driven by intra-group cohesion and inter-group differentiation; general account of subgroup-differentiating markers. ▲ The corpus file's `authors:` frontmatter field is EMPTY — author attribution comes from Europe PMC, not the corpus.
+- note: norms of mixed appeal driven by intra-group cohesion and inter-group differentiation; general account of subgroup-differentiating markers. ▲ The corpus file's `authors:` frontmatter field is EMPTY — author attribution comes from Europe PMC, not the corpus. Cited by DD note 2.4.
 
 ### byy4khbb-fk-discussion-transcript
 - status: barred
@@ -1865,7 +2207,7 @@ Also: existing entry `curry-mullins-whitehouse-2019-seven-moral-rules` should ad
 - cite: Thomas E. Currie, Marco Campenni, Adam Flitton, Tim Njagi, Enoch Ontiri, Cedric Perret & Lindsay Walker, "The cultural evolution and ecology of institutions", *Philosophical Transactions of the Royal Society B* (2021), PMCID PMC8126459
 - kb: `PMC8126459-the-cultural-evolution-and-ecology-of-institutions.md`
 - verified: web (PMC8126459; authors confirmed via Europe PMC authorString "Currie TE, Campenni M, Flitton A, Njagi T, Ontiri E, Perret C, Walker L")
-- note: institutions as "socially created and culturally inherited proscriptions on behaviour that define roles and set expectations about social interactions"; institutions-as-rules vs as-equilibria; institutions may be "designed by a minority for a minority" and enforce socially detrimental behaviour.
+- note: institutions as "socially created and culturally inherited proscriptions on behaviour that define roles and set expectations about social interactions"; institutions-as-rules vs as-equilibria; institutions may be "designed by a minority for a minority" and enforce socially detrimental behaviour. Cited by DD note 2.4.
 
 ### curry-2019-seven-moral-rules
 - status: usable
@@ -1881,7 +2223,7 @@ Also: existing entry `curry-mullins-whitehouse-2019-seven-moral-rules` should ad
 - cite: Oliver Scott Curry, Daniel Austin Mullins and Harvey Whitehouse, "Is It Good to Cooperate? Testing the Theory of Morality-as-Cooperation in 60 Societies," Current Anthropology 60(1) (2019); popularized as "Seven Moral Rules Found All Around the World" (University of Oxford press release, 2019; repr. prosocial.world)
 - kb: `posts_the-seven-moral-rules-found-all-around-the-world.md`, `Curry-Mullins-Whitehouse_Is-It-Good-to-Cooperate_CurrentAnthropology-2019_with-commentaries.md`, `Curry-Mullins-Whitehouse_2019_SUPPLEMENT-coding-tables.md` (2019 paper: published abstract plus attributed summary, and the supplementary coding tables)
 - verified: web (https://doi.org/10.1086/701478)
-- note: Attributed summary with verified page anchors staged as `curry-mullins-whitehouse_is-it-good-to-cooperate_2019.md` (workshops/DD/sources/), covering the full typeset article INCLUDING the four published Comments (Bloom; Gintis; Smith & Kurzban, 'Morality Is Not Always Good'; Wong) and the authors' Reply — the Oxford ORA deposit of the published version, plus supplement, in the DD local archive. Key figures: 961/962 coded valence observations positive (p. 54); fairness observed in 9/60 societies; coverage confound r = 0.43 (p. 55); fairness κ = 0.14. ▲ 'None was found' is the honest gloss, not 'there are none'; the codebook's rule five has no 'legitimate' qualifier. Prefer this entry over curry-2019-seven-moral-rules (blog gloss) for any [S#] carrying weight.
+- note: Attributed summary with verified page anchors staged as `curry-mullins-whitehouse_is-it-good-to-cooperate_2019.md` (workshops/DD/sources/), covering the full typeset article INCLUDING the four published Comments (Bloom; Gintis; Smith & Kurzban, 'Morality Is Not Always Good'; Wong) and the authors' Reply — the Oxford ORA deposit of the published version, plus supplement, in the DD local archive. Key figures: 961/962 coded valence observations positive (p. 54); fairness observed in 9/60 societies; coverage confound r = 0.43 (p. 55); fairness κ = 0.14. ▲ 'None was found' is the honest gloss, not 'there are none'; the codebook's rule five has no 'legitimate' qualifier. Prefer this entry over curry-2019-seven-moral-rules (blog gloss) for any [S#] carrying weight. Cited by DD note 1.2.
 
 ### dalai-lama-simple-religion-quote
 - status: usable
@@ -1889,7 +2231,7 @@ Also: existing entry `curry-mullins-whitehouse-2019-seven-moral-rules` should ad
 - cite: Dalai Lama XIV, "This is my simple religion. There is no need for temples; no need for complicated philosophy. Our own brain, our own heart is our temple; the philosophy is kindness." (widely attributed; The Dalai Lama: A Policy of Kindness: An Anthology of Writings By and About the Dalai Lama, ed. Sidney Piburn, Snow Lion Publications, 1990, p. 52)
 - kb: `simple-religion-need-temples-need-complicated-philosophy-brain-heart-ou_gpt-4o-mini.md`
 - verified: web (ISBN 9781559390224; A Policy of Kindness, ed. Piburn, 1990, p. 52 per multiple quote-reference sites)
-- note: truncated filename resolved via DB LIKE match to zenquotes/discourse.md/simple-religion-need-temples-need-complicated-philosophy-brain-heart-ou_gpt-4o-mini.mdgpt-4o-mini.md; KB text is an LLM (gpt-4o-mini) discourse elaborating this Dalai Lama quote -- verify against original
+- note: truncated filename resolved via DB LIKE match to zenquotes/discourse.md/simple-religion-need-temples-need-complicated-philosophy-brain-heart-ou_gpt-4o-mini.mdgpt-4o-mini.md; KB text is an LLM (gpt-4o-mini) discourse elaborating this Dalai Lama quote -- verify against original. Cited by DD note 8.3.
 
 ### daring-to-define-by-whose-right
 - status: barred
@@ -1961,7 +2303,7 @@ Also: existing entry `curry-mullins-whitehouse-2019-seven-moral-rules` should ad
 - cite: Terence D. Dores Cruz, Isabel Thielmann, Simon Columbus, Catherine Molho, Junhui Wu, Francesca Righetti, Reinout E. de Vries, Antonis Koutsoumpis, Paul A. M. van Lange, Bianca Beersma & Daniel Balliet, "Gossip and reputation in everyday life", *Philosophical Transactions of the Royal Society B* 376 (2021), PMCID PMC8487731
 - kb: `PMC8487731-gossip-and-reputation-in-everyday-life.md`
 - verified: web (PMC8487731; authors confirmed via Europe PMC authorString)
-- note: ten-day experience-sampling study (N = 309; 5,284 gossip events) showing everyday gossip concerns targets' cooperativeness and drives reputation updating, partner selection and indirect reciprocity. Field evidence replacing Brown-via-Wikipedia for the gossip universal.
+- note: ten-day experience-sampling study (N = 309; 5,284 gossip events) showing everyday gossip concerns targets' cooperativeness and drives reputation updating, partner selection and indirect reciprocity. Field evidence replacing Brown-via-Wikipedia for the gossip universal. Cited by DD notes 1.2, 2.3.
 
 ### einzelganger-2021-wu-wei-cook-ding
 - status: usable
@@ -1993,7 +2335,7 @@ Also: existing entry `curry-mullins-whitehouse-2019-seven-moral-rules` should ad
 - cite: Ioana Ene, Keri Ka-Yee Wong & Gul Deniz Salali, "Is it good to be bad? An evolutionary analysis of the adaptive potential of psychopathic traits", *Evolutionary Human Sciences* 4 (2022), PMCID PMC10426111
 - kb: `PMC10426111-is-it-good-to-be-bad-an-evolutionary-analysis-of-the-adaptiv.md`
 - verified: web (PMC10426111; authors confirmed via Europe PMC authorString "Ene I, Wong KK, Salali GD"; ▲ year is 2022 per doc header and Europe PMC, corrected from an earlier note reference to 2023)
-- note: review of frequency-dependent and life-history models of psychopathy; dimensional not categorical; adaptiveness mediated by cultural norms (whether people "tolerate, ostracise or are easily deceived by psychopaths"). Now corpus-internal (was an external PMC link in note 5.5).
+- note: review of frequency-dependent and life-history models of psychopathy; dimensional not categorical; adaptiveness mediated by cultural norms (whether people "tolerate, ostracise or are easily deceived by psychopaths"). Now corpus-internal (was an external PMC link in note 5.5). Cited by DD note 5.5.
 
 ### espin-branas-garza-2022-group-functional-punishment
 - status: usable
@@ -2001,7 +2343,7 @@ Also: existing entry `curry-mullins-whitehouse-2019-seven-moral-rules` should ad
 - cite: Antonio M. Espín, Pablo Brañas-Garza, Juan F. Gamella, Benedikt Herrmann & Jesús Martín, "Culture and group-functional punishment behaviour", *Evolutionary Human Sciences* 4 (2022), PMCID PMC10426100
 - kb: `PMC10426100-culture-and-group-functional-punishment-behaviour.md`
 - verified: web (PMC10426100; authors confirmed via Europe PMC authorString "Espín AM, Brañas-Garza P, Gamella JF, Herrmann B, Martín J")
-- note: altruistic punishers "condemned to a lower evolutionary success within their group"; the sanctioning system as a "second-order social dilemma"; cultural group selection picks which norms proliferate, but punishment stabilises any norm, adaptive or maladaptive. Primary-literature anchor for the third-party-punishment claim previously on a prosocial.world post.
+- note: altruistic punishers "condemned to a lower evolutionary success within their group"; the sanctioning system as a "second-order social dilemma"; cultural group selection picks which norms proliferate, but punishment stabilises any norm, adaptive or maladaptive. Primary-literature anchor for the third-party-punishment claim previously on a prosocial.world post. Cited by DD notes 2.3, 3.4.
 
 ### etymology-origins-of-dharma-md
 - status: barred
@@ -2010,14 +2352,6 @@ Also: existing entry `curry-mullins-whitehouse-2019-seven-moral-rules` should ad
 - kb: `etymology-origins-of-dharma.md`
 - verified: unverified
 - note: prov=faqs; AI-authored corpus FAQ note per rule 1 (gloss itself flags '*AI-authored co[ntent]*')
-
-### evan-thompson-waking-dreaming-being
-- status: usable
-- medium: text
-- cite: Evan Thompson, *Waking Dreaming Being_Self and Consciousness*
-- kb: `Evan-Thompson_Waking-Dreaming-Being_Self-and-Consciousness.md`
-- verified: web (ISBN 978-0-231-13709-6)
-- note: NEEDS-HUMAN: was under _unprocessed_ staging dir; genuine third-party work reclassified usable — confirm bibliographic details
 
 ### evans-moses-2011-interview-graeber
 - status: usable
@@ -2085,7 +2419,7 @@ Also: existing entry `curry-mullins-whitehouse-2019-seven-moral-rules` should ad
 - cite: Dugald Foster, Erik Postma, Shakti Lamba & Alex Mesoudi, "Testing evolutionary theories of human cooperation via meta-analysis of microfinance repayment", *Evolutionary Human Sciences* 8 (2026), PMCID PMC13122405
 - kb: `PMC13122405-testing-evolutionary-theories-of-human-cooperation-via-meta-.md`
 - verified: web (PMC13122405; authors confirmed via Europe PMC authorString "Foster D, Postma E, Lamba S, Mesoudi A")
-- note: preregistered Bayesian meta-analysis of evolutionary cooperation mechanisms in real-world joint-liability microfinance (73 effect estimates, largely non-WEIRD); only punishment robustly positive, kin selection weakly negative (65% posterior more-related groups repay less), high heterogeneity and reproducibility concerns. Quantitative backing for 5.2's adaptationism hedge.
+- note: preregistered Bayesian meta-analysis of evolutionary cooperation mechanisms in real-world joint-liability microfinance (73 effect estimates, largely non-WEIRD); only punishment robustly positive, kin selection weakly negative (65% posterior more-related groups repay less), high heterogeneity and reproducibility concerns. Quantitative backing for 5.2's adaptationism hedge. Cited by DD notes 5.2, 5.5.
 
 ### four-paths-to-atheism-emergence-non-religiosity
 - status: usable
@@ -2128,15 +2462,15 @@ Also: existing entry `curry-mullins-whitehouse-2019-seven-moral-rules` should ad
 
 ### geertz-1960-religion-of-java
 - status: usable
-- medium: text
+- medium: text-ocr
 - cite: Clifford Geertz, The Religion of Java (The Free Press, 1960; repr. 1976)
-- kb: `clifford-geertz_the-religion-of-java_1976.md`
+- kb: `Geertz_The-Religion-of-Java_1976.md` (full OCR text, partially transcribed; ch. 20 "Mysticism" — Sumarah — from seg 463; rasa at segs 357–365)
 - verified: web (per Cambridge/UChicago Press catalogue entries)
-- note: NEEDS-HUMAN: prov=_unprocessed_ literally matches the barred:self heuristic (rule 1), but sqlite peek confirms this is the genuine OCR'd text of Geertz's 1960 book (1976 reprint per filename/Monoskop copy), not project-author prose -- reclassified usable by content override; recommend confirming and re-filing out of _unprocessed_
+- note: Genuine OCR text of Geertz's 1960 ethnography (1976 reprint); the earlier `clifford-geertz_…` filename is no longer in the corpus. ▲ Geertz saw a formally ranked guru-sect in 1953–54 — do not quote the movement's later "no guru" self-description for its whole history. Cited by DD notes 0.6, 3.5, 3.5.1, 3.5.3, 3.5.4.
 
 ### gintis-vanschaik-boehm-2015-zoon-politikon
 - status: usable
-- medium: text
+- medium: text-ocr
 - cite: Herbert Gintis, Carel van Schaik, and Christopher Boehm, "Zoon Politikon: The Evolutionary Origins of Human Political Systems," Current Anthropology 56(3) (2015): 327-353
 - kb: `zoonpolitikon.md`
 - verified: web (DOI 10.1086/681217)
@@ -2162,7 +2496,7 @@ Also: existing entry `curry-mullins-whitehouse-2019-seven-moral-rules` should ad
 - cite: David Graeber, "Debt: The First Five Thousand Years" (Mute magazine, 2009)
 - kb: `david-graeber-debt-the-first-five-thousand-years.md`
 - verified: web (repr. https://theanarchistlibrary.org/library/david-graeber-debt-the-first-five-thousand-years; corpus header: "Retrieved on May 16th, 2009 from www.metamute.org")
-- note: the 2009 essay preceding the 2011 Melville House book of the same title — this entry cites the essay, which is what the corpus holds.
+- note: the 2009 essay preceding the 2011 Melville House book of the same title — this entry cites the essay, which is what the corpus holds. Cited by DD note 6.3.
 
 ### graeber-2012-after-the-jubilee
 - status: usable
@@ -2177,7 +2511,7 @@ Also: existing entry `curry-mullins-whitehouse-2019-seven-moral-rules` should ad
 - cite: David Graeber, "All Economies Are Ultimately Human Economies," in *Challenging Capitalist Modernity II: Dissecting Capitalist Modernity — Building Democratic Confederalism* (Network for an Alternative Quest, 2015), §3.3, pp. 143–153
 - kb: `david-graeber_all-economies-are-ultimately-human-economies.md`
 - verified: web (PDF at ocalanbooks.com, per document header; conference talk, original video on YouTube)
-- note: —
+- note: —. Cited by DD note 6.3.
 
 ### graeber-stern-weiner-2011-debt-slavery-freedom
 - status: usable
@@ -2185,7 +2519,7 @@ Also: existing entry `curry-mullins-whitehouse-2019-seven-moral-rules` should ad
 - cite: David Graeber, interviewed by Jamie Stern-Weiner, "Debt, Slavery and our Idea of Freedom" (two-part interview, 29 August & 1 September 2011)
 - kb: `david-graeber+jamie-stern-weiner_debt-slavery-and-our-idea-of-freedom.md`
 - verified: web (https://davidgraeber.org/interviews/debt-slavery-and-our-idea-of-freedom/; repr. The Anarchist Library, ZNetwork)
-- note: conducted on UK publication of *Debt: The First 5000 Years*.
+- note: conducted on UK publication of *Debt: The First 5000 Years*. Cited by DD note 6.3.
 
 ### hagen-2018-seven-reasons-depression-not-brain-disorder
 - status: usable
@@ -2263,7 +2597,7 @@ Also: existing entry `curry-mullins-whitehouse-2019-seven-moral-rules` should ad
 - cite: Thaddeus Metz, "Ubuntu as a moral theory and human rights in South Africa," *African Human Rights Law Journal* 11(2) (2011): 532–559
 - kb: `Metz_Ubuntu-as-a-Moral-Theory-and-Human-Rights-in-South-Africa_AHRLJ-2011.md` (staged at staging.text/DD/sources/1-ubuntu/, folded into the corpus 2026-08)
 - verified: acquired (diamond OA; full text at `scratch/sources/part4/1-ubuntu/`, 28 pp.)
-- note: The standard analytic statement of ubuntu as a *moral theory* rather than a slogan, by the philosopher who has done most to formalise it, and the natural first citation for Part 4's Ubuntu cluster. Also treats *S v Makwanyane*, so it covers both the ethics and the constitutional-law strand in one text. Cited by DD note 4.2.
+- note: The standard analytic statement of ubuntu as a *moral theory* rather than a slogan, by the philosopher who has done most to formalise it, and the natural first citation for Part 4's Ubuntu cluster. Also treats *S v Makwanyane*, so it covers both the ethics and the constitutional-law strand in one text.
 
 ### gade-2011-written-discourses-on-ubuntu
 - status: usable
@@ -2271,22 +2605,22 @@ Also: existing entry `curry-mullins-whitehouse-2019-seven-moral-rules` should ad
 - cite: Christian B. N. Gade, "The historical development of the written discourses on ubuntu," *South African Journal of Philosophy* 30(3) (2011): 303–329
 - kb: `Gade_The-Historical-Development-of-the-Written-Discourses-on-Ubuntu_SAJP-2011.md` (staged at staging.text/DD/sources/1-ubuntu/, folded into the corpus 2026-08)
 - verified: acquired (OA via Aarhus PURE; full text at `scratch/sources/part4/1-ubuntu/`, 27 pp.)
-- note: Traces when ubuntu was actually written about and what it was taken to mean at each stage. The load-bearing finding for Part 4: Gade advances as an explicit **hypothesis** — his word, not a demonstration — that it was "between 1993 and 1995" that ubuntu "was defined for the first time as something connected to the proverb '*umuntu ngumuntu ngabantu*'," i.e. contemporaneous with the Interim Constitution's Epilogue and the founding of the TRC, so that "the term 'ubuntu' and the proverb became intimately connected within the space of just a few years." ▲ Cite it as a dated hypothesis about the *written* discourse, not as proof about oral tradition — the distinction matters for Part 4's "a village proverb became a principle of constitutional law" sentence. Cited by DD note 4.2.
+- note: Traces when ubuntu was actually written about and what it was taken to mean at each stage. The load-bearing finding for Part 4: Gade advances as an explicit **hypothesis** — his word, not a demonstration — that it was "between 1993 and 1995" that ubuntu "was defined for the first time as something connected to the proverb '*umuntu ngumuntu ngabantu*'," i.e. contemporaneous with the Interim Constitution's Epilogue and the founding of the TRC, so that "the term 'ubuntu' and the proverb became intimately connected within the space of just a few years." ▲ Cite it as a dated hypothesis about the *written* discourse, not as proof about oral tradition — the distinction matters for Part 4's "a village proverb became a principle of constitutional law" sentence.
 
 ### menkiti-1984-person-and-community
 - status: usable
-- medium: text
+- medium: text-ocr
 - cite: Ifeanyi A. Menkiti, "Person and Community in African Traditional Thought," in Richard A. Wright (ed.), *African Philosophy: An Introduction*, 3rd edn (University Press of America, 1984), 171–181
 - kb: `Menkiti_Person-and-Community-in-African-Traditional-Thought_1984.md` (staged at staging.text/DD/sources/1-ubuntu/, folded into the corpus 2026-08)
 - verified: acquired (full text at `scratch/sources/part4/1-ubuntu/`, 6 pp.)
-- note: The foundational statement of relational personhood — that personhood is acquired within community rather than possessed at birth — and the text the whole "I am because we are" literature argues with. Short, primary, and the correct anchor for Part 4's contrast between relational and individualist accounts of the self. Cited by DD note 4.2.
+- note: The foundational statement of relational personhood — that personhood is acquired within community rather than possessed at birth — and the text the whole "I am because we are" literature argues with. Short, primary, and the correct anchor for Part 4's contrast between relational and individualist accounts of the self.
 
 ### makwanyane-1995-constitutional-court
 - status: usable
 - medium: text
 - cite: *S v Makwanyane and Another* (CCT3/94) [1995] ZACC 3, Constitutional Court of South Africa, 6 June 1995
 - verified: acquired (via Metz 2011, which quotes and analyses the ubuntu passages; primary judgment on SAFLII is `browser`-only)
-- note: The judgment abolishing the death penalty in South Africa, and the case in which *ubuntu* enters constitutional jurisprudence — the documentary basis for the claim that ubuntu became a principle of law. ▲ Read here through Metz's treatment rather than in the primary; SAFLII refuses scripted fetches, so one manual download is outstanding. Cited by DD note 4.2.
+- note: The judgment abolishing the death penalty in South Africa, and the case in which *ubuntu* enters constitutional jurisprudence — the documentary basis for the claim that ubuntu became a principle of law. ▲ Read here through Metz's treatment rather than in the primary; SAFLII refuses scripted fetches, so one manual download is outstanding.
 
 ### i-dare-you-define-dharma
 - status: barred
@@ -2302,7 +2636,7 @@ Also: existing entry `curry-mullins-whitehouse-2019-seven-moral-rules` should ad
 - cite: "In the Eye of the Beholder: Parochial Altruism, Radicalization, and Extremism," prosocial.world (2023; also published thisviewoflife.com, 2020)
 - kb: `in-the-eye-of-the-beholder-parochial-altruism-radicalization-and-extremism.md`
 - verified: web (prosocial.world/posts/in-the-eye-of-the-beholder-parochial-altruism-radicalization-and-extremism)
-- note: Specific byline not surfaced in search results.
+- note: Specific byline not surfaced in search results. Cited by DD note 7.1.
 
 ### ishungisa-2025-prestige-gender-ideology
 - status: usable
@@ -2310,7 +2644,7 @@ Also: existing entry `curry-mullins-whitehouse-2019-seven-moral-rules` should ad
 - cite: Alexander M. Ishungisa, Joseph A. Kilgallen, Elisha Mabula, Charlotte O. Brand, Mark Urassa & David W. Lawson, "Prestige and gender role ideology: a study of young Tanzanian men", *Evolutionary Human Sciences* (2025), PMCID PMC11949630
 - kb: `PMC11949630-prestige-and-gender-role-ideology-a-study-of-young-tanzanian.md`
 - verified: web (PMC11949630; authors confirmed via Europe PMC authorString "Ishungisa AM, Kilgallen JA, Mabula E, Brand CO, Urassa M, Lawson DW")
-- note: field evidence for model-based social learning of *norms*; elders prestigious as "preservers and teachers of societal norms"; prestige empirically hard to separate from dominance.
+- note: field evidence for model-based social learning of *norms*; elders prestigious as "preservers and teachers of societal norms"; prestige empirically hard to separate from dominance. Cited by DD note 2.4.
 
 ### jakarta-post-australian-reporter-tale-of-living-the-news
 - status: usable
@@ -2438,7 +2772,7 @@ Also: existing entry `curry-mullins-whitehouse-2019-seven-moral-rules` should ad
 - cite: Peter K. Jonason, Norman P. Li & Anna Z. Czarna, "Quick and dirty: some psychosocial costs associated with the Dark Triad in three countries", *Evolutionary Psychology* 11(5) (2013), PMCID PMC10426975
 - kb: `PMC10426975-quick-and-dirty-some-psychosocial-costs-associated-with-the-.md`
 - verified: web (PMC10426975; authors confirmed via Europe PMC authorString "Jonason PK, Li NP, Czarna AZ")
-- note: US/Singapore/Poland samples; the fast Dark-Triad strategy carries familial, romantic and platonic psychosocial costs. Cross-national ballast against overstating adaptiveness of the fast strategy.
+- note: US/Singapore/Poland samples; the fast Dark-Triad strategy carries familial, romantic and platonic psychosocial costs. Cross-national ballast against overstating adaptiveness of the fast strategy. Cited by DD note 5.5.
 
 ### jordan-2016-evolution-moral-outrage
 - status: usable
@@ -2470,7 +2804,7 @@ Also: existing entry `curry-mullins-whitehouse-2019-seven-moral-rules` should ad
 - cite: Will Kalkhoff, Richard T. Serpe & Josh Pollock, "Is Video Chat a Sufficient Proxy for Face-to-Face Interaction? Biosociological Reflections on Life during the COVID-19 Pandemic" (This View of Life, 28 Jul 2020)
 - kb: `posts_is-video-chat-a-sufficient-proxy-for-face-to-face-interaction-biosociological-reflections-on-life-during-the-covid-19-pandemic.md`
 - verified: web
-- note: Cites Turkle, *Alone Together* (2011) per gloss; full title truncated with "..." in the input filename.
+- note: Cites Turkle, *Alone Together* (2011) per gloss; full title truncated with "..." in the input filename. Cited by DD note 6.2.
 
 ### khan-2026-institutionalised-commitment
 - status: usable
@@ -2478,7 +2812,7 @@ Also: existing entry `curry-mullins-whitehouse-2019-seven-moral-rules` should ad
 - cite: Saira Khan, "Institutionalised commitment and its origins", *Human Nature* 37 (2026), PMCID PMC13079463
 - kb: `PMC13079463-institutionalised-commitment-and-its-origins.md`
 - verified: web (PMC13079463; author confirmed via Europe PMC authorString "Khan S")
-- note: transition from reputationally- to institutionally-enforced commitment, dated to Neolithic sedentism/agriculture/hierarchy; institutional third-party punishment enables cooperation with strangers absent reputational information. Author flags it as a narrative hypothesis. Converts an [A] in note 2.3 to a citable [S#].
+- note: transition from reputationally- to institutionally-enforced commitment, dated to Neolithic sedentism/agriculture/hierarchy; institutional third-party punishment enables cooperation with strangers absent reputational information. Author flags it as a narrative hypothesis. Converts an [A] in note 2.3 to a citable [S#]. Cited by DD note 2.3.
 
 ### kido-takezawa-2024-norm-psychology
 - status: usable
@@ -2486,7 +2820,7 @@ Also: existing entry `curry-mullins-whitehouse-2019-seven-moral-rules` should ad
 - cite: Yuta Kido & Masanori Takezawa, "Coevolution of norm psychology and cooperation through exapted conformity", *Evolutionary Human Sciences* 6 (2024), PMCID PMC11503932
 - kb: `PMC11503932-coevolution-of-norm-psychology-and-cooperation-through-exapt.md`
 - verified: web (PMC11503932; authors confirmed via Europe PMC authorString "Kido Y, Takezawa M")
-- note: gene-culture coevolutionary model of norm psychology; injunctive vs descriptive norms; internalisation evidenced by early norm acquisition in children and reward-circuit activation making "norm compliance a goal rather than a burden".
+- note: gene-culture coevolutionary model of norm psychology; injunctive vs descriptive norms; internalisation evidenced by early norm acquisition in children and reward-circuit activation making "norm compliance a goal rather than a burden". Cited by DD note 1.2.
 
 ### kish-bar-on-lamm-2023-norm-psychology-identity
 - status: usable
@@ -2494,7 +2828,7 @@ Also: existing entry `curry-mullins-whitehouse-2019-seven-moral-rules` should ad
 - cite: Kati Kish Bar-On & Ehud Lamm, "The interplay of social identity and norm psychology in the evolution of human groups", *Philosophical Transactions of the Royal Society B* 378 (2023), PMCID PMC9869443
 - kb: `PMC9869443-the-interplay-of-social-identity-and-norm-psychology-in-the-.md`
 - verified: web (PMC9869443; authors confirmed via Europe PMC authorString "Kish Bar-On K, Lamm E" — surname is the compound "Kish Bar-On")
-- note: canonical definition of norm psychology as "the suite of psychological adaptations involved in humans' capacity to establish and enforce social norms"; argues norm psychology and social identity must be integrated.
+- note: canonical definition of norm psychology as "the suite of psychological adaptations involved in humans' capacity to establish and enforce social norms"; argues norm psychology and social identity must be integrated. Cited by DD note 1.2.
 
 ### kline-shamsudheen-broesch-2018-variation-is-the-universal
 - status: usable
@@ -2509,7 +2843,7 @@ Also: existing entry `curry-mullins-whitehouse-2019-seven-moral-rules` should ad
 - cite: Eva Kundtová Klocová, Radek Kundt, Pushkar Varma Puryag & Martin Lang, "Estimated costs and benefits of participation in an extreme ritual in Mauritius", *Evolutionary Human Sciences* 7 (2025), PMCID PMC12645328
 - kb: `PMC12645328-estimated-costs-and-benefits-of-participation-in-an-extreme-.md`
 - verified: web (PMC12645328; authors confirmed via Europe PMC authorString "Kundtová Klocová E, Kundt R, Puryag PV, Lang M" — lead surname is the compound "Kundtová Klocová")
-- note: preregistered Thaipusam Kavadi study (N = 369; Tamil Hindu in-group vs Christian out-group). ▲ In-group estimated physical costs lower but *material* costs higher; concludes "differential estimation of ritual benefits, not costs, are key to the persistence of extreme rituals" — refines rather than confirms Sosis's differential-cost-estimation account. Replaces the YouTube-transcript source for 5.2's Thaipusam claim.
+- note: preregistered Thaipusam Kavadi study (N = 369; Tamil Hindu in-group vs Christian out-group). ▲ In-group estimated physical costs lower but *material* costs higher; concludes "differential estimation of ritual benefits, not costs, are key to the persistence of extreme rituals" — refines rather than confirms Sosis's differential-cost-estimation account. Replaces the YouTube-transcript source for 5.2's Thaipusam claim. Cited by DD note 5.2.
 
 ### lightner-2021-ethnoscientific-expertise
 - status: usable
@@ -2517,7 +2851,7 @@ Also: existing entry `curry-mullins-whitehouse-2019-seven-moral-rules` should ad
 - cite: Aaron D. Lightner, Cynthiann Heckelsmiller & Edward H. Hagen, "Ethnoscientific expertise and knowledge specialisation in 55 traditional cultures", *Evolutionary Human Sciences* (2021), PMCID PMC10427309
 - kb: `PMC10427309-ethnoscientific-expertise-and-knowledge-specialisation-in-55.md`
 - verified: web (PMC10427309; authors confirmed via Europe PMC authorString "Lightner AD, Heckelsmiller C, Hagen EH")
-- note: cross-cultural coding of knowledge specialists; religious/spiritual leaders are ethnoscientific experts in 19% of records; competing cultural-transmission vs proprietary-knowledge (secretive, gatekept) models of expertise.
+- note: cross-cultural coding of knowledge specialists; religious/spiritual leaders are ethnoscientific experts in 19% of records; competing cultural-transmission vs proprietary-knowledge (secretive, gatekept) models of expertise. Cited by DD note 2.4.
 
 ### lucid-dreaming-new-perspectives-2014
 - status: usable
@@ -2533,7 +2867,7 @@ Also: existing entry `curry-mullins-whitehouse-2019-seven-moral-rules` should ad
 - cite: Mason L. Manning, Bill Thompson & Thomas J. H. Morgan, "Norm reinforcement, not conformity or environmental factors, is predicted to sustain cultural variation", *Evolutionary Human Sciences* (2024), PMCID PMC11658947
 - kb: `PMC11658947-norm-reinforcement-not-conformity-or-environmental-factors-i.md`
 - verified: web (PMC11658947; authors confirmed via Europe PMC authorString "Manning ML, Thompson B, Morgan TJH")
-- note: conformist transmission alone cannot stabilise traditions; punishment/reward-based norm reinforcement can; generates historical contingency, multi-generational adaptive lag, and boundary-driven divergence between culturally similar neighbouring groups.
+- note: conformist transmission alone cannot stabilise traditions; punishment/reward-based norm reinforcement can; generates historical contingency, multi-generational adaptive lag, and boundary-driven divergence between culturally similar neighbouring groups. Cited by DD note 2.4.
 
 ### manson-2020-narcissism-lhs-instrument
 - status: usable
@@ -2541,7 +2875,7 @@ Also: existing entry `curry-mullins-whitehouse-2019-seven-moral-rules` should ad
 - cite: Joseph H. Manson, "Is narcissism a slow life history strategy indicator?: the answer depends on the LHS instrument", *Evolutionary Psychology* 18 (2020), PMCID PMC10358412
 - kb: `PMC10358412-is-narcissism-a-slow-life-history-strategy-indicator-the-ans.md`
 - verified: web (PMC10358412; author confirmed via Europe PMC authorString "Manson JH")
-- note: N = 929; callousness and secondary psychopathy are fast-LHS indicators across two psychometric LHS instruments, while narcissism's status is instrument-dependent. Measurement-robustness reinforcement for the psychopathy/fast-LHS mapping.
+- note: N = 929; callousness and secondary psychopathy are fast-LHS indicators across two psychometric LHS instruments, while narcissism's status is instrument-dependent. Measurement-robustness reinforcement for the psychopathy/fast-LHS mapping. Cited by DD note 5.5.
 
 ### marks-2015-evolutionary-psychology-is-neither
 - status: usable
@@ -2564,7 +2898,7 @@ Also: existing entry `curry-mullins-whitehouse-2019-seven-moral-rules` should ad
 - cite: J. Gordon Melton & Martin Baumann (eds.), "Sumarah" entry in *Religions of the World: A Comprehensive Encyclopedia of Beliefs and Practices* (ABC-CLIO, 2nd ed., 2010)
 - kb: `sumarah-religions-of-the-world.md`, `Paul-Stange_Sumarah_2002.md`
 - verified: web
-- note: prov=sumarah (explicit usable-topic dir).
+- note: prov=sumarah (explicit usable-topic dir). Cited by DD notes 0.7, 3.5, 3.5.1, 3.5.2, 3.5.4.
 
 ### mesoudi-thornton-2018-what-is-cce
 - status: usable
@@ -2572,7 +2906,7 @@ Also: existing entry `curry-mullins-whitehouse-2019-seven-moral-rules` should ad
 - cite: Alex Mesoudi & Alex Thornton, "What is cumulative cultural evolution?", *Proceedings of the Royal Society B* (2018), PMCID PMC6015846
 - kb: `PMC6015846-what-is-cumulative-cultural-evolution.md`
 - verified: web (PMC6015846; authors confirmed via Europe PMC authorString "Mesoudi A, Thornton A")
-- note: core vs extended criteria for cumulative cultural evolution; the standard definitional reference for transmission fidelity and trait retention.
+- note: core vs extended criteria for cumulative cultural evolution; the standard definitional reference for transmission fidelity and trait retention. Cited by DD notes 1.2, 2.4.
 
 ### migliano-vinicius-2022-foraging-niche
 - status: usable
@@ -2580,7 +2914,7 @@ Also: existing entry `curry-mullins-whitehouse-2019-seven-moral-rules` should ad
 - cite: Andrea Bamberg Migliano & Lucio Vinicius, "The origins of human cumulative culture: from the foraging niche to collective intelligence", *Philosophical Transactions of the Royal Society B* (2022), PMCID PMC8666907
 - kb: `PMC8666907-the-origins-of-human-cumulative-culture-from-the-foraging-ni.md`
 - verified: web (PMC8666907; authors confirmed via Europe PMC authorString "Migliano AB, Vinicius L")
-- note: transmission fidelity, teaching, specialisation, recombination and ratcheting as adaptations of the forager niche. ▲ Argues *reduced* hierarchy raised transmission fidelity — cuts against note 2.4's hierarchical paradigm carriers.
+- note: transmission fidelity, teaching, specialisation, recombination and ratcheting as adaptations of the forager niche. ▲ Argues *reduced* hierarchy raised transmission fidelity — cuts against note 2.4's hierarchical paradigm carriers. Cited by DD notes 1.2, 2.4.
 
 ### milinski-2016-reputation-universal-currency
 - status: usable
@@ -2588,7 +2922,7 @@ Also: existing entry `curry-mullins-whitehouse-2019-seven-moral-rules` should ad
 - cite: Manfred Milinski, "Reputation, a universal currency for human social interactions", *Philosophical Transactions of the Royal Society B* 371 (2016), PMCID PMC4760200
 - kb: `PMC4760200-reputation-a-universal-currency-for-human-social-interaction.md`
 - verified: web (PMC4760200; author confirmed via Europe PMC authorString "Milinski M")
-- note: direct vs indirect reciprocity; reputation as a socially maintained score updated by observation and gossip, functioning "like money that can be used whenever the person needs help", attracting help from strangers and out-group members.
+- note: direct vs indirect reciprocity; reputation as a socially maintained score updated by observation and gossip, functioning "like money that can be used whenever the person needs help", attracting help from strangers and out-group members. Cited by DD notes 1.2, 5.2.
 
 ### mydharma-ourdharma-28258
 - status: barred
@@ -2604,7 +2938,7 @@ Also: existing entry `curry-mullins-whitehouse-2019-seven-moral-rules` should ad
 - cite: Joseph L. Nedelec & Francesco DiRienzo, "Predicting Moffitt's developmental taxonomy of antisocial behavior using life history theory: a partial test of the evolutionary taxonomy", *Evolutionary Psychology* 21 (2023), PMCID PMC10655648
 - kb: `PMC10655648-predicting-moffitt-s-developmental-taxonomy-of-antisocial-be.md`
 - verified: web (PMC10655648; authors confirmed via Europe PMC authorString "Nedelec JL, DiRienzo F")
-- note: Add Health test; harshness and unpredictability distinguish life-course-persistent from adolescence-limited offenders, but other life-history measures do not — "a lack of support for the evolutionary taxonomy" on those measures. Corroborates the harshness/unpredictability channel while curbing the broader fast-LHS story.
+- note: Add Health test; harshness and unpredictability distinguish life-course-persistent from adolescence-limited offenders, but other life-history measures do not — "a lack of support for the evolutionary taxonomy" on those measures. Corroborates the harshness/unpredictability channel while curbing the broader fast-LHS story. Cited by DD note 5.5.
 
 ### on-not-being-a-buddhist-expanded
 - status: barred
@@ -2644,7 +2978,7 @@ Also: existing entry `curry-mullins-whitehouse-2019-seven-moral-rules` should ad
 - cite: Hervey C. Peoples, Pavel Duda & Frank W. Marlowe, "Hunter-gatherers and the origins of religion", *Human Nature* 27 (2016), PMCID PMC4958132
 - kb: `PMC4958132-hunter-gatherers-and-the-origins-of-religion.md`
 - verified: web (PMC4958132; authors confirmed via Europe PMC authorString "Peoples HC, Duda P, Marlowe FW")
-- note: phylogenetic reconstruction of religiosity across a global hunter-gatherer sample using a time-calibrated supertree; animism ancestral; moralising active high gods "absent in early humans". Method-independent corroboration of the moralising-gods-are-late caveat, not reliant on the retracted Seshat analysis.
+- note: phylogenetic reconstruction of religiosity across a global hunter-gatherer sample using a time-calibrated supertree; animism ancestral; moralising active high gods "absent in early humans". Method-independent corroboration of the moralising-gods-are-late caveat, not reliant on the retracted Seshat analysis. Cited by DD notes 1.2, 2.3.
 
 ### pinker-2018-enlightenment-now
 - status: usable
@@ -2675,7 +3009,7 @@ Also: existing entry `curry-mullins-whitehouse-2019-seven-moral-rules` should ad
 - cite: Matthew Polistina, "Half The World Lives In Cities. Did We Get Here Thanks To Religion?" (This View of Life / prosocial.world, 6 May 2016)
 - kb: `half-the-world-lives-in-cities-did-we-get-here-thanks-to-religion.md`, `posts_half-the-world-lives-in-cities-did-we-get-here-thanks-to-religion.md`
 - verified: web (prosocial.world/posts/half-the-world-lives-in-cities-did-we-get-here-thanks-to-religion; 2016-05-06)
-- note: Discusses Norenzayan's "big gods" thesis and Purzycki cross-cultural game data.
+- note: Discusses Norenzayan's "big gods" thesis and Purzycki cross-cultural game data. Cited by DD note 7.4.
 
 ### nettlau-history-of-anarchy-early-spring
 - status: usable
@@ -2817,7 +3151,7 @@ Also: existing entry `curry-mullins-whitehouse-2019-seven-moral-rules` should ad
 - cite: Dimitris Xygalatas, "Bridging the Gap Between Laboratory and Field" (This View of Life / prosocial.world)
 - kb: `posts_bridging-the-gap-between-laboratory-and-field.md`
 - verified: web (prosocial.world/posts/bridging-the-gap-between-laboratory-and-field)
-- note: Xygalatas = anthropologist, University of Connecticut. Cited in 5.4 [S4] alongside the registered cognitive-anthropologist companion post.
+- note: Xygalatas = anthropologist, University of Connecticut. Cited in 5.4 [S4] alongside the registered cognitive-anthropologist companion post. Cited by DD note 5.4.
 
 ### prosocial-world-developing-field-site-anthropologists-view
 - status: usable
@@ -2841,7 +3175,7 @@ Also: existing entry `curry-mullins-whitehouse-2019-seven-moral-rules` should ad
 - cite: "Core Design Principle Handout with Spoke Diagram" (ProSocial World resource page)
 - kb: `resources_processes_core-design-principles-handout-spoke-diagram.md`
 - verified: web (web.archive.org/web/20250326034739/https://www.prosocial.world/resources/processes/core-design-principles-handout-spoke-diagram; live URL now HTTP 404, snapshot 26 Mar 2025 HTTP 200 via archive.org availability API, 2026-07-19)
-- note: ProSocial World's own material — non-independent; registered usable with that caveat by author decision (2026-07-19). Evidences only the programme's self-description (CDPs from Ostrom). Cited in 6.1 [S4].
+- note: ProSocial World's own material — non-independent; registered usable with that caveat by author decision (2026-07-19). Evidences only the programme's self-description (CDPs from Ostrom). Cited in 6.1 [S4]. Cited by DD note 6.1.
 
 ### prosocial-world-events-embodiment-workshop
 - status: barred
@@ -2881,7 +3215,7 @@ Also: existing entry `curry-mullins-whitehouse-2019-seven-moral-rules` should ad
 - cite: "ProSocial Spirituality Active Group Engagement (P-SAGE)," prosocial.world
 - kb: `www.prosocial.world_prosocial-spirituality-active-group-engagement.md`
 - verified: web (web.archive.org/web/20250118093302/https://www.prosocial.world/prosocial-spirituality-active-group-engagement)
-- note: Confirmed URL: prosocial.world/prosocial-spirituality-active-group-engagement; combines Ostrom's Core Design Principles with Teasdale's Interspiritual Elements, funded by John Templeton Foundation. P3-verify (2026-07-02): live URL now returns HTTP 404 (absent from sitemap.xml), but a Wayback Machine snapshot (18 Jan 2025, HTTP 200) exists and is used as the anchor; confirmed via the archive.org availability API.
+- note: Confirmed URL: prosocial.world/prosocial-spirituality-active-group-engagement; combines Ostrom's Core Design Principles with Teasdale's Interspiritual Elements, funded by John Templeton Foundation. P3-verify (2026-07-02): live URL now returns HTTP 404 (absent from sitemap.xml), but a Wayback Machine snapshot (18 Jan 2025, HTTP 200) exists and is used as the anchor; confirmed via the archive.org availability API. Cited by DD note 6.1.
 
 ### prosocial-world-solving-friction-with-fiction-storytelling
 - status: usable
@@ -2897,7 +3231,7 @@ Also: existing entry `curry-mullins-whitehouse-2019-seven-moral-rules` should ad
 - cite: "ProSocial World's Spiritual Communities Initiative Preliminary Research Report" (ProSocial World resource page; John Templeton Foundation-funded initiative)
 - kb: `resources_projects_prosocial-worlds-spiritual-communities-initiative-preliminary-research-report.md`
 - verified: web (web.archive.org/web/20250402075812/https://www.prosocial.world/resources/projects/prosocial-worlds-spiritual-communities-initiative-preliminary-research-report; live URL now HTTP 404, snapshot 2 Apr 2025 HTTP 200 via archive.org availability API, 2026-07-19)
-- note: programme's own promotional/research material — non-independent; registered usable with that caveat by author decision (2026-07-19). Evidences only the programme's self-description. Cited in 6.1 [S4]; cf. entry prosocial-world-prosocial-spirituality-active-group-engagement.
+- note: programme's own promotional/research material — non-independent; registered usable with that caveat by author decision (2026-07-19). Evidences only the programme's self-description. Cited in 6.1 [S4]; cf. entry prosocial-world-prosocial-spirituality-active-group-engagement. Cited by DD note 6.1.
 
 ### prosocial-world-tags-ostrom
 - status: barred
@@ -2921,7 +3255,7 @@ Also: existing entry `curry-mullins-whitehouse-2019-seven-moral-rules` should ad
 - cite: Lesleigh E. Pullman, Nabhan Refaie, Martin L. Lalumière & DB Krupp, "Is psychopathy a mental disorder or an adaptation? Evidence from a meta-analysis of the association between psychopathy and handedness", *Evolutionary Psychology* 19 (2021), PMCID PMC10358405
 - kb: `PMC10358405-is-psychopathy-a-mental-disorder-or-an-adaptation-evidence-f.md`
 - verified: web (PMC10358405; authors confirmed via Europe PMC authorString "Pullman LE, Refaie N, Lalumière ML, Krupp DB")
-- note: 16-study meta-analysis; no elevation of non-right-handedness in psychopathy across community, offender and forensic samples; "fail[s] to support the mental disorder model", "partly support[s] the adaptive strategy model", Factor 1 vs Factor 2 divergent. Empirical test of the harmful-dysfunction argument.
+- note: 16-study meta-analysis; no elevation of non-right-handedness in psychopathy across community, offender and forensic samples; "fail[s] to support the mental disorder model", "partly support[s] the adaptive strategy model", Factor 1 vs Factor 2 divergent. Empirical test of the harmful-dysfunction argument. Cited by DD note 5.5.
 
 ### puurtinen-mappes-2009-between-group-competition
 - status: usable
@@ -2929,7 +3263,7 @@ Also: existing entry `curry-mullins-whitehouse-2019-seven-moral-rules` should ad
 - cite: Mikael Puurtinen & Tapio Mappes, "Between-group competition and human cooperation", *Proceedings of the Royal Society B* 276 (2009), PMCID PMC2581672
 - kb: `PMC2581672-between-group-competition-and-human-cooperation.md`
 - verified: web (PMC2581672; authors confirmed via Europe PMC authorString "Puurtinen M, Mappes T"; ▲ Europe PMC gives year 2009, vol. 276 — some secondary citations give 2008 from the online-first date)
-- note: experimental demonstration that between-group competition resolves the public-goods dilemma, raises within-group cooperation, and "intensifies the moral emotions of anger and guilt associated with violations of the cooperative norm".
+- note: experimental demonstration that between-group competition resolves the public-goods dilemma, raises within-group cooperation, and "intensifies the moral emotions of anger and guilt associated with violations of the cooperative norm". Cited by DD notes 1.2, 2.3.
 
 ### quinn-2024-how-the-world-made-the-west
 - status: usable
@@ -2944,7 +3278,7 @@ Also: existing entry `curry-mullins-whitehouse-2019-seven-moral-rules` should ad
 - cite: Susanne Rebers & Ruud Koopmans, "Altruistic punishment and between-group competition: evidence from n-person prisoner's dilemmas", *Human Nature* 23 (2012), PMCID PMC3387358
 - kb: `PMC3387358-altruistic-punishment-and-between-group-competition.md`
 - verified: web (PMC3387358; authors and full subtitle confirmed via Europe PMC)
-- note: tests two cultural-group-selection predictions about costly punishment under intergroup competition; both confirmed, but the effect is fully explained by conditionality on *expected* punishment levels — a deflationary caveat that belongs in any note leaning on CGS.
+- note: tests two cultural-group-selection predictions about costly punishment under intergroup competition; both confirmed, but the effect is fully explained by conditionality on *expected* punishment levels — a deflationary caveat that belongs in any note leaning on CGS. Cited by DD note 1.2.
 
 ### religion-for-breakfast-2019-atheist-churches
 - status: usable
@@ -3043,7 +3377,9 @@ Also: existing entry `curry-mullins-whitehouse-2019-seven-moral-rules` should ad
 - cite: Laura Romano, "Notes on Sumarah Meditation Practice" (1995)
 - kb: `notes-on-sumarah-meditation-practice.md`
 - verified: web (https://www.sumarah.net/en/writings/essays/notes-on-sumarah-meditation-practice.html)
-- note: Author/year identified from document header ('# Notes on Sumarah meditation practice / ### Laura Romano, 1995')
+- note: Author/year identified from document header ('# Notes on Sumarah meditation practice /. Cited by DD notes 3.5, 3.5.2, 3.5.3, 3.5.4.
+
+### Laura Romano, 1995'). Cited by DD notes 3.5, 3.5.2, 3.5.3, 3.5.4.
 
 ### romano-introduction-to-sumarah-meditation
 - status: usable
@@ -3051,7 +3387,9 @@ Also: existing entry `curry-mullins-whitehouse-2019-seven-moral-rules` should ad
 - cite: Laura Romano, "Introduction to Sumarah Meditation"
 - kb: `introduction-to-sumarah.md`
 - verified: web (https://www.sumarah.net/en/introduction/introduction-to-sumarah.html)
-- note: Author identified from document header ('# Introduction to Sumarah Meditation / ### Laura Romano')
+- note: Author identified from document header ('# Introduction to Sumarah Meditation /. Cited by DD notes 0.7, 3.5, 3.5.2, 3.5.4.
+
+### Laura Romano'). Cited by DD notes 0.7, 3.5, 3.5.2, 3.5.4.
 
 ### rusch-2013-altruism-asymmetries-intergroup-conflict
 - status: usable
@@ -3059,7 +3397,7 @@ Also: existing entry `curry-mullins-whitehouse-2019-seven-moral-rules` should ad
 - cite: Hannes Rusch, "Asymmetries in altruistic behavior during violent intergroup conflict", *Evolutionary Psychology* 11(5) (2013), PMCID PMC10437105
 - kb: `PMC10437105-asymmetries-in-altruistic-behavior-during-violent-intergroup.md`
 - verified: web (PMC10437105; author confirmed via Europe PMC authorString "Rusch H")
-- note: critiques the symmetric n-person-prisoner's-dilemma model underlying Choi & Bowles parochial-altruism theory; historical 20th-century data show in-group altruism concentrated in defence rather than attack; "calls for a refinement of theories".
+- note: critiques the symmetric n-person-prisoner's-dilemma model underlying Choi & Bowles parochial-altruism theory; historical 20th-century data show in-group altruism concentrated in defence rather than attack; "calls for a refinement of theories". Cited by DD notes 5.2, 7.1.
 
 ### rybanska-addressing-field-site-concept
 - status: usable
@@ -3238,7 +3576,7 @@ Also: existing entry `curry-mullins-whitehouse-2019-seven-moral-rules` should ad
 - cite: Shade T. Shutters, "Collective action and the detrimental side of punishment", *Evolutionary Psychology* 11 (2013), PMCID PMC10481089
 - kb: `PMC10481089-collective-action-and-the-detrimental-side-of-punishment.md`
 - verified: web (PMC10481089; author confirmed via Europe PMC authorString "Shutters ST")
-- note: agent-based simulation; when retaliation against punishers or second-order punishment is permitted, "the cooperative effects of punishment are reduced or eliminated", modulated by network density. ▲ Complicates the "layered punishment sustains cooperation" claim in 5.5 §4.
+- note: agent-based simulation; when retaliation against punishers or second-order punishment is permitted, "the cooperative effects of punishment are reduced or eliminated", modulated by network density. ▲ Complicates the "layered punishment sustains cooperation" claim in 5.5 §4. Cited by DD note 5.5.
 
 ### silva-mace-2014-northern-ireland-field-experiments
 - status: usable
@@ -3246,7 +3584,7 @@ Also: existing entry `curry-mullins-whitehouse-2019-seven-moral-rules` should ad
 - cite: Antonio S. Silva & Ruth Mace, "Cooperation and conflict: field experiments in Northern Ireland", *Proceedings of the Royal Society B* 281:1792 (2014), art. 20141435, PMCID PMC4150329
 - kb: `PMC4150329-cooperation-and-conflict-field-experiments-in-northern-irela.md`
 - verified: web (PMC4150329; authors confirmed via Europe PMC authorString "Silva AS, Mace R")
-- note: naturalistic field experiments (donations, lost-letter returns) with Catholics and Protestants; conflict reduced out-group but showed "no evidence that it influences in-group cooperation", SES dominant; "a challenge to dominant perspectives on the origins of human cooperation". Counter-evidence to Choi & Bowles, bears on 5.2 and 7.1's "same machinery" thesis.
+- note: naturalistic field experiments (donations, lost-letter returns) with Catholics and Protestants; conflict reduced out-group but showed "no evidence that it influences in-group cooperation", SES dominant; "a challenge to dominant perspectives on the origins of human cooperation". Counter-evidence to Choi & Bowles, bears on 5.2 and 7.1's "same machinery" thesis. Cited by DD notes 5.2, 7.1.
 
 ### singh-henrich-2020-mentawai-taboos
 - status: usable
@@ -3254,7 +3592,7 @@ Also: existing entry `curry-mullins-whitehouse-2019-seven-moral-rules` should ad
 - cite: Manvir Singh & Joseph Henrich, "Why do religious leaders observe costly prohibitions? Examining taboos on Mentawai shamans", *Evolutionary Human Sciences* 2 (2020), PMCID PMC10427447
 - kb: `PMC10427447-why-do-religious-leaders-observe-costly-prohibitions-examini.md`
 - verified: web (PMC10427447; authors confirmed via Europe PMC authorString "Singh M, Henrich J")
-- note: field experiment among Mentawai shamans (Siberut) testing cooperative costly signalling, CREDs and supernatural otherness; all three supported, strongest effect on perceived belief. Non-WEIRD animist/shamanic setting; co-authored by Henrich. Full-text anchor for 5.2's CREDs claim.
+- note: field experiment among Mentawai shamans (Siberut) testing cooperative costly signalling, CREDs and supernatural otherness; all three supported, strongest effect on perceived belief. Non-WEIRD animist/shamanic setting; co-authored by Henrich. Full-text anchor for 5.2's CREDs claim. Cited by DD note 5.2.
 
 ### smaldino-2025-similarity-biased-learning
 - status: usable
@@ -3262,7 +3600,7 @@ Also: existing entry `curry-mullins-whitehouse-2019-seven-moral-rules` should ad
 - cite: Paul E. Smaldino & Alejandro Pérez Velilla, "The evolution of similarity-biased social learning", *Evolutionary Human Sciences* (2025), PMCID PMC11859121
 - kb: `PMC11859121-the-evolution-of-similarity-biased-social-learning.md`
 - verified: web (PMC11859121; authors confirmed via Europe PMC authorString "Smaldino PE, Velilla AP" — the double surname "Pérez Velilla" is indexed under Velilla)
-- note: identity-cued (parochial) social learning as an adaptive strategy; grounds the "learn from our kind" mechanism behind sectarian in-group transmission.
+- note: identity-cued (parochial) social learning as an adaptive strategy; grounds the "learn from our kind" mechanism behind sectarian in-group transmission. Cited by DD note 2.4.
 
 ### smolla-akcay-2023-pathways-cultural-adaptation
 - status: usable
@@ -3270,7 +3608,7 @@ Also: existing entry `curry-mullins-whitehouse-2019-seven-moral-rules` should ad
 - cite: Marco Smolla & Erol Akçay, "Pathways to cultural adaptation: the coevolution of cumulative culture and social networks", *Evolutionary Human Sciences* (2023), PMCID PMC10565192
 - kb: `PMC10565192-pathways-to-cultural-adaptation-the-coevolution-of-cumulativ.md`
 - verified: web (PMC10565192; authors confirmed via Europe PMC authorString "Smolla M, Akçay E")
-- note: high-proficiency culture requires dense networks, norms suppressing individual innovation, and specialised transmitters — a formal mechanism for scholastic conservatism and for the emergence of teaching lineages.
+- note: high-proficiency culture requires dense networks, norms suppressing individual innovation, and specialised transmitters — a formal mechanism for scholastic conservatism and for the emergence of teaching lineages. Cited by DD note 2.4.
 
 ### sparks-burleigh-barclay-2024-expressed-disapproval
 - status: usable
@@ -3278,7 +3616,7 @@ Also: existing entry `curry-mullins-whitehouse-2019-seven-moral-rules` should ad
 - cite: Adam Sparks, Tyler Burleigh & Pat Barclay, "Expressed disapproval does not sustain long-term cooperation as effectively as costly punishment", *Evolutionary Human Sciences* 6 (2024), PMCID PMC11706683
 - kb: `PMC11706683-expressed-disapproval-does-not-sustain-long-term-cooperation.md`
 - verified: web (PMC11706683; authors confirmed via Europe PMC authorString "Sparks A, Burleigh T, Barclay P")
-- note: 40-round experiment; expressed disapproval raises cooperation initially then decays while tangible punishment holds; disapproval "has no impact on an offender's fitness" unless backed by "physical punishment, monetary fines or fewer cooperative interactions because of ostracism" — the "teeth" argument. Explains why forager gossip works and predicts where it fails at scale.
+- note: 40-round experiment; expressed disapproval raises cooperation initially then decays while tangible punishment holds; disapproval "has no impact on an offender's fitness" unless backed by "physical punishment, monetary fines or fewer cooperative interactions because of ostracism" — the "teeth" argument. Explains why forager gossip works and predicts where it fails at scale. Cited by DD note 2.3.
 
 ### spinoza-1677-ethics
 - status: usable
@@ -3310,7 +3648,7 @@ Also: existing entry `curry-mullins-whitehouse-2019-seven-moral-rules` should ad
 - cite: Paul Stange, "Javanese Mysticism in the Revolutionary Period," *Journal of Studies in Mysticism*, vol. 1 no. 2, 1978, pp. 115-130
 - kb: `Paul-Stange_Javanese-Mysticism-in-the-Revolutionary-Period_1978.md`
 - verified: web (https://freotopia.org/people/paulstange/revolutionary.html)
-- note: venue/year from the article's own citation line.
+- note: venue/year from the article's own citation line. Cited by DD notes 3.5, 3.5.1.
 
 ### stange-1979-possession-experience
 - status: usable
@@ -3318,7 +3656,7 @@ Also: existing entry `curry-mullins-whitehouse-2019-seven-moral-rules` should ad
 - cite: Paul Stange, "Configurations of Javanese Possession Experience," *Religious Traditions*, vol. 2 no. 2, 1979, pp. 39-54
 - kb: `Paul-Stange_Configurations-of-Javanese-Possession-Experience_1979.md`
 - verified: web (https://freotopia.org/people/paulstange/configurations.html)
-- note: venue/year from the article's own citation line.
+- note: venue/year from the article's own citation line. Cited by DD note 3.5.1.
 
 ### stange-1980-evolution-of-sumarah
 - status: usable
@@ -3326,7 +3664,7 @@ Also: existing entry `curry-mullins-whitehouse-2019-seven-moral-rules` should ad
 - cite: Paul Stange, *The Evolution of Sumarah* — revision of the PhD dissertation "The Sumarah Movement in Javanese Mysticism" (University of Wisconsin–Madison, 1980); circulated as *Modern Javanism: Truth in Sumarah Practice*
 - kb: `Paul-Stange_The-Evolution-of-Sumarah_1980.md`
 - verified: web (https://freotopia.org/people/paulstange/evolution.pdf; sumarah.net/en/writings/books/the-evolution-of-sumarah---paul-stange.html)
-- note: Stange's CV links evolution.pdf both as the book *Modern Javanism* and as the thesis *The Evolution of Sumarah* — single file; 1980 (Wisconsin PhD) confirmed via sumarah.net; KB filename year is the manifest's best estimate for this revision.
+- note: Stange's CV links evolution.pdf both as the book *Modern Javanism* and as the thesis *The Evolution of Sumarah* — single file; 1980 (Wisconsin PhD) confirmed via sumarah.net; KB filename year is the manifest's best estimate for this revision. Cited by DD notes 3.5, 3.5.1, 3.5.2, 3.5.3, 3.5.4.
 
 ### stange-1986-legitimate-mysticism
 - status: usable
@@ -3334,7 +3672,7 @@ Also: existing entry `curry-mullins-whitehouse-2019-seven-moral-rules` should ad
 - cite: Paul Stange, "'Legitimate' mysticism in Indonesia," *Review of Indonesian and Malaysian Affairs*, vol. 20 no. 2, 1986, pp. 76-117
 - kb: `Paul-Stange_Legitimate-mysticism-in-Indonesia_1986.md`
 - verified: web (https://freotopia.org/people/paulstange/legitimate.html)
-- note: venue/year from the article's own citation line.
+- note: venue/year from the article's own citation line. Cited by DD notes 3.5, 3.5.1, 3.5.4.
 
 ### stange-1989-sabdopalon-prophecy
 - status: usable
@@ -3356,9 +3694,9 @@ Also: existing entry `curry-mullins-whitehouse-2019-seven-moral-rules` should ad
 - status: usable
 - medium: text
 - cite: Paul Stange, "Javanism as text or praxis," *Anthropological Forum*, vol. 6 no. 2, 1990, pp. 237-255
-- kb: `Paul-Stange_Javanism-as-text-or-praxis_1990.md`
+- kb: `Paul-Stange_Javanism-as-text-or-praxis_1990.md`, `Stange_freotopia-praxis_wayback-20260728.md` (full text, folded into the corpus 2026-08)
 - verified: web (https://freotopia.org/people/paulstange/praxis.html)
-- note: venue/year from the article's own citation line.
+- note: venue/year from the article's own citation line. Cited by DD notes 3.5.3, 3.5.4.
 
 ### stange-1991-collapse-of-lineage
 - status: usable
@@ -3366,7 +3704,7 @@ Also: existing entry `curry-mullins-whitehouse-2019-seven-moral-rules` should ad
 - cite: Paul Stange, "The Collapse of Lineage and Availability of Gnosis" (Charles Strong Trust lecture, Australian Association for the Study of Religions, Adelaide, 1991)
 - kb: `Paul-Stange_The-Collapse-of-Lineage-and-Availability-of-Gnosis_1991.md`
 - verified: web (https://freotopia.org/people/paulstange/gnosis.html)
-- note: venue/year from the document's own citation line ("Charles Strong Trust, AASR, Adelaide, 1991").
+- note: venue/year from the document's own citation line ("Charles Strong Trust, AASR, Adelaide, 1991"). Cited by DD note 3.5.2.
 
 ### stange-1991-deconstruction-disempowerment
 - status: usable
@@ -3374,7 +3712,7 @@ Also: existing entry `curry-mullins-whitehouse-2019-seven-moral-rules` should ad
 - cite: Paul Stange, "Deconstruction as disempowerment: new orientalisms of Java," *Bulletin of Concerned Asian Scholars*, vol. 23 no. 3, 1991, pp. 51-71
 - kb: `Paul-Stange_Deconstruction-as-disempowerment_new-orientalisms-of-Java_1991.md`
 - verified: web (https://freotopia.org/people/paulstange/deconstruction.html)
-- note: venue/year from the article's own citation line.
+- note: venue/year from the article's own citation line. Cited by DD notes 3.5, 3.5.3.
 
 ### stange-1992-religious-change-sea
 - status: usable
@@ -3382,15 +3720,15 @@ Also: existing entry `curry-mullins-whitehouse-2019-seven-moral-rules` should ad
 - cite: Paul Stange, "Religious Change in Contemporary Southeast Asia," in *The Cambridge History of Southeast Asia*, vol. 2, ed. Nicholas Tarling (Cambridge University Press, 1992), pp. 529-584
 - kb: `Paul-Stange_Religious-Change-in-Contemporary-Southeast-Asia_1992.md`
 - verified: web (https://freotopia.org/people/paulstange/religious.html)
-- note: venue/year from the article's own citation line.
+- note: venue/year from the article's own citation line. Cited by DD note 3.5.4.
 
 ### stange-1993-inner-dimensions-revolution
 - status: usable
 - medium: text
 - cite: Paul Stange, "Inner dimensions of the Indonesian Revolution," in *Autonomous Histories, Particular Truths: Essays in Honor of John Smail*, ed. Laurie J. Sears (CSEAS, University of Wisconsin, Madison, 1993), pp. 219-243
-- kb: `Paul-Stange_Inner-dimensions-of-the-Indonesian-Revolution_1993.md`
+- kb: `Paul-Stange_Inner-dimensions-of-the-Indonesian-Revolution_1993.md`, `Stange_freotopia-inner_wayback-20260728.md` (full text, folded into the corpus 2026-08)
 - verified: web (https://freotopia.org/people/paulstange/inner.html)
-- note: venue/year from the article's own citation line.
+- note: venue/year from the article's own citation line. Cited by DD notes 3.5.1, 3.5.3.
 
 ### stange-1994-silences-solonese-dance
 - status: usable
@@ -3398,7 +3736,7 @@ Also: existing entry `curry-mullins-whitehouse-2019-seven-moral-rules` should ad
 - cite: Paul Stange, "Silences in Solonese Dance Production," *Journal of Southeast Asian Social Science*, vol. 22 (1994), pp. 210-229
 - kb: `Paul-Stange_Silences-in-Solonese-Dance-Production_1994.md`
 - verified: web (https://freotopia.org/people/paulstange/silences.pdf)
-- note: venue/year from the document's own header line.
+- note: venue/year from the document's own header line. Cited by DD note 3.5.3.
 
 ### stange-1995-exploring-modern-asian-mysticisms
 - status: usable
@@ -3406,7 +3744,7 @@ Also: existing entry `curry-mullins-whitehouse-2019-seven-moral-rules` should ad
 - cite: Paul Stange, *Exploring Modern Asian Mysticisms* (a.k.a. *Asian Mystical Religions*, unpublished book manuscript, c. 1995)
 - kb: `Paul-Stange_Exploring-Modern-Asian-Mysticisms_1995.md`
 - verified: web (https://freotopia.org/people/paulstange/exploring.pdf)
-- note: full text hosted on the author's freotopia.org CV page; document titles itself "Asian Mystical Religions".
+- note: full text hosted on the author's freotopia.org CV page; document titles itself "Asian Mystical Religions". Cited by DD notes 3.5, 3.5.3.
 
 ### stange-2002-javanism
 - status: usable
@@ -3446,7 +3784,7 @@ Also: existing entry `curry-mullins-whitehouse-2019-seven-moral-rules` should ad
 - cite: Paul Stange, "Kebatinan movements," in *Southeast Asia: A Historical Encyclopedia from Angkor Wat to East Timor*, ed. Ooi Keat Gin (ABC-CLIO, Santa Barbara, 2004)
 - kb: `Paul-Stange_Kebatinan-movements_2004.md`
 - verified: web (https://freotopia.org/people/paulstange/kebatinan.html)
-- note: encyclopedia entry; the document's citation line reads "Cambridge UP, Santa Barbara, 2004" but the encyclopedia was published by ABC-CLIO (Santa Barbara).
+- note: encyclopedia entry; the document's citation line reads "Cambridge UP, Santa Barbara, 2004" but the encyclopedia was published by ABC-CLIO (Santa Barbara). Cited by DD note 3.5.3.
 
 ### stange-2007-politik-perhatian
 - status: usable
@@ -3454,7 +3792,7 @@ Also: existing entry `curry-mullins-whitehouse-2019-seven-moral-rules` should ad
 - cite: Paul Stange, *Politik Perhatian: Rasa dalam Kebudayaan Jawa*, ed. Hairus Salim HS (LKiS, Yogyakarta, 1998; 2nd printing 2009)
 - kb: `Paul-Stange_Politik-Perhatian_Rasa-dalam-Kebudayaan-Jawa_2007.md`, `Paul-Stange_Politik-Perhatian_Rasa-dalam-Kebudayaan-Jawa_2007.en.md`
 - verified: web (https://freotopia.org/people/paulstange/politikperhatian.pdf; kubuku.id/detail/politik-perhatian---rasa-dalam-kebudayaan-jawa/37989)
-- note: publisher/years confirmed via LKiS catalogue and Jakarta library records; the KB filename year (2007) is the manifest's best estimate. The `.en.md` file is a 2026 LLM English translation of the Indonesian KB text (*The Politics of Attention: Rasa in Javanese Culture*).
+- note: publisher/years confirmed via LKiS catalogue and Jakarta library records; the KB filename year (2007) is the manifest's best estimate. The `.en.md` file is a 2026 LLM English translation of the Indonesian KB text (*The Politics of Attention: Rasa in Javanese Culture*). Cited by DD notes 3.5, 3.5.1, 3.5.2, 3.5.3, 3.5.4.
 
 ### stange-2008-kejawen-modern
 - status: usable
@@ -3462,7 +3800,7 @@ Also: existing entry `curry-mullins-whitehouse-2019-seven-moral-rules` should ad
 - cite: Paul Stange, *Kejawen Modern: Hakikat dalam Penghayatan Sumarah*, trans. Chandra Utama, ed. Khudori (LKiS, Yogyakarta, 2009)
 - kb: `Paul-Stange_Kejawen-Modern_Hakikat-dalam-Penghayatan-Sumarah_2008.md`
 - verified: web (https://freotopia.org/people/paulstange/kejawenmodern.pdf; ISBN 979-978-53-8-3)
-- note: Indonesian translation of Stange's Sumarah work; publisher/year/ISBN confirmed via LKiS catalogue records; the KB filename year (2008) is the manifest's best estimate.
+- note: Indonesian translation of Stange's Sumarah work; publisher/year/ISBN confirmed via LKiS catalogue records; the KB filename year (2008) is the manifest's best estimate. Cited by DD notes 3.5, 3.5.1, 3.5.2, 3.5.4.
 
 ### stange-2009-ancestral-voices
 - status: usable
@@ -3470,13 +3808,13 @@ Also: existing entry `curry-mullins-whitehouse-2019-seven-moral-rules` should ad
 - cite: Paul Stange, *Ancestral Voices in Island Asia* (unpublished book manuscript, c. 2009); Indonesian version *Suara nenek moyang Nusantara*
 - kb: `Paul-Stange_Ancestral-Voices-in-Island-Asia_2009.md`, `Paul-Stange_Suara-nenek-moyang-Nusantara_2009.md`
 - verified: web (https://freotopia.org/people/paulstange/ancestralvoices.pdf; https://freotopia.org/people/paulstange/suara.pdf)
-- note: full texts hosted on the author's freotopia.org CV page; year is the manifest's best estimate for both files.
+- note: full texts hosted on the author's freotopia.org CV page; year is the manifest's best estimate for both files. Cited by DD note 3.5.3.
 
 ### stange-logic-of-rasa-in-java
 - status: usable
 - medium: text
 - cite: Paul Stange, "The Logic of Rasa in Java," Indonesia, no. 38 (October 1984), pp. 113-134
-- kb: `the-logic-of-rasa--stange.md`, `Paul-Stange_The-Logic-of-Rasa-in-Java_1984.md`
+- kb: `the-logic-of-rasa--stange.md`, `Paul-Stange_The-Logic-of-Rasa-in-Java_1984.md`, `Stange_The-Logic-of-Rasa-in-Java_Indonesia-1984_CornellOA.md` (full text, folded into the corpus 2026-08)
 - verified: web (https://www.jstor.org/stable/3350848)
 
 ### stange-relaxed-meditation-sumarah-teachings
@@ -3537,7 +3875,7 @@ Also: existing entry `curry-mullins-whitehouse-2019-seven-moral-rules` should ad
 - status: usable
 - medium: text
 - cite: Evan Thompson, Waking, Dreaming, Being: Self and Consciousness in Neuroscience, Meditation, and Philosophy (Columbia University Press, 2015)
-- kb: `Evan-Thompson_Waking-Dreaming-Being-Self-and-Consciousness.md`
+- kb: `Evan-Thompson_Waking-Dreaming-Being_2015.md` (full text; earlier `Evan-Thompson_Waking-Dreaming-Being…` filenames are no longer in the corpus)
 - verified: web (ISBN 9780231136952)
 
 ### van-der-kolk-2014-body-keeps-the-score
@@ -3560,7 +3898,7 @@ Also: existing entry `curry-mullins-whitehouse-2019-seven-moral-rules` should ad
 - cite: Lucio Vinicius, Leonardo Rizzo, Federico Battiston & Andrea Bamberg Migliano, "Cultural evolution, social ratcheting and the evolution of human division of labour", *Philosophical Transactions of the Royal Society B* (2025), PMCID PMC11969390
 - kb: `PMC11969390-cultural-evolution-social-ratcheting-and-the-evolution-of-hu.md`
 - verified: web (PMC11969390; authors confirmed via Europe PMC authorString "Vinicius L, Rizzo L, Battiston F, Migliano AB")
-- note: social ratcheting — irreversible interdependence among cultural specialists; individual memory limits force distribution of a repertoire across a corporate body.
+- note: social ratcheting — irreversible interdependence among cultural specialists; individual memory limits force distribution of a repertoire across a corporate body. Cited by DD note 2.4.
 
 ### von-rueden-large-scale-societies-outliers-moral-judgment
 - status: usable
@@ -3776,7 +4114,7 @@ Also: existing entry `curry-mullins-whitehouse-2019-seven-moral-rules` should ad
 - cite: David Sloan Wilson, Mark Sloan and Michael Price, "Is There a Universal Morality? Introduction and Overview of Responses" (This View of Life / prosocial.world, 23 May 2018); this DS_Wilson-directory copy (tvol_morality.md) is the series-introduction section
 - kb: `tvol_morality.md`
 - verified: web (https://www.prosocial.world/posts/is-there-a-universal-morality-introduction-and-overview-of-responses; 23 May 2018)
-- note: DUPLICATE of key wilson-sloan-price-is-there-a-universal-morality-overview -- tvol_morality.md (DS_Wilson dir) is the series-introduction section of that same Wilson/Sloan/Price essay; its opening ("Our moral sense makes involuntary... Eating shrimp... Leviticus") matches the overview page verbatim. NOT a separate Wilson-solo article (Wilson's own distinct lead piece in the series is "Moral Universals, Moral Particulars and Tinbergen's Four Questions," 17 May 2018).
+- note: DUPLICATE of key wilson-sloan-price-is-there-a-universal-morality-overview -- tvol_morality.md (DS_Wilson dir) is the series-introduction section of that same Wilson/Sloan/Price essay; its opening ("Our moral sense makes involuntary... Eating shrimp... Leviticus") matches the overview page verbatim. NOT a separate Wilson-solo article (Wilson's own distinct lead piece in the series is "Moral Universals, Moral Particulars and Tinbergen's Four Questions," 17 May 2018). Cited by DD note 8.2.
 
 ### would-abandoning-moral-foundations-better-society
 - status: usable
@@ -3791,7 +4129,9 @@ Also: existing entry `curry-mullins-whitehouse-2019-seven-moral-rules` should ad
 - cite: Richard Wrangham, *The Goodness Paradox: The Strange Relationship Between Virtue and Violence in Human Evolution* (Pantheon Books, 2019)
 - kb: `the-goodness-paradox-the-strange-relationship-between-virtue-and-violence-in-human-evolution-2018028837-9781101870907-9781101870914_compress.md`
 - verified: web (ISBN 978-1-101-87090-7)
-- note: Filename resolved via DB path (staging.text/Wrangham/...9781101870907-9781101870914_compress.md), which itself embeds the ISBNs. Merged 2026-07-24 with a duplicate entry keyed `wrangham-2019-the-goodness-paradox`; both described the same work and the same corpus file, which double-counted it in the `kb:` delta index. Neither key was referenced by any note. Cited by DD note 2.3.### yt-aliran-kepercayaan-paguyuban-sumarah
+- note: Filename resolved via DB path (staging.text/Wrangham/...9781101870907-9781101870914_compress.md), which itself embeds the ISBNs. Merged 2026-07-24 with a duplicate entry keyed `wrangham-2019-the-goodness-paradox`; both described the same work and the same corpus file, which double-counted it in the `kb:` delta index. Neither key was referenced by any note.
+
+### yt-aliran-kepercayaan-paguyuban-sumarah
 - status: usable
 - medium: transcript
 - cite: "Aliran Kepercayaan dan Kebatinan Paguyuban Sumarah" (YouTube, Indonesian-language explainer on Paguyuban Sumarah)
@@ -3823,6 +4163,14 @@ Also: existing entry `curry-mullins-whitehouse-2019-seven-moral-rules` should ad
 - verified: web (https://theanarchistlibrary.org/library/john-zerzan-the-catastrophe-of-postmodernism)
 
 ---
+
+### zuckerman-2009-atheism-secularity-and-well-being
+- status: usable
+- medium: text
+- cite: Phil Zuckerman, "Atheism, Secularity, and Well-Being: How the Findings of Social Science Counter Negative Stereotypes and Assumptions," *Sociology Compass* 3:6 (2009), 949–971
+- kb: `Zuckerman_Atheism-Secularity-and-Well-Being_SociologyCompass-2009.md`
+- verified: file (title, author, abstract at seg 0; criminality review at seg 13; volume/pages from the published record, not re-checked online)
+- note: Review of the social-science record on atheists and secular societies; the "atheists are more immoral" claim "long disproven."
 
 ## Not used (assessed and excluded)
 - `Glenn-Roberts_CH-19-FINAL-draft.md` — marked "DRAFT IN DEVELOPMENT – NOT FOR CIRCULATION"; barred per BRIEF.
