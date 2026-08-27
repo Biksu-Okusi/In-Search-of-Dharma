@@ -70,7 +70,7 @@ China's "ecological civilization" doctrine is the instructive modern case precis
 
 The corporate culture-by-decree, Part 8's minor key: values authored in a workshop, laminated, and cascaded to people who must live them but may not amend them. Revisable, certainly: by the board, at the next rebrand. Revisable by the bound, no. That the regime is a comfortable one does not change who may amend it.
 
-And the machines, since they are where this project is ultimately headed. Delphi, the 2021 model distilled from 1.7 million moral judgements, was in effect a dharma with no revision organ at all: a frozen verdict machine, wrong the way an oracle is wrong, with no path by which the judged could talk back. Whereas a constitution for a machine, an explicit, readable, rewritable document stating the values it is trained toward, is at least the right *shape*: the pen exists, the text is public, revision is procedurally possible. The second test then asks its question anyway: revisable by *whom*? By the lab that wrote it, or by the people increasingly bound by it? The plain answer today is the former, with experiments (a thousand citizens drafting a public constitution, in one trial) probing toward the latter.
+And the machines, since they are where this project is ultimately headed. Delphi, the 2021 model distilled from 1.7 million moral judgements, was in effect a dharma with no revision organ at all: a frozen verdict machine, wrong the way an oracle is wrong, with no path by which the judged could talk back. Whereas a constitution for a machine, an explicit, readable, rewritable document stating the values it is trained toward, is at least the right *shape*: the pen exists, the text is public, revision is procedurally possible. The second test then asks its question anyway: revisable by *whom*? By the lab that wrote it, or by the people increasingly bound by it? The plain answer today is the former, with experiments (a thousand US American adults drafting a public constitution, in one trial) probing toward the latter.
 
 ## The objections
 
@@ -123,5 +123,5 @@ So, in one breath: the better dharmas hold firmly, crush no one -- and keep the 
 - Wael B Hallaq, "Was the Gate of Ijtihad Closed?" (*International Journal of Middle East Studies*, 1984) -- the centuries-long tradition-internal argument over a revision organ.
 - Mette Halskov Hansen, Hongtao Li & Rune Svarverud, "Ecological civilization: Interpreting the Chinese past, projecting the global future" (*Global Environmental Change*, 2018) -- authoritarian environmentalism and the 2018 constitutional amendment.
 - L Jiang et al., "Can Machines Learn Morality? The Delphi Experiment" (arXiv:2110.07574, 2021) -- the frozen verdict machine.
-- Anthropic & the Collective Intelligence Project, "Collective Constitutional AI: Aligning a Language Model with Public Input" (2023) -- the thousand-citizen constitution trial.
+- Anthropic & the Collective Intelligence Project, "Collective Constitutional AI: Aligning a Language Model with Public Input" (2023) -- the thousand-participant constitution trial.
 
