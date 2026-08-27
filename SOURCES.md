@@ -38,6 +38,14 @@ A note's `[S#]` line points here via `[src:<key>]`. No `[S#]` may point at a `st
 - verified: file (Brill masthead, DOI and page range at seg 0; thesis statement at segs 6–7)
 - note: Counter to the "religion is a modern Western invention" genealogy for the Islamic case — premodern Muslims had a robust concept of *dīn* and a dīn/dunyā distinction.
 
+### abiri-2025-public-constitutional-ai
+- status: usable
+- medium: text
+- cite: Gilad Abiri, "Public Constitutional AI," *Georgia Law Review* 59 (2025), 601; arXiv:2406.16696 (June 2024)
+- kb: `Abiri_Public-Constitutional-AI_arXiv-2406.16696.md`
+- verified: file (harvest header with arXiv id and fetch date at seg 0; full text follows)
+- note: AI legitimacy requires public authorship of AI constitutions; proposes AI Courts and popular-constitutionalism mechanisms.
+
 ### adam-bagir-2022-indigenous-politics-of-justice-sedulur-sikep
 - status: usable
 - medium: text
@@ -45,6 +53,14 @@ A note's `[S#]` line points here via `[src:<key>]`. No `[S#]` may point at a `st
 - kb: `Adam-Bagir_The-Indigenous-Politics-of-Justice-Sedulur-Sikep_Kawistara-2022.md`
 - verified: file (abstract at seg 0; volume, pages and DOI at seg 1; running head with authors at seg 3)
 - note: Four months with Wong Sikep households in Pati; redistribution and recognition inseparable in the peasant identity.
+
+### aiyer-dharma-in-the-mahabharata-ecological-crises
+- status: usable
+- medium: text
+- cite: Kamesh Aiyer, "Dharma in the Mahabharata as a response to Ecological Crises: A speculation," *The Trumpeter* (year not given in the corpus file)
+- kb: `trumpeter_101_1078.md`
+- verified: file (title, author and abstract at seg 0; no masthead or date in file)
+- note: Self-described speculation reading the epic as a conflict over ecological policy; a specimen of "dharma" used as an ecological-policy word from the Indic side. Not a historical source.
 
 ### al-mufakhir-2025-multikulturalisme-ajaran-sumarah
 - status: usable
@@ -134,6 +150,14 @@ A note's `[S#]` line points here via `[src:<key>]`. No `[S#]` may point at a `st
 - verified: file (masthead "Philosophy 33, No. 124 January 1958" and the three theses at seg 0; tesseract OCR, 37 low-confidence words marked `[?]`, seg 8 scrambled)
 - note: The law-conception argument — moral "ought" as a survival from divine law, now "a word of mere mesmeric force"; moral philosophy to wait on a philosophy of psychology. Pointer for wording; check print before quoting.
 
+### anthropic-claudes-constitution-2023-2026
+- status: usable
+- medium: text
+- cite: Anthropic, "Claude's Constitution" (9 May 2023); Anthropic, "Claude's new constitution" (announcement, 22 January 2026); Amanda Askell, Joe Carlsmith, Chris Olah, Jared Kaplan, Holden Karnofsky et al., *Claude's Constitution* (21 January 2026, CC0 1.0)
+- kb: `Anthropic_Claudes-Constitution_2023.md`, `Anthropic_Claudes-New-Constitution-Announcement_2026.md`, `Anthropic_Claudes-Constitution_2026.md`
+- verified: file (2023 page with the January 2026 update banner at seg 0; CC0 release statement in the announcement seg 0; rules-vs-judgment passage at 2026 seg 2 and "perpetual work in progress" at seg 6)
+- note: The revision event itself, both versions in full; evidence that a machine ethic can be versioned in public. Author-side documents — cite as the object, not as authority on their own adequacy.
+
 ### aquinas-summa-treatise-on-law
 - status: usable
 - medium: text
@@ -222,6 +246,14 @@ A note's `[S#]` line points here via `[src:<key>]`. No `[S#]` may point at a `st
 - verified: file (bibliographic header with DOI and CC licence at seg 0; page numbers in running text)
 - note: Sympathetic but sceptical review of the modes theory's applied turn ("realistic, exaggerated or naive"); notes the Seshat retraction.
 
+### bai-et-al-2022-constitutional-ai
+- status: usable
+- medium: text
+- cite: Yuntao Bai et al., "Constitutional AI: Harmlessness from AI Feedback," arXiv:2212.08073 (2022)
+- kb: `Bai-et-al_Constitutional-AI-Harmlessness-from-AI-Feedback_arXiv-2212.08073.md`
+- verified: file (author block seg 0; "we cannot avoid choosing some set of principles" at seg 2)
+- note: The founding CAI paper; the lab's own admission that encoding is choosing.
+
 ### bakunin-1882-god-and-the-state
 - status: usable
 - medium: text
@@ -253,6 +285,14 @@ A note's `[S#]` line points here via `[src:<key>]`. No `[S#]` may point at a `st
 - kb: `Simon-Baren-Cohen_We-need-to-change-how-we-view-autism.md`
 - verified: file (IAI header, date and speaker bio in seg 0; 7 segments; corpus filename misspells the surname "Baren")
 - note: The E-S / Pattern Seekers author in his own voice: "if-and-then" pattern-seeking and the STEM link, the affective/cognitive empathy split, the "male brain / female brain" headlines called "totally misleading," masking in girls and women. Interview transcript, not peer-reviewed.
+
+### baron-mickey-2025-deep-degrowth
+- status: usable
+- medium: text
+- cite: Chad Baron & Sam Mickey, "Deep Degrowth: Contributions from Catholic Social Teaching," *The Trumpeter* 41:1 (2025)
+- kb: `trumpeter_130_1886.md`
+- verified: file (masthead "Volume 41, No. 1 (2025)" at seg 0)
+- note: Degrowth, deep social ecology and Catholic social teaching read together; quotes Laudato Si' §193 on accepting decreased growth.
 
 ### batchelor-2012-a-secular-buddhism-jgb
 - status: usable
@@ -326,6 +366,14 @@ A note's `[S#]` line points here via `[src:<key>]`. No `[S#]` may point at a `st
 - verified: file (headnote at seg 0 gives the 1988 Turin occasion and "second edition" provenance; running heads "THE PURSUIT OF THE IDEAL"; the pluralism-vs-relativism passage at seg 10)
 - note: Berlin's own statement of value pluralism against relativism — "a world of objective values… many. But not infinitely many".
 
+### birhane-et-al-2022-values-encoded-in-ml-research
+- status: usable
+- medium: text
+- cite: Abeba Birhane, Pratyusha Kalluri, Dallas Card, William Agnew, Ravit Dotan & Michelle Bao, "The Values Encoded in Machine Learning Research," *FAccT* 2022; arXiv:2106.15590
+- kb: `Birhane-et-al_The-Values-Encoded-in-Machine-Learning-Research_arXiv-2106.15590.md`
+- verified: file (author block and abstract seg 0: 100 top-cited ICML/NeurIPS papers; 15% justify a societal need, 1% discuss negative potential; 59 values)
+- note: Empirical content analysis of the values ML research uplifts; grounds the "curation is political" claim.
+
 ### blair-2013-neurobiology-of-psychopathic-traits-in-youths
 - status: usable
 - medium: text
@@ -357,6 +405,14 @@ A note's `[S#]` line points here via `[src:<key>]`. No `[S#]` may point at a `st
 - kb: `Christopher-Boehm_Hierarchy-in-the-Forest_The-Evolution-of-Egalitarian-Behavior_HarvardUP-1999.md`, `04-chapter.md`
 - verified: web (ISBN 978-0-674-39031-7)
 - note: reverse dominance hierarchy; foragers as moral communities. Cited by DD note 7.3.
+
+### bookchin-1987-social-ecology-versus-deep-ecology
+- status: usable
+- medium: text
+- cite: Murray Bookchin, "Social Ecology versus Deep Ecology: A Challenge for the Ecology Movement," *Green Perspectives* 4–5 (Summer 1987); Anarchy Archives text
+- kb: `Murray-Bookchin_Social-Ecology-versus-Deep-Ecology_A-Challenge-for-the-Ecology-Movement_1987.md`
+- verified: file (impressum with source URL and original publication at seg 0; 39 segments)
+- note: The polemic that opened the social/deep ecology quarrel ("Eco-la-la"; the AIDS/microbe reductio); the Anarchy Archives posting removed the original scare quotes around "deep ecology."
 
 ### bookchin-1997-reader
 - status: usable
@@ -486,6 +542,14 @@ A note's `[S#]` line points here via `[src:<key>]`. No `[S#]` may point at a `st
 - verified: file (journal header, DOI and licence in segs 0–1)
 - note: The one trial of modern Stoic training as practice in the corpus: n = 24, twelve online days, "quantitatively, results were mixed."
 
+### brunila-laviolette-2022-what-company-do-words-keep
+- status: usable
+- medium: text
+- cite: Mikael Brunila & Jack LaViolette, "What company do words keep? Revisiting the distributional semantics of J.R. Firth & Zellig Harris," *NAACL* 2022; arXiv:2205.07750
+- kb: `Kuhn-et-al_What-Company-Do-Words-Keep-Distributional-Semantics-Firth-Harris_arXiv-2205.07750.md`
+- verified: file (author block and abstract at seg 0)
+- note: ▲ Corpus filename misattributes the paper to "Kuhn et al."; authors are Brunila (McGill) and LaViolette (Columbia). Firth's "company" as cultural and situational context vs Harris's co-occurrence reading.
+
 ### bullivant-et-al-2019-understanding-unbelief
 - status: usable
 - medium: text
@@ -525,6 +589,14 @@ A note's `[S#]` line points here via `[src:<key>]`. No `[S#]` may point at a `st
 - kb: `Cicero_De-Re-Publica_trans-Barham_OLL.md`, `Cicero_De-Legibus_trans-Barham_OLL.md` (full text, folded into the corpus 2026-08); `cicero-aquinas_natural-law-primary-texts.md` (attributed summary, in corpus under staging.text/DD/sources/oldsources/)
 - verified: web (oll.libertyfund.org; public domain)
 - note: attributed summary note with verified page anchors, shared with the Aquinas entry. ▲ Barham's rendering differs from the modern textbook wording ('There is a true law, a right reason, conformable to nature…') and interpolates 'our own conscience' absent from the Latin — quote Barham as Barham. Full text in DD local archive (scratch/sources/part1/, gitignored).
+
+### clark-2010-dialogue-with-arne-naess
+- status: usable
+- medium: text
+- cite: John P Clark, "A Dialogue with Arne Naess on Social Ecology and Deep Ecology (1988–1997)," *The Trumpeter* 26:2 (2010)
+- kb: `trumpeter_102_1176.md`
+- verified: file (title and preface at seg 0; running footer "Volume 26, Number 2 (2010)" at seg 7)
+- note: Bookchin's former collaborator on the 1987 polemic and on Naess's reception of pluralist social ecology; the in-corpus bridge between the two camps.
 
 ### clastres-1989-society-against-the-state
 - status: usable
@@ -590,6 +662,14 @@ A note's `[S#]` line points here via `[src:<key>]`. No `[S#]` may point at a `st
 - verified: web (University of Cambridge Apollo repository)
 - note: scholarship *about* Tan Malaka, cited by note 7.7 as [S11] — *Madilog* (1943) as a mentality-reconstruction programme, its spread as circulated manuscript rather than by decree, the countermanding of the 1926–27 insurrection and the 1948 Madiun condemnation, plus the honesty items (the racialised *bangsa* theory, "Aslia" expansionism, the prophetic self-image). ▲ Crawford's characterisations are not Tan Malaka's own words. Entry added 2026-07-27 to close a gap left by the 2026-07-24 pass, which cited the file without registering it. Cited by DD note 7.7.
 
+### cremer-kemp-2021-democratising-risk
+- status: usable
+- medium: text
+- cite: Carla Zoe Cremer & Luke Kemp, "Democratising Risk: In Search of a Methodology to Study Existential Risk," arXiv:2201.11214 (2021)
+- kb: `Cremer-Kemp_Democratising-Risk-In-Search-of-a-Methodology-to-Study-Existential-Risk_arXiv-2201.11214.md`
+- verified: file (title, authors, abstract and section 1 at segs 0–1; arXiv id in filename)
+- note: Insider critique of existential-risk studies and its "techno-utopian approach" (total utilitarianism, transhumanism, strong longtermism); value pluralism and the dangers of "exceptional actions."
+
 ### curry-jones-chesters-van-lissa-2019-mapping-morality-with-a-compass
 - status: usable
 - medium: text
@@ -629,6 +709,22 @@ A note's `[S#]` line points here via `[src:<key>]`. No `[S#]` may point at a `st
 - kb: `Ding-et-al_The-Therapy-of-Desire-in-Times-of-Crisis-Buddhism-and-Stoicism_Religions-2023.md`
 - verified: file (citation block with DOI and dates in seg 0)
 - note: Buddhism and Stoicism paired as "philosophical therapy" for desire, via Hadot's spiritual exercises.
+
+### docastaway-2020-six-tongan-castaways-of-ata
+- status: usable
+- medium: text
+- cite: Docastaway (Alvaro Cerezo), "The six Tongan castaways of Ata Island" (docastaway.com, 2020), transcribing Captain Peter Warner's log of the September 1966 rescue
+- kb: `Docastaway_The-Six-Tongan-Castaways-of-Ata-Island_2020.md`
+- verified: file (Warner's log in italics at segs 4–7; site framing and reader comments segs 0–3, 8–19)
+- note: ▲ Commercial castaway-tourism site; the log is presented as Warner's own words (the Just David, "St Andrews Anglican high School", the "borrowed" boat) but the transcription is unverified against any Warner publication. Use as a pointer to Warner's account, not as a quotable primary. Reader comments include relatives of the six (seg 11–13).
+
+### doctor-levin-et-al-2022-biology-buddhism-and-ai
+- status: usable
+- medium: text
+- cite: Thomas Doctor, Olaf Witkowski, Elizaveta Solomonova, Bill Duane & Michael Levin, "Biology, Buddhism, and AI: Care as the Driver of Intelligence," *Entropy* 24:5 (2022), 710, DOI 10.3390/e24050710 (CC BY)
+- kb: `Doctor-Levin-et-al_Biology-Buddhism-and-AI-Care-as-the-Driver-of-Intelligence_Entropy-2022.md`
+- verified: file (abstract at seg 2; author list from the published record)
+- note: The cognitive light cone as the invariant linking intelligence and compassion; the Bodhisattva vow as a design principle.
 
 ### doctorow-2021-how-to-destroy-surveillance-capitalism
 - status: usable
@@ -678,6 +774,14 @@ A note's `[S#]` line points here via `[src:<key>]`. No `[S#]` may point at a `st
 - verified: file (Introduction at seg 0; Book II ch. 7 §ii "society… is what a god is to his worshippers" at seg 205; Conclusion at seg 429)
 - note: Society as the source of moral authority and the sacred; three copies in the corpus — prefer the Gutenberg text for quotation.
 
+### durmus-et-al-2023-global-opinions-language-models
+- status: usable
+- medium: text
+- cite: Esin Durmus et al. (Anthropic), "Towards Measuring the Representation of Subjective Global Opinions in Language Models," arXiv:2306.16388 (2023)
+- kb: `Anthropic_Towards-Measuring-the-Representation-of-Subjective-Global-Opinions_arXiv-2306.16388.md`
+- verified: file (abstract seg 0 — GlobalOpinionQA; default similarity to US/European opinion; stereotype caveat on prompting; author list not recoverable from the file header)
+- note: The measurement of the averaging: whose opinions a CAI-trained model's answers resemble by default.
+
 ### dyble-2021-evolution-of-altruism-through-war-sensitive
 - status: usable
 - medium: text
@@ -685,6 +789,14 @@ A note's `[S#]` line points here via `[src:<key>]`. No `[S#]` may point at a `st
 - kb: `Dyble_Evolution-of-Altruism-Through-War-Sensitive-to-Population-Structure_PNAS-2021.md`
 - verified: file (masthead, editor line and abstract at seg 0; FST result at seg 8)
 - note: Re-runs Choi & Bowles under a wide parameter range; altruism does not evolve at empirically observed hunter-gatherer FST. A sensitivity critique, not a refutation of observed parochialism.
+
+### eagleton-2012-religion-for-atheists-review
+- status: usable
+- medium: text
+- cite: Terry Eagleton, "Religion for Atheists by Alain de Botton – review," *The Guardian*, 12 January 2012
+- kb: `Guardian_Religion-for-Atheists-by-Alain-de-Botton-Review_2012.md`
+- verified: file (byline, date and standfirst at seg 4; scraped page — article text in segs 4–7 only, the rest is site navigation)
+- note: Eagleton's case that "religion for atheists" is the old elite instrumentalism (Machiavelli, Voltaire, Toland); cited for its argument about borrowed-forms secularism, not as a source on de Botton's text.
 
 ### earp-trafimow-2015-replication-falsification-crisis-of-confidence
 - status: usable
@@ -694,6 +806,14 @@ A note's `[S#]` line points here via `[src:<key>]`. No `[S#]` may point at a `st
 - verified: file (title, authors, affiliations at seg 0; running head "Frontiers in Psychology | www.frontiersin.org 3 May 2015 | Volume 6 | Article 621" at seg 8)
 - note: ▲ The corpus filename is wrong — this file is Earp & Trafimow, not the Open Science Collaboration's *Science* paper, which is not in the corpus. Popperian reading of the replication crisis: negative results never compel abandoning a hypothesis; direct vs conceptual replication; loosely constructed predictions. Rename on re-harvest.
 
+### earth-charter-2000
+- status: usable
+- medium: text-ocr
+- cite: Earth Charter Commission, *The Earth Charter* (The Hague, 2000), earthcharter.org
+- kb: `EarthCharter_The-Earth-Charter_2000.md`
+- verified: file (preamble, sixteen principles and "The Way Forward" present in 8 segments; header "C H A R T E R P R E A M B L E" letter-spaced, body clean)
+- note: The secular soft-law declaration; preamble's "one human family and one Earth community" and "citizens of different nations and of one world"; principle 4 on future generations.
+
 ### efferson-lalive-fehr-2008-coevolution-cultural-groups-ingroup-favoritism
 - status: usable
 - medium: text
@@ -701,6 +821,14 @@ A note's `[S#]` line points here via `[src:<key>]`. No `[S#]` may point at a `st
 - kb: `Efferson-Lalive-Fehr_The-Coevolution-of-Cultural-Groups-and-Ingroup-Favoritism_Science-2008.md`
 - verified: file (title, authors and abstract at seg 0; volume/pages from the published record)
 - note: Experimental: arbitrary symbolic markers become predictors of behaviour by solving coordination problems, generating in-group favouritism without conflict.
+
+### elmahjub-2023-ai-in-islamic-ethics
+- status: usable
+- medium: text
+- cite: Ezieddin Elmahjub, "Artificial Intelligence (AI) in Islamic Ethics: Towards Pluralist Ethical Benchmarking for AI," *Philosophy & Technology* 36 (2023), art. 73, DOI 10.1007/s13347-023-00668-x
+- kb: `Elmahjub_AI-in-Islamic-Ethics-Towards-Pluralist-Ethical-Benchmarking_PhilosophyAndTechnology-2023.md`
+- verified: file (DOI at seg 0; "Western monopoly in norm creation" seg 0; IEEE warning at seg 7; article number from the published record)
+- note: Non-Western counterweight inside the alignment literature; Islamic normative principles as a parallel benchmark.
 
 ### emma-goldman-1897-marriage
 - status: usable
@@ -918,6 +1046,14 @@ A note's `[S#]` line points here via `[src:<key>]`. No `[S#]` may point at a `st
 - verified: unverified (searched: no reliable web locus for original venue/date; *Umanità Nova* founded 1919, *Pensiero e Volontà* ran 1924–26 — either is possible. Cite the year with the file's caveat, not as established.)
 - note: the movement's positive transmission doctrine — "a question of education for freedom"; the propagandist as the schoolteacher who helps "in such a way that the pupil imagines that he has found the solution unaided"; the party paper disowned as a central organ; and the failure condition, that "isolated, sporadic propaganda… is forgotten and lost before its effect can grow and bear fruit".
 
+### feng-et-al-2024-modular-pluralism
+- status: usable
+- medium: text
+- cite: Shangbin Feng, Taylor Sorensen, Yuhan Liu, Jillian Fisher, Chan Young Park, Yejin Choi & Yulia Tsvetkov, "Modular Pluralism: Pluralistic Alignment via Multi-LLM Collaboration," *EMNLP* 2024, 4151–4171
+- kb: `Feng-et-al_Modular-Pluralism_EMNLP-2024.md`
+- verified: file (proceedings header with pages and authors at seg 0)
+- note: Community LMs plugged into a base model; an engineering form of thin-base-over-thick-modules.
+
 ### fischer-xygalatas-et-al-2014-fire-walkers-high
 - status: usable
 - medium: text
@@ -950,6 +1086,14 @@ A note's `[S#]` line points here via `[src:<key>]`. No `[S#]` may point at a `st
 - verified: file ("power produces knowledge" at seg 29; "power produces; it produces reality" at seg 216 with Part Three "Panopticism" heading following)
 - note: Primary for productive/disciplinary power. Does not contain the pastoral-power argument (the word "pastoral" is absent), which remains with the unheld 1979 Tanner lecture.
 
+### fox-1990-meanings-of-deep-ecology
+- status: usable
+- medium: text
+- cite: Warwick Fox, "The Meanings of 'Deep Ecology'," *The Trumpeter* (1990), ISSN 0832-6193
+- kb: `trumpeter_53_519.md`
+- verified: file (journal header with year and ISSN at seg 0; volume/issue not in file)
+- note: Naess's popular, formal and philosophical senses of deep ecology; the platform as the shared formal sense.
+
 ### frankfort-et-al-1946-intellectual-adventure
 - status: usable
 - medium: text-ocr
@@ -957,6 +1101,14 @@ A note's `[S#]` line points here via `[src:<key>]`. No `[S#]` may point at a `st
 - kb: `Frankfort-et-al_The-Intellectual-Adventure-of-Ancient-Man_1946.md`
 - verified: file (preface and chapter list at :1; "oi.uchicago.edu" running footer; Jacobsen "The Cosmos as a State" header at :131)
 - note: The classic cross-civilisation treatment of cosmic order; Jacobsen's Egypt/Mesopotamia mood contrast and "cosmos as a state." OCR: Wilson's *ma'at* is not recoverable by string search — locate via "justice"/"order" context.
+
+### frazier-2026-ai-constitutionalism-research-agenda
+- status: usable
+- medium: text
+- cite: Kevin Frazier & the Working Group on AI Constitutionalism, "A New Research Agenda for AI Constitutionalism," *Lawfare*, 6 August 2026
+- kb: `Frazier_A-New-Research-Agenda-for-AI-Constitutionalism_Lawfare-2026.md`
+- verified: file (header with venue, date and URL; "A small collection of individuals control the frontier AI models in use by billions" at seg 4)
+- note: Names the field; the agenda's questions (which values, whose, selected how, contested how) are this project's questions about any dharma.
 
 ### frey-osborne-2013-the-future-of-employment
 - status: usable
@@ -1014,6 +1166,14 @@ A note's `[S#]` line points here via `[src:<key>]`. No `[S#]` may point at a `st
 - verified: file (MDPI citation block with DOI, dates and licence at seg 0)
 - note: Peer-reviewed mechanism for Buddhist protectionism in Myanmar — fear of sāsana decline and amyo deracination, the love-jihad trope, colonial-era anti-Indian legacies. The lethal boundary drawn around the group's women.
 
+### gabriel-2020-artificial-intelligence-values-and-alignment
+- status: usable
+- medium: text
+- cite: Iason Gabriel, "Artificial Intelligence, Values, and Alignment," *Minds and Machines* 30 (2020), 411–437, DOI 10.1007/s11023-020-09539-2 (CC BY)
+- kb: `Gabriel_Artificial-Intelligence-Values-and-Alignment_MindsAndMachines-2020.md`
+- verified: file (journal masthead, DOI and dates at seg 0; pagination in running heads)
+- note: The "whose values, by what fair process" statement of the alignment problem; three routes to fair principles (overlapping consensus, veil of ignorance, social choice).
+
 ### galante-et-al-2021-mindfulness-based-programmes-nonclinical
 - status: usable
 - medium: text
@@ -1062,6 +1222,14 @@ A note's `[S#]` line points here via `[src:<key>]`. No `[S#]` may point at a `st
 - verified: web (Oxford ORA deposit, CC BY-NC)
 - note: attributed summary note with verified page anchors. The formal GDAT motion: Curry proposes, Alfano seconds (needs/capabilities grounding), Cook and Venkatesan oppose. Attribute by speaker — the methodological objections DD needs are Venkatesan's (p. 422). Vote swing 13–6 → 4–24, unreliable per the chair (p. 415). Curry Templeton-funded (TWCF0164, p. 426). Cited by DD note 1.2.
 
+### gesa-fatafehi-2021-real-tongan-boys-of-ata
+- status: usable
+- medium: text
+- cite: Meleika Gesa (Gesa-Fatafehi), "The real Tongan boys of 'Ata were not the real Lord of the Flies," *The Spinoff* (Ātea), 8 January 2021 (summer reissue; first published 17 May 2020)
+- kb: `Gesa-Fatafehi_The-Real-Tongan-Boys-of-Ata-Were-Not-the-Real-Lord-of-the-Flies_TheSpinoff-2021.md`
+- verified: file (reissue header with the 17 May 2020 first-publication line at seg 2; body segs 2–6)
+- note: The Tongan reply to Bregman's framing — names the six men, the 1863 raid as "footnote", anga fakatonga as what the boys carried. Scraped page; segs 0–1 are site navigation.
+
 ### gethin-2004-he-who-sees-dhamma
 - status: usable
 - medium: text-ocr
@@ -1069,6 +1237,14 @@ A note's `[S#]` line points here via `[src:<key>]`. No `[S#]` may point at a `st
 - kb: `Olivelle-ed_Dharma-Semantic-Cultural-Religious-History_2009_INCOMPLETE-SCAN.md` (full text, folded into the corpus 2026-08); `rupert-gethin_he-who-sees-dhamma-sees-dhammas_2004.md` (attributed summary, in corpus under staging.text/DD/sources/oldsources/)
 - verified: web (DOI 10.1007/s10781-004-8633-6 for the JIP original; read from the MLBD reprint scan)
 - note: ▲ Full text is an incomplete tesseract scan of the 2009 MLBD volume (preface letter-spaced; Brereton/Horsch articles absent). attributed summary note with verified page anchors (MLBD pagination; +422 for JIP). Argues the senses of dhamma cohere genealogically around 'support/maintain' — against homonymy, cutting against Part 1's rope-not-thread rhetoric for the Buddhist case while vindicating 'that which holds'. ▲ Same incomplete, poor-OCR volume scan as the Olivelle entry; unreliable for verbatim transliterated Pali. Cited by DD note 1.4.
+
+### glasser-1995-deep-ecology-clarified
+- status: usable
+- medium: text
+- cite: Harold Glasser, "Deep Ecology Clarified: A Few Fallacies and Misconceptions," *The Trumpeter* (1995), ISSN 0832-6193
+- kb: `trumpeter_39_312.md`
+- verified: file (journal header with year and ISSN at seg 0; volume/issue not in file)
+- note: Five misconceptions about deep ecology, the first "equating ecocentrism with misanthropy"; author is general editor of the Naess Selected Works.
 
 ### glenn-roberts-2020-the-dharma-of-dog
 - status: usable
@@ -1117,6 +1293,14 @@ A note's `[S#]` line points here via `[src:<key>]`. No `[S#]` may point at a `st
 - kb: `Glenn-Roberts_Dog-Dharma-Notes.md`
 - verified: unverified
 - note: private working notes in letter form ("Dear Stephen"); superseded by the finished talk in `Glenn-Roberts_The-Dharma-of-Dog.md` and `Glenn-Roberts_Bodhi-Talk-2020-02-08.md`. Cite the finished piece, not the notes. Cited by DD note 6.1.
+
+### globalvoices-2020-wheres-the-pacific-voice
+- status: usable
+- medium: text
+- cite: Global Voices, "Where's the Pacific voice in the viral 'real Lord of the Flies' story?" (May 2020); mirrored at Asia Pacific Report
+- kb: `GlobalVoices_Wheres-the-Pacific-Voice-in-the-Viral-Real-Lord-of-the-Flies-Story_2020.md`, `AsiaPacificReport_Wheres-the-Pacific-Voice-mirror_2020.md` (same text)
+- verified: file (article body segs 5–9 in the Global Voices file; the mirror is mostly site navigation)
+- note: Round-up of the Twitter exchange — the six names via Matangi Tonga, "It lacked the very Tongans the story was about", Bregman's replies, Gesa-Fatafehi's rejoinder. Both files are heavy with menu scrape. Cited by DD note 8.5.
 
 ### goldberg-et-al-2017-is-mindfulness-research-methodology-improving
 - status: usable
@@ -1174,6 +1358,14 @@ A note's `[S#]` line points here via `[src:<key>]`. No `[S#]` may point at a `st
 - verified: file (letter-spaced running heads "T H E A X I AL A G E 2 2 9" at seg 280, "C R E D I T V E R S US B ULL I O N 2 1 3" at seg 262 match the Melville House pagination; ch. 9 spans segs ~274–308)
 - note: The book itself, distinct from the 2009 Mute essay carried as `graeber-2009-debt-first-five-thousand-years`; ch. 9 "The Axial Age" is the source of the military-coinage-slavery complex and the markets/world-religions complementarity.
 
+### graeber-2018-bullshit-jobs
+- status: usable
+- medium: text
+- cite: David Graeber, *Bullshit Jobs: A Theory* (New York: Simon & Schuster, 2018), ISBN 978-1-5011-4331-1
+- kb: `david-graeber-bullshit-jobs.md`
+- verified: file (title page with ISBNs at seg 0; 389 segments, born-digital)
+- note: Full text; the 2013 essay's reception and the YouGov 37% poll at seg 9.
+
 ### graeber-wengrow-2021-dawn
 - status: usable
 - medium: text
@@ -1205,6 +1397,14 @@ A note's `[S#]` line points here via `[src:<key>]`. No `[S#]` may point at a `st
 - kb: `Gray-DiMaggio-Schein-Kachanoff_The-Problem-of-Purity-in-Moral-Psychology_PSPR-2022.md`
 - verified: file (journal header with DOI, volume and pages at seg 0; abstract at seg 1)
 - note: Systematic review dissolving purity as a distinct moral construct; the dyadic-morality programme's case against the sanctity foundation.
+
+### guardian-2020-real-life-lord-of-the-flies-film-rights
+- status: usable
+- medium: text
+- cite: *The Guardian*, "Real-life Lord of the Flies story sparks film rights scramble" (18 May 2020) and "Hollywood studio behind 12 Years a Slave wins rights for 'real life Lord of the Flies'" (22 May 2020)
+- kb: `Guardian_Real-Life-Lord-of-the-Flies-Film-Rights-Tonga_2020-05-18.md`, `Guardian_Hollywood-Studio-Behind-12-Years-a-Slave-Wins-Rights_2020-05-22.md`
+- verified: file (headlines and datelines at segs 3–4 of each; bodies segs 3–6)
+- note: The rights decision — New Regency chosen collectively by the four surviving men, Warner and Bregman; "this was a Tongan story". Scraped pages; leading segs are navigation.
 
 ### gulenc-2016-physis-nomos-sophists
 - status: usable
@@ -1310,6 +1510,14 @@ A note's `[S#]` line points here via `[src:<key>]`. No `[S#]` may point at a `st
 - verified: file (tesseract OCR header at seg 0; title and preface; Stuart-Glennie's 1873 dating at seg 2)
 - note: Recovers Stuart-Glennie's 1873 "Moral Revolution" as a precursor to Jaspers; frames the shift as conscience over custom.
 
+### hamilton-2016-a-slave-raid-in-the-pacific
+- status: usable
+- medium: text
+- cite: Scott Hamilton, "A slave raid in the Pacific," *E-Tangata*, 3 December 2016 — extract from *The Stolen Island: Searching for 'Ata* (Wellington: Bridget Williams Books, 2016)
+- kb: `Hamilton_A-Slave-Raid-in-the-Pacific_E-Tangata.md`
+- verified: file (post date and book attribution at segs 0 and 9; the extract runs segs 0–9)
+- note: The 1863 Grecian raid: McGrath, the Peruvian labour trade, at least 144 taken, the survivors' resettlement at Kolomaile on 'Eua. The history Bregman's excerpt reduced to one sentence.
+
 ### hammurabi-code-trans-king-1910-avalon
 - status: usable
 - medium: text
@@ -1384,6 +1592,14 @@ Also: existing entry `curry-mullins-whitehouse-2019-seven-moral-rules` should ad
 - verified: file (title, authors, editors and reviewers at seg 0; discussion at segs 22–23; article number from the published record, not web-checked)
 - note: Cranial-muscle artefacts occupy the gamma band and can produce false conclusions unless cleaned; the technical caveat on scalp-gamma meditation findings.
 
+### huang-siddarth-et-al-2024-collective-constitutional-ai
+- status: usable
+- medium: text
+- cite: Saffron Huang, Divya Siddarth, Liane Lovitt, Thomas I Liao, Esin Durmus, Alex Tamkin & Deep Ganguli, "Collective Constitutional AI: Aligning a Language Model with Public Input," *FAccT '24* (ACM, 2024); arXiv:2406.07814
+- kb: `Huang-Siddarth-et-al_Collective-Constitutional-AI_arXiv-2406.07814.md`, `Anthropic_Collective-Constitutional-AI-Announcement_2023.md` (the October 2023 announcement)
+- verified: file (title and abstract at seg 0; method at segs 2, 5; author list from the published record, not re-checked)
+- note: Public vs Standard constitution from a representative sample of US adults; "developers should not be the sole deciders of LM behavior.". Cited by DD note 8.4.
+
 ### hultzsch-1925-inscriptions-of-asoka
 - status: usable
 - medium: text-ocr
@@ -1424,6 +1640,22 @@ Also: existing entry `curry-mullins-whitehouse-2019-seven-moral-rules` should ad
 - verified: file (tesseract OCR header at seg 0; Routledge Revivals blurb; "Axial Period" definition at seg 7, characterisation at seg 8; contents pages garbled — "rif" for "of")
 - note: The primary text for *Achsenzeit*; Part I ch. 1 gives the 800–200 BCE bracket, "depths of selfhood," "thinking became its own object," "the step into universality." Pointer, not quotable without checking the printed translation.
 
+### jiang-et-al-2021-delphi-can-machines-learn-morality
+- status: usable
+- medium: text
+- cite: Liwei Jiang, Jena D Hwang, Chandra Bhagavatula, Ronan Le Bras, Jenny Liang, Jesse Dodge, Keisuke Sakaguchi, Maxwell Forbes, Jon Borchardt, Saadia Gabriel, Yulia Tsvetkov, Oren Etzioni, Maarten Sap, Regina Rini & Yejin Choi, "Can Machines Learn Morality? The Delphi Experiment" (arXiv:2110.07574, 2021)
+- kb: `Jiang-et-al_Can-Machines-Learn-Morality-The-Delphi-Experiment_arXiv-2110.07574.md`
+- verified: file (abstract with 92.1%/83.9% figures at seg 0; author list from the arXiv record, not re-checked)
+- note: The Delphi morality model and the Commonsense Norm Bank (1.7M judgements).
+
+### jiang-et-al-2025-delphi-nature-machine-intelligence
+- status: usable
+- medium: text
+- cite: Liwei Jiang et al., "Investigating machine moral judgement through the Delphi experiment," *Nature Machine Intelligence* (published online 13 January 2025)
+- kb: `Jiang-et-al_Investigating-Machine-Moral-Judgement-Through-the-Delphi-Experiment_NatureMachineIntelligence-2025.md`
+- verified: file (received/accepted/published dates at seg 1; crowdworker demographics at seg 3)
+- note: The authors' retrospective: Norm Bank judgements "primarily from educated, white crowdworkers in the US"; "limited cultural awareness and is susceptible to pervasive biases."
+
 ### karunadasa-1996-dhamma-theory
 - status: usable
 - medium: text
@@ -1455,6 +1687,14 @@ Also: existing entry `curry-mullins-whitehouse-2019-seven-moral-rules` should ad
 - kb: `Ward-Keeler_Javanese-Shadow-Plays-Javanese-Selves_2017.md`
 - verified: file (iTextSharp 2017 PDF metadata at seg 0; chapter running heads "CHAPTER 4", "CHAPTER 9" with 1987 pagination at segs 237, 484; letter-spaced OCR in headings)
 - note: The deconstruction-era ethnography Stange 1991 indicts; ch. 9 on ngelmu, pusaka and potency; the "theosophical prejudices" sentence Stange quotes was not string-locatable in the scan. Filename year is the PDF creation date, not the edition. Cited by DD note 3.5.3.
+
+### kela-2020-results-of-finlands-basic-income-experiment
+- status: usable
+- medium: text-ocr
+- cite: Kela (Social Insurance Institution of Finland), *Results of Finland's Basic Income Experiment 2017–2018* (Helsinki, 2020; summary brochure)
+- kb: `Kela_Results-of-Finlands-Basic-Income-Experiment-2017-2018_2020.md`
+- verified: file (tesseract OCR; three segments only — the brochure, not the full evaluation report)
+- note: Nationwide statutory randomised trial sampled from basic-unemployment-benefit recipients; employment up among the already active; trust and confidence up. ▲ Brochure-level source; cite the full Kela/VATT evaluation for figures.
 
 ### kiehl-hoffman-2011-the-criminal-psychopath
 - status: usable
@@ -1503,6 +1743,14 @@ Also: existing entry `curry-mullins-whitehouse-2019-seven-moral-rules` should ad
 - kb: `Klimecki-Leiberg-Ricard-Singer_Differential-Brain-Plasticity-Compassion-vs-Empathy_SCAN-2014.md`
 - verified: file (title, authors, affiliations and abstract at seg 0; volume/pages from the published record, not web-checked)
 - note: The primary behind Sapolsky's Ricard empathy-vs-compassion story: empathy training raises negative affect and insula/aMCC activation, compassion training reverses it via ventral striatum / pgACC / mOFC.
+
+### klingefjord-lowe-edelman-2024-human-values-moral-graph
+- status: usable
+- medium: text
+- cite: Oliver Klingefjord, Ryan Lowe & Joe Edelman (Meaning Alignment Institute), "What are human values, and how do we align AI to them?", arXiv:2404.10636 (2024)
+- kb: `Klingefjord-Lowe-Edelman_What-Are-Human-Values-and-How-Do-We-Align-AI-to-Them_arXiv-2404.10636.md`, `MeaningAlignment_The-First-Moral-Graph_2024.md` (the Substack trial report)
+- verified: file (title/authors/abstract seg 0; 89.1% / 89% figures and "expert values" claim at seg 0)
+- note: Moral Graph Elicitation; the 500-participant trial is the Substack post already registered under `meaning-alignment-institute-moral-graphs-openai-grant-winners`.
 
 ### konvalinka-xygalatas-et-al-2011-synchronized-arousal-fire-walking
 - status: usable
@@ -1666,6 +1914,22 @@ Also: existing entry `curry-mullins-whitehouse-2019-seven-moral-rules` should ad
 - verified: file (masthead, DOI and pagination in segs 0 and 3; eight practitioners / ten controls at seg 1)
 - note: The founding contemplative-neuroscience result; eight expert subjects; the paper's own 80–120 Hz muscle adjustment is at seg 3.
 
+### lyons-2020-real-lord-of-the-flies-survivors-story
+- status: usable
+- medium: text
+- cite: Kate Lyons, "The 'real Lord of the Flies': a survivor's story of shipwreck and salvation," *The Guardian* (The Pacific project), 13 May 2020
+- kb: `Lyons_The-Real-Lord-of-the-Flies-A-Survivors-Story_Guardian-2020.md`
+- verified: file (byline, series label and 13 May 2020 dateline at segs 3–4; article body segs 4–8)
+- note: Mano (Sione Filipe) Totau's first media interview — the one first-person account of 'Ata in the corpus; the gaoling on return and Warner's sale of rights to Channel Seven. Scraped page; segs 0–2 are navigation.
+
+### macaskill-wiblin-intelligence-explosion-too-fast-to-handle
+- status: usable
+- medium: transcript
+- cite: Will MacAskill with Rob Wiblin, "Why the 'intelligence explosion' might be too fast to handle" (*80,000 Hours* podcast transcript; undated in file, c. 2025)
+- kb: `Will-MacAskill_Why-the-intelligence-explosion-might-be-too-fast-to-handle.md`
+- verified: file (title and speaker at seg 0; 121 segments of speaker-labelled transcript)
+- note: Lock-in defined as closing down the possibility space for future civilisation; lock-in and seizure of power; the grand-challenges bucket list.
+
 ### macintyre-1981-after-virtue
 - status: usable
 - medium: text-ocr
@@ -1722,6 +1986,14 @@ Also: existing entry `curry-mullins-whitehouse-2019-seven-moral-rules` should ad
 - verified: file (SEP header with first-published and revision dates at seg 0)
 - note: The taxonomy of moral value pluralism (foundational vs non-foundational, incommensurability, the relation to relativism).
 
+### matangi-tonga-2025-castaway-mano-totau-returns-to-ata
+- status: usable
+- medium: text
+- cite: *Matangi Tonga*, "Castaway, Mano Totau returns to 'Ata," 28 May 2025
+- kb: `MatangiTonga_Castaway-Mano-Totau-Returns-to-Ata_2025.md`
+- verified: file (single segment: headline, date and opening paragraph; the harvest note records that the page is a subscription teaser)
+- note: ▲ One paragraph only — Totau's return at 76 for a documentary. Full article behind a paywall; do not cite for anything beyond the return itself.
+
 ### maulana-et-al-2021-sumarah-interrituality
 - status: usable
 - medium: text
@@ -1770,6 +2042,14 @@ Also: existing entry `curry-mullins-whitehouse-2019-seven-moral-rules` should ad
 - verified: file (journal masthead and abstract at seg 0; author name not recoverable from the ingested text)
 - note: Reception study of the two Kendeng documentaries; the Sikep in *Sikep Samin Semen* hold "demo bukanlah ajaran komunitas mereka" (*ora pamer suara, ora pamer tindak*).
 
+### meissner-smith-2024-climate-crisis-as-relational-crisis
+- status: usable
+- medium: text
+- cite: Shelbi Nahwilet Meissner & Andrew Frederick Smith, "Climate Crisis as Relational Crisis: Centering Indigenous Feminist Conceptions of Responsibility in Environmental Discourse," *Feminist Philosophy Quarterly* 10 (2024)
+- kb: `Meissner-Smith_Climate-Crisis-as-Relational-Crisis_FeministPhilQuarterly-2024.md`
+- verified: file (title, authors, abstract and "Published by Scholarship@Western, 2024" at seg 0; issue number not in file)
+- note: Rejects the "default climate crisis motif" (unprecedented/urgent/apocalyptic); climate crisis as a rebound of colonial relational disruption.
+
 ### mercadante-2020-spiritual-struggles-of-nones-and-sbnr
 - status: usable
 - medium: text
@@ -1810,6 +2090,14 @@ Also: existing entry `curry-mullins-whitehouse-2019-seven-moral-rules` should ad
 - verified: file (author, Wake Forest affiliation and "Blackwell International Encyclopedia of Ethics (forthcoming)" in seg 0; Plato 10a quotation)
 - note: Standard statement of the dilemma against theological voluntarism, with the "God's nature" rescue and its regress.
 
+### milliere-2025-normative-conflicts-and-shallow-ai-alignment
+- status: usable
+- medium: text
+- cite: Raphaël Millière, "Normative conflicts and shallow AI alignment," *Philosophical Studies* 182 (2025), 2035–2078, DOI 10.1007/s11098-025-02347-3 (CC BY)
+- kb: `Milliere_Normative-Conflicts-and-Shallow-AI-Alignment_PhilosophicalStudies-2025.md`
+- verified: file (journal masthead, DOI and dates at seg 0)
+- note: Preference fine-tuning installs "shallow behavioral dispositions"; LLMs lack normative reasoning to resolve conflicts between helpfulness, honesty and harmlessness.
+
 ### mills-1887-yasna-avesta-org
 - status: usable
 - medium: text
@@ -1817,6 +2105,14 @@ Also: existing entry `curry-mullins-whitehouse-2019-seven-moral-rules` should ad
 - kb: `Yasna-incl-Gathas_trans-Mills_avesta-org.md`
 - verified: file (avesta.org page structure with "Adapted from Mills" headers; Y 30 at chunk :72 checked against SBE 31 wording)
 - note: Primary text for the aša/druj dualism (Y 30.1–3 twin Spirits). Chapter headings are bare numerals (`## 30.`), so search by content not by "Yasna 43".
+
+### mohamed-png-isaac-2020-decolonial-ai
+- status: usable
+- medium: text
+- cite: Shakir Mohamed, Marie-Therese Png & William Isaac, "Decolonial AI: Decolonial Theory as Sociotechnical Foresight in Artificial Intelligence," *Philosophy & Technology* 33 (2020), 659–684, DOI 10.1007/s13347-020-00405-8
+- kb: `Mohamed-Png-Isaac_Decolonial-AI-Decolonial-Theory-as-Sociotechnical-Foresight_PhilosophyAndTechnology-2020.md`
+- verified: file (DOI and abstract at seg 0; pages from the published record)
+- note: Decolonial critique as foresight; the 7.5 objection inside the alignment literature.
 
 ### morris-1993-bakunin-historical-materialism
 - status: usable
@@ -1849,6 +2145,14 @@ Also: existing entry `curry-mullins-whitehouse-2019-seven-moral-rules` should ad
 - kb: `Mukodi-Burhanuddin_Domestifikasi-Perempuan-Samin_Al-Tahrir-2015.md`
 - verified: file (title, authors and abstract at seg 0; Indonesian abstract with "budaya patriarki" at seg 4)
 - note: Kelopo Dhuwur (Blora) fieldwork; women "still placed as a sub-ordinate of men"; patriarchal culture "dalam tataran tertentu", especially in matchmaking and marriage.
+
+### muller-sep-ethics-of-artificial-intelligence-and-robotics
+- status: usable
+- medium: text
+- cite: Vincent C Müller, "Ethics of Artificial Intelligence and Robotics," *The Stanford Encyclopedia of Philosophy* (first published 30 April 2020; substantive revision 27 March 2026), https://plato.stanford.edu/entries/ethics-ai/
+- kb: `SEP_Ethics-of-Artificial-Intelligence-and-Robotics.md`
+- verified: file (SEP header with publication and revision dates at seg 0)
+- note: Survey entry; quotes Bostrom's orthogonality thesis verbatim (seg 34) with the Müller & Cannon 2022 objection and Dung 2024 defence; singularity and control-problem literature mapped.
 
 ### mullins-et-al-2018-systematic-assessment-of-axial-age-proposals
 - status: usable
@@ -2063,7 +2367,7 @@ Also: existing entry `curry-mullins-whitehouse-2019-seven-moral-rules` should ad
 - cite: Thomas Paine, *Agrarian Justice* (Paris/London, 1797), in Moncure Daniel Conway (ed.), *The Writings of Thomas Paine*, vol. III (New York: Putnam, 1895), Project Gutenberg 31270
 - kb: `Paine_Agrarian-Justice-in-The-Writings-of-Thomas-Paine_Gutenberg-31270.txt`
 - verified: file (Gutenberg 31270 plain text; the *Agrarian Justice* essay runs from about seg 888; the fund proposal at seg 898; the file is the whole vol. III — 1,238 segments — so most of it is other Paine writings)
-- note: The 1797 proposal of a national fund paying fifteen pounds at twenty-one and an old-age annuity as compensation for the loss of natural inheritance in land — the ancestor of universal basic income. Cited here only for the floor-without-subsidy point; UBI proper belongs to 8.2.
+- note: The 1797 proposal of a national fund paying fifteen pounds at twenty-one and an old-age annuity as compensation for the loss of natural inheritance in land — the ancestor of universal basic income. Cited here only for the floor-without-subsidy point; UBI proper belongs to 8.2. Cited by DD note 8.2.
 
 ### parker-1916-constitution-of-the-five-nations
 - status: usable
@@ -2161,6 +2465,14 @@ Also: existing entry `curry-mullins-whitehouse-2019-seven-moral-rules` should ad
 - verified: file (foreword dated "Paris, 20 September 1977" at seg 6; the author's account of his evidence at segs 1–5; 224 segments)
 - note: The book that named Year Zero; the author's own statement of method (fifty-six written accounts plus face-to-face meetings, refugee exaggeration discounted) replaces the "94 interviews" figure. PDF-extracted text with soft-hyphen artefacts ("re ­ locating"); quotations checked against chunks. Translator and US edition from the published record, not web-checked.
 
+### pope-francis-2015-laudato-si
+- status: usable
+- medium: text
+- cite: Pope Francis, *Laudato Si': On Care for Our Common Home*, encyclical letter (Vatican, 24 May 2015)
+- kb: `PopeFrancis_Laudato-Si_2015.md`
+- verified: file (numbered paragraphs 1–246 with chapter headings; §90, §104, §117, §159, §162, §193 located)
+- note: Integral ecology; intergenerational and intragenerational solidarity; refuses biocentric levelling (§90); names concentrated technological power (§104).
+
 ### postgate-wang-wilkinson-1995-early-writing
 - status: usable
 - medium: text
@@ -2241,6 +2553,22 @@ Also: existing entry `curry-mullins-whitehouse-2019-seven-moral-rules` should ad
 - verified: file (seg 3; title/authors not re-checked against a masthead segment)
 - note: universality in relational motives, diversity in relational models; "morally motivated acts, not simply errors in judgment."
 
+### raworth-doughnut-economics-lecture-transcript
+- status: usable
+- medium: transcript
+- cite: Kate Raworth, "Doughnut Economics" (public lecture, YouTube transcript; undated in the corpus file, introduced by a host after the 2017 book)
+- kb: `Kate-Raworth-Doughnut-Economics-Lecture-economist.transcript.txt`, `A-healthy-economy-should-be-designed-to-thrive-not-grow-Kate-Raworth.transcript.txt` (TED talk transcript)
+- verified: file (host introduction and doughnut explanation at seg 2; 26 segments)
+- note: Spoken exposition of the social foundation / ecological ceiling model; printed edition *Doughnut Economics* (2017) remains the citation of record.
+
+### redvers-et-al-2023-indigenous-peoples-traditional-knowledges-climate-health
+- status: usable
+- medium: text
+- cite: Nicole Redvers, Paula Aubrey, Yuria Celidwen & Kyle Hill, "Indigenous Peoples: Traditional knowledges, climate change, and health," *PLOS Global Public Health* 3:10 (2023), e0002474
+- kb: `Redvers-et-al_Indigenous-Peoples-Traditional-Knowledges-Climate-Change-and-Health_PLOSGlobalPublicHealth-2023.md`
+- verified: file (masthead, authors, affiliations and abstract at seg 0; article number from the published record, not web-checked)
+- note: Public-health review; source of the "six percent of population / eighty percent of biodiversity" estimate (cited, not measured).
+
 ### reed-ikigai-podcast-18-nanba-walking
 - status: usable
 - medium: transcript
@@ -2288,6 +2616,22 @@ Also: existing entry `curry-mullins-whitehouse-2019-seven-moral-rules` should ad
 - kb: `Riesebrodt_The-Promise-of-Salvation_2010.md` (full text, folded into the corpus 2026-08); `martin-riesebrodt_the-promise-of-salvation_2010.md` (attributed summary, in corpus under staging.text/DD/sources/oldsources/)
 - verified: web (ISBN 978-0-226-71391-5)
 - note: attributed summary note with verified page anchors. The closest structural precedent for DD: answers the constructionist objection, then defines religion substantively (interventionist practices toward superhuman powers). ▲ The fork this creates for DD: his universality is empirical and falsifiable *because* the definition is substantive — and the same criterion ejects secular frameworks ('morality does not require religion,' pp. 183–84). DD cannot borrow the universality while keeping non-privileging. Full text in DD local archive (scratch/sources/part1/, gitignored); community upload.
+
+### rinaldi-2025-on-constitutional-ai
+- status: usable
+- medium: text
+- cite: Alberto Rinaldi, "On 'Constitutional' AI," *The Digital Constitutionalist* (digi-con.org), 13 March 2025
+- kb: `Rinaldi_On-Constitutional-AI_DigiCon-2025.md`
+- verified: file (harvest header with URL and date at seg 0)
+- note: The constitutional metaphor borrows a normative legacy (limited power, rule of law, rights) the technique does not embody.
+
+### rnz-2020-concerns-over-a-tale-of-shipwrecked-tongans
+- status: usable
+- medium: text
+- cite: RNZ Pacific, "Concerns over a tale of shipwrecked Tongans" (Radio New Zealand, May 2020)
+- kb: `RNZ_Concerns-Over-a-Tale-of-Shipwrecked-Tongans_2020.md`
+- verified: file (article body segs 4–7; exact publication date not recoverable from the scrape)
+- note: Gesa-Fatafehi's "colonial lens" and ownership objections via ABC Pacific Beat; Bregman's defence; Totau to the ABC; the Channel 7 rights and prison release. Scraped page; segs 1–3 empty.
 
 ### roberts-wolfson-2004-rediscovery-of-recovery
 - status: usable
@@ -2648,6 +2992,14 @@ Also: existing entry `curry-mullins-whitehouse-2019-seven-moral-rules` should ad
 - verified: file (author and two-part structure at seg 0; running head "Dangir's Testimony 115" at seg 41)
 - note: Translation of the 1928 Pati interrogation minutes plus commentary: "doubly alienated"; spies' "fantastic mixture"; the doctrine of language ("It is man who utters the word"); *wong sikep* vs the state's "Samin" label.
 
+### shumailov-et-al-2024-model-collapse
+- status: usable
+- medium: text
+- cite: Ilia Shumailov, Zakhar Shumaylov, Yiren Zhao, Nicolas Papernot, Ross Anderson & Yarin Gal, "AI models collapse when trained on recursively generated data," *Nature* 631 (2024), 755–759
+- kb: `Shumailov-et-al_AI-Models-Collapse-When-Trained-on-Recursively-Generated-Data_Nature-2024.md`
+- verified: file (abstract seg 0: "irreversible defects… tails of the original content distribution disappear"; seg 1 on access to real data)
+- note: Model collapse — the technical name for flattening by recursion; volume/pages from the published record, not web-checked.
+
 ### singh-glowacki-2022-beyond-the-nomadic-egalitarian-model
 - status: usable
 - medium: text
@@ -2720,13 +3072,21 @@ Also: existing entry `curry-mullins-whitehouse-2019-seven-moral-rules` should ad
 - verified: file (title, twelve authors and abstract at seg 0; arXiv id from the filename)
 - note: Overton / steerable / distributional pluralism; evidence that standard alignment reduces distributional pluralism.
 
+### sorensen-et-al-2024-value-kaleidoscope
+- status: usable
+- medium: text
+- cite: Taylor Sorensen, Liwei Jiang, Jena Hwang, Sydney Levine, Valentina Pyatkin, Peter West, Nouha Dziri, Ximing Lu, Kavel Rao, Chandra Bhagavatula, Maarten Sap, John Tasioulas & Yejin Choi, "Value Kaleidoscope: Engaging AI with Pluralistic Human Values, Rights, and Duties," *AAAI* 2024
+- kb: `Sorensen-et-al_Value-Kaleidoscope-Engaging-AI-with-Pluralistic-Human-Values_AAAI-2024.md`
+- verified: file (title/affiliations seg 0; "As statistical learners, AI systems fit to averages by default" at seg 0; author list partly lost in the header)
+- note: The practitioners' own statement of the averaging problem.
+
 ### sosis-bressler-2003-commune-longevity
 - status: usable
 - medium: text
 - cite: Richard Sosis & Eric R Bressler, "Cooperation and Commune Longevity: A Test of the Costly Signaling Theory of Religion," *Cross-Cultural Research* 37:2 (2003), 211–239, DOI 10.1177/1069397103251426
-- kb: `Sosis-Bressler_Cooperation-and-Commune-Longevity_CCR-2003.md`
+- kb: `Sosis-Bressler_Cooperation-and-Commune-Longevity_CCR-2003.md`, `Sosis-Bressler_Cooperation-and-Commune-Longevity-Costly-Signaling_CrossCulturalResearch-2003.md` (full text, folded into the corpus 2026-08)
 - verified: file (DOI and running heads "Sosis, Bressler / COMMUNE LONGEVITY 215–222" in segs 0–13; Table 2 at seg 13)
-- note: 83 nineteenth-century US communes, 1,556 commune-years; religious communes mean 35.6 years vs secular 7.7, anarchist 9 (n = 7); costly requirements predict survival.
+- note: 83 nineteenth-century US communes, 1,556 commune-years; religious communes mean 35.6 years vs secular 7.7, anarchist 9 (n = 7); costly requirements predict survival. Cited by DD note 8.3.
 
 ### stanley-yin-sinnott-armstrong-2019-reason-based-explanation-moral-dumbfounding
 - status: usable
@@ -2768,6 +3128,14 @@ Also: existing entry `curry-mullins-whitehouse-2019-seven-moral-rules` should ad
 - verified: web (DOI 10.1386/punk.4.1.71_1; green-OA accepted manuscript, Stirling STORRE)
 - note: attributed summary note with verified page anchors (▲ manuscript pagination — convert when citing; ms is pre-copyedit, e.g. 'Vispanna'). Fieldwork on Dharma Punx (US) and Rebel Dharma (UK). ▲ Verdict for Part 1's borderline case: punk supplies identity, code, community; every transformative practice is imported from Buddhism via Levine — supports the 'two or three out of four' hedge rather than resolving it. Cross-links the corpus's Ronan/Prouty fusion specimens.
 
+### stockton-seed-2021-preliminary-analysis-first-year
+- status: usable
+- medium: text
+- cite: Stacia West, Amy Castro Baker, Sukhi Samra & Erin Coltrera, *Preliminary Analysis: SEED's First Year* (Stockton Economic Empowerment Demonstration, March 2021)
+- kb: `StocktonSEED_Preliminary-Analysis-SEEDs-First-Year_2021.md`
+- verified: file (key findings at seg 0; employment figures at seg 24; author list from the published record)
+- note: 125 recipients, $500/month for 24 months, RCT; full-time employment 28%→40% vs 32%→37% for controls in year one.
+
 ### suhler-churchland-2011-can-innate-modular-foundations-explain-morality
 - status: usable
 - medium: text-ocr
@@ -2807,6 +3175,14 @@ Also: existing entry `curry-mullins-whitehouse-2019-seven-moral-rules` should ad
 - kb: `Supratikno-Adi_The-Samin-Community-in-the-Globalization-Era_2023.md`
 - verified: file (title and second author at seg 0; ▲ first author's name and the venue are not recoverable from the ingested text — taken from the filename)
 - note: Sukolilo (Pati) study; Agama Adam glossed by informants as *pangucap* (utterance) — "*mbecikna laku, ngugemi ucap*"; faith as resource against the cement industry.
+
+### talat-et-al-2021-a-word-on-machine-ethics
+- status: usable
+- medium: text
+- cite: Zeerak Talat, Hagen Blix, Josef Valvoda, Maya Indira Ganesh, Ryan Cotterell & Adina Williams, "A Word on Machine Ethics: A Response to Jiang et al. (2021)" (arXiv:2111.04158, 2021); published as "On the Machine Learning of Ethical Judgments from Natural Language," *NAACL 2022*
+- kb: `Talat-et-al_A-Word-on-Machine-Ethics-A-Response-to-Jiang-et-al_arXiv-2111.04158.md`, `Talat-et-al_On-the-Machine-Learning-of-Ethical-Judgments-from-Natural-Language_NAACL-2022.md`
+- verified: file (abstract at seg 0; conclusion at seg 16; NAACL version present as the second file)
+- note: Audit of Delphi — "an inconsistent model of normative ethics"; the enterprise "rooted in a category error."
 
 ### taves-2009-religious-experience-reconsidered
 - status: usable
@@ -3047,6 +3423,14 @@ Also: existing entry `curry-mullins-whitehouse-2019-seven-moral-rules` should ad
 - kb: — (external; no KB file)
 - verified: web (article fetched 2026-07-27: Emerson's ownership, work-exchange arrangement, 4 July 1845 – 6 September 1847, several-times-weekly Concord trips, in-kind support; Walls 2017 confirmed via University of Chicago Press catalogue)
 - note: the documented facts behind the Lowell critique, used in 6.3 to keep the Thoreau strand honest. Walls is the standing scholarly biography if a deeper treatment is later needed; her text was not itself consulted.
+
+### wirth-2021-deep-social-ecology
+- status: usable
+- medium: text
+- cite: Jason Wirth, "Deep Social Ecology," *The Trumpeter* 37:1 (2021)
+- kb: `trumpeter_126_1701.md`
+- verified: file (masthead "Volume 37, No. 1 (2021)" at seg 0)
+- note: Proposes a hybrid of deep and social ecology "rooted in the cultivation of wisdom"; the convergence the 1987–91 polemics deferred.
 
 ### witness-2023-in-the-name-of-mother-earth-kendeng-women
 - status: usable
@@ -3297,7 +3681,7 @@ Also: existing entry `curry-mullins-whitehouse-2019-seven-moral-rules` should ad
 - cite: Rutger Bregman, *Humankind: A Hopeful History*, trans. Elizabeth Manton & Erica Moore (Bloomsbury, 2020)
 - kb: `rutger-bregman_humankind_a-hopeful-history.md`
 - verified: web (ISBN 978-1-4088-9893-2)
-- note: anchor source of note 8.5 — the 1965–66 'Ata shipwreck ("real Lord of the Flies") and the Robbers Cave / Middle Grove correction (via Gina Perry's archive work). Reviewers have criticised Bregman's use of sources; weigh popular-synthesis claims accordingly. Cited by DD note 8.5.
+- note: anchor source of note 8.5 — the 1965–66 'Ata shipwreck ("real Lord of the Flies") and the Robbers Cave / Middle Grove correction (via Gina Perry's archive work). Reviewers have criticised Bregman's use of sources; weigh popular-synthesis claims accordingly.
 
 ### bretl-goering-2022-moral-intuitions
 - status: usable
@@ -5323,6 +5707,14 @@ Also: existing entry `curry-mullins-whitehouse-2019-seven-moral-rules` should ad
 - verified: web (https://theanarchistlibrary.org/library/john-zerzan-the-catastrophe-of-postmodernism)
 
 ---
+
+### zhi-xuan-et-al-2024-beyond-preferences
+- status: usable
+- medium: text
+- cite: Tan Zhi-Xuan, Micah Carroll, Matija Franklin & Hal Ashton, "Beyond Preferences in AI Alignment," *Philosophical Studies* 182 (2025), 1813–1863, DOI 10.1007/s11098-024-02249-w
+- kb: `ZhiXuan-et-al_Beyond-Preferences-in-AI-Alignment_PhilosophicalStudies-2024.md`
+- verified: file (journal masthead with DOI and pages at seg 0; the four theses at seg 2; "overlooking the contested and plural nature of human values" at seg 4)
+- note: Critique of preference aggregation as the alignment target; the philosophical form of the flattening objection.
 
 ### zuboff-2019-age-of-surveillance-capitalism
 - status: usable
