@@ -4,7 +4,7 @@
 
 ---
 
-The problem of definition is one of the deepest there is, and the only workable framing of it is reflexive -- "defining definition", perhaps -- because the problem bites its own tail. What follows works through it, returning throughout to *dharma*, which happens to be a near-perfect specimen: it exhibits every pathology of meaning at once.
+The problem of definition is one of the deepest there is, and the only workable framing of it is reflexive -- "defining definition," perhaps -- because the problem bites its own tail. What follows works through it, returning throughout to *dharma*, which happens to be a near-perfect specimen: it exhibits every pathology of meaning at once.
 
 ## The request contains its own answer
 
