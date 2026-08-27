@@ -181,7 +181,7 @@ Research notes used in this book are published on [GitHub](https://github.com/Bi
 - [8.5 Dharma from Scratch: The 'Ata Case](8-future/8.5-ata-case.md) -- the 1965 'Ata shipwreck as real-world evidence that stripped-down groups rebuild a cooperative order; the Robbers Cave correction; the "social suite" and Pitcairn as counter-case.
 - [7.7 Dharma by Decree: The Engineered-Dharma Failure Mode](7-critical/7.7-engineered-dharmas.md) -- the Part 6 stress-test this part's licence rests on: the Jacobin cults, the New Soviet Man, Year Zero, and the conditions that survive them (no boot, no blank slate, the unbuilding power retained).
 - [4.1 Samin of Java](4-cultural/4.1-samin-of-java.md) -- the floor's worked hard case: the schooling refusal and its post-independence softening, the gendered cosmology and the patriarchal domestic order, and the Kartini Kendeng's within-tradition agency.
-- [3.4 Relativism vs. Universalism](3-philosophical/3.4-relativism-universalism.md) -- pluralism is not relativism; the thin floor, thick variation; "holds without crushing"; Nietzsche's ranking-without-a-floor as the standing challenge.
+- [3.4 Relativism vs Universalism](3-philosophical/3.4-relativism-universalism.md) -- pluralism is not relativism; the thin floor, thick variation; "holds without crushing"; Nietzsche's ranking-without-a-floor as the standing challenge.
 - [7.4 Measurement & Falsifiability](7-critical/7.4-measurement-falsifiability.md) -- the is/ought wall; provenance is not truth; the project's own evidentiary bar.
 - [7.5 Orientalism](7-critical/7.5-orientalism.md) -- Said's knowledge-power critique and its limits, turned on this project's own corpus-and-machine ambition; the projection-screen history behind the Mirror.
 
@@ -207,7 +207,7 @@ Research notes used in this book are published on [GitHub](https://github.com/Bi
 - Michael Sandel, *The Tyranny of Merit* (2020), and David Graeber, *Bullshit Jobs* (2018) -- contributive justice; the dignity work was carrying.
 - Kela, final report of Finland's basic-income experiment (2020); the Stockton SEED pilot (2021); GiveDirectly's Kenya trials -- the idleness objection, tested and largely failed.
 - Sam Harris, interviewed by Steven Bartlett on *The Diary of a CEO* (2023) -- the UBI case ("break this connection between work and survival") and the "stories we tell ourselves" reply to the purpose objection.
-- Stephen Batchelor, *After Buddhism* (2015), and David McMahan, *The Making of Buddhist Modernism* (2008) -- ultimate concern (a phrase from Paul Tillich) vs. institutional form; tradition already remade by modernity.
+- Stephen Batchelor, *After Buddhism* (2015), and David McMahan, *The Making of Buddhist Modernism* (2008) -- ultimate concern (a phrase from Paul Tillich) vs institutional form; tradition already remade by modernity.
 - Robert Bellah et al., *Habits of the Heart* (1985) -- "Sheilaism"; with Steven Katz on the constructed, plural nature of mystical experience against perennialism.
 - David Sloan Wilson, "The New Atheism as a Stealth Religion" -- secular belief systems can be dogmatic too; prosocial.world, "The World Needs a Secular Community Revolution" -- the community deficit.
 - L Jiang et al., "Delphi" (2021; *Nature Machine Intelligence*, 2025), with the critique pressed by Zeerak Talat and colleagues -- descriptions served as prescriptions; I Shumailov et al., "AI models collapse when trained on recursively generated data," *Nature* (2024) -- the tails vanish first; keeping human data in the mix is the cure.
