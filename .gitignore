@@ -68,5 +68,18 @@ pg-*.png
 # stay tracked: they are small, and they are what the repository is read for.
 *_with-audio.epub
 
+# typeface proofs (`./mk-book.sh --fonts SET` for any set but the default).
+# Built to be looked at and printed while a typeface decision is open, then
+# thrown away; only the shipping edition's EPUB and PDF stay tracked. Suffixes
+# match FONT_SETS in lib/fonts.sh.
+*_worksans.epub
+*_worksans.pdf
+*_bonanova.epub
+*_bonanova.pdf
+*_bonanova-worksans.epub
+*_bonanova-worksans.pdf
+*_bonanova-solo.epub
+*_bonanova-solo.pdf
+
 # Working critique document, session-local; never publish.
 critical-analysis.md

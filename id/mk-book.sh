@@ -67,9 +67,13 @@ declare -r -a SUBJECTS=(Antropologi Filsafat)
 # build stages it verbatim rather than converting it. Regenerate via
 # images/defining-dharma-gentitle.sh in the parent tree, then re-compress.
 declare -r COVER_IMAGE="$SCRIPT_DIR"/defining-dharma-cover-title.jpg
-declare -r OUTPUT="$SCRIPT_DIR"/Mencari-Dharma_Biksu-Okusi_2026.epub
-declare -r OUTPUT_PDF="${OUTPUT%.epub}".pdf
-declare -r OUTPUT_AUDIO="${OUTPUT%.epub}"_with-audio.epub
+# OUTPUT_BASE is the shipping filename; the three artefact paths are derived
+# from it in main() once the typeface set is known, because a non-default set
+# suffixes them (see --fonts). Derived at run time, so not readonly.
+declare -r OUTPUT_BASE="$SCRIPT_DIR"/Mencari-Dharma_Biksu-Okusi_2026.epub
+declare -- OUTPUT=$OUTPUT_BASE
+declare -- OUTPUT_PDF="${OUTPUT%.epub}".pdf
+declare -- OUTPUT_AUDIO="${OUTPUT%.epub}"_with-audio.epub
 
 # Chapter narration. One MP3 per chapter, named N-<stem>.mp3 (N = 0..9), living
 # canonically under the garydean.id web-root and served from AUDIO_BASE_URL. The
@@ -105,8 +109,8 @@ declare -r DEPLOY_DIR=${DEPLOY_DIR:-$PUBLISH_DIR}
 # line-length exception -- splitting a quoted XML literal would only obscure it).
 # Inline SVG renders identically
 # in EPUB3 and weasyprint and scales with the font (width/height 1em), whereas an
-# emoji would fall back to a missing-glyph box -- the embedded EB Garamond / Lato
-# faces carry no emoji. fill/stroke use currentColor so it inherits the link hue.
+# emoji would fall back to a missing-glyph box -- none of the embedded text
+# faces carries emoji. fill/stroke use currentColor so it inherits the link hue.
 declare -r AUDIO_ICON='<svg class="audio-icon" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" width="1em" height="1em" aria-hidden="true" focusable="false"><path d="M3 9v6h4l5 4V5L7 9H3z" fill="currentColor"/><path d="M15.5 8.5a4 4 0 0 1 0 7" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"/></svg>'
 
 # Images are recompressed to JPEG at build time (source PNGs stay untouched). The
@@ -114,27 +118,26 @@ declare -r AUDIO_ICON='<svg class="audio-icon" xmlns="http://www.w3.org/2000/svg
 # same visible quality, taking the finished EPUB from ~20 MB to ~4 MB.
 declare -ir JPEG_QUALITY=80
 
-# Fonts, embedded into the EPUB so it renders identically everywhere rather than
-# falling back to the reader's defaults:
-#   - body: EB Garamond, serif, vendored under ../fonts/ebgaramond (OFL; see
-#     OFL.txt there). This is Octavio Pardo's revival (the version Google Fonts
-#     distributes), NOT the Debian fonts-ebgaramond package: that package ships
-#     Georg Duffner's unfinished v0.016, whose italic f-ligature glyphs (ff,
-#     ffi, ffl) are drawn far too heavy and print as ink blots. The vendored
-#     copy also supplies a true Bold Italic and covers U+221A (the root sign in
-#     "√dhṛ"), which previously fell back to Georgia.
-#   - headings: Lato (pkg fonts-lato), humanist sans-serif. Stands in for Prima
-#     Sans (commercial, not installed); swap LATO_DIR/faces below to switch.
-declare -r FONT_DIR="$BOOK_ROOT"/fonts/ebgaramond
-declare -r LATO_DIR=/usr/share/fonts/truetype/lato
-declare -ar FONT_FILES=(
-  "$FONT_DIR"/EBGaramond-Regular.otf
-  "$FONT_DIR"/EBGaramond-Italic.otf
-  "$FONT_DIR"/EBGaramond-Bold.otf
-  "$FONT_DIR"/EBGaramond-BoldItalic.otf
-  "$LATO_DIR"/Lato-Regular.ttf
-  "$LATO_DIR"/Lato-Bold.ttf
-)
+# Fonts, embedded into the EPUB (and read from disk for the PDF) so the book
+# renders identically everywhere rather than falling back to the reader's
+# defaults. The face inventory, the @font-face CSS and the colophon's naming of
+# the typefaces all live in ../lib/fonts.sh, shared with the English edition:
+# one book design, one set of typefaces, one place to change them. Pick a set
+# with --fonts (see show_help); the default is the shipping EB Garamond / Lato
+# pair.
+#
+# On the vendored body face: ../fonts/ebgaramond holds Octavio Pardo's revival
+# (the version Google Fonts distributes), NOT the Debian fonts-ebgaramond
+# package. That package ships Georg Duffner's unfinished v0.016, whose italic
+# f-ligature glyphs (ff, ffi, ffl) are drawn far too heavy and print as ink
+# blots. The vendored copy also supplies a true Bold Italic and covers U+221A
+# (the root sign in "√dhṛ"), which previously fell back to Georgia.
+declare -r FONT_LIB="$BOOK_ROOT"/lib/fonts.sh
+[[ -f $FONT_LIB ]] \
+  || { >&2 echo "✗ missing font library ${FONT_LIB@Q}"; exit 1; }
+#shellcheck source=../lib/fonts.sh source-path=SCRIPTDIR
+source "$FONT_LIB" \
+  || { >&2 echo "✗ failed to source ${FONT_LIB@Q}"; exit 1; }
 
 # Simplified die(): always exits 1. Intentional deviation from the BCS
 # die(code, msg...) contract -- this build script has no callers that
@@ -148,7 +151,7 @@ show_help() {
 $SCRIPT_NAME $VERSION - build "$TITLE" (Indonesian edition) as an EPUB3 and/or PDF.
 
 Usage:
-  $SCRIPT_NAME [epub|pdf|all] [--audio none|link|embed]
+  $SCRIPT_NAME [epub|pdf|all] [--audio none|link|embed] [--fonts SET]
   $SCRIPT_NAME -h|--help
   $SCRIPT_NAME -V|--version
 
@@ -165,6 +168,16 @@ Options:
                    embed  bundle the MP3s in the EPUB (EPUB target only;
                           output gets a _with-audio suffix)
                    none   no narration reference. Default.
+  --fonts SET    Typeface set (default: ${FONT_SETS[0]}). Any set other than the
+                 default writes its output with a matching filename suffix and
+                 is never published, so several settings can be built and
+                 compared side by side:
+                   classic        EB Garamond body, Lato headings (shipping)
+                   worksans       EB Garamond body, Work Sans SemiBold headings
+                   bonanova       Bona Nova body, Open Sans SemiBold headings
+                   bonanova-worksans
+                                  Bona Nova body, Work Sans SemiBold headings
+                   bonanova-solo  Bona Nova throughout, headings in its Bold
   -h, --help     Show this help and exit.
   -V, --version  Show version and exit.
 HELP
@@ -174,6 +187,10 @@ HELP
 # (installed before mktemp) can clean it: an EXIT trap fires after main returns,
 # by which point a function-local would be out of scope under `set -u`.
 declare -- tmp=''
+
+# Artefacts this run actually produced, appended as each build completes and
+# read by the publish step.
+declare -a BUILT=()
 
 # Mirror pandoc's auto-identifier algorithm for a heading: downcase, drop
 # punctuation (keeping underscore, hyphen, period), spaces to hyphens, strip
@@ -370,6 +387,7 @@ main() {
   # Indonesian narration has been recorded (see AUDIO_STEM above).
   local -- target=all
   local -- audio_mode=none
+  local -- font_set=${FONT_SETS[0]}
   while (($#)); do
     case $1 in
       -h|--help)
@@ -384,8 +402,14 @@ main() {
         audio_mode=$1 ;;
       --audio=*)
         audio_mode=${1#*=} ;;
+      --fonts)
+        [[ -n ${2:-} ]] || die "--fonts requires a value (${FONT_SETS[*]})"
+        shift
+        font_set=$1 ;;
+      --fonts=*)
+        font_set=${1#*=} ;;
       *)
-        die "usage: $SCRIPT_NAME [epub|pdf|all] [--audio none|link|embed]" ;;
+        die "usage: $SCRIPT_NAME [epub|pdf|all] [--audio none|link|embed] [--fonts SET]" ;;
     esac
     shift
   done
@@ -397,6 +421,15 @@ main() {
   if [[ $audio_mode == embed && $target != epub ]]; then
     die "audio embed only applies to the EPUB; use: $SCRIPT_NAME epub --audio embed"
   fi
+
+  # Load the typeface set, then re-derive the output names from its suffix. The
+  # default set has an empty suffix, so the shipping filenames are unchanged.
+  font_set_load "$font_set" "$BOOK_ROOT"/fonts || exit 1
+  OUTPUT=${OUTPUT_BASE%.epub}$FONT_SUFFIX.epub
+  OUTPUT_PDF=${OUTPUT%.epub}.pdf
+  OUTPUT_AUDIO=${OUTPUT%.epub}_with-audio.epub
+  readonly OUTPUT OUTPUT_PDF OUTPUT_AUDIO
+  [[ -z $FONT_SUFFIX ]] || info "font set: $font_set ($FONT_COLOPHON_EN)"
   local -r target audio_mode
 
   command -v pandoc >/dev/null 2>&1 || die 'pandoc not found (apt install pandoc)'
@@ -414,7 +447,7 @@ main() {
   local -- font
   for font in "${FONT_FILES[@]}"; do
     [[ -f $font ]] \
-      || die "font missing ${font@Q} (EB Garamond: vendored in ../fonts/ebgaramond; Lato: sudo apt install fonts-lato)"
+      || die "font missing ${font@Q} (vendored sets live under ../fonts/; Lato comes from the system: sudo apt install fonts-lato)"
   done
   # Sanity-check the canonical MP3s before building. embed must have them locally
   # (they get bundled) -> hard fail. link only points at the web URL, so a missing
@@ -540,7 +573,7 @@ main() {
     printf '%s\n\n' "$SUBTITLE"
     printf 'oleh **%s**\n\n' "$AUTHOR"
     printf '<br/>\n\n'
-    printf 'Buku elektronik ini ditata dari Markdown dengan pandoc, dalam huruf EB Garamond dan Lato. Sampul dan ilustrasi bab adalah gambar bergaya cat air yang dihasilkan dengan [AI:grok-imagine-image-quality](https://docs.x.ai/developers/models/grok-imagine-image-quality), dari prompt yang ditulis, diolah, dan dipilih oleh penulis.\n\n'
+    printf 'Buku elektronik ini ditata dari Markdown dengan pandoc, dalam %s. Sampul dan ilustrasi bab adalah gambar bergaya cat air yang dihasilkan dengan [AI:grok-imagine-image-quality](https://docs.x.ai/developers/models/grok-imagine-image-quality), dari prompt yang ditulis, diolah, dan dipilih oleh penulis.\n\n' "$FONT_COLOPHON_ID"
     printf 'Catatan riset disusun dengan bantuan [AI:fable-5](https://www.anthropic.com/claude-fable-5-mythos-5-system-card), [AI:opus-5](https://www.anthropic.com/claude-opus-5-system-card), [AI:sonnet-5](https://www.anthropic.com/claude-sonnet-5-system-card), [AI:glm-5.2](https://huggingface.co/zai-org/GLM-5.2), [AI:gpt-5.6](https://deploymentsafety.openai.com/gpt-5-6/gpt-5-6.pdf), serta [basis pengetahuan Applied Anthropology](https://github.com/Open-Technology-Foundation/appliedanthropology).\n\n'
     printf '<br/>\n\n'
     printf 'Karya ini dilisensikan di bawah %s.\n\n' "$LICENSE_NAME"
@@ -564,20 +597,22 @@ main() {
     done
   } >"$meta_xml" || die "failed to write ${meta_xml@Q}"
 
-  # Stylesheet: bind the embedded faces (EB Garamond body, Lato headings) to
-  # their families and apply them. Fonts are embedded under EPUB/fonts/; this
-  # CSS lives under EPUB/styles/, so the src url() is one directory up.
+  # Stylesheet: bind the embedded faces to their families and apply them. The
+  # @font-face rules come from ../lib/fonts.sh so the selected set drives both
+  # this and the PDF sheet below. Fonts are embedded under EPUB/fonts/; this CSS
+  # lives under EPUB/styles/, so the src url() is one directory up.
+  #
+  # The body rules are written with an unquoted heredoc so the family names and
+  # sizes interpolate -- safe because the CSS below contains no $, backtick or
+  # backslash. font-weight on the headings is explicit rather than left to the
+  # renderer's bold default: a set whose heading face is SemiBold (weight 600)
+  # would otherwise be asked for 700 and get a synthesised heavier face.
   local -- css="$tmp"/book.css
-  cat >"$css" <<'CSS' || die "failed to write ${css@Q}"
-@font-face{font-family:"EB Garamond";font-weight:normal;font-style:normal;src:url("../fonts/EBGaramond-Regular.otf")}
-@font-face{font-family:"EB Garamond";font-weight:normal;font-style:italic;src:url("../fonts/EBGaramond-Italic.otf")}
-@font-face{font-family:"EB Garamond";font-weight:bold;font-style:normal;src:url("../fonts/EBGaramond-Bold.otf")}
-@font-face{font-family:"EB Garamond";font-weight:bold;font-style:italic;src:url("../fonts/EBGaramond-BoldItalic.otf")}
-@font-face{font-family:"Lato";font-weight:normal;font-style:normal;src:url("../fonts/Lato-Regular.ttf")}
-@font-face{font-family:"Lato";font-weight:bold;font-style:normal;src:url("../fonts/Lato-Bold.ttf")}
-body{font-family:"EB Garamond",Georgia,serif;font-size:1rem;line-height:1.5;text-align:justify;-webkit-hyphens:auto;-epub-hyphens:auto;hyphens:auto;orphans:2;widows:2}
+  font_faces_css epub >"$css" || die "failed to write ${css@Q}"
+  cat >>"$css" <<CSS || die "failed to write ${css@Q}"
+body{font-family:"$FONT_SERIF_FAMILY",Georgia,serif;font-size:$FONT_BODY_SIZE_EPUB;line-height:$FONT_BODY_LEADING;text-align:justify;-webkit-hyphens:auto;-epub-hyphens:auto;hyphens:auto;orphans:2;widows:2}
 a{color:#0b295a}
-h1,h2,h3,h4,h5,h6{font-family:"Lato","DejaVu Sans",sans-serif;line-height:1.2;text-align:left;-webkit-hyphens:none;-epub-hyphens:none;hyphens:none}
+h1,h2,h3,h4,h5,h6{font-family:"$FONT_SANS_FAMILY","DejaVu Sans",sans-serif;font-weight:$FONT_HEADING_WEIGHT;line-height:1.2;text-align:left;-webkit-hyphens:none;-epub-hyphens:none;hyphens:none}
 h1{font-size:2em;margin:1em 0 0.6em}
 h2{font-size:1.133em;margin:1.2em 0 0.4em}
 h3{font-size:1.2em;margin:1em 0 0.3em}
@@ -586,7 +621,7 @@ h3{font-size:1.2em;margin:1em 0 0.3em}
 .pagebreak{break-before:page;page-break-before:always}
 .dlig{font-variant-ligatures:discretionary-ligatures;font-feature-settings:"dlig" 1}
 .copyright{font-size:0.8em}
-p.audio{font-family:"Lato","DejaVu Sans",sans-serif;font-size:0.9em;margin:0.2em 0 1.2em}
+p.audio{font-family:"$FONT_SANS_FAMILY","DejaVu Sans",sans-serif;font-size:0.9em;margin:0.2em 0 1.2em}
 p.audio a{text-decoration:none}
 p.audio .audio-url{display:none}
 .audio-icon{vertical-align:-0.12em;margin-right:0.4em}
@@ -640,6 +675,7 @@ CSS
         -o "$epub_out" \
         "${inputs[@]}" ) || die 'pandoc EPUB build failed'
     inject_accessibility_metadata "$epub_out" "$tmp"
+    BUILT+=("$epub_out")
     info "done: $epub_out ($(du -h --apparent-size "$epub_out" | cut -f1))"
     # Validate: epubcheck is the arbiter of EPUB conformance. Fail the build on
     # any error so a broken artefact is never shipped. ace (DAISY accessibility
@@ -658,21 +694,19 @@ CSS
 
   if [[ $target != epub ]]; then
     # PDF via weasyprint: it renders HTML/CSS, so it reuses the centred cover,
-    # the .pagebreak breaks and the images. EB Garamond is bound to the vendored
-    # faces via @font-face (unquoted heredoc: $FONT_DIR expands) -- resolving it
-    # by family name through fontconfig would pick up the broken Debian-packaged
-    # Duffner v0.016 instead. Lato still resolves by family name. weasyprint
+    # the .pagebreak breaks and the images. Every face is bound by absolute
+    # file:// URL from ../lib/fonts.sh -- resolving by family name through
+    # fontconfig would pick up the broken Debian-packaged Duffner EB Garamond
+    # v0.016 instead, and would not see the vendored Bona Nova, Work Sans or
+    # Open Sans at all, since none of them is installed system-wide. weasyprint
     # resolves image URLs relative to the CWD, so this pandoc runs from the
     # staged image dir.
     local -- pdf_css="$tmp"/pdf.css
-    cat >"$pdf_css" <<CSS || die "failed to write ${pdf_css@Q}"
-@font-face{font-family:"EB Garamond";font-weight:normal;font-style:normal;src:url("file://$FONT_DIR/EBGaramond-Regular.otf")}
-@font-face{font-family:"EB Garamond";font-weight:normal;font-style:italic;src:url("file://$FONT_DIR/EBGaramond-Italic.otf")}
-@font-face{font-family:"EB Garamond";font-weight:bold;font-style:normal;src:url("file://$FONT_DIR/EBGaramond-Bold.otf")}
-@font-face{font-family:"EB Garamond";font-weight:bold;font-style:italic;src:url("file://$FONT_DIR/EBGaramond-BoldItalic.otf")}
-body{font-family:"EB Garamond",Georgia,serif;font-size:15pt;line-height:1.5}
+    font_faces_css pdf >"$pdf_css" || die "failed to write ${pdf_css@Q}"
+    cat >>"$pdf_css" <<CSS || die "failed to write ${pdf_css@Q}"
+body{font-family:"$FONT_SERIF_FAMILY",Georgia,serif;font-size:$FONT_BODY_SIZE_PDF;line-height:$FONT_BODY_LEADING}
 a{color:#0b295a}
-h1,h2,h3,h4,h5,h6{font-family:"Lato","DejaVu Sans",sans-serif;line-height:1.2}
+h1,h2,h3,h4,h5,h6{font-family:"$FONT_SANS_FAMILY","DejaVu Sans",sans-serif;font-weight:$FONT_HEADING_WEIGHT;line-height:1.2}
 h1{font-size:2em;margin:1em 0 0.6em;break-before:page}
 h2{font-size:1.133em;margin:1.2em 0 0.4em}
 h3{font-size:1.2em;margin:1em 0 0.3em}
@@ -680,11 +714,11 @@ h3{font-size:1.2em;margin:1em 0 0.3em}
 .pagebreak{break-before:page}
 .dlig{font-variant-ligatures:discretionary-ligatures;font-feature-settings:"dlig" 1}
 .copyright{font-size:0.8em}
-p.audio{font-family:"Lato","DejaVu Sans",sans-serif;font-size:0.9em;margin:0.2em 0 1.2em}
+p.audio{font-family:"$FONT_SANS_FAMILY","DejaVu Sans",sans-serif;font-size:0.9em;margin:0.2em 0 1.2em}
 p.audio a{text-decoration:none;color:inherit}
 p.audio .audio-listen{display:none}
 .audio-icon{vertical-align:-0.12em;margin-right:0.4em}
-.repo-url{font-family:"Lato","DejaVu Sans",sans-serif;font-size:0.85em;overflow-wrap:break-word}
+.repo-url{font-family:"$FONT_SANS_FAMILY","DejaVu Sans",sans-serif;font-size:0.85em;overflow-wrap:break-word}
 img{max-width:100%}
 img.ornament{width:25px;height:auto;margin:0 auto;opacity:0.6}
 header#title-block-header{display:none}
@@ -710,15 +744,28 @@ CSS
         --css="$pdf_css" \
         -o "$OUTPUT_PDF" \
         "$plate" "${inputs[@]}" ) || die 'pandoc PDF build failed'
+    BUILT+=("$OUTPUT_PDF")
     info "done: $OUTPUT_PDF ($(du -h --apparent-size "$OUTPUT_PDF" | cut -f1))"
   fi
 
   # Deploy beside the English edition (same slug directory; the Indonesian
-  # filenames keep the editions distinct), then mirror to the remote host. The
-  # glob is derived from OUTPUT so a filename change happens in exactly one
-  # place; the targets come from deploy.conf, and without it the artefacts
-  # simply stay in the build directory.
-  local -a artefacts=("${OUTPUT%.epub}"*)
+  # filenames keep the editions distinct), then mirror to the remote host. BUILT
+  # holds exactly the files this run produced; it replaces the former
+  # "${OUTPUT%.epub}"* glob, which would sweep up the other typeface sets'
+  # artefacts (their names share that stem) as well as anything stale left in
+  # the build directory by an earlier run. The targets come from deploy.conf,
+  # and without it the artefacts simply stay in the build directory.
+  #
+  # A non-default typeface set is a proof, built to be looked at and printed --
+  # never the edition anyone should be downloading. Publishing it to the live
+  # web-root is therefore always wrong, so the suffix itself gates the step: to
+  # publish a set, promote it to the default in ../lib/fonts.sh.
+  if [[ -n $FONT_SUFFIX ]]; then
+    info "publish skipped: ${FONT_SUFFIX#_} is a proof set, not the shipping edition"
+    return 0
+  fi
+  ((${#BUILT[@]})) || die 'publish: nothing was built'
+  local -a artefacts=("${BUILT[@]}")
   if [[ -z $PUBLISH_DIR ]]; then
     info 'publish skipped: PUBLISH_DIR unset (see deploy.conf.example)'
     return 0
