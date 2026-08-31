@@ -3,9 +3,9 @@ part: 7
 title: "Dharmas in a Secular Age"
 slug: secular-age
 status: done
-words: 5443
+words: 5440
 reading_level: year-12
-updated: 2026-08-22
+updated: 2026-08-31
 draws_on: ["6.1", "6.2", "3.3", "3.1", "7.2", "6.5", "3.5.2", "3.5.3", "3.5.4"]
 #author: "Biksu Okusi"
 #date: 2026-08-01
@@ -128,7 +128,7 @@ A real digital-age dharma is therefore partly a recovery, the same move Hadot de
 
 ## The shape of the question changes
 
-The inherited dharmas are fraying, and most of them were made for a world that is gone. The secular replacements can perhaps be grounded, though only in the quieter, conditional way that may be the only grounding there ever was; and they can perhaps be installed, though the apparatus is improvised and the evidence is young; and they must do their work on terrain more hostile to the gathering of a self than anything in human history. That is a daunting tally. But the seeker we started with, the one with the yoga and the app and the book of Stoic sayings, looks different now. She is not a symptom of decline. She is doing, alone and clumsily and mostly without help, the most ancient human work there is: trying to assemble, out of the materials at hand, a dharma she can live by. The patchwork is construction, under the worst conditions in which the work has ever been attempted.
+The inherited dharmas are fraying, and most of them were made for a world that is gone. The secular replacements can perhaps be grounded, though only in the quieter, conditional way that may be the only grounding there ever was; and they can perhaps be installed, though the apparatus is improvised and the evidence is young; and they must do their work on terrain engineered, deliberately and for profit, against the gathering of a self. That is a daunting tally. But the seeker we started with, the one with the yoga and the app and the book of Stoic sayings, looks different now. She is not a symptom of decline. She is doing, alone and clumsily and mostly without help, the most ancient human work there is: trying to assemble, out of the materials at hand, a dharma she can live by. The patchwork is construction, under conditions no earlier builder ever faced.
 
 And that recognition changes the very shape of the question we have been asking all along. For all of human history before now, the question a person faced was: *which* of the inherited dharmas is the true one, and how do I submit myself to it? One was born onto a path, and the task was to walk it. But the seeker cannot ask that question any more, and she knows it. So the question is mutating, in her hands and in ours, into something no previous age could quite bring itself to ask out loud. Not *which dharma do I receive*, but: *can we build a better one, knowing exactly what we are doing, on purpose?*
 

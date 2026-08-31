@@ -3,7 +3,7 @@ part: 3
 title: "The Dharmas of the Samin of Java"
 slug: samin-of-java
 status: done
-words: 5335
+words: 5339
 reading_level: year-12
 updated: 2026-08-31
 draws_on: ["4.1", "1.3", "7.3", "8.1"]
@@ -166,7 +166,7 @@ But look at what has happened to the Sikep dharma. The colonial-era creed -- com
 
 So what was waiting, all along, in the teak country of Blora?
 
-A dharma with the lid off. No prophet on a mountain, no book handed down from the sky, no two-thousand-year pedigree to make it untouchable. Just an illiterate farmer and his neighbours, in a squeezed and unjust corner of a colonised island, deciding (deliberately, against the grain of their own culture and the full weight of an empire) how they were going to live. And then living it so completely, and teaching it so well, with nothing but their voices and their feet, that the way outlasted the man by a century and walked itself from a colonial tax revolt into an environmental protest without ever losing its shape.
+A dharma with the lid off. No prophet on a mountain, no book handed down from the sky, no two-thousand-year pedigree to make it untouchable. Just an illiterate farmer and his neighbours, in a squeezed and unjust corner of a colonised island, deciding (deliberately, against the grain of their own culture and the full weight of an empire) how they were going to live. And then living it so completely, and teaching it so well, with nothing but their voices and their feet, that the way outlasted the man by a century and walked itself from a colonial tax revolt into an environmental protest, changing its body but never its spine.
 
 That is the thing the great traditions can no longer easily show us, and the *wong sikep* can. We are used to thinking of a dharma as something ancient and given, something you are born into or convert to, something you *find*. The Sedulur Sikep let us watch the opposite happen. A dharma is something a community *makes*, and then *keeps*, by choosing it, naming it, and saying, over and over, with their feet in the cement if it comes to that: *this is who we are.*
 

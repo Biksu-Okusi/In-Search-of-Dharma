@@ -3,7 +3,7 @@ part: 4
 title: "A World of Dharmas"
 slug: world-of-dharmas
 status: done
-words: 6346
+words: 6384
 reading_level: year-12
 updated: 2026-08-31
 draws_on: ["4.2", "4.3", "4.4", "1.4", "3.5.1", "3.5.2", "3.5.3", "3.5.4", "4.5"]
@@ -148,7 +148,7 @@ If the Abrahamic paths are dharmas, then so is whatever I am doing here. "Secula
 
 So we have our five, and they really are profoundly different. Set them side by side and they disagree about the deepest things there are. They disagree about what a person even is: a node in a living web, a self-contained citadel of choice, or an instrument surrendered to its God. They disagree about time: a line running from creation to judgement, or an "everywhen" in which the ancestral past is permanently present. They disagree about the ground of it all: an impersonal order you align with, a commanding God you answer to, a silent God you yield to, a land you belong to. This diversity does not melt away on inspection; it goes all the way down. The claim that the world's wisdom traditions are "all really saying the same thing" does not survive a hard look at what they actually say.
 
-And yet, if you stand back far enough, the family resemblance is just as undeniable as the difference. Every one of these dharmas, each in the form we have met it here, carries some version of the oldest rule we know, the call to treat others as you would be treated, whether it is extended to the village, the cosmopolis, the more-than-human world, or the covenant community. Every one of them binds an "us," turning a crowd of strangers into a people who can trust one another, and every one draws that circle with a hard edge as well as a warm inside. Every one of them forms character through practice and habit rather than through assent alone. And every one of them treats the moral order as continuous with the order of reality itself, so that to live rightly is to come into tune with the way things truly are.
+And yet, if you stand back far enough, the family resemblance is just as plain as the difference. Every one of these dharmas, each in the form we have met it here, carries some version of the oldest rule we know, the call to treat others as you would be treated, whether it is extended to the village, the cosmopolis, the more-than-human world, or the covenant community. Every one of them binds an "us," turning a crowd of strangers into a people who can trust one another, and every one draws that circle with a hard edge as well as a warm inside. Every one of them forms character through practice and habit rather than through assent alone. And every one of them treats the moral order as continuous with the order of reality itself, so that to live rightly is to come into tune with the way things truly are.
 
 That is the shape we keep arriving at. The variety is real, thick, and not to be flattened, and underneath it runs a thin band of shared human concern that no functioning dharma seems to do without. Difference all the way down, and kinship all the way down, at the same time. One admission is owed here: these five were chosen because they rhyme, so this gallery illustrates the family resemblance; it cannot prove it. Later, when we have to ask the dangerous question of whether some dharmas are simply better than others, that thin shared band is going to be the only honest place to stand.
 
