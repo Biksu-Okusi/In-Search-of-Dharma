@@ -3,9 +3,9 @@ part: 2
 title: "The Genesis of Dharmas"
 slug: birth-of-dharma
 status: done
-words: 4871
+words: 4848
 reading_level: year-12
-updated: 2026-08-22
+updated: 2026-08-31
 draws_on: ["2.1", "2.2", "2.3", "5.2", "1.2", "5.5"]
 #author: "Biksu Okusi"
 #date: 2026-08-01
@@ -40,7 +40,7 @@ That something is, in large part, a "dharma," by whatever local name. Every huma
 
 ## The puzzle of the simultaneous sages
 
-The great reflective ethical systems, the ones whose descendants we still live inside, did not dribble into existence evenly across history. A remarkable number of them erupted in a single narrow window, roughly between 800 and 200 BCE, in civilisations that had little or no contact with one another. In North India, the Buddha sat down under a tree, and the wandering philosophers of the Upanishads asked what lay behind the self. In what we now call China, Confucius and Laozi were laying down two rival visions of "the Way." In Persia, Zoroaster split the cosmos into truth and the lie. In the small kingdoms of Palestine, the Hebrew prophets thundered that ritual without justice was worthless. And in the Hellenic city-states, the first philosophers began prising the world apart with reason.
+A remarkable number of the great reflective ethical systems, the ones whose descendants we still live inside, erupted in a single narrow window, roughly between 800 and 200 BCE, in civilisations that had little or no contact with one another. In North India, the Buddha sat down under a tree, and the wandering philosophers of the Upanishads asked what lay behind the self. In what we now call China, Confucius and Laozi were laying down two rival visions of "the Way." In Persia, Zoroaster split the cosmos into truth and the lie. In the small kingdoms of Palestine, the Hebrew prophets thundered that ritual without justice was worthless. And in the Hellenic city-states, the first philosophers began prising the world apart with reason.
 
 The German philosopher Karl Jaspers gave this window a name: the Axial Age, the age on which history turns. The label, I should say at once, has taken a battering from historians since, and I will come back to give the objections their due. But the coincidence he pointed at is arresting. Why should so many of humanity's deepest ethical breakthroughs cluster into a few centuries, scattered across a continent, among peoples who could not have copied one another? Either it is an accident of staggering proportions, or something was happening to the human condition, in several places at once, that pressed people toward the same kind of answer.
 
@@ -54,7 +54,7 @@ For something like a hundred thousand years before anyone wrote anything down, h
 
 Christopher Boehm spent a career on the question, and his answer is bracing. Human beings, he argues, have the same instinct for dominance as our great-ape cousins, the same itch to climb and to lord it over others. What foragers do is gang up against that instinct. Boehm calls it a "reverse dominance hierarchy": instead of the strong dominating the weak, the many combine to dominate the would-be strong. The upstart who grabs more than his share, who swaggers, who tries to give orders, is met with a graded series of corrections. First laughter. Then mockery. Then pointed criticism, gossip behind his back, the cold shoulder. And if he will not be shamed into line, in the last resort, the group can decide to be rid of him for good.
 
-Boehm's own trawl of the ethnographic record turned up executions among foragers on three continents and among tribesmen on three more: rare, in his phrase, yet widespread. That last resort was rare, but it was not random. Behind it Boehm found a particular and harder figure in the ethnographic record: the intimidator who cannot be shamed at all, the recidivist bully or killer off whom ridicule and gossip simply slide. Most troublemakers fold at the first cold shoulder; this one does not, and it was against him that the band held its ultimate sanction in reserve. He will return, because he is the deep ancestor of a human type: the one who can mimic every signal of belonging while feeling none of its pull.
+Boehm's own trawl of the ethnographic record turned up executions among foragers on three continents and among tribesmen on three more: rare, in his phrase, yet widespread. Behind that last resort Boehm found a particular and harder figure in the ethnographic record: the intimidator who cannot be shamed at all, the recidivist bully or killer off whom ridicule and gossip simply slide. Most troublemakers fold at the first cold shoulder; this one does not, and it was against him that the band held its ultimate sanction in reserve. He will return, because he is the deep ancestor of a human type: the one who can mimic every signal of belonging while feeling none of its pull.
 
 This is morality with teeth, and it needs no scripture because it needs no strangers. Everything it requires is carried in the heads and mouths of people who see each other every day. Reputation does the policing. The constant low hum of who-did-what, what we now dismiss as mere gossip, was in fact the surveillance system that kept everyone honest. You behaved, because everyone was always -- gently -- watching, and because the story of your behaviour would outrun you to the next campfire.
 
@@ -126,7 +126,7 @@ There is a complication that keeps the picture from being too neat. I have told 
 
 ## The fence that comes with the circle
 
-One shadow falls across all of this. The very machinery that makes a dharma such a powerful glue, the way it turns strangers into brothers, works by drawing a line around the "us" it creates. A dharma includes by excluding. It is never only a circle of care; it is also, always, a fence. We will spend a whole part, much later, on what happens at that fence.
+One shadow falls across all of this. The very machinery that makes a dharma such a powerful glue, the way it turns strangers into brothers, works by drawing a line around the "us" it creates. A dharma includes by excluding; the circle of care is also a fence. We will spend a whole part, much later, on what happens at that fence.
 
 There is a stronger version of that claim which I had better not make. Some evolutionary models propose that the warmth turned inward and the suspicion turned outward are two faces of one adaptation, bred together by war between groups. It is an elegant idea and it may yet be right, but it has taken a serious knock. When anthropologist Mark Dyble re-ran the best-known of those models across a much wider range of conditions, he found the result held only when groups were assumed to differ genetically far more than real hunter-gatherer groups actually do. Set that dial to what we measure in the field, and the altruism stops evolving. The fence is real, and we have plenty of evidence for it in history and in the laboratory. What we do not have is a settled account of it written into our genes by ancient warfare.
 

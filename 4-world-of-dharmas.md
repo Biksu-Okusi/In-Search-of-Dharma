@@ -3,9 +3,9 @@ part: 4
 title: "A World of Dharmas"
 slug: world-of-dharmas
 status: done
-words: 6351
+words: 6346
 reading_level: year-12
-updated: 2026-08-22
+updated: 2026-08-31
 draws_on: ["4.2", "4.3", "4.4", "1.4", "3.5.1", "3.5.2", "3.5.3", "3.5.4", "4.5"]
 #author: "Biksu Okusi"
 #date: 2026-08-01
@@ -114,7 +114,7 @@ Set this beside the Stoic and the tour gains its sharpest contrast. The Stoic dr
 
 And it does this with almost none of the equipment a religion is supposed to need. There is no scripture; a guide named Pak Wondo put it flatly: "In Sumarah we have no sacred book. Our sacred book is Life." There are no temples, no clergy, and no creed to recite. Above all there is no guru. The only teacher who finally counts is the *guru sejati*, the true teacher within; the person who guides a session, the *pamong*, is understood not as a master but as a function, someone speaking spontaneously out of attunement to the people in the room, with an authority that lasts exactly as long as the attunement does. Even revelation must pass inspection. At the fellowship's 1950 congress its first chairman, Dr Surono, insisted that guidance claiming the highest source still had to be proven before the gathering: "Even Sukino asks us for our agreement," he said, and then drew the boundary that earns Sumarah its place on this tour: "We differ from religions, within which people accept God on faith and without knowledge."
 
-Nor, finally, is there anywhere to retreat to. The tradition's phrase for its own style is *tapa rame*, asceticism in the crowd: no monastery, no hermitage, just the practice carried on inside ordinary working and family life, the surrender renewed at the desk and the market stall as much as in the meditation hall.
+Nor, finally, is there anywhere to retreat to. The tradition's phrase for its own style is *tapa rame*, asceticism in the crowd: the practice carried on inside ordinary working and family life, the surrender renewed at the desk and the market stall as much as in the meditation hall.
 
 So where does this dharma draw its circle of care? At the doctrinal edge, more softly than any other stop on the tour. Most members are Muslims, but Buddhists and Christians sit in the same silence without ceasing to be Buddhists and Christians; Indonesian researchers studying the fellowship describe people of different religions joined in a single shared ritual, each remaining inside their own faith. Almost anyone, it seems, may sit, and nobody is asked to convert, because there is nothing to convert to: no profession of belief is required of anyone who takes a place in the silence, and the fellowship has never proselytised. The hard edge is practical instead.
 

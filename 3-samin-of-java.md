@@ -3,9 +3,9 @@ part: 3
 title: "The Dharmas of the Samin of Java"
 slug: samin-of-java
 status: done
-words: 5355
+words: 5335
 reading_level: year-12
-updated: 2026-08-22
+updated: 2026-08-31
 draws_on: ["4.1", "1.3", "7.3", "8.1"]
 #author: "Biksu Okusi"
 #date: 2026-08-01
@@ -94,7 +94,7 @@ Third: is it *oriented toward the good*, rather than toward mere advantage? Yes.
 
 And the fourth feature is the decisive one: is it *reflective and self-aware*? Here is where this dharma and mere custom part company for good. Ordinary village tradition is usually inherited and seldom held up for examination. You do it because it is done, because your parents did it, because that is simply how things are. What the Sedulur Sikep did is far rarer, and they did it out loud. They *consciously chose* a set of values, lifted them out of the surrounding culture, gave them a name, and defended them deliberately, against the dominant order of their day. They knew they were being different, and they meant to be.
 
-That deliberate lifting is precisely what turned the Sedulur Sikep's folkways into a dharma. And it is why the Samin pass the test where mere custom would fail it. They were practising a chosen way, and they knew it, and they would tell you so, in blunt language, to your face.
+That deliberate lifting is precisely what turned the Sedulur Sikep's folkways into a dharma. They were practising a chosen way, and they knew it, and they would tell you so, in blunt language, to your face.
 
 Which brings us to the language.
 
@@ -142,7 +142,7 @@ The second is sharper, and we have to face it squarely. The *wong sikep* were *n
 
 So why are they here at all when, in the end, the question is whether we can build ethical worlds without the supernatural?
 
-Because they are a *boundary case*, and boundary cases are worth more than tidy examples. The Sedulur Sikep are not a world religion, with scripture, clergy, and empire. But they are not a secular philosophy either, like Stoicism stripped of its gods. They sit in between: a non-scriptural, non-institutional, this-worldly, ethics-first *folk* dharma, with just enough cosmology to give it a backbone and not an ounce more. There is a whole middle country of ways of living that are neither, and the Sedulur Sikep are its first sure landmark. For an argument that dharmas come in every form, an example that refuses our neat boxes is not an embarrassment. It is the best evidence we have.
+Because they are a *boundary case*, and boundary cases are worth more than tidy examples. The Sedulur Sikep are not a world religion, with scripture, clergy, and empire. But they are not a secular philosophy either, like Stoicism stripped of its gods. They sit in between: a non-scriptural, non-institutional, this-worldly, ethics-first *folk* dharma, with just enough cosmology to give it a backbone and not an ounce more. There is a whole middle country of ways of living that are neither, and the Sedulur Sikep are its first sure landmark. For an argument that dharmas come in every form, an example that refuses our neat boxes is the best evidence we have.
 
 The third warning I can only post here and honour later, because it needs a standard this book has not yet built. A dharma this admirable still had hard edges, and they pressed on its own people: for most of a century the *wong sikep* kept their children from school, and with it from letters, rather than hand them to the state's classroom; and the same tradition that will shortly give us nine heroic women at a palace gate also prescribed -- and in the one village fieldworkers have studied closely still prescribes -- a wife's place in a plainly patriarchal household. Whether a way of life can hold this well without crushing anyone inside it is a real question, not a rhetorical one, and Part 8 will put this very dharma through that test, without flinching, as its hardest case.
 
