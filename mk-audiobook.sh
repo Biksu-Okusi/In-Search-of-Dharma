@@ -5,8 +5,12 @@
 #
 # Concatenates the spoken cover plus chapters 0..9 (one TTS-narrated MP3 each,
 # read straight from the garydean.id web-root) into one audiobook MP3, embeds
-# the lettered cover art as ID3v2 front-cover picture, and tags it with the
-# book's bibliographic metadata.
+# the lettered cover art as ID3v2 front-cover picture, tags it with the
+# book's bibliographic metadata, and writes ID3v2 chapter markers (CHAP
+# frames) so podcast and audiobook players can list and jump to sections.
+# Chapter titles come from the first H1 of each essay's Markdown source
+# alongside this script; each marker starts on the first sample of its
+# narration (the preceding gap/chime belongs to the chapter before it).
 #
 # A spacer is inserted between sections: --gap seconds of silence (default 4,
 # 0 disables). With --gong FILE the gap's silence is followed by the chime,
@@ -34,7 +38,7 @@ shopt -s inherit_errexit
 # locations only.
 declare -rx PATH=/usr/local/bin:/usr/bin:/bin
 
-declare -r VERSION=1.3.0
+declare -r VERSION=1.4.0
 #shellcheck disable=SC2155
 declare -r SCRIPT_PATH=$(realpath -- "$0")
 declare -r SCRIPT_DIR=${SCRIPT_PATH%/*} SCRIPT_NAME=${SCRIPT_PATH##*/}
@@ -85,7 +89,7 @@ Usage: $SCRIPT_NAME [OPTIONS]
 
 Joins ${#SOURCES[@]} chapter MP3s from $AUDIO_SRC_DIR
 into $OUTPUT
-with embedded cover art and ID3v2 tags.
+with embedded cover art, ID3v2 tags, and per-section chapter markers.
 
 Options:
   -g|--gap SECONDS   silence inserted between sections (default $GAP; 0 disables
@@ -161,6 +165,72 @@ write_concat_list() {
   printf '%s' "$list"
 }
 
+# Duration of an audio file in integer milliseconds, on stdout. ffprobe
+# reports seconds with a decimal fraction; split and rejoin in bash to avoid
+# floating point.
+duration_ms() {
+  local -- dur sec frac
+  dur=$(ffprobe -v error -show_entries format=duration \
+    -of default=noprint_wrappers=1:nokey=1 -- "$1") || return 1
+  sec=${dur%%.*}
+  frac=${dur#"$sec"}
+  frac=${frac#.}000
+  printf '%d' $((10#$sec * 1000 + 10#${frac:0:3}))
+}
+
+# Chapter title for essay n: the first H1 of $SCRIPT_DIR/n-*.md (e.g.
+# "1: Defining Dharma"), falling back to "Chapter n" if no essay is found.
+chapter_title() {
+  local -i n=$1
+  local -- md title=''
+  for md in "$SCRIPT_DIR/$n-"*.md; do
+    [[ -f $md ]] || break
+    title=$(grep -m1 '^# ' -- "$md") || title=''
+    title=${title#\# }
+    break
+  done
+  printf '%s' "${title:-Chapter $n}"
+}
+
+# Walk PLAYLIST accumulating item durations and emit an ffmetadata file with
+# one [CHAPTER] per source track. Spacers (minted in WORK_DIR) are not
+# chapters — each extends the chapter before it, so a marker lands on the
+# first spoken sample. The first chapter is pinned to 0 so the opening
+# bookend belongs to the cover. Prints the metadata file path.
+write_chapters_meta() {
+  local -- meta=$WORK_DIR/chapters.ffmeta item title
+  local -a starts=() titles=()
+  local -i pos=0 ms track=0 i
+  for item in "${PLAYLIST[@]}"; do
+    ms=$(duration_ms "$item") || die 1 "ffprobe failed on ${item@Q}"
+    if [[ $item != "$WORK_DIR"/* ]]; then
+      starts+=("$pos")
+      if ((track == 0)); then
+        titles+=('Cover')
+      else
+        titles+=("$(chapter_title $((track - 1)))")
+      fi
+      track+=1
+    fi
+    ((pos += ms))
+  done
+  starts[0]=0
+  {
+    printf ';FFMETADATA1\n'
+    for ((i = 0; i < ${#starts[@]}; i+=1)); do
+      # ffmetadata escaping: backslash first, then its special characters
+      title=${titles[i]}
+      title=${title//\\/\\\\}
+      title=${title//=/\\=}
+      title=${title//;/\\;}
+      title=${title//#/\\#}
+      printf '[CHAPTER]\nTIMEBASE=1/1000\nSTART=%d\nEND=%d\ntitle=%s\n' \
+        "${starts[i]}" "${starts[i + 1]:-$pos}" "$title"
+    done
+  } > "$meta"
+  printf '%s' "$meta"
+}
+
 # Assemble PLAYLIST: optional opening chime, then the sources with a spacer
 # between each pair, then the optional closing chime. The closing bookend
 # reuses the between-sections spacer — both are gap-then-chime. Fills a global
@@ -185,7 +255,7 @@ make_playlist() {
 }
 
 build_audiobook() {
-  local -- list gap_desc='no gap' tmp_out=$WORK_DIR/audiobook.mp3
+  local -- list chapters gap_desc='no gap' tmp_out=$WORK_DIR/audiobook.mp3
   if [[ -n $GONG ]]; then
     gap_desc="${GAP}s gong gaps, gong bookends"
   elif ((GAP > 0)); then
@@ -193,12 +263,15 @@ build_audiobook() {
   fi
   make_playlist
   list=$(write_concat_list "${PLAYLIST[@]}") || die 1 'failed to build concat list'
+  chapters=$(write_chapters_meta) || die 1 'failed to build chapter metadata'
 
-  info "joining ${#SOURCES[@]} tracks (stream copy, $gap_desc) with embedded cover"
+  info "joining ${#SOURCES[@]} tracks (stream copy, $gap_desc) with embedded cover and chapter markers"
   ffmpeg -hide_banner -loglevel error -y \
     -f concat -safe 0 -i "$list" \
     -i "$COVER_IMAGE" \
+    -f ffmetadata -i "$chapters" \
     -map 0:a -map 1:v \
+    -map_chapters 2 \
     -c:a copy -c:v copy \
     -disposition:v attached_pic \
     -id3v2_version 3 \
@@ -219,11 +292,15 @@ build_audiobook() {
 
 report() {
   local -- duration size hms
-  local -i seconds
+  local -i seconds nchapters
   duration=$(ffprobe -v error -show_entries format=duration \
     -of default=noprint_wrappers=1:nokey=1 -- "$OUTPUT") \
     || die 1 "ffprobe failed on ${OUTPUT@Q}"
   seconds=${duration%.*}
+  nchapters=$(ffprobe -v error -show_chapters -of csv=p=0 -- "$OUTPUT" \
+    | grep -c .) || die 1 "chapter probe failed on ${OUTPUT@Q}"
+  ((nchapters == ${#SOURCES[@]})) \
+    || die 1 "expected ${#SOURCES[@]} chapter markers, found $nchapters"
   # stat, not du: on delayed-allocation filesystems du under-reports a file
   # written moments ago.
   size=$(stat -c %s -- "$OUTPUT" | numfmt --to=iec) \
@@ -231,7 +308,7 @@ report() {
   printf -v hms '%dh%02dm%02ds' \
     $((seconds / 3600)) $(((seconds % 3600) / 60)) $((seconds % 60))
   success "built ${OUTPUT@Q}"
-  info "  duration $hms, size $size"
+  info "  duration $hms, size $size, $nchapters chapter markers"
 }
 
 main() {
