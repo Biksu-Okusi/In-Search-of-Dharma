@@ -5,9 +5,9 @@ slug: world-of-dharmas
 lang: id
 translated_from: ../4-world-of-dharmas.md
 status: done
-words: 5979
+words: 5974
 reading_level: year-12
-updated: 2026-08-17
+updated: 2026-08-31
 draws_on: ["4.2", "4.3", "4.4", "1.4", "3.5.1", "3.5.2", "3.5.3", "3.5.4", "4.5"]
 ---
 
@@ -99,7 +99,7 @@ Taruh ini di samping kaum Stoik, maka lawatan kita memperoleh kontrasnya yang pa
 
 Dan Sumarah melakukan semua itu nyaris tanpa satu pun perlengkapan yang konon dibutuhkan sebuah agama. Tidak ada kitab suci; seorang pembimbing bernama Pak Wondo mengatakannya dengan lugas: "Dalam Sumarah kami tidak punya kitab suci. Kitab suci kami adalah Kehidupan." Tidak ada kuil, tidak ada rohaniwan, dan tidak ada kredo untuk dilafalkan. Dan yang terutama: tidak ada guru. Satu-satunya guru yang akhirnya berarti adalah sang *guru sejati* di dalam diri; orang yang menuntun sebuah sesi, sang *pamong*, dipahami bukan sebagai tuan, melainkan sebagai fungsi, seseorang yang berbicara spontan karena keselarasan dengan orang-orang di ruangan itu, dengan wibawa yang bertahan persis selama keselarasan itu bertahan. Bahkan wahyu pun harus lolos pemeriksaan. Pada kongres paguyuban tahun 1950, ketua pertamanya, dr. Surono, bersikeras bahwa tuntunan yang mengaku bersumber dari yang tertinggi tetap harus dibuktikan di hadapan majelis: "Sukino pun meminta persetujuan kita," katanya, lalu menarik batas yang membuat Sumarah pantas mendapat tempat dalam lawatan ini: "Kami berbeda dari agama-agama, yang di dalamnya orang menerima Tuhan atas dasar iman dan tanpa pengetahuan."
 
-Dan akhirnya, tidak ada tempat untuk menyepi. Ungkapan tradisi ini untuk gayanya sendiri adalah *tapa rame*, bertapa di tengah keramaian: tanpa biara, tanpa pertapaan, hanya laku yang dijalankan di dalam kehidupan kerja dan keluarga yang biasa, penyerahan yang diperbarui di meja kerja dan lapak pasar, tak kalah sering daripada di ruang meditasi.
+Dan akhirnya, tidak ada tempat untuk menyepi. Ungkapan tradisi ini untuk gayanya sendiri adalah *tapa rame*, bertapa di tengah keramaian: laku yang dijalankan di dalam kehidupan kerja dan keluarga yang biasa, penyerahan yang diperbarui di meja kerja dan lapak pasar, tak kalah sering daripada di ruang meditasi.
 
 Lalu di mana dharma ini menarik lingkaran kepeduliannya? Di tepi ajaran, lebih lembut daripada perhentian mana pun dalam lawatan ini. Kebanyakan anggotanya Muslim, tetapi umat Buddha dan Kristen duduk di dalam keheningan yang sama tanpa berhenti menjadi umat Buddha dan Kristen; para peneliti Indonesia yang mengkaji paguyuban ini menggambarkan orang-orang berlainan agama yang bersatu dalam satu ritual bersama, masing-masing tetap tinggal di dalam imannya sendiri. Hampir siapa pun, tampaknya, boleh duduk, dan tak seorang pun diminta pindah agama, sebab tidak ada tempat untuk pindah: tak ada pengakuan iman yang dituntut dari siapa pun yang mengambil tempat di dalam keheningan itu, dan paguyuban ini tak pernah menyiarkan ajarannya ke luar. Tepi kerasnya justru praktis. Laku yang tanpa kitab, tanpa teknik, dan tanpa waralaba hanya bisa menular lewat persentuhan, orang ke orang dan sesi ke sesi, dan pada sebagian besar sejarahnya laku itu menular dalam bahasa Jawa, kadang dalam bahasa Jawa krama yang sukar dari tuntunan sang pendiri sendiri. Kembarannya yang nyaris serupa, Subud, yang lahir dari lingkaran mistik Yogyakarta yang sama pada dasawarsa yang sama, membungkus satu latihan rohani yang mudah dibawa dalam format yang seragam lalu membawanya keliling dunia; Sumarah tetap menjadi paguyuban Jawa beranggota beberapa ribu orang, jumlahnya memuncak mendekati sepuluh ribu pada pertengahan 1970-an dan menyusut perlahan sejak itu. Di sini, kecilnya jumlah bukanlah kegagalan pemasaran. Itulah harga yang dibayar karena menolak setiap bentuk yang bisa diperbanyak.
 

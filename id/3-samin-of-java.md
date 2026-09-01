@@ -5,9 +5,9 @@ slug: samin-of-java
 lang: id
 translated_from: ../3-samin-of-java.md
 status: done
-words: 5154
+words: 5137
 reading_level: year-12
-updated: 2026-08-17
+updated: 2026-08-31
 draws_on: ["4.1", "1.3", "7.3", "8.1"]
 ---
 
@@ -81,7 +81,7 @@ Ketiga: apakah ia *diarahkan pada kebaikan*, bukan sekadar pada keuntungan? Ya. 
 
 Dan ciri keempat adalah yang menentukan: apakah ia *reflektif dan sadar diri*? Di sinilah dharma ini dan sekadar adat berpisah untuk selamanya. Tradisi desa yang biasa umumnya diwarisi dan jarang diangkat untuk diperiksa. Anda melakukannya karena memang begitulah yang dilakukan, karena orang tua Anda melakukannya, karena memang begitulah adanya. Yang dilakukan Sedulur Sikep jauh lebih langka, dan mereka melakukannya terang-terangan. Mereka *secara sadar memilih* seperangkat nilai, mengangkatnya keluar dari kebudayaan di sekelilingnya, memberinya nama, dan membelanya dengan sengaja, melawan tatanan yang berkuasa pada zamannya. Mereka tahu bahwa mereka tengah mengambil jalan yang berbeda, dan mereka memang berniat begitu.
 
-Tindakan mengangkat dengan sengaja itulah yang mengubah kebiasaan rakyat Sedulur Sikep menjadi sebuah dharma. Dan itulah sebabnya wong sikep lulus ujian yang tak akan dilewati adat belaka. Mereka sedang menempuh jalan yang mereka pilih, dan mereka tahu itu, dan mereka akan mengatakannya kepada Anda, dengan bahasa yang lugas, tepat di depan wajah Anda.
+Tindakan mengangkat dengan sengaja itulah yang mengubah kebiasaan rakyat Sedulur Sikep menjadi sebuah dharma. Mereka sedang menempuh jalan yang mereka pilih, dan mereka tahu itu, dan mereka akan mengatakannya kepada Anda, dengan bahasa yang lugas, tepat di depan wajah Anda.
 
 Dan itu membawa kita ke soal bahasa.
 
@@ -129,7 +129,7 @@ Yang kedua lebih tajam, dan kita harus menghadapinya tanpa berkelit. Wong sikep 
 
 Lalu mengapa pula mereka ada di sini, kalau pada akhirnya pertanyaannya adalah apakah kita bisa membangun dunia etis tanpa yang adikodrati?
 
-Karena mereka adalah *kasus batas*, dan kasus batas lebih berharga daripada contoh yang rapi. Sedulur Sikep bukan agama dunia, yang punya kitab suci, rohaniwan, dan imperium. Namun, mereka juga bukan filsafat sekuler, seperti Stoisisme yang ditanggalkan dewa-dewanya. Mereka berada di antara keduanya: dharma *rakyat* yang tanpa kitab, tanpa lembaga, berpijak pada dunia ini, dan mendahulukan etika, dengan kosmologi yang secukupnya saja untuk memberinya tulang punggung, dan tak lebih dari itu sedikit pun. Terbentang satu negeri tengah yang luas berisi beragam cara hidup yang bukan keduanya, dan Sedulur Sikep adalah tetengernya yang pertama dan pasti. Bagi argumen bahwa dharma hadir dalam segala bentuk, contoh yang menolak masuk kotak-kotak rapi kita bukanlah hal memalukan. Ia justru bukti terbaik yang kita punya.
+Karena mereka adalah *kasus batas*, dan kasus batas lebih berharga daripada contoh yang rapi. Sedulur Sikep bukan agama dunia, yang punya kitab suci, rohaniwan, dan imperium. Namun, mereka juga bukan filsafat sekuler, seperti Stoisisme yang ditanggalkan dewa-dewanya. Mereka berada di antara keduanya: dharma *rakyat* yang tanpa kitab, tanpa lembaga, berpijak pada dunia ini, dan mendahulukan etika, dengan kosmologi yang secukupnya saja untuk memberinya tulang punggung, dan tak lebih dari itu sedikit pun. Terbentang satu negeri tengah yang luas berisi beragam cara hidup yang bukan keduanya, dan Sedulur Sikep adalah tetengernya yang pertama dan pasti. Bagi argumen bahwa dharma hadir dalam segala bentuk, contoh yang menolak masuk kotak-kotak rapi kita justru bukti terbaik yang kita punya.
 
 Peringatan ketiga hanya bisa saya pasang di sini dan saya penuhi nanti, sebab peringatan itu menuntut ukuran yang belum lagi dibangun buku ini. Dharma semengagumkan ini pun punya sisi-sisi tajamnya sendiri, dan sisi-sisi itu menekan orang-orangnya sendiri: selama sebagian besar abad itu wong sikep menjauhkan anak-anak mereka dari sekolah, dan dengan begitu dari keberaksaraan, alih-alih menyerahkan mereka ke ruang kelas milik negara; dan tradisi yang sama, yang sebentar lagi akan memberi kita sembilan perempuan pemberani di gerbang istana, juga menggariskan — dan, di satu desa yang telah diteliti para peneliti lapangan dari dekat, masih menggariskan — tempat seorang istri di dalam rumah tangga yang terang-terangan patriarkal. Apakah sebuah cara hidup bisa menyangga sebaik ini tanpa menggilas siapa pun di dalamnya adalah pertanyaan yang sungguh-sungguh, bukan pertanyaan retoris, dan Bagian 8 akan menghadapkan justru dharma ini pada ujian tersebut, tanpa berkelit, sebagai kasusnya yang paling sulit.
 
