@@ -21,20 +21,17 @@ CLAUDE.md
 # repository. deploy.conf.example is tracked and shows the required keys.
 deploy.conf
 
-# Internal working documents
-FABLE-REVIEW-PROMPT.md
-FABLE-REVIEW.md
+# Internal working documents — filed under wip/ (entire tree ignored).
+# The root-level patterns below remain as safety nets for working files
+# that habitually land at the root before being filed into wip/.
+wip/
 copy-to-workshops.sh
 rupert-reply.md
 ramsey-*.md
-BASH-CODING-STANDARD.md
 critical-review*.md
 critique-*.md
 CRITIQUE.md
-CODEX-CRITICAL-ANALYSIS.md
 TODO.md
-why-this-book.md
-talking-points-winton-higgins.md
 
 # Prose-hygiene sub-project: harvested source material (transcripts, comment
 # threads, style teardowns) used to identify and strip AI-generated tics,
@@ -83,6 +80,3 @@ pg-*.png
 *_bonanova-worksans.pdf
 *_bonanova-solo.epub
 *_bonanova-solo.pdf
-
-# Working critique document, session-local; never publish.
-critical-analysis.md

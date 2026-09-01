@@ -1,6 +1,6 @@
 # SOURCES — DD citation register
 
-One entry per cited **work**. Resolve once, reuse across every note. See `SOURCE-CITATION-POLICY.design.md` for the policy this implements.
+One entry per cited **work**. Resolve once, reuse across every note. See `docs/SOURCE-CITATION-POLICY.design.md` for the policy this implements.
 
 **Fields**
 
