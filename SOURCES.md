@@ -62,6 +62,22 @@ A note's `[S#]` line points here via `[src:<key>]`. No `[S#]` may point at a `st
 - verified: file (title, author and abstract at seg 0; no masthead or date in file)
 - note: Self-described speculation reading the epic as a conflict over ecological policy; a specimen of "dharma" used as an ecological-policy word from the Indic side. Not a historical source.
 
+### aji-2022-cara-penganut-samin-memandang-kematian
+- status: usable
+- medium: text
+- cite: Dian Utoro Aji, "Cara Penganut Samin Memandang Kematian," *detikJateng*, 26 February 2022, https://www.detik.com/jateng/berita/d-5960242/cara-penganut-samin-memandang-kematian
+- kb: `Aji_Cara-Penganut-Samin-Memandang-Kematian_detikJateng-2022.md` (full text, staged at workshops/DD/sources/14-samin-death-rites/ — not yet folded into corpus)
+- verified: web (byline and date on the page; fetched 2026-09-03)
+- note: Gunretno (Pati) on *salin sandangan* — "Sandangan itu bisanya rusak… wujudnya raga"; the body face up and level, not turned west as in Islam; traditional clothes rather than *kafan*; Moh Rosyid (IAIN Kudus) quoted. Cited by DD note 4.1.
+
+### aji-2022-tokoh-samin-mbah-gono-wafat-dimakamkan-di-dalam-rumahnya
+- status: usable
+- medium: text
+- cite: Dian Utoro Aji, "Tokoh Samin Mbah Gono Wafat, Jenazah Dimakamkan di Dalam Rumahnya," *detikJateng*, 26 February 2022, https://www.detik.com/jateng/berita/d-5960147/tokoh-samin-mbah-gono-wafat-jenazah-dimakamkan-di-dalam-rumahnya
+- kb: `Aji_Tokoh-Samin-Mbah-Gono-Wafat-Jenazah-Dimakamkan-di-Dalam-Rumahnya_detikJateng-2022.md` (full text, staged at workshops/DD/sources/14-samin-death-rites/ — not yet folded into corpus)
+- verified: web (byline and date on the page; fetched 2026-09-03)
+- note: Wargono (Mbah Gono), sesepuh of Kaliyoso, Karangrowo, Undaan, Kudus; d. 25 February 2022, 15:00; buried 26 February, 11:00, in the central room of his house by *wasiat*; black dress for *kelanggengan*; Gunretno: "hidup itu tidak mati, mati itu langgeng cuma ganti pakaiannya." Cited by DD note 4.1.
+
 ### al-mufakhir-2025-multikulturalisme-ajaran-sumarah
 - status: usable
 - medium: text
@@ -158,6 +174,14 @@ A note's `[S#]` line points here via `[src:<key>]`. No `[S#]` may point at a `st
 - verified: file (2023 page with the January 2026 update banner at seg 0; CC0 release statement in the announcement seg 0; rules-vs-judgment passage at 2026 seg 2 and "perpetual work in progress" at seg 6)
 - note: The revision event itself, both versions in full; evidence that a machine ethic can be versioned in public. Author-side documents — cite as the object, not as authority on their own adequacy.
 
+### antoni-2022-sejarah-panjang-sedulur-sikep-makam-di-rumah
+- status: usable
+- medium: text
+- cite: Ahmad Antoni, "Sejarah Panjang Sedulur Sikep, Makam di Rumah dan Penghormatan atas Kepercayaan," *iNews Jateng*, 27 February 2022, https://jateng.inews.id/berita/sejarah-panjang-sedulur-sikep-makam-di-rumah-dan-penghormatan-atas-kepercayaan
+- kb: `Antoni_Sejarah-Panjang-Sedulur-Sikep-Makam-di-Rumah-dan-Penghormatan-atas-Kepercayaan_iNews-2022.md` (full text, staged at workshops/DD/sources/14-samin-death-rites/ — not yet folded into corpus)
+- verified: partial (page 1 of 2 fetched 2026-09-03; page 2 not retrievable)
+- note: Eyewitness account (KH Imam Aziz, written up by Rumekso Setiyadi) of the Kudus standoff over Wargono's home burial: the village head cites a Perda against burial inside houses; Kesbangpol, local NU, police and army present; Gunretno offers to take the body to Pati; the governor's staff arrive. Cited by DD note 4.1.
+
 ### aquinas-summa-treatise-on-law
 - status: usable
 - medium: text
@@ -165,6 +189,14 @@ A note's `[S#]` line points here via `[src:<key>]`. No `[S#]` may point at a `st
 - kb: `Aquinas_ST-I-II_qq90-97_2090.md`, `Aquinas_ST-I-II_qq90-97_2091.md`, `Aquinas_ST-I-II_qq90-97_2092.md`, `Aquinas_ST-I-II_qq90-97_2093.md`, `Aquinas_ST-I-II_qq90-97_2094.md`, `Aquinas_ST-I-II_qq90-97_2095.md`, `Aquinas_ST-I-II_qq90-97_2096.md`, `Aquinas_ST-I-II_qq90-97_2097.md` (one file per quaestio, qq. 90–97) (full text, folded into the corpus 2026-08); `cicero-aquinas_natural-law-primary-texts.md` (attributed summary, in corpus under staging.text/DD/sources/oldsources/)
 - verified: web (newadvent.org/summa, qq. 90–97 saved to DD archive 2026-07-28)
 - note: attributed summary note with verified page anchors, shared with the Cicero entry. Natural law defined as the rational creature's participation in eternal law, knowable by 'the light of natural reason' (q. 91 a. 2) — the reason-accessible lower storey that weakens Part 1's 'cannot be secularised' contrast. Anchored edition-independently by q./a. Public domain.
+
+### aria-2025-mbah-lasiyo-dimakamkan-di-situs-samin-suro-engkrek
+- status: usable
+- medium: text
+- cite: Aria (ed. Vachri Rinaldy Lutfipambudi), "Mbah Lasiyo, Sesepuh Sedulur Sikep Blora Dimakamkan di Situs Samin Suro Engkrek," *Kompas.com* Regional, 21 November 2025, https://regional.kompas.com/read/2025/11/21/141626778/mbah-lasiyo-sesepuh-sedulur-sikep-blora-dimakamkan-di-situs-samin-suro
+- kb: `Aria_Mbah-Lasiyo-Sesepuh-Sedulur-Sikep-Blora-Dimakamkan-di-Situs-Samin-Suro-Engkrek_Kompas-2025.md` (full text, staged at workshops/DD/sources/14-samin-death-rites/ — not yet folded into corpus)
+- verified: web (byline and date on the page; fetched 2026-09-03)
+- note: Lasiyo, sesepuh of Karangpace, Klopoduwur, Blora; d. 20 November 2025 at RSUP Kariadi, Semarang; prayed over at the village mosque and buried after Friday prayers at Situs Samin Suro Engkrek; "Pemakaman memakai tradisi Islam" (his pupil Mbah Poso); Regent Arief Rohman attended. Cited by DD note 4.1.
 
 ### aristotle-nicomachean-ethics-ross
 - status: usable
@@ -1174,6 +1206,14 @@ A note's `[S#]` line points here via `[src:<key>]`. No `[S#]` may point at a `st
 - verified: file (journal masthead, DOI and dates at seg 0; pagination in running heads)
 - note: The "whose values, by what fair process" statement of the alignment problem; three routes to fair principles (overlapping consensus, veil of ignorance, social choice).
 
+### gagak-rimang-fm-2026-sesepuh-sedulur-sikep-sambongrejo-ganti-sandangan
+- status: usable
+- medium: text
+- cite: "Sesepuh Sedulur Sikep Samin di Sambongrejo Ganti Sandangan," *LPPL Radio Gagak Rimang 105.9 FM* (Blora), 22 February 2026, https://www.gagakrimangfm.id/2026/02/sesepuh-sedulur-sikep-samin-di.html
+- kb: `GagakRimangFM_Sesepuh-Sedulur-Sikep-Samin-di-Sambongrejo-Ganti-Sandangan_2026.md` (full text, staged at workshops/DD/sources/14-samin-death-rites/ — not yet folded into corpus)
+- verified: web (date on the page; no byline; fetched 2026-09-03)
+- note: Pramugi Prawiro Widjojo, 68, sesepuh of Sambongrejo, Sambong, Blora; d. 21 February 2026 after a year's illness; buried in the village public cemetery; mourners in black with *iket*; the headline uses *ganti sandangan* for death. Local public-broadcaster report. Cited by DD note 4.1.
+
 ### galante-et-al-2021-mindfulness-based-programmes-nonclinical
 - status: usable
 - medium: text
@@ -1656,6 +1696,14 @@ Also: existing entry `curry-mullins-whitehouse-2019-seven-moral-rules` should ad
 - verified: file (received/accepted/published dates at seg 1; crowdworker demographics at seg 3)
 - note: The authors' retrospective: Norm Bank judgements "primarily from educated, white crowdworkers in the US"; "limited cultural awareness and is susceptible to pervasive biases."
 
+### jurnal-pantura-2022-sesuai-wasiat-jenazah-sesepuh-sedulur-sikep-dimakamkan-di-rumahnya
+- status: usable
+- medium: text
+- cite: "Meninggal Dunia, Sesuai Wasiat Jenazah Sesepuh Sedulur Sikep Dimakamkan di Rumahnya," *Jurnal Pantura*, 26 February 2022, https://jurnalpantura.id/meningal-dunia-sesuai-wasiat-jenazah-sesepuh-sedulur-sikep-dimakamkan-di-rumahnya/
+- kb: `JurnalPantura_Sesuai-Wasiat-Jenazah-Sesepuh-Sedulur-Sikep-Dimakamkan-di-Rumahnya_2022.md` (full text, staged at workshops/DD/sources/14-samin-death-rites/ — not yet folded into corpus)
+- verified: web (date on the page; byline "admin"; fetched 2026-09-03)
+- note: Gunretno: "Pemakaman di rumah ini merupakan permintaan terakhir atau wasiat dari Mbah Wargono, terima kasih pada semua pihak, wasiat Mbah Wargono akhirnya terwujud." Cited by DD note 4.1.
+
 ### karunadasa-1996-dhamma-theory
 - status: usable
 - medium: text
@@ -1799,6 +1847,14 @@ Also: existing entry `curry-mullins-whitehouse-2019-seven-moral-rules` should ad
 - kb: `Kreplin-Farias-Brazil_The-Limited-Prosocial-Effects-of-Meditation_SciRep-2018.md`
 - verified: file (journal masthead with DOI on every page, seg 0)
 - note: Prosocial effects qualified by type and quality; compassion gains only with author-teachers and passive controls.
+
+### kristiantoro-2023-tindakan-sosial-masyarakat-samin
+- status: usable
+- medium: text
+- cite: Sony Kristiantoro, "Tindakan Sosial dan Perilaku Kolektif Masyarakat Samin (Sedulur Sikep) terhadap Pemeliharaan Lingkungan," *SAMI: Jurnal Sosial-Keagamaan dan Teologi di Indonesia* 1:2 (December 2023): 113–140
+- kb: `Kristiantoro_Tindakan-Sosial-Masyarakat-Samin-Pemeliharaan-Lingkungan_SAMI-2023.md`
+- verified: file (masthead with volume, issue, date and page range at seg 0)
+- note: Agama Adam as syncretic; "setelah mati, manusia akan menitis kembali" (citing David Samiyono); "tidak ada ajaran baku tentang kepercayaan mereka mengenai kosmos, melainkan hanya ajaran lisan yang bisa berbeda-beda." Cited by DD note 4.1.
 
 ### kropotkin-1916-manifesto-of-the-sixteen
 - status: usable
@@ -2162,6 +2218,14 @@ Also: existing entry `curry-mullins-whitehouse-2019-seven-moral-rules` should ad
 - verified: file (Oxford preprint header and author list at seg 0; abstract; conclusion segs 35–41; journal volume/pages not re-checked online)
 - note: The Seshat test of the Axial Age across five axial and five "non-axial" regions — no circumscribed age, traits earlier and elsewhere, "in fits and starts"; the principal empirical counterweight to Jaspers.
 
+### munawaroh-ariani-suwarno-2015-etnografi-masyarakat-samin-di-bojonegoro
+- status: usable
+- medium: text
+- cite: Siti Munawaroh, Christriyati Ariani & Suwarno, *Etnografi Masyarakat Samin di Bojonegoro (Potret Masyarakat Samin dalam Memaknai Hidup)* (Yogyakarta: Balai Pelestarian Nilai Budaya, Kementerian Pendidikan dan Kebudayaan, 2015), ISBN 978-979-8971-48-8
+- kb: `Munawaroh-Ariani-Suwarno_Etnografi-Masyarakat-Samin-di-Bojonegoro_BPNB-2015.md` (full text, staged at workshops/DD/sources/14-samin-death-rites/ — not yet folded into corpus)
+- verified: acquired (Kemendikbud repository PDF, 152 pp., fetched 2026-09-03; ISBN on the imprint page; full text also on archive.org)
+- note: State cultural-heritage ethnography of Dusun Jepang, Margomulyo; principal informant Mbah Hardjo Kardi. *Salin sandhang* (pp. 119–120): one *brokohan* at *dino geblak* only, none of the 7/40/100-day cycle; formerly unwashed, unprayed, three-layer white cloth or *jarit*, no qibla; no *ziarah kubur* (*bersih dusun* in Ruwah instead); the drift to the modin and to headstones. *Penitisan* (pp. 72, 126): the good return as humans, the bad as animals or plants, seven cycles to "manusia yang sempurna." Cited by DD note 4.1.
+
 ### munt-2012-sumarah-meditation-cognitive-emotional
 - status: usable
 - medium: text
@@ -2241,6 +2305,14 @@ Also: existing entry `curry-mullins-whitehouse-2019-seven-moral-rules` should ad
 - verified: file (full text, 188 segments; "philosophy of technology use" at seg 21; declutter protocol at segs 41–42)
 - note: The individual-practice pole of the digital-age responses, read in full.
 
+### nurdin-adzkiya-2021-tradisi-perlawanan-kultural-masyarakat-samin
+- status: usable
+- medium: text
+- cite: Nazar Nurdin & Ubbadul Adzkiya', "Tradisi Perlawanan Kultural Masyarakat Samin," *Jurnal Sosiologi Agama* 15:1 (January–June 2021)
+- kb: `Nurdin-Adzkiya_Tradisi-Perlawanan-Kultural-Masyarakat-Samin_SosiologiAgama-2021.md`
+- verified: file (journal masthead with volume, issue and ISSN at seg 0; title and authors in the file frontmatter)
+- note: Circumcision, marriage and death handled collectively — "Ketika ada khitanan, kawin, kematian semua dilakukan dengan bersama-sama"; *sama rasa*. Cited by DD note 4.1.
+
 ### nussbaum-2003-capabilities-as-fundamental-entitlements
 - status: usable
 - medium: text
@@ -2264,6 +2336,14 @@ Also: existing entry `curry-mullins-whitehouse-2019-seven-moral-rules` should ad
 - kb: `Odgers_The-Great-Rewiring-Review-of-Haidt_Nature-2024.md`
 - verified: file (citation line and DOI at the foot of seg 9)
 - note: ▲ Scraped nature.com page — segs 0–8 and 10 are navigation; the review text is seg 9 only. "No evidence… rewiring children's brains"; reforms still required; bans may backfire.
+
+### oktafiya-2020-eksistensi-ajaran-samin-di-tengah-modernisasi
+- status: usable
+- medium: text
+- cite: Yeti Oktafiya, "Eksistensi Ajaran Samin di Tengah Modernisasi," *Publique* 1:1 (2020), UIN Sunan Ampel Surabaya, https://jurnalfisip.uinsa.ac.id/index.php/publique/article/download/125/83
+- kb: `Oktafiya_Eksistensi-Ajaran-Samin-di-Tengah-Modernisasi_Publique-2020.md` (full text, staged at workshops/DD/sources/14-samin-death-rites/ — not yet folded into corpus)
+- verified: acquired (journal PDF fetched 2026-09-03; journal name and volume in the running head)
+- note: Dusun Jepang, Bojonegoro; interview with Mbah Hardjo Kardi, 20 December 2015: "Upacara kematian pada masyarakat Samin sama dengan masyarakat pada umumnya… manusia itu tidak ada yang mati. Jiwa masih ada di bumi; yang dibawa orang mati adalah suara, hati, dan amalnya saja"; contributions in kind, money returned. ▲ The informant also speaks of "jaminan surga" — Islamic idiom, or the interviewer's. Cited by DD note 4.1.
 
 ### olivelle-1999-dharmasutras
 - status: usable
@@ -2673,6 +2753,14 @@ Also: existing entry `curry-mullins-whitehouse-2019-seven-moral-rules` should ad
 - verified: file (title and byline at seg 0; body from seg 2; segs 0–1 are site navigation)
 - note: Buddhist-press journalism on Wirathu and monastic promotion of the anti-Rohingya narrative; use for the description, not for contested facts. Publication date not recoverable from the scrape.
 
+### rosyid-2012-studi-komparatif-konsep-ketuhanan-islam-dan-agama-adam
+- status: usable
+- medium: text
+- cite: Mohammad Rosyid, "Studi Komparatif Konsep Ketuhanan Islam dan Agama Adam pada Komunitas Samin," *Ulumuna: Jurnal Studi Keislaman* 16:2 (December 2012)
+- kb: `Rosyid_Studi-Komparatif-Konsep-Ketuhanan-Islam-dan-Agama-Adam_Ulumuna-2012.md`
+- verified: file (running head with journal, volume, issue and date throughout; page range not in the ingested text — running heads 413–435)
+- note: Kudus (Larekrejo, Karangrowo). Fn 49: the three stages of *merti jenazah* — washed "sebagai simbol membersihkan pakaian/sandangan (jasad)" or not washed if the dead held to Samin principle; wrapped in white or *jarit*; buried "tak ditalkin dan tak dihadapkan kiblat"; no *ziarah kubur*, *khaul* or post-death slametan, "Hanya slametan di saat kematian (dino geblak)." *Arwah menitis pada generasinya*; the fasting prayer "Asale wong, bali wong… Ojo dadi kebo, dadio wong neh"; the *ageman* gloss (fn 27); the death *brokohan*. IAIN Kudus; the frame is a comparison with Islam. Cited by DD note 4.1.
+
 ### rosyid-2023-komunitas-samin-agama-adam
 - status: usable
 - medium: text
@@ -2839,6 +2927,14 @@ Also: existing entry `curry-mullins-whitehouse-2019-seven-moral-rules` should ad
 - kb: `sapolsky-085-obesity-deja-vu-history-of-asd.txt`
 - verified: video-URL (https://www.youtube.com/watch?v=k4tOF47_K8A; manual subtitles per header)
 - note: Sapolsky relays Baron-Cohen's The Pattern Seekers (systemising as a ~100,000-year human novelty; frequency-dependent selection) with his own brakes — "I wish he had backed this up with a little bit more" and the unaddressed Neanderthal-introgression timing problem.
+
+### saptono-2022-kepercayaan-masyarakat-samin-makamkan-leluhur-di-dalam-rumah
+- status: usable
+- medium: text
+- cite: Pudyo Saptono, "Kepercayaan Masyarakat Samin, Makamkan Leluhur Di Dalam Rumah Sendiri," *Suara Karya*, 27 February 2022, https://www.suarakarya.id/nasional/pr-2602758726/kepercayaan-masyarakat-samin-makamkan-leluhur-di-dalam-rumah-sendiri
+- kb: `Saptono_Kepercayaan-Masyarakat-Samin-Makamkan-Leluhur-di-Dalam-Rumah-Sendiri_SuaraKarya-2022.md` (full text, staged at workshops/DD/sources/14-samin-death-rites/ — not yet folded into corpus)
+- verified: web (byline and date on the page; fetched 2026-09-03)
+- note: Frames home burial as a Samin belief ("keyakinan dalam memakamkan jenazah para leluhur tidak di Tempat Pemakaman Umum (TPU), tetapi di dalam rumah mereka sendiri"); the Kudus administration's Perda objection; Governor Ganjar Pranowo contacted the Regent; burial allowed. ▲ The "belief" framing is uncorroborated by the ethnographies; other reports call it Wargono's *wasiat*. Cited by DD note 4.1.
 
 ### schein-gray-2018-theory-of-dyadic-morality
 - status: usable
@@ -3136,6 +3232,14 @@ Also: existing entry `curry-mullins-whitehouse-2019-seven-moral-rules` should ad
 - verified: file (key findings at seg 0; employment figures at seg 24; author list from the published record)
 - note: 125 recipients, $500/month for 24 months, RCT; full-time employment 28%→40% vs 32%→37% for controls in year one.
 
+### suharyo-rokhman-yuniawan-2024-ajaran-samin-dari-makna-simbolik-menuju-hakikat
+- status: usable
+- medium: text
+- cite: Suharyo, Fathur Rokhman & Tommi Yuniawan, "Ajaran Samin: Dari Makna Simbolik Menuju Hakikat," *Humanika* 31:1 (2024): 105–115, DOI 10.14710/humanika.v31i1.60969 (CC BY-SA)
+- kb: `Suharyo-Rokhman-Yuniawan_Ajaran-Samin-Dari-Makna-Simbolik-Menuju-Hakikat_Humanika-2024.md` (full text, staged at workshops/DD/sources/14-samin-death-rites/ — not yet folded into corpus)
+- verified: web (DOI 10.14710/humanika.v31i1.60969; PDF fetched from ejournal.undip.ac.id 2026-09-03)
+- note: Literature study (Saussure; Pateda) of the *angger-angger*; *agama* as *ageman*; death as *ganti pakaian*; "Wong enom mati uripe titip sing urip… Dadi ora mati nanging kumpul sing urip. Apik wong salawase sepisan dadi wong, salawase dadi wong" (Mbah Sampan, Bojonegoro, via Mardikantoro 2017); "urip sepisan kanggo salawase." Leans on Munawaroh et al 2015. Cited by DD note 4.1.
+
 ### suhler-churchland-2011-can-innate-modular-foundations-explain-morality
 - status: usable
 - medium: text-ocr
@@ -3351,6 +3455,14 @@ Also: existing entry `curry-mullins-whitehouse-2019-seven-moral-rules` should ad
 - kb: `Walzer_Exodus-and-Revolution_1986.md`
 - verified: file (tesseract OCR; Basic Books title page at seg 0; the Sinai covenant chapter "The Covenant: A Free People" at segs 66–72; filename year 1986 is the paperback, first edition 1985)
 - note: The covenant read as informed popular consent and "radical voluntarism" — the feature that most separates Abrahamic grounding from cosmic order. Running heads are interleaved into the text by the OCR.
+
+### waskitoadi-et-al-2023-pergumulan-kelompok-penghayat-kepercayaan
+- status: usable
+- medium: text
+- cite: Agung Waskitoadi, C Dwi Wuryaningsih, Pradjarta Dirdjosanjoto & Setyo Handoyo, *Pergumulan Kelompok-Kelompok Penghayat Kepercayaan di Aras Lokal* (Salatiga: Yayasan Persemaian Cinta Kemanusiaan (Percik), 2023), ISBN 978-623-09-3889-4, https://percik.or.id/wp-content/uploads/2023/05/Pergumulan-Kelompok-Penghayat-Kepercayaan.pdf
+- kb: `Waskitoadi-et-al_Pergumulan-Kelompok-Penghayat-Kepercayaan-di-Aras-Lokal_Yapercik-2023.md` (full text, staged at workshops/DD/sources/15-sumarah-death/ — not yet folded into corpus)
+- verified: acquired (publisher PDF, 289 pp., fetched 2026-09-03; ISBN and imprint on the copyright page)
+- note: Percik (Salatiga) field survey of penghayat groups in Central Java. Sumarah listed among registered penghayat organisations in Sragen (pp. 10, 101) and Kudus (p. 23, citing Rosyid & Kushidayati: only Sapto Darmo and Sikep Samin changed the KTP religion column). Full description of a Hidup Betul funeral at Dusun Kacepit, Wonosobo, 19–20 March 2019 (modin hands the body to the group; head to the south; shroud opened to the navel; mourners facing east; slametan next night), and burial refusals (Kotagede 2018 cross sawn to a "T"; Daodah refused a waqf cemetery in Brebes, 2014) (pp. 55–59). No Sumarah funeral described. Cited by DD note 3.5.2.
 
 ### weber-1946-from-max-weber
 - status: usable
