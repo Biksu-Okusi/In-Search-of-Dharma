@@ -3,7 +3,7 @@ part: 0
 title: "Preface"
 slug: preface
 status: done
-words: 4322
+words: 4415
 reading_level: year-12
 updated: 2026-09-02
 draws_on: ["0.1", "0.2", "0.3", "0.4", "0.5", "0.6", "0.7"]
@@ -119,6 +119,8 @@ So let me disclose the intent as plainly as the method. This book's most importa
 ## What this is, and isn't
 
 I hold no lineage and no authority, and there is no practice waiting at the end of this book that I am surreptitiously selling. Nor is it academic anthropology, though it leans on a great deal of it: the sourcing is real, but the voice is a personal one, written for an intelligent general reader rather than for a subfield. What it is, is one person's attempt to look hard and straight at a single enormous question: what these things called dharmas are, where they come from, and how they get made, with the workings kept on show the whole way.
+
+And since any book about how people live invites the wish to be told, I had better say now that I have no solutions to offer, for how to live or what to believe. What I have are questions, better ones, I hope, than the ones I set out with, and the book's job is to hand them on sharper than it found them. That is not modesty. A book that ended by handing down a solution would be one more dharma to kneel before, and eight parts of argument stand against that.
 
 The one commitment that runs through every part, and the one I would ask you to hold onto, is a refusal to rank the dharmas in advance. Secular and sacred, written and unwritten, the great world religions and the code of a single profession or subculture: I treat them all as real candidates for the same description, and decline to hand any of them the high ground before the looking is done.
 
