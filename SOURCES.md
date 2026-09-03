@@ -1756,9 +1756,9 @@ Also: existing entry `curry-mullins-whitehouse-2019-seven-moral-rules` should ad
 - status: usable
 - medium: text
 - cite: Robert Hertz, "Contribution à une étude sur la représentation collective de la mort," *Année sociologique* 10 (1907): 48–137; repr. in *Sociologie religieuse et folklore* (Paris: Alcan, 1928); English in *Death and the Right Hand*, trans. Rodney & Claudia Needham (London: Cohen & West, 1960)
-- kb: none (not accessed — classiques.uqac.ca unreachable 2026-09-03)
-- verified: none (metadata; content as relayed by graeber-2007-possibilities)
-- note: The double burial: the second funeral frees the soul and ends the mourners' liminal period. Public domain in French (UQAC hosts the 1928 collection); fetch and stage when reachable. Cited by DD note 1.2.
+- kb: `Hertz-1928_Sociologie-religieuse-et-folklore_UQAC.md` (full text of the 1928 collection, French, staged at workshops/DD/sources/19-death-rites-general/ — not yet folded into corpus; EPUB and RTF alongside)
+- verified: file (essay sections "Le corps : la sépulture provisoire", "L'âme : son séjour temporaire sur la terre", "Les vivants : le deuil", "II. La cérémonie finale" with "La sépulture définitive", "L'accès de l'âme au séjour des morts", "La libération des vivants")
+- note: The double funeral: the intermediate period in which the dead still belong to the world they have left, and the final ceremony that buries, admits the soul and releases the mourners together. classiques.uqac.ca itself times out from here; fetched from the Wayback Machine 2026-09-03 (the archived PDF is truncated at 80 KB, the EPUB is complete). English translation not accessed. Cited by DD note 1.2.
 
 ### higgins-2017-flexible-appropriation
 - status: usable
