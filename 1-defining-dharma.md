@@ -3,7 +3,7 @@ part: 1
 title: "Defining Dharma"
 slug: defining-dharma
 status: done
-words: 5624
+words: 5676
 reading_level: year-12
 updated: 2026-09-02
 draws_on: ["1.1", "1.2", "1.3", "1.4", "3.3", "3.4"]
@@ -106,7 +106,7 @@ Run the everyday impostors against those four features, and you can see why they
 
 **Custom**, the way a village does things, supplies rules, but it is usually inherited without reflection and carries no transformative aim; it tells you what *is* done, not what is good and why.
 
-**Law** is comprehensive and powerful, but it binds from the outside: by coercion, enforceable by punishment and abolishable by a vote. Repeal a statute, and it is gone; a dharma is not undone so easily, because it lives in conviction rather than on a statute book.
+**Law** is comprehensive and powerful, but it binds from the outside: by coercion, enforceable by punishment and abolishable by a vote. Repeal a statute, and it is gone; a dharma is not undone so easily, because it lives in conviction rather than on a statute book. The line is less clean than it sounds. Law also makes conscience, through the school and the courtroom, and every dharma in this book uses sanctions of its own. The difference is where the binding is felt: from inside, as who you are, or from outside, as what it will cost you.
 
 **Etiquette** governs only the polished surface of conduct (which fork, which form of address) and asks nothing of your soul.
 

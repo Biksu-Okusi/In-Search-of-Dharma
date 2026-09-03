@@ -3,7 +3,7 @@ part: 3
 title: "The Dharmas of the Samin of Java"
 slug: samin-of-java
 status: done
-words: 5597
+words: 5633
 reading_level: year-12
 updated: 2026-09-02
 draws_on: ["4.1", "1.3", "7.3", "8.1"]
@@ -134,7 +134,7 @@ There is an older current here too, one we have already met. Christopher Boehm's
 
 I have been building a case, and before I finish it, three warnings are in order, because a dharma is exactly the kind of thing it is easy to romanticise, and I have been as charmed by this one as anyone.
 
-The first is about the evidence. Almost everything we "know" about Samin doctrine comes to us second-hand, and often third-hand, from outsiders: Dutch colonial officials and, later, ethnographers. The reason is the very thing that makes the movement so striking: the Samin themselves wrote almost nothing down. The historians Harry Benda and Lance Castles, in their foundational scholarly study, make this their central caution and note that the accounts we do have were frequently written by hostile or baffled observers. We are watching this dharma through a series of other people's windows, some of them grimy.
+The first is about the evidence. Almost everything we "know" about Samin doctrine comes to us second-hand, and often third-hand, from outsiders: Dutch colonial officials and, later, ethnographers. The reason is the very thing that makes the movement so striking: the Samin themselves wrote almost nothing down. The historians Harry Benda and Lance Castles, in their foundational scholarly study, make this their central caution and note that the accounts we do have were frequently written by hostile or baffled observers. We are watching this dharma through a series of other people's windows, some of them grimy. This chapter adds a window of its own, and the reader should know what kind: a reading of the archive and of the scholars who did the fieldwork, not a report of conversations of my own.
 
 There is one window that is less grimy than the rest, and what can be seen through it should adjust the whole picture. The historian Takashi Shiraishi dug out of the colonial archive the minutes of the interrogation of Dangir, a twenty-five-year-old follower arrested in 1928, who answered a native official's questions about his faith at length and in his own idiom: how he was initiated with five aphorisms about walking; why the ritual meal that sealed it could be paid for only with money from his own farm labour, never from trade, "because traders usually get profit by cheating"; what an honest man may and may not do. It is the nearest thing we have to a Samin speaking, and even it reaches us, as Shiraishi says, doubly alienated, filtered through the official who wrote it down. But a voice it is, and it says something startling: Dangir denied being a "Samin" at all. The word meant nothing to him; it was the government's label. He called himself *wong sikep*, a man who embraces, living the religion of Adam he had learned from a neighbouring teacher he could name.
 
