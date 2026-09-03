@@ -206,6 +206,14 @@ A note's `[S#]` line points here via `[src:<key>]`. No `[S#]` may point at a `st
 - verified: web (byline and date on the page; fetched 2026-09-03)
 - note: Lasiyo, sesepuh of Karangpace, Klopoduwur, Blora; d. 20 November 2025 at RSUP Kariadi, Semarang; prayed over at the village mosque and buried after Friday prayers at Situs Samin Suro Engkrek; "Pemakaman memakai tradisi Islam" (his pupil Mbah Poso); Regent Arief Rohman attended. Cited by DD note 4.1.
 
+### aridiantari-lasmawan-suastika-2020-eksistensi-tradisi-bali-aga-trunyan
+- status: usable
+- medium: text
+- cite: Putu Aridiantari, I Wayan Lasmawan & I Nengah Suastika, "Eksistensi Tradisi dan Budaya Masyarakat Bali Aga pada Era Globalisasi di Desa Trunyan," *Ganesha Civic Education Journal* 2:2 (2020), 67–80, https://ejournal2.undiksha.ac.id/index.php/GANCEJ/article/view/345
+- kb: `GANCEJ_Trunyan_Undiksha.md` (full text, staged at workshops/DD/sources/18-bali-aga-death/ — not yet folded into corpus)
+- verified: web (journal PDF; fetched 2026-09-03)
+- note: Four months of fieldwork at Trunyan with named village officers; relays Danandjaja 1980 (pp. 116, 309, 316, 433). Death: *mepasah* for the married, the single and children whose milk teeth have fallen; inhumation for the damaged and unnatural dead; three *sema*; every spirit "menitis (lahir kembali) kembali ke badan kasar keketurunannya" as the reason for *dadia* endogamy. Contains pasted boilerplate from unrelated papers; use the field data only. Cited by DD note 4.1.
+
 ### aristotle-nicomachean-ethics-ross
 - status: usable
 - medium: text
@@ -718,6 +726,14 @@ A note's `[S#]` line points here via `[src:<key>]`. No `[S#]` may point at a `st
 - verified: file (title, authors, affiliations and abstract at seg 0; volume/article number from the published record)
 - note: Public-goods and trust games: in-group pro-sociality does not predict in-group bias; Big-5 predictors differ — parochial altruism is a population pattern, not an individual trait.
 
+### covarrubias-1937-island-of-bali
+- status: usable
+- medium: text-ocr
+- cite: Miguel Covarrubias, *Island of Bali* (New York: Alfred A. Knopf, 1937), https://archive.org/details/IslandOfBali
+- kb: `Covarrubias-1937_Island-of-Bali_archive-org-IslandOfBali_djvu.txt` (full text, OCR, staged at workshops/DD/sources/18-bali-aga-death/ — not yet folded into corpus)
+- verified: file (Internet Archive djvu text; page numbers from the running heads)
+- note: Whole book staged as OCR text. Ch. 1 "The Ancient Survival: the Bali Aga" pp. 17–26 (Tenganan; the funeral-rice story "pure hearsay which I could not verify" p. 23; Sembiran platform exposure p. 25); "Death and Cremation" pp. 359–361 (cremation "not introduced into Bali until the time of Madjapahit"; the animist "life-fluid"; Sembiran ravine). Period vocabulary ("primitive", "pure Indonesians"). Cited by DD note 4.1.
+
 ### crawford-2018-tan-malaka
 - status: usable
 - medium: text
@@ -741,6 +757,14 @@ A note's `[S#]` line points here via `[src:<key>]`. No `[S#]` may point at a `st
 - kb: `Curry-JonesChesters-VanLissa_Mapping-Morality-with-a-Compass_JRP-2019.md`
 - verified: file (JRP header at seg 0; Study 2 MFQ test at seg 24; CFA fit at seg 22). ▲ The ingested file begins mid-introduction — the abstract's "MAC emerges as superior" is not in the chunks.
 - note: The MAC-Q vs MFQ head-to-head; the direct test between the framework Part 1 runs on and the one Part 5 runs on.
+
+### danandjaja-1980-kebudayaan-petani-desa-trunyan
+- status: usable
+- medium: text
+- cite: James Danandjaja, *Kebudayaan Petani Desa Trunyan di Bali: lukisan analitis yang menghubungkan praktek pengasuhan anak orang Trunyan dengan latar belakang etnografisnya* (Jakarta: Pustaka Jaya, 1980; UI dissertation 1977; UI Press ed. 1989)
+- kb: none (not accessed — no digital copy found)
+- verified: none (metadata from library catalogues and citing works)
+- note: The ethnography of Trunyan and the source behind every Indonesian account of *mepasah*: "exposure" vs inhumation, the three *sema*, the soul held back from Dalem until the water-*ngaben*, rebirth in the *dadia*. Cited only as relayed by koestanto-2010, indonesia-go-id-2019 and aridiantari-2020. Re-try Indonesian library digitisation (Perpusnas, UI) for a scan. Cited by DD note 4.1.
 
 ### decety-cowell-2014-is-empathy-necessary-for-moral-behavior
 - status: usable
@@ -1013,6 +1037,14 @@ A note's `[S#]` line points here via `[src:<key>]`. No `[S#]` may point at a `st
 - kb: `Epictetus_Enchiridion_trans-Carter_PG45109.txt`
 - verified: file (Gutenberg text; §5 at seg 12; 51 segments)
 - note: Public-domain translation; source of "Men are disturbed not by things, but by the views which they take of things."
+
+### epistema-2025-menjenguk-tradisi-aga-desa-tenganan-pegringsingan
+- status: usable
+- medium: text
+- cite: "Menjenguk Tradisi Aga Desa Tenganan Pegrisingan," *Epistema Institute* (Liputan Kegiatan), 3 October 2025, https://epistema.or.id/kabar/liputan-kegiatan/menjenguk-tradisi-aga-desa-tenganan-pegrisingan/
+- kb: `Epistema_Menjenguk-Tradisi-Aga-Desa-Tenganan-Pegrisingan.md` (full text, staged at workshops/DD/sources/18-bali-aga-death/ — not yet folded into corpus)
+- verified: web (dated post; fetched 2026-09-03)
+- note: Legal-anthropology NGO field visit; the customary head Adi Suwarmata: no gravestones, the dead buried naked "sebagai simbol kita lahir tidak membawa apa-apa"; the 61-article *awig-awig* (1842, re-enforced 1925); the Oncesrawa horse-carcass legend. Cited by DD note 4.1.
 
 ### ernanda-2023-challenging-the-patriarchal-culture
 - status: usable
@@ -1670,6 +1702,22 @@ A note's `[S#]` line points here via `[src:<key>]`. No `[S#]` may point at a `st
 - verified: file (title and date in the transcript header; "first contact with social media" at seg 3; engagement business model and LLM companions at seg 16)
 - note: Harris's own statement of the attention-economy thesis; "In this first contact with social media, humanity lost."
 
+### hauser-schaublin-2004-bali-aga-and-islam
+- status: usable
+- medium: text
+- cite: Brigitta Hauser-Schäublin, "'Bali Aga' and Islam: Ethnicity, Ritual Practice, and 'Old-Balinese' as an Anthropological Construct," *Indonesia* 77 (April 2004), 27–55, https://ecommons.cornell.edu/bitstreams/cd674e15-9baf-4bf0-9f3f-c8f114f45ba0/download
+- kb: `Hauser-Schaublin_Bali-Aga-and-Islam_Indonesia-2004.md` (full text, staged at workshops/DD/sources/18-bali-aga-death/ — not yet folded into corpus)
+- verified: web (Cornell eCommons PDF; fetched 2026-09-03)
+- note: Sembiran and Julah: the "Bali Aga" construct from van Eck, Brandes ("acknowledge neither a Brahmana priest's authority nor the power of toya tirta"), van der Tuuk (exposure "on a plank"), Liefrinck, Goris; the former exposure "covered only with leaves"; Islamic elements in Sembiran ritual; marriages and deaths reported at Pura Jugan. Cited by DD note 4.1.
+
+### hauser-schaublin-ardika-2008-burials-texts-and-rituals-north-bali
+- status: usable
+- medium: text
+- cite: Brigitta Hauser-Schäublin & I Wayan Ardika (eds), *Burials, Texts and Rituals: Ethnoarchaeological Investigations in North Bali, Indonesia*, Göttinger Beiträge zur Ethnologie 1 (Göttingen: Universitätsverlag Göttingen, 2008), 314 pp., https://univerlag.uni-goettingen.de/handle/3/isbn-978-3-940344-12-0
+- kb: `Hauser-Schaublin-Ardika-eds-2008_Burials-Texts-and-Rituals_North-Bali_Univerlag-Gottingen.md` (full text, staged at workshops/DD/sources/18-bali-aga-death/ — not yet folded into corpus)
+- verified: file (publisher PDF, CC BY-NC-ND; fetched 2026-09-03)
+- note: Whole volume staged. Hauser-Schäublin "Sembiran and Julah – Sketches of History" pp. 9–68 (p. 44 n. 46: exposure ended 1963, women on backs / men on bellies, Wirz 1928); Nabholz-Kartaschoff "The Textiles of Sembiran" (p. 86 n. 35 grave goods); Drawatik "The Burial System at Pacung" pp. 177–190 (no cremation, same-day burial, *mepegat*, 11 coins, face-down/face-up, *jejeneng*, *metuun*, *embang*); Ardika on the Sembiran/Pacung excavations. Cited by DD note 4.1.
+
 ### henrich-heine-norenzayan-2010-weirdest-people
 - status: usable
 - medium: text
@@ -1768,6 +1816,14 @@ Also: existing entry `curry-mullins-whitehouse-2019-seven-moral-rules` should ad
 - verified: file (entry text and glossary at segs 0, 24, 42; authorship from the live IEP entry, not re-checked)
 - note: Accessible summary of oikeiôsis and Hierocles' expanding circles; used alongside SEP_Stoicism.
 
+### indonesia-go-id-2019-desa-adat-trunyan-kubur-angin-kubur-tanah
+- status: usable
+- medium: text
+- cite: "Desa Adat Trunyan, antara Kubur Angin dan Kubur Tanah," *Indonesia.go.id* (Portal Informasi Indonesia, Kominfo), 17 July 2019, https://indonesia.go.id/ragam/budaya/kebudayaan/desa-adat-trunyan-antara-kubur-angin-dan-kubur-tanah
+- kb: `IndonesiaGoId_Desa-Adat-Trunyan-antara-Kubur-Angin-dan-Kubur-Tanah_wayback-20251006.md` (full text, Wayback capture 2025-10-06, staged at workshops/DD/sources/18-bali-aga-death/ — not yet folded into corpus)
+- verified: web (live page is a JS shell to curl; Wayback snapshot 20251006194015; fetched 2026-09-03)
+- note: The fullest relay of Danandjaja's eschatology: *mepasah* is the Hindu-Balinese term, no local word found; who is exposed and who buried; seven plots at Sema Wayah with bones moved aside; the married dead "gentayangan" until the *Pengabenan*, then Dalem and rebirth in the *dadia*; the unmarried "serta merta kembali ke kawah (surga)"; the bad dead as *hantu* at latrines; *prerai*, *amben tengah*, the *wadah* sunk in the lake, "Pengabenan dengan Tirta (air)." Cited by DD note 4.1.
+
 ### james-2018-arnhem-land-funeral-ceremony-filmed-abc-news
 - status: usable
 - medium: text
@@ -1792,6 +1848,14 @@ Also: existing entry `curry-mullins-whitehouse-2019-seven-moral-rules` should ad
 - verified: file (tesseract OCR header at seg 0; Routledge Revivals blurb; "Axial Period" definition at seg 7, characterisation at seg 8; contents pages garbled — "rif" for "of")
 - note: The primary text for *Achsenzeit*; Part I ch. 1 gives the 800–200 BCE bracket, "depths of selfhood," "thinking became its own object," "the step into universality." Pointer, not quotable without checking the printed translation.
 
+### jero-lochan-surpi-seriadi-2025-corpse-exposure-cosmological-ecology-trunyan
+- status: usable
+- medium: text
+- cite: Ni Wayan Jemiwi Jero, Amarjiva Lochan, Ni Kadek Surpi & Si Luh Nyoman Seriadi, "Corpse exposure and cosmological ecology: Ritual, space, and death in an indigenous mortuary landscape," *Life and Death: Journal of Eschatology* 3:1 (2025), 15–28, https://doi.org/10.61511/lad.v3i1.2025.1952
+- kb: `LaD-2025_Corpse-Exposure-and-Cosmological-Ecology_Trunyan_Life-and-Death-3-1.md` (full text, staged at workshops/DD/sources/18-bali-aga-death/ — not yet folded into corpus)
+- verified: web (journal PDF, CC BY; fetched 2026-09-03)
+- note: Ethnographic (participant observation, *pemangku* and elders, *awig-awig*): eleven corpses, rotation, married-only, *salah pati* / *ulah pati*, women stop at the lakeshore, *panca mahabhuta*, the elder's "there is no need for fire." Framing ("dark green religion," new animism) heavy; use the field data. Cited by DD note 4.1.
+
 ### jiang-et-al-2021-delphi-can-machines-learn-morality
 - status: usable
 - medium: text
@@ -1807,6 +1871,14 @@ Also: existing entry `curry-mullins-whitehouse-2019-seven-moral-rules` should ad
 - kb: `Jiang-et-al_Investigating-Machine-Moral-Judgement-Through-the-Delphi-Experiment_NatureMachineIntelligence-2025.md`
 - verified: file (received/accepted/published dates at seg 1; crowdworker demographics at seg 3)
 - note: The authors' retrospective: Norm Bank judgements "primarily from educated, white crowdworkers in the US"; "limited cultural awareness and is susceptible to pervasive biases."
+
+### juniari-widyawati-2021-upacara-pemakaman-ngutang-mayit-trunyan
+- status: usable
+- medium: text
+- cite: Ni Wayan Yuli Juniari & Anak Agung Ayu Alit Widyawati, "Upacara Pemakaman Ngutang Mayit Kepercayaan Masyarakat Trunyan Bangli," *Ganaya: Jurnal Ilmu Sosial dan Humaniora* 4:4 (2021), 987–1001, https://jayapanguspress.penerbit.org/index.php/ganaya/article/view/3093
+- kb: `Ganaya_Upacara-Pemakaman-Ngutang-Mayit_Jayapangus.md` (full text, staged at workshops/DD/sources/18-bali-aga-death/ — not yet folded into corpus)
+- verified: web (journal PDF; fetched 2026-09-03)
+- note: Library study (relays Danandjaja, Ransu 2013, Yudantini & Kastawan 2018): the 20 cm hollow open from the chest, the 45-bamboo *ancaksaji*, seven plots (two for village heads), Sema Bantas moved toward Tempek Puseh, Sema Nguda cave burial of infants; the *prerai* and the *wadah* sunk in Lake Batur in *Sasih Jiyestha*; a mainstream *ngaben* sequence is pasted in at pp. 993–994 and should not be read as Trunyan practice. Cited by DD note 4.1.
 
 ### jurnal-pantura-2022-sesuai-wasiat-jenazah-sesepuh-sedulur-sikep-dimakamkan-di-rumahnya
 - status: usable
@@ -1920,6 +1992,14 @@ Also: existing entry `curry-mullins-whitehouse-2019-seven-moral-rules` should ad
 - verified: file (title/authors/abstract seg 0; 89.1% / 89% figures and "expert values" claim at seg 0)
 - note: Moral Graph Elicitation; the 500-participant trial is the Substack post already registered under `meaning-alignment-institute-moral-graphs-openai-grant-winners`.
 
+### koestanto-2010-terunyan-dan-entitas-bali-turunan-kompas
+- status: usable
+- medium: text
+- cite: Benny D Koestanto, "Terunyan dan Entitas Bali Turunan," *Kompas.com*, 16 October 2010, https://edukasi.kompas.com/read/2010/10/16/07462099/terunyan-dan-entitas-bali-turunan
+- kb: `Kompas-2010_Terunyan-dan-Entitas-Bali-Turunan.md` (full text, staged at workshops/DD/sources/18-bali-aga-death/ — not yet folded into corpus)
+- verified: web (byline and date; fetched 2026-09-03)
+- note: Reported feature with the *perbekel* Ketut Sutapa: Bali Aga / Bali Mula / Bali Turunan; the origin myth per Danandjaja 1980; the Trunyan AI inscription (833 Saka) and the 4-metre Ratu Sakti Pancering Jagat; no Indian gods; Nyepi ignored; the three *sema*; nine bodies under the tree, no smell; a thousand tourists a day; Danandjaja on *mepasah* as pre-Hindu and formerly at Sembiran and Tenganan. Cited by DD note 4.1.
+
 ### konvalinka-xygalatas-et-al-2011-synchronized-arousal-fire-walking
 - status: usable
 - medium: text
@@ -1975,6 +2055,14 @@ Also: existing entry `curry-mullins-whitehouse-2019-seven-moral-rules` should ad
 - kb: `Kreplin-Farias-Brazil_The-Limited-Prosocial-Effects-of-Meditation_SciRep-2018.md`
 - verified: file (journal masthead with DOI on every page, seg 0)
 - note: Prosocial effects qualified by type and quality; compassion gains only with author-teachers and passive controls.
+
+### krisnayanti-2023-tak-ada-pembakaran-mayat-tenganan-detik
+- status: usable
+- medium: text
+- cite: Ni Made Nami Krisnayanti, "Tak Ada Pembakaran Mayat di Desa Tenganan Pengringsingan," *detikTravel*, 18 October 2023, https://travel.detik.com/travel-news/d-6987974/tak-ada-pembakaran-mayat-di-desa-tenganan-pengringsingan
+- kb: `Detik-2023_Tak-Ada-Pembakaran-Mayat-di-Desa-Tenganan-Pengringsingan.md` (full text, staged at workshops/DD/sources/18-bali-aga-death/ — not yet folded into corpus)
+- verified: web (byline and date; fetched 2026-09-03)
+- note: I Putu Suarjana (*tamping takon tebenan*): Indra sect; "ngabennya dikubur"; burial on the day of death after noon and before sunset, no auspicious day; nine kinds of *setra* (infants, adolescents, the disabled, warriors, the *sanghyang* class); outsiders may be buried under the village rules. Cited by DD note 4.1.
 
 ### kristiantoro-2023-tindakan-sosial-masyarakat-samin
 - status: usable
@@ -2569,6 +2657,14 @@ Also: existing entry `curry-mullins-whitehouse-2019-seven-moral-rules` should ad
 - verified: file (abstract at seg 2 of the typeset copy; Table 3 comparison specifications at seg 22)
 - note: Specification-curve analysis, n = 355,358; association "at most 0.4% of the variation," comparable to eating potatoes; "too small to warrant policy change." The null-leaning side of the dispute. Cited by DD note 6.2.
 
+### order-of-the-good-death-2017-confronting-mortality-in-trunyan
+- status: usable
+- medium: text
+- cite: "Confronting Mortality in Trunyan," *The Order of the Good Death*, 21 March 2017 (text and photographs by Paul Koudounaris), https://www.orderofthegooddeath.com/article/confronting-mortality-in-trunyan/
+- kb: `OrderOfTheGoodDeath_Confronting-Mortality-in-Trunyan.md` (full text, staged at workshops/DD/sources/18-bali-aga-death/ — not yet folded into corpus)
+- verified: web (dated; fetched 2026-09-03)
+- note: Eyewitness essay, no references: Mt Batur as fire god (why cremation "never caught on"); eleven cages and the numerology; women barred from carrying the corpse; the shallow indentation; about a year to decompose; tourism fees and the 60 per cent to the village. Secondary; the fire-god gloss is single-sourced. Cited by DD note 4.1.
+
 ### ortman-et-al-2014-pre-history-of-urban-scaling
 - status: usable
 - medium: text
@@ -2857,6 +2953,14 @@ Also: existing entry `curry-mullins-whitehouse-2019-seven-moral-rules` should ad
 - verified: file (journal, volume and pages in the running footer at seg 17; abstract at seg 0; experimenter-awareness moderation at seg 24)
 - note: 60 experiments; medium effect of synchrony on prosociality, inflated by g = 0.29 when experimenters were unblinded. The counterweight to the synchrony literature's headline.
 
+### reuter-2009-origin-and-precedence-highlands-of-bali
+- status: usable
+- medium: text
+- cite: Thomas A Reuter, "Origin and Precedence: The Construction and Distribution of Status in the Highlands of Bali," in Michael P Vischer (ed.), *Precedence: Social Differentiation in the Austronesian World* (Canberra: ANU Press, 2009), pp. 13–49, https://press-files.anu.edu.au/downloads/press/p79751/mobile/ch02s03.html
+- kb: `Reuter-2009_Desa-Ulu-Apad_Origin-and-Precedence_Vischer-ed-Precedence_ANU-ch02s03.md` (full text, staged at workshops/DD/sources/18-bali-aga-death/ — not yet folded into corpus) — the whole volume is also staged as `Vischer-ed-2009_Precedence-Social-Differentiation-in-the-Austronesian-World_ANU-Press.md`
+- verified: web (ANU Press open-access HTML section and book PDF; fetched 2026-09-03)
+- note: The *ulu apad* at Sukawana: the *kuren* as unit, rank by date of entry, one step up per death or retirement above, the two *sibak*, retirement at the last child's marriage or a spouse's death (*balu*), the Kubayan's *mayah piteh* and the "boundary between life and afterlife." Reuter's *Custodians of the Sacred Mountains* (2002) and *The House of Our Ancestors* (KITLV 2002) remain unread. Cited by DD note 4.1.
+
 ### rhys-davids-1909-psalms-of-the-sisters
 - status: usable
 - medium: text-ocr
@@ -2952,6 +3056,14 @@ Also: existing entry `curry-mullins-whitehouse-2019-seven-moral-rules` should ad
 - kb: `Rosyid_Komunitas-Samin-Agama-Adam-dan-Ajarannya_Hanifiya-2023.md`
 - verified: file (title, author, IAIN Kudus affiliation and dates at seg 0; volume/issue not in the ingested text)
 - note: Kudus community; Agama Adam transmitted "secara regenerasi dengan bahasa tutur"; classed by the state as *penghayat kepercayaan*.
+
+### rosyida-et-al-2025-tradisi-pemakaman-mepasah-terunyan
+- status: usable
+- medium: text
+- cite: Shela Zaimatur Rosyida, Intan Dwi Listiani, Nia Ayu Mevia, Afin Naila Salma, Nurwildan Tsalits Khozin, Niswatin & Nuansa Bayu Segara, "Tradisi Pemakaman Mepasah Desa Terunyan dalam Kajian Historis," *Seuneubok Lada* 12:2 (2025), 336–353, https://doi.org/10.33059/jsnbl.v12i2.12011
+- kb: `Rosyida-et-al_Tradisi-Pemakaman-Mepasah-Desa-Terunyan-Kajian-Historis_Seuneubok-Lada.md` (full text, staged at workshops/DD/sources/18-bali-aga-death/ — not yet folded into corpus)
+- verified: web (journal PDF; fetched 2026-09-03)
+- note: Student-led (Unesa) with cemetery observation and the grave-keeper as informant: eleven plots, three for *pemangku adat*, eight for commoners; married and natural death only; children 0–5 in a cave; *Salah Pati* dead wait for a good day; "hukum kosmis" against substituting cremation. Cites the *Sema Wayah / Semah Cilik / Salah Pati* naming; citation hygiene poor. Cited by DD note 4.1.
 
 ### royzman-kim-leeman-2015-curious-tale-of-julie-and-mark
 - status: usable
@@ -3384,6 +3496,14 @@ Also: existing entry `curry-mullins-whitehouse-2019-seven-moral-rules` should ad
 - verified: file (DOI and running heads "Sosis, Bressler / COMMUNE LONGEVITY 215–222" in segs 0–13; Table 2 at seg 13)
 - note: 83 nineteenth-century US communes, 1,556 commune-years; religious communes mean 35.6 years vs secular 7.7, anarchist 9 (n = 7); costly requirements predict survival. Cited by DD note 8.3.
 
+### speirs-2026-in-search-of-ancient-bali-now-bali
+- status: usable
+- medium: text
+- cite: Edward Speirs, "In Search of Ancient Bali: Exploring Four Bali Aga Villages," *NOW! Bali*, 16 April 2026, https://www.nowbali.co.id/in-search-of-ancient-bali/
+- kb: `NowBali_In-Search-of-Ancient-Bali-Four-Bali-Aga-Villages.md` (full text, staged at workshops/DD/sources/18-bali-aga-death/ — not yet folded into corpus)
+- verified: web (byline and date; fetched 2026-09-03)
+- note: Magazine editor's visits to Trunyan, Bayung Gede, Julah, Sembiran and Tenganan: Julah *mekelin* (unclothed, face covered in leaves, bamboo *wadah*); the 1980s census of 38 villages; Bayung Gede placentas on *bukak* trees; Mead and Bateson. Single source for *mekelin*. Cited by DD note 4.1.
+
 ### spencer-1914-native-tribes-of-the-northern-territory
 - status: usable
 - medium: text
@@ -3447,6 +3567,14 @@ Also: existing entry `curry-mullins-whitehouse-2019-seven-moral-rules` should ad
 - kb: `StocktonSEED_Preliminary-Analysis-SEEDs-First-Year_2021.md`
 - verified: file (key findings at seg 0; employment figures at seg 24; author list from the published record)
 - note: 125 recipients, $500/month for 24 months, RCT; full-time employment 28%→40% vs 32%→37% for controls in year one.
+
+### sucita-2021-tradisi-penguburan-mayat-tigawasa
+- status: usable
+- medium: text
+- cite: Dewa Nyoman Sucita, "Tradisi Penguburan Mayat Umat Hindu di Desa Tigawasa," *Jurnal Widya Sastra Pendidikan Agama Hindu* 4:1 (2021), 25–36, https://jurnal.stkipahsingaraja.ac.id/index.php/wspah/article/view/208
+- kb: `Widya-Sastra-PAH-2021_Bali-Aga-kematian.md` (full text, staged at workshops/DD/sources/18-bali-aga-death/ — not yet folded into corpus)
+- verified: web (journal PDF; fetched 2026-09-03)
+- note: Interviews with the Tigawasa village head, *kelihan adat*, *pemangku* and offering-makers: the 12-hectare forbidden *setra* with no Pura Dalem or Prajapati, grave dug only at burial, materials cut on site, the 24-hour rule and no *dewasa ayu*, the five stages (*wawu lampus*, *nyiramang*, carrying, buying the grave with *pis bolong*, burial with *blitbit* and *daun wi*), three offerings; read as Sambhu-sect survival with Trunyan as Bayu-sect (Jendra). Cited by DD note 4.1.
 
 ### suharyo-rokhman-yuniawan-2024-ajaran-samin-dari-makna-simbolik-menuju-hakikat
 - status: usable
@@ -3751,6 +3879,14 @@ Also: existing entry `curry-mullins-whitehouse-2019-seven-moral-rules` should ad
 - kb: `Whyte_Indigenous-Climate-Change-Studies_2017.md`
 - verified: file (journal header "English Language Notes 55.1-2 Fall 2017" at seg 1; page numbers 155 ff. in-text)
 - note: Potawatomi philosopher; indigenous peoples "already living today in post-apocalyptic situation"; the Anthropocene as rooted in colonisation; anthropogenic change as diverse. Indigenous-authored.
+
+### wikipedia-tenganan
+- status: usable
+- medium: text
+- cite: "Tenganan," *Wikipedia*, rev. 7 May 2026 (oldid 1353059086), https://en.wikipedia.org/wiki/Tenganan
+- kb: `Wikipedia_Tenganan.md` (full text, staged at workshops/DD/sources/18-bali-aga-death/ — not yet folded into corpus)
+- verified: web (fetched 2026-09-03)
+- note: Encyclopedia article resting on Hauser-Schäublin, Nabholz-Kartaschoff & Ramseyer, *Balinese Textiles* (1991) pp. 117, 127 for the death details: the *geringsing* hip sash over the genitals of the dead, the *muhun* soul-purification effigy in a *geringsing* shoulder cloth; the Uccaisrawa horse-carcass land legend. Secondary. Cited by DD note 4.1.
 
 ### wikipedia-walden
 - status: usable
