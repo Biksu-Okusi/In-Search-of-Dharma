@@ -38,6 +38,14 @@ A note's `[S#]` line points here via `[src:<key>]`. No `[S#]` may point at a `st
 - verified: file (Brill masthead, DOI and page range at seg 0; thesis statement at segs 6–7)
 - note: Counter to the "religion is a modern Western invention" genealogy for the Islamic case — premodern Muslims had a robust concept of *dīn* and a dīn/dunyā distinction.
 
+### abc-2021-respecting-indigenous-people-and-culture-editorial-policies
+- status: usable
+- medium: text
+- cite: Australian Broadcasting Corporation, "Respecting Indigenous people and culture in ABC content," *ABC Editorial Policies* guidance note, issued 8 October 2015, revised November 2021, https://www.abc.net.au/edpols/guidance/respecting-indigenous-people-and-culture-in-abc-content/13633944
+- kb: `ABC_Respecting-Indigenous-People-and-Culture-in-ABC-Content_Editorial-Policies-2021.md` (full text, staged at workshops/DD/sources/17-aboriginal-death/ — not yet folded into corpus)
+- verified: web (fetched 2026-09-03)
+- note: The national broadcaster's protocol on deceased persons: naming and depiction "often prohibited under customary law," the standard audience advice, the "conservative approach" of not using first name, image or voice, regional variation, family and elders as the authority. Cited by DD note 4.3.
+
 ### abiri-2025-public-constitutional-ai
 - status: usable
 - medium: text
@@ -430,6 +438,14 @@ A note's `[S#]` line points here via `[src:<key>]`. No `[S#]` may point at a `st
 - verified: file (masthead "Spring 2015 Vol. 31 #2" and byline at seg 0; born-digital web capture)
 - note: The Theravāda traditionalist statement of the Classical/Secular divide — secular Buddhism as "a rupture with Buddhist tradition"; the counterweight to Batchelor on grain vs accretion. Cited by DD note 3.5.4.
 
+### boedi-2018-makam-orang-baduy
+- status: usable
+- medium: text
+- cite: Oerip Bramantyo Boedi, "Makam Orang Baduy," *Panalungtik: Jurnal Arkeologi* (Balai Arkeologi Jawa Barat) 1:2 (2018), DOI 10.24164/pnk.v1i2.12
+- kb: `Boedi_Makam-Orang-Baduy_Panalungtik-2018_GARUDA-ABSTRACT.md` (Garuda record with abstract only, staged at workshops/DD/sources/16-badui-death/ — not yet folded into corpus)
+- verified: partial (DOI resolves to the retired panalungtik.kemdikbud.go.id; Garuda record 1281068 carries author, journal, issue and abstract; the archived PDF at web.archive.org/web/20240910141339/…/article/download/12/9 could not be retrieved — rate-limited)
+- note: Archaeological survey of Badui graves: grave complexes in seven *panamping* and two *tangtu* hamlets; settlement patterns and grave orientation carry religious symbols. ▲ abstract-only. Cited by DD note 4.6.
+
 ### boehm-1999-hierarchy
 - status: usable
 - medium: text
@@ -486,6 +502,14 @@ A note's `[S#]` line points here via `[src:<key>]`. No `[S#]` may point at a `st
 - verified: file (preface at seg 0 names the French original and the added essays; "monopoly of legitimate naming" at seg 454)
 - note: ▲ Heavily letter-spaced tesseract OCR throughout; usable for retrieval and pointer, quotations must be reassembled and checked against print. Symbolic power as the monopoly of legitimate naming.
 
+### bowler-et-al-2003-new-ages-lake-mungo
+- status: usable
+- medium: text
+- cite: James M Bowler, Harvey Johnston, Jon M Olley, John R Prescott, Richard G Roberts, Wilfred Shawcross & Nigel A Spooner, "New ages for human occupation and climatic change at Lake Mungo, Australia," *Nature* 421 (2003), 837–840, https://doi.org/10.1038/nature01383
+- kb: `Bowler-et-al_New-Ages-for-Human-Occupation-Lake-Mungo_Nature-2003_ABSTRACT.md` (abstract only, staged at workshops/DD/sources/17-aboriginal-death/ — not yet folded into corpus)
+- verified: web (fetched 2026-09-03)
+- note: Abstract only (paywalled): "the world's oldest ritual ochre burial (Mungo III) and the first recorded cremation (Mungo I)"; both "at 40 ± 2 kyr ago"; occupation "by 50–46 kyr ago." Cited by DD note 4.3.
+
 ### boy-torpey-2013-inventing-the-axial-age
 - status: usable
 - medium: text
@@ -501,6 +525,14 @@ A note's `[S#]` line points here via `[src:<key>]`. No `[S#]` may point at a `st
 - kb: `Boyer_Religion-Explained_2001.md`
 - verified: file (tesseract OCR provenance header and subtitle at seg 0; chapter structure matches the printed edition)
 - note: Cognitive science of religion — selection among concept variants "inside each individual mind"; counterintuitive ("counterontological") concepts as the transmissible ones. OCR: the label "minimally counterintuitive" is not string-locatable; cite print for it.
+
+### bradley-2005-afterlife-australian-indigenous-concepts
+- status: usable
+- medium: text
+- cite: John J Bradley, "Afterlife: Australian Indigenous Concepts," in Lindsay Jones (ed.), *Encyclopedia of Religion*, 2nd ed. (Detroit: Macmillan Reference, 2005), via Encyclopedia.com, https://www.encyclopedia.com/environment/encyclopedias-almanacs-transcripts-and-maps/afterlife-australian-indigenous-concepts
+- kb: `Bradley_Afterlife-Australian-Indigenous-Concepts_Encyclopedia-of-Religion-2005_Encyclopedia-com.md` (full text, staged at workshops/DD/sources/17-aboriginal-death/ — not yet folded into corpus)
+- verified: web (fetched 2026-09-03)
+- note: "No easy generalizations"; the Yanyuwa case (ardirri, the shadow-spirit, the *wuwarr* ghost; the spirit sent back to its source on the land "to await rebirth"; hollow-log coffins; "talking to country"); the one widespread belief — "spirits of the deceased on the land." Bibliography: Bradley 2001, Morphy 1984, Myers 1986, Povinelli 1993, Rose 1992, Tamisari 1995. Cited by DD note 4.3.
 
 ### brian-morris-1998-anthropology-and-anarchism
 - status: usable
@@ -814,6 +846,14 @@ A note's `[S#]` line points here via `[src:<key>]`. No `[S#]` may point at a `st
 - verified: file (abstract seg 0 — GlobalOpinionQA; default similarity to US/European opinion; stereotype caveat on prompting; author list not recoverable from the file header)
 - note: The measurement of the averaging: whose opinions a CAI-trained model's answers resemble by default.
 
+### dussart-2005-warlpiri-religion
+- status: usable
+- medium: text
+- cite: Françoise Dussart, "Warlpiri Religion," in Lindsay Jones (ed.), *Encyclopedia of Religion*, 2nd ed. (Detroit: Macmillan Reference, 2005), via Encyclopedia.com, https://www.encyclopedia.com/environment/encyclopedias-almanacs-transcripts-and-maps/warlpiri-religion
+- kb: `Encyclopedia-com_Warlpiri-Religion.md` (full text, staged at workshops/DD/sources/17-aboriginal-death/ — not yet folded into corpus)
+- verified: web (fetched 2026-09-03)
+- note: *Pirlirrpa*, *kurruwalpa*, *kuruwarri*; death and the liminal *yama/marnparrpa*; *malamala* (sorry business), the sorry camp and speech taboo, *kumanjayi* "no name," suspension of the Dreaming performances until "finishing-time," sweeping the ground so the spirit "does not remain among the living." Cited by DD note 4.3.
+
 ### dyble-2021-evolution-of-altruism-through-war-sensitive
 - status: usable
 - medium: text
@@ -845,6 +885,14 @@ A note's `[S#]` line points here via `[src:<key>]`. No `[S#]` may point at a `st
 - kb: `EarthCharter_The-Earth-Charter_2000.md`
 - verified: file (preamble, sixteen principles and "The Way Forward" present in 8 segments; header "C H A R T E R P R E A M B L E" letter-spaced, body clean)
 - note: The secular soft-law declaration; preamble's "one human family and one Earth community" and "citizens of different nations and of one world"; principle 4 on future generations.
+
+### edwar-ulfah-maratusyolihat-2021-keagamaan-suku-baduy-lebak-banten
+- status: usable
+- medium: text
+- cite: Ahmad Edwar, Miftahul Ulfah & Maratusyolihat, "Keagamaan Suku Baduy Lebak Banten: antara Islam dan Islam Sunda Wiwitan," *Alim* 3:1 (2021): 39–54, DOI 10.51275/alim.v3i1.197
+- kb: `Edwar-Ulfah-Maratusyolihat_Keagamaan-Suku-Baduy-Lebak-Banten_Alim-2021_ABSTRACT-PAGE.md` (Neliti record with abstract only, staged at workshops/DD/sources/16-badui-death/ — not yet folded into corpus)
+- verified: partial (DOI and page range on the Neliti record; the journal domain jurnal.kopertais1.or.id does not resolve; PDF not retrieved)
+- note: Badui religion as "Agama Slam Sunda Wiwitan," an Islam "masih bersifat sederhana dan sinkretik"; Dangka the most Islamised tier. ▲ abstract-only. Cited by DD note 4.6.
 
 ### efferson-lalive-fehr-2008-coevolution-cultural-groups-ingroup-favoritism
 - status: usable
@@ -1278,6 +1326,14 @@ A note's `[S#]` line points here via `[src:<key>]`. No `[S#]` may point at a `st
 - verified: web (DOI 10.1007/s10781-004-8633-6 for the JIP original; read from the MLBD reprint scan)
 - note: ▲ Full text is an incomplete tesseract scan of the 2009 MLBD volume (preface letter-spaced; Brereton/Horsch articles absent). attributed summary note with verified page anchors (MLBD pagination; +422 for JIP). Argues the senses of dhamma cohere genealogically around 'support/maintain' — against homonymy, cutting against Part 1's rope-not-thread rhetoric for the Buddhist case while vindicating 'that which holds'. ▲ Same incomplete, poor-OCR volume scan as the Olivelle entry; unreliable for verbatim transliterated Pali. Cited by DD note 1.4.
 
+### glaskin-tonkinson-musharbash-burbank-2008-mortality-mourning-mortuary-practices
+- status: usable
+- medium: text
+- cite: Katie Glaskin, Myrna Tonkinson, Yasmine Musharbash & Victoria Burbank (eds), *Mortality, Mourning and Mortuary Practices in Indigenous Australia* (Aldershot: Ashgate, 2008; Routledge, 2016), https://researchportalplus.anu.edu.au/en/publications/mortality-mourning-and-mortuary-practices-in-indigenous-australia
+- kb: `Burbank-et-al_Introduction-Indigenous-Ways-of-Death-in-Australia_2008_ANU-portal.md` (abstract only, staged at workshops/DD/sources/17-aboriginal-death/ — not yet folded into corpus)
+- verified: web (fetched 2026-09-03)
+- note: The field's framing volume; abstract only — mortality "20 years lower," death "ubiquitous in Indigenous Australia." Chapters (Musharbash "Sorry Business is Yapa Way"; Glaskin on the Bardi; Burbank on Numbulwar; Tonkinson on the Mardu) paywalled; the UWA repository copy of Musharbash serves a script shell. Cited by DD note 4.3.
+
 ### glasser-1995-deep-ecology-clarified
 - status: usable
 - medium: text
@@ -1341,6 +1397,14 @@ A note's `[S#]` line points here via `[src:<key>]`. No `[S#]` may point at a `st
 - kb: `GlobalVoices_Wheres-the-Pacific-Voice-in-the-Viral-Real-Lord-of-the-Flies-Story_2020.md`, `AsiaPacificReport_Wheres-the-Pacific-Voice-mirror_2020.md` (same text)
 - verified: file (article body segs 5–9 in the Global Voices file; the mirror is mostly site navigation)
 - note: Round-up of the Twitter exchange — the six names via Matangi Tonga, "It lacked the very Tongans the story was about", Bregman's replies, Gesa-Fatafehi's rejoinder. Both files are heavy with menu scrape. Cited by DD note 8.5.
+
+### glynn-mcdonald-death-and-sorry-business-common-ground
+- status: usable
+- medium: text
+- cite: Rona Glynn-McDonald & the Common Ground team, "Death and Sorry Business," *Common Ground* (n.d.), https://www.commonground.org.au/article/death-and-sorry-business
+- kb: `Glynn-McDonald_Death-and-Sorry-Business_CommonGround.md` (full text, staged at workshops/DD/sources/17-aboriginal-death/ — not yet folded into corpus)
+- verified: web (fetched 2026-09-03)
+- note: First Nations-led organisation's explainer: what Sorry Business is, its duration (days to months), kinship-determined obligation, the bereavement protocols (name, voice, image, house-bound mourning) and how outsiders should respect them. Cited by DD note 4.3.
 
 ### goldberg-et-al-2017-is-mindfulness-research-methodology-improving
 - status: usable
@@ -1430,6 +1494,14 @@ A note's `[S#]` line points here via `[src:<key>]`. No `[S#]` may point at a `st
 - verified: file (editors' introduction and running heads "GRAMSCI: PRISON NOTEBOOKS"; "The Intellectuals" hegemony/coercion passage at seg 125; religion as "multiplicity" at seg 681)
 - note: Primary for hegemony as organised consent with coercion in reserve, and for religion as internally stratified. 787 segments, OCR with stray hyphenation; segs 0–~120 are the editors' biographical introduction.
 
+### graves-bapurru-death-in-yolngu-culture-yidakistory
+- status: usable
+- medium: text
+- cite: Randin Graves, "Bäpurru — Death in Yolŋu Culture," *YidakiStory.com* (n.d.), https://yidakistory.com/bapurru/
+- kb: `Graves_Bapurru-Death-in-Yolngu-Culture_YidakiStory.md` (full text, staged at workshops/DD/sources/17-aboriginal-death/ — not yet folded into corpus)
+- verified: web (fetched 2026-09-03)
+- note: Secondary account by a non-Yolngu yidaki player long resident at Yirrkala: *birrimbirr* and *mokuy*, the clan-specific destinations (water hole, north-eastern island, Milky Way), the *yiḏaki*/*mandapul* substitution, mourning "from a few years to a decade," photographs and recordings today. ▲ Weak tier — used where it agrees with Morphy & Morphy or is flagged. Cited by DD note 4.3.
+
 ### gray-dimaggio-schein-kachanoff-2022-problem-of-purity
 - status: usable
 - medium: text
@@ -1445,6 +1517,14 @@ A note's `[S#]` line points here via `[src:<key>]`. No `[S#]` may point at a `st
 - kb: `Guardian_Real-Life-Lord-of-the-Flies-Film-Rights-Tonga_2020-05-18.md`, `Guardian_Hollywood-Studio-Behind-12-Years-a-Slave-Wins-Rights_2020-05-22.md`
 - verified: file (headlines and datelines at segs 3–4 of each; bodies segs 3–6)
 - note: The rights decision — New Regency chosen collectively by the four surviving men, Warner and Bregman; "this was a Tongan story". Scraped pages; leading segs are navigation.
+
+### guedes-hamacher-et-al-2018-death-and-maier-torres-strait
+- status: usable
+- medium: text
+- cite: Carla B Guedes, Duane W Hamacher, John Barsa, Elsa Day, Ron Day, Segar Passi & Alo Tapim, "Death and Maier: meteors and mortuary rites in the eastern Torres Strait," *Australian Journal of Indigenous Issues* 21(3) (2018), 39–59; preprint arXiv:1810.11276, https://arxiv.org/abs/1810.11276
+- kb: `Hamacher-et-al_Death-and-Maier_Torres-Strait-mortuary_arXiv-2018.md` (full text, staged at workshops/DD/sources/17-aboriginal-death/ — not yet folded into corpus)
+- verified: web (fetched 2026-09-03)
+- note: Meriam (Mer) death beliefs from Haddon's 1898 records and 2016 elder interviews (five Meriam elders are co-authors): bright meteors as spirits of the dying; Terer taking the spirit to Beig near Boigu; mummification; "traditional beliefs about death still survive after 150 years of Christian assimilation." Preprint text. Cited by DD note 4.3.
 
 ### gulenc-2016-physis-nomos-sophists
 - status: usable
@@ -1558,6 +1638,14 @@ A note's `[S#]` line points here via `[src:<key>]`. No `[S#]` may point at a `st
 - verified: file (post date and book attribution at segs 0 and 9; the extract runs segs 0–9)
 - note: The 1863 Grecian raid: McGrath, the Peruvian labour trade, at least 144 taken, the survivors' resettlement at Kolomaile on 'Eua. The history Bregman's excerpt reduced to one sentence.
 
+### hamm-rowlands-smith-2019-kopi-mourning-caps
+- status: usable
+- medium: text
+- cite: Giles Hamm, Don Rowlands & Mike Smith, "Frontier mystery: An unusual mound of kopi mourning caps on the eastern edge of the Simpson Desert," *Queensland Archaeological Research* 22 (2019), https://doi.org/10.25120/qar.22.2019.3700
+- kb: `Kopi-mourning-caps_QAR-22-2019.md` (full text, staged at workshops/DD/sources/17-aboriginal-death/ — not yet folded into corpus)
+- verified: web (fetched 2026-09-03)
+- note: The *kopi* (gypsum-plaster) widow's cap: manufacture, ~25 mm thickness, distribution across the Murray-Darling and Lake Eyre basins, disposal on the grave; a 40–60-cap cluster near the 1878 Kaliduwarry massacre site and its two readings (frontier violence or pre-contact ranking). Cited by DD note 4.3.
+
 ### hammurabi-code-trans-king-1910-avalon
 - status: usable
 - medium: text
@@ -1632,6 +1720,22 @@ Also: existing entry `curry-mullins-whitehouse-2019-seven-moral-rules` should ad
 - verified: file (title, authors, editors and reviewers at seg 0; discussion at segs 22–23; article number from the published record, not web-checked)
 - note: Cranial-muscle artefacts occupy the gamma band and can produce false conclusions unless cleaned; the technical caveat on scalp-gamma meditation findings.
 
+### hocking-2020-kumanjayi-walkers-life-mattered
+- status: usable
+- medium: text
+- cite: Rachael Hocking, "Kumanjayi Walker's life mattered," *SBS NITV*, 23 October 2020 (updated 11 November 2020), https://www.sbs.com.au/nitv/article/kumanjayi-walkers-life-mattered/a2sed6ncb
+- kb: `Hocking_Kumanjayi-Walkers-Life-Mattered_SBS-NITV-2020.md` (full text, staged at workshops/DD/sources/17-aboriginal-death/ — not yet folded into corpus)
+- verified: web (fetched 2026-09-03)
+- note: Report of the Yuendumu funeral nearly a year after the police shooting: Sorry Business immediate, funeral months later; the service starting where his *pirlirrpa* "had remained"; houses of the dead "sometimes bulldozed"; white ochre; touching the coffin; church songs with tribute dances — "a combination of western religion and traditional ceremony." The substitute name in national use. Cited by DD note 4.3.
+
+### howitt-1904-native-tribes-of-south-east-australia
+- status: usable
+- medium: text
+- cite: AW Howitt, *The Native Tribes of South-East Australia* (London: Macmillan, 1904), ch. 8 "Beliefs and Burial Practices," Wikisource transcription, https://en.wikisource.org/wiki/Native_Tribes_of_South-East_Australia/Chapter_8
+- kb: `Howitt_Native-Tribes-of-South-East-Australia-1904_Ch8-Beliefs-and-Burial-Practices_Wikisource.md` (full text, staged at workshops/DD/sources/17-aboriginal-death/ — not yet folded into corpus)
+- verified: web (fetched 2026-09-03)
+- note: South-eastern beliefs and rites: the sleep-travelling spirit and the sky-country; death as "the permanent disability to return to the body, produced by the evil magic of some enemy"; the inquest (Dieri, Wurunjerri, Port Stephens); burial, cremation "with the head to the east," drying and carrying the body, the Kurnai *bret*; the name of the dead "universal[ly]" avoided. Chapter only; the rest of the book is on Wikisource. Cited by DD note 4.3.
+
 ### huang-siddarth-et-al-2024-collective-constitutional-ai
 - status: usable
 - medium: text
@@ -1663,6 +1767,14 @@ Also: existing entry `curry-mullins-whitehouse-2019-seven-moral-rules` should ad
 - kb: `IEP_Stoicism.md`
 - verified: file (entry text and glossary at segs 0, 24, 42; authorship from the live IEP entry, not re-checked)
 - note: Accessible summary of oikeiôsis and Hierocles' expanding circles; used alongside SEP_Stoicism.
+
+### james-2018-arnhem-land-funeral-ceremony-filmed-abc-news
+- status: usable
+- medium: text
+- cite: Felicity James, "Rare glimpse of Arnhem Land funeral ceremony filmed to promote understanding of Yolngu law," *ABC News*, 29 July 2018, https://www.abc.net.au/news/2018-07-29/arnhem-land-indigenous-funeral-filmed-to-promote-understanding/10035336
+- kb: `James_Arnhem-Land-Funeral-Ceremony-Filmed-Yolngu-Law_ABC-News-2018.md` (full text, staged at workshops/DD/sources/17-aboriginal-death/ — not yet folded into corpus)
+- verified: web (fetched 2026-09-03)
+- note: Galiwin'ku cleansing ceremony filmed with senior clan approval: water, smoke and songlines to "guide a spirit home"; funerals "up to two weeks"; the *djungaya* caretakers; Helen Nyomba Gandangu and Oscar Datjarranga on balanda learning Yolngu law. Cited by DD note 4.3.
 
 ### james-russell-lowell-1865-thoreau
 - status: usable
@@ -1776,6 +1888,14 @@ Also: existing entry `curry-mullins-whitehouse-2019-seven-moral-rules` should ad
 - verified: file (tesseract OCR provenance header at seg 0; running head "The politics of privatization" with pages 167–173 at segs 213–221)
 - note: Reports and criticises Katz's constructivism; the modern experiential definition of "the mystical" as itself a Western construction. Cited by DD note 3.5.3.
 
+### kingsley-2003-worlds-oldest-burial-redated-abc-science
+- status: usable
+- medium: text
+- cite: Danny Kingsley, "World's oldest burial redated to 40,000 years," *ABC Science Online*, 20 February 2003, https://www.abc.net.au/science/articles/2003/02/20/788032.htm
+- kb: `ABC-Science_Worlds-Oldest-Burial-Redated-to-40000-Years_2003.md` (full text, staged at workshops/DD/sources/17-aboriginal-death/ — not yet folded into corpus)
+- verified: web (fetched 2026-09-03)
+- note: Press report of Bowler et al. 2003 with Bowler quoted: Mungo Man "the world's first evidence of a human ritual burial," Mungo Lady "the first known human cremation"; "a quite culturally sophisticated community." Cited by DD note 4.3.
+
 ### klimecki-et-al-2013-compassion-training-positive-affect
 - status: usable
 - medium: text
@@ -1815,6 +1935,14 @@ Also: existing entry `curry-mullins-whitehouse-2019-seven-moral-rules` should ad
 - kb: `Koons_Can-Gods-Goodness-Save-Divine-Command-Theory.md`
 - verified: file (journal masthead, volume, pages in seg 0; running page numbers 192 at seg 18)
 - note: Against Adams/Alston — grounding goodness in God's nature leaves it "a featureless property… completely unintelligible"; an adequate solution may need a standard external to God.
+
+### korff-2023-sorry-business-mourning-an-aboriginal-death
+- status: usable
+- medium: text
+- cite: Jens Korff, "Sorry Business: Mourning an Aboriginal death," *Creative Spirits*, updated 1 August 2023, https://www.creativespirits.info/aboriginalculture/people/mourning-an-aboriginal-death
+- kb: `Korff_Sorry-Business-Mourning-an-Aboriginal-Death_CreativeSpirits-2023.md` (full text, staged at workshops/DD/sources/17-aboriginal-death/ — not yet folded into corpus)
+- verified: web (fetched 2026-09-03)
+- note: Compendium by a non-Aboriginal editor; used only for its attributed Aboriginal quotations (Miriam-Rose Ungunmerr-Baumann, Djambawa Marawili, Aunty Margaret Parker) and the substitute-name list (Kumantjayi, Kwementyaye, Kunmanara, Barlang; "Kumantjayi Perkins"). ▲ Weak tier. Cited by DD note 4.3.
 
 ### korver-1976-the-samin-movement-and-millenarism
 - status: usable
@@ -2066,6 +2194,14 @@ Also: existing entry `curry-mullins-whitehouse-2019-seven-moral-rules` should ad
 - verified: file (authors, affiliations and article history at seg 0; running head with volume and pages at seg 10)
 - note: Unextracted-plasma immunoassays overstate oxytocin by orders of magnitude; the measurement critique beneath the correlational oxytocin literature.
 
+### mcgrath-jebb-2015-long-history-deep-time
+- status: usable
+- medium: text
+- cite: Ann McGrath & Mary Anne Jebb (eds), *Long History, Deep Time: Deepening Histories of Place* (Canberra: ANU Press, 2015)
+- kb: `McGrath-Jebb-eds_Long-History-Deep-Time_ANUPress-2015.md`
+- verified: file
+- note: Open-access ANU Press volume. Ch. 2 (Diana James, "Tjukurpa Time") on Tjukurpa and the translation history of "Dreamtime"; ch. 13 (Nicola Stern) on Willandra archaeology; ch. 14 (Allbrook & McGrath) on Mungo Lady, "the earliest known human cremation," 42,000 years. Cited by DD note 4.3.
+
 ### mckinnon-2002-sociological-definitions
 - status: usable
 - medium: text
@@ -2169,6 +2305,22 @@ Also: existing entry `curry-mullins-whitehouse-2019-seven-moral-rules` should ad
 - kb: `Mohamed-Png-Isaac_Decolonial-AI-Decolonial-Theory-as-Sociotechnical-Foresight_PhilosophyAndTechnology-2020.md`
 - verified: file (DOI and abstract at seg 0; pages from the published record)
 - note: Decolonial critique as foresight; the 7.5 objection inside the alignment literature.
+
+### moreton-robinson-2020-our-story-is-in-the-land
+- status: usable
+- medium: text
+- cite: Aileen Moreton-Robinson, "'Our story is in the land': Why the Indigenous sense of belonging unsettles white Australia," *ABC Religion & Ethics*, 9 November 2020, https://www.abc.net.au/religion/our-story-is-in-the-land-indigenous-sense-of-belonging/11159992
+- kb: `Moreton-Robinson_Our-Story-is-in-the-Land_ABC-Religion-Ethics-2020.md` (full text, staged at workshops/DD/sources/17-aboriginal-death/ — not yet folded into corpus)
+- verified: web (fetched 2026-09-03)
+- note: Goenpul scholar on ontological belonging; the vehicle for Bill Neidjie's statement "I die and put my bones in cave or earth. Soon my bones become earth… My spirit has gone back to my country… my mother" (unpaged; from *Kakadu Man* 1985 / *Story About Feeling* 1989, neither accessed); "our death reintegrates our body with that of our mother the earth." Cited by DD note 4.3.
+
+### morphy-morphy-2011-yolngu-mortuary-rituals-epoch-of-constant-change
+- status: usable
+- medium: text-scan
+- cite: Frances Morphy & Howard Morphy, "'Soon We Will Be Spending All Our Time at Funerals': Yolngu Mortuary Rituals in an Epoch of Constant Change," in Signe Howell & Aud Talle (eds), *Returns to the Field: Multitemporal Research and Contemporary Anthropology* (Bloomington: Indiana University Press, 2011), pp. 49–72, https://openresearch-repository.anu.edu.au/bitstreams/6a7145c9-5829-4ea4-83e4-26d5fa6ddd62/download
+- kb: `Morphy-Morphy_Soon-We-Will-Be-Spending-All-Our-Time-at-Funerals_Yolngu-Mortuary-Rituals_Returns-to-the-Field-2011.md` (full text, staged at workshops/DD/sources/17-aboriginal-death/ — not yet folded into corpus)
+- verified: file (ANU Open Research scan; tesseract OCR)
+- note: Forty years of change in Yolngu mortuary ritual: the pre-mission sequence and its purpose (guiding the *birrimbirr* back to the *wangarr* and the clan's "spiritual reservoir; lit. eye, waterhole"), the 1970s Yirrkala substitutions (coffin-lid painting, "objects of 'contagion'"), morgues, homeland funerals, memorial services, Marawili on hollow-log reburial. ▲ Scanned PDF (the ANU bitstream begins with the tail of Terence Turner's references); OCR rough — verify wording against print. Cited by DD note 4.3.
 
 ### morris-1993-bakunin-historical-materialism
 - status: usable
@@ -2281,6 +2433,22 @@ Also: existing entry `curry-mullins-whitehouse-2019-seven-moral-rules` should ad
 - verified: web (Verso 2015, ISBN 978-1-78168-581-5, editors and Le Guin foreword confirmed at https://www.versobooks.com/products/34-the-next-revolution and https://openlibrary.org/books/OL31035172M/The_next_revolution)
 - note: posthumous collection of the libertarian-municipalism / communalism essays. Used in 8.1 for confederalism as an explicitly anti-parochial coordination architecture: confederation "counteract[s] the tendency of decentralized communities to drift toward exclusivity and parochialism"; policymaking reserved to face-to-face assemblies while confederal councils are administrative with mandated, recallable delegates. ▲ Programmatic advocacy, not evidence — no case is made here that the design has been tested above municipal scale. Cited in 8.1 [S22]. Cited by DD note 7.3.
 
+### myers-pintupi-religion-and-expressive-culture-encyclopedia-of-world-cultures
+- status: usable
+- medium: text
+- cite: "Pintupi — Religion and Expressive Culture," *Encyclopedia of World Cultures* (Gale, 1996; entry drawn from Fred R Myers), via everyculture.com, https://www.everyculture.com/Oceania/Pintupi-Religion-and-Expressive-Culture.html
+- kb: `Myers_Pintupi-Religion-and-Expressive-Culture_Encyclopedia-of-World-Cultures_everyculture.md` (full text of the entry, staged at workshops/DD/sources/17-aboriginal-death/ — not yet folded into corpus)
+- verified: web (fetched 2026-09-03)
+- note: Tertiary summary of Myers's Pintupi ethnography: *tjukurrpa* as past and present; death — belongings redistributed, self-harm, "sorry fights," the spirit staying near the first burial until a second ceremony months later, destination "up in the sky." Myers 1986 itself not accessed. Cited by DD note 4.3.
+
+### nash-simpson-1981-no-name-in-central-australia
+- status: usable
+- medium: text-ocr
+- cite: David Nash & Jane Simpson, "'No-name' in Central Australia," in Carrie S Masek, Roberta A Hendrick & Mary Frances Miller (eds), *Papers from the Parasession on Language and Behavior* (Chicago Linguistic Society, 1981), pp. 165–177, http://hdl.handle.net/1885/95496
+- kb: `Nash-Simpson_No-Name-in-Central-Australia_CLS-1981.md` (full text, staged at workshops/DD/sources/17-aboriginal-death/ — not yet folded into corpus)
+- verified: file (ANU Open Research PDF)
+- note: The central-desert name taboo and the replacement term *kumunjayi*/*kunmanara*; homophone avoidance (Meyer 1879 on Encounter Bay water; Lajamanu "Fred, bread, fridge"); Meggitt's "no-name… for a year or so"; Gould's Warburton Normans → Wally; European names. OCR of the ANU repository scan is garbled in places — quote with care. Cited by DD note 4.3.
+
 ### nesse-2019-tinbergens-four-questions
 - status: usable
 - medium: text
@@ -2304,6 +2472,14 @@ Also: existing entry `curry-mullins-whitehouse-2019-seven-moral-rules` should ad
 - kb: `Newport_Digital-Minimalism_2019.md`
 - verified: file (full text, 188 segments; "philosophy of technology use" at seg 21; declutter protocol at segs 41–42)
 - note: The individual-practice pole of the digital-age responses, read in full.
+
+### nitv-2017-indigenous-cultural-protocols-depicting-deceased-persons
+- status: usable
+- medium: text
+- cite: NITV staff, "Indigenous cultural protocols: what the media needs to do when depicting deceased persons," *SBS NITV*, 27 July 2017, https://www.sbs.com.au/nitv/article/indigenous-cultural-protocols-what-the-media-needs-to-do-when-depicting-deceased-persons/97xq2otnt
+- kb: `NITV_Indigenous-Cultural-Protocols-Depicting-Deceased-Persons_SBS-2017.md` (full text, staged at workshops/DD/sources/17-aboriginal-death/ — not yet folded into corpus)
+- verified: web (fetched 2026-09-03)
+- note: Indigenous broadcaster's media guidance: name changed and images suppressed "due to cultural beliefs," six to twelve months in some cases, circumlocution ("the old man who painted"), community instructions for well-known individuals. Cited by DD note 4.3.
 
 ### nurdin-adzkiya-2021-tradisi-perlawanan-kultural-masyarakat-samin
 - status: usable
@@ -2729,6 +2905,14 @@ Also: existing entry `curry-mullins-whitehouse-2019-seven-moral-rules` should ad
 - verified: file (masthead with volume, article id and date at seg 0; study design at seg 5)
 - note: People compete more with in-group members than with out-group members or strangers under perceived within-group scarcity; by the senior author of the "tend-and-defend" papers — complication, not recantation.
 
+### romi-purwanto-2022-symbolic-meaning-of-death-ritual-in-baduy-society
+- status: usable
+- medium: text
+- cite: Romi & Semiarto Aji Purwanto, "The Symbolic Meaning of Death Ritual in Baduy Society," *Tsaqofah: Jurnal Agama dan Budaya* 20:1 (January–June 2022), UIN Sultan Maulana Hasanuddin Banten
+- kb: `Romi-Purwanto_The-Symbolic-Meaning-of-Death-Ritual-in-Baduy-Society_Tsaqofah-2022_ABSTRACT-PAGE.md` (journal landing page with abstract only, staged at workshops/DD/sources/16-badui-death/ — not yet folded into corpus)
+- verified: partial (journal page fetched 2026-09-03; the PDF galley download/5801/3677/19400 returns a zero-byte file; Garuda record 2864794 confirms authors and journal)
+- note: Ethnographic field study (observation, interviews) of Badui death rites; death rite as "one of the sacred rites in the rite of passage"; the dead "will return to the Mandala Hyang (the place where the souls gather after death)." ▲ abstract-only. Cited by DD note 4.6.
+
 ### rosch-mervis-1975-family-resemblances
 - status: usable
 - medium: text-ocr
@@ -2784,6 +2968,14 @@ Also: existing entry `curry-mullins-whitehouse-2019-seven-moral-rules` should ad
 - kb: `RuizCollantes_Democracy-Against-Homo-Sapiens-Alpha-Reverse-Dominance_Constellations-2023.md`
 - verified: file (DOI, Wiley copyright line and CC BY notice at segs 0–1; conclusion at segs 33–34)
 - note: Political theory reading Boehm's reverse dominance as the Palaeolithic "original democracies." ▲ Advocacy built on the nomadic-egalitarian model.
+
+### rumah-duka-elim-2025-kaparupuhan-tradisi-upacara-adat-kematian-suku-baduy
+- status: usable
+- medium: text
+- cite: "Kaparupuhan, Tradisi Upacara Adat Kematian Suku Baduy," *Rumah Duka Elim* (funeral-services site), 27 August 2025, https://rumahdukaelim.com/kaparupuhan-tradisi-upacara-adat-kematian-suku-baduy/
+- kb: `RumahDukaElim_Kaparupuhan-Tradisi-Upacara-Adat-Kematian-Suku-Baduy_2025.md` (full text, staged at workshops/DD/sources/16-badui-death/ — not yet folded into corpus)
+- verified: web (date on the page; fetched 2026-09-03)
+- note: Secondary summary of the BPNB Jawa Barat article "Peristiwa Kematian di Baduy" (kebudayaan.kemdikbud.go.id, unreachable) and Kabar Banten reporting. Adds to [S41]: *boeh*, *pasarad*, body facing south toward Sasaka Domas with head west toward Sasaka Pada Agung, three-night vigil, seven days indoors, rice pounded on day three, *tumpeng* on day seven, forty days (Inner) vs seven (Outer). ▲ Weak tier — commercial site; used only where it agrees with the MerahPutih account or is flagged. Cited by DD note 4.6.
 
 ### rybanska-et-al-2018-rituals-improve-childrens-delay-of-gratification
 - status: usable
@@ -2935,6 +3127,14 @@ Also: existing entry `curry-mullins-whitehouse-2019-seven-moral-rules` should ad
 - kb: `Saptono_Kepercayaan-Masyarakat-Samin-Makamkan-Leluhur-di-Dalam-Rumah-Sendiri_SuaraKarya-2022.md` (full text, staged at workshops/DD/sources/14-samin-death-rites/ — not yet folded into corpus)
 - verified: web (byline and date on the page; fetched 2026-09-03)
 - note: Frames home burial as a Samin belief ("keyakinan dalam memakamkan jenazah para leluhur tidak di Tempat Pemakaman Umum (TPU), tetapi di dalam rumah mereka sendiri"); the Kudus administration's Perda objection; Governor Ganjar Pranowo contacted the Regent; burial allowed. ▲ The "belief" framing is uncorroborated by the ethnographies; other reports call it Wargono's *wasiat*. Cited by DD note 4.1.
+
+### saunders-2022-everywhen
+- status: usable
+- medium: text
+- cite: Mykaela Saunders, "Everywhen," *Griffith Review* 76: Acts of Reckoning (2022), https://www.griffithreview.com/articles/everywhen/
+- kb: `Saunders_Everywhen_GriffithReview-2022.md` (full text, staged at workshops/DD/sources/17-aboriginal-death/ — not yet folded into corpus)
+- verified: web (fetched 2026-09-03)
+- note: Koori/Goori writer on Stanner's "everywhen" as Aboriginal temporality: "all things that have happened are still happening now"; the dead as stars; "Nothing truly dies but is transformed by death"; time "nested inside Country like sedimentary layers." Cited by DD note 4.3.
 
 ### schein-gray-2018-theory-of-dyadic-morality
 - status: usable
@@ -3184,6 +3384,14 @@ Also: existing entry `curry-mullins-whitehouse-2019-seven-moral-rules` should ad
 - verified: file (DOI and running heads "Sosis, Bressler / COMMUNE LONGEVITY 215–222" in segs 0–13; Table 2 at seg 13)
 - note: 83 nineteenth-century US communes, 1,556 commune-years; religious communes mean 35.6 years vs secular 7.7, anarchist 9 (n = 7); costly requirements predict survival. Cited by DD note 8.3.
 
+### spencer-1914-native-tribes-of-the-northern-territory
+- status: usable
+- medium: text
+- cite: Baldwin Spencer, *Native Tribes of the Northern Territory of Australia* (London: Macmillan, 1914)
+- kb: `Spencer_Native-Tribes-of-the-Northern-Territory_1914.md`
+- verified: file
+- note: Fieldwork 1911–12. Ch. 6 "Burial and Mourning Ceremonies" (Tiwi grave-posts, Kakadu Morlil/Kuderi and the name taboo "monowei, koyada tjikaru narama," Waduman/Mudburra/Larakia/Mungarai tree burial and the *lurkun*); ch. 8 on spirit-children and reincarnation ("universal amongst the Northern Territory tribes"; the Arunta *Nanja*). Colonial-era language throughout. Cited by DD note 4.3.
+
 ### stanley-yin-sinnott-armstrong-2019-reason-based-explanation-moral-dumbfounding
 - status: usable
 - medium: text
@@ -3191,6 +3399,14 @@ Also: existing entry `curry-mullins-whitehouse-2019-seven-moral-rules` should ad
 - kb: `Stanley-Yin-SinnottArmstrong_A-Reason-Based-Explanation-for-Moral-Dumbfounding_JDM-2019.md`
 - verified: file (journal header and DOI at segs 0–2)
 - note: Follow-up to Royzman et al: the residue of unreversed judgments explained by unstated harm-related reasons (80% initially not OK; 32% OK after failing to justify).
+
+### stanner-1953-the-dreaming
+- status: usable
+- medium: text-ocr
+- cite: WEH Stanner, "The Dreaming" (1953), repr. in *White Man Got No Dreaming: Essays 1938–1973* (Canberra: ANU Press, 1979), pp. 23–40, https://openresearch-repository.anu.edu.au/bitstreams/5f6db56f-c50c-40ee-be20-8e1102e50ee7/download
+- kb: `Stanner_White-Man-Got-No-Dreaming_ANUPress-1979.md` (full text, staged at workshops/DD/sources/17-aboriginal-death/ — not yet folded into corpus)
+- verified: file (ANU repository PDF; pdftotext, page numbers from the running heads)
+- note: The whole ANU Press volume (405 pp., open access) is staged; "The Dreaming" is pp. 23–40 — "everywhen" p. 24, name/spirit/shadow and the reluctance "to breathe his name" p. 25, spirit-child conception p. 27, "rituals of sorrow… reconciliation with the terms of life" p. 35. Also contains "Continuity and Change" (1958), already in the corpus as an excerpt (see stanner-1958-continuity-and-change), and "Durmugam" (1959). Cited by DD note 4.3.
 
 ### stanner-1958-continuity-and-change
 - status: usable
@@ -3279,6 +3495,14 @@ Also: existing entry `curry-mullins-whitehouse-2019-seven-moral-rules` should ad
 - kb: `Supratikno-Adi_The-Samin-Community-in-the-Globalization-Era_2023.md`
 - verified: file (title and second author at seg 0; ▲ first author's name and the venue are not recoverable from the ingested text — taken from the filename)
 - note: Sukolilo (Pati) study; Agama Adam glossed by informants as *pangucap* (utterance) — "*mbecikna laku, ngugemi ucap*"; faith as resource against the cement industry.
+
+### suryo-2023-kaparupuhan-kematian-pada-suku-baduy
+- status: usable
+- medium: text
+- cite: P Suryo R, "Kaparupuhan, Kematian pada Suku Baduy," *MerahPutih*, 18 January 2023, https://merahputih.com/post/read/kaparupuhan-kematian-pada-suku-baduy (relaying *Balutan Pikukuh Persalinan Baduy*, 2014)
+- kb: `Suryo_Kaparupuhan-Kematian-pada-Suku-Baduy_MerahPutih-2023.md` (full text, staged at workshops/DD/sources/16-badui-death/ — not yet folded into corpus)
+- verified: web (byline and date on the page; fetched 2026-09-03)
+- note: The fullest readable account of the Badui death rite: *panghulu jalu/bikang*; washing on a banana trunk with sirih; machete kept back; kafan and bier; *ceurik panglayuan*; chest-deep grave dug with sharpened bamboo, "kepala berada di arah selatan dengan wajah diarahkan ke arah barat," bamboo roof; red *hanjuang* at head and foot; "Mereka tidak pernah memelihara kuburan"; offerings on an *ancak* and the bamboo water tube; three-day feast; after seven days the ground "bisa dipergunakan sebagai ladang"; taboo on loud weeping. Cited by DD note 4.6.
 
 ### talat-et-al-2021-a-word-on-machine-ethics
 - status: usable
@@ -3575,6 +3799,14 @@ Also: existing entry `curry-mullins-whitehouse-2019-seven-moral-rules` should ad
 - kb: `Xygalatas_Culture-Cognition-and-Ritual_2023_chapter-preprint.md`
 - verified: file (title, affiliation and abstract at seg 0; Mauritius Thaipusam experiment at segs 22–23)
 - note: Review chapter with the author's field experiments (Mauritius prayer vs kavadi donations; Power's Tamil Nadu signalling studies). Preprint — page numbers unavailable.
+
+### yunupingu-2016-rom-watangu
+- status: usable
+- medium: text
+- cite: Galarrwuy Yunupingu, "Rom Watangu," *The Monthly*, July 2016, https://www.themonthly.com.au/issue/2016/july/1467295200/galarrwuy-yunupingu/rom-watangu
+- kb: `Yunupingu_Rom-Watangu_The-Monthly-2016.md` (full text, staged at workshops/DD/sources/17-aboriginal-death/ — not yet folded into corpus)
+- verified: web (fetched 2026-09-03)
+- note: Gumatj leader's essay on Yolngu law; primary Aboriginal-authored account of two deaths — Wonggu's body painted, shrouded and carried by his sons; the author's father sung toward his spirit home ("no hope in finding a place in the spirit home if there is no song"; "the future is already in the song cycle"), purification by water and smoke, *Djäpana*; Ganbulapula's funeral and the hollow-log coffin. Site blocks WebFetch; harvested by curl. Cited by DD note 4.3.
 
 ### zakharin-bates-2021-remapping-the-foundations-of-morality
 - status: usable
