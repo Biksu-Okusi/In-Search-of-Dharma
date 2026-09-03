@@ -430,6 +430,14 @@ A note's `[S#]` line points here via `[src:<key>]`. No `[S#]` may point at a `st
 - verified: file (title, author affiliation and abstract at seg 0; volume/pages/DOI from the published record, not web-checked)
 - note: The two-impairment model for CU youth: reduced amygdala responsiveness to distress cues; vmPFC/striatal decision-making deficits.
 
+### bloch-parry-1982-death-and-the-regeneration-of-life
+- status: usable
+- medium: text
+- cite: Maurice Bloch & Jonathan Parry (eds.), *Death and the Regeneration of Life* (Cambridge: Cambridge University Press, 1982)
+- kb: none (not accessed — publisher page returned an error 2026-09-03)
+- verified: none (metadata; content as relayed by graeber-2007-possibilities)
+- note: Mortuary ritual as the staging of the permanent against the transitory and the reconstitution of the social order after a death. Cited only as relayed by Graeber. Cited by DD note 1.2.
+
 ### bodhi-2011-what-does-mindfulness-really-mean
 - status: usable
 - medium: text
@@ -860,7 +868,7 @@ A note's `[S#]` line points here via `[src:<key>]`. No `[S#]` may point at a `st
 - cite: Émile Durkheim, *The Elementary Forms of the Religious Life*, trans. Joseph Ward Swain (London: George Allen & Unwin, 1915; French orig. 1912)
 - kb: `Durkheim_The-Elementary-Forms-of-the-Religious-Life_Swain-trans-1915.md`, `Durkheim_The-Elementary-Forms-of-the-Religious-Life_Gutenberg-41360.txt` (born-digital Gutenberg text of the same translation), `Durkheim_The-Elementary-Forms-of-the-Religious-Life_trans-Swain_1915_OCR.md` (second OCR under 3-ritual-habituation/)
 - verified: file (Introduction at seg 0; Book II ch. 7 §ii "society… is what a god is to his worshippers" at seg 205; Conclusion at seg 429)
-- note: Society as the source of moral authority and the sacred; three copies in the corpus — prefer the Gutenberg text for quotation.
+- note: Society as the source of moral authority and the sacred; three copies in the corpus — prefer the Gutenberg text for quotation. Also cited by DD note 5.4 for Book III ch. 5, the piacular rites (seg 462).
 
 ### durmus-et-al-2023-global-opinions-language-models
 - status: usable
@@ -1332,7 +1340,7 @@ A note's `[S#]` line points here via `[src:<key>]`. No `[S#]` may point at a `st
 - cite: Clifford Geertz, *The Interpretation of Cultures: Selected Essays* (New York: Basic Books, 1973)
 - kb: `Geertz_The-Interpretation-of-Cultures_1973.md`
 - verified: file (essay text of "Ethos, World View, and the Analysis of Sacred Symbols" at segs 175–180 and "Religion as a Cultural System" earlier; hyphenation artefacts "artic­ ulate" indicate a scanned PDF)
-- note: Whole collection in the corpus under this filename; DD cites the rasa passage of "Ethos, World View" (1957). Cited by DD note 3.5.3.
+- note: Whole collection in the corpus under this filename; DD cites the rasa passage of "Ethos, World View" (1957). Cited by DD note 3.5.3. Also cited by DD note 7.1 for "Ritual and Social Change: A Javanese Example" (1957), ch. 6 — the Paidjan funeral (segs ~198–210).
 
 ### gellner-curry-cook-alfano-venkatesan-2020-gdat-debate
 - status: usable
@@ -1744,6 +1752,14 @@ Also: existing entry `curry-mullins-whitehouse-2019-seven-moral-rules` should ad
 - verified: web (Wikisource: *The Atlantic Monthly*, Volume 12, Number 71; Wikipedia "Life Without Principle" — first published posthumously October 1863, edited by Thoreau for publication before his death in 1862)
 - note: the moral-livelihood essay — "The ways by which you may get money almost without exception lead downward"; "You are paid for being something less than a man." The canonical secular statement that *how* one earns a living is itself a moral question. All quotations verified verbatim against the staging.text file (segs 3, 6, 7, 12, 19).
 
+### hertz-1907-representation-collective-de-la-mort
+- status: usable
+- medium: text
+- cite: Robert Hertz, "Contribution à une étude sur la représentation collective de la mort," *Année sociologique* 10 (1907): 48–137; repr. in *Sociologie religieuse et folklore* (Paris: Alcan, 1928); English in *Death and the Right Hand*, trans. Rodney & Claudia Needham (London: Cohen & West, 1960)
+- kb: none (not accessed — classiques.uqac.ca unreachable 2026-09-03)
+- verified: none (metadata; content as relayed by graeber-2007-possibilities)
+- note: The double burial: the second funeral frees the soul and ends the mourners' liminal period. Public domain in French (UQAC hosts the 1928 collection); fetch and stage when reachable. Cited by DD note 1.2.
+
 ### higgins-2017-flexible-appropriation
 - status: usable
 - medium: text
@@ -1799,6 +1815,22 @@ Also: existing entry `curry-mullins-whitehouse-2019-seven-moral-rules` should ad
 - kb: `Hultzsch_Corpus-Inscriptionum-Indicarum-I-Inscriptions-of-Asoka_1925.md`, `Hultzsch_Inscriptions-of-Asoka_1925_IGNCA-compact.md`
 - verified: file (tesseract OCR provenance headers in seg 0 of both files; the compact IGNCA file carries the translations only, Rock Edicts 5 and 12 at segs 35 and 40)
 - note: The scholarly edition of the edicts with texts, translations and apparatus; OCR quality uneven — pointer only, verify wording against print. Cited by DD note 2.4.
+
+### humanists-uk-ceremonies
+- status: usable
+- medium: text
+- cite: Humanists UK, "Humanist Ceremonies," https://humanists.uk/ceremonies/
+- kb: `HumanistsUK_Ceremonies.md` (full text, staged at workshops/DD/sources/19-death-rites-general/ — not yet folded into corpus)
+- verified: web (fetched 2026-09-03)
+- note: Landing page for the celebrant service: "network of trained and accredited non-religious celebrants … since 1896." No figures. Cited by DD note 6.1.
+
+### humanists-uk-non-religious-funerals
+- status: usable
+- medium: text
+- cite: Humanists UK, "Humanist funerals and memorials," https://humanists.uk/ceremonies/non-religious-funerals/
+- kb: `HumanistsUK_Non-religious-funerals.md` (full text, staged at workshops/DD/sources/19-death-rites-general/ — not yet folded into corpus)
+- verified: web (fetched 2026-09-03)
+- note: The celebrant-led non-religious funeral, "led by a celebrant, rather than a religious official." No figures. Cited by DD note 6.1.
 
 ### hume-1739-treatise-of-human-nature
 - status: usable
@@ -2103,6 +2135,38 @@ Also: existing entry `curry-mullins-whitehouse-2019-seven-moral-rules` should ad
 - kb: `Legge_The-Texts-of-Taoism_SBE-39_1891.md` (Part II is `Legge_The-Texts-of-Taoism_SBE-40_1891.md`)
 - verified: file (running head "THE TEXTS OF TAOISM. pt. I" with pagination at :92; chapter numerals 25 and 37 located)
 - note: Public-domain primary text; OCR has broken headings (`###
+
+### sahih-bukhari-1315-hasten-the-funeral
+- status: usable
+- medium: text
+- cite: *Sahih al-Bukhari* 1315 (Book 23, Funerals: "Hasten the funeral"), sunnah.com/bukhari:1315
+- kb: none (not accessed — sunnah.com returned a bot-check page 2026-09-03)
+- verified: none (standard numbering; USC-MSA translation "Hurry up with the dead body")
+- note: Prompt burial in Islamic practice. Fetch from an unblocked mirror and stage. Cited by DD note 4.4.
+
+### sefaria-moed-katan-20a
+- status: usable
+- medium: text
+- cite: *Moed Katan* 20a, Babylonian Talmud, William Davidson edition, https://www.sefaria.org/Moed_Katan.20a
+- kb: `Sefaria_Moed-Katan-20a_seven-days.md` (full text, staged at workshops/DD/sources/19-death-rites-general/ — not yet folded into corpus)
+- verified: web (Sefaria API text fetched 2026-09-03; English, footnotes stripped)
+- note: The seven-day mourning period and the public's duty to the mourner in the first days. Cited by DD note 4.4.
+
+### sefaria-sanhedrin-46b
+- status: usable
+- medium: text
+- cite: *Sanhedrin* 46b, Babylonian Talmud, William Davidson edition, https://www.sefaria.org/Sanhedrin.46b
+- kb: `Sefaria_Sanhedrin-46b_burial-same-day.md` (full text, staged at workshops/DD/sources/19-death-rites-general/ — not yet folded into corpus)
+- verified: web (Sefaria API text fetched 2026-09-03; English, footnotes stripped)
+- note: Same-day burial derived from Deuteronomy 21:23: leaving the dead overnight "transgresses a prohibition." Cited by DD note 4.4.
+
+### sefaria-shulchan-arukh-yoreh-deah-375
+- status: usable
+- medium: text
+- cite: *Shulchan Arukh, Yoreh De'ah* 375, https://www.sefaria.org/Shulchan_Arukh,_Yoreh_De'ah.375
+- kb: `Sefaria_Shulchan-Arukh-Yoreh-Deah-375_shiva.md` (full text, staged at workshops/DD/sources/19-death-rites-general/ — not yet folded into corpus)
+- verified: web (Sefaria API text fetched 2026-09-03; English, footnotes stripped)
+- note: Mourning "commences forthwith" once the grave is closed. Cited by DD note 4.4.
 
 ### Tao`) inside sentences, so quote only after reassembly.
 
@@ -4513,6 +4577,7 @@ Also: existing entry `curry-mullins-whitehouse-2019-seven-moral-rules` should ad
 - cite: David Graeber, Possibilities: Essays on Hierarchy, Rebellion, and Desire (AK Press, 2007)
 - kb: `david-graeber-possibilities.md`
 - verified: web (ISBN 9781904859666)
+- note: Also cited by DD note 1.2 as the relay for Hertz 1907 and Bloch & Parry 1982.
 
 ### graeber-2009-debt-first-five-thousand-years
 - status: usable

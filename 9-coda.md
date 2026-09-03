@@ -3,7 +3,7 @@ part: 9
 title: "Coda"
 slug: coda
 status: done
-words: 1333
+words: 1355
 reading_level: year-12
 updated: 2026-08-22
 draws_on: []
@@ -92,7 +92,7 @@ In this sense, a dharma is a kind of **ethical software** running on human biolo
 
 It does not erase our animal nature. It trains it.
 
-And none of this survives on its own. Every carrier of a dharma dies, so a dharma persists only by reproducing itself in new people: taught by story and example, grooved in by practice and repetition, held in place by a community that notices when it slips. Call it education, in the broadest sense, so long as the word is allowed to include all of that; explicit instruction is the smallest part of it, and most of the teaching happens below argument, which is why a dharma feels inherited rather than chosen. A dharma that cannot reproduce itself dies with the people who hold it, however wise it was.
+And none of this survives on its own. Every carrier of a dharma dies, so a dharma persists only by reproducing itself in new people: taught by story and example, grooved in by practice and repetition, held in place by a community that notices when it slips. The funeral is where that shows most plainly: the rite that sends one carrier off is the one that re-seats the rest. Call it education, in the broadest sense, so long as the word is allowed to include all of that; explicit instruction is the smallest part of it, and most of the teaching happens below argument, which is why a dharma feels inherited rather than chosen. A dharma that cannot reproduce itself dies with the people who hold it, however wise it was.
 
 And no dharma is built from nothing. New dharmas emerge from within the cultures and communities that carry their makers, and they inherit the materials of those cultures, the worse along with the better. The craft lies in choosing what deserves to go on holding.
 

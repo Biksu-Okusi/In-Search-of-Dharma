@@ -3,7 +3,7 @@ part: 8
 title: "Creating Dharmas"
 slug: creating-dharmas
 status: done
-words: 6923
+words: 6927
 reading_level: year-12
 updated: 2026-09-02
 draws_on: ["8.1", "8.2", "8.3", "8.4", "8.5", "3.4", "4.1", "7.4", "7.5", "7.7"]
@@ -38,7 +38,7 @@ Between those two pictures sits the whole question. The seeker on the cushion an
 
 ## The thing we were always doing
 
-Building dharmas on purpose is no unprecedented act of hubris. It is what our species has always done. Every dharma we have met was *made*: assembled by particular people in particular places, from the materials to hand. The Axial sages made theirs. Samin Surosentiko made his, in plain low Javanese, one conversation at a time. What is new is not the making. What is new is that we can no longer pretend we are doing anything else.
+Building dharmas on purpose is no unprecedented act of hubris. It is what our species has always done. Every dharma we have met was *made*: assembled by particular people in particular places, from the materials to hand. The sages of the first millennium BCE made theirs. Samin Surosentiko made his, in plain low Javanese, one conversation at a time. What is new is not the making. What is new is that we can no longer pretend we are doing anything else.
 
 For a glimpse of that making stripped to the bone, consider six teenage boys from a boarding school in Tonga who, in 1965, took a fishing boat, were caught by a storm, and washed up on 'Ata, an uninhabited Pacific rock, where they were marooned for fifteen months. What they built, with a single old knife blade and their hands, was not the savagery of William Golding's *Lord of the Flies* but its opposite. They cleared a food garden, hollowed tree trunks to catch rainwater, and kept a fire alight for more than a year, working the garden and the kitchen in rostered pairs. They opened and closed each day with song and prayer, to a driftwood guitar strung with wire salvaged from the wreck. When two quarrelled, the pair went to opposite ends of the island to cool their tempers, then came back and made up. When one boy fell from a cliff and broke his leg, the others set it with sticks and leaves and carried his share of the work until it healed. They were found in September 1966 in glowing health, the mended leg clean.
 

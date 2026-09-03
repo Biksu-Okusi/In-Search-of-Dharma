@@ -3,7 +3,7 @@ part: 3
 title: "The Dharmas of the Samin of Java"
 slug: samin-of-java
 status: done
-words: 5297
+words: 5597
 reading_level: year-12
 updated: 2026-09-02
 draws_on: ["4.1", "1.3", "7.3", "8.1"]
@@ -87,6 +87,8 @@ Now, a sceptic could stop me right here. *Plenty of villages have customs*, the 
 It is a fair challenge, and the Samin are where our definition gets tested against a real case. Back in Part 1, we worked out what separates a dharma from mere custom or law or etiquette. Not its content (there is no single belief that makes something a dharma) but a *combination* of features. I will run the Sedulur Sikep against that test, in plain language.
 
 First: is it *comprehensive*? Does it govern a whole life, or just one corner of behaviour? The Sikep code clearly does the former. It tells you how to work, how to speak, what you may own, how to treat your neighbours, how to deal with authority, even how to understand death. It is an architecture for living, not a rule about one thing.
+
+The *wong sikep* do not say that a person dies. They say *salin sandhangan*, changing clothes: what wears out is the garment, the body, and the life inside it goes on -- back, on the tellings the ethnographers have collected, into a person again, into one's own descendants, or simply "gathered with the living." The rite is as bare as the belief. The village religious official is given no part. The body is washed, or deliberately not washed if the dead person is thought to have held firm to the teaching; it is wrapped in white cloth or a plain *jarit*, laid level and face up, not turned toward Mecca, and buried without the Islamic prayers and without the words spoken into the grave. There is one shared meal, on the day of the burial, and then nothing: none of the Javanese cycle of feasts at seven, forty and a hundred days, no headstone, no visiting of the grave, no anniversary. Contributions come in rice, sugar and cigarettes; money is handed back. On the Kudus telling, the good conduct of the dead attaches to the next generation, which is why the grave needs no tending. The same refusals run through it as through the rest of the code: no cleric, no cycle of feasts, no tended grave, no profit, no display; and the hope reaches forward through the lineage rather than upward to another world. In the Blora villages the rite has drifted toward the mosque, and the elder of Klopoduwur who died in 2025 was prayed over at the village mosque before burial; Kudus keeps the older form. Benda and Castles, quoting the provincial surveys of the 1950s, put the difference in a sentence: the Saminists' births and circumcisions looked like their neighbours', their marriages and burials did not.
 
 Second: is it *identity-constituting*, does it tell people who they are? Unmistakably. To be Sedulur Sikep is to be one of "the honest people." It is a self; you can hear it in the very name they chose.
 
@@ -206,5 +208,6 @@ Research notes used in this book are published on [GitHub](https://github.com/Bi
 - Clifford Geertz, *The Religion of Java* (1960) -- the *abangan* / *santri* / *priyayi* map and the *ngoko* / *krama* speech-level hierarchy that the Samin refused.
 - James C Scott, *The Moral Economy of the Peasant* (1976), *Weapons of the Weak* (1985), and *Domination and the Arts of Resistance: Hidden Transcripts* (1990) -- the peasant moral economy, the "weapons of the weak," and the "hidden transcript" / "infra-politics" of below-the-radar refusal; the comparative frame for the Samin's tactics.
 - Christopher Boehm, *Hierarchy in the Forest* (1999) -- egalitarian foragers and the "reverse dominance hierarchy"; morality's deep origin as a check on domination.
+- On *salin sandhangan* and the Sikep funeral: Siti Munawaroh, Christriyati Ariani & Suwarno, *Etnografi Masyarakat Samin di Bojonegoro* (Balai Pelestarian Nilai Budaya Yogyakarta, 2015); Moh Rosyid, "Studi Komparatif Konsep Ketuhanan Islam dan Agama Adam," *Ulumuna* (2012), and "Komunitas Samin: Agama Adam dan Ajarannya," *Hanifiya* (2023), for the Kudus rite and its drift; and *detikJateng*'s reporting of Mbah Wargono's burial (February 2022) and of the Blora elders' funerals (2025–2026). The 1950s contrast is Benda & Castles quoting the provincial volumes.
 - Reporting on the Kendeng resistance -- the *Kartini Kendeng*, the 2016 and 2017 feet-in-cement protests at the Presidential Palace, and Patmi's death (Mongabay, 2020; *Indonesia at Melbourne*, University of Melbourne).
 - The living Indonesian scholarship -- S Setiadi, A Saraswati & N Rosyid, "Geger Sikep: Environmental (Re)Interpretation among the Contemporary Anti-Cement Movement in Kendeng, Central Java," *Komunitas* 9(1) (2017): 13–28; Moh Rosyid, "Memotret Agama Adam: Studi Kasus pada Komunitas Samin," *Orientasi Baru* 23(2) (2014) -- the community as an object of active Indonesian research, not only of colonial and Western memory.

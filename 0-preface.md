@@ -3,7 +3,7 @@ part: 0
 title: "Preface"
 slug: preface
 status: done
-words: 4415
+words: 4480
 reading_level: year-12
 updated: 2026-09-02
 draws_on: ["0.1", "0.2", "0.3", "0.4", "0.5", "0.6", "0.7"]
@@ -77,6 +77,8 @@ In my late thirties I went back to university for a specialist degree in Indones
 This was, I can see now, my first recognisable "secular dharma," met fully two decades before I ever sat down in a Bodhi College retreat; and I am no detached observer: I built their international movement's English-language [website](https://sumarah.net) back in 1998. It planted early the suspicion I will later argue: that a dharma is far harder to prise away from its culture than from its gods.
 
 My personal life has been large and disorderly by any conventional measure: more marriages than is decent, children and grandchildren scattered across three countries, the ordinary share of estrangements and an extraordinary share of complications. In 2012 I lost a son, and in 2015 a partner, and it was during and after that stretch that a long, idle interest in dharmas turned into something closer to a need. I will not pretend to know whether grief sharpened the search or merely cleared the time for it. But I would be misrepresenting the work if I let you picture it arriving out of serenity. It came, like most things worth having, out of a fair amount of mess.
+
+The old dharmas all know what to do with a body, and with the people left standing around it, and the argument that follows leans on that without always saying so. It is why Part 1 argues that a dharma must be comprehensive, why Part 5 opens at a funeral, and why Part 7 asks whether a secular dharma can bury.
 
 One more disclosure belongs here, because it is printed on the cover. *Biksu* is the Indonesian word for a Buddhist monk, and I am not one: no ordination, no robe, no teacher who ever sanctioned me. Nor did I choose the name. It was given to me, beginning more than a decade ago, by Indonesian friends and colleagues -- all of them, as it happens, Muslims -- who knew that I meditated, knew the kind of thing I read, and watched me withdraw into my office studios in Jakarta, Batam and Bali for weeks and months at a time, running the firm entirely online, avoiding direct contact even with clients, doing little but programming and studying anthropology. The withdrawal deepened through the grieving years just described, and also after the [Jakarta terrorist attack of 2016](https://garydean.id/works/meet-me-at-the-starbucks-that-was-bombed). Three bombs exploded, and the second and largest of those went off in the Starbucks directly below my office windows, where I had bought my coffee every working morning. It was probably meant for me.
 

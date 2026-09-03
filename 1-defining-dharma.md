@@ -3,7 +3,7 @@ part: 1
 title: "Defining Dharma"
 slug: defining-dharma
 status: done
-words: 5426
+words: 5624
 reading_level: year-12
 updated: 2026-09-02
 draws_on: ["1.1", "1.2", "1.3", "1.4", "3.3", "3.4"]
@@ -69,6 +69,8 @@ The evidence that this is universal is strong, though it requires careful handli
 "None was found" is not the same as "there are none"; still, as a first pass over the species, it is striking. The content of morality varies enormously; but the cooperative spine, so far as anyone has looked, does not. And it is only the spine that the evidence shows to be universal: the moral machinery itself, not any full architecture built upon it. How far a people elaborates that machinery into something comprehensive, named, and examined -- a dharma in the strong sense I will mark out shortly -- varies from case to case, and is a matter of degree rather than kind.
 
 The trick to holding "universal" and "wildly varied" together at once comes from biology. Niko Tinbergen, who studied animal behaviour, taught that among the questions you can ask about any trait, two stand sharply apart: what is it *for*, and how is it *built*? The evolutionary biologist David Sloan Wilson applies exactly that split to morality, and it resolves our puzzle. The *function* of a dharma is nearly always the same: to sustain cooperation and hold the group together. But the *mechanism* that delivers that function can be almost anything: a sense of duty, a fear of divine punishment, a code of honour, the Indian idea of dharma, the southern African idea of Ubuntu. One job, many tools. That is why dharma-shaped frameworks keep being reinvented by people who have never met: they are local solutions to a problem that every human community faces.
+
+Every group that solves the free-rider problem still loses a member, sooner or later, to death, and the cooperation story on its own has nothing to say about it. A death subtracts a person from the web of obligations, and it does so at the moment the survivors are least able to think. The old sociology of the funeral, from Robert Hertz's 1907 essay on the double burial to the collection Maurice Bloch and Jonathan Parry edited in 1982 as *Death and the Regeneration of Life*, holds that mortuary ritual is where a social order reconstitutes itself after the subtraction, re-seating the living in their roles and sending the dead somewhere the living can bear. I find that hard to argue with, and it is why a dharma has to be *comprehensive*, the first of the features I set out below, and cannot be merely a set of rules for exchange. A code that only regulates cooperation falls silent exactly when its people need it most, at the graveside, and a code that falls silent there will be replaced by one that does not. Cooperation explains why dharmas arise; death explains why they cannot stop at the marketplace.
 
 ## Written across the sky
 
@@ -187,6 +189,7 @@ Research notes used in this book are published on [GitHub](https://github.com/Bi
 - Oliver Scott Curry, Daniel Austin Mullins & Harvey Whitehouse, "Is It Good to Cooperate?" (*Current Anthropology*, 2019) -- the seven cooperative moral rules across sixty societies, read here together with its published critics and the formal anthropological debate that followed (*JRAI*, 2020).
 - Nicholas A Christakis, *Blueprint: The Evolutionary Origins of a Good Society* (2019) -- the "social suite" of evolved social tendencies (cooperation, friendship, in-group bias, social learning).
 - Donald E Brown, *Human Universals* (1991) -- reciprocity, fairness, and ethical patterning as features present in every documented culture.
+- Robert Hertz, "Contribution à une étude sur la représentation collective de la mort" (*Année sociologique*, 1907; English in *Death and the Right Hand*, 1960), and Maurice Bloch & Jonathan Parry (eds.), *Death and the Regeneration of Life* (1982) -- mortuary ritual as the reconstitution of the social order after a death; the reason a dharma cannot stop at exchange.
 - Niko Tinbergen, "On Aims and Methods of Ethology" (1963) -- the four questions, and the function/mechanism distinction this part uses to hold "universal" and "wildly varied" together. David Sloan Wilson applies that split to morality; the project reaches his application through his writing at prosocial.world rather than a peer-reviewed paper, and Tinbergen's own article is listed here as the source of the idea, not as a text the corpus holds.
 - Ludwig Wittgenstein, *Philosophical Investigations* (1953) -- "game," family resemblance, and the rope-not-thread model of meaning.
 - WB Gallie, "Essentially Contested Concepts" (1956) -- why words like *justice*, *democracy*, and *dharma* sustain permanent, internal disagreement.
