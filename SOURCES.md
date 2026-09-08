@@ -646,6 +646,38 @@ A note's `[S#]` line points here via `[src:<key>]`. No `[S#]` may point at a `st
 - verified: file (running head "HERAKLEITOS OF EPHESOS 133" at :182; fragment numbering matches Burnet's)
 - note: Burnet renders *logos* as "Word"; fragments cited by his numbers (fr. 2 at :182). Public domain.
 
+### campbell-1959-primitive-mythology-masks-of-god-1
+- status: usable
+- medium: text
+- cite: Joseph Campbell, *Primitive Mythology: The Masks of God, Volume I* (New York: Viking Press, 1959; rev. 1969); Collected Works of Joseph Campbell digital edition, ed. David Kudler (Joseph Campbell Foundation, 2018)
+- kb: `Joseph-Campbell_Primitive-Mythology_The-Masks-of-God-1_1959.md`
+- verified: file (frontmatter and editorial headnote at seg 0; Prologue "Toward a Natural History of the Gods and Heroes" and ch. 2 "The Imprints of Experience" §V "The System of Sentiments of the Local Group" located by heading)
+- note: Epub-derived Collected Works text; the editors' updates and "— Editors" comments are inline as separate paragraphs and must not be quoted as Campbell's own words. Cited by DD notes 1.3, 6.1 and 8.3 (2026-09-08) for the numinous as the first function of myth, initiation as the "caldron" of installation, the "cerebral emphasis" diagnosis, and the "single symphony" perennialism.
+
+### campbell-1962-oriental-mythology-masks-of-god-2
+- status: usable
+- medium: text
+- cite: Joseph Campbell, *Oriental Mythology: The Masks of God, Volume II* (New York: Viking Press, 1962); Collected Works of Joseph Campbell digital edition, ed. David Kudler (Joseph Campbell Foundation, 2014)
+- kb: `Joseph-Campbell_Oriental-Mythology_The-Masks-of-God-2_1962.md`
+- verified: file (frontmatter and editorial headnote at seg 0; ch. 1 "The Signatures of the Four Great Domains" §§I–III and ch. 9 "Tibet: The Buddha and the New Happiness" located by heading)
+- note: Epub-derived Collected Works text. Campbell's reading of *dharma* as caste-impressed "thou shalt" and of the Orient as lacking the deciding individual is an Orient/Occident essentialism of the kind DD note 7.5 anatomises; cite as an object of study on that axis. Cited by DD notes 1.3 and 8.3 (2026-09-08).
+
+### campbell-1964-occidental-mythology-masks-of-god-3
+- status: usable
+- medium: text
+- cite: Joseph Campbell, *Occidental Mythology: The Masks of God, Volume III* (New York: Viking Press, 1964); Collected Works of Joseph Campbell digital edition, ed. David Kudler (Joseph Campbell Foundation, 2017)
+- kb: `Joseph-Campbell_Occidental-Mythology_The-Masks-of-God-3_1964.md`
+- verified: file (frontmatter and editorial headnote at seg 0; ch. 9 "Europe Resurgent" §"At the Close of an Age" located by heading)
+- note: Epub-derived Collected Works text. The four-functions statement (mystical, cosmological, sociological, pedagogical) and the "our laws are… from ourselves; are conventional, not absolute" concession are in the closing section. Cited by DD notes 1.3, 6.1 and 8.3 (2026-09-08).
+
+### campbell-1968-creative-mythology-masks-of-god-4
+- status: usable
+- medium: text
+- cite: Joseph Campbell, *Creative Mythology: The Masks of God, Volume IV* (New York: Viking Press, 1968); Collected Works of Joseph Campbell digital edition (Joseph Campbell Foundation, 2016)
+- kb: `Joseph-Campbell_Creative-Mythology_The-Masks-of-God-4_1968.md`
+- verified: file (frontmatter and editorial headnote at seg 0; ch. 1 "Experience and Authority", ch. 8 "The Paraclete" §V "Second Intermezzo: The Secularization of Myth", ch. 9 "The Death of 'God'" §VI "Toward New Mythologies", ch. 10 "The Earthly Paradise" §II "Symbolization" located by heading)
+- note: Epub-derived Collected Works text. Campbell's own theory of individually created ("creative") mythology — experience first, symbol second, reception uncoerced — and the "mythogenetic zone is the individual heart" passage. Cited by DD notes 1.3, 6.1 and 8.3 (2026-09-08).
+
 ### candraningrum-2019-magic-of-dukun-jani-neo-saminism
 - status: usable
 - medium: text-ocr
