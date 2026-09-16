@@ -35,7 +35,7 @@
   || { >&2 echo "✗ ${BASH_SOURCE[0]##*/} is a library: source it, do not run it"; exit 2; }
 
 # Selectable sets, in help-text order. The first is the default.
-declare -ar FONT_SETS=(classic worksans bonanova bonanova-worksans bonanova-solo)
+declare -ar FONT_SETS=(bonanova-worksans classic worksans bonanova bonanova-solo)
 
 # Populated by font_set_load. Declared here so a `set -u` script can reference
 # them before the first load without tripping an unbound-variable error.
@@ -71,12 +71,13 @@ font_set_load() {
 
   case $set_name in
     classic)
-      # The shipping design. EB Garamond body (vendored: see the note in
-      # mk-book.sh on why the Debian package will not do), Lato headings from
-      # the system package -- an absolute path, so this set stays byte-identical
-      # to the build that produced the tracked EPUB and PDF.
+      # The original design, shipped until 2026-09-16: EB Garamond body
+      # (vendored: see the note in mk-book.sh on why the Debian package will
+      # not do), Lato headings from the system package -- an absolute path, so
+      # this set stays byte-identical to the builds it produced.
       FONT_SERIF_FAMILY='EB Garamond'
       FONT_SANS_FAMILY='Lato'
+      FONT_SUFFIX=_classic
       faces=(
         "EB Garamond|normal|normal|ebgaramond/EBGaramond-Regular.otf"
         "EB Garamond|normal|italic|ebgaramond/EBGaramond-Italic.otf"
@@ -122,18 +123,19 @@ font_set_load() {
       )
       ;;
     bonanova-worksans)
-      # Ramsey's third request: keep the Bona Nova body, swap the sans for Work
-      # Sans SemiBold. Reads to him as the bonanova set with Lato in it -- the
-      # sans there is Open Sans, but the ask is the same either way, and this is
-      # the pairing he wants. Same Bona Nova caveats as the bonanova set: no
-      # Bold Italic face, and the 14pt body that its x-height calls for.
-      # SemiBold is weight 600, so FONT_HEADING_WEIGHT must say so, or the
-      # renderer asks for 700 and synthesises a heavier face than is embedded.
+      # The shipping design since 2026-09-16 (no FONT_SUFFIX: it writes the
+      # tracked, published filenames). Ramsey's third request: keep the Bona
+      # Nova body, swap the sans for Work Sans SemiBold. Reads to him as the
+      # bonanova set with Lato in it -- the sans there is Open Sans, but the ask
+      # is the same either way, and this is the pairing he chose. Same Bona
+      # Nova caveats as the bonanova set: no Bold Italic face, and the 14pt
+      # body that its x-height calls for. SemiBold is weight 600, so
+      # FONT_HEADING_WEIGHT must say so, or the renderer asks for 700 and
+      # synthesises a heavier face than is embedded.
       FONT_SERIF_FAMILY='Bona Nova'
       FONT_SANS_FAMILY='Work Sans'
       FONT_HEADING_WEIGHT=600
       FONT_BODY_SIZE_PDF=14pt
-      FONT_SUFFIX=_bonanova-worksans
       faces=(
         "Bona Nova|normal|normal|bonanova/BonaNova-Regular.ttf"
         "Bona Nova|normal|italic|bonanova/BonaNova-Italic.ttf"

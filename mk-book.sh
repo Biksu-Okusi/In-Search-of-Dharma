@@ -123,7 +123,8 @@ declare -ir JPEG_QUALITY=80
 # defaults. The face inventory, the @font-face CSS and the colophon's naming of
 # the typefaces all live in lib/fonts.sh, which id/mk-book.sh sources too: one
 # book design, one set of typefaces, one place to change them. Pick a set with
-# --fonts (see show_help); the default is the shipping EB Garamond / Lato pair.
+# --fonts (see show_help); the default is the shipping Bona Nova / Work Sans
+# pair.
 #
 # On the vendored body face: fonts/ebgaramond holds Octavio Pardo's revival (the
 # version Google Fonts distributes), NOT the Debian fonts-ebgaramond package.
@@ -167,11 +168,12 @@ Options:
                  default writes its output with a matching filename suffix and
                  is never published, so several settings can be built and
                  compared side by side:
-                   classic        EB Garamond body, Lato headings (shipping)
-                   worksans       EB Garamond body, Work Sans SemiBold headings
-                   bonanova       Bona Nova body, Open Sans SemiBold headings
                    bonanova-worksans
                                   Bona Nova body, Work Sans SemiBold headings
+                                  (shipping)
+                   classic        EB Garamond body, Lato headings
+                   worksans       EB Garamond body, Work Sans SemiBold headings
+                   bonanova       Bona Nova body, Open Sans SemiBold headings
                    bonanova-solo  Bona Nova throughout, headings in its Bold
   -h, --help     Show this help and exit.
   -V, --version  Show version and exit.
