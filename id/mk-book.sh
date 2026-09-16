@@ -105,13 +105,18 @@ declare -r PUBLISH_OWNER=${PUBLISH_OWNER:-}
 declare -r DEPLOY_HOST=${DEPLOY_HOST:-}
 declare -r DEPLOY_DIR=${DEPLOY_DIR:-$PUBLISH_DIR}
 
-# Speaker glyph for the audio link, as inline SVG (single long line: an accepted
-# line-length exception -- splitting a quoted XML literal would only obscure it).
-# Inline SVG renders identically
+# Speaker glyph for the audio link, as inline SVG. Inline SVG renders identically
 # in EPUB3 and weasyprint and scales with the font (width/height 1em), whereas an
 # emoji would fall back to a missing-glyph box -- none of the embedded text
 # faces carries emoji. fill/stroke use currentColor so it inherits the link hue.
-declare -r AUDIO_ICON='<svg class="audio-icon" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" width="1em" height="1em" aria-hidden="true" focusable="false"><path d="M3 9v6h4l5 4V5L7 9H3z" fill="currentColor"/><path d="M15.5 8.5a4 4 0 0 1 0 7" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"/></svg>'
+# Assembled by concatenation so no line runs past 120 characters (BCS1201).
+declare -- AUDIO_ICON='<svg class="audio-icon" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"'
+AUDIO_ICON+=' width="1em" height="1em" aria-hidden="true" focusable="false">'
+AUDIO_ICON+='<path d="M3 9v6h4l5 4V5L7 9H3z" fill="currentColor"/>'
+AUDIO_ICON+='<path d="M15.5 8.5a4 4 0 0 1 0 7" fill="none" stroke="currentColor"'
+AUDIO_ICON+=' stroke-width="1.8" stroke-linecap="round"/>'
+AUDIO_ICON+='</svg>'
+readonly AUDIO_ICON
 
 # Images are recompressed to JPEG at build time (source PNGs stay untouched). The
 # watercolours are painterly, so lossy JPEG is far smaller than lossless PNG at the
@@ -134,16 +139,30 @@ declare -ir JPEG_QUALITY=80
 # (the root sign in "√dhṛ"), which previously fell back to Georgia.
 declare -r FONT_LIB="$BOOK_ROOT"/lib/fonts.sh
 [[ -f $FONT_LIB ]] \
-  || { >&2 echo "✗ missing font library ${FONT_LIB@Q}"; exit 1; }
+  || { >&2 echo "✗ missing font library ${FONT_LIB@Q}"; exit 3; }
 #shellcheck source=../lib/fonts.sh source-path=SCRIPTDIR
 source "$FONT_LIB" \
   || { >&2 echo "✗ failed to source ${FONT_LIB@Q}"; exit 1; }
 
-# Simplified die(): always exits 1. Intentional deviation from the BCS
-# die(code, msg...) contract -- this build script has no callers that
-# distinguish failure codes.
-die() { >&2 echo "✗ $*"; exit 1; }
-info() { >&2 echo "◉ $*"; }
+# Script-scope state, declared before any function (BCS0105).
+# VERBOSE gates info(); --quiet clears it.
+# TMP_DIR is the build workspace, created in main(). Script scope so the EXIT
+# trap (installed before mktemp) can clean it: an EXIT trap fires after main
+# returns, by which point a function-local would be out of scope under `set -u`.
+# BUILT holds the artefacts this run actually produced, appended as each build
+# completes and read by the publish step.
+declare -i VERBOSE=1
+declare -- TMP_DIR=''
+declare -a BUILT=()
+
+# Messaging (BCS0703). warn() and error() are unconditional; die() takes the
+# exit code first (BCS0602): 2 usage, 3 missing file, 5 I/O failure,
+# 18 missing dependency, 22 invalid argument.
+_msg()  { >&2 printf '%s: %s %s\n' "$SCRIPT_NAME" "$1" "${*:2}"; }
+info()  { ((VERBOSE)) || return 0; _msg '◉' "$@"; }
+warn()  { _msg '▲' "$@"; }
+error() { _msg '✗' "$@"; }
+die()   { (($# < 2)) || error "${@:2}"; exit "${1:-0}"; }
 
 # Help text (to stdout: it is requested output, not a diagnostic).
 show_help() {
@@ -180,18 +199,10 @@ Options:
                    bonanova       Bona Nova body, Open Sans SemiBold headings
                    bonanova-solo  Bona Nova throughout, headings in its Bold
   -h, --help     Show this help and exit.
+  -q, --quiet    Suppress progress messages (warnings and errors still show).
   -V, --version  Show version and exit.
 HELP
 }
-
-# Build workspace, created in main(). Declared at script scope so the EXIT trap
-# (installed before mktemp) can clean it: an EXIT trap fires after main returns,
-# by which point a function-local would be out of scope under `set -u`.
-declare -- tmp=''
-
-# Artefacts this run actually produced, appended as each build completes and
-# read by the publish step.
-declare -a BUILT=()
 
 # Mirror pandoc's auto-identifier algorithm for a heading: downcase, drop
 # punctuation (keeping underscore, hyphen, period), spaces to hyphens, strip
@@ -246,9 +257,13 @@ slugify() {
 #     Markdown link *target* would break that link -- no current source has one.
 preprocess() {
   local -- src=$1
+  # The <image r 40 "src" "alt" "cap"> shortcode, as an ERE. Built in two steps
+  # so no line runs past 120 characters (BCS1201).
+  local -- sp='[[:space:]]'
+  local -- img_re="<image$sp+[a-z]+$sp+[0-9]+$sp+\"([^\"]*)\"$sp+\"([^\"]*)\"$sp+\"[^\"]*\"$sp*>"
   awk 'NR==1 && $0=="---"{fm=1; next} fm && $0=="---"{fm=0; next} !fm{print}' "$src" \
     | sed -E \
-        -e 's#<image[[:space:]]+[a-z]+[[:space:]]+[0-9]+[[:space:]]+"([^"]*)"[[:space:]]+"([^"]*)"[[:space:]]+"[^"]*"[[:space:]]*>#![\2](\1)#' \
+        -e "s#$img_re#![\\2](\\1)#" \
         -e 's#\]\(/images/#](images/#g' \
         -e 's#\.(webp|png)\)#.jpg)#g' \
         -e 's#<br[[:space:]]*/?>#<br/>#g' \
@@ -290,7 +305,7 @@ audio_block() {
       printf '<a class="audio-url" href="%s">Audio: %s</a>' "$url" "$shown"
       printf '</p>\n'
       ;;
-    *) die "internal: audio_block called with bad mode ${mode@Q}" ;;
+    *) die 1 "internal: audio_block called with bad mode ${mode@Q}" ;;
   esac
 }
 
@@ -299,13 +314,13 @@ audio_block() {
 # headings (## and deeper) are not matched, and only the first H1 is touched.
 splice_after_h1() {
   local -- file=$1 block=$2
-  local -- t
-  t=$(mktemp -p "${file%/*}") || die "failed to create temp file beside ${file@Q}"
+  local -- tmp_file
+  tmp_file=$(mktemp -p "${file%/*}") || die 5 "failed to create temp file beside ${file@Q}"
   awk -v blk="$block" '
     !done && /^# / { print; print ""; print blk; print ""; done=1; next }
     { print }
-  ' "$file" >"$t" || die "failed to rewrite ${file@Q}"
-  mv -- "$t" "$file" || die "failed to update ${file@Q}"
+  ' "$file" >"$tmp_file" || die 5 "failed to rewrite ${file@Q}"
+  mv -- "$tmp_file" "$file" || die 5 "failed to update ${file@Q}"
 }
 
 # Standard Ebooks-style semantic inflection: set an epub:type on a section by
@@ -317,8 +332,8 @@ splice_after_h1() {
 # first H1 is touched. See https://standardebooks.org/manual (semantic inflection).
 inflect_h1() {
   local -- file=$1 etype=$2
-  local -- t
-  t=$(mktemp -p "${file%/*}") || die "failed to create temp file beside ${file@Q}"
+  local -- tmp_file
+  tmp_file=$(mktemp -p "${file%/*}") || die 5 "failed to create temp file beside ${file@Q}"
   awk -v et="$etype" '
     !done && /^# / {
       if ($0 ~ /\{[^}]*\}[[:space:]]*$/) {
@@ -329,8 +344,8 @@ inflect_h1() {
       done=1
     }
     { print }
-  ' "$file" >"$t" || die "failed to rewrite ${file@Q}"
-  mv -- "$t" "$file" || die "failed to update ${file@Q}"
+  ' "$file" >"$tmp_file" || die 5 "failed to rewrite ${file@Q}"
+  mv -- "$tmp_file" "$file" || die 5 "failed to update ${file@Q}"
 }
 
 # Inject EPUB Accessibility 1.1 / schema.org metadata into a finished EPUB's OPF.
@@ -346,14 +361,16 @@ inject_accessibility_metadata() {
   # Work under the caller's already-trapped temp dir, so it is cleaned on any
   # exit/signal without this function owning a second trap.
   local -- work
-  work=$(mktemp -d -p "$tmpdir") || die 'failed to create EPUB work dir'
-  ( cd -- "$work" && unzip -q -- "$epub" ) || die "failed to unpack EPUB: $epub"
+  work=$(mktemp -d -p "$tmpdir") || die 5 'failed to create EPUB work dir'
+  ( cd -- "$work" && unzip -q -- "$epub" ) || die 5 "failed to unpack EPUB: $epub"
   local -- opf
   opf=$(find "$work" -name '*.opf' -print -quit)
-  [[ -f $opf ]] || die "OPF not found inside ${epub@Q}"
+  [[ -f $opf ]] || die 3 "OPF not found inside ${epub@Q}"
 
   local -- meta
-  meta=$(cat <<'META'
+  # Unquoted so the long summary line can be \-continued (BCS1201); the body
+  # contains nothing the shell would expand.
+  meta=$(cat <<META
     <meta property="schema:accessMode">textual</meta>
     <meta property="schema:accessMode">visual</meta>
     <meta property="schema:accessModeSufficient">textual</meta>
@@ -361,26 +378,28 @@ inject_accessibility_metadata() {
     <meta property="schema:accessibilityFeature">readingOrder</meta>
     <meta property="schema:accessibilityFeature">alternativeText</meta>
     <meta property="schema:accessibilityHazard">none</meta>
-    <meta property="schema:accessibilitySummary">Terbitan ini mengikuti urutan baca teks yang linear dengan daftar isi yang dapat dinavigasi. Ilustrasinya berupa gambar dekoratif bergaya cat air yang disertai teks alternatif, dan buku ini tidak mengandung bahaya kilatan cahaya, gerakan, maupun suara.</meta>
+    <meta property="schema:accessibilitySummary">Terbitan ini mengikuti urutan baca teks yang linear \
+dengan daftar isi yang dapat dinavigasi. Ilustrasinya berupa gambar dekoratif bergaya cat air yang \
+disertai teks alternatif, dan buku ini tidak mengandung bahaya kilatan cahaya, gerakan, maupun suara.</meta>
 META
 )
   # Splice the block in just before </metadata>.
-  local -- t
-  t=$(mktemp -p "${opf%/*}") || die "failed to create temp file beside ${opf@Q}"
+  local -- tmp_file
+  tmp_file=$(mktemp -p "${opf%/*}") || die 5 "failed to create temp file beside ${opf@Q}"
   awk -v ins="$meta" '/<\/metadata>/ && !done { print ins; done=1 } { print }' \
-    "$opf" >"$t" || die "failed to rewrite ${opf@Q}"
-  mv -- "$t" "$opf" || die "failed to update ${opf@Q}"
+    "$opf" >"$tmp_file" || die 5 "failed to rewrite ${opf@Q}"
+  mv -- "$tmp_file" "$opf" || die 5 "failed to update ${opf@Q}"
 
   # Repackage: mimetype first and stored, everything else deflated. zip cannot
   # take `--` before the archive name, and after it `--` would turn the
   # `-x mimetype` exclude into literal operands -- both operand sets here are
   # constants ($epub is script-derived, absolute), so the calls stay as-is.
-  rm -f -- "$epub" || die "failed to remove ${epub@Q} before repackaging"
+  rm -f -- "$epub" || die 5 "failed to remove ${epub@Q} before repackaging"
   ( cd -- "$work" \
     && zip -X -0 -q "$epub" mimetype \
     && zip -X -9 -rq "$epub" . -x mimetype ) \
-    || die "failed to repackage EPUB ${epub@Q}"
-  rm -rf -- "$work" || die 'failed to clean EPUB work dir'
+    || die 5 "failed to repackage EPUB ${epub@Q}"
+  rm -rf -- "$work" || die 5 'failed to clean EPUB work dir'
 }
 
 main() {
@@ -393,39 +412,41 @@ main() {
     case $1 in
       -h|--help)
         show_help; exit 0 ;;
+      -q|--quiet)
+        VERBOSE=0 ;;
       -V|--version)
         printf '%s %s\n' "$SCRIPT_NAME" "$VERSION"; exit 0 ;;
       epub|pdf|all)
         target=$1 ;;
       --audio)
-        [[ -n ${2:-} ]] || die '--audio requires a value (none|link|embed)'
+        [[ -n ${2:-} ]] || die 2 '--audio requires a value (none|link|embed)'
         shift
         audio_mode=$1 ;;
       --audio=*)
         audio_mode=${1#*=} ;;
       --fonts)
-        [[ -n ${2:-} ]] || die "--fonts requires a value (${FONT_SETS[*]})"
+        [[ -n ${2:-} ]] || die 2 "--fonts requires a value (${FONT_SETS[*]})"
         shift
         font_set=$1 ;;
       --fonts=*)
         font_set=${1#*=} ;;
       *)
-        die "usage: $SCRIPT_NAME [epub|pdf|all] [--audio none|link|embed] [--fonts SET]" ;;
+        die 2 "usage: $SCRIPT_NAME [epub|pdf|all] [--audio none|link|embed] [--fonts SET]" ;;
     esac
     shift
   done
   case $audio_mode in
     none|link|embed) ;;
-    *) die "invalid --audio ${audio_mode@Q} (want: none|link|embed)" ;;
+    *) die 22 "invalid --audio ${audio_mode@Q} (want: none|link|embed)" ;;
   esac
   # Embedded audio is an EPUB-only, Releases-only artefact; a PDF cannot play it.
   if [[ $audio_mode == embed && $target != epub ]]; then
-    die "audio embed only applies to the EPUB; use: $SCRIPT_NAME epub --audio embed"
+    die 22 "audio embed only applies to the EPUB; use: $SCRIPT_NAME epub --audio embed"
   fi
 
   # Load the typeface set, then re-derive the output names from its suffix. The
   # default set has an empty suffix, so the shipping filenames are unchanged.
-  font_set_load "$font_set" "$BOOK_ROOT"/fonts || exit 1
+  font_set_load "$font_set" "$BOOK_ROOT"/fonts || die 22
   OUTPUT=${OUTPUT_BASE%.epub}$FONT_SUFFIX.epub
   OUTPUT_PDF=${OUTPUT%.epub}.pdf
   OUTPUT_AUDIO=${OUTPUT%.epub}_with-audio.epub
@@ -433,22 +454,23 @@ main() {
   [[ -z $FONT_SUFFIX ]] || info "font set: $font_set ($FONT_COLOPHON_EN)"
   local -r target audio_mode
 
-  command -v pandoc >/dev/null 2>&1 || die 'pandoc not found (apt install pandoc)'
-  command -v convert >/dev/null 2>&1 || die "ImageMagick 'convert' not found (apt install imagemagick)"
+  command -v pandoc &>/dev/null || die 18 'pandoc not found (apt install pandoc)'
+  command -v convert &>/dev/null || die 18 "ImageMagick 'convert' not found (apt install imagemagick)"
   # rsync mirrors the finished artefacts to the remote host in the deploy step.
-  command -v rsync >/dev/null 2>&1 || die 'rsync not found (apt install rsync)'
-  [[ $target == epub ]] || command -v weasyprint >/dev/null 2>&1 \
-    || die 'weasyprint not found, needed for PDF (apt install weasyprint)'
+  command -v rsync &>/dev/null || die 18 'rsync not found (apt install rsync)'
+  [[ $target == epub ]] || command -v weasyprint &>/dev/null \
+    || die 18 'weasyprint not found, needed for PDF (apt install weasyprint)'
   # zip/unzip repackage the EPUB after injecting accessibility metadata (EPUB only).
   if [[ $target != pdf ]]; then
-    command -v zip >/dev/null 2>&1 || die 'zip not found (apt install zip)'
-    command -v unzip >/dev/null 2>&1 || die 'unzip not found (apt install unzip)'
+    command -v zip &>/dev/null || die 18 'zip not found (apt install zip)'
+    command -v unzip &>/dev/null || die 18 'unzip not found (apt install unzip)'
   fi
-  [[ -f $COVER_IMAGE ]] || die "cover image missing ${COVER_IMAGE@Q}"
+  [[ -f $COVER_IMAGE ]] || die 3 "cover image missing ${COVER_IMAGE@Q}"
   local -- font
   for font in "${FONT_FILES[@]}"; do
     [[ -f $font ]] \
-      || die "font missing ${font@Q} (vendored sets live under ../fonts/; Lato comes from the system: sudo apt install fonts-lato)"
+      || die 3 "font missing ${font@Q}" \
+               '(vendored sets live under ../fonts/; Lato comes from the system: sudo apt install fonts-lato)'
   done
   # Sanity-check the canonical MP3s before building. embed must have them locally
   # (they get bundled) -> hard fail. link only points at the web URL, so a missing
@@ -459,11 +481,11 @@ main() {
     for an in {0..9}; do
       [[ -f "$AUDIO_SRC_DIR/$an-$AUDIO_STEM.mp3" ]] && continue ||:
       [[ $audio_mode == embed ]] \
-        && die "audio missing '$AUDIO_SRC_DIR/$an-$AUDIO_STEM.mp3'" ||:
+        && die 3 "audio missing '$AUDIO_SRC_DIR/$an-$AUDIO_STEM.mp3'" ||:
       missing+=" $an"
     done
     [[ -z $missing ]] \
-      || info "local MP3s absent (${missing# }); links still resolve via ${AUDIO_BASE_URL@Q}"
+      || warn "local MP3s absent (${missing# }); links still resolve via ${AUDIO_BASE_URL@Q}"
   fi
 
   # Assemble the source list: cover first, then essays 0..9 by numeric prefix.
@@ -472,45 +494,45 @@ main() {
   local -a match
   for n in {0..9}; do
     match=("$SCRIPT_DIR/$n"-*.md)
-    (( ${#match[@]} == 1 )) || die "expected exactly one file for essay $n, found ${#match[@]}"
-    [[ -f ${match[0]} ]] || die "essay $n source not found: ${match[0]}"
+    (( ${#match[@]} == 1 )) || die 3 "expected exactly one file for essay $n, found ${#match[@]}"
+    [[ -f ${match[0]} ]] || die 3 "essay $n source not found: ${match[0]}"
     sources+=("${match[0]}")
   done
 
   # Install the cleanup trap before creating the temp dir, so a signal landing
   # between the two cannot leak it. Single quotes defer expansion to exit time;
-  # the script-scope `tmp` (still '' here) makes the pre-mktemp window a harmless
+  # the script-scope `TMP_DIR` (still '' here) makes the pre-mktemp window a harmless
   # empty rm, and keeps it in scope when the EXIT trap fires after main returns.
-  trap 'rm -rf -- "$tmp"' EXIT
+  trap 'rm -rf -- "$TMP_DIR"' EXIT
   # Convert fatal signals into exits so the EXIT trap performs the cleanup
   # exactly once (a bare cleanup command in a signal trap would let the
   # script continue past the interrupt).
   trap 'exit 130' SIGINT
   trap 'exit 143' SIGTERM
-  tmp=$(mktemp -d) || die 'failed to create temp dir'
+  TMP_DIR=$(mktemp -d) || die 5 'failed to create temp dir'
 
-  # Stage JPEG copies of every source PNG under $tmp/img, mirroring the parent
+  # Stage JPEG copies of every source PNG under $TMP_DIR/img, mirroring the parent
   # tree's layout (images/ and images/png/) so the .png->.jpg link rewrites
   # resolve against --resource-path. The PNGs are shared with the English
   # edition and are never modified.
-  local -- img_stage="$tmp"/img
-  mkdir -p "$img_stage"/images/png || die "failed to create image staging dir ${img_stage@Q}"
+  local -- img_stage="$TMP_DIR"/img
+  mkdir -p "$img_stage"/images/png || die 5 "failed to create image staging dir ${img_stage@Q}"
   local -- png rel
   while IFS= read -r -d '' png; do
     rel=${png#"$BOOK_ROOT"/}
     convert -- "$png" -quality "$JPEG_QUALITY" "$img_stage/${rel%.png}.jpg" \
-      || die "image conversion failed ${png@Q}"
+      || die 5 "image conversion failed ${png@Q}"
   done < <(find "$BOOK_ROOT"/images -maxdepth 2 -name '*.png' -print0)
   # The cover is the id-local, pre-compressed JPEG (see COVER_IMAGE): staged
   # verbatim at the top of $img_stage. cover_rel is its path relative to
   # $img_stage, which the PDF cover plate uses as its markdown link.
   local -- cover_rel=${COVER_IMAGE##*/}
   local -- cover_jpg="$img_stage"/"$cover_rel"
-  cp -- "$COVER_IMAGE" "$cover_jpg" || die "failed to stage cover ${COVER_IMAGE@Q}"
+  cp -- "$COVER_IMAGE" "$cover_jpg" || die 5 "failed to stage cover ${COVER_IMAGE@Q}"
   # SVGs (the title-page ornament) are copied verbatim; EPUB3 and weasyprint
   # both render them natively, and they are tiny.
   cp -- "$BOOK_ROOT"/images/*.svg "$img_stage"/images/ \
-    || die 'failed to stage SVG images'
+    || die 5 'failed to stage SVG images'
 
   # Preprocess into ordered temp files (00-, 01-, ...) to preserve chapter order.
   # Chapters are cover(=0), then essays 0..9 at indices 1..10, so essay index i
@@ -519,8 +541,8 @@ main() {
   local -i i=0
   local -- src dst block
   for src in "${sources[@]}"; do
-    printf -v dst '%s/%02d-%s' "$tmp" "$i" "${src##*/}"
-    preprocess "$src" >"$dst" || die "preprocessing failed for ${src@Q}"
+    printf -v dst '%s/%02d-%s' "$TMP_DIR" "$i" "${src##*/}"
+    preprocess "$src" >"$dst" || die 1 "preprocessing failed for ${src@Q}"
     if [[ $audio_mode != none ]] && ((i >= 1)); then
       block=$(audio_block "$((i - 1))" "$audio_mode")
       splice_after_h1 "$dst" "$block"
@@ -534,13 +556,13 @@ main() {
   # always places the TOC at the very front of the flow. Entries link to each
   # chapter's H1 via its pandoc auto-identifier (see slugify). The Kata
   # Pengantar entry is italic, the rest render in small caps (see .contents CSS).
-  local -- contents="$tmp"/contents.md
+  local -- contents="$TMP_DIR"/contents.md
   {
     printf '<div align="center">\n\n# Daftar Isi {.unlisted .contents}\n\n'
     local -- h1 label
     local -i k=0
     for dst in "${inputs[@]:1}"; do
-      h1=$(grep -m1 '^# ' "$dst") || die "no H1 found in $dst"
+      h1=$(grep -m1 '^# ' "$dst") || die 3 "no H1 found in $dst"
       label=${h1#\# }
       if (( k == 0 )); then
         printf '*[%s](#%s)*\n\n' "$label" "$(slugify "$label")"
@@ -550,7 +572,7 @@ main() {
       k+=1
     done
     printf '</div>\n'
-  } >"$contents" || die "failed to write ${contents@Q}"
+  } >"$contents" || die 5 "failed to write ${contents@Q}"
   inputs=("${inputs[0]}" "$contents" "${inputs[@]:1}")
 
   # Standard Ebooks-style semantic inflection. inputs is now
@@ -566,7 +588,7 @@ main() {
 
   # A colophon, closing the book (backmatter), in the same centred house style as
   # the title page: production credits and the licence, per Standard Ebooks.
-  local -- colophon="$tmp"/colophon.md
+  local -- colophon="$TMP_DIR"/colophon.md
   {
     printf '<div align="center">\n\n'
     printf '# Kolofon {.unlisted}\n\n'
@@ -574,20 +596,32 @@ main() {
     printf '%s\n\n' "$SUBTITLE"
     printf 'oleh **%s**\n\n' "$AUTHOR"
     printf '<br/>\n\n'
-    printf 'Buku elektronik ini ditata dari Markdown dengan pandoc, dalam %s. Sampul dan ilustrasi bab adalah gambar bergaya cat air yang dihasilkan dengan [AI:grok-imagine-image-quality](https://docs.x.ai/developers/models/grok-imagine-image-quality), dari prompt yang ditulis, diolah, dan dipilih oleh penulis.\n\n' "$FONT_COLOPHON_ID"
-    printf 'Catatan riset disusun dengan bantuan [AI:fable-5](https://www.anthropic.com/claude-fable-5-mythos-5-system-card), [AI:opus-5](https://www.anthropic.com/claude-opus-5-system-card), [AI:sonnet-5](https://www.anthropic.com/claude-sonnet-5-system-card), [AI:glm-5.2](https://huggingface.co/zai-org/GLM-5.2), [AI:gpt-5.6](https://deploymentsafety.openai.com/gpt-5-6/gpt-5-6.pdf), serta [basis pengetahuan Applied Anthropology](https://github.com/Open-Technology-Foundation/appliedanthropology).\n\n'
+    # One sentence per printf so no line runs past 120 characters (BCS1201);
+    # the output is a single paragraph.
+    printf 'Buku elektronik ini ditata dari Markdown dengan pandoc, dalam %s. ' "$FONT_COLOPHON_ID"
+    printf 'Sampul dan ilustrasi bab adalah gambar bergaya cat air yang dihasilkan dengan '
+    printf '[AI:grok-imagine-image-quality](https://docs.x.ai/developers/models/grok-imagine-image-quality), '
+    printf 'dari prompt yang ditulis, diolah, dan dipilih oleh penulis.\n\n'
+    printf 'Catatan riset disusun dengan bantuan '
+    printf '[AI:fable-5](https://www.anthropic.com/claude-fable-5-mythos-5-system-card), '
+    printf '[AI:opus-5](https://www.anthropic.com/claude-opus-5-system-card), '
+    printf '[AI:sonnet-5](https://www.anthropic.com/claude-sonnet-5-system-card), '
+    printf '[AI:glm-5.2](https://huggingface.co/zai-org/GLM-5.2), '
+    printf '[AI:gpt-5.6](https://deploymentsafety.openai.com/gpt-5-6/gpt-5-6.pdf), '
+    printf 'serta [basis pengetahuan Applied Anthropology]'
+    printf '(https://github.com/Open-Technology-Foundation/appliedanthropology).\n\n'
     printf '<br/>\n\n'
     printf 'Karya ini dilisensikan di bawah %s.\n\n' "$LICENSE_NAME"
     printf '<%s>\n\n' "$LICENSE_URL"
     printf '</div>\n'
-  } >"$colophon" || die "failed to write ${colophon@Q}"
+  } >"$colophon" || die 5 "failed to write ${colophon@Q}"
   inflect_h1 "$colophon" 'backmatter colophon'
   inputs+=("$colophon")
 
   # EPUB package metadata pandoc will merge in (dc:* elements). A stable
   # identifier, the licence as dc:rights, and the subjects. Accessibility
   # metadata is injected separately after the build (pandoc drops schema:* here).
-  local -- meta_xml="$tmp"/epub-meta.xml
+  local -- meta_xml="$TMP_DIR"/epub-meta.xml
   {
     printf '<dc:identifier id="uid">%s</dc:identifier>\n' "$IDENTIFIER"
     printf '<dc:rights>Dilisensikan di bawah %s. %s</dc:rights>\n' \
@@ -596,7 +630,7 @@ main() {
     for subj in "${SUBJECTS[@]}"; do
       printf '<dc:subject>%s</dc:subject>\n' "$subj"
     done
-  } >"$meta_xml" || die "failed to write ${meta_xml@Q}"
+  } >"$meta_xml" || die 5 "failed to write ${meta_xml@Q}"
 
   # Stylesheet: bind the embedded faces to their families and apply them. The
   # @font-face rules come from ../lib/fonts.sh so the selected set drives both
@@ -604,21 +638,27 @@ main() {
   # lives under EPUB/styles/, so the src url() is one directory up.
   #
   # The body rules are written with an unquoted heredoc so the family names and
-  # sizes interpolate -- safe because the CSS below contains no $, backtick or
-  # backslash. font-weight on the headings is explicit rather than left to the
+  # sizes interpolate; the only backslashes are line continuations, which an
+  # unquoted heredoc joins (BCS1201), and it contains no $ or backtick of its
+  # own. font-weight on the headings is explicit rather than left to the
   # renderer's bold default: a set whose heading face is SemiBold (weight 600)
   # would otherwise be asked for 700 and get a synthesised heavier face.
-  local -- css="$tmp"/book.css
-  font_faces_css epub >"$css" || die "failed to write ${css@Q}"
-  cat >>"$css" <<CSS || die "failed to write ${css@Q}"
-body{font-family:"$FONT_SERIF_FAMILY",Georgia,serif;font-size:$FONT_BODY_SIZE_EPUB;line-height:$FONT_BODY_LEADING;text-align:justify;-webkit-hyphens:auto;-epub-hyphens:auto;hyphens:auto;orphans:2;widows:2}
+  local -- css="$TMP_DIR"/book.css
+  font_faces_css epub >"$css" || die 5 "failed to write ${css@Q}"
+  cat >>"$css" <<CSS || die 5 "failed to write ${css@Q}"
+body{font-family:"$FONT_SERIF_FAMILY",Georgia,serif;font-size:$FONT_BODY_SIZE_EPUB;\
+line-height:$FONT_BODY_LEADING;text-align:justify;\
+-webkit-hyphens:auto;-epub-hyphens:auto;hyphens:auto;orphans:2;widows:2}
 a{color:#0b295a}
-h1,h2,h3,h4,h5,h6{font-family:"$FONT_SANS_FAMILY","DejaVu Sans",sans-serif;font-weight:$FONT_HEADING_WEIGHT;line-height:1.2;text-align:left;-webkit-hyphens:none;-epub-hyphens:none;hyphens:none}
+h1,h2,h3,h4,h5,h6{font-family:"$FONT_SANS_FAMILY","DejaVu Sans",sans-serif;\
+font-weight:$FONT_HEADING_WEIGHT;line-height:1.2;text-align:left;\
+-webkit-hyphens:none;-epub-hyphens:none;hyphens:none}
 h1{font-size:2em;margin:1em 0 0.6em}
 h2{font-size:1.133em;margin:1.2em 0 0.4em}
 h3{font-size:1.2em;margin:1em 0 0.3em}
 [data-align="center"]{text-align:center}
-[data-align="center"] h1,[data-align="center"] h2,[data-align="center"] h3,[data-align="center"] h4,[data-align="center"] h5,[data-align="center"] h6{text-align:center}
+[data-align="center"] h1,[data-align="center"] h2,[data-align="center"] h3,\
+[data-align="center"] h4,[data-align="center"] h5,[data-align="center"] h6{text-align:center}
 .pagebreak{break-before:page;page-break-before:always}
 .dlig{font-variant-ligatures:discretionary-ligatures;font-feature-settings:"dlig" 1}
 .copyright{font-size:0.8em}
@@ -668,28 +708,28 @@ CSS
         --metadata author="$AUTHOR" \
         --metadata lang="$LANGUAGE" \
         --metadata date="$PUB_DATE" \
-        --metadata toc-title="Daftar Isi" \
+        --metadata toc-title='Daftar Isi' \
         --epub-cover-image="$cover_jpg" \
         --css="$css" \
         "${font_args[@]}" \
         --resource-path="$resource_path" \
         -o "$epub_out" \
-        "${inputs[@]}" ) || die 'pandoc EPUB build failed'
-    inject_accessibility_metadata "$epub_out" "$tmp"
+        "${inputs[@]}" ) || die 1 'pandoc EPUB build failed'
+    inject_accessibility_metadata "$epub_out" "$TMP_DIR"
     BUILT+=("$epub_out")
     info "done: $epub_out ($(du -h --apparent-size "$epub_out" | cut -f1))"
     # Validate: epubcheck is the arbiter of EPUB conformance. Fail the build on
     # any error so a broken artefact is never shipped. ace (DAISY accessibility
     # checker) is run only if installed, as an informational pass.
-    if command -v epubcheck >/dev/null 2>&1; then
+    if command -v epubcheck &>/dev/null; then
       info 'validating with epubcheck'
-      epubcheck "$epub_out" || die "epubcheck reported errors in ${epub_out@Q}"
+      epubcheck "$epub_out" || die 1 "epubcheck reported errors in ${epub_out@Q}"
     else
-      info 'epubcheck not found; skipping validation (apt install epubcheck)'
+      warn 'epubcheck not found; skipping validation (apt install epubcheck)'
     fi
-    if command -v ace >/dev/null 2>&1; then
+    if command -v ace &>/dev/null; then
       info 'running DAISY ace accessibility check'
-      ace -o "$tmp"/ace "$epub_out" || info 'ace reported issues (informational)'
+      ace -o "$TMP_DIR"/ace "$epub_out" || info 'ace reported issues (informational)'
     fi
   fi
 
@@ -702,12 +742,13 @@ CSS
     # Open Sans at all, since none of them is installed system-wide. weasyprint
     # resolves image URLs relative to the CWD, so this pandoc runs from the
     # staged image dir.
-    local -- pdf_css="$tmp"/pdf.css
-    font_faces_css pdf >"$pdf_css" || die "failed to write ${pdf_css@Q}"
-    cat >>"$pdf_css" <<CSS || die "failed to write ${pdf_css@Q}"
+    local -- pdf_css="$TMP_DIR"/pdf.css
+    font_faces_css pdf >"$pdf_css" || die 5 "failed to write ${pdf_css@Q}"
+    cat >>"$pdf_css" <<CSS || die 5 "failed to write ${pdf_css@Q}"
 body{font-family:"$FONT_SERIF_FAMILY",Georgia,serif;font-size:$FONT_BODY_SIZE_PDF;line-height:$FONT_BODY_LEADING}
 a{color:#0b295a}
-h1,h2,h3,h4,h5,h6{font-family:"$FONT_SANS_FAMILY","DejaVu Sans",sans-serif;font-weight:$FONT_HEADING_WEIGHT;line-height:1.2}
+h1,h2,h3,h4,h5,h6{font-family:"$FONT_SANS_FAMILY","DejaVu Sans",sans-serif;\
+font-weight:$FONT_HEADING_WEIGHT;line-height:1.2}
 h1{font-size:2em;margin:1em 0 0.6em;break-before:page}
 h2{font-size:1.133em;margin:1.2em 0 0.4em}
 h3{font-size:1.2em;margin:1em 0 0.3em}
@@ -731,9 +772,9 @@ section.contents em a{font-variant:normal}
 CSS
     # The EPUB gets the watercolour via --epub-cover-image; the PDF has no such
     # option, so a dedicated cover-plate page is prepended ahead of the title page.
-    local -- plate="$tmp"/00-cover-plate.md
+    local -- plate="$TMP_DIR"/00-cover-plate.md
     # No explicit pagebreak needed: the title page's own h1 carries break-before:page.
-    printf '![](%s)\n' "$cover_rel" >"$plate" || die "failed to write ${plate@Q}"
+    printf '![](%s)\n' "$cover_rel" >"$plate" || die 5 "failed to write ${plate@Q}"
     info "building PDF from $(( ${#inputs[@]} + 1 )) files -> $OUTPUT_PDF"
     ( cd -- "$img_stage" && pandoc \
         --from=markdown-yaml_metadata_block \
@@ -744,7 +785,7 @@ CSS
         --metadata lang="$LANGUAGE" \
         --css="$pdf_css" \
         -o "$OUTPUT_PDF" \
-        "$plate" "${inputs[@]}" ) || die 'pandoc PDF build failed'
+        "$plate" "${inputs[@]}" ) || die 1 'pandoc PDF build failed'
     BUILT+=("$OUTPUT_PDF")
     info "done: $OUTPUT_PDF ($(du -h --apparent-size "$OUTPUT_PDF" | cut -f1))"
   fi
@@ -765,20 +806,20 @@ CSS
     info "publish skipped: ${FONT_SUFFIX#_} is a proof set, not the shipping edition"
     return 0
   fi
-  ((${#BUILT[@]})) || die 'publish: nothing was built'
+  ((${#BUILT[@]})) || die 1 'publish: nothing was built'
   local -a artefacts=("${BUILT[@]}")
   if [[ -z $PUBLISH_DIR ]]; then
     info 'publish skipped: PUBLISH_DIR unset (see deploy.conf.example)'
     return 0
   fi
-  cp -- "${artefacts[@]}" "$PUBLISH_DIR"/ || die "deploy failed: cp to ${PUBLISH_DIR@Q}"
+  cp -- "${artefacts[@]}" "$PUBLISH_DIR"/ || die 1 "deploy failed: cp to ${PUBLISH_DIR@Q}"
   if [[ -n $PUBLISH_OWNER ]]; then
-    chown -R -- "$PUBLISH_OWNER" "$PUBLISH_DIR" || die 'deploy failed: chown'
+    chown -R -- "$PUBLISH_OWNER" "$PUBLISH_DIR" || die 1 'deploy failed: chown'
   fi
-  chmod -- 664 "$PUBLISH_DIR"/* || die 'deploy failed: chmod'
+  chmod -- 664 "$PUBLISH_DIR"/* || die 1 'deploy failed: chmod'
   if [[ -n $DEPLOY_HOST ]]; then
     rsync -av --timeout=300 -- "${artefacts[@]}" "$DEPLOY_HOST":"$DEPLOY_DIR"/ \
-      || die 'deploy failed: rsync to remote host'
+      || die 1 'deploy failed: rsync to remote host'
   else
     info 'remote mirror skipped: DEPLOY_HOST unset'
   fi
