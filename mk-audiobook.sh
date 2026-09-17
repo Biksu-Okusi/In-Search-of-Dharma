@@ -1,13 +1,18 @@
 #!/bin/bash
-# mk-audiobook.sh - Build the single-file "In Search of Dharma" audiobook MP3.
+# mk-audiobook.sh - Build the single-file "In Search of Dharma" audiobook, as
+# an MP3 and as an M4B.
 #
 #   ./mk-audiobook.sh [-g SECONDS] [-G FILE]
 #
 # Concatenates the spoken cover plus chapters 0..9 (one TTS-narrated MP3 each,
-# read straight from the garydean.id web-root) into one audiobook MP3, embeds
-# the lettered cover art as ID3v2 front-cover picture, tags it with the
-# book's bibliographic metadata, and writes ID3v2 chapter markers (CHAP
-# frames) so podcast and audiobook players can list and jump to sections.
+# read straight from the garydean.id web-root) into one audiobook, embeds the
+# lettered cover art, tags it with the book's bibliographic metadata, and
+# writes chapter markers so podcast and audiobook players can list and jump to
+# sections. Two containers are built from the same playlist, cover and markers:
+#   .mp3  ID3v2 front-cover picture and CHAP frames; plays everywhere.
+#   .m4b  MP4 audiobook (cover atom, chapter track, media type "audiobook"):
+#         the format Apple Books and dedicated audiobook players expect, with
+#         resume-position and sleep-timer support that a bare MP3 lacks.
 # Chapter titles come from the first H1 of each essay's Markdown source
 # alongside this script; each marker starts on the first sample of its
 # narration (the preceding gap/chime belongs to the chapter before it).
@@ -27,10 +32,13 @@
 #     -af afade=t=out:st=3.4:d=0.6 -c:a libmp3lame -b:a 32k gong-bowl.mp3
 #
 # All source MP3s come from the same TTS pipeline (MP3, 24 kHz mono, ~32 kbps),
-# so the audio is stream-copied (-c:a copy) — a bit-perfect join with no
-# re-encode. The ffmpeg mp3 muxer rewrites the Xing header on close, so the
-# joined file reports the correct total duration. The build is atomic: output
-# is assembled in a temp file and moved into place only on success.
+# so the MP3 audiobook is stream-copied (-c:a copy) — a bit-perfect join with
+# no re-encode. The ffmpeg mp3 muxer rewrites the Xing header on close, so the
+# joined file reports the correct total duration. The M4B cannot be copied:
+# players that take the format expect AAC inside it, so it is encoded from the
+# same playlist (AAC-LC, 24 kHz mono, M4B_BITRATE). The build is atomic: both
+# outputs are assembled in temp files and moved into place only once both have
+# succeeded, so the pair on the web-root always comes from one run.
 set -euo pipefail
 shopt -s inherit_errexit
 
@@ -38,7 +46,7 @@ shopt -s inherit_errexit
 # locations only.
 declare -rx PATH=/usr/local/bin:/usr/bin:/bin
 
-declare -r VERSION=1.4.0
+declare -r VERSION=1.5.0
 #shellcheck disable=SC2155
 declare -r SCRIPT_PATH=$(realpath -- "$0")
 declare -r SCRIPT_DIR=${SCRIPT_PATH%/*} SCRIPT_NAME=${SCRIPT_PATH##*/}
@@ -50,7 +58,12 @@ declare -r PUB_YEAR=2026
 declare -r AUDIO_SRC_DIR=/var/www/vhosts/garydean.id/html/audio
 declare -r AUDIO_STEM=in-search-of-dharma
 declare -r COVER_IMAGE=$SCRIPT_DIR/images/defining-dharma-cover-title.png
-declare -r OUTPUT=$AUDIO_SRC_DIR/In-Search-of-Dharma_Biksu-Okusi_${PUB_YEAR}_audiobook.mp3
+declare -r OUTPUT_BASE=$AUDIO_SRC_DIR/In-Search-of-Dharma_Biksu-Okusi_${PUB_YEAR}_audiobook
+declare -r OUTPUT_MP3=$OUTPUT_BASE.mp3 OUTPUT_M4B=$OUTPUT_BASE.m4b
+# The M4B is a second lossy generation over the ~32 kbps MP3 sources, so it is
+# given headroom rather than a matching bitrate, to keep the two encodes from
+# compounding their artefacts.
+declare -r M4B_BITRATE=48k
 
 # Track order: spoken cover first, then chapters 0..9.
 declare -a SOURCES=("$AUDIO_SRC_DIR/In-Search-of-Dharma_cover.mp3")
@@ -83,13 +96,14 @@ trap 'cleanup $?' SIGINT SIGTERM EXIT
 
 usage() {
   cat <<USAGE
-$SCRIPT_NAME $VERSION - build the '$TITLE' audiobook MP3
+$SCRIPT_NAME $VERSION - build the '$TITLE' audiobook (MP3 and M4B)
 
 Usage: $SCRIPT_NAME [OPTIONS]
 
 Joins ${#SOURCES[@]} chapter MP3s from $AUDIO_SRC_DIR
-into $OUTPUT
-with embedded cover art, ID3v2 tags, and per-section chapter markers.
+into $OUTPUT_MP3
+ and $OUTPUT_M4B
+each with embedded cover art, tags, and per-section chapter markers.
 
 Options:
   -g|--gap SECONDS   silence inserted between sections (default $GAP; 0 disables
@@ -254,8 +268,17 @@ make_playlist() {
   [[ -z $GONG ]] || PLAYLIST+=("$spacer")
 }
 
+# Move a finished temp file into the web-root, group-readable by the server.
+install_output() {
+  local -- tmp=$1 out=$2
+  mv -- "$tmp" "$out" || die 1 "failed to install ${out@Q}"
+  chgrp www-data -- "$out" || die 1 "failed to set group on ${out@Q}"
+  chmod 664 -- "$out" || die 1 "failed to set mode on ${out@Q}"
+}
+
 build_audiobook() {
-  local -- list chapters gap_desc='no gap' tmp_out=$WORK_DIR/audiobook.mp3
+  local -- list chapters gap_desc='no gap'
+  local -- tmp_mp3=$WORK_DIR/audiobook.mp3 tmp_m4b=$WORK_DIR/audiobook.m4b
   if [[ -n $GONG ]]; then
     gap_desc="${GAP}s gong gaps, gong bookends"
   elif ((GAP > 0)); then
@@ -265,49 +288,74 @@ build_audiobook() {
   list=$(write_concat_list "${PLAYLIST[@]}") || die 1 'failed to build concat list'
   chapters=$(write_chapters_meta) || die 1 'failed to build chapter metadata'
 
-  info "joining ${#SOURCES[@]} tracks (stream copy, $gap_desc) with embedded cover and chapter markers"
+  # Shared by both containers, so their audio timeline, cover and chapter
+  # markers cannot drift apart. Input 0 is the joined audio, 1 the cover,
+  # 2 the chapter markers.
+  local -a inputs=(
+    -f concat -safe 0 -i "$list"
+    -i "$COVER_IMAGE"
+    -f ffmetadata -i "$chapters"
+    -map 0:a -map 1:v
+    -map_chapters 2
+  )
+  local -a tags=(
+    -metadata title="$TITLE"
+    -metadata artist="$AUTHOR"
+    -metadata album_artist="$AUTHOR"
+    -metadata album="$TITLE"
+    -metadata date="$PUB_YEAR"
+    -metadata genre=Audiobook
+  )
+
+  info "joining ${#SOURCES[@]} tracks (stream copy, $gap_desc) into the MP3, with cover and chapter markers"
   ffmpeg -hide_banner -loglevel error -y \
-    -f concat -safe 0 -i "$list" \
-    -i "$COVER_IMAGE" \
-    -f ffmetadata -i "$chapters" \
-    -map 0:a -map 1:v \
-    -map_chapters 2 \
+    "${inputs[@]}" \
     -c:a copy -c:v copy \
     -disposition:v attached_pic \
     -id3v2_version 3 \
-    -metadata title="$TITLE" \
-    -metadata artist="$AUTHOR" \
-    -metadata album_artist="$AUTHOR" \
-    -metadata album="$TITLE" \
-    -metadata date="$PUB_YEAR" \
-    -metadata genre=Audiobook \
+    "${tags[@]}" \
     -metadata:s:v title='Album cover' \
     -metadata:s:v comment='Cover (front)' \
-    "$tmp_out" || die 1 'ffmpeg join failed'
+    "$tmp_mp3" || die 1 'ffmpeg MP3 join failed'
 
-  mv -- "$tmp_out" "$OUTPUT" || die 1 "failed to install ${OUTPUT@Q}"
-  chgrp www-data -- "$OUTPUT" || die 1 "failed to set group on ${OUTPUT@Q}"
-  chmod 664 -- "$OUTPUT" || die 1 "failed to set mode on ${OUTPUT@Q}"
+  # The .m4b extension selects ffmpeg's ipod muxer, which writes the cover atom
+  # and both chapter forms (Nero chpl and the QuickTime chapter track Apple
+  # Books reads). media_type=2 is the iTunes "audiobook" kind; +faststart moves
+  # the index to the front of the file so it plays while still downloading.
+  info "encoding the same playlist into the M4B (AAC $M4B_BITRATE)"
+  ffmpeg -hide_banner -loglevel error -y \
+    "${inputs[@]}" \
+    -c:a aac -b:a "$M4B_BITRATE" -c:v copy \
+    -disposition:v attached_pic \
+    -movflags +faststart \
+    "${tags[@]}" \
+    -metadata media_type=2 \
+    "$tmp_m4b" || die 1 'ffmpeg M4B encode failed'
+
+  install_output "$tmp_mp3" "$OUTPUT_MP3"
+  install_output "$tmp_m4b" "$OUTPUT_M4B"
 }
 
+# Verify and describe one finished output: its chapter-marker count must match
+# the number of source tracks, whichever container carries them.
 report() {
-  local -- duration size hms
+  local -- output=$1 duration size hms
   local -i seconds nchapters
   duration=$(ffprobe -v error -show_entries format=duration \
-    -of default=noprint_wrappers=1:nokey=1 -- "$OUTPUT") \
-    || die 1 "ffprobe failed on ${OUTPUT@Q}"
+    -of default=noprint_wrappers=1:nokey=1 -- "$output") \
+    || die 1 "ffprobe failed on ${output@Q}"
   seconds=${duration%.*}
-  nchapters=$(ffprobe -v error -show_chapters -of csv=p=0 -- "$OUTPUT" \
-    | grep -c .) || die 1 "chapter probe failed on ${OUTPUT@Q}"
+  nchapters=$(ffprobe -v error -show_chapters -of csv=p=0 -- "$output" \
+    | grep -c .) || die 1 "chapter probe failed on ${output@Q}"
   ((nchapters == ${#SOURCES[@]})) \
-    || die 1 "expected ${#SOURCES[@]} chapter markers, found $nchapters"
+    || die 1 "expected ${#SOURCES[@]} chapter markers in ${output@Q}, found $nchapters"
   # stat, not du: on delayed-allocation filesystems du under-reports a file
   # written moments ago.
-  size=$(stat -c %s -- "$OUTPUT" | numfmt --to=iec) \
-    || die 1 "failed to stat ${OUTPUT@Q}"
+  size=$(stat -c %s -- "$output" | numfmt --to=iec) \
+    || die 1 "failed to stat ${output@Q}"
   printf -v hms '%dh%02dm%02ds' \
     $((seconds / 3600)) $(((seconds % 3600) / 60)) $((seconds % 60))
-  success "built ${OUTPUT@Q}"
+  success "built ${output@Q}"
   info "  duration $hms, size $size, $nchapters chapter markers"
 }
 
@@ -338,7 +386,8 @@ main() {
   check_prerequisites
   WORK_DIR=$(mktemp -d) || die 1 'failed to create work directory'
   build_audiobook
-  report
+  report "$OUTPUT_MP3"
+  report "$OUTPUT_M4B"
 }
 
 main "$@"

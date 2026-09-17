@@ -2,7 +2,7 @@
 # mk-book.sh - Build "In Search of Dharma" (EPUB and/or PDF) from cover.md +
 # essays 0..9 + the companion essay the-better-ones.md as appendix.
 #
-#   ./mk-book.sh [epub|pdf|all] [--audio none|link|embed]   (defaults: all, link)
+#   ./mk-book.sh [epub|pdf|all] [--audio none|link]   (defaults: all, link)
 #
 # Audio narration (one MP3 per chapter, 0..9) is referenced at the top of each
 # chapter. Modes (--audio):
@@ -11,11 +11,9 @@
 #          URL instead (invisible hyperlinks are useless on paper, so a print
 #          reader gets a typable address). Tiny output; needs a network
 #          connection at read-time.
-#   embed  the MP3s are bundled inside the EPUB (~61 MB; EPUB target only,
-#          distribute via GitHub Releases). Output gets a _with-audio suffix.
 #   none   no narration reference at all.
-# The canonical MP3s are read straight from the web-root; they are never copied
-# into the repository.
+# The canonical MP3s live under the web-root and are only ever linked to; they
+# are never bundled into the book or copied into the repository.
 #
 # Preprocesses each source Markdown file (strips YAML frontmatter, converts the
 # custom `<image r 40 "src" "alt" "cap">` shortcode into a standard Markdown
@@ -36,7 +34,7 @@ shopt -s inherit_errexit
 # must resolve from system locations only.
 declare -rx PATH=/usr/local/bin:/usr/bin:/bin
 
-declare -r VERSION=1.1.0
+declare -r VERSION=1.2.0
 #shellcheck disable=SC2155
 declare -r SCRIPT_PATH=$(realpath -- "$0")
 declare -r SCRIPT_DIR=${SCRIPT_PATH%/*} SCRIPT_NAME=${SCRIPT_PATH##*/}
@@ -66,20 +64,18 @@ declare -r COVER_IMAGE="$SCRIPT_DIR"/images/defining-dharma-cover-title.png
 # over the back art by images/defining-dharma-genback.sh. Re-run that script
 # after editing the blurb. It closes the book as its final page.
 declare -r BACK_IMAGE="$SCRIPT_DIR"/images/defining-dharma-back-text.png
-# OUTPUT_BASE is the shipping filename; the three artefact paths are derived
+# OUTPUT_BASE is the shipping filename; the two artefact paths are derived
 # from it in main() once the typeface set is known, because a non-default set
 # suffixes them (see --fonts). Derived at run time, so not readonly.
 declare -r OUTPUT_BASE="$SCRIPT_DIR"/In-Search-of-Dharma_Biksu-Okusi_2026.epub
 declare -- OUTPUT=$OUTPUT_BASE
 declare -- OUTPUT_PDF="${OUTPUT%.epub}".pdf
-declare -- OUTPUT_AUDIO="${OUTPUT%.epub}"_with-audio.epub
 
 # Chapter narration. One MP3 per chapter, named N-<stem>.mp3 (N = 0..9), living
 # canonically under the garydean.id web-root and served from AUDIO_BASE_URL. The
-# embed build reads them via --resource-path=AUDIO_WEBROOT (so "audio/N-...mp3"
-# resolves); nothing is copied into the repo.
+# build only links to them; AUDIO_SRC_DIR is read solely to warn when a local
+# copy is absent.
 declare -r AUDIO_SRC_DIR=/var/www/vhosts/garydean.id/html/audio
-declare -r AUDIO_WEBROOT=${AUDIO_SRC_DIR%/audio}
 declare -r AUDIO_BASE_URL=https://garydean.id/audio
 declare -r AUDIO_STEM=in-search-of-dharma
 
@@ -171,7 +167,7 @@ show_help() {
 $SCRIPT_NAME $VERSION - build "$TITLE" as an EPUB3 and/or PDF.
 
 Usage:
-  $SCRIPT_NAME [epub|pdf|all] [--audio none|link|embed] [--fonts SET]
+  $SCRIPT_NAME [epub|pdf|all] [--audio none|link] [--fonts SET]
   $SCRIPT_NAME -h|--help
   $SCRIPT_NAME -V|--version
 
@@ -184,8 +180,6 @@ Options:
   --audio MODE   Per-chapter audio narration reference (default: link):
                    link   hyperlink to the web-hosted MP3s. The EPUB shows a
                           "Listen" link; the PDF shows the URL. Default.
-                   embed  bundle the MP3s in the EPUB (EPUB target only;
-                          output gets a _with-audio suffix)
                    none   no narration reference
   --fonts SET    Typeface set (default: ${FONT_SETS[0]}). Any set other than the
                  default writes its output with a matching filename suffix and
@@ -280,34 +274,21 @@ preprocess() {
         -e 's#f?fj#<span class="dlig">&</span>#g'
 }
 
-# Emit the audio player/link for chapter n (0..9) in the requested mode, to be
-# spliced in just below the chapter's H1. Nothing is emitted for mode=none.
-#   embed -> raw XHTML <audio> whose <source src> pandoc bundles into the EPUB
-#   link  -> a raw <p> carrying two anchors to the same MP3: a friendly "Listen"
-#            label and the bare URL. book.css/pdf.css each hide the one they don't
-#            want (EPUB shows the label, PDF shows the URL a print reader can type),
-#            so the shared chapter file feeds both formats without duplication.
+# Emit the audio link for chapter n (0..9), to be spliced in just below the
+# chapter's H1: a raw <p> carrying two anchors to the same MP3, a friendly
+# "Listen" label and the bare URL. book.css/pdf.css each hide the one they don't
+# want (EPUB shows the label, PDF shows the URL a print reader can type), so the
+# shared chapter file feeds both formats without duplication. The caller skips
+# this entirely for --audio none.
 audio_block() {
   local -i n=$1
-  local -- mode=$2
-  local -- url shown
-  case $mode in
-    embed)
-      printf '<audio controls="controls" preload="none">\n'
-      printf '<source src="audio/%d-%s.mp3" type="audio/mpeg"/>\n' "$n" "$AUDIO_STEM"
-      printf '</audio>\n'
-      ;;
-    link)
-      url="$AUDIO_BASE_URL/$n-$AUDIO_STEM.mp3"
-      shown="Part $n: $TITLE"
-      printf '<p class="audio">'
-      printf '%s' "$AUDIO_ICON"
-      printf '<a class="audio-listen" href="%s">Listen to this chapter (audio narration)</a>' "$url"
-      printf '<a class="audio-url" href="%s">Audio: %s</a>' "$url" "$shown"
-      printf '</p>\n'
-      ;;
-    *) die 1 "internal: audio_block called with bad mode ${mode@Q}" ;;
-  esac
+  local -- url="$AUDIO_BASE_URL/$n-$AUDIO_STEM.mp3"
+  local -- shown="Part $n: $TITLE"
+  printf '<p class="audio">'
+  printf '%s' "$AUDIO_ICON"
+  printf '<a class="audio-listen" href="%s">Listen to this chapter (audio narration)</a>' "$url"
+  printf '<a class="audio-url" href="%s">Audio: %s</a>' "$url" "$shown"
+  printf '</p>\n'
 }
 
 # Splice $block into $file immediately after its first level-1 heading (^# ),
@@ -400,8 +381,7 @@ META
 }
 
 main() {
-  # Defaults: both formats, narration linked rather than embedded (the embed
-  # build is a deliberate release step), the shipping typeface set.
+  # Defaults: both formats, narration linked, the shipping typeface set.
   local -- target=all
   local -- audio_mode=link
   local -- font_set=${FONT_SETS[0]}
@@ -416,7 +396,7 @@ main() {
       epub|pdf|all)
         target=$1 ;;
       --audio)
-        [[ -n ${2:-} ]] || die 2 '--audio requires a value (none|link|embed)'
+        [[ -n ${2:-} ]] || die 2 '--audio requires a value (none|link)'
         shift
         audio_mode=$1 ;;
       --audio=*)
@@ -428,26 +408,21 @@ main() {
       --fonts=*)
         font_set=${1#*=} ;;
       *)
-        die 2 "usage: $SCRIPT_NAME [epub|pdf|all] [--audio none|link|embed] [--fonts SET]" ;;
+        die 2 "usage: $SCRIPT_NAME [epub|pdf|all] [--audio none|link] [--fonts SET]" ;;
     esac
     shift
   done
   case $audio_mode in
-    none|link|embed) ;;
-    *) die 22 "invalid --audio ${audio_mode@Q} (want: none|link|embed)" ;;
+    none|link) ;;
+    *) die 22 "invalid --audio ${audio_mode@Q} (want: none|link)" ;;
   esac
-  # Embedded audio is an EPUB-only, Releases-only artefact; a PDF cannot play it.
-  if [[ $audio_mode == embed && $target != epub ]]; then
-    die 22 "audio embed only applies to the EPUB; use: $SCRIPT_NAME epub --audio embed"
-  fi
 
   # Load the typeface set, then re-derive the output names from its suffix. The
   # default set has an empty suffix, so the shipping filenames are unchanged.
   font_set_load "$font_set" "$SCRIPT_DIR"/fonts || die 22
   OUTPUT=${OUTPUT_BASE%.epub}$FONT_SUFFIX.epub
   OUTPUT_PDF=${OUTPUT%.epub}.pdf
-  OUTPUT_AUDIO=${OUTPUT%.epub}_with-audio.epub
-  readonly OUTPUT OUTPUT_PDF OUTPUT_AUDIO
+  readonly OUTPUT OUTPUT_PDF
   [[ -z $FONT_SUFFIX ]] || info "font set: $font_set ($FONT_COLOPHON_EN)"
 
   command -v pandoc &>/dev/null || die 18 'pandoc not found (apt install pandoc)'
@@ -469,17 +444,14 @@ main() {
       || die 3 "font missing ${font@Q}" \
                '(vendored sets live under fonts/; Lato comes from the system: sudo apt install fonts-lato)'
   done
-  # Sanity-check the canonical MP3s before building. embed must have them locally
-  # (they get bundled) -> hard fail. link only points at the web URL, so a missing
-  # local copy is a warning, not a failure (the URL is the source of truth).
+  # Sanity-check the canonical MP3s before building. The book only points at the
+  # web URL, so a missing local copy is a warning, not a failure (the URL is the
+  # source of truth).
   if [[ $audio_mode != none ]]; then
     local -i an
     local -- missing=''
     for an in {0..9}; do
-      [[ -f "$AUDIO_SRC_DIR/$an-$AUDIO_STEM.mp3" ]] && continue
-      [[ $audio_mode == embed ]] \
-        && die 3 "audio missing '$AUDIO_SRC_DIR/$an-$AUDIO_STEM.mp3'"
-      missing+=" $an"
+      [[ -f "$AUDIO_SRC_DIR/$an-$AUDIO_STEM.mp3" ]] || missing+=" $an"
     done
     [[ -z $missing ]] \
       || warn "local MP3s absent (${missing# }); links still resolve via ${AUDIO_BASE_URL@Q}"
@@ -542,7 +514,7 @@ main() {
 
   # Preprocess into ordered temp files (00-, 01-, ...) to preserve chapter order.
   # Chapters are cover(=0), then essays 0..9 at indices 1..10, so essay index i
-  # carries audio number i-1. The cover (i=0) never gets an audio player, and
+  # carries audio number i-1. The cover (i=0) never gets an audio link, and
   # neither does the appendix (i=11): no narration exists for it.
   local -a inputs=()
   local -i i=0
@@ -569,7 +541,7 @@ main() {
         || die 1 "appendix headnote still present in ${dst@Q} (headnote wording changed in ${APPENDIX@Q}?)"
     fi
     if [[ $audio_mode != none ]] && ((i >= 1 && i <= 10)); then
-      block=$(audio_block "$((i - 1))" "$audio_mode")
+      block=$(audio_block "$((i - 1))")
       splice_after_h1 "$dst" "$block"
     fi
     inputs+=("$dst")
@@ -733,15 +705,7 @@ CSS
   done
 
   if [[ $target != pdf ]]; then
-    # For embedded audio, write the _with-audio output and add the web-root to the
-    # resource path so pandoc resolves (and bundles) each "audio/N-...mp3".
-    local -- epub_out=$OUTPUT
-    local -- resource_path=$img_stage
-    if [[ $audio_mode == embed ]]; then
-      epub_out=$OUTPUT_AUDIO
-      resource_path="$img_stage:$AUDIO_WEBROOT"
-    fi
-    info "building EPUB from ${#inputs[@]} files -> $epub_out"
+    info "building EPUB from ${#inputs[@]} files -> $OUTPUT"
     # markdown-yaml_metadata_block: metadata comes from --metadata/--epub-metadata,
     # and preprocess already strips frontmatter, so pandoc's YAML parsing is pure
     # liability -- with it on, the chapters' `---` thematic breaks get paired as
@@ -760,12 +724,12 @@ CSS
         --epub-cover-image="$cover_jpg" \
         --css="$css" \
         "${font_args[@]}" \
-        --resource-path="$resource_path" \
-        -o "$epub_out" \
+        --resource-path="$img_stage" \
+        -o "$OUTPUT" \
         "${inputs[@]}" ) || die 1 'pandoc EPUB build failed'
-    inject_accessibility_metadata "$epub_out" "$TMP_DIR"
-    BUILT+=("$epub_out")
-    info "done: $epub_out ($(du -h --apparent-size "$epub_out" | cut -f1))"
+    inject_accessibility_metadata "$OUTPUT" "$TMP_DIR"
+    BUILT+=("$OUTPUT")
+    info "done: $OUTPUT ($(du -h --apparent-size "$OUTPUT" | cut -f1))"
     # Validate: epubcheck is the arbiter of EPUB conformance. Fail the build on
     # any error so a broken artefact is never shipped. ace (DAISY accessibility
     # checker) is run only if installed, as an informational pass.
@@ -780,13 +744,13 @@ CSS
     fi
     if ((${#epubcheck_cmd[@]})); then
       info 'validating with epubcheck'
-      "${epubcheck_cmd[@]}" "$epub_out" || die 1 "epubcheck reported errors in ${epub_out@Q}"
+      "${epubcheck_cmd[@]}" "$OUTPUT" || die 1 "epubcheck reported errors in ${OUTPUT@Q}"
     else
       warn 'epubcheck not found; skipping validation (apt install epubcheck)'
     fi
     if command -v ace &>/dev/null; then
       info 'running DAISY ace accessibility check'
-      ace -o "$TMP_DIR"/ace "$epub_out" || info 'ace reported issues (informational)'
+      ace -o "$TMP_DIR"/ace "$OUTPUT" || info 'ace reported issues (informational)'
     fi
   fi
 

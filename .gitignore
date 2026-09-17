@@ -60,12 +60,9 @@ hf-dataset/
 pg-*.png
 9-defining-dharma_watercolor.v*
 
-# audio-embedded EPUB (~70 MB of bundled MP3s, over GitHub's 50 MB advisory
-# limit and near its 100 MB hard limit). Binaries do not delta-compress, so
-# every rebuild would add another full copy to the repository. Rebuild it with
-# `./mk-book.sh epub --audio embed` and distribute it as a GitHub Release
-# asset, per the note at the top of mk-book.sh. The plain EPUB and the PDF
-# stay tracked: they are small, and they are what the repository is read for.
+# audio-embedded EPUB (~70 MB of bundled MP3s). The `--audio embed` build was
+# retired from mk-book.sh in 1.2.0; the pattern stays so a copy left over from
+# an earlier build can never be committed by accident.
 *_with-audio.epub
 
 # typeface proofs (`./mk-book.sh --fonts SET` for any set but the default).

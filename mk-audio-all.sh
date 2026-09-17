@@ -1,7 +1,8 @@
 #!/bin/bash
 # mk-audio-all.sh - regenerate the chapter narrations (gentts over each part's
-# audio: frontmatter), rebuild the audiobook, and mirror the web-root audio
-# directory to the remote host.
+# audio: frontmatter), rebuild the audiobook (MP3 and M4B, via mk-audiobook.sh),
+# and mirror the web-root audio directory, both audiobooks included, to the
+# remote host.
 set -euo pipefail
 
 #shellcheck disable=SC2155
