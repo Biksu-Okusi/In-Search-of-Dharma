@@ -13,14 +13,47 @@ declare -i FAILED=0
 ok()   { printf '  ✓ %s\n' "$1"; }
 bad()  { printf '  ✗ %s\n' "$1"; FAILED+=1; }
 
-# Build a minimal conforming interior: 2 pages, 152x229mm, black text, blank
-# final page.
+# assert_fails DESC PDF PATTERN [CHECK_ARGS...]
+# Runs `pdfcheck check PDF CHECK_ARGS...`, expecting a non-zero exit whose
+# combined output contains PATTERN. Grepping for the specific failure tag,
+# not just a non-zero exit, proves the intended rule fired rather than some
+# unrelated rule the fixture also happens to break.
+assert_fails() {
+  local -- desc=$1 pdf=$2 pattern=$3
+  shift 3
+  local -- out
+  if out=$("$CHECK" check "$pdf" "$@" 2>&1); then
+    bad "$desc (check exited 0)"
+  elif [[ $out == *"$pattern"* ]]; then
+    ok "$desc"
+  else
+    bad "$desc (unexpected output: $out)"
+  fi
+}
+
+gs_gray() {
+  gs -q -dBATCH -dNOPAUSE -dSAFER -sDEVICE=pdfwrite -dProcessColorModel=/DeviceGray \
+     -sColorConversionStrategy=Gray -dCompatibilityLevel=1.6 -dSubsetFonts=true \
+     -dEmbedAllFonts=true -dAutoRotatePages=/None \
+     -sOutputFile="$2" "$1"
+}
+
+# Build a minimal conforming interior: N pages, 152x229mm, black text, blank
+# final page. Every page boundary is forced with break-before, not
+# break-after: WeasyPrint elides a trailing break-after with nothing
+# following it, which would silently collapse the intended page count (a
+# 3-page request rendering as 2 real pages, a 2-page request as 1).
 make_pdf() {
   local -- out=$1 size=${2:-152mm 229mm} colour=${3:-#000} pages=${4:-2}
   local -- html=$TMP/in.html body='' i
   for ((i = 1; i < pages; i += 1)); do
-    body+="<p>Page $i text.</p><p style=\"break-after:page\"></p>"
+    if ((i == 1)); then
+      body+="<p>Page $i text.</p>"
+    else
+      body+="<div style=\"break-before:page\"><p>Page $i text.</p></div>"
+    fi
   done
+  body+='<div style="break-before:page"></div>'
   cat >"$html" <<HTML
 <!doctype html><html lang="en"><head><meta charset="utf-8"><style>
 @font-face{font-family:BN;src:url(file://$(realpath "$ROOT")/fonts/bonanova/BonaNova-Regular.ttf)}
@@ -38,12 +71,10 @@ TMP=$(mktemp -d)
 echo '== pdfcheck =='
 
 make_pdf "$TMP/good.pdf"
-gs -q -dBATCH -dNOPAUSE -dSAFER -sDEVICE=pdfwrite -dProcessColorModel=/DeviceGray \
-   -sColorConversionStrategy=Gray -dCompatibilityLevel=1.6 -dSubsetFonts=true \
-   -dEmbedAllFonts=true -dAutoRotatePages=/None \
-   -sOutputFile="$TMP/good-gray.pdf" "$TMP/good.pdf"
+gs_gray "$TMP/good.pdf" "$TMP/good-gray.pdf"
 
 # measure reports the trim
+declare -- trim
 trim=$("$CHECK" measure "$TMP/good-gray.pdf" \
   | python3 -c 'import json,sys;w,h=json.load(sys.stdin)["trim_mm"];print(f"{w:.1f}x{h:.1f}")')
 [[ $trim == 152.0x229.0 ]] && ok "measure reports 152.0x229.0" || bad "measure reported $trim"
@@ -53,24 +84,97 @@ trim=$("$CHECK" measure "$TMP/good-gray.pdf" \
   && ok 'check accepts a conforming interior' \
   || bad 'check rejected a conforming interior'
 
-# check rejects an odd page count. --require-even is mandatory here: without it
-# the rule is never armed and this test would pass against a tool that does
-# nothing at all.
+# check rejects a genuinely odd page count. Confirmed with pdfinfo rather
+# than assumed from the fixture's parameters: WeasyPrint can collapse a
+# trailing page make_pdf() intended to emit, which would let this assertion
+# pass for the wrong reason (a tool whose --require-even does nothing would
+# still "pass" if the fixture were secretly even, or if colour failed
+# instead). gs-converted to grey so colour cannot be what fails here either.
 make_pdf "$TMP/odd.pdf" '152mm 229mm' '#000' 3
-"$CHECK" check "$TMP/odd.pdf" --require-even &>/dev/null \
-  && bad 'check accepted an odd page count' \
-  || ok 'check rejects an odd page count'
+declare -i odd_pages
+odd_pages=$(pdfinfo "$TMP/odd.pdf" | awk '/^Pages:/ {print $2}')
+if ((odd_pages % 2 == 0)); then
+  bad "odd.pdf fixture is not odd (pdfinfo reports $odd_pages pages)"
+fi
+gs_gray "$TMP/odd.pdf" "$TMP/odd-gray.pdf"
+assert_fails 'check rejects an odd page count' "$TMP/odd-gray.pdf" 'parity:' --require-even
 
 # check rejects the wrong trim
 make_pdf "$TMP/a4.pdf" 'A4'
-"$CHECK" check "$TMP/a4.pdf" &>/dev/null \
-  && bad 'check accepted the wrong trim size' \
-  || ok 'check rejects the wrong trim size'
+assert_fails 'check rejects the wrong trim size' "$TMP/a4.pdf" 'trim:'
 
 # check rejects RGB colour (WeasyPrint's native output, before the gs pass)
-"$CHECK" check "$TMP/good.pdf" &>/dev/null \
-  && bad 'check accepted non-grey colour' \
-  || ok 'check rejects non-grey colour'
+assert_fails 'check rejects non-grey colour' "$TMP/good.pdf" 'colour:'
+
+# check rejects a MediaBox carrying bleed and crop marks: WeasyPrint's own
+# bleed/marks CSS produces exactly the TrimBox-inside-a-larger-MediaBox
+# shape this rule exists to catch.
+cat >"$TMP/bleed.html" <<HTML
+<!doctype html><html lang="en"><head><meta charset="utf-8"><style>
+@font-face{font-family:BN;src:url(file://$(realpath "$ROOT")/fonts/bonanova/BonaNova-Regular.ttf)}
+@page{size:152mm 229mm;margin:25mm 20mm;bleed:3mm;marks:crop}
+body{font-family:BN;font-size:10pt;line-height:16pt;color:#000;margin:0}
+</style></head><body><p>Bleed test.</p></body></html>
+HTML
+weasyprint "$TMP/bleed.html" "$TMP/bleed.pdf" 2>/dev/null
+gs_gray "$TMP/bleed.pdf" "$TMP/bleed-gray.pdf"
+assert_fails 'check rejects a MediaBox with bleed/crop marks' "$TMP/bleed-gray.pdf" 'boxes:'
+
+# check rejects non-uniform page sizes (page 1 sized differently to the rest)
+cat >"$TMP/uneven.html" <<HTML
+<!doctype html><html lang="en"><head><meta charset="utf-8"><style>
+@font-face{font-family:BN;src:url(file://$(realpath "$ROOT")/fonts/bonanova/BonaNova-Regular.ttf)}
+@page{size:152mm 229mm;margin:25mm 20mm}
+@page:first{size:100mm 150mm}
+body{font-family:BN;font-size:10pt;line-height:16pt;color:#000;margin:0}
+</style></head><body><p>Page 1.</p><div style="break-before:page"><p>Page 2.</p></div></body></html>
+HTML
+weasyprint "$TMP/uneven.html" "$TMP/uneven.pdf" 2>/dev/null
+gs_gray "$TMP/uneven.pdf" "$TMP/uneven-gray.pdf"
+assert_fails 'check rejects non-uniform page sizes' "$TMP/uneven-gray.pdf" 'not uniform'
+
+# check --require-blank-last rejects a non-blank final page
+cat >"$TMP/nonblanklast.html" <<HTML
+<!doctype html><html lang="en"><head><meta charset="utf-8"><style>
+@font-face{font-family:BN;src:url(file://$(realpath "$ROOT")/fonts/bonanova/BonaNova-Regular.ttf)}
+@page{size:152mm 229mm;margin:25mm 20mm}
+body{font-family:BN;font-size:10pt;line-height:16pt;color:#000;margin:0}
+</style></head><body><p>Page 1 text.</p><div style="break-before:page"><p>Page 2 text.</p></div></body></html>
+HTML
+weasyprint "$TMP/nonblanklast.html" "$TMP/nonblanklast.pdf" 2>/dev/null
+gs_gray "$TMP/nonblanklast.pdf" "$TMP/nonblanklast-gray.pdf"
+assert_fails 'check --require-blank-last rejects a non-blank final page' \
+  "$TMP/nonblanklast-gray.pdf" 'last-page:' --require-blank-last
+
+# check rejects a non-embedded font. Built directly with Ghostscript from a
+# one-line PostScript program referencing a bare base-14 name (Helvetica):
+# WeasyPrint always embeds whatever font it resolves, so producing a
+# genuinely unembedded font needs a tool that will not.
+cat >"$TMP/noembed.ps" <<'PS'
+%!PS
+<< /PageSize [430.866 649.134] >> setpagedevice
+/Helvetica findfont 24 scalefont setfont
+100 500 moveto (Hello) show
+showpage
+PS
+gs -q -dBATCH -dNOPAUSE -dSAFER -sDEVICE=pdfwrite -dEmbedAllFonts=false \
+   -sOutputFile="$TMP/noembed.pdf" "$TMP/noembed.ps"
+assert_fails 'check rejects a non-embedded font' "$TMP/noembed.pdf" 'is not embedded'
+
+# check rejects a colour image, and separately its low resolution: a 100x100
+# red square placed at 20mm is both RGB and, at ~127ppi, under the 300ppi
+# floor -- one fixture, two independent rule failures to grep for.
+convert -size 100x100 xc:red "$TMP/rgb.png"
+cat >"$TMP/rgbimg.html" <<HTML
+<!doctype html><html lang="en"><head><meta charset="utf-8"><style>
+@page{size:152mm 229mm;margin:25mm 20mm}
+body{margin:0}
+img{width:20mm;height:20mm}
+</style></head><body><img src="file://$TMP/rgb.png"></body></html>
+HTML
+weasyprint "$TMP/rgbimg.html" "$TMP/rgbimg.pdf" 2>/dev/null
+assert_fails 'check rejects a colour image' "$TMP/rgbimg.pdf" 'must be grayscale'
+assert_fails 'check rejects a low-resolution image' "$TMP/rgbimg.pdf" 'ppi, want'
 
 ((FAILED == 0)) || exit 1
 #fin
