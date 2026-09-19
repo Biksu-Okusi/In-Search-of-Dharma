@@ -43,7 +43,7 @@ print_geom_load() {
   PRINT_SUB_PT=12 PRINT_SRC_PT=9
   PRINT_TOP_MM=24.58 PRINT_BOT_MM=24.5
   PRINT_HEADPAD_MM=13.35 PRINT_FOLIOPAD_MM=6.80
-  PRINT_H1PAD_MM=55.34 PRINT_H1GAP_MM=39.21
+  PRINT_H1PAD_MM=55.34 PRINT_H1GAP_MM=39.46
   PRINT_DROP_FS=3.200 PRINT_DROP_LH=0.688
 }
 
@@ -68,10 +68,16 @@ print_page_css() {
 @page:blank{@top-left{content:none}@top-right{content:none}
   @bottom-left{content:none}@bottom-right{content:none}}
 @page chapopen{@top-left{content:none}@top-right{content:none}}
-@page front{
-  @bottom-left{content:counter(page,lower-roman)}
-  @bottom-right{content:counter(page,lower-roman)}
+@page firstbody{counter-reset:page 1;
   @top-left{content:none}@top-right{content:none}}
+@page front:left{@top-left{content:none}@top-right{content:none}
+  @bottom-right{content:none}
+  @bottom-left{content:counter(page,lower-roman);font:600 8pt/1 "$FONT_SANS_FAMILY";
+    vertical-align:top;padding-top:${PRINT_FOLIOPAD_MM}mm}}
+@page front:right{@top-left{content:none}@top-right{content:none}
+  @bottom-left{content:none}
+  @bottom-right{content:counter(page,lower-roman);font:600 8pt/1 "$FONT_SANS_FAMILY";
+    vertical-align:top;padding-top:${PRINT_FOLIOPAD_MM}mm}}
 
 html{font-family:"$FONT_SERIF_FAMILY",serif;font-size:${PRINT_SIZE_PT}pt;
   line-height:${PRINT_LEAD_PT}pt;color:#000;hyphens:auto;
@@ -96,16 +102,63 @@ p.attrib{text-indent:20mm;font:600 9pt/${PRINT_LEAD_PT}pt "$FONT_SANS_FAMILY"}
 .sources p{font-size:${PRINT_SRC_PT}pt}
 ul,ol{margin:${PRINT_LEAD_PT}pt 0;padding-left:8mm}
 
-h1+p::first-letter{float:left;font-size:${PRINT_DROP_FS}em;
+/* The two-line drop cap. It hangs on p.op, which lib/dropcap.py marks: a
+   chapter's opening paragraph is not the element after the h1, because the
+   watercolour and the epigraph come between them. */
+p.op .dc{float:left;font-size:${PRINT_DROP_FS}em;
   line-height:${PRINT_DROP_LH};padding:0 0.06em 0 0}
 .sc{font-variant-caps:small-caps;letter-spacing:0.02em}
 
 section.front{page:front}
-section.front h1{break-before:auto;page:front;padding-top:0;padding-bottom:${PRINT_LEAD_PT}pt}
-section.chapter:first-of-type{counter-reset:page 1}
+section.front h1{break-before:auto;page:front;padding-top:0;
+  padding-bottom:${PRINT_LEAD_PT}pt;margin-left:0;font-size:14pt}
+/* The arabic sequence restarts at the first chapter. ":first-of-type" cannot
+   do this: section.front is also a <section>, so it is the first of its type
+   and no .chapter element ever matches. mk-print.sh tags the first chapter. */
+/* The arabic sequence restarts at the first chapter, via a named page that
+   exists only to carry the reset. WeasyPrint ignores counter-reset:page on an
+   ELEMENT (verified: it renumbers nothing), and putting the reset on a shared
+   named page renumbers every page that uses it. A page name applied to just
+   the first chapter's h1 resets once, exactly where it should. */
+section.chapter.first > h1{page:firstbody}
+
+/* A printed page has no hyperlinks to follow, so underlines and link colour
+   are noise. The href is kept for the PDF's own sake. */
+a{text-decoration:none;color:inherit}
+
+/* pandoc's implicit_figures turns an image's alt text into a <figcaption>.
+   The alt text is accessibility copy for the EPUB, not a printed caption. */
+figcaption{display:none}
+
+/* Chapter watercolours: the source shortcode asks for 40% of the measure and
+   preprocess() drops that width, so it is restored here. PLACEMENT ON THE
+   OPENER IS STILL RAMSEY'S CALL (see the design spec, section 8): the art
+   currently falls where it lands in the flow. */
+section.chapter figure{margin:${PRINT_LEAD_PT}pt 0;break-inside:avoid}
+section.chapter figure img{max-width:42%}
+
+/* Each front-matter part takes its own page: half-title, title, imprint,
+   contents. Without this they flow together and the whole of the front matter
+   lands on page i. */
+section.front > div,section.front > nav{break-after:page}
+section.front .halftitle{padding-top:60mm}
+section.front .titlepage{padding-top:55mm;text-align:center}
+section.front .halftitle p,section.front .titlepage p{text-indent:0;text-align:center}
+section.front .ht-title{font:600 14pt/1.3 "$FONT_SANS_FAMILY"}
+section.front .tp-title{font:600 22pt/1.2 "$FONT_SANS_FAMILY";margin-bottom:6mm}
+section.front .tp-sub{font-style:italic;margin-bottom:24mm}
+section.front .tp-author{font:600 12pt/1.4 "$FONT_SANS_FAMILY";margin-bottom:3mm}
+section.front .tp-imprint{font:600 10pt/1.4 "$FONT_SANS_FAMILY"}
+section.front .imprint{padding-top:80mm;font-size:8.5pt;line-height:12pt}
+section.front .imprint p{text-indent:0;text-align:left;margin-bottom:6pt}
+section.front .imprint .placeholder{font:600 8.5pt/12pt "$FONT_SANS_FAMILY"}
 
 nav.contents a{text-decoration:none;color:#000}
 nav.contents a::after{content:leader('.') target-counter(attr(href), page)}
+/* The entries must not inherit the body's 10mm first-line indent: the leader
+   computes its fill against the un-indented line width, so an indent pushes
+   the page number past the measure and into the trim margin. */
+nav.contents p{text-indent:0;text-align:left}
 
 img{max-width:100%;height:auto;display:block;margin:0 auto}
 CSS

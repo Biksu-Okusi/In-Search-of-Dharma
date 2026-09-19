@@ -32,7 +32,7 @@ cat > "$TMP"/fixture.html <<'HTML'
 <!doctype html><html lang="en"><head><meta charset="utf-8">
 <link rel="stylesheet" href="print.css"></head><body>
 <section class="chapter"><h1>Preface</h1>
-<p class="op">Most books that refer to the word 'dharma' come from one of two
+<p class="op"><span class="dc">M</span><span class="sc">ost books</span> that refer to the word 'dharma' come from one of two
 places: a monastery or a university, or somewhere in their vicinity. A teacher
 hands down a lineage received from their own teacher, or a scholar maps the
 territory from a careful distance. This one comes from neither. It was written
@@ -65,7 +65,11 @@ assert_near() {
 
 echo '== print geometry =='
 assert_near title  "$(b 1 | jq -r '.lines[] | select(.text=="Preface") | .y_mm')"
-assert_near opener "$(b 1 | jq -r '[.lines[] | select(.text|startswith("ost"))][0].y_mm')"
+# The opening line is found by its small-caps lead-in, which lib/dropcap.py
+# emits as <span class="dc">M</span><span class="sc">ost books</span>. The
+# floated drop cap sits on its own baseline, so the line to measure is the one
+# carrying the lead-in text, not the cap.
+assert_near opener "$(b 1 | jq -r '[.lines[] | select(.text|startswith("ost books"))][0].y_mm')"
 assert_near head   "$(b 2 | jq -r '.lines[0].y_mm')"
 assert_near first  "$(b 2 | jq -r '.lines[1].y_mm')"
 assert_near folio  "$(b 2 | jq -r '.lines[-1].y_mm')"
