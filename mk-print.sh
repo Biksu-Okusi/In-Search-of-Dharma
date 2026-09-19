@@ -49,6 +49,9 @@ declare -r OUTPUT_PDF="$SCRIPT_DIR"/In-Search-of-Dharma_interior_152x229.pdf
 # Optional imprint copy from Tuwhiri. Absent, a deliberately visible placeholder
 # is set instead, so a proof cannot be sent without the omission being obvious.
 declare -r IMPRINT_SRC="$SCRIPT_DIR"/print-imprint.md
+# The Okusi mark, set on the rule above each chapter title in place of the
+# roundel Tuwhiri uses in its own books.
+declare -r LOGO_SRC="$SCRIPT_DIR"/images/dharma-eye.svg
 
 # Script-scope state, declared before any function (BCS0105).
 declare -i VERBOSE=1 KEEP_TEMP=0
@@ -143,6 +146,12 @@ stage_images() {
       || die 5 "greyscale conversion failed ${src@Q}"
   done < <(find "$SCRIPT_DIR"/images -maxdepth 2 \
              \( -name '*.webp' -o -name '*.png' \) -print0)
+  # The Okusi mark for chapter openers, in the house navy. A black-and-white
+  # interior wants 100% K, not a navy that the greyscale pass would render as
+  # a dark grey, so a blackened copy is staged. The source SVG is untouched.
+  [[ -f $LOGO_SRC ]] || die 3 "logo missing ${LOGO_SRC@Q}"
+  sed 's/#0b295a/#000000/g' "$LOGO_SRC" >"$stage"/images/"${LOGO_SRC##*/}" \
+    || die 5 "logo blackening failed ${LOGO_SRC@Q}"
 }
 
 # The four front-matter pages: half-title, title, imprint, contents. Roman

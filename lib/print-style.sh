@@ -85,7 +85,7 @@ html{font-family:"$FONT_SERIF_FAMILY",serif;font-size:${PRINT_SIZE_PT}pt;
   font-feature-settings:"lnum" 1,"liga" 1,"kern" 1}
 body{margin:0;string-set:booktitle "In search of dharma"}
 
-h1{page:chapopen;break-before:recto;margin:0 0 0 10mm;
+h1{page:chapopen;break-before:recto;margin:0 0 0 10mm;position:relative;
   font:600 20pt/1 "$FONT_SANS_FAMILY";
   padding-top:${PRINT_H1PAD_MM}mm;padding-bottom:${PRINT_H1GAP_MM}mm;
   string-set:chaptitle content()}
@@ -108,6 +108,19 @@ ul,ol{margin:${PRINT_LEAD_PT}pt 0;padding-left:8mm}
 p.op .dc{float:left;font-size:${PRINT_DROP_FS}em;
   line-height:${PRINT_DROP_LH};padding:0 0.06em 0 0}
 .sc{font-variant-caps:small-caps;letter-spacing:0.02em}
+
+/* The chapter-opener device, following Ramsey's marked-up recto: a hairline
+   vertical rule 32.5mm from the trim edge, running from 15mm below the trim
+   top down to just above the title, with the Okusi mark set on it. Tuwhiri's
+   own books put their roundel here.
+   Offsets are relative to the h1's border box, whose top is PRINT_TOP_MM from
+   the trim and whose left edge is the 25mm gutter plus the h1's own 10mm
+   indent. Openers are always recto, so the geometry never mirrors. */
+section.chapter h1::before{content:"";position:absolute;
+  left:-2.5mm;top:-9.58mm;width:0.4pt;height:71mm;background:#000}
+section.chapter h1::after{content:"";position:absolute;
+  left:-10.5mm;top:36.4mm;width:16mm;height:16mm;
+  background:url(images/dharma-eye.svg) no-repeat center/contain}
 
 section.front{page:front}
 section.front h1{break-before:auto;page:front;padding-top:0;
