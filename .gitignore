@@ -77,3 +77,15 @@ pg-*.png
 *_bonanova.pdf
 *_bonanova-solo.epub
 *_bonanova-solo.pdf
+
+# Printer's reference material from Tuwhiri: their book extract, IngramSpark's
+# file checklist, and Ramsey's marked-up typographic specs. Third-party
+# copyright, supplied for reference only. This repository is public, so none of
+# it may ever be committed. The measurements taken from these files live in
+# docs/superpowers/specs/2026-09-19-print-interior-pdf-design.md, which is the
+# durable record; the files themselves are disposable.
+print/
+
+# The print interior, rebuilt on demand from the sources like every other
+# artefact in this list.
+In-Search-of-Dharma_interior_*.pdf
