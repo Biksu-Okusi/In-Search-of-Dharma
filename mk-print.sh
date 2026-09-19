@@ -52,6 +52,12 @@ declare -r IMPRINT_SRC="$SCRIPT_DIR"/print-imprint.md
 # The Okusi mark, set on the rule above each chapter title in place of the
 # roundel Tuwhiri uses in its own books.
 declare -r LOGO_SRC="$SCRIPT_DIR"/images/dharma-eye.svg
+# Part watercolours in the printed interior. Off: in greyscale on a 107mm
+# measure they take a large part of an opener and earn little, and they
+# compete with the rule and the mark that open each chapter. The reading PDF
+# and the EPUB keep them, in colour. Set to 1 to put them back in print;
+# this flag is the only thing that needs changing.
+declare -ir PRINT_CHAPTER_ART=0
 
 # Script-scope state, declared before any function (BCS0105).
 declare -i VERBOSE=1 KEEP_TEMP=0
@@ -138,6 +144,7 @@ stage_images() {
   local -- stage=$1
   local -- src rel
   mkdir -p "$stage"/images || die 5 "failed to create image staging dir ${stage@Q}"
+  if ((PRINT_CHAPTER_ART)); then
   while IFS= read -r -d '' src; do
     rel=${src#"$SCRIPT_DIR"/}
     mkdir -p "$stage/${rel%/*}" || die 5 "failed to create ${stage@Q}/${rel%/*}"
@@ -146,6 +153,7 @@ stage_images() {
       || die 5 "greyscale conversion failed ${src@Q}"
   done < <(find "$SCRIPT_DIR"/images -maxdepth 2 \
              \( -name '*.webp' -o -name '*.png' \) -print0)
+  fi
   # The Okusi mark for chapter openers, in the house navy. A black-and-white
   # interior wants 100% K, not a navy that the greyscale pass would render as
   # a dark grey, so a blackened copy is staged. The source SVG is untouched.
@@ -287,6 +295,12 @@ main() {
     # The print interior carries no audio links: a hyperlink is useless on
     # paper, and the bare URL belongs to the reading PDF, not a printed book.
     sed -i '/^<p class="audio">/d' "$dst" || die 1 "audio strip failed for ${dst@Q}"
+    # Drop the Part watercolour unless PRINT_CHAPTER_ART is set. preprocess()
+    # has already turned the <image ...> shortcode into a standalone Markdown
+    # image on its own line, which is the only image any source carries.
+    ((PRINT_CHAPTER_ART)) \
+      || sed -i -E '/^!\[[^]]*\]\(images\/[^)]*\)$/d' "$dst" \
+      || die 1 "chapter-art strip failed for ${dst@Q}"
     title=$(sed -n 's/^# //p' "$dst" | head -1)
     [[ -n $title ]] || die 1 "no H1 heading found in ${dst@Q}"
     titles+=("$title")

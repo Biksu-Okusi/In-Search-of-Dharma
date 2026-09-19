@@ -221,7 +221,7 @@ other built artefacts.
 | Stage | Action |
 |-------|--------|
 | 1 | Preprocess sources via `lib/preprocess.sh` (shared with `mk-book.sh`) |
-| 2 | Convert the watercolours to greyscale with a tone curve (§8) |
+| 2 | Stage the Okusi mark in black; stage the watercolours only when PRINT_CHAPTER_ART is set (§8) |
 | 3 | Generate front matter: half-title, title, imprint, contents |
 | 4 | `pandoc` to one HTML5 document, one `<section>` per chapter |
 | 5 | Generate the print stylesheet from `lib/fonts.sh` + `lib/print-geom.sh` |
@@ -262,40 +262,31 @@ build refuses to emit a non-conforming PDF rather than relying on memory.
 
 ## 8. Images
 
-Decision taken: **keep the chapter watercolours, converted to greyscale.**
+Decision taken (2026-09-19, superseding the earlier one): **the Part
+watercolours do not appear in the printed interior.**
 
-A black-and-white IngramSpark interior requires greyscale images carrying no
-ICC profile and no spot colour. The watercolours are 1024 × 1024 sRGB, which at
-40% of the 107 mm measure is about 600 ppi, comfortably above the 300 ppi floor.
+They were first kept, converted to greyscale with a tone curve, and set at 70%
+of the measure under the chapter title. On the page that was the wrong call. In
+greyscale on a 107 mm measure a watercolour takes a large part of an opener and
+earns little, and it competes with the rule and the mark that open each
+chapter. The reading PDF and the EPUB keep them, in colour, unchanged.
 
-Plain desaturation flattens them. The build applies a gentle tone curve so the
-midtones survive press dot-gain:
+`mk-print.sh` carries a single flag, `PRINT_CHAPTER_ART`, default 0. Setting it
+to 1 restores both the greyscale staging and the images in the text; nothing
+else needs changing. The greyscale recipe is kept for that case:
 
 ```
--colorspace Gray -level 5%,95% -sigmoidal-contrast 3,50%
+-colorspace Gray -level 5%,95% -sigmoidal-contrast 3,50% -strip
 ```
 
-The greyscale conversion happens at stage 2, on the staged copies only. The
-source `.webp` files are untouched, and the EPUB and reading PDF keep their
-colour.
+Plain desaturation flattens a watercolour; the level and the sigmoidal curve
+restore the tonal separation that press dot-gain would otherwise close up.
+`-strip` removes the colour profile IngramSpark rejects. The source `.webp`
+files are never modified.
 
-### Placement
-
-A chapter opener has roughly 71 mm of white above the title, and the Tuwhiri
-device (a thin vertical rule carrying a small roundel) occupies it. Ramsey's
-markup replaces that roundel with the Okusi logo. The watercolour is a
-different kind of mark, and the two compete for the same zone.
-
-Default, to be settled on the first proof: **the watercolour sits in the
-opener's upper zone at 40% of the measure, centred, with the Okusi logo and
-rule retained above it at small size.** The title baseline stays at 87.59 mm
-regardless, so the watercolour's height is capped, not the other way round.
-
-▲ This is the one item in this design that cannot be settled by measurement.
-It needs Ramsey's eye on a printed proof, and it is the first question to put
-to him when proof 1 goes out.
-
----
+◉ With the art gone, the interior carries no raster images at all, so the
+preflight rules on image colour space and resolution have nothing to check.
+They stay armed for the flag's sake.
 
 ## 9. Dependencies on Tuwhiri
 
@@ -309,8 +300,8 @@ placeholders until each arrives.
    interior.
 4. **The Okusi logo** for chapter openers, replacing the Tuwhiri roundel, as a
    vector or a 300 ppi-equivalent raster.
-5. **Ramsey's decision on the chapter-opener watercolour** (§8, Placement), to
-   be put to him with proof 1.
+5. ~~Ramsey's decision on the chapter-opener watercolour.~~ Settled
+   2026-09-19: the art is out of the printed interior (§8).
 
 ---
 
