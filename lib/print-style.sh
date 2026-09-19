@@ -135,7 +135,14 @@ figcaption{display:none}
    OPENER IS STILL RAMSEY'S CALL (see the design spec, section 8): the art
    currently falls where it lands in the flow. */
 section.chapter figure{margin:${PRINT_LEAD_PT}pt 0;break-inside:avoid}
-section.chapter figure img{max-width:42%}
+section.chapter figure img{max-width:70%}
+/* The heading's bottom padding is calibrated for BODY TEXT following a title,
+   so that the first line lands on the model book's grid. When the chapter
+   watercolour follows instead, that padding is dead space and the art drifts
+   into the middle of an otherwise empty page. Pulling the figure back up sits
+   it under the title. Scoped to figures, so the calibrated grid is untouched
+   wherever body text does follow the title. */
+section.chapter h1 + figure{margin-top:-31.5mm}
 
 /* Each front-matter part takes its own page: half-title, title, imprint,
    contents. Without this they flow together and the whole of the front matter
