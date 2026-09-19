@@ -141,6 +141,16 @@ declare -r FONT_LIB="$SCRIPT_DIR"/lib/fonts.sh
 source "$FONT_LIB" \
   || { >&2 echo "✗ failed to source ${FONT_LIB@Q}"; exit 1; }
 
+# Source preprocessing lives in lib/preprocess.sh, which mk-print.sh sources
+# too: one set of sources, one reading of what they mean. It needs REPO_URL and
+# REPO_BLOB, declared above.
+declare -r PREPROCESS_LIB="$SCRIPT_DIR"/lib/preprocess.sh
+[[ -f $PREPROCESS_LIB ]] \
+  || { >&2 echo "✗ missing preprocessing library ${PREPROCESS_LIB@Q}"; exit 3; }
+#shellcheck source=lib/preprocess.sh
+source "$PREPROCESS_LIB" \
+  || { >&2 echo "✗ failed to source ${PREPROCESS_LIB@Q}"; exit 1; }
+
 # Script-scope state, declared before any function (BCS0105).
 # VERBOSE gates info(); --quiet clears it.
 # TMP_DIR is the build workspace, created in main(). Script scope so the EXIT
@@ -208,70 +218,6 @@ slugify() {
   s=${s// /-}
   while [[ -n $s && ! $s =~ ^[a-z] ]]; do s=${s:1}; done
   printf '%s' "$s"
-}
-
-# Convert one source file into pandoc-ready Markdown on stdout.
-#   - drop a leading YAML frontmatter block (--- ... ---)
-#   - <image ALIGN WIDTH "SRC" "ALT" "CAP"> -> ![ALT](SRC)
-#   - "/images/..." web-root path -> "images/..." on-disk path
-#   - image .webp/.png refs -> .jpg (build stages JPEG copies; see main)
-#   - self-close bare <br> (raw <br> is invalid XHTML -> fatal EPUB parse error)
-#   - drop obsolete <center> tags (not valid in EPUB3 XHTML; centring is done in
-#     CSS via <div align="center"> -> [data-align="center"])
-#   - a line containing only \newpage -> a hard page break (styled by .pagebreak)
-#   - a lone <!--\newpage--> marker -> the same page break, blank-line-surrounded
-#     so it forms its own raw-HTML block. (A raw <div>/<!-- --> directly abutting a
-#     preceding `---` becomes an HTML block that runs to the next blank line, which
-#     can swallow whole following chapters -> dropped headings, dangling TOC links.)
-#   - strip any other stray HTML comments (e.g. <!--audio start/stop--> narration
-#     markers); they render nothing and risk the same block-swallowing.
-#   - research-note links -> absolute REPO_BLOB URLs. The optional "../" prefix
-#     (Indonesian edition) is captured and dropped, so both editions produce the
-#     same valid URL. Anchoring on the leading digit scopes the rule to the eight
-#     category directories, and excluding ":" from the path means an
-#     already-absolute link can never be prefixed twice. External https targets
-#     do not trip epubcheck RSC-007, which governs dangling *internal* refs.
-#   - the repo-URL link in the "published on GitHub" line gains a trailing span
-#     carrying the bare URL, hidden in the EPUB and shown in the PDF (a hyperlink
-#     is useless on paper). Keyed on the URL, not the prose, so it works in both
-#     languages. Safe after the rule above, whose output ends in ".md)" and so
-#     cannot match a pattern requiring ")" straight after the repo name.
-#   - de-link /works/ prev-next nav, keeping the link text; those live outside the
-#     book and would otherwise be dangling references (epubcheck RSC-007).
-#   - spaced em dash " — " -> spaced en dash " – " (the typesetter's house style
-#     for the book; British/NZ practice). Sources keep their em dashes -- this is
-#     a book-build concern, not a change to the canonical essays. All source em
-#     dashes are the spaced form, so this one rule covers every occurrence.
-#   - "fj"/"ffj" -> wrapped in <span class="dlig"> so the stylesheets can switch
-#     on the OpenType dlig feature for just that sequence. EB Garamond keeps its
-#     f_j/f_f_j ligatures in dlig (off by default), unlike ff/fi/ffl which sit in
-#     liga, so "Klingefjord" otherwise prints with the f hook colliding with the
-#     j dot. Enabling dlig globally is not an option: it would also ligate Th,
-#     ct, st, ch, ck throughout. Harmless under a face with no f_j in dlig: the
-#     span then simply asks for a substitution the font does not offer. Caveat:
-#     the rule is textual, so an fj inside a Markdown link *target* would break
-#     that link -- no current source has one.
-preprocess() {
-  local -- src=$1
-  # The <image r 40 "src" "alt" "cap"> shortcode, as an ERE. Built in two steps
-  # so no line runs past 120 characters (BCS1201).
-  local -- sp='[[:space:]]'
-  local -- img_re="<image$sp+[a-z]+$sp+[0-9]+$sp+\"([^\"]*)\"$sp+\"([^\"]*)\"$sp+\"[^\"]*\"$sp*>"
-  awk 'NR==1 && $0=="---"{fm=1; next} fm && $0=="---"{fm=0; next} !fm{print}' "$src" \
-    | sed -E \
-        -e "s#$img_re#![\\2](\\1)#" \
-        -e 's#\]\(/images/#](images/#g' \
-        -e 's#\.(webp|png)\)#.jpg)#g' \
-        -e 's#<br[[:space:]]*/?>#<br/>#g' \
-        -e 's#</?center>##g' \
-        -e 's#^[[:space:]]*\\newpage[[:space:]]*$#<div class="pagebreak"></div>#' \
-        -e 's#^[[:space:]]*<!--[[:space:]]*\\?newpage[[:space:]]*-->[[:space:]]*$#\n<div class="pagebreak"></div>\n#' \
-        -e 's#<!--.*-->##g' \
-        -e "s#\]\((\.\./)?([0-9]-[^):]*\.md)\)#]($REPO_BLOB/\2)#g" \
-        -e "s#(\[[^]]+\]\($REPO_URL\))#\1<span class=\"repo-url\"> — $REPO_URL</span>#g" \
-        -e 's#\[([^]]+)\]\(/works/[^)]*\)#\1#g' \
-        -e 's# — # – #g' \
-        -e 's#f?fj#<span class="dlig">&</span>#g'
 }
 
 # Emit the audio link for chapter n (0..9), to be spliced in just below the
@@ -665,6 +611,10 @@ main() {
   local -- css="$TMP_DIR"/book.css
   font_faces_css epub >"$css" || die 5 "failed to write ${css@Q}"
   cat >>"$css" <<CSS || die 5 "failed to write ${css@Q}"
+/* Bona Nova defaults to oldstyle figures, whose 1 is easily taken for a
+   small-capital I. This book names Part 1 through Part 8 on almost every
+   page, so the figures are asked for lining. */
+body{font-variant-numeric:lining-nums;font-feature-settings:"lnum" 1,"liga" 1,"kern" 1}
 body{font-family:"$FONT_SERIF_FAMILY",Georgia,serif;font-size:$FONT_BODY_SIZE_EPUB;\
 line-height:$FONT_BODY_LEADING;text-align:justify;\
 -webkit-hyphens:auto;-epub-hyphens:auto;hyphens:auto;orphans:2;widows:2}
@@ -766,6 +716,10 @@ CSS
     local -- pdf_css="$TMP_DIR"/pdf.css
     font_faces_css pdf >"$pdf_css" || die 5 "failed to write ${pdf_css@Q}"
     cat >>"$pdf_css" <<CSS || die 5 "failed to write ${pdf_css@Q}"
+/* Bona Nova defaults to oldstyle figures, whose 1 is easily taken for a
+   small-capital I. This book names Part 1 through Part 8 on almost every
+   page, so the figures are asked for lining. */
+body{font-variant-numeric:lining-nums;font-feature-settings:"lnum" 1,"liga" 1,"kern" 1}
 body{font-family:"$FONT_SERIF_FAMILY",Georgia,serif;font-size:$FONT_BODY_SIZE_PDF;line-height:$FONT_BODY_LEADING}
 a{color:#0b295a}
 h1,h2,h3,h4,h5,h6{font-family:"$FONT_SANS_FAMILY","DejaVu Sans",sans-serif;\

@@ -45,11 +45,28 @@ The ten parts are also assembled into a single book, *In Search of Dharma* — s
 The script preprocesses each part (frontmatter, image shortcodes), then stitches them into an EPUB3 with pandoc and a PDF via weasyprint, with embedded fonts and optional per-chapter audio narration (`link` adds hyperlinks to the hosted MP3s; `none` omits them). The companion essay [`the-better-ones.md`](the-better-ones.md), which states and stress-tests the project's two-test standard for judging dharmas, closes the book as its appendix. The built books are tracked in the repository (`--audio embed` also produces a self-contained EPUB with the MP3s bundled in, about 75 MB, which is built locally and not tracked):
 
 - [`In-Search-of-Dharma_Biksu-Okusi_2026.epub`](In-Search-of-Dharma_Biksu-Okusi_2026.epub) — EPUB3, with links to the hosted chapter narrations (~3.6 MB)
-- [`In-Search-of-Dharma_Biksu-Okusi_2026.pdf`](In-Search-of-Dharma_Biksu-Okusi_2026.pdf) — print-styled PDF (~2.4 MB)
+- [`In-Search-of-Dharma_Biksu-Okusi_2026.pdf`](In-Search-of-Dharma_Biksu-Okusi_2026.pdf) — A4 reading PDF (~2.4 MB)
 
 An Indonesian edition, *Mencari Dharma*, is built the same way in [`id/`](id/): [`Mencari-Dharma_Biksu-Okusi_2026.epub`](id/Mencari-Dharma_Biksu-Okusi_2026.epub) and [`Mencari-Dharma_Biksu-Okusi_2026.pdf`](id/Mencari-Dharma_Biksu-Okusi_2026.pdf). Milestone versions of the books are also published via [GitHub Releases](https://github.com/Biksu-Okusi/In-Search-of-Dharma/releases).
 
 Building needs no configuration. Copying the finished files to a web-root, and mirroring them to another host, is optional and off by default: [`deploy.conf.example`](deploy.conf.example) lists the settings that enable it.
+
+### The printed edition
+
+[`mk-print.sh`](mk-print.sh) builds the interior of the paperback, separately from the reading formats above:
+
+```bash
+./mk-print.sh                      # build the interior
+./mk-print.sh --preflight FILE     # check an existing PDF and stop
+```
+
+The interior only: a print cover is a separate artefact, and the printer requires it uploaded as a separate file. The page is 152 × 229 mm with a 107 mm measure, a 25 mm gutter and a 20 mm outer margin mirrored across the spread, set in Bona Nova at 10 pt on 16 pt leading with Work Sans SemiBold for chapter titles, subheads, running heads and folios. Chapters open recto with a two-line drop cap and the first two words in small capitals; front matter takes roman folios and the arabic sequence restarts at the Preface. The contents page numbers come from the renderer, so they cannot drift from the pages they point at. Geometry lives in [`lib/print-style.sh`](lib/print-style.sh), and [`lib/dropcap.py`](lib/dropcap.py) marks each chapter's opening paragraph.
+
+The finished file is then hardened to the printer's interior rules and checked against them by [`lib/pdfcheck.py`](lib/pdfcheck.py): even page count, blank final page, DeviceGray throughout, every font embedded, no crop or registration marks, no ICC profiles, greyscale images at 300 ppi or better, and no ink closer to the trim than the printer allows. **The build refuses to write a file that fails any of these.** The same tool runs standalone via `--preflight`.
+
+[`lib/glyphcheck.py`](lib/glyphcheck.py) fails the build when a source character is absent from the bound typefaces, naming the character and the first file and line that uses it. Bona Nova and Work Sans both lack the rarer IAST diacritics; no current source uses them, and this gate is what keeps it that way.
+
+Run the test suite with [`tests/run_tests.sh`](tests/run_tests.sh). It covers the conformance rules, the preprocessing parity between the two builders, the print page geometry against its measured targets, and the glyph gate.
 
 ## Research notes
 
