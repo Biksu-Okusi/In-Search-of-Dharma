@@ -81,8 +81,8 @@ print_page_css() {
 
 html{font-family:"$FONT_SERIF_FAMILY",serif;font-size:${PRINT_SIZE_PT}pt;
   line-height:${PRINT_LEAD_PT}pt;color:#000;hyphens:auto;
-  font-variant-numeric:lining-nums;
-  font-feature-settings:"lnum" 1,"liga" 1,"kern" 1}
+  font-variant-numeric:oldstyle-nums;
+  font-feature-settings:"onum" 1,"liga" 1,"kern" 1}
 body{margin:0;string-set:booktitle "In search of dharma"}
 
 h1{page:chapopen;break-before:recto;margin:0 0 0 10mm;position:relative;
@@ -108,6 +108,29 @@ ul,ol{margin:${PRINT_LEAD_PT}pt 0;padding-left:8mm}
 p.op .dc{float:left;font-size:${PRINT_DROP_FS}em;
   line-height:${PRINT_DROP_LH};padding:0 0.06em 0 0}
 .sc{font-variant-caps:small-caps;letter-spacing:0.02em}
+
+/* Ramsey's point 3: a run of two or more capitals is set in small capitals.
+   No selector can reach an element by what it contains, so lib/smallcaps.py
+   wraps each run first. "all-small-caps" is smcp+c2sc together: the text is already
+   uppercase, so c2sc is the one doing the work. */
+.caps{font-variant-caps:all-small-caps;
+  font-feature-settings:"c2sc" 1,"smcp" 1,"onum" 1,"liga" 1,"kern" 1;
+  letter-spacing:0.02em}
+
+/* Ramsey's point 4: bold in the text is Work Sans SemiBold, not a bold cut of
+   the serif. Work Sans carries the larger x-height of the two (0.500 against
+   Bona Nova's 0.440) while their cap heights are all but identical (0.660 and
+   0.665), so at the same nominal size it reads noticeably bigger than the text
+   around it. 0.94em is the geometric mean of those two ratios, which leaves
+   neither lowercase nor capitals far out. */
+strong,b{font-family:"$FONT_SANS_FAMILY";font-weight:600;font-size:0.94em}
+
+/* The book holds exactly two code spans, both of them a domain name in a
+   Sources list. Left to the default monospace they pull DejaVu Sans Mono into
+   the print file -- a face nothing here binds, that glyphcheck.py therefore
+   never inspects, and that reads as a screen artefact on a printed page. They
+   take the text face instead. */
+code,kbd,samp{font-family:inherit;font-size:inherit}
 
 /* The chapter-opener device, following Ramsey's marked-up recto: a hairline
    vertical rule 32.5mm from the trim edge, running from 15mm below the trim

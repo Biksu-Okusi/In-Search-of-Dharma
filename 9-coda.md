@@ -36,7 +36,7 @@ A dharma is not necessarily a religion. It is a **living ethical orientation**: 
 
 At its deepest level, a dharma is **that which holds a life, a community, or a world together**.
 
-## There is no single "the Dharma"
+## There is no single 'the Dharma'
 
 It is better to say **a dharma** than **the Dharma**, because human beings create many dharmas.
 
@@ -74,7 +74,7 @@ A dharma usually includes:
 
 - **Community** -- whom one belongs to, and who holds one to the path.
 
-- **Identity** -- who "we" are, or who "I" am trying to become.
+- **Identity** -- who 'we' are, or who 'I' am trying to become.
 
 - **Discipline** -- how one trains conduct, attention, speech, desire, and response.
 
@@ -114,7 +114,7 @@ Not everything that holds deserves to keep holding. These two tests are how to t
 
 A personal dharma is the way an individual consciously chooses to live. But it is never made alone: even the most personal dharma is built from inherited language, examples, communities, obligations and refusals, and it needs company, and someone to answer to, if it is to be more than a private mood.
 
-It is not necessarily a mystical destiny or a fixed "life purpose." It is more like a cultivated path: a way of accepting reality, responding to difficulty, reducing unnecessary harm, and leaving the place a little better held than one found it.
+It is not necessarily a mystical destiny or a fixed 'life purpose'. It is more like a cultivated path: a way of accepting reality, responding to difficulty, reducing unnecessary harm, and leaving the place a little better held than one found it.
 
 A mature personal dharma asks:
 

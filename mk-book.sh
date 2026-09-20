@@ -611,10 +611,11 @@ main() {
   local -- css="$TMP_DIR"/book.css
   font_faces_css epub >"$css" || die 5 "failed to write ${css@Q}"
   cat >>"$css" <<CSS || die 5 "failed to write ${css@Q}"
-/* Bona Nova defaults to oldstyle figures, whose 1 is easily taken for a
-   small-capital I. This book names Part 1 through Part 8 on almost every
-   page, so the figures are asked for lining. */
-body{font-variant-numeric:lining-nums;font-feature-settings:"lnum" 1,"liga" 1,"kern" 1}
+/* Oldstyle (non-lining) figures, which is Bona Nova's default and the
+   publisher's house style: they sit on the x-height and ride with lowercase
+   text instead of standing above it. Asked for explicitly so the setting
+   survives a font change. */
+body{font-variant-numeric:oldstyle-nums;font-feature-settings:"onum" 1,"liga" 1,"kern" 1}
 body{font-family:"$FONT_SERIF_FAMILY",Georgia,serif;font-size:$FONT_BODY_SIZE_EPUB;\
 line-height:$FONT_BODY_LEADING;text-align:justify;\
 -webkit-hyphens:auto;-epub-hyphens:auto;hyphens:auto;orphans:2;widows:2}
@@ -716,10 +717,11 @@ CSS
     local -- pdf_css="$TMP_DIR"/pdf.css
     font_faces_css pdf >"$pdf_css" || die 5 "failed to write ${pdf_css@Q}"
     cat >>"$pdf_css" <<CSS || die 5 "failed to write ${pdf_css@Q}"
-/* Bona Nova defaults to oldstyle figures, whose 1 is easily taken for a
-   small-capital I. This book names Part 1 through Part 8 on almost every
-   page, so the figures are asked for lining. */
-body{font-variant-numeric:lining-nums;font-feature-settings:"lnum" 1,"liga" 1,"kern" 1}
+/* Oldstyle (non-lining) figures, which is Bona Nova's default and the
+   publisher's house style: they sit on the x-height and ride with lowercase
+   text instead of standing above it. Asked for explicitly so the setting
+   survives a font change. */
+body{font-variant-numeric:oldstyle-nums;font-feature-settings:"onum" 1,"liga" 1,"kern" 1}
 body{font-family:"$FONT_SERIF_FAMILY",Georgia,serif;font-size:$FONT_BODY_SIZE_PDF;line-height:$FONT_BODY_LEADING}
 a{color:#0b295a}
 h1,h2,h3,h4,h5,h6{font-family:"$FONT_SANS_FAMILY","DejaVu Sans",sans-serif;\

@@ -89,3 +89,8 @@ print/
 # The print interior, rebuilt on demand from the sources like every other
 # artefact in this list.
 In-Search-of-Dharma_interior_*.pdf
+
+# Ramsey's working document for the cover copy; the author's final version
+# lives in print-cover-text.md.
+cover-text-In-search-of-dharma.rtf
+cover text In search of dharma.*

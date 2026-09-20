@@ -1,6 +1,11 @@
 #!/bin/bash
 # tests/test-preprocess.sh - lib/preprocess.sh reproduces, byte for byte, what
 # mk-book.sh produced before the function was extracted.
+#
+# The golden hashes are of preprocess() output over the CURRENT sources, so an
+# edit to the book moves them and the file is regenerated with the edit. What
+# the test guards is the function: a change to preprocess() alone must never
+# move a hash. Regenerate only after confirming the delta belongs to the source.
 set -euo pipefail
 shopt -s inherit_errexit
 

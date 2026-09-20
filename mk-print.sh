@@ -318,8 +318,12 @@ main() {
   local -r body_html="$TMP_DIR"/body.html
   : >"$body_html"
   for dst in "${inputs[@]}"; do
+    # dropcap.py runs before smallcaps.py: it scans for a line that begins
+    # "<p>" and takes the first two words, which a <span> inserted ahead of it
+    # would hide.
     frag=$(pandoc --from=markdown-yaml_metadata_block --to=html5 "$dst" \
-             | "$SCRIPT_DIR"/lib/dropcap.py) \
+             | "$SCRIPT_DIR"/lib/dropcap.py \
+             | "$SCRIPT_DIR"/lib/smallcaps.py) \
       || die 1 "pandoc failed for ${dst@Q}"
     # The first chapter carries an extra class: the stylesheet restarts the
     # arabic page sequence there, and no CSS selector can find "the first
