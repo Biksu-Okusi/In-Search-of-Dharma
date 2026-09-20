@@ -94,3 +94,5 @@ In-Search-of-Dharma_interior_*.pdf
 # lives in print-cover-text.md.
 cover-text-In-search-of-dharma.rtf
 cover text In search of dharma.*
+# Derived from print-cover-text.md for correspondents who cannot open Markdown.
+print-cover-text.docx

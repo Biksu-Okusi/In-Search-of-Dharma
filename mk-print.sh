@@ -154,12 +154,15 @@ stage_images() {
   done < <(find "$SCRIPT_DIR"/images -maxdepth 2 \
              \( -name '*.webp' -o -name '*.png' \) -print0)
   fi
-  # The Okusi mark for chapter openers, in the house navy. A black-and-white
-  # interior wants 100% K, not a navy that the greyscale pass would render as
-  # a dark grey, so a blackened copy is staged. The source SVG is untouched.
+  # The Okusi mark for chapter openers, whose source is the house navy. Left
+  # to the greyscale pass a navy lands wherever its luminance happens to fall,
+  # so the tint is chosen instead: 75% black, at the publisher's request, which
+  # sits the mark back from the 100% K of the title beside it. #404040 is that
+  # tint (0.251 grey), and DeviceGray carries it through unchanged. The source
+  # SVG is untouched.
   [[ -f $LOGO_SRC ]] || die 3 "logo missing ${LOGO_SRC@Q}"
-  sed 's/#0b295a/#000000/g' "$LOGO_SRC" >"$stage"/images/"${LOGO_SRC##*/}" \
-    || die 5 "logo blackening failed ${LOGO_SRC@Q}"
+  sed 's/#0b295a/#404040/g' "$LOGO_SRC" >"$stage"/images/"${LOGO_SRC##*/}" \
+    || die 5 "logo tinting failed ${LOGO_SRC@Q}"
 }
 
 # The four front-matter pages: half-title, title, imprint, contents. Roman
@@ -295,6 +298,12 @@ main() {
     # The print interior carries no audio links: a hyperlink is useless on
     # paper, and the bare URL belongs to the reading PDF, not a printed book.
     sed -i '/^<p class="audio">/d' "$dst" || die 1 "audio strip failed for ${dst@Q}"
+    # Nor the end-of-chapter furniture: the "« previous | next »" line is web
+    # navigation, and the rule under it divides the essay from its Sources,
+    # which in print begin on a page of their own. Every staged source holds
+    # exactly one such rule; the appendix headnote rule is already gone.
+    sed -i -E -e '/^(« .*|.* »)$/d' -e '/^---$/d' "$dst" \
+      || die 1 "chapter-end marker strip failed for ${dst@Q}"
     # Drop the Part watercolour unless PRINT_CHAPTER_ART is set. preprocess()
     # has already turned the <image ...> shortcode into a standalone Markdown
     # image on its own line, which is the only image any source carries.
@@ -337,9 +346,12 @@ main() {
   # Sources & further reading sets smaller. Wrap from that h2 to the end of its
   # own section: open a div at the heading, and close it only in sections that
   # opened one (awk, because the close must be conditional -- a blanket sed
-  # would close a div in every chapter whether or not one was opened).
+  # would close a div in every chapter whether or not one was opened). The
+  # section test takes the class PREFIX: the first chapter is "chapter first",
+  # and an exact match once left the Preface's sources unwrapped -- full size,
+  # and running on from the text instead of opening a page of their own.
   awk '
-    /^<section class="chapter">/ { insec = 1; opened = 0 }
+    /^<section class="chapter[ "]/ { insec = 1; opened = 0 }
     /<h2 id="sources/            { if (insec && !opened) { print "<div class=\"sources\">"; opened = 1 } }
     /^<\/section>/               { if (opened) { print "</div>"; opened = 0 }; insec = 0 }
     { print }

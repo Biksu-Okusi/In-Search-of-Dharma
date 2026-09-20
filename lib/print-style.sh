@@ -14,7 +14,10 @@
 #   { font_faces_css pdf; print_page_css; } > print.css
 #
 # The constants below were solved numerically against the model book and are
-# frozen. They are specific to 10pt on 16pt leading in Bona Nova; any other
+# frozen, with one deliberate departure: PRINT_H1GAP_MM. The model book drops
+# 131mm to the first line of a chapter; Ramsey asked for two line spaces under
+# the title instead (2026-09-21), so the opening line sits three linefeeds
+# below the title's baseline, at 104.52mm. They are specific to 10pt on 16pt leading in Bona Nova; any other
 # setting needs them re-solved, which is what mk-print.sh --solve does.
 
 [[ ${BASH_SOURCE[0]} != "$0" ]] \
@@ -43,7 +46,7 @@ print_geom_load() {
   PRINT_SUB_PT=12 PRINT_SRC_PT=9
   PRINT_TOP_MM=24.58 PRINT_BOT_MM=24.5
   PRINT_HEADPAD_MM=13.35 PRINT_FOLIOPAD_MM=6.80
-  PRINT_H1PAD_MM=55.34 PRINT_H1GAP_MM=39.46
+  PRINT_H1PAD_MM=55.34 PRINT_H1GAP_MM=12.85
   PRINT_DROP_FS=3.200 PRINT_DROP_LH=0.688
 }
 
@@ -98,6 +101,10 @@ p{margin:0;text-align:justify;text-indent:10mm;widows:2;orphans:2}
 p.op,h1+p,h2+p,h3+p,blockquote+p{text-indent:0}
 blockquote{margin:${PRINT_LEAD_PT}pt 0 ${PRINT_LEAD_PT}pt 8mm;font-style:italic}
 blockquote p{text-indent:0}
+/* An epigraph directly under a chapter title gives up its top margin: the
+   title's own padding already is the two line spaces, and the margin on top of
+   it would make three. */
+h1 + blockquote{margin-top:0}
 p.attrib{text-indent:20mm;font:600 9pt/${PRINT_LEAD_PT}pt "$FONT_SANS_FAMILY"}
 .sources p{font-size:${PRINT_SRC_PT}pt}
 ul,ol{margin:${PRINT_LEAD_PT}pt 0;padding-left:8mm}
@@ -134,15 +141,17 @@ code,kbd,samp{font-family:inherit;font-size:inherit}
 
 /* The chapter-opener device, following Ramsey's marked-up recto: a hairline
    vertical rule 32.5mm from the trim edge, running from 15mm below the trim
-   top down to just above the title, with the Okusi mark set on it. Tuwhiri's
-   own books put their roundel here.
+   top down to just above the title, with the Okusi mark beside it. Tuwhiri's
+   own books put their roundel here. The mark is 12mm and its left edge is the
+   title's own (left:0), so it stands over the chapter number; its foot stays
+   where the 16mm mark's was, 52.4mm down.
    Offsets are relative to the h1's border box, whose top is PRINT_TOP_MM from
    the trim and whose left edge is the 25mm gutter plus the h1's own 10mm
    indent. Openers are always recto, so the geometry never mirrors. */
 section.chapter h1::before{content:"";position:absolute;
   left:-2.5mm;top:-9.58mm;width:0.4pt;height:71mm;background:#000}
 section.chapter h1::after{content:"";position:absolute;
-  left:-10.5mm;top:36.4mm;width:16mm;height:16mm;
+  left:0;top:40.4mm;width:12mm;height:12mm;
   background:url(images/dharma-eye.svg) no-repeat center/contain}
 
 section.front{page:front}
@@ -172,13 +181,11 @@ figcaption{display:none}
    currently falls where it lands in the flow. */
 section.chapter figure{margin:${PRINT_LEAD_PT}pt 0;break-inside:avoid}
 section.chapter figure img{max-width:70%}
-/* The heading's bottom padding is calibrated for BODY TEXT following a title,
-   so that the first line lands on the model book's grid. When the chapter
-   watercolour follows instead, that padding is dead space and the art drifts
-   into the middle of an otherwise empty page. Pulling the figure back up sits
-   it under the title. Scoped to figures, so the calibrated grid is untouched
-   wherever body text does follow the title. */
-section.chapter h1 + figure{margin-top:-31.5mm}
+
+/* Sources & further reading opens on a page of its own. mk-print.sh wraps it
+   in div.sources; the source's own div.pagebreak is the reading PDF's device
+   and does nothing here. */
+.sources{break-before:page}
 
 /* Each front-matter part takes its own page: half-title, title, imprint,
    contents. Without this they flow together and the whole of the front matter

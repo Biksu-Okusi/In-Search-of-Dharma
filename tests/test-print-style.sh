@@ -10,9 +10,11 @@ declare -r ROOT=$TEST_DIR/..
 declare -i FAILED=0
 declare -r TOL=0.1
 
-# Target baselines in mm from the trim top, measured from the model book.
+# Target baselines in mm from the trim top, measured from the model book --
+# except the opener, which the publisher set: two line spaces under the title,
+# so three 5.644mm linefeeds below its 87.59 baseline.
 declare -rA TARGET=(
-  [title]=87.59 [opener]=131.13 [head]=16.80 [first]=29.53 [folio]=214.38
+  [title]=87.59 [opener]=104.52 [head]=16.80 [first]=29.53 [folio]=214.38
 )
 
 declare -- TMP=''
