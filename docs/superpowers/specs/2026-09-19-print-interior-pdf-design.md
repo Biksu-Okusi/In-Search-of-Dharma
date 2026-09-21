@@ -96,6 +96,12 @@ not to be re-derived by eye.
 the body setting requires re-solving them. The build script keeps the solver so
 this is a command, not a craft exercise.
 
+▲ As built (noted 2026-09-21): the solver was never written, and `mk-print.sh`
+has no `--solve`. The constants live in `lib/print-style.sh`, not a
+`lib/print-geom.sh`, and re-solving them for another setting is still done by
+hand against `lib/pdfcheck.py baselines`. The mentions of a solver below record
+the plan, not the code.
+
 ---
 
 ## 4. Type specification

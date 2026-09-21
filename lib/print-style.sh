@@ -11,14 +11,19 @@
 #   font_set_load bonanova-worksans "$SCRIPT_DIR"/fonts
 #   source "$SCRIPT_DIR"/lib/print-style.sh
 #   print_geom_load            # or: print_geom_load 10.5 17  (a proof setting)
-#   { font_faces_css pdf; print_title_faces_css "$SCRIPT_DIR"/fonts; print_page_css; } > print.css
+#   { font_faces_css pdf && print_title_faces_css "$SCRIPT_DIR"/fonts && print_page_css; } > print.css
 #
 # The constants below were solved numerically against the model book and are
 # frozen, with one deliberate departure: PRINT_H1GAP_MM. The model book drops
 # 131mm to the first line of a chapter; Ramsey asked for two line spaces under
 # the title instead (2026-09-21), so the opening line sits three linefeeds
-# below the title's baseline, at 104.52mm. They are specific to 10pt on 16pt leading in Bona Nova; any other
-# setting needs them re-solved, which is what mk-print.sh --solve does.
+# below the title's baseline, at 104.52mm. They are specific to 10pt on 16pt
+# leading in Bona Nova. Nothing re-derives them: the design planned a solver
+# and it was never built, so any other setting is a proof setting, good for
+# judging type size and colour but with its openers, running heads, folios and
+# drop caps off the grid. To ship another setting, re-solve the constants by
+# hand against `lib/pdfcheck.py baselines` and move the targets in
+# tests/test-print-style.sh with them.
 
 [[ ${BASH_SOURCE[0]} != "$0" ]] \
   || { >&2 echo "✗ ${BASH_SOURCE[0]##*/} is a library: source it, do not run it"; exit 2; }
@@ -70,8 +75,9 @@ declare -- PRINT_H1PAD_MM='' PRINT_H1GAP_MM='' PRINT_DROP_FS='' PRINT_DROP_LH=''
 print_geom_load() {
   PRINT_SIZE_PT=${1:-10} PRINT_LEAD_PT=${2:-16}
   if [[ $PRINT_SIZE_PT != 10 || $PRINT_LEAD_PT != 16 ]]; then
-    >&2 printf '▲ %s: %spt on %spt is a proof setting; the frozen constants were solved '\
-'for 10 on 16. Run mk-print.sh --solve.\n' \
+    >&2 printf '▲ %s: %spt on %spt is a proof setting. The layout constants were solved '\
+'for 10 on 16 and are not re-derived, so openers, running heads, folios and drop caps '\
+'will sit off the grid.\n' \
       "${BASH_SOURCE[0]##*/}" "$PRINT_SIZE_PT" "$PRINT_LEAD_PT"
   fi
   PRINT_SUB_PT=12 PRINT_SRC_PT=9

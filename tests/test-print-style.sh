@@ -83,5 +83,26 @@ awk -v a="$x0" -v b="$x1" 'BEGIN{w=b-a; exit !(w>106.5 && w<107.5)}' \
   && printf '  ✓ measure %.1fmm\n' "$(awk -v a="$x0" -v b="$x1" 'BEGIN{print b-a}')" \
   || { printf '  ✗ measure is not 107mm (%s..%s)\n' "$x0" "$x1"; FAILED+=1; }
 
+# The proof-setting warning. Run in subshells: print_geom_load sets globals.
+declare -- warning help opt
+declare -a named=()
+warning=$( (print_geom_load) 2>&1 )
+[[ -z $warning ]] && printf '  ✓ the shipping setting loads without a warning\n' \
+  || { printf '  ✗ the shipping setting warned: %s\n' "$warning"; FAILED+=1; }
+
+warning=$( (print_geom_load 10.5 17) 2>&1 )
+[[ $warning == *10.5pt*17pt* ]] && printf '  ✓ a proof setting warns, naming the setting\n' \
+  || { printf '  ✗ a proof setting did not warn with its size and leading: %s\n' "$warning"; FAILED+=1; }
+
+# It once told the reader to run `mk-print.sh --solve`, an option that was
+# planned and never built. Any option the warning names must be a real one.
+help=$("$ROOT"/mk-print.sh --help)
+readarray -t named < <(grep -oE -- '--[a-z][a-z-]+' <<<"$warning" | sort -u)
+((${#named[@]})) || printf '  ✓ the warning names no option at all\n'
+for opt in "${named[@]}"; do
+  [[ $help == *"$opt"* ]] && printf '  ✓ the warning names a real option: %s\n' "$opt" \
+    || { printf '  ✗ the warning names %s, which mk-print.sh --help does not list\n' "$opt"; FAILED+=1; }
+done
+
 ((FAILED == 0)) || exit 1
 #fin
