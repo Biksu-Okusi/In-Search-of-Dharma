@@ -240,7 +240,9 @@ main() {
   font_set_load "$font_set" "$SCRIPT_DIR"/fonts
   print_geom_load ${size:+"$size"} ${lead:+"$lead"}
   local -- font
-  for font in "${FONT_FILES[@]}"; do
+  local -a title_fonts=()
+  readarray -t title_fonts < <(print_title_files "$SCRIPT_DIR"/fonts)
+  for font in "${FONT_FILES[@]}" "${title_fonts[@]}"; do
     [[ -f $font ]] || die 3 "font missing ${font@Q}"
   done
 
@@ -272,6 +274,12 @@ main() {
   if [[ -x "$SCRIPT_DIR"/lib/glyphcheck.py ]]; then
     "$SCRIPT_DIR"/lib/glyphcheck.py "${FONT_FILES[@]}" -- "${sources[@]}" \
       || die 1 'a source character is missing from the bound faces'
+    # The title faces set one string, so that string is all they are held to:
+    # asking Literata for every character in the book would fail the build over
+    # glyphs it is never asked to draw.
+    printf '%s\n' "$TITLE" >"$TMP_DIR"/title.txt || die 5 'failed to stage the title text'
+    "$SCRIPT_DIR"/lib/glyphcheck.py "${title_fonts[@]}" -- "$TMP_DIR"/title.txt \
+      || die 1 'a title character is missing from the title faces'
   fi
 
   info 'staging greyscale images'
@@ -327,10 +335,13 @@ main() {
   local -r body_html="$TMP_DIR"/body.html
   : >"$body_html"
   for dst in "${inputs[@]}"; do
+    # A paragraph that is nothing but a bold run is a label, and is marked as
+    # one here for the stylesheet (see .sources p.label in lib/print-style.sh).
     # dropcap.py runs before smallcaps.py: it scans for a line that begins
     # "<p>" and takes the first two words, which a <span> inserted ahead of it
     # would hide.
     frag=$(pandoc --from=markdown-yaml_metadata_block --to=html5 "$dst" \
+             | sed -E 's|^<p><strong>([^<]*)</strong></p>$|<p class="label">\1</p>|' \
              | "$SCRIPT_DIR"/lib/dropcap.py \
              | "$SCRIPT_DIR"/lib/smallcaps.py) \
       || die 1 "pandoc failed for ${dst@Q}"
@@ -359,7 +370,7 @@ main() {
   mv -- "$body_html".wrapped "$body_html" || die 5 'sources wrap move failed'
 
   local -- css="$TMP_DIR"/print.css
-  { font_faces_css pdf; print_page_css; } >"$css" \
+  { font_faces_css pdf; print_title_faces_css "$SCRIPT_DIR"/fonts; print_page_css; } >"$css" \
     || die 5 "failed to write ${css@Q}"
   cp -- "$css" "$img_stage"/print.css || die 5 'failed to stage the stylesheet'
 

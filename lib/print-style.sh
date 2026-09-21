@@ -11,7 +11,7 @@
 #   font_set_load bonanova-worksans "$SCRIPT_DIR"/fonts
 #   source "$SCRIPT_DIR"/lib/print-style.sh
 #   print_geom_load            # or: print_geom_load 10.5 17  (a proof setting)
-#   { font_faces_css pdf; print_page_css; } > print.css
+#   { font_faces_css pdf; print_title_faces_css "$SCRIPT_DIR"/fonts; print_page_css; } > print.css
 #
 # The constants below were solved numerically against the model book and are
 # frozen, with one deliberate departure: PRINT_H1GAP_MM. The model book drops
@@ -28,6 +28,37 @@
 # because a perfect-bound spine swallows part of it.
 declare -r PRINT_TRIM_W_MM=152 PRINT_TRIM_H_MM=229
 declare -r PRINT_MEASURE_MM=107 PRINT_INNER_MM=25 PRINT_OUTER_MM=20
+
+# The book's title, on the half-title and the title page, is set in Literata
+# Medium Italic -- the publisher's choice for the cover title (2026-09-21),
+# carried inside so the two agree. Literata ships optical sizes as separate
+# static files, and each is bound under its own family name: the text cut for
+# the 14pt half-title, the 36pt display cut for the 22pt title page, where the
+# text cut's sturdier hairlines would look heavy. These faces belong to the
+# print title pages alone, so they stay out of lib/fonts.sh, whose sets are
+# embedded whole in the EPUB.
+declare -r PRINT_TITLE_FAMILY='Literata' PRINT_TITLE_DISPLAY_FAMILY='Literata Display'
+declare -ar PRINT_TITLE_FACES=(
+  "$PRINT_TITLE_FAMILY|literata/Literata-MediumItalic.ttf"
+  "$PRINT_TITLE_DISPLAY_FAMILY|literata/Literata36pt-MediumItalic.ttf"
+)
+
+# print_title_files <fonts-root> : the title faces' paths, one per line.
+print_title_files() {
+  local -- entry
+  for entry in "${PRINT_TITLE_FACES[@]}"; do
+    printf '%s/%s\n' "$1" "${entry#*|}"
+  done
+}
+
+# print_title_faces_css <fonts-root> : one @font-face per title face.
+print_title_faces_css() {
+  local -- entry
+  for entry in "${PRINT_TITLE_FACES[@]}"; do
+    printf '@font-face{font-family:"%s";font-weight:500;font-style:italic;src:url("file://%s/%s")}\n' \
+      "${entry%%|*}" "$1" "${entry#*|}"
+  done
+}
 
 # Populated by print_geom_load. Declared here so a `set -u` script may reference
 # them before the call.
@@ -81,6 +112,11 @@ print_page_css() {
   @bottom-left{content:none}
   @bottom-right{content:counter(page,lower-roman);font:600 8pt/1 "$FONT_SANS_FAMILY";
     vertical-align:top;padding-top:${PRINT_FOLIOPAD_MM}mm}}
+/* A blank in the front matter carries nothing, folio included. It has to be
+   said again here, after the two rules above: they match a blank front page as
+   well as @page:blank does, and the later rule wins. */
+@page front:blank{@top-left{content:none}@top-right{content:none}
+  @bottom-left{content:none}@bottom-right{content:none}}
 
 html{font-family:"$FONT_SERIF_FAMILY",serif;font-size:${PRINT_SIZE_PT}pt;
   line-height:${PRINT_LEAD_PT}pt;color:#000;hyphens:auto;
@@ -106,8 +142,27 @@ blockquote p{text-indent:0}
    it would make three. */
 h1 + blockquote{margin-top:0}
 p.attrib{text-indent:20mm;font:600 9pt/${PRINT_LEAD_PT}pt "$FONT_SANS_FAMILY"}
-.sources p{font-size:${PRINT_SRC_PT}pt}
-ul,ol{margin:${PRINT_LEAD_PT}pt 0;padding-left:8mm}
+ul,ol{margin:${PRINT_LEAD_PT}pt 0;padding-left:10mm}
+/* The bullet hangs at the left margin and the text stands in by the paragraph
+   indent, as in the publisher's sample. A marker left to the renderer sits just
+   outside the text instead, a few points in from nowhere in particular. */
+ul{list-style:none}
+ul > li{position:relative;text-align:left}
+ul > li::before{content:"\\2022";position:absolute;left:-10mm}
+
+/* Sources & further reading is reference matter, not narrative, and is set as
+   such. The size applies to the whole block: set on p alone it missed the
+   lists, which then stood a point larger than the notes around them. Nothing
+   takes the narrative first-line indent. A paragraph that is only a bold label
+   ("Research notes", "Key works") is a subhead: mk-print.sh marks it p.label,
+   since no selector can tell a paragraph that IS a bold run from one that
+   merely contains one. */
+.sources{font-size:${PRINT_SRC_PT}pt}
+.sources p{text-indent:0}
+.sources p.label{font:600 ${PRINT_SIZE_PT}pt/${PRINT_LEAD_PT}pt "$FONT_SANS_FAMILY";
+  margin-top:${PRINT_LEAD_PT}pt;text-align:left;break-after:avoid}
+.sources h2 + p.label{margin-top:0}
+.sources ul,.sources ol{margin:0}
 
 /* The two-line drop cap. It hangs on p.op, which lib/dropcap.py marks: a
    chapter's opening paragraph is not the element after the h1, because the
@@ -131,6 +186,21 @@ p.op .dc{float:left;font-size:${PRINT_DROP_FS}em;
    around it. 0.94em is the geometric mean of those two ratios, which leaves
    neither lowercase nor capitals far out. */
 strong,b{font-family:"$FONT_SANS_FAMILY";font-weight:600;font-size:0.94em}
+/* Work Sans ships no italic, so bold inside italic -- the Coda's closing
+   statement, the Preface's signature -- was drawn in a slant the renderer
+   faked, which also ran wide of the measure. Bold stands upright wherever it
+   falls: a real face, and the contrast with the italic around it does the
+   work the slant was meant to. */
+em strong,em b,strong em,b em,blockquote strong,blockquote b{font-style:normal}
+/* A statement set whole in bold is display matter, and is not justified: the
+   renderer's justification runs a line of the stepped-down sans up to 0.6mm
+   past the measure, which the Coda's closing statement showed. */
+blockquote p:has(> strong:only-child){text-align:left}
+/* Italic inside a subhead is meaning, not decoration -- a Javanese term, a
+   stressed "The" -- so it cannot simply go upright. It borrows the serif's
+   true italic, stepped up by the same x-height reckoning that steps the sans
+   down in running text. */
+h1 em,h2 em,h3 em{font-family:"$FONT_SERIF_FAMILY";font-weight:normal;font-size:1.06em}
 
 /* The book holds exactly two code spans, both of them a domain name in a
    Sources list. Left to the default monospace they pull DejaVu Sans Mono into
@@ -191,11 +261,15 @@ section.chapter figure img{max-width:70%}
    contents. Without this they flow together and the whole of the front matter
    lands on page i. */
 section.front > div,section.front > nav{break-after:page}
+/* The title page is a recto with the imprint on its back, as in the model
+   book: half-title i, blank ii, title iii, imprint iv, contents v. Without
+   this the title fell on ii, a left-hand page, facing its own imprint. */
+section.front .titlepage{break-before:recto}
 section.front .halftitle{padding-top:60mm}
 section.front .titlepage{padding-top:55mm;text-align:center}
 section.front .halftitle p,section.front .titlepage p{text-indent:0;text-align:center}
-section.front .ht-title{font:600 14pt/1.3 "$FONT_SANS_FAMILY"}
-section.front .tp-title{font:600 22pt/1.2 "$FONT_SANS_FAMILY";margin-bottom:6mm}
+section.front .ht-title{font:italic 500 14pt/1.3 "$PRINT_TITLE_FAMILY"}
+section.front .tp-title{font:italic 500 22pt/1.2 "$PRINT_TITLE_DISPLAY_FAMILY";margin-bottom:6mm}
 section.front .tp-sub{font-style:italic;margin-bottom:24mm}
 section.front .tp-author{font:600 12pt/1.4 "$FONT_SANS_FAMILY";margin-bottom:3mm}
 section.front .tp-imprint{font:600 10pt/1.4 "$FONT_SANS_FAMILY"}
