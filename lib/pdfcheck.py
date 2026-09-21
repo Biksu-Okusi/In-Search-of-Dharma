@@ -344,6 +344,9 @@ def main():
   a = ap.parse_args()
   if (a.measure is None) != (a.inner is None):
     ap.error('--measure and --inner go together')
+  # Absolute, so a name beginning with a dash cannot reach mutool, pdftotext and
+  # the rest as an option: not all of them honour `--`.
+  a.file = os.path.abspath(a.file)
   try:
     if a.action == 'measure':
       print(json.dumps(measure(a.file), indent=2))

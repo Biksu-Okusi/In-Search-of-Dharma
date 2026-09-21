@@ -28,7 +28,7 @@ shopt -s inherit_errexit
 declare -rx PATH=/usr/local/bin:/usr/bin:/bin
 
 declare -r VERSION=1.0.0
-#shellcheck disable=SC2155
+#shellcheck disable=SC2155  # exit-on-error catches realpath failure
 declare -r SCRIPT_PATH=$(realpath -- "$0")
 declare -r SCRIPT_DIR=${SCRIPT_PATH%/*} SCRIPT_NAME=${SCRIPT_PATH##*/}
 
@@ -65,11 +65,10 @@ declare -ir PRINT_CHAPTER_ART=0
 declare -i VERBOSE=1 KEEP_TEMP=0
 declare -- TMP_DIR=''
 
-# Messaging (BCS0703). warn() and error() are unconditional; die() takes the
-# exit code first, then an optional message.
+# Messaging (BCS0703). error() is unconditional; die() takes the exit code
+# first, then an optional message.
 _msg()  { >&2 printf '%s: %s %s\n' "$SCRIPT_NAME" "$1" "${*:2}"; }
 info()  { ((VERBOSE)) || return 0; _msg '◉' "$@"; }
-warn()  { _msg '▲' "$@"; }
 error() { _msg '✗' "$@"; }
 die()   { (($# < 2)) || error "${@:2}"; exit "${1:-0}"; }
 
@@ -78,16 +77,19 @@ declare -r PREPROCESS_LIB="$SCRIPT_DIR"/lib/preprocess.sh
 declare -r STYLE_LIB="$SCRIPT_DIR"/lib/print-style.sh
 declare -r PDFCHECK="$SCRIPT_DIR"/lib/pdfcheck.py
 
-declare -- _lib
-for _lib in "$FONT_LIB" "$PREPROCESS_LIB" "$STYLE_LIB"; do
-  [[ -f $_lib ]] || { >&2 echo "✗ missing library ${_lib@Q}"; exit 3; }
+# Sourced at file scope, not from a function: the libraries declare their
+# globals with plain `declare`, which inside a function would make them local.
+declare -- LIB
+for LIB in "$FONT_LIB" "$PREPROCESS_LIB" "$STYLE_LIB"; do
+  [[ -f $LIB ]] || die 3 "missing library ${LIB@Q}"
 done
+unset LIB
 #shellcheck source=lib/fonts.sh
-source "$FONT_LIB"       || { >&2 echo "✗ failed to source ${FONT_LIB@Q}"; exit 1; }
+source -- "$FONT_LIB"       || die 1 "failed to source ${FONT_LIB@Q}"
 #shellcheck source=lib/preprocess.sh
-source "$PREPROCESS_LIB" || { >&2 echo "✗ failed to source ${PREPROCESS_LIB@Q}"; exit 1; }
+source -- "$PREPROCESS_LIB" || die 1 "failed to source ${PREPROCESS_LIB@Q}"
 #shellcheck source=lib/print-style.sh
-source "$STYLE_LIB"      || { >&2 echo "✗ failed to source ${STYLE_LIB@Q}"; exit 1; }
+source -- "$STYLE_LIB"      || die 1 "failed to source ${STYLE_LIB@Q}"
 
 show_help() {
   cat <<HELP
@@ -145,16 +147,16 @@ xml_escape() {
 stage_images() {
   local -- stage=$1
   local -- src rel
-  mkdir -p "$stage"/images || die 5 "failed to create image staging dir ${stage@Q}"
+  mkdir -p -- "$stage"/images || die 5 "failed to create image staging dir ${stage@Q}"
   if ((PRINT_CHAPTER_ART)); then
-  while IFS= read -r -d '' src; do
-    rel=${src#"$SCRIPT_DIR"/}
-    mkdir -p "$stage/${rel%/*}" || die 5 "failed to create ${stage@Q}/${rel%/*}"
-    convert "$src" -colorspace Gray -level 5%,95% -sigmoidal-contrast 3,50% \
-      -strip -quality "$JPEG_QUALITY" "$stage/${rel%.*}.jpg" \
-      || die 5 "greyscale conversion failed ${src@Q}"
-  done < <(find "$SCRIPT_DIR"/images -maxdepth 2 \
-             \( -name '*.webp' -o -name '*.png' \) -print0)
+    while IFS= read -r -d '' src; do
+      rel=${src#"$SCRIPT_DIR"/}
+      mkdir -p -- "$stage/${rel%/*}" || die 5 "failed to create ${stage@Q}/${rel%/*}"
+      convert "$src" -colorspace Gray -level 5%,95% -sigmoidal-contrast 3,50% \
+        -strip -quality "$JPEG_QUALITY" "$stage/${rel%.*}.jpg" \
+        || die 5 "greyscale conversion failed ${src@Q}"
+    done < <(find "$SCRIPT_DIR"/images -maxdepth 2 \
+               \( -name '*.webp' -o -name '*.png' \) -print0)
   fi
   # The Okusi mark for chapter openers, whose source is the house navy. Left
   # to the greyscale pass a navy lands wherever its luminance happens to fall,
@@ -163,7 +165,7 @@ stage_images() {
   # tint (0.251 grey), and DeviceGray carries it through unchanged. The source
   # SVG is untouched.
   [[ -f $LOGO_SRC ]] || die 3 "logo missing ${LOGO_SRC@Q}"
-  sed 's/#0b295a/#404040/g' "$LOGO_SRC" >"$stage"/images/"${LOGO_SRC##*/}" \
+  sed 's/#0b295a/#404040/g' -- "$LOGO_SRC" >"$stage"/images/"${LOGO_SRC##*/}" \
     || die 5 "logo tinting failed ${LOGO_SRC@Q}"
 }
 
@@ -185,7 +187,7 @@ front_matter() {
   printf '</div>\n'
   printf '<div class="imprint">\n'
   if [[ -f $IMPRINT_SRC ]]; then
-    pandoc --from=markdown --to=html5 "$IMPRINT_SRC" \
+    pandoc --from=markdown --to=html5 -- "$IMPRINT_SRC" \
       || die 1 "imprint conversion failed ${IMPRINT_SRC@Q}"
   else
     # Deliberately loud and deliberately on the page: a proof must not be sent
@@ -209,6 +211,59 @@ front_matter() {
   printf '</div>\n</nav>\n</section>\n'
 }
 
+# IngramSpark: "The final page should be blank. If there is no blank page,
+# we'll add one for you." Adding it here keeps the page count ours to control,
+# and Tuwhiri requires a multiple of 2.
+#
+# Forcing chapter openers onto rectos already leaves blank versos, so the book
+# often ends blank and even with nothing to do. Four cases, in order:
+#   even + last blank -> nothing to add
+#   odd  + last blank -> one blank (even, still ends blank)
+#   even + last inked -> two blanks (even, ends blank)
+#   odd  + last inked -> one blank (even, ends blank)
+pad_to_even() {
+  local -- src=$1 out=$2
+  local -i pages last_blank=0 add=0
+  pages=$(pdfinfo -- "$src" | awk '/^Pages:/{print $2}') \
+    || die 1 "pdfinfo failed for ${src@Q}"
+  ((pages > 0)) || die 1 "no page count read from ${src@Q}"
+  # blank_pages is a pretty-printed JSON array, so it spans lines; grep with .*
+  # cannot match across them. Ask jq whether the last page is in the list. jq -e
+  # exits 1 for "not in the list" and higher for a real failure, and the two
+  # must not be confused: a failure read as "last page inked" pads wrongly.
+  local -- measured
+  local -i rc=0
+  measured=$("$PDFCHECK" measure -- "$src") || die 1 "pdfcheck measure failed for ${src@Q}"
+  jq --argjson p "$pages" -e '.blank_pages | index($p)' <<<"$measured" >/dev/null || rc=$?
+  case $rc in
+    0) last_blank=1 ;;
+    1) ;;
+    *) die 1 "could not read blank_pages for ${src@Q} (jq exit $rc)" ;;
+  esac
+  if ((last_blank)); then
+    add=$(( pages % 2 ))
+  else
+    add=$(( pages % 2 == 0 ? 2 : 1 ))
+  fi
+  if ((add == 0)); then
+    cp -- "$src" "$out" || die 5 "failed to copy ${src@Q}"
+    info "page count $pages is even and ends blank; nothing to pad"
+    return 0
+  fi
+  local -- blank="$TMP_DIR"/blank.pdf
+  {
+    printf '<!doctype html><html lang="en"><head><meta charset="utf-8">'
+    printf '<style>@page{size:%smm %smm;margin:0}</style></head><body></body></html>' \
+      "$PRINT_TRIM_W_MM" "$PRINT_TRIM_H_MM"
+  } >"$TMP_DIR"/blank.html || die 5 'failed to write the blank page source'
+  weasyprint -- "$TMP_DIR"/blank.html "$blank" || die 1 'blank-page render failed'
+  local -a parts=("$src")
+  local -i j
+  for ((j = 0; j < add; j+=1)); do parts+=("$blank"); done
+  pdfunite -- "${parts[@]}" "$out" || die 1 'pdfunite failed'
+  info "padded $pages -> $((pages + add)) pages"
+}
+
 main() {
   local -- font_set=${FONT_SETS[0]} size='' lead='' preflight=''
   while (($#)); do
@@ -224,13 +279,16 @@ main() {
       *) die 2 "unknown option ${1@Q} (try --help)" ;;
     esac
   done
+  readonly VERBOSE KEEP_TEMP
 
   if [[ -n $preflight ]]; then
     [[ -f $preflight ]] || die 3 "no such file ${preflight@Q}"
-    "$PDFCHECK" check "$preflight" \
+    # Options first, then --: the name is the user's, and one beginning with a
+    # dash must reach the checker as a file.
+    "$PDFCHECK" check \
       --trim "${PRINT_TRIM_W_MM}x${PRINT_TRIM_H_MM}" \
       --measure "$PRINT_MEASURE_MM" --inner "$PRINT_INNER_MM" \
-      --require-even --require-blank-last
+      --require-even --require-blank-last -- "$preflight"
     return $?
   fi
 
@@ -245,6 +303,7 @@ main() {
   local -- font
   local -a title_fonts=()
   readarray -t title_fonts < <(print_title_files "$SCRIPT_DIR"/fonts)
+  ((${#title_fonts[@]})) || die 3 'no title faces listed by lib/print-style.sh'
   for font in "${FONT_FILES[@]}" "${title_fonts[@]}"; do
     [[ -f $font ]] || die 3 "font missing ${font@Q}"
   done
@@ -261,9 +320,9 @@ main() {
     [[ -f ${match[0]} ]] || die 3 "essay $n source not found: ${match[0]}"
     sources+=("${match[0]}")
   done
-  local -r APPENDIX="$SCRIPT_DIR"/the-better-ones.md
-  [[ -f $APPENDIX ]] || die 3 "appendix source not found: ${APPENDIX@Q}"
-  sources+=("$APPENDIX")
+  local -r appendix="$SCRIPT_DIR"/the-better-ones.md
+  [[ -f $appendix ]] || die 3 "appendix source not found: ${appendix@Q}"
+  sources+=("$appendix")
 
   # Install the cleanup trap before creating the temp dir, so a signal landing
   # between the two cannot leak it.
@@ -295,33 +354,33 @@ main() {
   for src in "${sources[@]}"; do
     printf -v dst '%s/%02d-%s' "$TMP_DIR" "$i" "${src##*/}"
     preprocess "$src" >"$dst" || die 1 "preprocessing failed for ${src@Q}"
-    if [[ $src == "$APPENDIX" ]]; then
+    if [[ $src == "$appendix" ]]; then
       # Same appendix treatment as mk-book.sh: label it, strip the repo-surface
       # headnote. Exact-match rewrite plus check, so a future title change
       # fails the build loudly instead of shipping unlabelled.
-      sed -i 's/^# Dharmas: The Better Ones$/# Appendix: Dharmas, the Better Ones/' "$dst" \
+      sed -i 's/^# Dharmas: The Better Ones$/# Appendix: Dharmas, the Better Ones/' -- "$dst" \
         || die 1 "appendix H1 rewrite failed for ${dst@Q}"
-      grep -q '^# Appendix: ' "$dst" \
-        || die 1 "appendix H1 not rewritten in ${dst@Q} (title changed in ${APPENDIX@Q}?)"
-      sed -i -e '/^\*A discussion piece /d' -e '0,/^---$/{/^---$/d}' "$dst" \
+      grep -q -- '^# Appendix: ' "$dst" \
+        || die 1 "appendix H1 not rewritten in ${dst@Q} (title changed in ${appendix@Q}?)"
+      sed -i -e '/^\*A discussion piece /d' -e '0,/^---$/{/^---$/d}' -- "$dst" \
         || die 1 "appendix headnote strip failed for ${dst@Q}"
     fi
     # The print interior carries no audio links: a hyperlink is useless on
     # paper, and the bare URL belongs to the reading PDF, not a printed book.
-    sed -i '/^<p class="audio">/d' "$dst" || die 1 "audio strip failed for ${dst@Q}"
+    sed -i '/^<p class="audio">/d' -- "$dst" || die 1 "audio strip failed for ${dst@Q}"
     # Nor the end-of-chapter furniture: the "« previous | next »" line is web
     # navigation, and the rule under it divides the essay from its Sources,
     # which in print begin on a page of their own. Every staged source holds
     # exactly one such rule; the appendix headnote rule is already gone.
-    sed -i -E -e '/^(« .*|.* »)$/d' -e '/^---$/d' "$dst" \
+    sed -i -E -e '/^(« .*|.* »)$/d' -e '/^---$/d' -- "$dst" \
       || die 1 "chapter-end marker strip failed for ${dst@Q}"
     # Drop the Part watercolour unless PRINT_CHAPTER_ART is set. preprocess()
     # has already turned the <image ...> shortcode into a standalone Markdown
     # image on its own line, which is the only image any source carries.
     ((PRINT_CHAPTER_ART)) \
-      || sed -i -E '/^!\[[^]]*\]\(images\/[^)]*\)$/d' "$dst" \
+      || sed -i -E '/^!\[[^]]*\]\(images\/[^)]*\)$/d' -- "$dst" \
       || die 1 "chapter-art strip failed for ${dst@Q}"
-    title=$(sed -n 's/^# //p' "$dst" | head -1)
+    title=$(sed -n 's/^# //p' -- "$dst" | head -1)
     [[ -n $title ]] || die 1 "no H1 heading found in ${dst@Q}"
     titles+=("$title")
     inputs+=("$dst")
@@ -343,7 +402,7 @@ main() {
     # dropcap.py runs before smallcaps.py: it scans for a line that begins
     # "<p>" and takes the first two words, which a <span> inserted ahead of it
     # would hide.
-    frag=$(pandoc --from=markdown-yaml_metadata_block --to=html5 "$dst" \
+    frag=$(pandoc --from=markdown-yaml_metadata_block --to=html5 -- "$dst" \
              | sed -E 's|^<p><strong>([^<]*)</strong></p>$|<p class="label">\1</p>|' \
              | "$SCRIPT_DIR"/lib/dropcap.py \
              | "$SCRIPT_DIR"/lib/smallcaps.py) \
@@ -353,7 +412,7 @@ main() {
     # section that is a chapter" on its own, because section.front is also a
     # <section> and so takes :first-of-type.
     printf '<section class="chapter%s">\n%s\n</section>\n' \
-      "$( ((chapter_n == 0)) && printf ' first' )" "$frag" >>"$body_html"
+      "$( ((chapter_n)) || printf ' first' )" "$frag" >>"$body_html"
     chapter_n+=1
   done
 
@@ -364,7 +423,7 @@ main() {
   # section test takes the class PREFIX: the first chapter is "chapter first",
   # and an exact match once left the Preface's sources unwrapped -- full size,
   # and running on from the text instead of opening a page of their own.
-  awk '
+  awk -- '
     /^<section class="chapter[ "]/ { insec = 1; opened = 0 }
     /<h2 id="sources/            { if (insec && !opened) { print "<div class=\"sources\">"; opened = 1 } }
     /^<\/section>/               { if (opened) { print "</div>"; opened = 0 }; insec = 0 }
@@ -385,14 +444,14 @@ main() {
     printf '<!doctype html><html lang="en"><head><meta charset="utf-8">\n'
     printf '<title>%s</title><link rel="stylesheet" href="print.css"></head><body>\n' \
       "$(xml_escape "$TITLE")"
-    cat "$front"
-    cat "$body_html"
+    cat -- "$front"
+    cat -- "$body_html"
     printf '</body></html>\n'
   } >"$doc" || die 5 "failed to write ${doc@Q}"
 
   local -r raw_pdf="$TMP_DIR"/raw.pdf
   info "typesetting at ${PRINT_SIZE_PT}pt on ${PRINT_LEAD_PT}pt"
-  weasyprint --base-url "$img_stage"/ "$doc" "$raw_pdf" \
+  weasyprint --base-url "$img_stage"/ -- "$doc" "$raw_pdf" \
     || die 1 'weasyprint failed'
 
   local -r padded="$TMP_DIR"/padded.pdf
@@ -412,58 +471,15 @@ main() {
     || die 1 'greyscale conversion failed'
 
   info 'running preflight'
-  "$PDFCHECK" check "$OUTPUT_PDF" \
+  "$PDFCHECK" check \
     --trim "${PRINT_TRIM_W_MM}x${PRINT_TRIM_H_MM}" \
     --measure "$PRINT_MEASURE_MM" --inner "$PRINT_INNER_MM" \
-    --require-even --require-blank-last \
+    --require-even --require-blank-last -- "$OUTPUT_PDF" \
     || { rm -f -- "$OUTPUT_PDF"
          die 1 'preflight failed; no file was written for upload'; }
 
-  info "done: $OUTPUT_PDF ($(du -h --apparent-size "$OUTPUT_PDF" | cut -f1))"
-  ((KEEP_TEMP)) && info "build directory kept: $TMP_DIR"
-  return 0
-}
-
-# IngramSpark: "The final page should be blank. If there is no blank page,
-# we'll add one for you." Adding it here keeps the page count ours to control,
-# and Tuwhiri requires a multiple of 2.
-#
-# Forcing chapter openers onto rectos already leaves blank versos, so the book
-# often ends blank and even with nothing to do. Four cases, in order:
-#   even + last blank -> nothing to add
-#   odd  + last blank -> one blank (even, still ends blank)
-#   even + last inked -> two blanks (even, ends blank)
-#   odd  + last inked -> one blank (even, ends blank)
-pad_to_even() {
-  local -- src=$1 out=$2
-  local -i pages last_blank=0 add=0
-  pages=$(pdfinfo "$src" | awk '/^Pages:/{print $2}')
-  # blank_pages is a pretty-printed JSON array, so it spans lines; grep with .*
-  # cannot match across them. Ask jq whether the last page is in the list.
-  if "$PDFCHECK" measure "$src" \
-       | jq --argjson p "$pages" -e '.blank_pages | index($p)' >/dev/null; then
-    last_blank=1
-  fi
-  if ((last_blank)); then
-    add=$(( pages % 2 ))
-  else
-    add=$(( pages % 2 == 0 ? 2 : 1 ))
-  fi
-  if ((add == 0)); then
-    cp -- "$src" "$out" || die 5 "failed to copy ${src@Q}"
-    info "page count $pages is even and ends blank; nothing to pad"
-    return 0
-  fi
-  local -- blank="$TMP_DIR"/blank.pdf
-  printf '<!doctype html><html lang="en"><head><meta charset="utf-8"><style>@page{size:%smm %smm;margin:0}</style></head><body></body></html>' \
-    "$PRINT_TRIM_W_MM" "$PRINT_TRIM_H_MM" >"$TMP_DIR"/blank.html \
-    || die 5 'failed to write the blank page source'
-  weasyprint "$TMP_DIR"/blank.html "$blank" || die 1 'blank-page render failed'
-  local -a parts=("$src")
-  local -i j
-  for ((j = 0; j < add; j++)); do parts+=("$blank"); done
-  pdfunite "${parts[@]}" "$out" || die 1 'pdfunite failed'
-  info "padded $pages -> $((pages + add)) pages"
+  info "done: $OUTPUT_PDF ($(du -h --apparent-size -- "$OUTPUT_PDF" | cut -f1))"
+  ((KEEP_TEMP == 0)) || info "build directory kept: $TMP_DIR"
 }
 
 main "$@"
