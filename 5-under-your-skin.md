@@ -3,9 +3,9 @@ part: 5
 title: "How a Dharma Gets Under Your Skin"
 slug: under-your-skin
 status: done
-words: 5541
+words: 5508
 reading_level: year-12
-updated: 2026-09-02
+updated: 2026-09-21
 draws_on: ["5.1", "5.3", "5.4", "5.2", "5.5"]
 #author: "Biksu Okusi"
 #date: 2026-08-01
@@ -34,7 +34,7 @@ A man who has not believed in God for thirty years stands at his mother's funera
 
 In each case something is running a program the conscious mind has formally cancelled. The argument has been won, on paper, by the sceptic. And the body was not listening. There is a self underneath the self that was speaking, with its own convictions, and it does not answer to reason.
 
-That underneath-self is where a dharma actually lives. In the first four parts we have looked at dharmas from the outside, as made things, plural things, things with histories and functions. But Part 4 ended on a puzzle. From the inside, a dharma never feels made, or chosen, or cultural. It feels like simply the truth, as plain and unarguable as the floor being solid. The question is how that happens: how a thing that human beings built gets so deep inside other human beings that it stops feeling built at all. To answer, we have to stop asking what a dharma teaches and start asking what it does to you -- down through three layers: the gut, the body, and the brain itself.
+That underneath-self is where a dharma actually lives. In the first four parts we have looked at dharmas from the outside, as made things, plural things, things with histories and functions. But Part 4 ended on a puzzle: how a thing that human beings built gets so deep inside other human beings that it stops feeling built at all. To answer, we have to stop asking what a dharma teaches and start asking what it does to you -- down through three layers: the gut, the body, and the brain itself.
 
 ## The elephant and the rider
 
