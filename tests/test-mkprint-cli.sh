@@ -37,6 +37,19 @@ main() {
     ok '--preflight takes a dash-led filename as a file, not an option'
   fi
 
+  # A bad value stops the build at the command line with exit 22 and names the
+  # option, rather than reaching the stylesheet or dying inside a library.
+  local -- opt
+  for opt in --size --lead --fonts; do
+    rc=0
+    out=$("$MKPRINT" "$opt" 'x;}' 2>&1) || rc=$?
+    if ((rc == 22)) && [[ $out == *"$opt"* ]]; then
+      ok "$opt rejects an invalid value with exit 22"
+    else
+      bad "$opt with an invalid value: exit $rc, output: ${out%%$'\n'*}"
+    fi
+  done
+
   ((FAILED == 0)) || exit 1
 }
 

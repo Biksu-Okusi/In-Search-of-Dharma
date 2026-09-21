@@ -151,11 +151,11 @@ stage_images() {
   if ((PRINT_CHAPTER_ART)); then
     while IFS= read -r -d '' src; do
       rel=${src#"$SCRIPT_DIR"/}
-      mkdir -p -- "$stage/${rel%/*}" || die 5 "failed to create ${stage@Q}/${rel%/*}"
+      mkdir -p -- "$stage/${rel%/*}" || die 5 "failed to create a directory for ${rel@Q} under ${stage@Q}"
       convert "$src" -colorspace Gray -level 5%,95% -sigmoidal-contrast 3,50% \
         -strip -quality "$JPEG_QUALITY" "$stage/${rel%.*}.jpg" \
         || die 5 "greyscale conversion failed ${src@Q}"
-    done < <(find "$SCRIPT_DIR"/images -maxdepth 2 \
+    done < <(find -- "$SCRIPT_DIR"/images -maxdepth 2 \
                \( -name '*.webp' -o -name '*.png' \) -print0)
   fi
   # The Okusi mark for chapter openers, whose source is the house navy. Left
@@ -165,7 +165,7 @@ stage_images() {
   # tint (0.251 grey), and DeviceGray carries it through unchanged. The source
   # SVG is untouched.
   [[ -f $LOGO_SRC ]] || die 3 "logo missing ${LOGO_SRC@Q}"
-  sed 's/#0b295a/#404040/g' -- "$LOGO_SRC" >"$stage"/images/"${LOGO_SRC##*/}" \
+  sed -- 's/#0b295a/#404040/g' "$LOGO_SRC" >"$stage"/images/"${LOGO_SRC##*/}" \
     || die 5 "logo tinting failed ${LOGO_SRC@Q}"
 }
 
@@ -252,9 +252,9 @@ pad_to_even() {
   fi
   local -- blank="$TMP_DIR"/blank.pdf
   {
-    printf '<!doctype html><html lang="en"><head><meta charset="utf-8">'
-    printf '<style>@page{size:%smm %smm;margin:0}</style></head><body></body></html>' \
-      "$PRINT_TRIM_W_MM" "$PRINT_TRIM_H_MM"
+    printf '<!doctype html><html lang="en"><head><meta charset="utf-8">' \
+      && printf '<style>@page{size:%smm %smm;margin:0}</style></head><body></body></html>' \
+           "$PRINT_TRIM_W_MM" "$PRINT_TRIM_H_MM"
   } >"$TMP_DIR"/blank.html || die 5 'failed to write the blank page source'
   weasyprint -- "$TMP_DIR"/blank.html "$blank" || die 1 'blank-page render failed'
   local -a parts=("$src")
@@ -280,6 +280,9 @@ main() {
     esac
   done
   readonly VERBOSE KEEP_TEMP
+  # Both reach the stylesheet as "${size}pt", so they are held to a number.
+  [[ -z $size || $size =~ ^[0-9]+(\.[0-9]+)?$ ]] || die 22 "invalid --size value ${size@Q}"
+  [[ -z $lead || $lead =~ ^[0-9]+(\.[0-9]+)?$ ]] || die 22 "invalid --lead value ${lead@Q}"
 
   if [[ -n $preflight ]]; then
     [[ -f $preflight ]] || die 3 "no such file ${preflight@Q}"
@@ -298,8 +301,10 @@ main() {
   done
   [[ -x $PDFCHECK ]] || die 3 "missing or non-executable ${PDFCHECK@Q}"
 
-  font_set_load "$font_set" "$SCRIPT_DIR"/fonts
-  print_geom_load ${size:+"$size"} ${lead:+"$lead"}
+  font_set_load "$font_set" "$SCRIPT_DIR"/fonts || die 22 "invalid --fonts value ${font_set@Q}"
+  # Both arguments always, empty for "default": with an unset size dropped from
+  # the list, --lead given alone would land in the size's position.
+  print_geom_load "$size" "$lead"
   local -- font
   local -a title_fonts=()
   readarray -t title_fonts < <(print_title_files "$SCRIPT_DIR"/fonts)
@@ -317,7 +322,7 @@ main() {
     match=("$SCRIPT_DIR/$n"-*.md)
     (( ${#match[@]} == 1 )) \
       || die 3 "expected exactly one file for essay $n, found ${#match[@]}"
-    [[ -f ${match[0]} ]] || die 3 "essay $n source not found: ${match[0]}"
+    [[ -f ${match[0]} ]] || die 3 "essay $n source not found: ${match[0]@Q}"
     sources+=("${match[0]}")
   done
   local -r appendix="$SCRIPT_DIR"/the-better-ones.md
@@ -358,7 +363,7 @@ main() {
       # Same appendix treatment as mk-book.sh: label it, strip the repo-surface
       # headnote. Exact-match rewrite plus check, so a future title change
       # fails the build loudly instead of shipping unlabelled.
-      sed -i 's/^# Dharmas: The Better Ones$/# Appendix: Dharmas, the Better Ones/' -- "$dst" \
+      sed -i -- 's/^# Dharmas: The Better Ones$/# Appendix: Dharmas, the Better Ones/' "$dst" \
         || die 1 "appendix H1 rewrite failed for ${dst@Q}"
       grep -q -- '^# Appendix: ' "$dst" \
         || die 1 "appendix H1 not rewritten in ${dst@Q} (title changed in ${appendix@Q}?)"
@@ -367,7 +372,7 @@ main() {
     fi
     # The print interior carries no audio links: a hyperlink is useless on
     # paper, and the bare URL belongs to the reading PDF, not a printed book.
-    sed -i '/^<p class="audio">/d' -- "$dst" || die 1 "audio strip failed for ${dst@Q}"
+    sed -i -- '/^<p class="audio">/d' "$dst" || die 1 "audio strip failed for ${dst@Q}"
     # Nor the end-of-chapter furniture: the "« previous | next »" line is web
     # navigation, and the rule under it divides the essay from its Sources,
     # which in print begin on a page of their own. Every staged source holds
@@ -378,9 +383,9 @@ main() {
     # has already turned the <image ...> shortcode into a standalone Markdown
     # image on its own line, which is the only image any source carries.
     ((PRINT_CHAPTER_ART)) \
-      || sed -i -E '/^!\[[^]]*\]\(images\/[^)]*\)$/d' -- "$dst" \
+      || sed -i -E -- '/^!\[[^]]*\]\(images\/[^)]*\)$/d' "$dst" \
       || die 1 "chapter-art strip failed for ${dst@Q}"
-    title=$(sed -n 's/^# //p' -- "$dst" | head -1)
+    title=$(sed -n -- '/^# /{s///p;q}' "$dst") || die 1 "cannot read the H1 of ${dst@Q}"
     [[ -n $title ]] || die 1 "no H1 heading found in ${dst@Q}"
     titles+=("$title")
     inputs+=("$dst")
@@ -395,7 +400,7 @@ main() {
   local -- frag
   local -i chapter_n=0
   local -r body_html="$TMP_DIR"/body.html
-  : >"$body_html"
+  : >"$body_html" || die 5 "failed to create ${body_html@Q}"
   for dst in "${inputs[@]}"; do
     # A paragraph that is nothing but a bold run is a label, and is marked as
     # one here for the stylesheet (see .sources p.label in lib/print-style.sh).
@@ -412,7 +417,8 @@ main() {
     # section that is a chapter" on its own, because section.front is also a
     # <section> and so takes :first-of-type.
     printf '<section class="chapter%s">\n%s\n</section>\n' \
-      "$( ((chapter_n)) || printf ' first' )" "$frag" >>"$body_html"
+      "$( ((chapter_n)) || printf ' first' )" "$frag" >>"$body_html" \
+      || die 5 "failed to append to ${body_html@Q}"
     chapter_n+=1
   done
 
@@ -432,7 +438,12 @@ main() {
   mv -- "$body_html".wrapped "$body_html" || die 5 'sources wrap move failed'
 
   local -- css="$TMP_DIR"/print.css
-  { font_faces_css pdf; print_title_faces_css "$SCRIPT_DIR"/fonts; print_page_css; } >"$css" \
+  # Chained with &&: a group tested by || runs with errexit off, so with plain
+  # semicolons only the last command's status would be seen, and a failed
+  # font_faces_css would leave a stylesheet with no faces in it.
+  { font_faces_css pdf \
+      && print_title_faces_css "$SCRIPT_DIR"/fonts \
+      && print_page_css; } >"$css" \
     || die 5 "failed to write ${css@Q}"
   cp -- "$css" "$img_stage"/print.css || die 5 'failed to stage the stylesheet'
 
@@ -441,12 +452,12 @@ main() {
 
   local -- doc="$img_stage"/book.html
   {
-    printf '<!doctype html><html lang="en"><head><meta charset="utf-8">\n'
-    printf '<title>%s</title><link rel="stylesheet" href="print.css"></head><body>\n' \
-      "$(xml_escape "$TITLE")"
-    cat -- "$front"
-    cat -- "$body_html"
-    printf '</body></html>\n'
+    printf '<!doctype html><html lang="en"><head><meta charset="utf-8">\n' \
+      && printf '<title>%s</title><link rel="stylesheet" href="print.css"></head><body>\n' \
+           "$(xml_escape "$TITLE")" \
+      && cat -- "$front" \
+      && cat -- "$body_html" \
+      && printf '</body></html>\n'
   } >"$doc" || die 5 "failed to write ${doc@Q}"
 
   local -r raw_pdf="$TMP_DIR"/raw.pdf
