@@ -3,7 +3,7 @@ part: 0
 title: "Preface"
 slug: preface
 status: done
-words: 4564
+words: 4556
 reading_level: year-12
 updated: 2026-09-21
 draws_on: ["0.1", "0.2", "0.3", "0.4", "0.5", "0.6", "0.7"]
@@ -38,7 +38,7 @@ So the conclusion comes first. The book asks what a dharma is, where such things
 
 ## A note on two words
 
-By *dharma* I mean something deliberately broad. Not the Vedic or Buddhist teaching with a capital D, but a way of living, a path one walks: what other traditions have called a *dao*, or simply *the Way*, and what we might equally meet in the unspoken code of a profession or a subculture. A dharma, in my usage, is whatever holds a life or a people together by answering the question of how to live. I write it in the plural, *dharmas*, on purpose, because there is no single Dharma, only many, none ranked above the rest before we look.
+By *dharma* I mean something deliberately broad. Not the Vedic or Buddhist teaching with a capital D, but a way of living, a path one walks: what other traditions have called a *dao*, or simply *the Way*, and what we might equally meet in the unspoken code of a profession or a subculture. A dharma, in my usage, is whatever holds a life or a people together by answering the question of how to live. I write it in the plural, *dharmas*, on purpose, because there is no single Dharma, only many.
 
 What marks a dharma off from mere unexamined custom is that it *can* be held up and known *as* a path: named, questioned, reformed, and even recombined and made anew. That capacity is available, not required, since most dharmas are absorbed half-consciously and never feel chosen at all.
 

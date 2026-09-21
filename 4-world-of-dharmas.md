@@ -3,7 +3,7 @@ part: 4
 title: "A World of Dharmas"
 slug: world-of-dharmas
 status: done
-words: 6620
+words: 6559
 reading_level: year-12
 updated: 2026-09-21
 draws_on: ["4.2", "4.3", "4.4", "1.4", "3.5.1", "3.5.2", "3.5.3", "3.5.4", "4.5"]
@@ -46,7 +46,7 @@ Five answers. They look nothing alike. The first dissolves the self into the com
 
 ## How far can they get?
 
-The *wong sikep* of Part 3 were one dharma, watched up close. Now pull back and take in the range, because the plurality I keep insisting on is a real and sometimes dizzying fact about the human world. So we are going to visit five dharmas that grew up far apart, look at each on its own terms, and only then ask what, if anything, holds across them. One thread runs through every stop: where each dharma draws its circle of care, who it gathers in and who it leaves outside.
+The *wong sikep* of Part 3 were one dharma, watched up close. Now pull back and take in the range, because the plurality is a real and sometimes dizzying fact about the human world. So we are going to visit five dharmas that grew up far apart, look at each on its own terms, and only then ask what, if anything, holds across them. One thread runs through every stop: where each dharma draws its circle of care, who it gathers in and who it leaves outside.
 
 I am going to end the tour with the one many of you were raised inside, the family of Jewish, Christian, and Muslim ethics, and I should say why. The whole wager here is that we can look at dharmas without privileging any of them, including our own. That is easy to say about somebody else's tradition and hard to do about the water you were swimming in before you could see it. So the Abrahamic covenant comes last, as the real test of whether the non-privileging eye can be turned around to look at itself.
 
@@ -130,7 +130,7 @@ A fellowship that tests truth by collective feeling has a characteristic failure
 
 ## The Covenant: looking at your own
 
-For most readers in the Western world, the tradition you absorbed before you could choose, whether or not you still believe a word of it, is one of the three faiths that trace themselves to Abraham. And the reflex bred into the modern mind is to file these under a different and opposite heading from 'dharma': under *religion*, the thing of belief and faith and the supernatural, as against ethics or philosophy or a way of life. That reflex is mistaken, and I should own that the bookshelf behind this project shares its tilt -- heavy on evolution and secular philosophy, light on the faiths of Abraham -- which is why this stop on the tour gets its full weight. Judaism, Christianity, and Islam are, by every test we have used, dharmas like any other.
+For most readers in the Western world, the tradition you absorbed before you could choose, whether or not you still believe a word of it, is one of the three faiths that trace themselves to Abraham. And the reflex bred into the modern mind is to file these under a different and opposite heading from 'dharma': under *religion*, the thing of belief and faith and the supernatural, as against ethics or philosophy or a way of life. That reflex is mistaken, and I should own that the bookshelf behind this project shares its tilt: heavy on evolution and secular philosophy, light on the faiths of Abraham. Judaism, Christianity, and Islam are, by every test we have used, dharmas like any other.
 
 The clinching evidence is sitting in their own vocabulary. *Halakha*, the word for the whole body of Jewish practice, comes from a root meaning 'to walk', and it is best translated not as 'law' but as 'the way to walk'. *Sharia*, in Islam, literally means 'the path to water'. And the very first Christians, before anyone called them Christians, called themselves followers of 'the Way'. The same image in all three: a *path one walks*. That is the image the Indian traditions attach to *dharma* as well, and the plain meaning of its companion word *mārga*, the Sanskrit for a road or path. These traditions describe themselves, in their own oldest language, just as a dharma does.
 
@@ -142,7 +142,7 @@ Two common stereotypes deserve puncturing. Islam carries inside its own law a li
 
 And these are living traditions, not fossils, which is what the secular eye most easily misses. The very *maqasid*, the higher purposes of the law, are what reformers reach for when they argue that a cruel or patriarchal reading has lost sight of what the law was *for*: movements such as Sisters in Islam contest extremist interpretations by reaching further into the tradition rather than walking away from it. Both Islam and Judaism carry centuries of fierce internal argument, and both shelter mystical, inward streams, Sufism and Kabbalah, every bit as contemplative as anything in Buddhism. A dharma is not its most rigid and frightened version. To define other people's traditions by their fundamentalists while defining our own by their philosophers is a failure of the non-privileging eye.
 
-If the Abrahamic paths are dharmas, then so is whatever I am doing here. 'Secular dharma' is not a neutral throne above the others from which I get to rank them. It is one more path among the paths, with its own commitments and its own blind spots, walking alongside the covenant, the Dreaming, and the rest. The non-privileging stance, taken seriously, privileges *me* least of all.
+If the Abrahamic paths are dharmas, then so is whatever I am doing here. The non-privileging stance, taken seriously, privileges *me* least of all.
 
 ## What rhymes
 

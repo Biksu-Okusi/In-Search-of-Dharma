@@ -3,7 +3,7 @@ part: 1
 title: "Defining Dharma"
 slug: defining-dharma
 status: done
-words: 5855
+words: 5843
 reading_level: year-12
 updated: 2026-09-21
 draws_on: ["1.1", "1.2", "1.3", "1.4", "3.3", "3.4"]
@@ -156,7 +156,7 @@ I found that the word we treat as exotic is, at its root, the plainest word imag
 
 Which means the thing we have been taught to see as faraway and faintly mystical is, in fact, the most ordinary thing in the world. You are standing inside a dharma right now, some inherited, half-examined account of how to treat people and what a good life looks like, whether or not you have ever given it a name. The interesting question was never whether *you* have a dharma. It is which one -- or which ones -- where it came from, how it got inside you, and whether it deserves to keep you.
 
-We have a working definition and a plural, unprivileged field to explore. The very next question is the obvious one: if dharmas are made rather than handed down from the sky, where do they actually come from? What is it about being human that makes us build these things, over and over, wherever we appear? To answer that, we have to go and watch one being born: back past the philosophers and past the scriptures, to the first crowded cities, where the ancient social instincts we just met were made to hold together more strangers than they had ever faced.
+The very next question is the obvious one: if dharmas are made rather than handed down from the sky, where do they actually come from? What is it about being human that makes us build these things, over and over, wherever we appear? To answer that, we have to go and watch one being born: back past the philosophers and past the scriptures, to the first crowded cities, where the ancient social instincts we just met were made to hold together more strangers than they had ever faced.
 
 <!--audio stop-->
 

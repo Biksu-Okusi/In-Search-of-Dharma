@@ -3,9 +3,9 @@ part: 2
 title: "The Genesis of Dharmas"
 slug: birth-of-dharma
 status: done
-words: 4890
+words: 4852
 reading_level: year-12
-updated: 2026-09-02
+updated: 2026-09-21
 draws_on: ["2.1", "2.2", "2.3", "5.2", "1.2", "5.5"]
 #author: "Biksu Okusi"
 #date: 2026-08-01
@@ -122,7 +122,7 @@ So, did the Axial sages invent morality? By now you can hear how badly that ques
 
 They added explicitness: they took an ethic that had lived silently in habit and story and stated it out loud, as doctrine you could examine, teach, and argue with. They added universality: they stretched the moral circle, at least in principle, past the band and the tribe toward the stranger, the foreigner, and eventually all of humanity, prising the warm inside of the small group open to take in people the foragers would have raided. They added reflection: a tradition that enacted its values and also theorised them, asked after their reasons, and could therefore criticise itself and reform. And through writing, they added permanence and reach: a code on a page could be fixed, copied, carried across an ocean, and handed to a generation the teacher would never meet, in a way almost no spoken story ever could.
 
-What is on that list matters as much as what is missing from it. Every item is a technology layered on top of the older cooperative human nature, not a replacement for it. And that single observation is the foundation of the secular case. If a full moral order ran for something like a hundred thousand years on story, ritual, reputation, and the levelling of upstarts, with no scripture and frequently no god in sight, then scripture and god were never necessary for ethics. They were tools that a particular kind of large society found useful for the job. Which means the job can, at least in principle, be done with other tools. The historical record itself is the first and best argument that you can have a binding, demanding ethic without the supernatural, because for most of the human story, that is exactly what we had.
+What is on that list matters as much as what is missing from it. Every item is a technology layered on top of the older cooperative human nature, not a replacement for it. And that single observation is the foundation of the secular case. If a full moral order ran all that time on story, ritual, reputation, and the levelling of upstarts, with no scripture and frequently no god in sight, then scripture and god were never necessary for ethics. They were tools that a particular kind of large society found useful for the job. Which means the job can, at least in principle, be done with other tools.
 
 There is a complication that keeps the picture from being too neat. I have told this as though crowding came first and codes came second, society creating dharmas to cope. But the arrow can run the other way too. Anthropologist Joseph Henrich and his colleagues have traced how the medieval Western Church, by banning cousin marriage and reshaping the family, actively dissolved the dense webs of kinship that had organised European life, and in doing so helped manufacture the loose, mobile, individualistic, stranger-trusting society we now think of as modern. There the dharma did not merely answer the new world; it helped build it. Codes and the societies that carry them make each other, in a long feedback loop with no clean beginning.
 
