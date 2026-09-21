@@ -3,9 +3,9 @@ part: 0
 title: "Preface"
 slug: preface
 status: done
-words: 4480
+words: 4564
 reading_level: year-12
-updated: 2026-09-02
+updated: 2026-09-21
 draws_on: ["0.1", "0.2", "0.3", "0.4", "0.5", "0.6", "0.7"]
 #author: "Biksu Okusi"
 #date: 2026-08-01
@@ -32,15 +32,27 @@ audio:
 
 Most books that refer to the word 'dharma' come from one of two places: a monastery or a university, or somewhere in their vicinity. A teacher hands down a lineage received from their own teacher, or a scholar maps the territory from a careful distance. This one comes from neither. It was written by a lifelong anarchist, raised on the remote western rim of Australia: a naturalised Indonesian now, writing from the island of Bali. It was built on decades of accumulated reading and hard experience, along with a handful of friends scattered across three continents and, latterly, dozens of Large Language Models.
 
-A preface is normally a throat-clearing, the part most sensible readers skip on the way to Part 1. I'd ask you not to skip this one; I have made it longer than is fashionable on purpose. The eight parts that follow make fairly bold assertions about where our worldviews and ethics come from, and they reach their conclusions by a route unusual enough to require explanation. I think you can weigh a conclusion better when you can see who helped reach it, and what was standing behind the person doing the reaching; above all, when you can see *how* it was reached.
+A preface is normally a throat-clearing, the part most sensible readers skip on the way to Part 1. I'd ask you not to skip this one; I have made it longer than is fashionable on purpose. The eight parts that follow reach their conclusions by a route unusual enough to require explanation. I think you can weigh a conclusion better when you can see who helped reach it, and what was standing behind the person doing the reaching; above all, when you can see *how* it was reached.
 
-I start with the people and ideas behind the work, since I did not do it alone. Then comes something of my own life and how it ground the lens. Then the one idea the whole book argues. Last, at greatest length, how the book was actually made: the methods, the sources, and the disciplines that kept the process honest. But before any of that, two words need pinning down: *dharma*, and its plural.
+So the conclusion comes first. The book asks what a dharma is, where such things come from, and how new ones get made, and my answer is set down below, so that you know what you are being asked to weigh. The disclosures follow, and the longest of them, on how the book was made, comes last. But before any of that, two words need pinning down: *dharma*, and its plural.
 
 ## A note on two words
 
 By *dharma* I mean something deliberately broad. Not the Vedic or Buddhist teaching with a capital D, but a way of living, a path one walks: what other traditions have called a *dao*, or simply *the Way*, and what we might equally meet in the unspoken code of a profession or a subculture. A dharma, in my usage, is whatever holds a life or a people together by answering the question of how to live. I write it in the plural, *dharmas*, on purpose, because there is no single Dharma, only many, none ranked above the rest before we look.
 
 What marks a dharma off from mere unexamined custom is that it *can* be held up and known *as* a path: named, questioned, reformed, and even recombined and made anew. That capacity is available, not required, since most dharmas are absorbed half-consciously and never feel chosen at all.
+
+## The one idea
+
+If I were forced to compress what this book argues into a single sentence, it would be this: a dharma is not a revelation but a technology, an evolved cultural technology, worked out by a particular kind of social animal to solve a particular and permanent problem.
+
+That problem is cooperation. Human beings get far more done together than apart, but every cooperative group has a weak spot: the cheat, the free-rider, the one who takes the benefit and skips the cost. A species that found a way to hold cooperation together against its own parasites would inherit the earth, and ours, more or less, did. We evolved, slowly and through both our genes and our cultures, a thick toolkit for the job. A dharma, on this account, is a culture's particular, elaborated version of that toolkit, its worked-out answer to the questions of how to live together and what holds the group steady while it does. From the Vedas down to the working rules of a profession, they are all answers to the same problem, and not the same answer: the differences are real enough to fight over.
+
+Nobody who launched a dharma was trying to solve a cooperation problem; Gotama (the Buddha) was after the end of suffering. The claim is about what came next: what communities kept, carried and built their lives around, and why those communities held. From the inside a dharma is a path and a practice. The toolkit is how it looks from outside, and that outside view is the lens this project tests.
+
+This is not an idea I invented, so I should name the people I took it from, because they are the real intellectual scaffolding of everything that follows. The frame leans on the human behavioural biology of Robert Sapolsky; on Christopher Boehm's account of how foraging bands actively hold their own equality in place; on Sarah Hrdy's argument that cooperative child-rearing was the cradle of human kindness; on David Sloan Wilson's case for selection acting on groups and not only individuals; and, reaching back more than a century, on the Russian anarchist Peter Kropotkin, whose *Mutual Aid* argued, against the social Darwinists of his day, that cooperation is as natural a force in evolution as competition. Set Stephen Batchelor's secular dharma beside David Graeber's anthropology of mutual aid, and with Sapolsky's biology underneath, and they stop looking like neighbours and start looking like the same thing said in three vocabularies.
+
+I should flag that this is a particular and partial lens, and the book leans the way it leans: secular, evolutionary, anti-authoritarian, broadly Western, and a bit academic, even where the subject matter is none of those things. In each part, I have tried to show where that slant does the work and to look for the voices the lens tends to miss.
 
 ## The impetus
 
@@ -52,15 +64,15 @@ I had come mainly because of his book *After Buddhism*, which does something I h
 
 But the lasting thing the retreats gave me was people. In that course I first met Rupert Bozeat and Elfie Klinger. The three of us kept talking long after the formal programme ended, always online, across the distance between our countries. I guess we were a *sangha* in the loosest possible sense of that word: a small standing conversation that went on for years. Somewhere along the way we began recording the conversations and putting them on a [YouTube channel](https://www.youtube.com/@aseculardharma), under the deliberately unsure title 'a secular dharma?', question mark included.
 
-We made around fifty of them. They were never polished and were never going to find a wide audience, but they were the laboratory where much of what is in this book was first said out loud, argued over, and knocked into better shape. The question this book spends eight parts chasing, whether dharma can be defined at all, grew up inside those meetings.
+We made around fifty of them. They were never polished and were never going to find a wide audience, but they were the laboratory where much of what is in this book was first said out loud, argued over, and knocked into better shape. The question this book started from, whether dharma can be defined at all, grew up inside those meetings.
 
 Around that small core sits a wider circle I owe a good deal to. What I had wandered into was a scattering of people in several countries, all working the same seam without any one centre. The publishing end of it, for me, is the [Tuwhiri Project](https://tuwhiri.org), a small New Zealand house run by Ramsey Margolis and built for books that take ethics seriously and have no further use for religion. Around it are others coming at the same thing from their own directions: the [Secular Buddhist Network](https://secularbuddhistnetwork.org/), and Mike Slott, whose *Mindful Solidarity* ties contemplative practice back to politics; Winton Higgins, who wrote the workbook to *After Buddhism*; and a scatter of newsletters and reading groups, all of them trying to keep the wisdom traditions alive without asking anyone to believe six impossible things before breakfast.
 
-I will not dress up any of these people or organisations as the source of my argument, which is mine to answer for and is set out plainly further on; what they gave me was readers, counter-arguments, and the sense that the work was not merely eccentric. I am an unsociable person by temperament, and I have not always been an easy member of any of these circles, but I did not arrive at these ideas alone.
+I will not dress up any of these people or organisations as the source of my argument, which is set out plainly above and is mine to answer for; what they gave me was readers, counter-arguments, and the sense that the work was not merely eccentric. I am an unsociable person by temperament, and I have not always been an easy member of any of these circles, but I did not arrive at these ideas alone.
 
 ## The shape of the lens
 
-Now the warier part: the life behind the lens. I include it because a reader has a right to know the biases built into a writer, and mine are not the standard-issue ones. But I will keep it tied to the only thing that matters here, which is how it shaped the way I see.
+Now the warier part: the life behind the lens. I include it because a reader has a right to know the biases built into a writer, and mine are not the standard-issue ones: I warm to anarchists and to Javanese mystics, and I cool wherever a dharma grows offices to fill and an orthodoxy to police. But I will keep the telling tied to the only thing that matters here, which is how that life shaped the way I see.
 
 I was born in 1957 in Perth, Western Australia, which is, by most measures, the most isolated city on this planet. It is closer to Jakarta than to Sydney. A child on the western rim of Australia faces, geographically and imaginatively, not only east toward the Australian metropolises, but north, across the Indian Ocean, toward the vast and crowded archipelago of maritime Southeast Asia. The cultural gravity of my childhood pulled toward Asia long before I really understood why.
 
@@ -94,16 +106,6 @@ The name Biksu Okusi, then, was teasing and serious at once, in the way of most 
 
 There is also a second, plainer reason this name sits on this book. The pages ahead have things to say about communism and atheism. In Indonesia, where every citizen's identity card must state a religion, both words still carry real legal and social weight. Publishing under this given name deflects a little of that attention away from my legal one. It is a screen, not a mask; my legal name is attached to this project's public repository and to everything else I have ever published.
 
-## The one idea
-
-If I were forced to compress what this book argues into a single sentence, it would be this: a dharma is not a revelation but a technology, an evolved cultural technology, worked out by a particular kind of social animal to solve a particular and permanent problem.
-
-That problem is cooperation. Human beings get far more done together than apart, but every cooperative group has a weak spot: the cheat, the free-rider, the one who takes the benefit and skips the cost. A species that found a way to hold cooperation together against its own parasites would inherit the earth, and ours, more or less, did. We evolved, slowly and through both our genes and our cultures, a thick toolkit for the job. A dharma, on this account, is a culture's particular, elaborated version of that toolkit, its worked-out answer to the questions of how to live together and what holds the group steady while it does. From the Vedas down to the working rules of a profession, they are all running the same evolved programme on different cultural hardware. From the inside, a dharma is more than that; from the outside, it is the lens this project tests.
-
-This is not an idea I invented, so I should name the people I took it from, because they are the real intellectual scaffolding of everything that follows. The frame leans on the human behavioural biology of Robert Sapolsky; on Christopher Boehm's account of how foraging bands actively hold their own equality in place; on Sarah Hrdy's argument that cooperative child-rearing was the cradle of human kindness; on David Sloan Wilson's case for selection acting on groups and not only individuals; and, reaching back more than a century, on the Russian anarchist Peter Kropotkin, whose *Mutual Aid* argued, against the social Darwinists of his day, that cooperation is as natural a force in evolution as competition. Set Stephen Batchelor's secular dharma beside David Graeber's anthropology of mutual aid, and with Sapolsky's biology underneath, and they stop looking like neighbours and start looking like the same thing said in three vocabularies.
-
-I should flag, here and once, that this is a particular and partial lens, and the book leans the way it leans: secular, evolutionary, broadly Western, and a bit academic, even where the subject matter is none of those things. In each part, I have tried to show where that slant does the work and to look for the voices the lens tends to miss.
-
 ## Show the workings
 
 This is the part I most want the reader to understand, because it is the part that should earn or lose your trust.
@@ -136,7 +138,7 @@ And since any book about how people live invites the wish to be told, I had bett
 
 The one commitment that runs through every part, and the one I would ask you to hold onto, is a refusal to rank the dharmas in advance. Secular and sacred, written and unwritten, the great world religions and the code of a single profession or subculture: I treat them all as real candidates for the same description, and decline to hand any of them the high ground before the looking is done.
 
-This refusal is not woolly relativism, and I will try to show why some dharmas genuinely fall through the floor. But it is the starting posture, and it emerges out of the most basic fact about the word, which is that there was never a single **the** dharma to begin with. There are only dharmas, plural, and Part 1 begins exactly there, with a word that almost no one can define and almost everyone uses anyway.
+This refusal is not woolly relativism. Once the looking is done I do judge, by tests that any dharma can be held to, my own favourites included: the *wong sikep*, at the centre of this book, do not pass cleanly. I will try to show why some dharmas genuinely fall through the floor. But the refusal is the starting posture, and it emerges out of the most basic fact about the word, which is that there was never a single **the** dharma to begin with. There are only dharmas, plural, and Part 1 begins exactly there, with a word that almost no one can define and almost everyone uses anyway.
 
 So: that is where all this comes from, who helped make it, and how it was built. The throat-clearing is over.
 

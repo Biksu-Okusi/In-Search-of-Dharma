@@ -3,9 +3,9 @@ part: 1
 title: "Defining Dharma"
 slug: defining-dharma
 status: done
-words: 5676
+words: 5855
 reading_level: year-12
-updated: 2026-09-02
+updated: 2026-09-21
 draws_on: ["1.1", "1.2", "1.3", "1.4", "3.3", "3.4"]
 #author: "Biksu Okusi"
 #date: 2026-08-01
@@ -71,6 +71,8 @@ The evidence that this is universal is strong, though it requires careful handli
 The trick to holding 'universal' and 'wildly varied' together at once comes from biology. Niko Tinbergen, who studied animal behaviour, taught that among the questions you can ask about any trait, two stand sharply apart: what is it *for*, and how is it *built*? The evolutionary biologist David Sloan Wilson applies exactly that split to morality, and it resolves our puzzle. The *function* of a dharma is nearly always the same: to sustain cooperation and hold the group together. But the *mechanism* that delivers that function can be almost anything: a sense of duty, a fear of divine punishment, a code of honour, the Indian idea of dharma, the southern African idea of Ubuntu. One job, many tools. That is why dharma-shaped frameworks keep being reinvented by people who have never met: they are local solutions to a problem that every human community faces.
 
 Every group that solves the free-rider problem still loses a member, sooner or later, to death, and the cooperation story on its own has nothing to say about it. A death subtracts a person from the web of obligations, and it does so at the moment the survivors are least able to think. The old sociology of the funeral, from Robert Hertz's 1907 essay on the double burial to the collection Maurice Bloch and Jonathan Parry edited in 1982 as *Death and the Regeneration of Life*, holds that mortuary ritual is where a social order reconstitutes itself after the subtraction, re-seating the living in their roles and sending the dead somewhere the living can bear. I find that hard to argue with, and it is why a dharma has to be *comprehensive*, the first of the features I set out below, and cannot be merely a set of rules for exchange. A code that only regulates cooperation falls silent exactly when its people need it most, at the graveside, and a code that falls silent there will be replaced by one that does not. Cooperation explains why dharmas arise; death explains why they cannot stop at the marketplace.
+
+A heart is for pumping blood, and nobody designed it to. The biologist's *for* names what a thing does that keeps it in being; it says nothing about what anyone had in mind. No founder of a dharma had cooperation in mind, and no mourner ever buried a mother in order to re-seat the living in their roles. The Buddha's question was how suffering ends. Joseph Campbell warned against picturing early man as 'a sort of primitive social scientist', and the warning holds for the founders too. The holding comes afterwards, when a community takes a teaching up, builds a life around it, and lasts, and that second moment is the one this book studies. The first moment stays in the account. What the founders worked on, a person's own conviction and conduct, is the other half of Tinbergen's pair, how the thing is *built*, and a dharma that did not take hold of people from the inside would hold nobody together. That inside returns below as the second of the features, and Part 5 is given to it entirely.
 
 ## Written across the sky
 
@@ -193,6 +195,7 @@ Research notes used in this book are published on [GitHub](https://github.com/Bi
 - Donald E Brown, *Human Universals* (1991) -- reciprocity, fairness, and ethical patterning as features present in every documented culture.
 - Robert Hertz, 'Contribution à une étude sur la représentation collective de la mort' (*Année sociologique*, 1907; English in *Death and the Right Hand*, 1960), and Maurice Bloch & Jonathan Parry (eds.), *Death and the Regeneration of Life* (1982) -- mortuary ritual as the reconstitution of the social order after a death; the reason a dharma cannot stop at exchange.
 - Niko Tinbergen, 'On Aims and Methods of Ethology' (1963) -- the four questions, and the function/mechanism distinction this part uses to hold 'universal' and 'wildly varied' together. David Sloan Wilson applies that split to morality; the project reaches his application through his writing at prosocial.world rather than a peer-reviewed paper, and Tinbergen's own article is listed here as the source of the idea, not as a text the corpus holds.
+- Joseph Campbell, *Oriental Mythology: The Masks of God, Vol. II* (1962), ch. 1 -- against picturing early man as 'a sort of primitive social scientist'; the caution this part extends to the founders of dharmas, that a function is not an intent.
 - Ludwig Wittgenstein, *Philosophical Investigations* (1953) -- 'game', family resemblance, and the rope-not-thread model of meaning.
 - WB Gallie, 'Essentially Contested Concepts' (1956) -- why words like *justice*, *democracy*, and *dharma* sustain permanent, internal disagreement.
 - Talal Asad, *Genealogies of Religion* (1993) -- the genealogical objection this part meets head-on: there is no universal definition of religion, because the definition itself is 'the historical product of discursive processes'; the strongest published opponent of this project's central move, engaged here from the full text.
