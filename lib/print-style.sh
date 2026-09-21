@@ -185,14 +185,22 @@ p.op .dc{float:left;font-size:${PRINT_DROP_FS}em;
    0.665), so at the same nominal size it reads noticeably bigger than the text
    around it. 0.94em is the geometric mean of those two ratios, which leaves
    neither lowercase nor capitals far out. */
-strong,b{font-family:"$FONT_SANS_FAMILY";font-weight:600;font-size:0.94em}
+/* The negligible word-spacing is a workaround for WeasyPrint (seen in 69.0),
+   not a spacing choice. The renderer applies word spacing as a letter-spacing
+   attribute on each space alone, which costs the kerning between a space and
+   its neighbours; but it adds those attributes only when word spacing is
+   non-zero, and justification spacing only when drawing. A justified line is
+   therefore measured with space kerning and drawn without it. Work Sans has
+   some 240 kern pairs against the space and Bona Nova none, so a line ending
+   in bold ran up to 0.4mm past the measure. Any non-zero value makes layout
+   measure what will be drawn. */
+strong,b{font-family:"$FONT_SANS_FAMILY";font-weight:600;font-size:0.94em;word-spacing:0.001pt}
 /* Bold inside italic -- the Coda's closing statement, the Preface's signature
    -- takes Work Sans SemiBold Italic, which lib/fonts.sh embeds. Without that
    face the renderer fakes a slant; an earlier proof forced such bold upright
    on the mistaken belief that the family had no italic. */
-/* A statement set whole in bold is display matter, and is not justified: the
-   renderer's justification runs a line of the stepped-down sans up to 0.6mm
-   past the measure, which the Coda's closing statement showed. */
+/* A statement set whole in bold is display matter, and is set ragged right
+   rather than justified. */
 blockquote p:has(> strong:only-child){text-align:left}
 /* Italic inside a subhead is meaning, not decoration -- a Javanese term, a
    stressed "The" -- and stays in the subhead's own family, in its true italic. */
