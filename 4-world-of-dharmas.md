@@ -3,9 +3,9 @@ part: 4
 title: "A World of Dharmas"
 slug: world-of-dharmas
 status: done
-words: 6604
+words: 6620
 reading_level: year-12
-updated: 2026-09-02
+updated: 2026-09-21
 draws_on: ["4.2", "4.3", "4.4", "1.4", "3.5.1", "3.5.2", "3.5.3", "3.5.4", "4.5"]
 #author: "Biksu Okusi"
 #date: 2026-08-01
@@ -156,7 +156,7 @@ That is the shape we keep arriving at. The variety is real, thick, and not to be
 
 ## Made of the same need
 
-Taken whole, the world of dharmas shows human beings facing the one problem of how to live well together, and building answers of breathtaking variety. A relational web in southern Africa, a fortress of the will in imperial Rome, a sung and walked law in the Australian desert, an open hand in Java, a covenant in the Near East: five solutions to one need, each fully itself, each unmistakably a member of the same family.
+Taken whole, the world of dharmas shows human beings facing the one problem of how to live well together, and building answers of breathtaking variety. A relational web in southern Africa, a fortress of the will in imperial Rome, a sung and walked law in the Australian desert, an open hand in Java, a covenant in the Near East: five solutions to one need, each fully itself, each unmistakably a member of the same family. A family can share a need and still quarrel about everything else, and this one does.
 
 But I have been describing these dharmas from the outside, as an observer strolling through a gallery, comparing the exhibits. That is not how anyone actually lives inside one. From the inside, your dharma does not feel like one option among five. It does not feel chosen, or built, or cultural at all. It feels like simply *the truth*, like the plain shape of reality, as obvious and unremarkable as the ground being solid and the sky being up. The elder does not experience 'a relational ontology of personhood'. She experiences the plain fact that a person needs other people. That is the real power of a working dharma, and it is also its deepest mystery. How does a made thing get so far inside a human being that it stops feeling made? How does a path you were born onto come to feel like the only ground there is?
 

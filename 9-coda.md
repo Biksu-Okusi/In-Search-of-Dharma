@@ -3,9 +3,9 @@ part: 9
 title: "Coda"
 slug: coda
 status: done
-words: 1355
+words: 1383
 reading_level: year-12
-updated: 2026-08-22
+updated: 2026-09-21
 draws_on: []
 #author: "Biksu Okusi"
 #date: 2026-08-01
@@ -57,6 +57,8 @@ The features come in degrees; a profession, a subculture, an environmentalism ma
 Religious dharmas do not have automatic privilege over secular ones. All dharmas can be studied as human cultural systems for answering the same practical question:
 
 > **How should we live?**
+
+The question is shared. The answers are not: they differ all the way down, about what a person is, what time is, and what the world rests on.
 
 ## What a dharma contains
 
@@ -144,4 +146,4 @@ For readers who came from the secular-dharma world carrying its standing worry (
 
 ## Sources & further reading
 
-*This coda states in miniature what Parts 1–8 argue and source in full; it introduces no new claims. The four features and the placeholder rule are Part 1's; the point about reproduction condenses Part 2's storytelling and Part 5's installation machinery; the translation rule is Part 7's; the two tests are stated at the end of Part 8 and defended at full length in the appendix that follows,* Dharmas: The Better Ones, *which is also published with the research notes on [GitHub](https://github.com/Biksu-Okusi/In-Search-of-Dharma).*
+*This coda states in miniature what Parts 1–8 argue and source in full; it introduces no new claims. The four features and the placeholder rule are Part 1's; the disagreement among the answers is Part 4's; the point about reproduction condenses Part 2's storytelling and Part 5's installation machinery; the translation rule is Part 7's; the two tests are stated at the end of Part 8 and defended at full length in the appendix that follows,* Dharmas: The Better Ones, *which is also published with the research notes on [GitHub](https://github.com/Biksu-Okusi/In-Search-of-Dharma).*
