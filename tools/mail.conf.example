@@ -1,0 +1,12 @@
+# tools/mail.conf.example - copy to tools/mail.conf (never tracked) and fill in.
+#
+# The account's Maildir root. The Inbox is its cur/ and new/.
+MAIL_BASE=/var/mail/example.org/user/
+# Extra folders to watch, space-separated, in Maildir ".name" form.
+MAIL_FOLDERS=.publisher
+# The Sent folder. Only mail addressed TO a correspondent is reported from it.
+SENT_FOLDER=.Sent
+# A correspondent, matched against From/To/Cc. Case-insensitive.
+WHO_REGEX=publisher\.example|surname
+# A relevant Subject from anyone. Case-insensitive.
+TOPIC_REGEX=in search of dharma

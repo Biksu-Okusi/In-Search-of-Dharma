@@ -68,6 +68,10 @@ The finished file is then hardened to the printer's interior rules and checked a
 
 Run the test suite with [`tests/run_tests.sh`](tests/run_tests.sh). It covers the conformance rules, the preprocessing parity between the two builders, the print page geometry against its measured targets, and the glyph gate.
 
+### Correspondence tools
+
+Producing the printed edition runs on email with the publisher, and [`tools/`](tools/) holds two small read-only scripts for keeping up with it. [`tools/mailwatch.py`](tools/mailwatch.py) reports messages about the book that have not been seen before, from a Maildir inbox, any extra folders, and the Sent folder when the mail is addressed to a correspondent; silence means no news. [`tools/mailshow.py`](tools/mailshow.py) prints a thread by subject with the quoted tails trimmed, and can save image attachments, which is how a marked-up screenshot of a proof gets looked at. Neither moves or flags a message. Where the mailbox lives and whose mail counts are read from a local settings file that is never tracked; [`tools/mail.conf.example`](tools/mail.conf.example) shows its shape.
+
 ## Research notes
 
 The evidence base is organised into eight categories, each a directory of cited notes:
