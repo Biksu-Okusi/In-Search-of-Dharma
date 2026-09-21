@@ -9,6 +9,7 @@ Usage:
   pdfcheck.py measure FILE
   pdfcheck.py baselines FILE [--page N]
   pdfcheck.py check FILE [--trim WxH] [--require-even] [--require-blank-last]
+                         [--measure MM --inner MM]
 """
 import argparse
 import json
@@ -27,6 +28,12 @@ INK_FAIL_MM = 12.0   # below the model book's own 12.20mm, so certainly wrong
 MIN_PPI = 300
 RENDER_DPI = 72      # 1 pixel == 1pt at this resolution; no pixel<->point scaling
 INK_THRESHOLD = 255  # any pixel darker than pure white counts as ink
+# How far a word may sit outside the measure before it counts as an overrun.
+# Renderer and Ghostscript rounding leave ordinary justified lines up to about
+# 0.03mm past the edge; the smallest real overrun this rule was written for
+# measured 0.07mm.
+MEASURE_TOL_MM = 0.05
+MEASURE_LIST_MAX = 10  # overruns named one by one before the rest are counted
 
 
 def run(*args):
@@ -204,6 +211,24 @@ def blank_pages(path, pages):
   return blank
 
 
+def measure_overruns(path, trim_w_mm, inner_mm, measure_mm, tol=MEASURE_TOL_MM):
+  """Words lying outside the text block: [(page, side, mm, word)], worst first.
+
+  The block is mirrored across the spread. Page 1 is a recto, so an odd page
+  has the inner margin on its left and an even page has it on its right.
+  """
+  out = []
+  for page, x0, _y0, x1, _y1, text in words(path):
+    left = inner_mm if page % 2 else trim_w_mm - inner_mm - measure_mm
+    past_left = left - x0 * PT_MM
+    past_right = x1 * PT_MM - (left + measure_mm)
+    if past_left > tol:
+      out.append((page, 'left', round(past_left, 2), text))
+    if past_right > tol:
+      out.append((page, 'right', round(past_right, 2), text))
+  return sorted(out, key=lambda o: -o[2])
+
+
 def measure(path):
   boxes = page_boxes(path)
   n = len(boxes)
@@ -240,7 +265,7 @@ def baselines(path, page):
   return {'lines': out}
 
 
-def check(path, trim, require_even, require_blank_last):
+def check(path, trim, require_even, require_blank_last, text_block=None):
   m = measure(path)
   fail, warn = [], []
 
@@ -284,6 +309,16 @@ def check(path, trim, require_even, require_blank_last):
       warn.append(('margins', f"ink {v}mm from the {edge} trim; "
                               f"IngramSpark states {INK_WARN_MM}mm minimum"))
 
+  if text_block:
+    inner_mm, measure_mm = text_block
+    over = measure_overruns(path, tw, inner_mm, measure_mm)
+    for page, side, mm, word in over[:MEASURE_LIST_MAX]:
+      fail.append(('measure', f"page {page}: {word!r} runs {mm}mm past the {side} "
+                              f"of the {measure_mm:g}mm measure"))
+    if len(over) > MEASURE_LIST_MAX:
+      fail.append(('measure', f"and {len(over) - MEASURE_LIST_MAX} more "
+                              f"(tolerance {MEASURE_TOL_MM}mm)"))
+
   for kind, detail in warn:
     print(f"▲ {kind}: {detail}", file=sys.stderr)
   for kind, detail in fail:
@@ -302,7 +337,13 @@ def main():
   ap.add_argument('--trim', default='152x229')
   ap.add_argument('--require-even', action='store_true')
   ap.add_argument('--require-blank-last', action='store_true')
+  ap.add_argument('--measure', type=float, metavar='MM',
+                  help='width of the text block; no word may lie outside it')
+  ap.add_argument('--inner', type=float, metavar='MM',
+                  help='inner (gutter) margin, which places the text block')
   a = ap.parse_args()
+  if (a.measure is None) != (a.inner is None):
+    ap.error('--measure and --inner go together')
   try:
     if a.action == 'measure':
       print(json.dumps(measure(a.file), indent=2))
@@ -310,7 +351,8 @@ def main():
       print(json.dumps(baselines(a.file, a.page), indent=2))
     else:
       w, h = (float(v) for v in a.trim.split('x'))
-      return check(a.file, (w, h), a.require_even, a.require_blank_last)
+      text_block = None if a.measure is None else (a.inner, a.measure)
+      return check(a.file, (w, h), a.require_even, a.require_blank_last, text_block)
   except Exception as e:  # deliberately broad: a preflight gate must never traceback
     print(f"✗ {e}", file=sys.stderr)
     return 1

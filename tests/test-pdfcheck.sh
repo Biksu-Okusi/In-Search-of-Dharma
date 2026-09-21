@@ -176,5 +176,54 @@ weasyprint "$TMP/rgbimg.html" "$TMP/rgbimg.pdf" 2>/dev/null
 assert_fails 'check rejects a colour image' "$TMP/rgbimg.pdf" 'must be grayscale'
 assert_fails 'check rejects a low-resolution image' "$TMP/rgbimg.pdf" 'ppi, want'
 
+# check --measure: no line may run outside the text block. The block is
+# mirrored across the spread, so the fixtures are too: page 1 is a recto with
+# the inner margin on its left, page 2 a verso with it on its right. EXTRA_CSS
+# is where each fixture breaks the rule, or does not.
+make_spread() {
+  local -- out=$1 extra_css=${2:-}
+  local -- filler='Words enough to fill several justified lines of the measure, '
+  filler+=$filler$filler$filler$filler$filler
+  cat >"$TMP/spread.html" <<HTML
+<!doctype html><html lang="en"><head><meta charset="utf-8"><style>
+@font-face{font-family:BN;src:url(file://$(realpath -- "$ROOT")/fonts/bonanova/BonaNova-Regular.ttf)}
+@page{size:152mm 229mm;margin:25mm 20mm}
+@page:right{margin-left:25mm;margin-right:20mm}
+@page:left{margin-left:20mm;margin-right:25mm}
+body{font-family:BN;font-size:10pt;line-height:16pt;color:#000;margin:0}
+p{margin:0;text-align:justify}
+$extra_css
+</style></head><body><p class="recto">$filler</p>
+<p class="verso" style="break-before:page">$filler</p></body></html>
+HTML
+  # stderr dropped: the renderer's warnings are noise here, and a failed render
+  # still stops the suite through set -e.
+  weasyprint -- "$TMP/spread.html" "$TMP/spread-rgb.pdf" 2>/dev/null
+  gs_gray "$TMP/spread-rgb.pdf" "$out"
+}
+
+make_spread "$TMP/spread.pdf"
+"$CHECK" check --measure 107 --inner 25 -- "$TMP/spread.pdf" &>/dev/null \
+  && ok 'check --measure accepts text set within a mirrored measure' \
+  || bad 'check --measure rejected text set within the measure'
+
+make_spread "$TMP/past-right.pdf" '.recto{margin-right:-0.3mm}'
+assert_fails 'check --measure rejects a recto line 0.3mm past the right of the measure' \
+  "$TMP/past-right.pdf" 'measure: page 1' --measure 107 --inner 25
+
+# The same paragraph is in bounds on a recto and out of bounds on a verso only
+# if the block really is mirrored: this one starts 0.3mm left of the verso's
+# 20mm outer margin, which would sit well inside a recto's measure.
+make_spread "$TMP/past-left.pdf" '.verso{margin-left:-0.3mm}'
+assert_fails 'check --measure mirrors the block: rejects a verso line 0.3mm past the left' \
+  "$TMP/past-left.pdf" 'measure: page 2' --measure 107 --inner 25
+
+# Renderer and Ghostscript rounding put ordinary justified lines up to about
+# 0.03mm past the edge; the rule's stated tolerance is 0.05mm.
+make_spread "$TMP/within-tol.pdf" '.recto{margin-right:-0.03mm}'
+"$CHECK" check --measure 107 --inner 25 -- "$TMP/within-tol.pdf" &>/dev/null \
+  && ok 'check --measure tolerates 0.03mm, inside its 0.05mm tolerance' \
+  || bad 'check --measure rejected a 0.03mm overrun'
+
 ((FAILED == 0)) || exit 1
 #fin

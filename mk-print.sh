@@ -13,8 +13,10 @@
 # well-being", on that book's measured baseline grid (see lib/print-style.sh).
 # The result is then hardened to IngramSpark's interior rules: even page count,
 # blank final page, DeviceGray throughout, every font embedded, no crop marks.
-# lib/pdfcheck.py asserts all of that against the finished file, and the build
-# refuses to write a non-conforming PDF.
+# One rule is the book's own rather than the printer's: no word may lie outside
+# the measure, which a renderer fault once allowed (see the strong,b rule in
+# lib/print-style.sh). lib/pdfcheck.py asserts all of that against the finished
+# file, and the build refuses to write a non-conforming PDF.
 #
 # Sources, preprocessing and typefaces are shared with mk-book.sh through
 # lib/preprocess.sh and lib/fonts.sh: one set of sources, one reading of them.
@@ -227,6 +229,7 @@ main() {
     [[ -f $preflight ]] || die 3 "no such file ${preflight@Q}"
     "$PDFCHECK" check "$preflight" \
       --trim "${PRINT_TRIM_W_MM}x${PRINT_TRIM_H_MM}" \
+      --measure "$PRINT_MEASURE_MM" --inner "$PRINT_INNER_MM" \
       --require-even --require-blank-last
     return $?
   fi
@@ -411,6 +414,7 @@ main() {
   info 'running preflight'
   "$PDFCHECK" check "$OUTPUT_PDF" \
     --trim "${PRINT_TRIM_W_MM}x${PRINT_TRIM_H_MM}" \
+    --measure "$PRINT_MEASURE_MM" --inner "$PRINT_INNER_MM" \
     --require-even --require-blank-last \
     || { rm -f -- "$OUTPUT_PDF"
          die 1 'preflight failed; no file was written for upload'; }
