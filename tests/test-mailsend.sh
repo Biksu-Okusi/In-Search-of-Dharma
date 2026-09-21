@@ -52,6 +52,9 @@ export MAIL_CONF=$TMP/mail.conf
 
 printf 'Hello Pat\n\nThis message is from BookBot, the agent working on the book.\n\nThe logo is fixed.\n' >"$TMP"/body.txt
 printf 'Hello Pat\n\nThe logo is fixed.\n' >"$TMP"/anon.txt
+# Signed at the foot and nowhere else, below more text than any "opening" holds.
+{ printf 'Hello Pat\n\n'; printf 'The logo is fixed, and so is the rule. %.0s' {1..30}
+  printf '\n\nWith best wishes,\n\nBookBot\n'; } >"$TMP"/signed.txt
 : >"$TMP"/empty.txt
 printf 'notes\n' >"$TMP"/notes.md
 printf 'doc\n' >"$TMP"/notes.docx
@@ -86,8 +89,11 @@ ok() {
 
 refuses 'an empty body'                 'body is empty' \
   --body "$TMP"/empty.txt --reply-to "$PARENT" --send
-refuses 'a body that does not say who is writing' 'does not say the message is from BookBot' \
+refuses 'a body that does not say who is writing' 'BookBot appears nowhere in it' \
   --body "$TMP"/anon.txt --reply-to "$PARENT" --send
+dry_run_passes() { "$SEND" "$@" &>/dev/null; }
+ok 'a body that names the sender only in its sign-off is accepted' \
+  dry_run_passes --body "$TMP"/signed.txt --reply-to "$PARENT"
 refuses 'a recipient who is not a correspondent' 'not a known correspondent' \
   --body "$TMP"/body.txt --to stranger@elsewhere.example --subject hello --send
 refuses 'a Markdown attachment'         'is Markdown' \

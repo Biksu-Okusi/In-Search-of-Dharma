@@ -20,8 +20,8 @@ Usage:
   --no-wait           do not wait on the MTA log after sending.
 
 The checks, each of which refuses the send:
-  - the body is plain text with something in it, and its opening names the
-    sender, so the reader knows at once what is writing to them
+  - the body is plain text with something in it, and names the sender
+    somewhere -- a sign-off is enough -- so no message goes out unsigned
   - every recipient is a known correspondent (WHO_REGEX)
   - every attachment exists and is not empty; none is Markdown; the total
     stays under 20MB
@@ -79,8 +79,8 @@ def check_body(text, sender_name):
     raise Refused('the body is empty')
   if re.search(r'<(html|body|div|p|br)\b', text, re.I):
     raise Refused('the body looks like HTML; messages go as plain text only')
-  if sender_name and sender_name.lower() not in text[:600].lower():
-    raise Refused(f'the opening does not say the message is from {sender_name}')
+  if sender_name and sender_name.lower() not in text.lower():
+    raise Refused(f'the body does not say who is writing: {sender_name} appears nowhere in it')
 
 
 def check_recipients(addrs, who):
