@@ -101,6 +101,7 @@ font_set_load() {
         "EB Garamond|bold|italic|ebgaramond/EBGaramond-BoldItalic.otf"
         "Work Sans|normal|normal|worksans/WorkSans-Regular.ttf"
         "Work Sans|600|normal|worksans/WorkSans-SemiBold.ttf"
+        "Work Sans|600|italic|worksans/WorkSans-SemiBoldItalic.ttf"
       )
       ;;
     bonanova)
@@ -131,7 +132,9 @@ font_set_load() {
       # Nova caveats as the bonanova set: no Bold Italic face, and the 14pt
       # body that its x-height calls for. SemiBold is weight 600, so
       # FONT_HEADING_WEIGHT must say so, or the renderer asks for 700 and
-      # synthesises a heavier face than is embedded.
+      # synthesises a heavier face than is embedded. The SemiBold Italic is
+      # there for the same reason: an italic word in a heading, or bold inside
+      # italic, otherwise gets a slant the renderer invents.
       FONT_SERIF_FAMILY='Bona Nova'
       FONT_SANS_FAMILY='Work Sans'
       FONT_HEADING_WEIGHT=600
@@ -142,6 +145,7 @@ font_set_load() {
         "Bona Nova|bold|normal|bonanova/BonaNova-Bold.ttf"
         "Work Sans|normal|normal|worksans/WorkSans-Regular.ttf"
         "Work Sans|600|normal|worksans/WorkSans-SemiBold.ttf"
+        "Work Sans|600|italic|worksans/WorkSans-SemiBoldItalic.ttf"
       )
       ;;
     bonanova-solo)

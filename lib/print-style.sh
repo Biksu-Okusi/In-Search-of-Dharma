@@ -186,21 +186,16 @@ p.op .dc{float:left;font-size:${PRINT_DROP_FS}em;
    around it. 0.94em is the geometric mean of those two ratios, which leaves
    neither lowercase nor capitals far out. */
 strong,b{font-family:"$FONT_SANS_FAMILY";font-weight:600;font-size:0.94em}
-/* Work Sans ships no italic, so bold inside italic -- the Coda's closing
-   statement, the Preface's signature -- was drawn in a slant the renderer
-   faked, which also ran wide of the measure. Bold stands upright wherever it
-   falls: a real face, and the contrast with the italic around it does the
-   work the slant was meant to. */
-em strong,em b,strong em,b em,blockquote strong,blockquote b{font-style:normal}
+/* Bold inside italic -- the Coda's closing statement, the Preface's signature
+   -- takes Work Sans SemiBold Italic, which lib/fonts.sh embeds. Without that
+   face the renderer fakes a slant; an earlier proof forced such bold upright
+   on the mistaken belief that the family had no italic. */
 /* A statement set whole in bold is display matter, and is not justified: the
    renderer's justification runs a line of the stepped-down sans up to 0.6mm
    past the measure, which the Coda's closing statement showed. */
 blockquote p:has(> strong:only-child){text-align:left}
 /* Italic inside a subhead is meaning, not decoration -- a Javanese term, a
-   stressed "The" -- so it cannot simply go upright. It borrows the serif's
-   true italic, stepped up by the same x-height reckoning that steps the sans
-   down in running text. */
-h1 em,h2 em,h3 em{font-family:"$FONT_SERIF_FAMILY";font-weight:normal;font-size:1.06em}
+   stressed "The" -- and stays in the subhead's own family, in its true italic. */
 
 /* The book holds exactly two code spans, both of them a domain name in a
    Sources list. Left to the default monospace they pull DejaVu Sans Mono into
