@@ -10,3 +10,12 @@ SENT_FOLDER=.Sent
 WHO_REGEX=publisher\.example|surname
 # A relevant Subject from anyone. Case-insensitive.
 TOPIC_REGEX=in search of dharma
+
+# --- mailsend.py ---
+# The From header, and the envelope sender (where a bounce comes back to).
+SEND_FROM=BookBot <user@example.org>
+SEND_ENVELOPE=user@example.org
+# Domain part of generated Message-IDs.
+MSGID_DOMAIN=example.org
+# Optional: copied on everything sent, so the author sees what went out.
+SEND_CC=user@example.org

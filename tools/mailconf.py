@@ -10,12 +10,24 @@ which is never tracked; tools/mail.conf.example shows the shape.
   SENT_FOLDER    the Sent folder; watched only for mail TO a correspondent
   WHO_REGEX      matches a correspondent in From/To/Cc
   TOPIC_REGEX    matches a relevant Subject from anyone
+
+mailsend.py needs three more, and may take two optional ones:
+
+  SEND_FROM      the From header, e.g. Name <user@example.org>
+  SEND_ENVELOPE  the envelope sender address, where a bounce returns
+  MSGID_DOMAIN   the domain part of generated Message-IDs
+  SEND_CC        optional: copied on everything sent
+  SENDMAIL       optional: the sendmail binary (default /usr/sbin/sendmail)
+  MAIL_LOG       optional: the MTA log read after sending (default /var/log/mail.log)
+
+MAIL_CONF in the environment names a different settings file, which is how the
+test suite runs these tools against a fixture instead of a real mailbox.
 """
 import os
 import sys
 
 HERE = os.path.dirname(os.path.abspath(__file__))
-CONF = os.path.join(HERE, 'mail.conf')
+CONF = os.environ.get('MAIL_CONF') or os.path.join(HERE, 'mail.conf')
 REQUIRED = ('MAIL_BASE', 'MAIL_FOLDERS', 'SENT_FOLDER', 'WHO_REGEX', 'TOPIC_REGEX')
 
 

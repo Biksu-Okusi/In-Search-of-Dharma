@@ -4,8 +4,8 @@
 Watches the Inbox, the configured folders, and Sent -- Sent only when the mail
 is addressed to a correspondent. Read-only: nothing is ever moved out of new/,
 so nothing is marked read. What has been seen is remembered by each message's
-Maildir unique name, the part before ":2,", which survives both the move from
-new/ to cur/ and any change of flags.
+Maildir unique name, the part before the first comma or colon, which survives
+the move from new/ to cur/, any change of flags, and the keys a server appends.
 
 Usage:
   mailwatch.py --seed   record everything present now, print nothing
@@ -24,13 +24,21 @@ from email.utils import parsedate_to_datetime
 
 import mailconf
 
-STATE = os.path.join(mailconf.HERE, '.mailwatch.seen')
+# Beside the settings file, so a fixture's state never touches the real record.
+STATE = os.path.join(os.path.dirname(mailconf.CONF), '.mailwatch.seen')
 # Only files this recent are opened: a Sent folder can hold many thousands.
 WINDOW = 14 * 86400
 
 
 def uniq(path):
-  return os.path.basename(path).split(':2,')[0]
+  """The delivery-time identity of a message file.
+
+  A Maildir name is UNIQUE[,key=value...][:2,FLAGS]. The flags change when a
+  message is read, and the server may add keys later -- Dovecot appends ",U="
+  once it assigns an IMAP UID -- so only what precedes the first comma or
+  colon stays put for the life of the message.
+  """
+  return re.split(r'[,:]', os.path.basename(path), maxsplit=1)[0]
 
 
 def main():
@@ -41,7 +49,7 @@ def main():
   seen = set()
   if os.path.exists(STATE):
     with open(STATE, encoding='utf-8') as fh:
-      seen = set(fh.read().split())
+      seen = {uniq(name) for name in fh.read().split()}
   cut = time.time() - WINDOW
   fresh = []
   for folder, label in mailconf.folders(conf).items():
