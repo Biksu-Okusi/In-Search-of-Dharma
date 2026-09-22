@@ -3,9 +3,9 @@ part: 3
 title: "The Dharmas of the Samin of Java"
 slug: samin-of-java
 status: done
-words: 5633
+words: 5636
 reading_level: year-12
-updated: 2026-09-02
+updated: 2026-09-22
 draws_on: ["4.1", "1.3", "7.3", "8.1"]
 #author: "Biksu Okusi"
 #date: 2026-08-01
@@ -44,7 +44,7 @@ The story so far has been very large and very abstract: civilisations, millennia
 
 Not a world religion with a billion followers, in other words. Something hand-made.
 
-The Samin of Java are exactly that. Their dharma was assembled, more or less in front of the historical record, by a single farmer and his neighbours, beginning around 1890. We know roughly when it started, what set it off, what it asked of people, and how it spread. We can watch it being made. And because we can watch it being made, it tells us something the ancient traditions cannot, not because it is wiser than they are, but because the machinery has not yet been hidden behind a curtain of scripture and time.
+The Samin of Java are exactly that. Their dharma was assembled, more or less in front of the historical record, by a single farmer and his neighbours, beginning around 1890. We know roughly when it started, what set it off, what it asked of people, and how it spread. We can watch it being made. And because we can watch it being made, it tells us something the ancient traditions cannot, not because it is wiser than they are, but because the machinery has not yet been hidden behind a curtain of scripture and the fog of time.
 
 So this part is a close-up. One dharma, in a few hundred square kilometres of teak forest, held up to the light.
 
