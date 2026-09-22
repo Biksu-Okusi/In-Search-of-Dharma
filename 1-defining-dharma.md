@@ -3,7 +3,7 @@ part: 1
 title: "Defining Dharma"
 slug: defining-dharma
 status: done
-words: 5846
+words: 6176
 reading_level: year-12
 updated: 2026-09-22
 draws_on: ["1.1", "1.2", "1.3", "1.4", "3.3", "3.4"]
@@ -108,7 +108,11 @@ Run the everyday impostors against those four features, and you can see why they
 
 **Custom**, the way a village does things, supplies rules, but it is usually inherited without reflection and carries no transformative aim; it tells you what *is* done, not what is good and why.
 
-**Law** is comprehensive and powerful, but it binds from the outside: by coercion, enforceable by punishment and abolishable by a vote. Repeal a statute, and it is gone; a dharma is not undone so easily, because it lives in conviction rather than on a statute book. The line is less clean than it sounds. Law also makes conscience, through the school and the courtroom, and every dharma in this book uses sanctions of its own. The difference is where the binding is felt: from inside, as who you are, or from outside, as what it will cost you.
+**Law**, in the statute-book sense, is comprehensive and powerful, but it binds from the outside: by coercion, enforceable by punishment and abolishable by a vote. Repeal a statute, and it is gone; a dharma is not undone so easily, because it lives in conviction rather than on a statute book. The line is less clean than it sounds. Law also makes conscience, through the school and the courtroom, and every dharma in this book uses sanctions of its own. The difference is where the binding is felt: from inside, as who you are, or from outside, as what it will cost you.
+
+That is law as a lawyer means it, and it is the only sense the test has to keep out. The word has an older life, and in that life 'law' comes nearer to dharma than any other English word does. When the Buddha's teaching reached China, the translators rendered *dharma* as *fa*, the ordinary Chinese word for law, standard and method, the same word the Legalist school had used for the statutes of a hard state; and the Victorian translators, coming at it from the other side, made the same choice, so that the Lotus Sutra reached English as 'The Lotus of the True Law'. Neither was being careless. In Pali, Rupert Gethin lists the senses of *dhamma* as teaching, conduct, truth, nature, natural law, and the basic qualities out of which a moment of experience is built, and insists they are one family rather than a list of homonyms; 'law' in English has kept a family nearly as wide, from the law of the land to the law of gravity. It is the natural law of two sections back, the order the jurists kept when they lost the lawgiver; and it shades into 'lore', 'way' and 'path', none of which covers the thing either.
+
+Try it. Read 'law' for 'dharma' through the rest of this book and it will hold more often than not; and where it fails, it fails at exactly the line this section is drawing. A law of nature does not bind you at all: you fall whether or not you believe in gravity. A statute binds you from outside. A dharma binds from within, as who you have become, and neither sense of 'law' has a word for that. That is the whole reason this book keeps a foreign placeholder rather than the nearest English word: not because 'law' is wrong, but because its two halves, the discovered and the decreed, have between them mislaid the part that matters here.
 
 **Etiquette** governs only the polished surface of conduct (which fork, which form of address) and social signalling, and asks nothing of your soul.
 
