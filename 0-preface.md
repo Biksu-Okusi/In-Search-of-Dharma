@@ -3,9 +3,9 @@ part: 0
 title: "Preface"
 slug: preface
 status: done
-words: 4556
+words: 4555
 reading_level: year-12
-updated: 2026-09-21
+updated: 2026-09-22
 draws_on: ["0.1", "0.2", "0.3", "0.4", "0.5", "0.6", "0.7"]
 #author: "Biksu Okusi"
 #date: 2026-08-01
@@ -92,7 +92,7 @@ Three decades of processing what the state actually demands of those who comply 
 
 Living inside Indonesian society did the deepest work on the lens. I do not write about dharma as a Westerner reaching for the exotic East. I live in a country whose language and cosmology are saturated with Sanskrit, where *dharma* is an ordinary, slightly worn loanword rather than a sacred mystery, and where the deep Indic substratum beneath a nominally Muslim surface is never very far from view. The word is furniture to me, not incense.
 
-In my late thirties I went back to university for a specialist degree in Indonesian anthropology at Murdoch University, including a year at Universitas Gadjah Mada in Yogyakarta on the ACICIS programme, and it was there that its resident director, Paul Stange, my Asian Studies lecturer and a scholar of Javanese mysticism, brought my attention to Sumarah: a quiet Javanese movement that calls itself a philosophy of life, a practice of surrender with no fixed guru, no creed, and no demand that you believe anything at all. It was inevitably bound up with elements of traditional Javanese culture I did not always share, but it gave me something I had no name for at the time: a working example of a contemplative and ethical path carried within a culture rather than a church, mosque or temple.
+In my late thirties I went back to university for a specialist degree in Indonesian anthropology at Murdoch University, including a year at Universitas Gadjah Mada in Yogyakarta on the ACICIS programme. It was there that its resident director, Paul Stange, my Asian Studies lecturer and a scholar of Javanese mysticism, brought my attention to Sumarah: a quiet Javanese movement that calls itself a philosophy of life, a practice of surrender with no fixed guru, no creed, and no demand that you believe anything at all. It was inevitably bound up with elements of traditional Javanese culture I did not always share, but it gave me something I had no name for at the time: a working example of a contemplative and ethical path carried within a culture rather than a church, mosque or temple.
 
 This was, I can see now, my first recognisable 'secular dharma', met fully two decades before I ever sat down in a Bodhi College retreat; and I am no detached observer: I built their international movement's English-language [website](https://sumarah.net) back in 1998. It planted early the suspicion I will later argue: that a dharma is far harder to prise away from its culture than from its gods.
 
@@ -100,7 +100,9 @@ My personal life has been large and disorderly by any conventional measure: more
 
 The old dharmas all know what to do with a body, and with the people left standing around it. It is why Part 1 argues that a dharma must be comprehensive, why Part 5 opens at a funeral, and why Part 7 asks whether a secular dharma can bury.
 
-One more disclosure belongs here, because it is printed on the cover. *Biksu* is the Indonesian word for a Buddhist monk, and I am not one: no ordination, no robe, no teacher who ever sanctioned me. Nor did I choose the name. It was given to me, beginning more than a decade ago, by Indonesian friends and colleagues -- all of them, as it happens, Muslims -- who knew that I meditated, knew the kind of thing I read, and watched me withdraw into my office studios in Jakarta, Batam and Bali for weeks and months at a time, running the firm entirely online, avoiding direct contact even with clients, doing little but programming and studying anthropology. The withdrawal deepened through the grieving years just described, and also after the [Jakarta terrorist attack of 2016](https://garydean.id/works/meet-me-at-the-starbucks-that-was-bombed). Three bombs exploded, and the second and largest of those went off in the Starbucks directly below my office windows, where I had bought my coffee every working morning. It was probably meant for me.
+One more disclosure belongs here, because it is printed on the cover. *Biksu* is the Indonesian word for a Buddhist monk, and I am not one: no ordination, no robe, no teacher who ever sanctioned me. Nor did I choose the name. It was given to me, beginning more than a decade ago, by Indonesian friends and colleagues -- all of them, as it happens, Muslims -- who knew that I meditated, knew the kind of thing I read, and watched me withdraw into my office studios in Jakarta, Batam and Bali for weeks and months at a time, running the firm entirely online, avoiding direct contact even with clients, doing little but programming and studying anthropology.
+
+The withdrawal deepened through the grieving years just described, and also after the [Jakarta terrorist attack of 2016](https://garydean.id/works/meet-me-at-the-starbucks-that-was-bombed). Three bombs exploded, and the second and largest of those went off in the Starbucks directly below my office windows, where I had bought my coffee every working morning. It was probably meant for me.
 
 The name Biksu Okusi, then, was teasing and serious at once, in the way of most Indonesian nicknames. At first it sort of annoyed me. But given names have a way of sinking in, and over the years I have accepted it as part of my Indonesian identity: my practice, and my company, Okusi, welded into a single title.
 

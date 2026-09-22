@@ -3,9 +3,9 @@ part: 1
 title: "Defining Dharma"
 slug: defining-dharma
 status: done
-words: 5843
+words: 5846
 reading_level: year-12
-updated: 2026-09-21
+updated: 2026-09-22
 draws_on: ["1.1", "1.2", "1.3", "1.4", "3.3", "3.4"]
 #author: "Biksu Okusi"
 #date: 2026-08-01
@@ -110,7 +110,7 @@ Run the everyday impostors against those four features, and you can see why they
 
 **Law** is comprehensive and powerful, but it binds from the outside: by coercion, enforceable by punishment and abolishable by a vote. Repeal a statute, and it is gone; a dharma is not undone so easily, because it lives in conviction rather than on a statute book. The line is less clean than it sounds. Law also makes conscience, through the school and the courtroom, and every dharma in this book uses sanctions of its own. The difference is where the binding is felt: from inside, as who you are, or from outside, as what it will cost you.
 
-**Etiquette** governs only the polished surface of conduct (which fork, which form of address) and asks nothing of your soul.
+**Etiquette** governs only the polished surface of conduct (which fork, which form of address) and social signalling, and asks nothing of your soul.
 
 The hardest case is **ideology**, which, like a dharma, is comprehensive and fuses values with a story about the world; and plenty of ideologies sincerely offer their adherents transformation, sacrifice, discipline, an identity to grow into. Nor can the difference be purity of motive, since dharmas have served power often enough: the word itself began in the rituals of kingship, and Aśoka put it to work for an empire. What separates them is centre of gravity. An ideology is organised first around political mobilisation, the winning and wielding of collective power; a dharma is organised first around the formation of persons, and carries that distinctive layer of inner practice (meditation, prayer, training) that an ideology can do without. The line is real, but it is the blurriest of the four, and traffic crosses it in both directions: a dharma curdles into an ideology when it is captured by power, and an ideology starts to look like a dharma the moment it begins telling its followers who to become.
 
