@@ -181,7 +181,7 @@ def dataset_card(notes: list[dict], essays: list[dict],
 license: cc-by-4.0
 language:
 - en
-pretty_name: In Search of Dharma — a traceably-sourced research corpus on dharma
+pretty_name: in search of dharma — a traceably-sourced research corpus on dharma
 tags:
 - philosophy
 - ethics
@@ -207,7 +207,7 @@ configs:
   data_files: data/companions.jsonl
 ---
 
-# In Search of Dharma — research corpus
+# in search of dharma — research corpus
 
 **Dharma** here means how human societies build, transmit and enforce ethics —
 not metaphysics. A traceably-sourced research corpus: every claim cited, drawn
@@ -220,7 +220,7 @@ The corpus has three configs serving different purposes:
   research notes. Each note answers one registry question and carries
   per-claim inline citations (`[S1]`, `[S2]`, ...) tied to its structured
   `sources` list. Categories: {', '.join(categories)}.
-- **`essays`** ({len(essays)} records) — the Stage-2 *In Search of Dharma*
+- **`essays`** ({len(essays)} records) — the Stage-2 *in search of dharma*
   essay series, synthesised from the notes (each record's `draws_on` field
   lists the note IDs it builds on). Published at
   [garydean.id]({HOMEPAGE}).

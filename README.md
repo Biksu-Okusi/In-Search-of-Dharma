@@ -1,10 +1,10 @@
-# In Search of Dharma
+# in search of dharma
 
 [![DOI](https://zenodo.org/badge/DOI/10.5281/zenodo.21348716.svg)](https://doi.org/10.5281/zenodo.21348716)
 
 *A traceably sourced research project and essay series that recovers **dharma** as the universal human craft of building an ethical world to live inside — secular, cross-cultural, and evidence-based.*
 
-**In Search of Dharma** takes the word *dharma* away from the yoga studio and shows it as something far larger: what every human group does when it assembles a way of living — values, stories, practices — that *holds the group together*. There is no single *The* Dharma. There are many, and they are **made, plural, and unprivileged**; because they are made rather than found, we can, and now must, build new ones consciously.
+**in search of dharma** takes the word *dharma* away from the yoga studio and shows it as something far larger: what every human group does when it assembles a way of living — values, stories, practices — that *holds the group together*. There is no single *The* Dharma. There are many, and they are **made, plural, and unprivileged**; because they are made rather than found, we can, and now must, build new ones consciously.
 
 ## Two-stage method
 
@@ -36,7 +36,7 @@ The series blueprint (the arc, the per-part briefs, and the status dashboard) is
 
 ## The book
 
-The ten parts are also assembled into a single book, *In Search of Dharma* — subtitled *What holds a life, a people, a world together* (tagline: *A natural history of ethics*) — built from [`cover.md`](cover.md) and the part files by [`mk-book.sh`](mk-book.sh):
+The ten parts are also assembled into a single book, *in search of dharma* — subtitled *What holds a life, a people, a world together* (tagline: *A natural history of ethics*) — built from [`cover.md`](cover.md) and the part files by [`mk-book.sh`](mk-book.sh):
 
 ```bash
 ./mk-book.sh [epub|pdf|all] [--audio none|link]   # defaults: all, link
