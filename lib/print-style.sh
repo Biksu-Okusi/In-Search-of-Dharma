@@ -292,7 +292,12 @@ section.front .tp-title{font:italic 500 22pt/1.2 "$PRINT_TITLE_DISPLAY_FAMILY";m
 section.front .tp-sub{font-style:italic;margin-bottom:24mm}
 section.front .tp-author{font:600 12pt/1.4 "$FONT_SANS_FAMILY";margin-bottom:3mm}
 section.front .tp-imprint{font:600 10pt/1.4 "$FONT_SANS_FAMILY"}
-section.front .imprint{padding-top:80mm;font-size:8.5pt;line-height:12pt}
+/* The imprint stands at the foot of its page, as a copyright page does, so it
+   fits however many lines Tuwhiri's copy runs to. 179mm is the text area
+   (229 - 24.58 - 24.5 = 179.92mm) less a hair, so the block can never spill
+   onto the next page and push the contents back. */
+section.front .imprint{height:179mm;display:flex;flex-direction:column;justify-content:flex-end;
+  font-size:8.5pt;line-height:12pt}
 section.front .imprint p{text-indent:0;text-align:left;margin-bottom:6pt}
 section.front .imprint .placeholder{font:600 8.5pt/12pt "$FONT_SANS_FAMILY"}
 
