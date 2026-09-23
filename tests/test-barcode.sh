@@ -61,6 +61,20 @@ else
   printf '  ✓ --no-addon leaves the add-on out\n'
 fi
 
+"$MK" 979-8-9980676-0-0 --addon 51995 --price-label -o "$TMP"/priced.svg
+# The dollar sign in US$19.95 is literal, not an expansion.
+#shellcheck disable=SC2016
+if grep -q '>US\$19\.95</text>' "$TMP"/priced.svg; then
+  printf '  ✓ --price-label prints US$19.95 for the add-on 51995\n'
+else
+  printf '  ✗ --price-label did not print US$19.95\n'; FAILED+=1
+fi
+if grep -q 'width="55.110mm"' "$TMP"/priced.svg && ! grep -q 'US\$' "$TMP"/b.svg; then
+  printf '  ✓ the label leaves the symbol size alone, and is off by default\n'
+else
+  printf '  ✗ the label moved the symbol size, or shows without --price-label\n'; FAILED+=1
+fi
+
 # refuses <name> <expected message fragment> <args...>
 refuses() {
   local -- name=$1 want=$2 err
@@ -79,6 +93,8 @@ refuses 'a number that is not an ISBN-13'            'not an ISBN-13'  590-1-234
 refuses 'a short number'                             'not an ISBN-13'  979-8-99806
 refuses 'an add-on that is not five digits'          'five digits'     979-8-9980676-0-0 --addon 9000
 refuses 'a scale outside the standard'               'outside the 0.8' 979-8-9980676-0-0 --scale 0.5
+refuses 'a price label on the no-price add-on'       'US-dollar add-on' 979-8-9980676-0-0 --price-label
+refuses 'a price label with no add-on'               'not none'         979-8-9980676-0-0 --no-addon --price-label
 
 ((FAILED == 0)) || exit 1
 exit 0

@@ -7,9 +7,15 @@ its right carries the price; 90000 means "no price given", which is what a
 book sold at different prices in different countries wants.
 
 Usage:
-  mk-barcode.py ISBN [--addon 90000] [--no-addon] [--scale 1.0] [-o FILE.svg]
+  mk-barcode.py ISBN [--addon 90000] [--no-addon] [--price-label] [--scale 1.0] [-o FILE.svg]
 
   mk-barcode.py 979-8-9980676-0-0 -o isbn-paperback.svg
+  mk-barcode.py 979-8-9980676-0-0 --addon 51995 --price-label -o priced.svg
+
+An add-on beginning 5 is a price in US dollars: 51995 is US$19.95. With
+--price-label that price is also printed in words, right-aligned above the
+add-on on the ISBN line, as on Tuwhiri's other covers. The words are read from
+the add-on, so the label and the bars cannot disagree.
 
 The output is a vector SVG in pure black on white, sized in millimetres, with
 the quiet zones the standard requires drawn into the white background -- so
@@ -42,7 +48,8 @@ GUARD_EXTRA_MM = 1.65     # guard bars run this far below the rest
 QUIET_LEFT, QUIET_RIGHT = 11, 7      # modules, EAN-13
 ADDON_GAP, ADDON_QUIET = 9, 5        # modules: gap before the add-on, quiet after
 TEXT_MM = 2.75            # digit height, for an OCR-B-like sans
-FONT = "'OCR-B','OCRB','Work Sans','DejaVu Sans',sans-serif"
+PRICE_SIZE = 0.8          # the price label, relative to the digits
+FONT ="'OCR-B','OCRB','Work Sans','DejaVu Sans',sans-serif"
 
 
 def check_digit(first12):
@@ -70,6 +77,12 @@ def ean5_modules(digits):
   return out
 
 
+def usd_label(addon):
+  """The price a US-dollar add-on carries, in words: 51995 is US$19.95."""
+  cents = int(addon[1:])
+  return f'US${cents // 100}.{cents % 100:02d}'
+
+
 def bars(modules, x0, y, height, m):
   """Merge runs of dark modules into one rectangle each: fewer, cleaner shapes."""
   out = []
@@ -79,7 +92,7 @@ def bars(modules, x0, y, height, m):
   return out
 
 
-def svg(isbn_text, digits, addon, scale):
+def svg(isbn_text, digits, addon, scale, price_label=False):
   m = MODULE_MM * scale
   bar, extra, text = BAR_MM * scale, GUARD_EXTRA_MM * scale, TEXT_MM * scale
   top = text * 1.9                       # room for the ISBN line above
@@ -94,26 +107,30 @@ def svg(isbn_text, digits, addon, scale):
   shapes += bars(long_mod, x_main, top, bar + extra, m)
   shapes += bars(short_mod, x_main, top, bar, m)
   base = top + bar + text * 1.05
-  # Each label is (x, y, anchor, text, spread): the two six-digit groups are
-  # spread to sit under their bars, one digit per seven modules.
+  # Each label is (x, y, anchor, text, spread, size): the two six-digit groups
+  # are spread to sit under their bars, one digit per seven modules.
   labels = [
-    (x_main, text, 'start', f'ISBN {isbn_text}', 0),
-    (x_main - 2 * m, base, 'end', digits[0], 0),
-    (x_main + (3 + 21) * m, base, 'middle', digits[1:7], 42 * m * 0.92),
-    (x_main + (50 + 21) * m, base, 'middle', digits[7:], 42 * m * 0.92),
+    (x_main, text, 'start', f'ISBN {isbn_text}', 0, 1),
+    (x_main - 2 * m, base, 'end', digits[0], 0, 1),
+    (x_main + (3 + 21) * m, base, 'middle', digits[1:7], 42 * m * 0.92, 1),
+    (x_main + (50 + 21) * m, base, 'middle', digits[7:], 42 * m * 0.92, 1),
   ]
   if addon:
     extra_mod = ean5_modules(addon)
     x_add = (width_mod - QUIET_RIGHT + ADDON_GAP) * m
     # The add-on's digits sit ABOVE its bars, which start lower to make room.
     shapes += bars(extra_mod, x_add, top + text * 1.25, bar + extra - text * 1.25, m)
-    labels.append((x_add + len(extra_mod) * m / 2, top + text * 0.95, 'middle', addon, 0))
+    labels.append((x_add + len(extra_mod) * m / 2, top + text * 0.95, 'middle', addon, 0, 1))
+    if price_label:
+      # On the ISBN line, a size smaller, flush with the add-on's last bar.
+      labels.append((x_add + len(extra_mod) * m, text, 'end', usd_label(addon), 0, PRICE_SIZE))
     width_mod = width_mod - QUIET_RIGHT + ADDON_GAP + len(extra_mod) + ADDON_QUIET
   width, height = width_mod * m, base + text * 0.45
   texts = []
-  for x, y, anchor, label, spread in labels:
+  for x, y, anchor, label, spread, size in labels:
     fit = f' textLength="{spread:.4f}" lengthAdjust="spacing"' if spread else ''
-    texts.append(f'<text x="{x:.4f}" y="{y:.4f}" text-anchor="{anchor}"{fit}>{label}</text>')
+    small = f' font-size="{text * size:.4f}"' if size != 1 else ''
+    texts.append(f'<text x="{x:.4f}" y="{y:.4f}" text-anchor="{anchor}"{fit}{small}>{label}</text>')
   return '\n'.join([
     '<?xml version="1.0" encoding="UTF-8"?>',
     f'<svg xmlns="http://www.w3.org/2000/svg" width="{width:.3f}mm" height="{height:.3f}mm" '
@@ -130,6 +147,7 @@ def main():
   ap.add_argument('isbn')
   ap.add_argument('--addon', default='90000')
   ap.add_argument('--no-addon', action='store_true')
+  ap.add_argument('--price-label', action='store_true')
   ap.add_argument('--scale', type=float, default=1.0)
   ap.add_argument('-o', '--output')
   args = ap.parse_args()
@@ -146,10 +164,14 @@ def main():
   if addon and not re.fullmatch(r'\d{5}', addon):
     print(f'✗ the add-on is five digits, e.g. 90000 for no price: {addon}', file=sys.stderr)
     return 1
+  if args.price_label and not addon.startswith('5'):
+    print(f'✗ --price-label needs a US-dollar add-on, 5 then the cents: 51995 for US$19.95, '
+          f'not {addon or "none"}', file=sys.stderr)
+    return 1
   if not 0.8 <= args.scale <= 2.0:
     print(f'✗ --scale {args.scale} is outside the 0.8 to 2.0 the standard allows', file=sys.stderr)
     return 1
-  out = svg(args.isbn.strip(), digits, addon, args.scale)
+  out = svg(args.isbn.strip(), digits, addon, args.scale, args.price_label)
   if args.output:
     with open(args.output, 'w', encoding='utf-8') as fh:
       fh.write(out)
