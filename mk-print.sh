@@ -58,6 +58,11 @@ declare -r IMPRINT_SRC="$SCRIPT_DIR"/print-imprint.md
 # The Okusi mark, set on the rule above each chapter title in place of the
 # roundel Tuwhiri uses in its own books.
 declare -r LOGO_SRC="$SCRIPT_DIR"/images/dharma-eye.svg
+# Tuwhiri's word mark, black only, set on the title page in place of the
+# publisher's name (Ramsey Margolis, 2026-09-23). It is Tuwhiri's trademark, not
+# this repository's to license, so it lives in the untracked print/ folder with
+# the publisher's other material. Absent, the name is set instead, with a warning.
+declare -r WORDMARK_SRC="$SCRIPT_DIR"/print/tuwhiri-wordmark-black.jpg
 # Part watercolours in the printed interior. Off: in greyscale on a 107mm
 # measure they take a large part of an opener and earn little, and they
 # compete with the rule and the mark that open each chapter. The reading PDF
@@ -73,6 +78,7 @@ declare -- TMP_DIR=''
 # first, then an optional message.
 _msg()  { >&2 printf '%s: %s %s\n' "$SCRIPT_NAME" "$1" "${*:2}"; }
 info()  { ((VERBOSE)) || return 0; _msg '◉' "$@"; }
+warn()  { _msg '▲' "$@"; }
 error() { _msg '✗' "$@"; }
 die()   { (($# < 2)) || error "${@:2}"; exit "${1:-0}"; }
 
@@ -168,6 +174,12 @@ stage_images() {
   # sits the mark back from the 100% K of the title beside it. #404040 is that
   # tint (0.251 grey), and DeviceGray carries it through unchanged. The source
   # SVG is untouched.
+  # Tuwhiri's word mark arrives as an sRGB-tagged JPEG of grey pixels: made
+  # single-channel grey and stripped of its profile, like every other image.
+  if [[ -f $WORDMARK_SRC ]]; then
+    convert "$WORDMARK_SRC" -colorspace Gray -strip -quality "$JPEG_QUALITY" \
+      "$stage"/images/"${WORDMARK_SRC##*/}" || die 5 "failed to stage the word mark ${WORDMARK_SRC@Q}"
+  fi
   [[ -f $LOGO_SRC ]] || die 3 "logo missing ${LOGO_SRC@Q}"
   sed -- 's/#0b295a/#404040/g' "$LOGO_SRC" >"$stage"/images/"${LOGO_SRC##*/}" \
     || die 5 "logo tinting failed ${LOGO_SRC@Q}"
@@ -187,7 +199,13 @@ front_matter() {
   printf '<p class="tp-title">%s</p>\n' "$(xml_escape "$TITLE_TYPESET")"
   printf '<p class="tp-sub">%s</p>\n' "$(xml_escape "$SUBTITLE")"
   printf '<p class="tp-author">%s</p>\n' "$(xml_escape "$AUTHOR")"
-  printf '<p class="tp-imprint">%s</p>\n' "$(xml_escape "$PUBLISHER")"
+  if [[ -f $WORDMARK_SRC ]]; then
+    printf '<p class="tp-imprint"><img class="tp-mark" src="images/%s" alt="%s"></p>\n' \
+      "${WORDMARK_SRC##*/}" "$(xml_escape "$PUBLISHER")"
+  else
+    warn "no word mark at ${WORDMARK_SRC@Q}: the title page carries the publisher's name instead"
+    printf '<p class="tp-imprint">%s</p>\n' "$(xml_escape "$PUBLISHER")"
+  fi
   printf '</div>\n'
   printf '<div class="imprint">\n'
   if [[ -f $IMPRINT_SRC ]]; then
