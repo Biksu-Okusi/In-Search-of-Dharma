@@ -1,5 +1,5 @@
 #!/bin/bash
-# mk-audiobook.sh - Build the single-file "In Search of Dharma" audiobook, as
+# mk-audiobook.sh - Build the single-file "in search of dharma" audiobook, as
 # an MP3 and as an M4B.
 #
 #   ./mk-audiobook.sh [-g SECONDS] [-G FILE]
@@ -51,7 +51,7 @@ declare -r VERSION=1.5.0
 declare -r SCRIPT_PATH=$(realpath -- "$0")
 declare -r SCRIPT_DIR=${SCRIPT_PATH%/*} SCRIPT_NAME=${SCRIPT_PATH##*/}
 
-declare -r TITLE='In Search of Dharma'
+declare -r TITLE='in search of dharma'
 declare -r AUTHOR='Biksu Okusi'
 declare -r PUB_YEAR=2026
 
