@@ -24,6 +24,14 @@
 # drop caps off the grid. To ship another setting, re-solve the constants by
 # hand against `lib/pdfcheck.py baselines` and move the targets in
 # tests/test-print-style.sh with them.
+#
+# Measure the raw WeasyPrint PDF (mk-print.sh --keep-temp leaves it as raw.pdf),
+# never the finished interior: the Ghostscript pass rewrites the fonts, and
+# pdfcheck then reads baselines 0.3 to 0.7mm low although the ink has not moved
+# (checked pixel by pixel, 2026-09-23). And measure in the book's own faces:
+# until 2026-09-23 the test loaded the fonts by a relative file:// URL, which
+# fails silently, so PRINT_H1GAP_MM was first solved in a fallback font and set
+# the opening line 0.25mm too low. It was re-solved in Bona Nova that day.
 
 [[ ${BASH_SOURCE[0]} != "$0" ]] \
   || { >&2 echo "✗ ${BASH_SOURCE[0]##*/} is a library: source it, do not run it"; exit 2; }
@@ -83,7 +91,7 @@ print_geom_load() {
   PRINT_SUB_PT=12 PRINT_SRC_PT=9
   PRINT_TOP_MM=24.58 PRINT_BOT_MM=24.5
   PRINT_HEADPAD_MM=13.35 PRINT_FOLIOPAD_MM=6.80
-  PRINT_H1PAD_MM=55.34 PRINT_H1GAP_MM=12.85
+  PRINT_H1PAD_MM=55.34 PRINT_H1GAP_MM=12.60
   PRINT_DROP_FS=3.200 PRINT_DROP_LH=0.688
 }
 

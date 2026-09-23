@@ -5,8 +5,13 @@
 set -euo pipefail
 shopt -s inherit_errexit
 
-declare -r TEST_DIR=${BASH_SOURCE[0]%/*}
-declare -r ROOT=$TEST_DIR/..
+# Resolved, never relative: lib/fonts.sh binds the faces as file://PATH URLs, and
+# a relative PATH (tests/../fonts) reads as a host name, so the faces silently
+# fail to load and the geometry is measured in a fallback font instead.
+#shellcheck disable=SC2155  # exit-on-error catches realpath failure
+declare -r SCRIPT_PATH=$(realpath -- "${BASH_SOURCE[0]}")
+declare -r TEST_DIR=${SCRIPT_PATH%/*}
+declare -r ROOT=${TEST_DIR%/*}
 declare -i FAILED=0
 declare -r TOL=0.1
 
@@ -49,10 +54,27 @@ running head and folio have somewhere to appear for measurement purposes, with
 enough text to guarantee the overflow under any reasonable setting whatsoever.
 A third paragraph, present so the fixture runs onto a second page and the
 running head and folio have somewhere to appear for measurement purposes.</p>
+<p>A fourth paragraph, because the book's own faces set tighter than a fallback
+font would: it carries the fixture well past the foot of the first page, so
+the second page opens with a full line of text beneath its running head, and
+its folio sits where every other verso folio in the book sits. A fourth
+paragraph, because the book's own faces set tighter than a fallback font would,
+and a page that ends early measures nothing at all.</p>
 </section></body></html>
 HTML
 
 weasyprint "$TMP"/fixture.html "$TMP"/fixture.pdf 2>/dev/null
+
+# The measurements mean something only in the book's own faces. If a face
+# fails to load, WeasyPrint falls back to another font without an error.
+declare -- embedded
+embedded=$(pdffonts -- "$TMP"/fixture.pdf)
+if [[ $embedded == *Bona-Nova* && $embedded == *Work-Sans* ]]; then
+  printf '  ✓ the fixture is set in Bona Nova and Work Sans\n'
+else
+  printf '  ✗ the fixture is not set in the book'"'"'s faces: %s\n' \
+    "$(awk 'NR>2{printf "%s ", $1}' <<<"$embedded")"; FAILED+=1
+fi
 
 b() { "$ROOT"/lib/pdfcheck.py baselines "$TMP"/fixture.pdf --page "$1"; }
 
@@ -76,8 +98,9 @@ assert_near head   "$(b 2 | jq -r '.lines[0].y_mm')"
 assert_near first  "$(b 2 | jq -r '.lines[1].y_mm')"
 assert_near folio  "$(b 2 | jq -r '.lines[-1].y_mm')"
 
-# measure and margins
-measure=$(b 2 | jq -r '[.lines[1].x0_mm, .lines[1].x1_mm] | @tsv')
+# measure and margins, from the widest body line on the verso: the first line
+# may open an indented paragraph, the last may be a short one.
+measure=$(b 2 | jq -r '.lines[1:-1] | max_by(.x1_mm - .x0_mm) | [.x0_mm, .x1_mm] | @tsv')
 read -r x0 x1 <<<"$measure"
 awk -v a="$x0" -v b="$x1" 'BEGIN{w=b-a; exit !(w>106.5 && w<107.5)}' \
   && printf '  ✓ measure %.1fmm\n' "$(awk -v a="$x0" -v b="$x1" 'BEGIN{print b-a}')" \
