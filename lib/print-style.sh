@@ -285,7 +285,12 @@ section.front > div,section.front > nav{break-after:page}
    this the title fell on ii, a left-hand page, facing its own imprint. */
 section.front .titlepage{break-before:recto}
 section.front .halftitle{padding-top:60mm}
-section.front .titlepage{padding-top:55mm;text-align:center}
+/* The title page fills the text area, so the publisher's mark can stand at its
+   foot; border-box keeps the 55mm drop inside the 179mm (see the imprint
+   below), so the page never spills. WeasyPrint ignores margin-top:auto in a
+   flex column here, so the mark is pinned to the bottom edge instead. */
+section.front .titlepage{padding-top:55mm;text-align:center;box-sizing:border-box;
+  height:179mm;position:relative}
 section.front .halftitle p,section.front .titlepage p{text-indent:0;text-align:center}
 section.front .ht-title{font:italic 500 14pt/1.3 "$PRINT_TITLE_FAMILY"}
 section.front .tp-title{font:italic 500 22pt/1.2 "$PRINT_TITLE_DISPLAY_FAMILY";margin-bottom:6mm}
@@ -294,6 +299,7 @@ section.front .tp-author{font:600 12pt/1.4 "$FONT_SANS_FAMILY";margin-bottom:3mm
 section.front .tp-imprint{font:600 10pt/1.4 "$FONT_SANS_FAMILY"}
 /* Tuwhiri's word mark, at the width Tuwhiri's opening pages give it. */
 section.front .tp-mark{width:60mm;height:auto}
+section.front .tp-imprint{position:absolute;bottom:0;left:0;right:0;margin:0}
 /* The imprint stands at the foot of its page, as a copyright page does, so it
    fits however many lines Tuwhiri's copy runs to. 179mm is the text area
    (229 - 24.58 - 24.5 = 179.92mm) less a hair, so the block can never spill
