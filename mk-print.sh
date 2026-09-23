@@ -33,6 +33,10 @@ declare -r SCRIPT_PATH=$(realpath -- "$0")
 declare -r SCRIPT_DIR=${SCRIPT_PATH%/*} SCRIPT_NAME=${SCRIPT_PATH##*/}
 
 declare -r TITLE='In search of dharma'
+# The half-title and title page set the title all in lowercase, as the cover
+# does (the author's decision, 2026-09-23). TITLE keeps its capital as the
+# bibliographic form, used for the HTML document's own <title>.
+declare -r TITLE_TYPESET='in search of dharma'
 declare -r SUBTITLE='What holds a life, a people, a world together'
 declare -r AUTHOR='Biksu Okusi'
 declare -r PUBLISHER='The Tuwhiri Project'
@@ -178,9 +182,9 @@ front_matter() {
   local -n _titles=$1
   local -- t id
   printf '<section class="front">\n'
-  printf '<div class="halftitle"><p class="ht-title">%s</p></div>\n' "$(xml_escape "$TITLE")"
+  printf '<div class="halftitle"><p class="ht-title">%s</p></div>\n' "$(xml_escape "$TITLE_TYPESET")"
   printf '<div class="titlepage">\n'
-  printf '<p class="tp-title">%s</p>\n' "$(xml_escape "$TITLE")"
+  printf '<p class="tp-title">%s</p>\n' "$(xml_escape "$TITLE_TYPESET")"
   printf '<p class="tp-sub">%s</p>\n' "$(xml_escape "$SUBTITLE")"
   printf '<p class="tp-author">%s</p>\n' "$(xml_escape "$AUTHOR")"
   printf '<p class="tp-imprint">%s</p>\n' "$(xml_escape "$PUBLISHER")"
@@ -344,7 +348,7 @@ main() {
     # The title faces set one string, so that string is all they are held to:
     # asking Literata for every character in the book would fail the build over
     # glyphs it is never asked to draw.
-    printf '%s\n' "$TITLE" >"$TMP_DIR"/title.txt || die 5 'failed to stage the title text'
+    printf '%s\n' "$TITLE_TYPESET" >"$TMP_DIR"/title.txt || die 5 'failed to stage the title text'
     "$SCRIPT_DIR"/lib/glyphcheck.py "${title_fonts[@]}" -- "$TMP_DIR"/title.txt \
       || die 1 'a title character is missing from the title faces'
   fi
