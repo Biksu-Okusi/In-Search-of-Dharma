@@ -1,11 +1,11 @@
 ---
 part: 2
-title: "The Genesis of Dharmas"
+title: "The genesis of dharmas"
 slug: birth-of-dharma
 status: done
 words: 4852
 reading_level: year-12
-updated: 2026-09-21
+updated: 2026-09-23
 draws_on: ["2.1", "2.2", "2.3", "5.2", "1.2", "5.5"]
 #author: "Biksu Okusi"
 #date: 2026-08-01
@@ -14,7 +14,7 @@ audio:
   # The spoken identity is the published one (essays.url
   # '0-in-search-of-dharma'), not the book-internal title above.
   title: "In Search of Dharma"
-  subtitle: "2: The Genesis of Dharmas"
+  subtitle: "2: The genesis of dharmas"
   strip_h1: true
   provider: google
   voice: en-AU-Chirp3-HD-Charon
@@ -24,9 +24,9 @@ audio:
   output: 2-in-search-of-dharma.mp3
 ---
 
-# 2: The Genesis of Dharmas
+# 2: The genesis of dharmas
 
-<image r 40 "/images/2-defining-dharma_watercolor.webp" "The Genesis of Dharmas" "">
+<image r 40 "/images/2-defining-dharma_watercolor.webp" "The genesis of dharmas" "">
 
 > *Why does every society grow a dharma, and why did so many of the greatest ones appear, in different worlds, at almost the same moment? It starts with a problem that arrives the day your village gets too big to know.*
 
@@ -142,7 +142,7 @@ But I have been speaking in the grand abstractions of deep time and lost civilis
 
 <!--audio stop-->
 
-[« 1: Defining Dharma](/works/1-in-search-of-dharma) | [3: The Dharmas of the Samin of Java »](/works/3-in-search-of-dharma)
+[« 1: Defining dharma](/works/1-in-search-of-dharma) | [3: The dharmas of the Samin of Java »](/works/3-in-search-of-dharma)
 
 ---
 

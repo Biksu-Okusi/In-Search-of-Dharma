@@ -1,11 +1,11 @@
 ---
 part: 1
-title: "Defining Dharma"
+title: "Defining dharma"
 slug: defining-dharma
 status: done
 words: 6176
 reading_level: year-12
-updated: 2026-09-22
+updated: 2026-09-23
 draws_on: ["1.1", "1.2", "1.3", "1.4", "3.3", "3.4"]
 #author: "Biksu Okusi"
 #date: 2026-08-01
@@ -14,7 +14,7 @@ audio:
   # The spoken identity is the published one (essays.url
   # '0-in-search-of-dharma'), not the book-internal title above.
   title: "In Search of Dharma"
-  subtitle: "1: Defining Dharma"
+  subtitle: "1: Defining dharma"
   strip_h1: true
   provider: google
   voice: en-AU-Chirp3-HD-Charon
@@ -24,9 +24,9 @@ audio:
   output: 1-in-search-of-dharma.mp3
 ---
 
-# 1: Defining Dharma
+# 1: Defining dharma
 
-<image r 40 "/images/1-defining-dharma_watercolor.webp" "Defining Dharma" "">
+<image r 40 "/images/1-defining-dharma_watercolor.webp" "Defining dharma" "">
 
 > *Dharma: A word almost no one can define without a lot of hand-waving, and almost everyone uses anyway. At its root, it means something very plain, 'to hold'. The interesting thing is how far this plain idea reaches.*
 
@@ -164,7 +164,7 @@ The very next question is the obvious one: if dharmas are made rather than hande
 
 <!--audio stop-->
 
-[« 0: Preface](/works/0-in-search-of-dharma) | [2: The Genesis of Dharmas »](/works/2-in-search-of-dharma)
+[« 0: Preface](/works/0-in-search-of-dharma) | [2: The genesis of dharmas »](/works/2-in-search-of-dharma)
 
 ---
 

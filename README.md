@@ -22,14 +22,14 @@ Read in order, the ten parts form one argument: a first-person search from *"wha
 | Part | Title |
 |------|-------|
 | 0 | [Preface](0-preface.md) |
-| 1 | [Defining Dharma](1-defining-dharma.md) |
-| 2 | [The Genesis of Dharmas](2-birth-of-dharma.md) |
-| 3 | [The Dharmas of the Samin of Java](3-samin-of-java.md) |
-| 4 | [A World of Dharmas](4-world-of-dharmas.md) |
-| 5 | [How a Dharma Gets Under Your Skin](5-under-your-skin.md) |
-| 6 | [When Dharmas Go Wrong](6-when-dharma-goes-wrong.md) |
-| 7 | [Dharmas in a Secular Age](7-secular-age.md) |
-| 8 | [Creating Dharmas](8-creating-dharmas.md) |
+| 1 | [Defining dharma](1-defining-dharma.md) |
+| 2 | [The genesis of dharmas](2-birth-of-dharma.md) |
+| 3 | [The dharmas of the Samin of Java](3-samin-of-java.md) |
+| 4 | [A world of dharmas](4-world-of-dharmas.md) |
+| 5 | [How a dharma gets under your skin](5-under-your-skin.md) |
+| 6 | [When dharmas go wrong](6-when-dharma-goes-wrong.md) |
+| 7 | [Dharmas in a secular age](7-secular-age.md) |
+| 8 | [Creating dharmas](8-creating-dharmas.md) |
 | 9 | [Coda](9-coda.md) |
 
 The series blueprint (the arc, the per-part briefs, and the status dashboard) is in [`Essays.md`](Essays.md).

@@ -1,11 +1,11 @@
 ---
 part: 5
-title: "How a Dharma Gets Under Your Skin"
+title: "How a dharma gets under your skin"
 slug: under-your-skin
 status: done
 words: 5508
 reading_level: year-12
-updated: 2026-09-21
+updated: 2026-09-23
 draws_on: ["5.1", "5.3", "5.4", "5.2", "5.5"]
 #author: "Biksu Okusi"
 #date: 2026-08-01
@@ -14,7 +14,7 @@ audio:
   # The spoken identity is the published one (essays.url
   # '0-in-search-of-dharma'), not the book-internal title above.
   title: "In Search of Dharma"
-  subtitle: "5: How a Dharma Gets Under Your Skin"
+  subtitle: "5: How a dharma gets under your skin"
   strip_h1: true
   provider: google
   voice: en-AU-Chirp3-HD-Charon
@@ -24,9 +24,9 @@ audio:
   output: 5-in-search-of-dharma.mp3
 ---
 
-# 5: How a Dharma Gets Under Your Skin
+# 5: How a dharma gets under your skin
 
-<image r 40 "/images/5-defining-dharma_watercolor.webp" "How a Dharma Gets Under Your Skin" "">
+<image r 40 "/images/5-defining-dharma_watercolor.webp" "How a dharma gets under your skin" "">
 
 > *Why does a dharma feel, from the inside, not like a belief you hold but like reality itself? Because it was never installed as a belief. It was grooved into your gut, your habits, and the wiring of your brain, below the reach of the part of you that could doubt it.*
 
@@ -140,7 +140,7 @@ We have spent four parts, in admiration, watching how dharmas hold us together, 
 
 <!--audio stop-->
 
-[« 4: A World of Dharmas](/works/4-in-search-of-dharma) | [6: When Dharmas Go Wrong »](/works/6-in-search-of-dharma)
+[« 4: A world of dharmas](/works/4-in-search-of-dharma) | [6: When dharmas go wrong »](/works/6-in-search-of-dharma)
 
 ---
 

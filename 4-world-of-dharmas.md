@@ -1,11 +1,11 @@
 ---
 part: 4
-title: "A World of Dharmas"
+title: "A world of dharmas"
 slug: world-of-dharmas
 status: done
 words: 6559
 reading_level: year-12
-updated: 2026-09-21
+updated: 2026-09-23
 draws_on: ["4.2", "4.3", "4.4", "1.4", "3.5.1", "3.5.2", "3.5.3", "3.5.4", "4.5"]
 #author: "Biksu Okusi"
 #date: 2026-08-01
@@ -14,7 +14,7 @@ audio:
   # The spoken identity is the published one (essays.url
   # '0-in-search-of-dharma'), not the book-internal title above.
   title: "In Search of Dharma"
-  subtitle: "4: A World of Dharmas"
+  subtitle: "4: A world of dharmas"
   strip_h1: true
   provider: google
   voice: en-AU-Chirp3-HD-Charon
@@ -24,9 +24,9 @@ audio:
   output: 4-in-search-of-dharma.mp3
 ---
 
-# 4: A World of Dharmas
+# 4: A world of dharmas
 
-<image r 40 "/images/4-defining-dharma_watercolor.webp" "A World of Dharmas" "">
+<image r 40 "/images/4-defining-dharma_watercolor.webp" "A world of dharmas" "">
 
 > *A relational web, a rational fortress, a sung land, an open hand, a commanding covenant: five ways of living that disagree about almost everything, and rhyme underneath. Including, if you have the nerve to look, your own.*
 
@@ -164,7 +164,7 @@ To answer that, we have to stop looking at what dharmas *say* and start looking 
 
 <!--audio stop-->
 
-[« 3: The Dharmas of the Samin of Java](/works/3-in-search-of-dharma) | [5: How a Dharma Gets Under Your Skin »](/works/5-in-search-of-dharma)
+[« 3: The dharmas of the Samin of Java](/works/3-in-search-of-dharma) | [5: How a dharma gets under your skin »](/works/5-in-search-of-dharma)
 
 ---
 

@@ -1,4 +1,4 @@
-# Dharmas: The Better Ones
+# Dharmas: the better ones
 
 <!--
 *A discussion piece stating, defending and stress-testing the project's criterion for judging dharmas. This is a reflective essay, not a Stage-1 cited research note: it carries no `[S#]` provenance and sits outside the question registry. It extracts and extends the standard argued at the end of Part 8 of* In Search of Dharma, *closes the book as its appendix, and connects most closely to notes [3.4 Relativism vs Universalism](3-philosophical/3.4-relativism-universalism.md), [7.7 Dharma by Decree](7-critical/7.7-engineered-dharmas.md) and [7.4 Measurement & Falsifiability](7-critical/7.4-measurement-falsifiability.md).*

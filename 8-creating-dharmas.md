@@ -1,11 +1,11 @@
 ---
 part: 8
-title: "Creating Dharmas"
+title: "Creating dharmas"
 slug: creating-dharmas
 status: done
 words: 6927
 reading_level: year-12
-updated: 2026-09-02
+updated: 2026-09-23
 draws_on: ["8.1", "8.2", "8.3", "8.4", "8.5", "3.4", "4.1", "7.4", "7.5", "7.7"]
 #author: "Biksu Okusi"
 #date: 2026-08-01
@@ -14,7 +14,7 @@ audio:
   # The spoken identity is the published one (essays.url
   # '0-in-search-of-dharma'), not the book-internal title above.
   title: "In Search of Dharma"
-  subtitle: "8: Creating Dharmas"
+  subtitle: "8: Creating dharmas"
   strip_h1: true
   provider: google
   voice: en-AU-Chirp3-HD-Charon
@@ -24,9 +24,9 @@ audio:
   output: 8-in-search-of-dharma.mp3
 ---
 
-# 8: Creating Dharmas
+# 8: Creating dharmas
 
-<image r 40 "/images/8-defining-dharma_watercolor.webp" "Creating Dharmas" "">
+<image r 40 "/images/8-defining-dharma_watercolor.webp" "Creating dharmas" "">
 
 > *We have always created our dharmas and told ourselves we found them. What becomes possible, and what becomes dangerous, once we admit it and start building on purpose?*
 
@@ -158,7 +158,7 @@ None of us gets to opt out of having a dharma; each of us is running one right n
 
 <!--audio stop-->
 
-[« 7: Dharmas in a Secular Age](/works/7-in-search-of-dharma) | [9: Coda »](/works/9-in-search-of-dharma)
+[« 7: Dharmas in a secular age](/works/7-in-search-of-dharma) | [9: Coda »](/works/9-in-search-of-dharma)
 
 ---
 
@@ -214,7 +214,7 @@ Research notes used in this book are published on [GitHub](https://github.com/Bi
 - Isaiah Berlin on value pluralism, and Martha Nussbaum & Amartya Sen, the capabilities approach -- pluralism as the alternative to both relativism and absolutism; the floor with teeth, its exact placement left open.
 - Friedrich Nietzsche, *Thus Spoke Zarathustra* (1883) and *Beyond Good and Evil* (1886) -- the tables of goods created by peoples, not found; the most serious attempt to rank them with no floor at all.
 - Evan Thompson, *Why I Am Not a Buddhist* (2020) -- against Buddhist exceptionalism and naturalised 'neural Buddhism'; the nearest published challenge to this book's keeping of a Buddhist-descended word as its master category, answered here only by Part 1's disclosed-placeholder rule.
-- The two-test standard is stated whole, defended, and stress-tested in this book's appendix, *Dharmas: The Better Ones*.
+- The two-test standard is stated whole, defended, and stress-tested in this book's appendix, *Dharmas: the better ones*.
 - Oliver Scott Curry, 'Is It Good to Cooperate?' (*Current Anthropology*, 2019) -- seven moral rules across sixty societies; morality as variation on a theme. With Mark Alfano, Marc Cheong & Oliver Scott Curry, 'Moral universals: A machine-reading analysis of 256 societies' (*Heliyon*, 2024), for the extension and its own weak validation.
 - WB Gallie, 'Essentially Contested Concepts' (1956) -- why the argument over dharma never closes.
 - Rutger Bregman, *Humankind: A Hopeful History* (2019) -- the real 'Ata shipwreck of 1965–66 against Golding's fiction; and the Robbers Cave correction (the buried 1953 Middle Grove pre-experiment, and Gina Perry's archival finding that the 1954 hostility was manufactured by the experimenters).

@@ -363,7 +363,7 @@ main() {
       # Same appendix treatment as mk-book.sh: label it, strip the repo-surface
       # headnote. Exact-match rewrite plus check, so a future title change
       # fails the build loudly instead of shipping unlabelled.
-      sed -i -- 's/^# Dharmas: The Better Ones$/# Appendix: Dharmas, the Better Ones/' "$dst" \
+      sed -i -- 's/^# Dharmas: the better ones$/# Appendix: Dharmas, the better ones/' "$dst" \
         || die 1 "appendix H1 rewrite failed for ${dst@Q}"
       grep -q -- '^# Appendix: ' "$dst" \
         || die 1 "appendix H1 not rewritten in ${dst@Q} (title changed in ${appendix@Q}?)"

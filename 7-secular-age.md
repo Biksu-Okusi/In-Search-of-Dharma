@@ -1,11 +1,11 @@
 ---
 part: 7
-title: "Dharmas in a Secular Age"
+title: "Dharmas in a secular age"
 slug: secular-age
 status: done
 words: 5611
 reading_level: year-12
-updated: 2026-09-02
+updated: 2026-09-23
 draws_on: ["6.1", "6.2", "3.3", "3.1", "7.2", "6.5", "3.5.2", "3.5.3", "3.5.4"]
 #author: "Biksu Okusi"
 #date: 2026-08-01
@@ -14,7 +14,7 @@ audio:
   # The spoken identity is the published one (essays.url
   # '0-in-search-of-dharma'), not the book-internal title above.
   title: "In Search of Dharma"
-  subtitle: "7: Dharmas in a Secular Age"
+  subtitle: "7: Dharmas in a secular age"
   strip_h1: true
   provider: google
   voice: en-AU-Chirp3-HD-Charon
@@ -24,9 +24,9 @@ audio:
   output: 7-in-search-of-dharma.mp3
 ---
 
-# 7: Dharmas in a Secular Age
+# 7: Dharmas in a secular age
 
-<image r 40 "/images/7-defining-dharma_watercolor.webp" "Dharmas in a Secular Age" "">
+<image r 40 "/images/7-defining-dharma_watercolor.webp" "Dharmas in a secular age" "">
 
 > *Hundreds of millions of people now say they are 'spiritual but not religious'. That is not the absence of a dharma. It is the search for one, carried out by people who have lost the old foundations but kept the old need.*
 
@@ -140,7 +140,7 @@ That is a vertiginous question. It is also the most dangerous question there is,
 
 <!--audio stop-->
 
-[« 6: When Dharmas Go Wrong](/works/6-in-search-of-dharma) | [8: Creating Dharmas »](/works/8-in-search-of-dharma)
+[« 6: When dharmas go wrong](/works/6-in-search-of-dharma) | [8: Creating dharmas »](/works/8-in-search-of-dharma)
 
 ---
 

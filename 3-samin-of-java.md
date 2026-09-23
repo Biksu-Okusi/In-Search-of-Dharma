@@ -1,11 +1,11 @@
 ---
 part: 3
-title: "The Dharmas of the Samin of Java"
+title: "The dharmas of the Samin of Java"
 slug: samin-of-java
 status: done
 words: 5636
 reading_level: year-12
-updated: 2026-09-22
+updated: 2026-09-23
 draws_on: ["4.1", "1.3", "7.3", "8.1"]
 #author: "Biksu Okusi"
 #date: 2026-08-01
@@ -14,7 +14,7 @@ audio:
   # The spoken identity is the published one (essays.url
   # '0-in-search-of-dharma'), not the book-internal title above.
   title: "In Search of Dharma"
-  subtitle: "3: The Dharmas of the Samin of Java"
+  subtitle: "3: The dharmas of the Samin of Java"
   strip_h1: true
   provider: google
   voice: en-AU-Chirp3-HD-Charon
@@ -24,9 +24,9 @@ audio:
   output: 3-in-search-of-dharma.mp3
 ---
 
-# 3: The Dharmas of the Samin of Java
+# 3: The dharmas of the Samin of Java
 
-<image r 40 "/images/3-defining-dharma_watercolor.webp" "The Dharmas of the Samin of Java" "">
+<image r 40 "/images/3-defining-dharma_watercolor.webp" "The dharmas of the Samin of Java" "">
 
 > *An illiterate farmer, a fenced-off forest, and a way of living so complete it outlasted its maker by a hundred years. What a Javanese peasant movement can show us that the great religions no longer easily can.*
 
@@ -178,7 +178,7 @@ But the *wong sikep* are only one. Having seen a dharma assembled this clearly, 
 
 <!--audio stop-->
 
-[« 2: The Genesis of Dharmas](/works/2-in-search-of-dharma) | [4: A World of Dharmas »](/works/4-in-search-of-dharma)
+[« 2: The genesis of dharmas](/works/2-in-search-of-dharma) | [4: A world of dharmas »](/works/4-in-search-of-dharma)
 
 ---
 

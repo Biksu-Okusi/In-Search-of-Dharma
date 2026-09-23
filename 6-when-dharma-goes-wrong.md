@@ -1,11 +1,11 @@
 ---
 part: 6
-title: "When Dharmas Go Wrong"
+title: "When dharmas go wrong"
 slug: when-dharma-goes-wrong
 status: done
 words: 6336
 reading_level: year-12
-updated: 2026-09-02
+updated: 2026-09-23
 draws_on: ["7.1", "7.2", "7.3", "7.6", "7.7", "6.3", "6.4", "5.5"]
 #author: "Biksu Okusi"
 #date: 2026-08-01
@@ -14,7 +14,7 @@ audio:
   # The spoken identity is the published one (essays.url
   # '0-in-search-of-dharma'), not the book-internal title above.
   title: "In Search of Dharma"
-  subtitle: "6: When Dharmas Go Wrong"
+  subtitle: "6: When dharmas go wrong"
   strip_h1: true
   provider: google
   voice: en-AU-Chirp3-HD-Charon
@@ -24,9 +24,9 @@ audio:
   output: 6-in-search-of-dharma.mp3
 ---
 
-# 6: When Dharmas Go Wrong
+# 6: When dharmas go wrong
 
-<image r 40 "/images/6-defining-dharma_watercolor.webp" "When Dharmas Go Wrong" "">
+<image r 40 "/images/6-defining-dharma_watercolor.webp" "When dharmas go wrong" "">
 
 > *Every failure of a dharma turns out to be the dark twin of a strength. The bond that holds a group together is the fence that shuts others out; the authority that can free people is the authority that can rule them; the practice that liberates is the cage. Failure is not a flaw in a dharma; it is the strength, over-extended -- or worn as a mask.*
 
@@ -154,7 +154,7 @@ But one complication remains. Every dharma we have put on trial here, every cast
 
 <!--audio stop-->
 
-[« 5: How a Dharma Gets Under Your Skin](/works/5-in-search-of-dharma) | [7: Dharmas in a Secular Age »](/works/7-in-search-of-dharma)
+[« 5: How a dharma gets under your skin](/works/5-in-search-of-dharma) | [7: Dharmas in a secular age »](/works/7-in-search-of-dharma)
 
 ---
 

@@ -138,7 +138,7 @@ For readers who came from the secular-dharma world carrying its standing worry (
 
 <!--audio stop-->
 
-[« 8: Creating Dharmas](/works/8-in-search-of-dharma)
+[« 8: Creating dharmas](/works/8-in-search-of-dharma)
 
 ---
 
@@ -146,4 +146,4 @@ For readers who came from the secular-dharma world carrying its standing worry (
 
 ## Sources & further reading
 
-*This coda states in miniature what Parts 1–8 argue and source in full; it introduces no new claims. The four features and the placeholder rule are Part 1's; the disagreement among the answers is Part 4's; the point about reproduction condenses Part 2's storytelling and Part 5's installation machinery; the translation rule is Part 7's; the two tests are stated at the end of Part 8 and defended at full length in the appendix that follows,* Dharmas: The Better Ones, *which is also published with the research notes on [GitHub](https://github.com/Biksu-Okusi/In-Search-of-Dharma).*
+*This coda states in miniature what Parts 1–8 argue and source in full; it introduces no new claims. The four features and the placeholder rule are Part 1's; the disagreement among the answers is Part 4's; the point about reproduction condenses Part 2's storytelling and Part 5's installation machinery; the translation rule is Part 7's; the two tests are stated at the end of Part 8 and defended at full length in the appendix that follows,* Dharmas: the better ones, *which is also published with the research notes on [GitHub](https://github.com/Biksu-Okusi/In-Search-of-Dharma).*
