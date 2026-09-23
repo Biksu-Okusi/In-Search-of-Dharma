@@ -128,7 +128,9 @@ html{font-family:"$FONT_SERIF_FAMILY",serif;font-size:${PRINT_SIZE_PT}pt;
   line-height:${PRINT_LEAD_PT}pt;color:#000;hyphens:auto;
   font-variant-numeric:oldstyle-nums;
   font-feature-settings:"onum" 1,"liga" 1,"kern" 1}
-body{margin:0;string-set:booktitle "In search of dharma"}
+/* The verso running head: the title in lowercase, as the title pages set it
+   (TITLE_TYPESET in mk-print.sh). */
+body{margin:0;string-set:booktitle "in search of dharma"}
 
 h1{page:chapopen;break-before:recto;margin:0 0 0 10mm;position:relative;
   font:600 20pt/1 "$FONT_SANS_FAMILY";
