@@ -26,7 +26,7 @@ audio:
 
 # Preface
 
-<image r 40 "/images/0-defining-dharma_watercolor.webp" "In Search of Dharma: Preface" "">
+<image r 40 "/images/0-defining-dharma_watercolor.webp" "in search of dharma: Preface" "">
 
 > *This book was assembled in an unusual way, by an unlikely person, in an unlikely place. So before starting, the reader is owed an open account of all three, not as credentials but as disclosures: where the work comes from, who helped make it, and, most importantly, how it was actually built.*
 

@@ -1,5 +1,5 @@
 #!/bin/bash
-# mk-book.sh - Build "In Search of Dharma" (EPUB and/or PDF) from cover.md +
+# mk-book.sh - Build "in search of dharma" (EPUB and/or PDF) from cover.md +
 # essays 0..9 + the companion essay the-better-ones.md as appendix.
 #
 #   ./mk-book.sh [epub|pdf|all] [--audio none|link]   (defaults: all, link)
@@ -39,7 +39,7 @@ declare -r VERSION=1.2.0
 declare -r SCRIPT_PATH=$(realpath -- "$0")
 declare -r SCRIPT_DIR=${SCRIPT_PATH%/*} SCRIPT_NAME=${SCRIPT_PATH##*/}
 
-declare -r TITLE='In Search of Dharma'
+declare -r TITLE='in search of dharma'
 declare -r SUBTITLE='What holds a life, a people, a world together'
 declare -r TAGLINE='A natural history of ethics'
 declare -r AUTHOR='Biksu Okusi'

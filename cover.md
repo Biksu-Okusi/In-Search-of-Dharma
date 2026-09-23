@@ -1,6 +1,6 @@
 ---
 part: cover
-title: "In Search of Dharma"
+title: "in search of dharma"
 slug: cover
 status: done
 updated: 2026-08-08
@@ -8,7 +8,7 @@ updated: 2026-08-08
 
 <div align="center">
 
-# In Search of Dharma {.unlisted}
+# in search of dharma {.unlisted}
 
 ![](images/dharma-eye.svg){.ornament}
 
@@ -55,7 +55,7 @@ This work is licensed under the Creative Commons Attribution 4.0 International L
 <p class="audio">
 <svg class="audio-icon" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" width="1em" height="1em" aria-hidden="true" focusable="false"><path d="M3 9v6h4l5 4V5L7 9H3z" fill="currentColor"/><path d="M15.5 8.5a4 4 0 0 1 0 7" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"/></svg>
 <a class="audio-listen" href="https://garydean.id/audio/In-Search-of-Dharma_Biksu-Okusi_2026_audiobook.mp3">Listen to the audiobook (abridged narration)</a>
-<a class="audio-url" href="https://garydean.id/audio/In-Search-of-Dharma_Biksu-Okusi_2026_audiobook.mp3">Audiobook: In Search of Dharma (abridged)</a>
+<a class="audio-url" href="https://garydean.id/audio/In-Search-of-Dharma_Biksu-Okusi_2026_audiobook.mp3">Audiobook: in search of dharma (abridged)</a>
 </p>
 
 
