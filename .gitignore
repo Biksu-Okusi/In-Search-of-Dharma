@@ -97,8 +97,3 @@ cover text In search of dharma.*
 # Derived from print-cover-text.md for correspondents who cannot open Markdown.
 print-cover-text.docx
 
-# Correspondence tools: the mailbox they read is one person's, so its
-# location and the record of what has been seen stay local.
-tools/mail.conf
-tools/.mailwatch.seen
-tools/.mailsend.log
