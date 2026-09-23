@@ -42,34 +42,34 @@
 declare -r PRINT_TRIM_W_MM=152 PRINT_TRIM_H_MM=229
 declare -r PRINT_MEASURE_MM=107 PRINT_INNER_MM=25 PRINT_OUTER_MM=20
 
-# The book's title, on the half-title and the title page, is set in Literata
-# Medium Italic -- the publisher's choice for the cover title (2026-09-21),
-# carried inside so the two agree. Literata ships optical sizes as separate
-# static files, and each is bound under its own family name: the text cut for
-# the 14pt half-title, the 36pt display cut for the 22pt title page, where the
-# text cut's sturdier hairlines would look heavy. These faces belong to the
-# print title pages alone, so they stay out of lib/fonts.sh, whose sets are
-# embedded whole in the EPUB.
-declare -r PRINT_TITLE_FAMILY='Literata' PRINT_TITLE_DISPLAY_FAMILY='Literata Display'
+# The book's title, on the half-title and the title page, is set in Cascadia
+# Code: "in search of" in its Light Italic above "dharma" in its Light, all
+# lowercase, as the cover sets it (Tuwhiri's choice, 2026-09-23; Gary's
+# lowercase, the same day). Vendored in fonts/cascadia (OFL, fsType 0, so
+# embeddable). These faces belong to the print title pages alone, so they stay
+# out of lib/fonts.sh, whose sets are embedded whole in the EPUB.
+declare -r PRINT_TITLE_FAMILY='Cascadia Code'
+# weight|style|file, one per face.
 declare -ar PRINT_TITLE_FACES=(
-  "$PRINT_TITLE_FAMILY|literata/Literata-MediumItalic.ttf"
-  "$PRINT_TITLE_DISPLAY_FAMILY|literata/Literata36pt-MediumItalic.ttf"
+  "300|normal|cascadia/CascadiaCode-Light.ttf"
+  "300|italic|cascadia/CascadiaCode-LightItalic.ttf"
 )
 
 # print_title_files <fonts-root> : the title faces' paths, one per line.
 print_title_files() {
   local -- entry
   for entry in "${PRINT_TITLE_FACES[@]}"; do
-    printf '%s/%s\n' "$1" "${entry#*|}"
+    printf '%s/%s\n' "$1" "${entry##*|}"
   done
 }
 
 # print_title_faces_css <fonts-root> : one @font-face per title face.
 print_title_faces_css() {
-  local -- entry
+  local -- entry weight style path
   for entry in "${PRINT_TITLE_FACES[@]}"; do
-    printf '@font-face{font-family:"%s";font-weight:500;font-style:italic;src:url("file://%s/%s")}\n' \
-      "${entry%%|*}" "$1" "${entry#*|}"
+    IFS='|' read -r weight style path <<<"$entry"
+    printf '@font-face{font-family:"%s";font-weight:%s;font-style:%s;src:url("file://%s/%s")}\n' \
+      "$PRINT_TITLE_FAMILY" "$weight" "$style" "$1" "$path"
   done
 }
 
@@ -292,8 +292,17 @@ section.front .halftitle{padding-top:60mm}
 section.front .titlepage{padding-top:55mm;text-align:center;box-sizing:border-box;
   height:179mm;position:relative}
 section.front .halftitle p,section.front .titlepage p{text-indent:0;text-align:center}
-section.front .ht-title{font:italic 500 14pt/1.3 "$PRINT_TITLE_FAMILY"}
-section.front .tp-title{font:italic 500 22pt/1.2 "$PRINT_TITLE_DISPLAY_FAMILY";margin-bottom:6mm}
+/* The title stacks: "in search of" in Cascadia Code Light Italic over "dharma"
+   in Light, the lead-in about a third the size of the name, as on the cover. */
+section.front .ht-title,section.front .tp-title{font-family:"$PRINT_TITLE_FAMILY";font-weight:300;
+  line-height:1.1}
+section.front .t-lead{display:block;font-style:italic}
+section.front .t-name{display:block}
+section.front .ht-title .t-lead{font-size:10pt}
+section.front .ht-title .t-name{font-size:24pt}
+section.front .tp-title{margin-bottom:6mm}
+section.front .tp-title .t-lead{font-size:14pt}
+section.front .tp-title .t-name{font-size:40pt}
 section.front .tp-sub{font-style:italic;margin-bottom:24mm}
 section.front .tp-author{font:600 12pt/1.4 "$FONT_SANS_FAMILY";margin-bottom:3mm}
 section.front .tp-imprint{font:600 10pt/1.4 "$FONT_SANS_FAMILY"}

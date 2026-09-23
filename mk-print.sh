@@ -34,9 +34,11 @@ declare -r SCRIPT_DIR=${SCRIPT_PATH%/*} SCRIPT_NAME=${SCRIPT_PATH##*/}
 
 declare -r TITLE='In search of dharma'
 # The half-title and title page set the title all in lowercase, as the cover
-# does (the author's decision, 2026-09-23). TITLE keeps its capital as the
-# bibliographic form, used for the HTML document's own <title>.
-declare -r TITLE_TYPESET='in search of dharma'
+# does (the author's decision, 2026-09-23), stacked in two parts: the lead-in
+# over the name. TITLE keeps its capital as the bibliographic form, used for
+# the HTML document's own <title>.
+declare -r TITLE_LEAD='in search of' TITLE_NAME='dharma'
+declare -r TITLE_TYPESET="$TITLE_LEAD $TITLE_NAME"
 declare -r SUBTITLE='What holds a life, a people, a world together'
 declare -r AUTHOR='Biksu Okusi'
 declare -r PUBLISHER='The Tuwhiri Project'
@@ -194,9 +196,12 @@ front_matter() {
   local -n _titles=$1
   local -- t id
   printf '<section class="front">\n'
-  printf '<div class="halftitle"><p class="ht-title">%s</p></div>\n' "$(xml_escape "$TITLE_TYPESET")"
+  local -- stack
+  printf -v stack '<span class="t-lead">%s</span><span class="t-name">%s</span>' \
+    "$(xml_escape "$TITLE_LEAD")" "$(xml_escape "$TITLE_NAME")"
+  printf '<div class="halftitle"><p class="ht-title">%s</p></div>\n' "$stack"
   printf '<div class="titlepage">\n'
-  printf '<p class="tp-title">%s</p>\n' "$(xml_escape "$TITLE_TYPESET")"
+  printf '<p class="tp-title">%s</p>\n' "$stack"
   printf '<p class="tp-sub">%s</p>\n' "$(xml_escape "$SUBTITLE")"
   printf '<p class="tp-author">%s</p>\n' "$(xml_escape "$AUTHOR")"
   if [[ -f $WORDMARK_SRC ]]; then
@@ -364,7 +369,7 @@ main() {
     "$SCRIPT_DIR"/lib/glyphcheck.py "${FONT_FILES[@]}" -- "${sources[@]}" \
       || die 1 'a source character is missing from the bound faces'
     # The title faces set one string, so that string is all they are held to:
-    # asking Literata for every character in the book would fail the build over
+    # asking Cascadia for every character in the book would fail the build over
     # glyphs it is never asked to draw.
     printf '%s\n' "$TITLE_TYPESET" >"$TMP_DIR"/title.txt || die 5 'failed to stage the title text'
     "$SCRIPT_DIR"/lib/glyphcheck.py "${title_fonts[@]}" -- "$TMP_DIR"/title.txt \
