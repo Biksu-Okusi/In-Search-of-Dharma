@@ -24,16 +24,17 @@ main() {
   (($# == 1)) || die 2 'usage: presend-check.sh FILE'
   local -- file=$1 src
   [[ -f $file ]] || die 3 "no such file ${file@Q}"
-  [[ ${file##*/} == *_interior_*.pdf ]] || return 0
+  local -- base=${file##*/}
+  [[ $base == *_interior_*.pdf ]] || return 0
   # What the print interior is built from. A PDF older than any of these is a
   # proof of a book that has since changed.
   local -a sources=("$ROOT"/[0-9]-*.md "$ROOT"/the-better-ones.md "$ROOT"/mk-print.sh
                     "$ROOT"/lib/*.sh "$ROOT"/lib/*.py)
   for src in "${sources[@]}"; do
     [[ ! $src -nt $file ]] \
-      || die 1 "${file##*/} is older than ${src#"$ROOT"/}: rebuild with mk-print.sh before sending"
+      || die 1 "${base@Q} is older than ${src#"$ROOT"/}: rebuild with mk-print.sh before sending"
   done
-  "$ROOT"/mk-print.sh --preflight "$file" || die 1 "${file##*/} fails mk-print.sh --preflight"
+  "$ROOT"/mk-print.sh --preflight "$file" || die 1 "${base@Q} fails mk-print.sh --preflight"
 }
 
 main "$@"
