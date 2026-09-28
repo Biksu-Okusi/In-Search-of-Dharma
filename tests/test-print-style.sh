@@ -17,7 +17,6 @@ declare -r ROOT=${TEST_DIR%/*}
 declare -r CHECK=$ROOT/lib/pdfcheck.py
 declare -i FAILED=0
 declare -r TOL=0.1
-declare -r ENDORSEMENT='\.endorsement\{margin:[^;]*'
 
 # Target baselines in mm from the trim top, measured from the model book --
 # except the opener, which the publisher set: two line spaces under the title,
@@ -510,23 +509,6 @@ HTML
     && source -- "$1"/lib/print-style.sh && print_geom_load "${@:2}" 2>/dev/null && print_page_css'
   local -- sheet
   local -i sheet_rc
-
-  # Two line spaces under an endorsement, at a leading that is not a whole number.
-  sheet=$(bash -c "$SHEET" _ "$ROOT" 10 16.5) && sheet_rc=0 || sheet_rc=$?
-  if ((sheet_rc == 0)) && [[ $sheet == *'.endorsement{margin:0 0 33pt 10mm'* ]]; then
-    printf '  ✓ two lines of 16.5pt leading are 33pt\n'
-  else
-    printf '  ✗ two lines of 16.5pt leading: exit %d, %s\n' "$sheet_rc" "$(rule_in "$sheet" "$ENDORSEMENT")"
-    FAILED+=1
-  fi
-  # mk-print.sh lets "08" through as a number; the shell's own arithmetic reads a
-  # leading zero as octal and stops at the 8.
-  sheet=$(bash -c "$SHEET" _ "$ROOT" 10 08 2>&1) && sheet_rc=0 || sheet_rc=$?
-  if ((sheet_rc == 0)) && [[ $sheet == *'.endorsement{margin:0 0 16pt 10mm'* ]]; then
-    printf '  ✓ a leading written 08 is read as eight\n'
-  else
-    printf '  ✗ a leading written 08: exit %d, %s\n' "$sheet_rc" "${sheet##*$'\n'}"; FAILED+=1
-  fi
 
   # The lengths are read back whatever field separator the caller has set.
   sheet=$(bash -c "IFS=,; $SHEET" _ "$ROOT" 2>&1) && sheet_rc=0 || sheet_rc=$?

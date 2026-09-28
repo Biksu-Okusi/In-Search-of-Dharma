@@ -168,7 +168,8 @@ of Part 1. (Amended 2026-09-28 at the publisher's request; the sequence
 originally restarted at the Preface.) Until the publisher names the pages that
 show a roman numeral, the half-title, the title page and the imprint show none.
 
-1. Endorsements, where the book has any (added 2026-09-28), on page i
+1. The dedication, where the book has one, on page i (2026-09-28; it replaced an
+   endorsements page the same day, the endorsement standing on the cover)
 2. Half-title, on the next recto
 3. Title page, on the recto after it
 4. Imprint (copy supplied by Ramsey; see §9), on the back of the title

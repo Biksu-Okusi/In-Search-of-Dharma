@@ -127,15 +127,15 @@ print_page_css() {
   # under the C locale: CSS writes its decimals with a point, and an awk that
   # follows the locale would write a comma. It is run and checked before its
   # figures are used, since a stylesheet with a length missing still parses.
-  local -- lengths rule_top rule_foot two_lines folio
+  local -- lengths rule_top rule_foot folio
   lengths=$(LC_ALL=C awk -v pad="$PRINT_FOLIOPAD_MM" -v rise="$PRINT_FOLIORISE_MM" \
-    -v len="$PRINT_FOLIORULE_MM" -v bot="$PRINT_BOT_MM" -v lead="$PRINT_LEAD_PT" \
-    'BEGIN{printf "%.2f %.2f %g\n", pad - rise, bot - (pad - rise) - len, lead * 2}') \
+    -v len="$PRINT_FOLIORULE_MM" -v bot="$PRINT_BOT_MM" \
+    'BEGIN{printf "%.2f %.2f\n", pad - rise, bot - (pad - rise) - len}') \
     || { >&2 printf '✗ %s: could not work out the stylesheet'"'"'s lengths\n' "${BASH_SOURCE[0]##*/}"
          return 1; }
   # The caller's field separator is not this function's to trust.
-  IFS=' ' read -r rule_top rule_foot two_lines <<<"$lengths"
-  [[ -n $rule_top && -n $rule_foot && -n $two_lines ]] \
+  IFS=' ' read -r rule_top rule_foot <<<"$lengths"
+  [[ -n $rule_top && -n $rule_foot ]] \
     || { >&2 printf '✗ %s: the stylesheet'"'"'s lengths came back incomplete: %s\n' \
            "${BASH_SOURCE[0]##*/}" "${lengths@Q}"
          return 1; }
@@ -367,7 +367,7 @@ div.blank-folio::before{content:counter(page)}
 section.chapter > h1{string-set:chaptitle content(),booktitle "in search of dharma"}
 section.chapter.prelim > h1{string-set:chaptitle content()}
 section.front{page:front}
-section.front .endorsements,section.front .halftitle,section.front .titlepage,
+section.front .dedication,section.front .halftitle,section.front .titlepage,
 section.front .imprint{page:bare}
 section.chapter.prelim{page:prelim}
 section.chapter.prelim > h1{page:prelim}
@@ -412,15 +412,14 @@ section.front > div,section.front > nav{break-after:page}
    this the title fell on ii, a left-hand page, facing its own imprint. */
 section.front .titlepage{break-before:recto}
 section.front .halftitle{padding-top:60mm}
-/* The endorsements, where the book has any, stand on page i with the
-   half-title on the next recto: i endorsements, ii blank, iii half-title, iv
+/* The dedication, where the book has one, stands on page i with the
+   half-title on the next recto: i dedication, ii blank, iii half-title, iv
    blank, v title, vi imprint, vii contents. Each is its words and, under them,
    who said them, set ragged and unhyphenated inside the paragraph indent. */
 section.front .halftitle{break-before:recto}
-section.front .endorsements{padding-top:45mm}
-section.front .endorsement{margin:0 0 ${two_lines}pt 10mm;break-inside:avoid}
-section.front .endorsement p{text-indent:0;text-align:left;hyphens:none}
-section.front .endorsement p + p{margin-top:4pt;font-size:${PRINT_SRC_PT}pt}
+section.front .dedication{padding-top:55mm}
+section.front .dedication p{text-indent:0;text-align:center;font-style:italic;hyphens:none;
+  margin:0 12mm}
 /* The title page fills the text area, so the publisher's mark can stand at its
    foot; border-box keeps the 55mm drop inside the 179mm (see the imprint
    below), so the page never spills. WeasyPrint ignores margin-top:auto in a

@@ -39,7 +39,7 @@ else
   printf '  ✗ a stale interior: refused, but said: %s\n' "$ERR"; FAILED+=1
 fi
 
-# The imprint and the endorsements are part of what the interior is built from.
+# The imprint and the dedication are part of what the interior is built from.
 # Run against a copy of the script in a tree of its own, where each file's age
 # can be set without touching the book: every source older than the interior
 # but the one named.
@@ -49,9 +49,9 @@ cp -- "$CHECK" "$TREE"/tools/presend-check.sh || broken "cannot copy ${CHECK@Q}"
 printf '#!/bin/bash\nexit 0\n' >"$TREE"/mk-print.sh || broken 'cannot write the stand-in mk-print.sh'
 chmod -- +x "$TREE"/mk-print.sh || broken 'cannot mark the stand-in mk-print.sh executable'
 printf 'x\n' | tee -- "$TREE"/1-part.md "$TREE"/the-better-ones.md "$TREE"/lib/a.sh "$TREE"/lib/a.py \
-  "$TREE"/print-imprint.md "$TREE"/print-endorsements.md >/dev/null || broken 'cannot write the sources'
+  "$TREE"/print-imprint.md "$TREE"/print-dedication.md >/dev/null || broken 'cannot write the sources'
 printf '%%PDF-1.4\n' >"$TREE"/Book_interior_152x229.pdf || broken 'cannot write the interior'
-for NAME in print-imprint.md print-endorsements.md; do
+for NAME in print-imprint.md print-dedication.md; do
   find -- "$TREE" -type f -exec touch -d '2001-01-01' -- {} + || broken 'cannot age the sources'
   touch -d '2002-01-01' -- "$TREE"/Book_interior_152x229.pdf || broken 'cannot date the interior'
   # What the check says when it refuses is read in the next step; here only
@@ -68,13 +68,13 @@ for NAME in print-imprint.md print-endorsements.md; do
     printf '  ✗ an interior older than %s: refused, but said: %s\n' "$NAME" "$ERR"; FAILED+=1
   fi
 done
-rm -f -- "$TREE"/print-imprint.md "$TREE"/print-endorsements.md \
-  || broken 'cannot remove the imprint and the endorsements'
+rm -f -- "$TREE"/print-imprint.md "$TREE"/print-dedication.md \
+  || broken 'cannot remove the imprint and the dedication'
 # As above: only the verdict is wanted.
 if "$TREE"/tools/presend-check.sh "$TREE"/Book_interior_152x229.pdf 2>/dev/null; then
-  printf '  ✓ a book with no imprint or endorsements file still passes\n'
+  printf '  ✓ a book with no imprint or dedication file still passes\n'
 else
-  printf '  ✗ a book with no imprint or endorsements file was refused\n'; FAILED+=1
+  printf '  ✗ a book with no imprint or dedication file was refused\n'; FAILED+=1
 fi
 
 if ERR=$("$CHECK" 2>&1); then

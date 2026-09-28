@@ -112,35 +112,43 @@ main() {
     && ok 'the interior has the permissions of any newly made file' \
     || bad "the interior's permissions are $(stat -c %a -- "$PDF"), a new file's $(stat -c %a -- "$fresh")"
 
-  # The front matter, in order: the endorsements on i, the half-title on iii,
+  # The front matter, in order: the dedication on i, the half-title on iii,
   # the title on v with the imprint on its back, the contents on vii. None of
-  # the first four printed pages shows a folio.
-  #
-  # The endorsements are the cover's words, to the letter. SC1112: the
-  # typographic apostrophe in them is the text being matched, not a slip.
-  #shellcheck disable=SC1112  # the apostrophe is part of the text matched
-  local -r back='is a wonderful example of how secular dharma should evolve; not by finessing '\
-'the words of a founding figure into an orthodoxy but by taking the enquiry further into new '\
-'areas unanticipated by one’s predecessors.'
-  #shellcheck disable=SC1112  # the apostrophe is part of the text matched
-  local -r credit='co-author of Living life on life’s terms: turning the wheel of secular dharma'
-  local -- text
+  # the first four printed pages shows a folio. The dedication is the author's
+  # (2026-09-28), set whole on page i and centred on the page's text block,
+  # which on a recto runs from 25mm to 132mm.
+  local -r dedication='Paul Stange, Irfan Kortschak, Peter Kropotkin, David Graeber, Pa Kettle, '\
+'Robert Sapolsky, Stephen Batchelor, Elfie Klinger and Rupert Bozeat; and Sukinah and the women '\
+'of Kendeng; for their inspiration, and for their ideas which have been brought together in this work.'
+  local -- text front off_centre
   text=$(page_text 1 | tr -s ' \n' ' ') || die 1 'could not read page 1'
-  [[ $text == *'Brilliant, very well written and researched, concise and compelling'* ]] \
-    && ok 'page i carries the endorsement from the front cover' \
-    || bad "page i does not carry the front-cover endorsement: ${text:0:80}"
-  [[ $text == *"$back"* ]] \
-    && ok 'page i carries the endorsement from the back cover, word for word' \
-    || bad 'page i does not carry the back-cover endorsement word for word'
-  [[ $text == *"$credit"* ]] \
-    && ok 'page i credits Stephen Batchelor as the cover does' \
-    || bad 'page i does not carry the credit as the cover words it'
-  # The second endorsement ends where the cover's does. Compared in lower
-  # case: the name is set in small capitals, which come back from the file in
-  # whatever case the face maps them to.
-  [[ ${text,,} == *'predecessors. – stephen batchelor'* ]] \
-    && ok 'the second endorsement ends where the cover'"'"'s does' \
-    || bad 'the second endorsement runs on past the words the cover carries'
+  text=${text# }
+  [[ ${text% } == "$dedication" ]] \
+    && ok 'page i carries the dedication, word for word, and nothing else' \
+    || bad "page i reads: ${text:0:160}"
+  off_centre=$("$CHECK" baselines --page 1 -- "$PDF" \
+    | jq -r '[.lines[] | ((.x0_mm + .x1_mm) / 2 - 78.5) | fabs] | max') \
+    || die 1 'could not measure the dedication'
+  awk -v d="$off_centre" 'BEGIN{exit !(d < 0.3)}' \
+    && ok 'every line of the dedication is centred' \
+    || bad "a line of the dedication stands ${off_centre}mm off the centre of the page"
+  # No name is divided between two lines.
+  local -- ded_lines name split=''
+  ded_lines=$("$CHECK" baselines --page 1 -- "$PDF" | jq -r '.lines[].text') \
+    || die 1 'could not read the lines of the dedication'
+  for name in 'Paul Stange' 'Irfan Kortschak' 'Peter Kropotkin' 'David Graeber' 'Pa Kettle' \
+              'Robert Sapolsky' 'Stephen Batchelor' 'Elfie Klinger' 'Rupert Bozeat' 'of Kendeng'; do
+    [[ $ded_lines == *"$name"* ]] || split+="${split:+, }$name"
+  done
+  [[ -z $split ]] && ok 'every name in the dedication stands whole on one line' \
+    || bad "divided between lines: $split"
+  # Nor does it end on a line of one word.
+  [[ ${ded_lines##*$'\n'} == *' '* ]] && ok 'the last line of the dedication holds more than one word' \
+    || bad "the dedication ends on a line of one word: ${ded_lines##*$'\n'}"
+  front=$(pdftotext -f 1 -l 8 -- "$PDF" -) || die 1 'could not read the front matter'
+  [[ $front != *'concise and compelling'* ]] \
+    && ok 'the endorsement is no longer in the front matter; it stands on the cover' \
+    || bad 'the front matter still carries the endorsement'
   expect_at 'page i folio' 1 "$FOLIO_Y" ''
   expect_blank 'page ii is blank' 2
   expect_on 'the half-title is on page iii' 3 'in search of dharma'
@@ -243,7 +251,7 @@ main() {
   local -- box=$TMP/box src kept=$TMP/kept.pdf left
   mkdir -- "$box" || die 5 'failed to create the build tree'
   for src in "$ROOT"/[0-9]-*.md "$ROOT"/the-better-ones.md "$ROOT"/print-imprint.md \
-             "$ROOT"/print-endorsements.md "$ROOT"/fonts "$ROOT"/images "$ROOT"/lib; do
+             "$ROOT"/print-dedication.md "$ROOT"/fonts "$ROOT"/images "$ROOT"/lib; do
     [[ -e $src ]] || die 3 "nothing at ${src@Q}"
     cp -Rs -- "$src" "$box"/ || die 5 "failed to link ${src@Q}"
   done

@@ -60,9 +60,9 @@ declare -r DEFAULT_OUTPUT_PDF="$SCRIPT_DIR"/In-Search-of-Dharma_interior_152x229
 # Optional imprint copy from Tuwhiri. Absent, a deliberately visible placeholder
 # is set instead, so a proof cannot be sent without the omission being obvious.
 declare -r IMPRINT_SRC="$SCRIPT_DIR"/print-imprint.md
-# Optional endorsements, set on page i ahead of the half-title. Absent, the
+# The optional dedication, set on page i ahead of the half-title. Absent, the
 # interior opens on the half-title.
-declare -r ENDORSE_SRC="$SCRIPT_DIR"/print-endorsements.md
+declare -r DEDICATION_SRC="$SCRIPT_DIR"/print-dedication.md
 # The Okusi mark, set on the rule above each chapter title in place of the
 # roundel Tuwhiri uses in its own books.
 declare -r LOGO_SRC="$SCRIPT_DIR"/images/dharma-eye.svg
@@ -203,7 +203,7 @@ stage_images() {
     || die 5 "logo tinting failed ${LOGO_SRC@Q}"
 }
 
-# The front matter: the endorsements where there are any, then half-title,
+# The front matter: the dedication if there is one, then half-title,
 # title, imprint and contents. No
 # running heads; roman folios, shown from the contents on (see the bare page in
 # lib/print-style.sh). The Preface follows in the same roman sequence, and the
@@ -217,12 +217,12 @@ front_matter() {
   local -- t id
   local -i k=0
   printf '<section class="front">\n'
-  # The endorsements run through smallcaps.py like the text: a name the cover
-  # sets in capitals is set here in small capitals, as the house style has it.
-  if [[ -f $ENDORSE_SRC ]]; then
-    printf '<div class="endorsements">\n'
-    pandoc --from=markdown --to=html5 -- "$ENDORSE_SRC" | "$SCRIPT_DIR"/lib/smallcaps.py \
-      || die 1 "endorsements conversion failed ${ENDORSE_SRC@Q}"
+  # The dedication runs through smallcaps.py like the text, so that a run of
+  # capitals in it would be set as the house style has it.
+  if [[ -f $DEDICATION_SRC ]]; then
+    printf '<div class="dedication">\n'
+    pandoc --from=markdown --to=html5 -- "$DEDICATION_SRC" | "$SCRIPT_DIR"/lib/smallcaps.py \
+      || die 1 "dedication conversion failed ${DEDICATION_SRC@Q}"
     printf '</div>\n'
   fi
   local -- stack
