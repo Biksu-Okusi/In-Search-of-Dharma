@@ -65,6 +65,11 @@ pg-*.png
 # an earlier build can never be committed by accident.
 *_with-audio.epub
 
+# Tuwhiri's ePub (`./mk-book.sh epub --edition tuwhiri`): the publisher's
+# edition under the publisher's cover, which is not this repository's to
+# license or to distribute.
+*_tuwhiri.epub
+*_tuwhiri_*.epub
 # typeface proofs (`./mk-book.sh --fonts SET` for any set but the default).
 # Built to be looked at and printed while a typeface decision is open, then
 # thrown away; only the shipping edition's EPUB and PDF stay tracked. Suffixes

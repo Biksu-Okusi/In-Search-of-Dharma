@@ -3,6 +3,7 @@
 # essays 0..9 + the companion essay the-better-ones.md as appendix.
 #
 #   ./mk-book.sh [epub|pdf|all] [--audio none|link]   (defaults: all, link)
+#   ./mk-book.sh epub --edition tuwhiri               (the publisher's ePub)
 #
 # Audio narration (one MP3 per chapter, 0..9) is referenced at the top of each
 # chapter. Modes (--audio):
@@ -70,6 +71,21 @@ declare -r BACK_IMAGE="$SCRIPT_DIR"/images/defining-dharma-back-text.png
 declare -r OUTPUT_BASE="$SCRIPT_DIR"/In-Search-of-Dharma_Biksu-Okusi_2026.epub
 declare -- OUTPUT=$OUTPUT_BASE
 declare -- OUTPUT_PDF="${OUTPUT%.epub}".pdf
+
+# Tuwhiri's ePub (--edition tuwhiri), the edition the publisher sells. It is the
+# same book under the publisher's own front cover, identified by Tuwhiri's ISBN
+# and carrying Tuwhiri's name. The chapter watercolours and the back-cover plate
+# stay, and the colophon still declares them (the author's decision,
+# 2026-09-28). An ePub only; never published from here, since the publish step
+# belongs to the author's own edition. The cover is Tuwhiri's artwork, not this
+# repository's to license, so it lives in the untracked print/ folder with the
+# publisher's other material.
+declare -r TUWHIRI_ISBN=979-8-9980676-1-7
+declare -r TUWHIRI_PUBLISHER='The Tuwhiri Project'
+declare -r TUWHIRI_PUB_DATE=2026
+declare -r TUWHIRI_COVER="$SCRIPT_DIR"/print/tuwhiri-cover-front.jpg
+declare -r TUWHIRI_COVER_CREDIT='minimum graphics'
+declare -r -a EDITIONS=(own tuwhiri)
 
 # Chapter narration. One MP3 per chapter, named N-<stem>.mp3 (N = 0..9), living
 # canonically under the garydean.id web-root and served from AUDIO_BASE_URL. The
@@ -177,7 +193,8 @@ show_help() {
 $SCRIPT_NAME $VERSION - build "$TITLE" as an EPUB3 and/or PDF.
 
 Usage:
-  $SCRIPT_NAME [epub|pdf|all] [--audio none|link] [--fonts SET]
+  $SCRIPT_NAME [epub|pdf|all] [--audio none|link] [--fonts SET] [--output FILE]
+  $SCRIPT_NAME epub --edition tuwhiri [--cover FILE] [--output FILE]
   $SCRIPT_NAME -h|--help
   $SCRIPT_NAME -V|--version
 
@@ -202,6 +219,15 @@ Options:
                    worksans       EB Garamond body, Work Sans SemiBold headings
                    bonanova       Bona Nova body, Open Sans SemiBold headings
                    bonanova-solo  Bona Nova throughout, headings in its Bold
+  --edition ED   Which edition to build (default: own):
+                   own      the author's edition, under its own cover
+                   tuwhiri  the publisher's ePub: Tuwhiri's cover, ISBN
+                            $TUWHIRI_ISBN and name. An ePub only, written
+                            with a _tuwhiri suffix and never published.
+  --cover FILE   The front cover of the Tuwhiri edition
+                 (default: ${TUWHIRI_COVER#"$SCRIPT_DIR"/})
+  --output FILE  Write the EPUB to FILE, and a PDF beside it under the same
+                 name. A build written elsewhere is never published.
   -h, --help     Show this help and exit.
   -q, --quiet    Suppress progress messages (warnings and errors still show).
   -V, --version  Show version and exit.
@@ -328,9 +354,10 @@ META
 
 main() {
   # Defaults: both formats, narration linked, the shipping typeface set.
-  local -- target=all
+  local -- target=''
   local -- audio_mode=link
   local -- font_set=${FONT_SETS[0]}
+  local -- edition=own cover_src=$TUWHIRI_COVER output=''
   while (($#)); do
     case $1 in
       -h|--help)
@@ -353,8 +380,23 @@ main() {
         font_set=$1 ;;
       --fonts=*)
         font_set=${1#*=} ;;
+      --edition)
+        [[ -n ${2:-} ]] || die 2 "--edition requires a value (${EDITIONS[*]})"
+        shift
+        edition=$1 ;;
+      --edition=*)
+        edition=${1#*=} ;;
+      --cover)
+        [[ -n ${2:-} ]] || die 2 '--cover requires a file'
+        shift
+        cover_src=$1 ;;
+      --output)
+        [[ -n ${2:-} ]] || die 2 '--output requires a file'
+        shift
+        output=$1 ;;
       *)
-        die 2 "usage: $SCRIPT_NAME [epub|pdf|all] [--audio none|link] [--fonts SET]" ;;
+        die 2 "usage: $SCRIPT_NAME [epub|pdf|all] [--audio none|link] [--fonts SET]" \
+              '[--edition ED] [--cover FILE] [--output FILE]' ;;
     esac
     shift
   done
@@ -362,11 +404,31 @@ main() {
     none|link) ;;
     *) die 22 "invalid --audio ${audio_mode@Q} (want: none|link)" ;;
   esac
+  case $edition in
+    own)
+      target=${target:-all} ;;
+    tuwhiri)
+      # Asked for with no target, the edition is its ePub; a PDF is refused
+      # rather than quietly left out.
+      target=${target:-epub}
+      [[ $target == epub ]] || die 22 "the tuwhiri edition is an ePub only, not ${target@Q}"
+      [[ -f $cover_src ]] || die 3 "the tuwhiri edition's front cover is missing: ${cover_src@Q}" ;;
+    *) die 22 "invalid --edition ${edition@Q} (want: ${EDITIONS[*]})" ;;
+  esac
+  readonly edition cover_src
 
   # Load the typeface set, then re-derive the output names from its suffix. The
   # default set has an empty suffix, so the shipping filenames are unchanged.
   font_set_load "$font_set" "$SCRIPT_DIR"/fonts || die 22
-  OUTPUT=${OUTPUT_BASE%.epub}$FONT_SUFFIX.epub
+  local -- edition_suffix=''
+  [[ $edition == own ]] || edition_suffix=_$edition
+  OUTPUT=${OUTPUT_BASE%.epub}$edition_suffix$FONT_SUFFIX.epub
+  if [[ -n $output ]]; then
+    # Absolute, since pandoc is run from the script's directory, not the caller's.
+    OUTPUT=$(realpath -m -- "$output") || die 22 "invalid --output value ${output@Q}"
+    [[ -d ${OUTPUT%/*} ]] || die 3 "no such directory for --output: ${OUTPUT%/*}"
+    [[ $OUTPUT == *.epub ]] || die 22 "--output wants a name ending .epub, not ${output@Q}"
+  fi
   OUTPUT_PDF=${OUTPUT%.epub}.pdf
   readonly OUTPUT OUTPUT_PDF
   [[ -z $FONT_SUFFIX ]] || info "font set: $font_set ($FONT_COLOPHON_EN)"
@@ -382,7 +444,7 @@ main() {
     command -v zip &>/dev/null || die 18 'zip not found (apt install zip)'
     command -v unzip &>/dev/null || die 18 'unzip not found (apt install unzip)'
   fi
-  [[ -f $COVER_IMAGE ]] || die 3 "cover image missing ${COVER_IMAGE@Q}"
+  [[ $edition != own || -f $COVER_IMAGE ]] || die 3 "cover image missing ${COVER_IMAGE@Q}"
   [[ -f $BACK_IMAGE ]] || die 3 "back cover image missing ${BACK_IMAGE@Q} (run images/defining-dharma-genback.sh)"
   local -- font
   for font in "${FONT_FILES[@]}"; do
@@ -447,6 +509,14 @@ main() {
   # COVER_IMAGE rather than repeating its name.
   local -- cover_rel=${COVER_IMAGE#"$SCRIPT_DIR"/}
   cover_rel=${cover_rel%.png}.jpg
+  if [[ $edition == tuwhiri ]]; then
+    # The publisher's cover, staged under a name of its own. Recompressed like
+    # every other image, and stripped of any colour profile or editing history
+    # its maker's software left in it.
+    cover_rel=images/tuwhiri-cover-front.jpg
+    convert "$cover_src" -strip -quality "$JPEG_QUALITY" "$img_stage"/"$cover_rel" \
+      || die 5 "cover conversion failed ${cover_src@Q}"
+  fi
   local -- cover_jpg="$img_stage"/"$cover_rel"
   [[ -f $cover_jpg ]] || die 3 "staged cover JPEG not produced ${cover_jpg@Q}"
   # The staged back cover, likewise named relative to $img_stage.
@@ -549,7 +619,15 @@ main() {
     # One sentence per printf so no line runs past 120 characters (BCS1201);
     # the output is a single paragraph.
     printf 'This ebook was typeset from Markdown with pandoc, in %s. ' "$FONT_COLOPHON_EN"
-    printf 'The cover and chapter illustrations are watercolour-style images generated with '
+    # What the declaration covers follows the edition: the publisher's cover is
+    # a designer's work and is credited as such; the watercolours inside are
+    # declared in both editions.
+    if [[ $edition == tuwhiri ]]; then
+      printf 'The cover is by %s. ' "$TUWHIRI_COVER_CREDIT"
+      printf 'The chapter illustrations and the back-cover plate are watercolour-style images generated with '
+    else
+      printf 'The cover and chapter illustrations are watercolour-style images generated with '
+    fi
     printf '[AI:grok-imagine-image-quality](https://docs.x.ai/developers/models/grok-imagine-image-quality), '
     printf 'from prompts written, iterated, and selected by the author.\n\n'
     printf 'Research notes assisted with '
@@ -587,8 +665,16 @@ main() {
   # identifier, the licence as dc:rights, and the subjects. Accessibility
   # metadata is injected separately after the build (pandoc drops schema:* here).
   local -- meta_xml="$TMP_DIR"/epub-meta.xml
+  local -- pub_date=$PUB_DATE
+  [[ $edition != tuwhiri ]] || pub_date=$TUWHIRI_PUB_DATE
   {
-    printf '<dc:identifier id="uid">%s</dc:identifier>\n' "$IDENTIFIER"
+    if [[ $edition == tuwhiri ]]; then
+      # An ISBN identifies the package as a URN, written without its hyphens.
+      printf '<dc:identifier id="uid">urn:isbn:%s</dc:identifier>\n' "${TUWHIRI_ISBN//-/}"
+      printf '<dc:publisher>%s</dc:publisher>\n' "$TUWHIRI_PUBLISHER"
+    else
+      printf '<dc:identifier id="uid">%s</dc:identifier>\n' "$IDENTIFIER"
+    fi
     printf '<dc:rights>Licensed under the %s. %s</dc:rights>\n' \
       "$LICENSE_NAME" "$LICENSE_URL"
     local -- subj
@@ -670,7 +756,7 @@ CSS
         --metadata title="$TITLE" \
         --metadata author="$AUTHOR" \
         --metadata lang="$LANGUAGE" \
-        --metadata date="$PUB_DATE" \
+        --metadata date="$pub_date" \
         --metadata toc-title='Contents' \
         --epub-cover-image="$cover_jpg" \
         --css="$css" \
@@ -780,6 +866,16 @@ CSS
   # publish a set, promote it to the default in lib/fonts.sh.
   if [[ -n $FONT_SUFFIX ]]; then
     info "publish skipped: ${FONT_SUFFIX#_} is a proof set, not the shipping edition"
+    return 0
+  fi
+  # The publisher's edition is the publisher's to distribute, and a build
+  # written somewhere else is a test or a proof. Neither goes to the web-root.
+  if [[ $edition != own ]]; then
+    info "publish skipped: the $edition edition is never published from here"
+    return 0
+  fi
+  if [[ -n $output ]]; then
+    info 'publish skipped: --output names a file of its own'
     return 0
   fi
   if [[ -z $PUBLISH_DIR ]]; then
