@@ -26,7 +26,7 @@ main() {
   # A file whose name begins with a dash must reach the checker as a file. It
   # is not a PDF, so the checker rejects it -- but as a file it could not read,
   # not as an option it did not recognise.
-  printf 'not a pdf\n' >"$TMP"/-x.pdf || die 5 'failed to write the fixture'
+  printf 'not a pdf\n' >"$TMP"/-x.pdf || die 5 "failed to write ${TMP@Q}/-x.pdf"
   local -- out
   local -i rc=0
   out=$(cd -- "$TMP" && "$MKPRINT" --preflight -x.pdf 2>&1) || rc=$?
@@ -64,7 +64,7 @@ main() {
     || bad 'the help does not list --output'
   # The interior is a PDF and is written as one: a name of any other kind is
   # most likely a slip, and could be one of the book's own sources.
-  printf 'a source\n' >"$TMP"/part.md || die 5 'failed to write the fixture'
+  printf 'a source\n' >"$TMP"/part.md || die 5 "failed to write ${TMP@Q}/part.md"
   rc=0
   out=$("$MKPRINT" --quiet --output "$TMP"/part.md 2>&1) || rc=$?
   if ((rc == 22)) && [[ $out == *'.pdf'* ]]; then
@@ -74,6 +74,18 @@ main() {
   fi
   [[ $(<"$TMP"/part.md) == 'a source' ]] && ok 'and leaves the file of that name as it was' \
     || bad '--output wrote over a file that is not a PDF'
+
+  # xml_escape writes titles into raw HTML. It is tried on its own, lifted from
+  # the script, since nothing in the book yet holds a character it must escape:
+  # the day a title gains a quotation mark is no day to find out.
+  local -- fn escaped
+  fn=$(sed -n -e '/^xml_escape() {$/,/^}$/p' -- "$MKPRINT") || die 1 "cannot read ${MKPRINT@Q}"
+  [[ -n $fn ]] || die 3 "xml_escape not found in ${MKPRINT@Q}"
+  escaped=$(bash -c "$fn"$'\n''xml_escape "$1"' _ 'Tom & Jerry <b> "q" it'"'"'s') \
+    || die 1 'xml_escape failed'
+  [[ $escaped == 'Tom &amp; Jerry &lt;b&gt; &quot;q&quot; it&#39;s' ]] \
+    && ok 'xml_escape escapes all five XML metacharacters' \
+    || bad "xml_escape gave: $escaped"
 
   ((FAILED == 0)) || exit 1
 }

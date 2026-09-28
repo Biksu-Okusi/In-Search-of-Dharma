@@ -78,9 +78,14 @@ declare -r WORDMARK_SRC="$SCRIPT_DIR"/print/tuwhiri-wordmark-black.jpg
 # this flag is the only thing that needs changing.
 declare -ir PRINT_CHAPTER_ART=0
 
+declare -r FONT_LIB="$SCRIPT_DIR"/lib/fonts.sh
+declare -r PREPROCESS_LIB="$SCRIPT_DIR"/lib/preprocess.sh
+declare -r STYLE_LIB="$SCRIPT_DIR"/lib/print-style.sh
+declare -r PDFCHECK="$SCRIPT_DIR"/lib/pdfcheck.py
+
 # Script-scope state, declared before any function (BCS0105).
 declare -i VERBOSE=1 KEEP_TEMP=0
-declare -- TMP_DIR='' OUTPUT_PDF=$DEFAULT_OUTPUT_PDF
+declare -- TMP_DIR='' OUTPUT_PDF=$DEFAULT_OUTPUT_PDF LIB=''
 
 # Messaging (BCS0703). error() is unconditional; die() takes the exit code
 # first, then an optional message.
@@ -90,14 +95,8 @@ warn()  { _msg '▲' "$@"; }
 error() { _msg '✗' "$@"; }
 die()   { (($# < 2)) || error "${@:2}"; exit "${1:-0}"; }
 
-declare -r FONT_LIB="$SCRIPT_DIR"/lib/fonts.sh
-declare -r PREPROCESS_LIB="$SCRIPT_DIR"/lib/preprocess.sh
-declare -r STYLE_LIB="$SCRIPT_DIR"/lib/print-style.sh
-declare -r PDFCHECK="$SCRIPT_DIR"/lib/pdfcheck.py
-
 # Sourced at file scope, not from a function: the libraries declare their
 # globals with plain `declare`, which inside a function would make them local.
-declare -- LIB
 for LIB in "$FONT_LIB" "$PREPROCESS_LIB" "$STYLE_LIB"; do
   [[ -f $LIB ]] || die 3 "missing library ${LIB@Q}"
 done
@@ -147,11 +146,13 @@ slugify() {
   printf '%s' "$s"
 }
 
-# Escape the five XML metacharacters, for text interpolated into raw HTML.
+# Escape the five XML metacharacters, for text interpolated into raw HTML. Each
+# replacement is quoted: Bash 5.2 reads a bare & in a replacement as the text
+# that matched, which turned < into <lt; and " into "quot;.
 xml_escape() {
   local -- s=$1
-  s=${s//&/&amp;}; s=${s//</&lt;}; s=${s//>/&gt;}
-  s=${s//\"/&quot;}; s=${s//\'/&#39;}
+  s=${s//&/'&amp;'}; s=${s//</'&lt;'}; s=${s//>/'&gt;'}
+  s=${s//\"/'&quot;'}; s=${s//\'/'&#39;'}
   printf '%s' "$s"
 }
 
@@ -334,8 +335,9 @@ main() {
   # relative name beginning with a dash or a percent sign would be misread.
   OUTPUT_PDF=$(realpath -m -- "$OUTPUT_PDF") || die 22 "invalid --output value ${OUTPUT_PDF@Q}"
   # A name of any other kind is most likely a slip, and could be a source.
-  [[ $OUTPUT_PDF == *.pdf ]] || die 22 "--output wants a name ending .pdf, not ${OUTPUT_PDF##*/}"
-  [[ -d ${OUTPUT_PDF%/*} ]] || die 3 "no such directory for --output: ${OUTPUT_PDF%/*}"
+  local -r out_name=${OUTPUT_PDF##*/} out_dir=${OUTPUT_PDF%/*}
+  [[ $out_name == *.pdf ]] || die 22 "--output wants a name ending .pdf, not ${out_name@Q}"
+  [[ -d $out_dir ]] || die 3 "no such directory for --output ${out_dir@Q}"
   readonly OUTPUT_PDF
   # Both reach the stylesheet as "${size}pt", so they are held to a number.
   [[ -z $size || $size =~ ^[0-9]+(\.[0-9]+)?$ ]] || die 22 "invalid --size value ${size@Q}"
