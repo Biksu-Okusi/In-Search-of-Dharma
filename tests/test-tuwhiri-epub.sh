@@ -121,7 +121,7 @@ main() {
   # stands between this build and the publish step.
   "$MKBOOK" epub --edition tuwhiri --cover "$cover" &>"$LOG" \
     || die 1 "the build failed: $(last_said 3)"
-  [[ -s $epub ]] && ok "the edition is written as ${epub##*/}" || die 1 'the build wrote no file'
+  [[ -s $epub ]] && ok "the edition is written as ${epub##*/}" || die 1 "the build did not write ${epub@Q}"
   holds "$LOG" "$GUARD_EDITION" \
     && ok 'the Tuwhiri edition stops before the publish step' \
     || bad "the guard on the edition did not stop the publish step: $(last_said 2)"
@@ -166,10 +166,10 @@ main() {
   # The colophon, the page that says how the book was typeset, no longer calls
   # the cover an AI image, still declares the watercolours, and credits the
   # cover. grep exits 1 when no page says it, and the next line reports that.
-  local -- colophon
-  colophon=$(grep -l -r -F --include='*.xhtml' -- 'typeset from Markdown' "$TMP"/x | head -n 1) ||:
-  [[ -f $colophon ]] || die 3 "no colophon page in ${epub@Q}"
-  colophon=$(plain "$colophon") || die 1 'could not read the colophon'
+  local -- colophon page
+  page=$(grep -l -r -F --include='*.xhtml' -- 'typeset from Markdown' "$TMP"/x | head -n 1) ||:
+  [[ -f $page ]] || die 3 "no colophon page in ${epub@Q}"
+  colophon=$(plain "$page") || die 1 "could not read ${page@Q}"
   [[ $colophon != *'The cover and chapter illustrations'* ]] \
     && ok 'the colophon no longer calls the cover an AI image' \
     || bad 'the colophon still calls the cover an AI image'
@@ -186,7 +186,7 @@ main() {
   "$MKBOOK" epub --output "$own" &>"$LOG" \
     || die 1 "the default edition failed to build: $(last_said 3)"
   [[ -s $own ]] && ok 'the default edition is written to the file named' \
-    || die 1 'the default edition wrote no file'
+    || die 1 "the default edition did not write ${own@Q}"
   holds "$LOG" "$GUARD_OUTPUT" \
     && ok 'a build written elsewhere stops before the publish step' \
     || bad "the --output guard did not stop the publish step: $(last_said 2)"
@@ -203,9 +203,9 @@ main() {
   [[ -n $default_cover ]] && ok 'the default edition keeps its own cover' \
     || bad 'the default edition lost its cover'
   # As above: no page found is reported by the check, not by grep's exit 1.
-  colophon=$(grep -l -r -F --include='*.xhtml' -- 'typeset from Markdown' "$TMP"/y | head -n 1) ||:
-  [[ -f $colophon ]] || die 3 "no colophon page in ${own@Q}"
-  colophon=$(plain "$colophon") || die 1 'could not read the colophon of the default edition'
+  page=$(grep -l -r -F --include='*.xhtml' -- 'typeset from Markdown' "$TMP"/y | head -n 1) ||:
+  [[ -f $page ]] || die 3 "no colophon page in ${own@Q}"
+  colophon=$(plain "$page") || die 1 "could not read ${page@Q}"
   [[ $colophon == *'The cover and chapter illustrations are watercolour-style images'* ]] \
     && ok 'the default edition keeps its colophon' || bad 'the colophon of the default edition has changed'
 

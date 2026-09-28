@@ -78,7 +78,7 @@ fail() { printf '  ✗ %s\n' "$1"; FAILED+=1; }
 # is not known. The test ends there, and says why on stderr.
 stop() { >&2 printf '  ✗ %s\n' "$1"; exit 1; }
 
-for TOOL in pandoc weasyprint jq; do
+for TOOL in pandoc weasyprint jq python3; do
   command -v "$TOOL" >/dev/null || { >&2 printf '  ✗ required: %s\n' "$TOOL"; exit 18; }
 done
 

@@ -57,6 +57,14 @@ declare -ar PRINT_TITLE_FACES=(
   '300|italic|cascadia/CascadiaCode-LightItalic.ttf'
 )
 
+# Populated by print_geom_load. Declared here so a `set -u` script may reference
+# them before the call.
+declare -- PRINT_SIZE_PT='' PRINT_LEAD_PT='' PRINT_SUB_PT='' PRINT_SRC_PT=''
+declare -- PRINT_TOP_MM='' PRINT_BOT_MM='' PRINT_HEADPAD_MM='' PRINT_FOLIOPAD_MM=''
+declare -- PRINT_H1PAD_MM='' PRINT_H1GAP_MM='' PRINT_DROP_FS='' PRINT_DROP_LH=''
+declare -- PRINT_FOLIORULE_MM='' PRINT_FOLIORISE_MM='' PRINT_FOLIOGAP_MM=''
+declare -- PRINT_DROP_DY_MM=''
+
 # print_title_files <fonts-root> : the title faces' paths, one per line.
 print_title_files() {
   local -- entry
@@ -74,14 +82,6 @@ print_title_faces_css() {
       "$PRINT_TITLE_FAMILY" "$weight" "$style" "$1" "$path"
   done
 }
-
-# Populated by print_geom_load. Declared here so a `set -u` script may reference
-# them before the call.
-declare -- PRINT_SIZE_PT='' PRINT_LEAD_PT='' PRINT_SUB_PT='' PRINT_SRC_PT=''
-declare -- PRINT_TOP_MM='' PRINT_BOT_MM='' PRINT_HEADPAD_MM='' PRINT_FOLIOPAD_MM=''
-declare -- PRINT_H1PAD_MM='' PRINT_H1GAP_MM='' PRINT_DROP_FS='' PRINT_DROP_LH=''
-declare -- PRINT_FOLIORULE_MM='' PRINT_FOLIORISE_MM='' PRINT_FOLIOGAP_MM=''
-declare -- PRINT_DROP_DY_MM=''
 
 # The shipping setting, and the constants solved for it.
 print_geom_load() {

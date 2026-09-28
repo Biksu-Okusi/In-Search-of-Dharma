@@ -20,7 +20,7 @@ declare -r DC=$ROOT/lib/dropcap.py
 declare -r REPO_URL=https://github.com/Biksu-Okusi/In-Search-of-Dharma
 declare -r REPO_BLOB="$REPO_URL"/blob/main
 declare -i FAILED=0
-declare -- SRC='' VERDICT=''
+declare -- SRC='' VERDICT='' TOOL=''
 
 # The fixtures: what pandoc makes of an opening, and what the filter is to
 # make of that.
@@ -150,7 +150,9 @@ check 'a paragraph inside a figure or blockquote is passed over' \
 # first body paragraph (a bare <p>, not a label or a figure's) is the one
 # carrying the cap.
 echo '== drop cap: every chapter =='
-command -v pandoc >/dev/null || { >&2 printf '  ✗ required: pandoc\n'; exit 18; }
+for TOOL in pandoc python3; do
+  command -v "$TOOL" >/dev/null || { >&2 printf '  ✗ required: %s\n' "$TOOL"; exit 18; }
+done
 #shellcheck source=SCRIPTDIR/../lib/preprocess.sh
 source -- "$ROOT"/lib/preprocess.sh
 

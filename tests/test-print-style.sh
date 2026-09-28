@@ -130,10 +130,10 @@ source -- "$ROOT"/lib/print-style.sh
 print_geom_load
 
 main() {
-  local -- TOOL
+  local -- tool
   local -i i_
-  for TOOL in weasyprint jq pdffonts pdfinfo pdftotext; do
-    command -v "$TOOL" >/dev/null || { >&2 printf '  ✗ required: %s\n' "$TOOL"; exit 18; }
+  for tool in weasyprint jq pdffonts pdfinfo pdftotext; do
+    command -v "$tool" >/dev/null || { >&2 printf '  ✗ required: %s\n' "$tool"; exit 18; }
   done
   TMP=$(mktemp -d) || stop 'could not make a temporary directory'
 
@@ -179,8 +179,6 @@ HTML
     printf '  ✗ the fixture is not set in the book'"'"'s faces: %s\n' \
       "$(awk 'NR>2{printf "%s ", $1}' <<<"$embedded")"; FAILED+=1
   fi
-
-
 
   echo '== print geometry =='
   assert_near title  "$(b 1 | jq -r '.lines[] | select(.text=="Preface") | .y_mm')"
@@ -247,7 +245,6 @@ HTML
     | .[0:3] | map(tojson) | join(" ")' <<<"$cap_lines" | tr -d ' ' | sed 's/}{/} {/g') \
     || stop 'could not find the lines beside the cap'
   read -r l1 l2 l3 <<<"$beside"
-
 
   cap_box=$(jq -r --argjson l1 "$l1" --argjson l2 "$l2" \
     '"\(.x0_mm - 0.3),\($l1.y_mm - 9),\(.x1_mm),\($l2.y_mm + 0.3)"' <<<"$cap_w") \
@@ -367,10 +364,6 @@ HTML
   local -i roman_pages
   roman_pages=$(pdfinfo -- "$TMP"/roman.pdf | awk '/^Pages:/{print $2}') \
     || stop 'could not count the pages of the roman fixture'
-
-
-
-
 
   local -i contents_pg preface_pg part1_pg
   contents_pg=$(page_of 'Contents') || stop 'could not search for the contents'
