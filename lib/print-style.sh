@@ -131,7 +131,10 @@ print_page_css() {
   @top-right{content:string(chaptitle);font:600 9pt/1 "$FONT_SANS_FAMILY";
     vertical-align:top;padding-top:${PRINT_HEADPAD_MM}mm}
   @bottom-left{content:counter(page);$folio}}
-@page:blank{@top-left{content:none}@top-right{content:none}
+/* A blank verso keeps its running head (Ramsey, 2026-09-28) and loses only its
+   folio: he asked for the head, not the number. :blank outranks :left, so the
+   head declared there survives unless it is named again here. */
+@page:blank{@top-right{content:none}
   @bottom-left{content:none}@bottom-right{content:none}}
 @page chapopen{@top-left{content:none}@top-right{content:none}}
 @page firstbody{counter-reset:page 1;

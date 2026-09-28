@@ -135,6 +135,27 @@ else
   printf '  ✗ no Work Sans Regular in the fixture: the folio is not regular weight\n'; FAILED+=1
 fi
 
+echo '== blank verso =='
+# A chapter that ends on a recto leaves the next opener's verso blank. Ramsey
+# (2026-09-28): a blank verso carries the running head too. It still carries no
+# folio: he asked for the head alone.
+cat > "$TMP"/blank.html <<'HTML'
+<!doctype html><html lang="en"><head><meta charset="utf-8">
+<link rel="stylesheet" href="print.css"></head><body>
+<section class="chapter"><h1>One</h1><p>A chapter one page long.</p></section>
+<section class="chapter"><h1>Two</h1><p>The next opener, on a recto.</p></section>
+</body></html>
+HTML
+weasyprint "$TMP"/blank.html "$TMP"/blank.pdf 2>/dev/null
+declare -- blank_lines
+blank_lines=$("$ROOT"/lib/pdfcheck.py baselines "$TMP"/blank.pdf --page 2)
+[[ $(jq -r '[.lines[].text] | join("|")' <<<"$blank_lines") == 'in search of dharma' ]] \
+  && printf '  ✓ the blank verso carries the running head and nothing else\n' \
+  || { printf '  ✗ the blank verso reads: %s\n' "$(jq -c '[.lines[].text]' <<<"$blank_lines")"; FAILED+=1; }
+[[ $("$ROOT"/lib/pdfcheck.py rules "$TMP"/blank.pdf --page 2 | jq '.rules | length') == 0 ]] \
+  && printf '  ✓ the blank verso has no folio rule\n' \
+  || { printf '  ✗ the blank verso carries a folio rule\n'; FAILED+=1; }
+
 # measure and margins, from the widest body line on the verso: the first line
 # may open an indented paragraph, the last may be a short one.
 measure=$(b 2 | jq -r '.lines[1:-1] | max_by(.x1_mm - .x0_mm) | [.x0_mm, .x1_mm] | @tsv')
