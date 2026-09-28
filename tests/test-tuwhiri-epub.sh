@@ -5,8 +5,11 @@
 # in the package, the chapter watercolours kept and still declared, and nothing
 # published.
 #
-# Built into a temporary file over a stand-in cover, so the test neither needs
-# Tuwhiri's artwork nor leaves anything behind that could pass for the edition.
+# Built over a stand-in cover, so the test needs none of Tuwhiri's artwork, and
+# in a tree of its own: links to the book's sources beside a copy of the
+# script, with no deploy.conf. Nothing can be published from there whatever
+# the script does, so each of the two guards on the publish step can be tried
+# alone, and what is asserted is that the guard is what stopped it.
 set -euo pipefail
 shopt -s inherit_errexit
 # Fixed PATH: every external tool must resolve from system locations only.
@@ -16,10 +19,10 @@ declare -rx PATH=/usr/local/bin:/usr/bin:/bin
 declare -r TEST_PATH=$(realpath -- "${BASH_SOURCE[0]}")
 declare -r TEST_DIR=${TEST_PATH%/*}
 declare -r ROOT=${TEST_DIR%/*}
-declare -r MKBOOK=$ROOT/mk-book.sh
+declare -r OWN_NAME=In-Search-of-Dharma_Biksu-Okusi_2026
 declare -r ISBN=9798998067617
 declare -i FAILED=0
-declare -- TMP=''
+declare -- TMP='' MKBOOK=''
 trap '[[ -z $TMP ]] || rm -rf -- "$TMP"' EXIT
 
 ok()   { printf '  ✓ %s\n' "$1"; }
@@ -43,23 +46,42 @@ refuses() {
 main() {
   echo '== Tuwhiri ePub edition =='
   TMP=$(mktemp -d) || die 5 'failed to create temp dir'
-  local -- epub=$TMP/tuwhiri.epub cover=$TMP/cover.jpg log=$TMP/build.log
+  local -- box=$TMP/box src
+  mkdir -- "$box" || die 5 'failed to create the build tree'
+  # cp -rs makes real directories holding links to the files: the build finds
+  # its images with find, which does not go down into a directory that is
+  # itself a link.
+  for src in "$ROOT"/[0-9]-*.md "$ROOT"/the-better-ones.md "$ROOT"/cover.md \
+             "$ROOT"/fonts "$ROOT"/images "$ROOT"/lib; do
+    cp -Rs -- "$src" "$box"/ || die 5 "failed to link ${src@Q}"
+  done
+  cp -- "$ROOT"/mk-book.sh "$box"/ || die 5 'failed to copy mk-book.sh'
+  MKBOOK=$box/mk-book.sh
+  local -- epub=$box/${OWN_NAME}_tuwhiri.epub cover=$TMP/cover.jpg log=$TMP/build.log
   # A stand-in cover of a size no image in the book has.
   convert -size 613x917 xc:'#d9d7d7' "$cover" || die 5 'failed to make the stand-in cover'
 
   refuses 'an unknown edition is refused' 22 'edition' \
-    epub --edition nonesuch --output "$epub"
+    epub --edition nonesuch
   refuses 'the Tuwhiri edition is an ePub only: a PDF is refused' 22 'ePub' \
-    pdf --edition tuwhiri --cover "$cover" --output "$epub"
+    pdf --edition tuwhiri --cover "$cover"
   refuses 'a missing cover stops the build and is named' 3 'nowhere.jpg' \
-    epub --edition tuwhiri --cover "$TMP"/nowhere.jpg --output "$epub"
-  [[ ! -e $epub ]] && ok 'a refused build writes nothing' || bad 'a refused build left a file'
+    epub --edition tuwhiri --cover "$TMP"/nowhere.jpg
+  # A cover handed to the author's edition would be dropped without a word,
+  # and the build would go on to publish the edition nobody asked for.
+  refuses '--cover without the Tuwhiri edition is refused' 2 '--cover' \
+    epub --cover "$cover"
+  [[ -z $(find "$box" -maxdepth 1 -name '*.epub' -print -quit) ]] \
+    && ok 'a refused build writes nothing' || bad 'a refused build left a file'
 
-  "$MKBOOK" epub --edition tuwhiri --cover "$cover" --output "$epub" >"$log" 2>&1 \
+  # The edition under its own name, with no --output: only the edition's guard
+  # stands between this build and the publish step.
+  "$MKBOOK" epub --edition tuwhiri --cover "$cover" >"$log" 2>&1 \
     || die 1 "the build failed: $(tail -n 3 "$log" | tr '\n' ' ')"
-  [[ -s $epub ]] && ok 'the edition is written to the file named' || die 1 'the build wrote no file'
-  grep -q -F 'publish skipped' "$log" && ok 'nothing is published' \
-    || bad "the build did not say the publish step was skipped: $(tail -n 2 "$log" | tr '\n' ' ')"
+  [[ -s $epub ]] && ok "the edition is written as ${epub##*/}" || die 1 'the build wrote no file'
+  grep -q -F 'publish skipped: the tuwhiri edition is never published from here' "$log" \
+    && ok 'the Tuwhiri edition stops before the publish step' \
+    || bad "the edition's guard did not stop the publish step: $(tail -n 2 "$log" | tr '\n' ' ')"
   grep -q -F 'validating with epubcheck' "$log" && ok 'epubcheck ran and found no error' \
     || bad 'epubcheck did not run'
 
@@ -109,12 +131,30 @@ main() {
   [[ $colophon == *'minimum graphics'* ]] && ok 'the colophon credits the cover to minimum graphics' \
     || bad 'the colophon does not credit the cover'
 
-  # The author's own edition is untouched by the switch: same identifier, same
-  # colophon sentence. Read from the script, since building it would publish it.
-  grep -q -F "IDENTIFIER='https://garydean.id/books/in-search-of-dharma'" "$MKBOOK" \
-    && grep -q -F 'The cover and chapter illustrations are watercolour-style images' "$MKBOOK" \
-    && ok 'the default edition keeps its identifier and its colophon' \
-    || bad 'the default edition'"'"'s identifier or colophon has changed'
+  # The author's own edition, written elsewhere: only the --output guard stands
+  # between this build and the publish step. It is also the edition the switch
+  # must leave alone, read back from the file this time.
+  local -- own=$TMP/own.epub
+  "$MKBOOK" epub --output "$own" >"$log" 2>&1 \
+    || die 1 "the author's edition failed to build: $(tail -n 3 "$log" | tr '\n' ' ')"
+  [[ -s $own ]] && ok "the author's edition is written to the file named" \
+    || die 1 "the author's edition wrote no file"
+  grep -q -F 'publish skipped: --output names a file of its own' "$log" \
+    && ok 'a build written elsewhere stops before the publish step' \
+    || bad "the --output guard did not stop the publish step: $(tail -n 2 "$log" | tr '\n' ' ')"
+  [[ ! -e $box/$OWN_NAME.epub ]] && ok 'nothing is written under the shipping name' \
+    || bad 'the build also wrote the shipping file'
+  mkdir -- "$TMP"/y && ( cd -- "$TMP"/y && unzip -q "$own" ) || die 5 "failed to unpack the author's ePub"
+  opf=$(find "$TMP"/y -name '*.opf' -print -quit)
+  grep -q -F '>https://garydean.id/books/in-search-of-dharma</dc:identifier>' "$opf" \
+    && ! grep -q -F '<dc:publisher>' "$opf" \
+    && ok "the author's edition keeps its identifier and names no publisher" \
+    || bad "the author's edition's package has changed: $(grep -o '<dc:\(identifier\|publisher\)[^<]*' "$opf" | tr '\n' ' ')"
+  [[ -n $(find "$TMP"/y -name 'defining-dharma-cover-title*' -print -quit) ]] \
+    && ok "the author's edition keeps its own cover" || bad "the author's edition lost its cover"
+  colophon=$(grep -l -r -F 'typeset from Markdown' "$TMP"/y --include='*.xhtml' | head -n 1)
+  [[ -f $colophon && $(sed -e 's/<[^>]*>//g' "$colophon" | tr -s ' \n' ' ') == *'The cover and chapter illustrations are watercolour-style images'* ]] \
+    && ok "the author's edition keeps its colophon" || bad "the author's edition's colophon has changed"
 
   ((FAILED == 0)) || exit 1
 }

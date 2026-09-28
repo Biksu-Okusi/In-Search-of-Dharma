@@ -357,7 +357,7 @@ main() {
   local -- target=''
   local -- audio_mode=link
   local -- font_set=${FONT_SETS[0]}
-  local -- edition=own cover_src=$TUWHIRI_COVER output=''
+  local -- edition=own cover_src='' output=''
   while (($#)); do
     case $1 in
       -h|--help)
@@ -406,8 +406,12 @@ main() {
   esac
   case $edition in
     own)
+      # The author's edition has its own cover. A cover handed to it would be
+      # dropped without a word, and the build would go on to publish.
+      [[ -z $cover_src ]] || die 2 '--cover belongs to the tuwhiri edition (--edition tuwhiri)'
       target=${target:-all} ;;
     tuwhiri)
+      cover_src=${cover_src:-$TUWHIRI_COVER}
       # Asked for with no target, the edition is its ePub; a PDF is refused
       # rather than quietly left out.
       target=${target:-epub}
