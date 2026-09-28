@@ -4,6 +4,8 @@
 # grid measured from Tuwhiri's The secular path to well-being.
 set -euo pipefail
 shopt -s inherit_errexit
+# Fixed PATH: every external tool must resolve from system locations only.
+declare -rx PATH=/usr/local/bin:/usr/bin:/bin
 
 # Resolved, never relative: lib/fonts.sh binds the faces as file://PATH URLs, and
 # a relative PATH (tests/../fonts) reads as a host name, so the faces silently
@@ -12,6 +14,7 @@ shopt -s inherit_errexit
 declare -r SCRIPT_PATH=$(realpath -- "${BASH_SOURCE[0]}")
 declare -r TEST_DIR=${SCRIPT_PATH%/*}
 declare -r ROOT=${TEST_DIR%/*}
+declare -r CHECK=$ROOT/lib/pdfcheck.py
 declare -i FAILED=0 i_
 declare -r TOL=0.1
 
@@ -30,25 +33,53 @@ declare -rA TARGET=(
   [rule_verso_x]=30.00 [rule_recto_x]=35.00 [rule_len]=5.00 [rule_top]=210.54
 )
 
-declare -- TMP=''
+declare -- TMP='' TOOL=''
 trap '[[ -z $TMP ]] || rm -rf -- "$TMP"' EXIT
-TMP=$(mktemp -d)
+
+# stop WHAT : a fixture could not be made or read, so what it would have shown
+# is not known. The test ends there, and says why.
+stop() { >&2 printf '  ✗ %s\n' "$1"; exit 1; }
+
+# render NAME : typeset $TMP/NAME.html as $TMP/NAME.pdf.
+# stderr dropped: the renderer's font and anchor warnings are noise in a test
+# log. A failed render is not dropped: it stops the test and says which file.
+render() {
+  weasyprint -- "$TMP/$1".html "$TMP/$1".pdf 2>/dev/null || stop "weasyprint failed on $1.html"
+}
+
+# page_lines NAME N : the lines of page N of $TMP/NAME.pdf, as pdfcheck.py
+# reports them.
+page_lines() { "$CHECK" baselines --page "$2" -- "$TMP/$1".pdf; }
+
+# page_rules NAME N : the hairline rules on page N of $TMP/NAME.pdf.
+page_rules() { "$CHECK" rules --page "$2" -- "$TMP/$1".pdf; }
+
+# depth_of NAME : how far each page of $TMP/NAME.pdf falls short of 31 lines.
+# stderr dropped: the checker sums up there what its report already holds.
+depth_of() {
+  "$CHECK" lines --top "$PRINT_TOP_MM" --lead "$PRINT_LEAD_PT" -- "$TMP/$1".pdf 2>/dev/null
+}
+
+for TOOL in weasyprint jq pdffonts pdfinfo pdftotext; do
+  command -v "$TOOL" >/dev/null || { >&2 printf '  ✗ required: %s\n' "$TOOL"; exit 18; }
+done
+TMP=$(mktemp -d) || stop 'could not make a temporary directory'
 
 #shellcheck source=SCRIPTDIR/../lib/fonts.sh
-source "$ROOT"/lib/fonts.sh
+source -- "$ROOT"/lib/fonts.sh
 font_set_load bonanova-worksans "$ROOT"/fonts
 #shellcheck source=SCRIPTDIR/../lib/print-style.sh
-source "$ROOT"/lib/print-style.sh
+source -- "$ROOT"/lib/print-style.sh
 print_geom_load
 
-{ font_faces_css pdf; print_page_css; } > "$TMP"/print.css
+{ font_faces_css pdf && print_page_css; } >"$TMP"/print.css || stop 'could not write the stylesheet'
 
 cat > "$TMP"/fixture.html <<'HTML'
 <!doctype html><html lang="en"><head><meta charset="utf-8">
 <link rel="stylesheet" href="print.css"></head><body>
 <section class="chapter"><h1>Preface</h1>
-<p class="op"><span class="dc">M</span><span class="sc">ost books</span> that refer to the word 'dharma' come from one of two
-places: a monastery or a university, or somewhere in their vicinity. A teacher
+<p class="op"><span class="dc">M</span><span class="sc">ost books</span> that refer to the word 'dharma'
+come from one of two places: a monastery or a university, or somewhere in their vicinity. A teacher
 hands down a lineage received from their own teacher, or a scholar maps the
 territory from a careful distance. This one comes from neither. It was written
 by a lifelong anarchist, raised on the remote western rim of Australia: a
@@ -71,12 +102,12 @@ and a page that ends early measures nothing at all.</p>
 </section></body></html>
 HTML
 
-weasyprint "$TMP"/fixture.html "$TMP"/fixture.pdf 2>/dev/null
+render fixture
 
 # The measurements mean something only in the book's own faces. If a face
 # fails to load, WeasyPrint falls back to another font without an error.
 declare -- embedded
-embedded=$(pdffonts -- "$TMP"/fixture.pdf)
+embedded=$(pdffonts -- "$TMP"/fixture.pdf) || stop 'could not list the fonts of the fixture'
 if [[ $embedded == *Bona-Nova* && $embedded == *Work-Sans* ]]; then
   printf '  ✓ the fixture is set in Bona Nova and Work Sans\n'
 else
@@ -84,7 +115,7 @@ else
     "$(awk 'NR>2{printf "%s ", $1}' <<<"$embedded")"; FAILED+=1
 fi
 
-b() { "$ROOT"/lib/pdfcheck.py baselines "$TMP"/fixture.pdf --page "$1"; }
+b() { page_lines fixture "$1"; }
 
 assert_near() {
   local -- name=$1 got=$2 want=${TARGET[$1]}
@@ -109,12 +140,12 @@ assert_near folio  "$(b 2 | jq -r '.lines[-1].y_mm')"
 echo '== folio =='
 # The folio's rule is the one in the foot; an opener also carries a 71mm rule
 # above its title.
-foot_rule() { "$ROOT"/lib/pdfcheck.py rules "$TMP"/fixture.pdf --page "$1" | jq -c '[.rules[] | select(.y0_mm > 200)][0]'; }
+foot_rule() { page_rules fixture "$1" | jq -c '[.rules[] | select(.y0_mm > 200)][0]'; }
 declare -- rule folio_x side
 declare -i pg
 for side in verso recto; do
   if [[ $side == verso ]]; then pg=2; else pg=1; fi
-  rule=$(foot_rule "$pg")
+  rule=$(foot_rule "$pg") || stop "could not look for the folio rule on page $pg"
   if [[ $rule == null ]]; then
     printf '  ✗ %s: no rule beside the folio\n' "$side"; FAILED+=1; continue
   fi
@@ -152,21 +183,35 @@ bend a little in each mind which holds them. Hills wear down: rivers move: a
 creed does no less. No book can hold it still.</p>
 </section></body></html>
 HTML
-weasyprint "$TMP"/cap.html "$TMP"/cap.pdf 2>/dev/null
+render cap
 declare -- cap_lines cap_w l1 l2 l3 cap_foot l2_foot
-cap_lines=$("$ROOT"/lib/pdfcheck.py baselines "$TMP"/cap.pdf --page 1)
-cap_w=$(jq -c '[.lines[] | select(.text == "M")][0]' <<<"$cap_lines")
-# The three lines beside and below the cap, in order, the cap's own excluded.
-read -r l1 l2 l3 < <(jq -r '[.lines[] | select(.text != "M" and .text != "Coda" and .y_mm < 200)]
-  | .[0:3] | map(tojson) | join(" ")' <<<"$cap_lines" | tr -d ' ' | sed 's/}{/} {/g')
-ink_foot() { "$ROOT"/lib/pdfcheck.py ink "$TMP"/cap.pdf --page 1 --box "$1" | jq -r '.ink.y1_mm // "none"'; }
-cap_foot=$(ink_foot "$(jq -r --argjson l1 "$l1" --argjson l2 "$l2" \
-  '"\(.x0_mm - 0.3),\($l1.y_mm - 9),\(.x1_mm),\($l2.y_mm + 0.3)"' <<<"$cap_w")")
-l2_foot=$(ink_foot "$(jq -r '"\(.x0_mm),\(.y_mm - 4),\(.x1_mm + 0.1),\(.y_mm + 0.3)"' <<<"$l2")")
-if awk -v c="$cap_foot" -v l="$l2_foot" -v t="$TOL" 'BEGIN{exit !(c != "none" && l != "none" && c-l < t && l-c < t)}'; then
-  printf '  ✓ the cap stands on the second line'"'"'s baseline (%s, line %s)\n' "$cap_foot" "$l2_foot"
+declare -- beside cap_box l2_box
+cap_lines=$(page_lines cap 1) || stop 'could not read the drop-cap fixture'
+cap_w=$(jq -c '[.lines[] | select(.text == "M")][0]' <<<"$cap_lines") || stop 'could not find the cap'
+# The three lines beside and below the cap, in order, the cap's own excluded:
+# one object to a line, its white space taken out so that read can split them.
+beside=$(jq -r '[.lines[] | select(.text != "M" and .text != "Coda" and .y_mm < 200)]
+  | .[0:3] | map(tojson) | join(" ")' <<<"$cap_lines" | tr -d ' ' | sed 's/}{/} {/g') \
+  || stop 'could not find the lines beside the cap'
+read -r l1 l2 l3 <<<"$beside"
+
+# ink_foot BOX : the foot of the ink inside BOX on the fixture's first page,
+# "none" where the box holds no ink.
+ink_foot() { "$CHECK" ink --page 1 --box "$1" -- "$TMP"/cap.pdf | jq -r '.ink.y1_mm // "none"'; }
+
+cap_box=$(jq -r --argjson l1 "$l1" --argjson l2 "$l2" \
+  '"\(.x0_mm - 0.3),\($l1.y_mm - 9),\(.x1_mm),\($l2.y_mm + 0.3)"' <<<"$cap_w") \
+  || stop 'could not place the cap'
+l2_box=$(jq -r '"\(.x0_mm),\(.y_mm - 4),\(.x1_mm + 0.1),\(.y_mm + 0.3)"' <<<"$l2") \
+  || stop 'could not place the second line'
+cap_foot=$(ink_foot "$cap_box") || stop 'could not measure the cap'
+l2_foot=$(ink_foot "$l2_box") || stop 'could not measure the second line'
+if awk -v c="$cap_foot" -v l="$l2_foot" -v t="$TOL" \
+     'BEGIN{exit !(c != "none" && l != "none" && c-l < t && l-c < t)}'; then
+  printf '  ✓ the cap stands on the baseline of the second line (%s, line %s)\n' "$cap_foot" "$l2_foot"
 else
-  printf '  ✗ the cap'"'"'s foot is at %s, the second line'"'"'s baseline at %s\n' "$cap_foot" "$l2_foot"; FAILED+=1
+  printf '  ✗ the foot of the cap is at %s, the baseline of the second line at %s\n' \
+    "$cap_foot" "$l2_foot"; FAILED+=1
 fi
 # Two lines stand in beside the cap and the third returns to the margin.
 jq -n -e --argjson l1 "$l1" --argjson l2 "$l2" --argjson l3 "$l3" --argjson c "$cap_w" \
@@ -179,7 +224,8 @@ echo '== 31 lines a page =='
 # with by hand at the very end. A three-line paragraph cannot be split at all
 # while widows and orphans are both held to two lines, so a chapter made of
 # them leaves a page short wherever a page ends inside one.
-declare -- three='<p>A paragraph of three lines, which a page may have to end inside: it holds words enough to run past two lines of the measure and into a third.</p>'
+declare -- three='<p>A paragraph of three lines, which a page may have to end inside: it holds '
+three+='words enough to run past two lines of the measure and into a third.</p>'
 declare -- run=''
 for ((i_ = 0; i_ < 45; i_+=1)); do run+=$three; done
 cat > "$TMP"/full.html <<HTML
@@ -187,17 +233,19 @@ cat > "$TMP"/full.html <<HTML
 <link rel="stylesheet" href="print.css"></head><body>
 <section class="chapter"><h1>One</h1>$run</section></body></html>
 HTML
-weasyprint "$TMP"/full.html "$TMP"/full.pdf 2>/dev/null
+render full
 declare -- depth
-depth=$("$ROOT"/lib/pdfcheck.py lines "$TMP"/full.pdf --top "$PRINT_TOP_MM" --lead "$PRINT_LEAD_PT" 2>/dev/null)
+depth=$(depth_of full) || stop 'could not count the lines of the chapter fixture'
 if jq -e '(.pages | length) >= 4 and .short == []' <<<"$depth" >/dev/null; then
   printf '  ✓ every page of a chapter of three-line paragraphs runs to 31 lines\n'
 else
-  printf '  ✗ pages fall short: %s\n' "$(jq -c '[.pages[] | {page, lines, short_by}]' <<<"$depth")"; FAILED+=1
+  printf '  ✗ pages fall short: %s\n' \
+    "$(jq -c '[.pages[] | {page, lines, short_by}]' <<<"$depth")"; FAILED+=1
 fi
 
 # The same holds in the Sources, whose entries are list items, not paragraphs.
-declare -- entry='<li>An Author, A Title of Some Length (1999) – a note on what the work is drawn on for here, long enough to run past two lines of the measure and into a third.</li>'
+declare -- entry='<li>An Author, A Title of Some Length (1999) – a note on what the work is drawn on for here, '
+entry+='long enough to run past two lines of the measure and into a third.</li>'
 run=''
 for ((i_ = 0; i_ < 40; i_+=1)); do run+=$entry; done
 cat > "$TMP"/fullsrc.html <<HTML
@@ -206,12 +254,13 @@ cat > "$TMP"/fullsrc.html <<HTML
 <section class="chapter"><h1>One</h1><p>The text.</p>
 <div class="sources"><h2 id="sources">Sources</h2><ul>$run</ul></div></section></body></html>
 HTML
-weasyprint "$TMP"/fullsrc.html "$TMP"/fullsrc.pdf 2>/dev/null
-depth=$("$ROOT"/lib/pdfcheck.py lines "$TMP"/fullsrc.pdf --top "$PRINT_TOP_MM" --lead "$PRINT_LEAD_PT" 2>/dev/null)
+render fullsrc
+depth=$(depth_of fullsrc) || stop 'could not count the lines of the list fixture'
 if jq -e '(.pages | length) >= 4 and .short == []' <<<"$depth" >/dev/null; then
   printf '  ✓ every page of a list of three-line entries runs to 31 lines\n'
 else
-  printf '  ✗ pages of the list fall short: %s\n' "$(jq -c '[.pages[] | {page, lines, short_by}]' <<<"$depth")"; FAILED+=1
+  printf '  ✗ pages of the list fall short: %s\n' \
+    "$(jq -c '[.pages[] | {page, lines, short_by}]' <<<"$depth")"; FAILED+=1
 fi
 
 echo '== blank verso =='
@@ -225,13 +274,14 @@ cat > "$TMP"/blank.html <<'HTML'
 <section class="chapter"><h1>Two</h1><p>The next opener, on a recto.</p></section>
 </body></html>
 HTML
-weasyprint "$TMP"/blank.html "$TMP"/blank.pdf 2>/dev/null
-declare -- blank_lines
-blank_lines=$("$ROOT"/lib/pdfcheck.py baselines "$TMP"/blank.pdf --page 2)
+render blank
+declare -- blank_lines blank_rules
+blank_lines=$(page_lines blank 2) || stop 'could not read the blank verso'
+blank_rules=$(page_rules blank 2 | jq '.rules | length') || stop 'could not look for rules on the blank verso'
 [[ $(jq -r '[.lines[].text] | join("|")' <<<"$blank_lines") == 'in search of dharma' ]] \
   && printf '  ✓ the blank verso carries the running head and nothing else\n' \
   || { printf '  ✗ the blank verso reads: %s\n' "$(jq -c '[.lines[].text]' <<<"$blank_lines")"; FAILED+=1; }
-[[ $("$ROOT"/lib/pdfcheck.py rules "$TMP"/blank.pdf --page 2 | jq '.rules | length') == 0 ]] \
+[[ $blank_rules == 0 ]] \
   && printf '  ✓ the blank verso has no folio rule\n' \
   || { printf '  ✗ the blank verso carries a folio rule\n'; FAILED+=1; }
 
@@ -240,7 +290,9 @@ echo '== front matter and Preface in roman; page 1 is Part 1 =='
 # it take roman numerals. Which of them show one he will say; until then the
 # half-title, title page and imprint show none, and the contents and the
 # Preface do. The Preface's pages carry running heads like any chapter's.
-declare -- para='<p>The Preface runs on across several pages, so that its later pages, and the blank before Part 1, have somewhere to appear. The Preface runs on across several pages, so that its later pages have somewhere to appear.</p>'
+declare -- para='<p>The Preface runs on across several pages, so that its later pages, '
+para+='and the blank before Part 1, have somewhere to appear. '
+para+='The Preface runs on across several pages, so that its later pages have somewhere to appear.</p>'
 declare -- preface_body=''
 # Fifteen paragraphs end the Preface on a recto, so a blank verso stands
 # before Part 1.
@@ -261,62 +313,157 @@ cat > "$TMP"/roman.html <<HTML
 <section class="chapter first"><h1 id="part-1">Part 1</h1><p>Part 1 opens here.</p></section>
 </body></html>
 HTML
-weasyprint "$TMP"/roman.html "$TMP"/roman.pdf 2>/dev/null
+render roman
 declare -i roman_pages
-roman_pages=$(pdfinfo "$TMP"/roman.pdf | awk '/^Pages:/{print $2}')
-# The text at a page's folio and running-head positions, "" where none.
-at_y() { "$ROOT"/lib/pdfcheck.py baselines "$TMP"/roman.pdf --page "$1" \
-  | jq -r --argjson y "$2" '[.lines[] | select((.y_mm - $y | fabs) < 0.5) | .text] | join(" ")'; }
-page_of() { # the first page whose text includes $1
+roman_pages=$(pdfinfo -- "$TMP"/roman.pdf | awk '/^Pages:/{print $2}') \
+  || stop 'could not count the pages of the roman fixture'
+
+# at_y N Y : the text at height Y on page N, "" where there is none.
+at_y() {
+  page_lines roman "$1" \
+    | jq -r --argjson y "$2" '[.lines[] | select((.y_mm - $y | fabs) < 0.5) | .text] | join(" ")'
+}
+
+# page_of TEXT : the first page whose text includes TEXT, 0 if none does.
+page_of() {
   local -i n
   for ((n = 1; n <= roman_pages; n+=1)); do
-    pdftotext -f "$n" -l "$n" "$TMP"/roman.pdf - | grep -q -F -- "$1" && { echo "$n"; return; }
+    if pdftotext -f "$n" -l "$n" -- "$TMP"/roman.pdf - | grep -q -F -- "$1"; then
+      echo "$n"; return
+    fi
   done
   echo 0
 }
-expect() { # expect <name> <got> <want>
+
+# expect NAME GOT WANT
+expect() {
   [[ $2 == "$3" ]] && printf '  ✓ %s: %s\n' "$1" "${3:-(none)}" \
     || { printf '  ✗ %s: got %s, want %s\n' "$1" "${2:-(none)}" "${3:-(none)}"; FAILED+=1; }
 }
+
+# expect_at NAME N Y WANT : the text at height Y on page N is WANT. Several
+# of these pass on an empty answer, a page with no folio or no running head,
+# so the page is read and the reading checked before it is compared: a reading
+# that fails stops the test, and is never taken for an empty page.
+expect_at() {
+  local -- got
+  got=$(at_y "$2" "$3") || stop "could not read page $2 for ${1@Q}"
+  expect "$1" "$got" "$4"
+}
+
 declare -i contents_pg preface_pg part1_pg
-contents_pg=$(page_of 'Contents') preface_pg=$(page_of 'Preface runs on') part1_pg=$(page_of 'Part 1 opens')
-expect 'half-title folio' "$(at_y 1 "${TARGET[folio]}")" ''
-expect 'title page folio' "$(at_y 3 "${TARGET[folio]}")" ''
-expect 'imprint folio' "$(at_y 4 "${TARGET[folio]}")" ''
-expect 'contents folio' "$(at_y "$contents_pg" "${TARGET[folio]}")" 'v'
-expect 'Preface opener folio' "$(at_y "$preface_pg" "${TARGET[folio]}")" 'vii'
-expect 'Preface opener head' "$(at_y "$preface_pg" "${TARGET[head]}")" ''
-expect 'Preface verso folio' "$(at_y $((preface_pg + 1)) "${TARGET[folio]}")" 'viii'
-expect 'Preface verso head' "$(at_y $((preface_pg + 1)) "${TARGET[head]}")" 'in search of dharma'
-expect 'Preface recto head' "$(at_y $((preface_pg + 2)) "${TARGET[head]}")" 'Preface'
-expect 'Part 1 opener folio' "$(at_y "$part1_pg" "${TARGET[folio]}")" '1'
+contents_pg=$(page_of 'Contents') || stop 'could not search for the contents'
+preface_pg=$(page_of 'Preface runs on') || stop 'could not search for the Preface'
+part1_pg=$(page_of 'Part 1 opens') || stop 'could not search for Part 1'
+((contents_pg && preface_pg && part1_pg)) \
+  || stop 'the contents, the Preface or Part 1 was not found in the roman fixture'
+expect_at 'half-title folio' 1 "${TARGET[folio]}" ''
+expect_at 'title page folio' 3 "${TARGET[folio]}" ''
+expect_at 'imprint folio' 4 "${TARGET[folio]}" ''
+expect_at 'contents folio' "$contents_pg" "${TARGET[folio]}" 'v'
+expect_at 'Preface opener folio' "$preface_pg" "${TARGET[folio]}" 'vii'
+expect_at 'Preface opener head' "$preface_pg" "${TARGET[head]}" ''
+expect_at 'Preface verso folio' $((preface_pg + 1)) "${TARGET[folio]}" 'viii'
+expect_at 'Preface verso head' $((preface_pg + 1)) "${TARGET[head]}" 'in search of dharma'
+expect_at 'Preface recto head' $((preface_pg + 2)) "${TARGET[head]}" 'Preface'
+expect_at 'Part 1 opener folio' "$part1_pg" "${TARGET[folio]}" '1'
 # The preliminaries' blank versos carry nothing: neither the one between the
 # contents and the Preface nor the one before Part 1. The running head on a
 # blank verso belongs to the text, from Part 1 on.
-expect 'blank before the Preface: head' "$(at_y $((preface_pg - 1)) "${TARGET[head]}")" ''
-expect 'blank before the Preface: folio' "$(at_y $((preface_pg - 1)) "${TARGET[folio]}")" ''
-# pdftotext ends each page with a form feed, which is not text.
-if [[ -z $(pdftotext -f $((part1_pg - 1)) -l $((part1_pg - 1)) "$TMP"/roman.pdf - | tr -d '\f' \
-           | grep -v -x -e 'in search of dharma' -e '' || true) ]]; then
-  expect 'blank before Part 1: head' "$(at_y $((part1_pg - 1)) "${TARGET[head]}")" ''
-  expect 'blank before Part 1: folio' "$(at_y $((part1_pg - 1)) "${TARGET[folio]}")" ''
+expect_at 'blank before the Preface: head' $((preface_pg - 1)) "${TARGET[head]}" ''
+expect_at 'blank before the Preface: folio' $((preface_pg - 1)) "${TARGET[folio]}" ''
+# The page before Part 1 must be a blank one for the two checks to mean
+# anything. pdftotext ends each page with a form feed, which is not text.
+declare -- before_part1 other
+before_part1=$(pdftotext -f $((part1_pg - 1)) -l $((part1_pg - 1)) -- "$TMP"/roman.pdf - | tr -d '\f') \
+  || stop 'could not read the page before Part 1'
+# grep exits 1 when nothing is left over, which is the blank page looked for.
+other=$(grep -v -x -e 'in search of dharma' -e '' <<<"$before_part1") ||:
+if [[ -z $other ]]; then
+  expect_at 'blank before Part 1: head' $((part1_pg - 1)) "${TARGET[head]}" ''
+  expect_at 'blank before Part 1: folio' $((part1_pg - 1)) "${TARGET[folio]}" ''
 else
   printf '  ✗ the fixture left no blank verso before Part 1: resize the Preface\n'; FAILED+=1
 fi
 declare -- toc
-toc=$(pdftotext -f "$contents_pg" -l "$contents_pg" -layout "$TMP"/roman.pdf - | tr -s ' .' ' ')
+toc=$(pdftotext -f "$contents_pg" -l "$contents_pg" -layout -- "$TMP"/roman.pdf - | tr -s ' .' ' ') \
+  || stop 'could not read the contents page'
 [[ $toc == *'Preface vii'* ]] && printf '  ✓ the contents give the Preface in roman: vii\n' \
-  || { printf '  ✗ the contents do not give the Preface as vii: %s\n' "$(grep Preface <<<"$toc")"; FAILED+=1; }
+  || { printf '  ✗ the contents do not give the Preface as vii: %s\n' "${toc:0:120}"; FAILED+=1; }
 [[ $toc == *'Part 1 1'* ]] && printf '  ✓ the contents give Part 1 as page 1\n' \
-  || { printf '  ✗ the contents do not give Part 1 as page 1: %s\n' "$(grep 'Part 1' <<<"$toc")"; FAILED+=1; }
+  || { printf '  ✗ the contents do not give Part 1 as page 1: %s\n' "${toc:0:120}"; FAILED+=1; }
 
 # measure and margins, from the widest body line on the verso: the first line
 # may open an indented paragraph, the last may be a short one.
-measure=$(b 2 | jq -r '.lines[1:-1] | max_by(.x1_mm - .x0_mm) | [.x0_mm, .x1_mm] | @tsv')
+declare -- measure x0 x1
+measure=$(b 2 | jq -r '.lines[1:-1] | max_by(.x1_mm - .x0_mm) | [.x0_mm, .x1_mm] | @tsv') \
+  || stop 'could not measure the text block'
 read -r x0 x1 <<<"$measure"
 awk -v a="$x0" -v b="$x1" 'BEGIN{w=b-a; exit !(w>106.5 && w<107.5)}' \
   && printf '  ✓ measure %.1fmm\n' "$(awk -v a="$x0" -v b="$x1" 'BEGIN{print b-a}')" \
   || { printf '  ✗ measure is not 107mm (%s..%s)\n' "$x0" "$x1"; FAILED+=1; }
+
+echo '== the arithmetic behind the stylesheet =='
+# The stylesheet computes three lengths. Each is tried in a shell of its own,
+# given the setting as its arguments, so that a PATH or a locale can be handed
+# to it without touching this script's.
+# SC2016: the text is run by another shell, and $1 and $@ are that shell's
+# arguments, so they must reach it unexpanded.
+#shellcheck disable=SC2016  # expanded by the shell that runs it, not this one
+declare -r SHEET='source -- "$1"/lib/fonts.sh && font_set_load bonanova-worksans "$1"/fonts \
+  && source -- "$1"/lib/print-style.sh && print_geom_load "${@:2}" 2>/dev/null && print_page_css'
+declare -- sheet
+declare -i sheet_rc
+
+# Two line spaces under an endorsement, at a leading that is not a whole number.
+sheet=$(bash -c "$SHEET" _ "$ROOT" 10 16.5) && sheet_rc=0 || sheet_rc=$?
+if ((sheet_rc == 0)) && [[ $sheet == *'.endorsement{margin:0 0 33pt 10mm'* ]]; then
+  printf '  ✓ two lines of 16.5pt leading are 33pt\n'
+else
+  printf '  ✗ two lines of 16.5pt leading: exit %d, %s\n' "$sheet_rc" \
+    "$(grep -o -- '\.endorsement{margin:[^;]*' <<<"$sheet" || echo 'no such rule')"; FAILED+=1
+fi
+# mk-print.sh lets "08" through as a number; the shell's own arithmetic reads a
+# leading zero as octal and stops at the 8.
+sheet=$(bash -c "$SHEET" _ "$ROOT" 10 08 2>&1) && sheet_rc=0 || sheet_rc=$?
+if ((sheet_rc == 0)) && [[ $sheet == *'.endorsement{margin:0 0 16pt 10mm'* ]]; then
+  printf '  ✓ a leading written 08 is read as eight\n'
+else
+  printf '  ✗ a leading written 08: exit %d, %s\n' "$sheet_rc" "$(tail -n 1 <<<"$sheet")"; FAILED+=1
+fi
+
+# If awk fails, the stylesheet is refused, not written with its lengths missing.
+mkdir -p -- "$TMP"/noawk "$TMP"/mawk || stop 'could not make the directories for the stand-in awks'
+printf '#!/bin/bash\nexit 1\n' >"$TMP"/noawk/awk || stop 'could not write the failing awk'
+chmod -- +x "$TMP"/noawk/awk || stop 'could not mark the failing awk executable'
+# stderr dropped: the stylesheet says on stderr why it stopped, and what is
+# judged here is that it stopped.
+sheet=$(env PATH="$TMP"/noawk:/usr/local/bin:/usr/bin:/bin bash -c "$SHEET" _ "$ROOT" 2>/dev/null) \
+  && sheet_rc=0 || sheet_rc=$?
+if ((sheet_rc != 0)) && [[ $sheet != *'margin:mm'* ]]; then
+  printf '  ✓ a failed awk stops the stylesheet\n'
+else
+  printf '  ✗ with awk failing the stylesheet was written all the same: exit %d, %s\n' "$sheet_rc" \
+    "$(grep -o -- 'margin:mm[^;]*' <<<"$sheet" | head -n 1)"; FAILED+=1
+fi
+
+# A locale that writes its decimals with a comma, under an awk that follows the
+# locale (mawk does; gawk does not unless asked to). CSS knows only the point.
+# stderr dropped: locale complains of locales it cannot read, none of which is
+# the one looked for.
+if [[ -x /usr/bin/mawk ]] && locale -a 2>/dev/null | grep -q -x -- 'id_ID.utf8'; then
+  ln -s -- /usr/bin/mawk "$TMP"/mawk/awk || stop 'could not link mawk in as awk'
+  sheet=$(env PATH="$TMP"/mawk:/usr/local/bin:/usr/bin:/bin LC_ALL=id_ID.utf8 \
+            bash -c "$SHEET" _ "$ROOT") && sheet_rc=0 || sheet_rc=$?
+  if ((sheet_rc == 0)) && [[ $sheet == *'margin:6.04mm 0 13.46mm 10mm'* ]]; then
+    printf '  ✓ the lengths keep their decimal point in a comma locale\n'
+  else
+    printf '  ✗ in a comma locale: exit %d, %s\n' "$sheet_rc" \
+      "$(grep -o -- 'margin:[0-9][^;]*10mm' <<<"$sheet" | head -n 1)"; FAILED+=1
+  fi
+else
+  printf '  ◉ skipped: the comma-locale check needs mawk and the id_ID.utf8 locale\n'
+fi
 
 # The proof-setting warning. Run in subshells: print_geom_load sets globals.
 declare -- warning help opt

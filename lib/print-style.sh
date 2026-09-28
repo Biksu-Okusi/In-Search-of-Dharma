@@ -1,4 +1,6 @@
 #!/bin/bash
+# SC2034: the constants declared here are read by mk-print.sh and the tests,
+# which source this file, not by the file itself.
 #shellcheck shell=bash disable=SC2034
 # lib/print-style.sh - page geometry and stylesheet for the print interior.
 #
@@ -51,8 +53,8 @@ declare -r PRINT_MEASURE_MM=107 PRINT_INNER_MM=25 PRINT_OUTER_MM=20
 declare -r PRINT_TITLE_FAMILY='Cascadia Code'
 # weight|style|file, one per face.
 declare -ar PRINT_TITLE_FACES=(
-  "300|normal|cascadia/CascadiaCode-Light.ttf"
-  "300|italic|cascadia/CascadiaCode-LightItalic.ttf"
+  '300|normal|cascadia/CascadiaCode-Light.ttf'
+  '300|italic|cascadia/CascadiaCode-LightItalic.ttf'
 )
 
 # print_title_files <fonts-root> : the title faces' paths, one per line.
@@ -117,10 +119,22 @@ print_page_css() {
   # its vertical margins shrink it to the rule's length. vertical-align:top
   # keeps the numeral at the head of the box, PRINT_FOLIORISE_MM below the
   # rule's top.
-  local -- rule_top rule_foot folio
-  read -r rule_top rule_foot < <(awk -v pad="$PRINT_FOLIOPAD_MM" -v rise="$PRINT_FOLIORISE_MM" \
-    -v len="$PRINT_FOLIORULE_MM" -v bot="$PRINT_BOT_MM" \
-    'BEGIN{printf "%.2f %.2f\n", pad - rise, bot - (pad - rise) - len}')
+  #
+  # The lengths are worked out by awk, the shell having integers only, and
+  # under the C locale: CSS writes its decimals with a point, and an awk that
+  # follows the locale would write a comma. It is run and checked before its
+  # figures are used, since a stylesheet with a length missing still parses.
+  local -- lengths rule_top rule_foot two_lines folio
+  lengths=$(LC_ALL=C awk -v pad="$PRINT_FOLIOPAD_MM" -v rise="$PRINT_FOLIORISE_MM" \
+    -v len="$PRINT_FOLIORULE_MM" -v bot="$PRINT_BOT_MM" -v lead="$PRINT_LEAD_PT" \
+    'BEGIN{printf "%.2f %.2f %g\n", pad - rise, bot - (pad - rise) - len, lead * 2}') \
+    || { >&2 printf '✗ %s: could not work out the stylesheet'"'"'s lengths\n' "${BASH_SOURCE[0]##*/}"
+         return 1; }
+  read -r rule_top rule_foot two_lines <<<"$lengths"
+  [[ -n $rule_top && -n $rule_foot && -n $two_lines ]] \
+    || { >&2 printf '✗ %s: the stylesheet'"'"'s lengths came back incomplete: %s\n' \
+           "${BASH_SOURCE[0]##*/}" "${lengths@Q}"
+         return 1; }
   folio="font:400 8pt/1 \"$FONT_SANS_FAMILY\";vertical-align:top;text-align:left;
     margin:${rule_top}mm 0 ${rule_foot}mm 10mm;border-left:0.4pt solid #000;
     padding:${PRINT_FOLIORISE_MM}mm 0 0 ${PRINT_FOLIOGAP_MM}mm"
@@ -249,7 +263,7 @@ ul > li::before{content:"\\2022";position:absolute;left:-10mm}
    relative offset, which shifts the letter and leaves the float where it was,
    so the two lines beside it are set exactly as before. */
 p.op .dc{float:left;font-size:${PRINT_DROP_FS}em;
-  line-height:${PRINT_DROP_LH};padding:0 0.06em 0 0;
+  line-height:$PRINT_DROP_LH;padding:0 0.06em 0 0;
   position:relative;top:${PRINT_DROP_DY_MM}mm}
 .sc{font-variant-caps:small-caps;letter-spacing:0.02em}
 
@@ -371,7 +385,7 @@ section.front .halftitle{padding-top:60mm}
    who said them, set ragged and unhyphenated inside the paragraph indent. */
 section.front .halftitle{break-before:recto}
 section.front .endorsements{padding-top:45mm}
-section.front .endorsement{margin:0 0 $((${PRINT_LEAD_PT%.*} * 2))pt 10mm;break-inside:avoid}
+section.front .endorsement{margin:0 0 ${two_lines}pt 10mm;break-inside:avoid}
 section.front .endorsement p{text-indent:0;text-align:left;hyphens:none}
 section.front .endorsement p + p{margin-top:4pt;font-size:${PRINT_SRC_PT}pt}
 /* The title page fills the text area, so the publisher's mark can stand at its
