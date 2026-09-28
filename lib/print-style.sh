@@ -179,6 +179,16 @@ ul > li::before{content:"\\2022";position:absolute;left:-10mm}
   margin-top:${PRINT_LEAD_PT}pt;text-align:left;break-after:avoid}
 .sources h2 + p.label{margin-top:0}
 .sources ul,.sources ol{margin:0}
+/* Research notes, as Ramsey set them out (2026-09-28): unhyphenated, the URL
+   whole on a line of its own, and the note text 5mm in from its bullet rather
+   than the paragraph indent. lib/researchnotes.py wraps the block in div.rn
+   and breaks the sentence before the URL. Ragged right, since a justified line
+   that may not hyphenate opens rivers. */
+.rn{hyphens:none;text-align:left}
+.rn p{text-align:left}
+.repo-url{white-space:nowrap}
+.rn ul{padding-left:5mm}
+.rn ul > li::before{left:-5mm}
 
 /* The two-line drop cap. It hangs on p.op, which lib/dropcap.py marks: a
    chapter's opening paragraph is not the element after the h1, because the

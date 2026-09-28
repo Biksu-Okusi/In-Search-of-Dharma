@@ -433,11 +433,13 @@ main() {
     # one here for the stylesheet (see .sources p.label in lib/print-style.sh).
     # dropcap.py runs before smallcaps.py: it scans for a line that begins
     # "<p>" and takes the first two words, which a <span> inserted ahead of it
-    # would hide.
+    # would hide. researchnotes.py sets the Research notes block for paper
+    # (Ramsey, 2026-09-28) and finds it by that label, so it runs after the sed.
     frag=$(pandoc --from=markdown-yaml_metadata_block --to=html5 -- "$dst" \
              | sed -E 's|^<p><strong>([^<]*)</strong></p>$|<p class="label">\1</p>|' \
              | "$SCRIPT_DIR"/lib/dropcap.py \
-             | "$SCRIPT_DIR"/lib/smallcaps.py) \
+             | "$SCRIPT_DIR"/lib/smallcaps.py \
+             | "$SCRIPT_DIR"/lib/researchnotes.py) \
       || die 1 "pandoc failed for ${dst@Q}"
     # The first chapter carries an extra class: the stylesheet restarts the
     # arabic page sequence there, and no CSS selector can find "the first

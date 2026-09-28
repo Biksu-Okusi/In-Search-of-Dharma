@@ -261,7 +261,9 @@ def baselines(path, page):
     out.append({'y_mm': round(y * PT_MM, 2),
                 'x0_mm': round(ws[0][0] * PT_MM, 2),
                 'x1_mm': round(max(w[1] for w in ws) * PT_MM, 2),
-                'text': ' '.join(w[2] for w in ws)})
+                'text': ' '.join(w[2] for w in ws),
+                'words': [{'x0_mm': round(a * PT_MM, 2), 'x1_mm': round(b * PT_MM, 2),
+                           'text': t} for a, b, t in ws]})
   return {'lines': out}
 
 
