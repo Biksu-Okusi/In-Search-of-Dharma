@@ -36,7 +36,7 @@ shopt -s inherit_errexit
 declare -rx PATH=/usr/local/bin:/usr/bin:/bin
 
 declare -r VERSION=1.2.0
-#shellcheck disable=SC2155
+#shellcheck disable=SC2155  # exit-on-error catches realpath failure
 declare -r SCRIPT_PATH=$(realpath -- "$0")
 declare -r SCRIPT_DIR=${SCRIPT_PATH%/*} SCRIPT_NAME=${SCRIPT_PATH##*/}
 
@@ -111,7 +111,7 @@ declare -r REPO_BLOB="$REPO_URL"/blob/main
 # build completes normally and only the publish step is skipped.
 if [[ -r $SCRIPT_DIR/deploy.conf ]]; then
   #shellcheck source=/dev/null
-  source "$SCRIPT_DIR"/deploy.conf
+  source -- "$SCRIPT_DIR"/deploy.conf
 fi
 declare -r PUBLISH_DIR=${PUBLISH_DIR:-}
 declare -r PUBLISH_OWNER=${PUBLISH_OWNER:-}
@@ -154,7 +154,7 @@ declare -r FONT_LIB="$SCRIPT_DIR"/lib/fonts.sh
 [[ -f $FONT_LIB ]] \
   || { >&2 echo "✗ missing font library ${FONT_LIB@Q}"; exit 3; }
 #shellcheck source=lib/fonts.sh
-source "$FONT_LIB" \
+source -- "$FONT_LIB" \
   || { >&2 echo "✗ failed to source ${FONT_LIB@Q}"; exit 1; }
 
 # Source preprocessing lives in lib/preprocess.sh, which mk-print.sh sources
@@ -164,7 +164,7 @@ declare -r PREPROCESS_LIB="$SCRIPT_DIR"/lib/preprocess.sh
 [[ -f $PREPROCESS_LIB ]] \
   || { >&2 echo "✗ missing preprocessing library ${PREPROCESS_LIB@Q}"; exit 3; }
 #shellcheck source=lib/preprocess.sh
-source "$PREPROCESS_LIB" \
+source -- "$PREPROCESS_LIB" \
   || { >&2 echo "✗ failed to source ${PREPROCESS_LIB@Q}"; exit 1; }
 
 # Script-scope state, declared before any function (BCS0105).
@@ -270,7 +270,7 @@ splice_after_h1() {
   local -- file=$1 block=$2
   local -- tmp_file
   tmp_file=$(mktemp -p "${file%/*}") || die 5 "failed to create temp file beside ${file@Q}"
-  awk -v blk="$block" '
+  awk -v blk="$block" -- '
     !done && /^# / { print; print ""; print blk; print ""; done=1; next }
     { print }
   ' "$file" >"$tmp_file" || die 5 "failed to rewrite ${file@Q}"
@@ -288,7 +288,7 @@ inflect_h1() {
   local -- file=$1 etype=$2
   local -- tmp_file
   tmp_file=$(mktemp -p "${file%/*}") || die 5 "failed to create temp file beside ${file@Q}"
-  awk -v et="$etype" '
+  awk -v et="$etype" -- '
     !done && /^# / {
       if ($0 ~ /\{[^}]*\}[[:space:]]*$/) {
         sub(/\}[[:space:]]*$/, " epub:type=\"" et "\"}")
@@ -315,9 +315,9 @@ inject_accessibility_metadata() {
   # exit/signal without this function owning a second trap.
   local -- work
   work=$(mktemp -d -p "$tmpdir") || die 5 'failed to create EPUB work dir'
-  ( cd -- "$work" && unzip -q "$epub" ) || die 5 "failed to unpack EPUB: $epub"
+  ( cd -- "$work" && unzip -q -- "$epub" ) || die 5 "failed to unpack EPUB ${epub@Q}"
   local -- opf
-  opf=$(find "$work" -name '*.opf' -print -quit)
+  opf=$(find -- "$work" -name '*.opf' -print -quit) || die 5 "failed to search ${work@Q}"
   [[ -f $opf ]] || die 3 "OPF not found inside ${epub@Q}"
 
   local -- meta
@@ -339,7 +339,7 @@ META
   # Splice the block in just before </metadata>.
   local -- tmp_file
   tmp_file=$(mktemp -p "${opf%/*}") || die 5 "failed to create temp file beside ${opf@Q}"
-  awk -v ins="$meta" '/<\/metadata>/ && !done { print ins; done=1 } { print }' \
+  awk -v ins="$meta" -- '/<\/metadata>/ && !done { print ins; done=1 } { print }' \
     "$opf" >"$tmp_file" || die 5 "failed to rewrite ${opf@Q}"
   mv -- "$tmp_file" "$opf" || die 5 "failed to update ${opf@Q}"
 
@@ -395,8 +395,8 @@ main() {
         shift
         output=$1 ;;
       *)
-        die 2 "usage: $SCRIPT_NAME [epub|pdf|all] [--audio none|link] [--fonts SET]" \
-              '[--edition ED] [--cover FILE] [--output FILE]' ;;
+        die 2 "unknown argument ${1@Q}; usage: $SCRIPT_NAME [epub|pdf|all] [--audio none|link]" \
+              '[--fonts SET] [--edition ED] [--cover FILE] [--output FILE]' ;;
     esac
     shift
   done
@@ -419,7 +419,7 @@ main() {
       [[ -f $cover_src ]] || die 3 "the tuwhiri edition's front cover is missing: ${cover_src@Q}" ;;
     *) die 22 "invalid --edition ${edition@Q} (want: ${EDITIONS[*]})" ;;
   esac
-  readonly edition cover_src
+  readonly edition cover_src VERBOSE
 
   # Load the typeface set, then re-derive the output names from its suffix. The
   # default set has an empty suffix, so the shipping filenames are unchanged.
@@ -430,7 +430,8 @@ main() {
   if [[ -n $output ]]; then
     # Absolute, since pandoc is run from the script's directory, not the caller's.
     OUTPUT=$(realpath -m -- "$output") || die 22 "invalid --output value ${output@Q}"
-    [[ -d ${OUTPUT%/*} ]] || die 3 "no such directory for --output: ${OUTPUT%/*}"
+    local -r out_dir=${OUTPUT%/*}
+    [[ -d $out_dir ]] || die 3 "no such directory for --output ${out_dir@Q}"
     [[ $OUTPUT == *.epub ]] || die 22 "--output wants a name ending .epub, not ${output@Q}"
   fi
   OUTPUT_PDF=${OUTPUT%.epub}.pdf
@@ -501,13 +502,13 @@ main() {
   # layout (images/ and images/png/) so the .png->.jpg link rewrites resolve
   # against --resource-path. Source PNGs are never modified.
   local -- img_stage="$TMP_DIR"/img
-  mkdir -p "$img_stage"/images/png || die 5 "failed to create image staging dir ${img_stage@Q}"
+  mkdir -p -- "$img_stage"/images/png || die 5 "failed to create image staging dir ${img_stage@Q}"
   local -- png rel
   while IFS= read -r -d '' png; do
     rel=${png#"$SCRIPT_DIR"/}
     convert "$png" -quality "$JPEG_QUALITY" "$img_stage/${rel%.png}.jpg" \
       || die 5 "image conversion failed ${png@Q}"
-  done < <(find "$SCRIPT_DIR"/images -maxdepth 2 -name '*.png' -print0)
+  done < <(find -- "$SCRIPT_DIR"/images -maxdepth 2 -name '*.png' -print0)
   # The staged cover, named relative to $img_stage so both the EPUB (which needs
   # the path) and the PDF cover plate (which needs the markdown link) derive from
   # COVER_IMAGE rather than repeating its name.
@@ -547,17 +548,17 @@ main() {
       # canonical file keeps its unprefixed title for the repository and
       # standalone surfaces. Exact-match rewrite + check: a future title
       # change fails the build loudly instead of shipping unlabelled.
-      sed -i 's/^# Dharmas: the better ones$/# Appendix: Dharmas, the better ones/' "$dst" \
+      sed -i -- 's/^# Dharmas: the better ones$/# Appendix: Dharmas, the better ones/' "$dst" \
         || die 1 "appendix H1 rewrite failed for ${dst@Q}"
-      grep -q '^# Appendix: ' "$dst" \
+      grep -q -- '^# Appendix: ' "$dst" \
         || die 1 "appendix H1 not rewritten in ${dst@Q} (title changed in ${APPENDIX@Q}?)"
       # The italic headnote under the H1 (and the rule that closes it) is
       # repo-surface preamble — registry links, Stage-1 caveats — so it is
       # stripped here; the canonical file keeps it for the repository and
       # standalone surfaces.
-      sed -i -e '/^\*A discussion piece /d' -e '0,/^---$/{/^---$/d}' "$dst" \
+      sed -i -e '/^\*A discussion piece /d' -e '0,/^---$/{/^---$/d}' -- "$dst" \
         || die 1 "appendix headnote strip failed for ${dst@Q}"
-      ! grep -q 'Stage-1\|question registry' "$dst" \
+      ! grep -q -- 'Stage-1\|question registry' "$dst" \
         || die 1 "appendix headnote still present in ${dst@Q} (headnote wording changed in ${APPENDIX@Q}?)"
     fi
     if [[ $audio_mode != none ]] && ((i >= 1 && i <= 10)); then
@@ -580,7 +581,7 @@ main() {
     local -- h1 label
     local -i k=0
     for dst in "${inputs[@]:1}"; do
-      h1=$(grep -m1 '^# ' "$dst") || die 3 "no H1 found in $dst"
+      h1=$(grep -m1 -- '^# ' "$dst") || die 3 "no H1 found in ${dst@Q}"
       label=${h1#\# }
       if (( k == 0 || k >= 9 )); then
         printf '*[%s](#%s)*\n\n' "$label" "$(slugify "$label")"
@@ -767,10 +768,10 @@ CSS
         "${font_args[@]}" \
         --resource-path="$img_stage" \
         -o "$OUTPUT" \
-        "${inputs[@]}" ) || die 1 'pandoc EPUB build failed'
+        -- "${inputs[@]}" ) || die 1 'pandoc EPUB build failed'
     inject_accessibility_metadata "$OUTPUT" "$TMP_DIR"
     BUILT+=("$OUTPUT")
-    info "done: $OUTPUT ($(du -h --apparent-size "$OUTPUT" | cut -f1))"
+    info "done: $OUTPUT ($(du -h --apparent-size -- "$OUTPUT" | cut -f1))"
     # Validate: epubcheck is the arbiter of EPUB conformance. Fail the build on
     # any error so a broken artefact is never shipped. ace (DAISY accessibility
     # checker) is run only if installed, as an informational pass.
@@ -853,9 +854,9 @@ CSS
         --metadata lang="$LANGUAGE" \
         --css="$pdf_css" \
         -o "$OUTPUT_PDF" \
-        "$plate" "${inputs[@]}" ) || die 1 'pandoc PDF build failed'
+        -- "$plate" "${inputs[@]}" ) || die 1 'pandoc PDF build failed'
     BUILT+=("$OUTPUT_PDF")
-    info "done: $OUTPUT_PDF ($(du -h --apparent-size "$OUTPUT_PDF" | cut -f1))"
+    info "done: $OUTPUT_PDF ($(du -h --apparent-size -- "$OUTPUT_PDF" | cut -f1))"
   fi
 
   # Publish to the local web-root, then mirror to the remote host. Both targets
