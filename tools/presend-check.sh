@@ -29,7 +29,10 @@ main() {
   # What the print interior is built from. A PDF older than any of these is a
   # proof of a book that has since changed.
   local -a sources=("$ROOT"/[0-9]-*.md "$ROOT"/the-better-ones.md "$ROOT"/mk-print.sh
-                    "$ROOT"/lib/*.sh "$ROOT"/lib/*.py)
+                    "$ROOT"/lib/*.sh "$ROOT"/lib/*.py
+                    "$ROOT"/print-imprint.md "$ROOT"/print-endorsements.md)
+  # The imprint and the endorsements are optional. A file that is not there is
+  # never newer than the interior, so it needs no test of its own.
   for src in "${sources[@]}"; do
     [[ ! $src -nt $file ]] \
       || die 1 "${base@Q} is older than ${src#"$ROOT"/}: rebuild with mk-print.sh before sending"

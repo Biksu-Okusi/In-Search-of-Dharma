@@ -312,7 +312,8 @@ section.chapter h1::after{content:"";position:absolute;
    Both strings are named here, since this rule replaces h1's own string-set. */
 section.chapter > h1{string-set:chaptitle content(),booktitle "in search of dharma"}
 section.front{page:front}
-section.front .halftitle,section.front .titlepage,section.front .imprint{page:bare}
+section.front .endorsements,section.front .halftitle,section.front .titlepage,
+section.front .imprint{page:bare}
 section.chapter.prelim{page:prelim}
 section.chapter.prelim > h1{page:prelim}
 section.front h1{break-before:auto;page:front;padding-top:0;
@@ -356,6 +357,15 @@ section.front > div,section.front > nav{break-after:page}
    this the title fell on ii, a left-hand page, facing its own imprint. */
 section.front .titlepage{break-before:recto}
 section.front .halftitle{padding-top:60mm}
+/* The endorsements, where the book has any, stand on page i with the
+   half-title on the next recto: i endorsements, ii blank, iii half-title, iv
+   blank, v title, vi imprint, vii contents. Each is its words and, under them,
+   who said them, set ragged and unhyphenated inside the paragraph indent. */
+section.front .halftitle{break-before:recto}
+section.front .endorsements{padding-top:45mm}
+section.front .endorsement{margin:0 0 $((${PRINT_LEAD_PT%.*} * 2))pt 10mm;break-inside:avoid}
+section.front .endorsement p{text-indent:0;text-align:left;hyphens:none}
+section.front .endorsement p + p{margin-top:4pt;font-size:${PRINT_SRC_PT}pt}
 /* The title page fills the text area, so the publisher's mark can stand at its
    foot; border-box keeps the 55mm drop inside the 179mm (see the imprint
    below), so the page never spills. WeasyPrint ignores margin-top:auto in a

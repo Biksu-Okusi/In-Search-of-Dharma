@@ -1,4 +1,5 @@
 #!/bin/bash
+#shellcheck disable=SC2015  # ok()/bad() only printf+append; A&&B||C is safe here
 # tests/test-mkprint-cli.sh - mk-print.sh's command line, without a full build.
 set -euo pipefail
 shopt -s inherit_errexit
@@ -49,6 +50,18 @@ main() {
       bad "$opt with an invalid value: exit $rc, output: ${out%%$'\n'*}"
     fi
   done
+
+  # --output names the file to write, so a test or a proof never has to be
+  # built over the interior itself. It needs a value, and the help lists it.
+  rc=0
+  out=$("$MKPRINT" --output 2>&1) || rc=$?
+  if ((rc == 2)) && [[ $out == *'--output needs'* ]]; then
+    ok '--output with no value stops with exit 2'
+  else
+    bad "--output with no value: exit $rc, output: ${out%%$'\n'*}"
+  fi
+  [[ $("$MKPRINT" --help) == *'--output FILE'* ]] && ok 'the help lists --output' \
+    || bad 'the help does not list --output'
 
   ((FAILED == 0)) || exit 1
 }

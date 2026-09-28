@@ -34,6 +34,39 @@ else
   printf '  ✗ a stale interior: refused, but said: %s\n' "$ERR"; FAILED+=1
 fi
 
+# The imprint and the endorsements are part of what the interior is built from.
+# Run against a copy of the script in a tree of its own, where each file's age
+# can be set without touching the book: every source older than the interior
+# but the one named.
+declare -- tree=$TMP/tree name
+mkdir -p -- "$tree"/tools "$tree"/lib
+cp -- "$CHECK" "$tree"/tools/presend-check.sh
+printf '#!/bin/bash\nexit 0\n' >"$tree"/mk-print.sh && chmod +x "$tree"/mk-print.sh
+printf 'x\n' | tee "$tree"/1-part.md "$tree"/the-better-ones.md "$tree"/lib/a.sh "$tree"/lib/a.py \
+  "$tree"/print-imprint.md "$tree"/print-endorsements.md >/dev/null
+printf '%%PDF-1.4\n' >"$tree"/Book_interior_152x229.pdf
+for name in print-imprint.md print-endorsements.md; do
+  find "$tree" -type f -exec touch -d '2001-01-01' -- {} +
+  touch -d '2002-01-01' -- "$tree"/Book_interior_152x229.pdf
+  if ! "$tree"/tools/presend-check.sh "$tree"/Book_interior_152x229.pdf 2>/dev/null; then
+    printf '  ✗ an interior newer than all its sources was refused\n'; FAILED+=1; continue
+  fi
+  touch -d '2003-01-01' -- "$tree/$name"
+  if ERR=$("$tree"/tools/presend-check.sh "$tree"/Book_interior_152x229.pdf 2>&1); then
+    printf '  ✗ an interior older than %s was accepted\n' "$name"; FAILED+=1
+  elif [[ $ERR == *"older than $name"* ]]; then
+    printf '  ✓ an interior older than %s is refused\n' "$name"
+  else
+    printf '  ✗ an interior older than %s: refused, but said: %s\n' "$name" "$ERR"; FAILED+=1
+  fi
+done
+rm -f -- "$tree"/print-imprint.md "$tree"/print-endorsements.md
+if "$tree"/tools/presend-check.sh "$tree"/Book_interior_152x229.pdf 2>/dev/null; then
+  printf '  ✓ a book with no imprint or endorsements file still passes\n'
+else
+  printf '  ✗ a book with no imprint or endorsements file was refused\n'; FAILED+=1
+fi
+
 if ERR=$("$CHECK" 2>&1); then
   printf '  ✗ no argument was accepted\n'; FAILED+=1
 elif [[ $ERR == *usage* ]]; then

@@ -2,7 +2,8 @@
 # mk-print.sh - Build the print-ready interior PDF of "In Search of Dharma"
 # for Tuwhiri's printer.
 #
-#   ./mk-print.sh [--size PT] [--lead PT] [--fonts SET] [--quiet] [--keep-temp]
+#   ./mk-print.sh [--size PT] [--lead PT] [--fonts SET] [--output FILE]
+#                 [--quiet] [--keep-temp]
 #   ./mk-print.sh --preflight FILE     # check an existing PDF and stop
 #
 # The interior only. A print cover is a separate artefact and a separate design
@@ -53,10 +54,15 @@ declare -r REPO_BLOB="$REPO_URL"/blob/main
 # on paper.
 declare -ir JPEG_QUALITY=92
 
-declare -r OUTPUT_PDF="$SCRIPT_DIR"/In-Search-of-Dharma_interior_152x229.pdf
+# Where the interior is written, unless --output names another file: a test or
+# a proof setting is built beside the interior, never over it.
+declare -r DEFAULT_OUTPUT_PDF="$SCRIPT_DIR"/In-Search-of-Dharma_interior_152x229.pdf
 # Optional imprint copy from Tuwhiri. Absent, a deliberately visible placeholder
 # is set instead, so a proof cannot be sent without the omission being obvious.
 declare -r IMPRINT_SRC="$SCRIPT_DIR"/print-imprint.md
+# Optional endorsements, set on page i ahead of the half-title. Absent, the
+# interior opens on the half-title.
+declare -r ENDORSE_SRC="$SCRIPT_DIR"/print-endorsements.md
 # The Okusi mark, set on the rule above each chapter title in place of the
 # roundel Tuwhiri uses in its own books.
 declare -r LOGO_SRC="$SCRIPT_DIR"/images/dharma-eye.svg
@@ -74,7 +80,7 @@ declare -ir PRINT_CHAPTER_ART=0
 
 # Script-scope state, declared before any function (BCS0105).
 declare -i VERBOSE=1 KEEP_TEMP=0
-declare -- TMP_DIR=''
+declare -- TMP_DIR='' OUTPUT_PDF=$DEFAULT_OUTPUT_PDF
 
 # Messaging (BCS0703). error() is unconditional; die() takes the exit code
 # first, then an optional message.
@@ -115,6 +121,7 @@ Options:
   --size PT        body type size (default 10)
   --lead PT        leading (default 16)
   --fonts SET      typeface set from lib/fonts.sh (default ${FONT_SETS[0]})
+  --output FILE    write the interior to FILE (default ${DEFAULT_OUTPUT_PDF##*/})
   --preflight FILE check an existing PDF against the printer's rules and stop
   -q, --quiet      suppress progress messages
   --keep-temp      leave the build directory in place for inspection
@@ -122,7 +129,7 @@ Options:
   -V, --version    print the version
 
 The interior only: IngramSpark requires the cover uploaded as a separate file.
-Output: ${OUTPUT_PDF##*/}
+Output: ${DEFAULT_OUTPUT_PDF##*/}
 HELP
 }
 
@@ -187,7 +194,8 @@ stage_images() {
     || die 5 "logo tinting failed ${LOGO_SRC@Q}"
 }
 
-# The four front-matter pages: half-title, title, imprint, contents. No
+# The front matter: the endorsements where there are any, then half-title,
+# title, imprint and contents. No
 # running heads; roman folios, shown from the contents on (see the bare page in
 # lib/print-style.sh). The Preface follows in the same roman sequence, and the
 # arabic sequence starts at Part 1, as Tuwhiri asked (2026-09-28). The
@@ -200,6 +208,14 @@ front_matter() {
   local -- t id
   local -i k=0
   printf '<section class="front">\n'
+  # The endorsements run through smallcaps.py like the text: a name the cover
+  # sets in capitals is set here in small capitals, as the house style has it.
+  if [[ -f $ENDORSE_SRC ]]; then
+    printf '<div class="endorsements">\n'
+    pandoc --from=markdown --to=html5 -- "$ENDORSE_SRC" | "$SCRIPT_DIR"/lib/smallcaps.py \
+      || die 1 "endorsements conversion failed ${ENDORSE_SRC@Q}"
+    printf '</div>\n'
+  fi
   local -- stack
   printf -v stack '<span class="t-lead">%s</span><span class="t-name">%s</span>' \
     "$(xml_escape "$TITLE_LEAD")" "$(xml_escape "$TITLE_NAME")"
@@ -305,6 +321,7 @@ main() {
       --lead)      [[ -n ${2:-} ]] || die 2 '--lead needs a value';  lead=$2;      shift 2 ;;
       --fonts)     [[ -n ${2:-} ]] || die 2 '--fonts needs a value'; font_set=$2;  shift 2 ;;
       --preflight) [[ -n ${2:-} ]] || die 2 '--preflight needs a file'; preflight=$2; shift 2 ;;
+      --output)    [[ -n ${2:-} ]] || die 2 '--output needs a file';    OUTPUT_PDF=$2; shift 2 ;;
       -q|--quiet)  VERBOSE=0;   shift ;;
       --keep-temp) KEEP_TEMP=1; shift ;;
       -h|--help)   show_help; return 0 ;;
@@ -313,6 +330,11 @@ main() {
     esac
   done
   readonly VERBOSE KEEP_TEMP
+  # Absolute: Ghostscript is handed the name inside -sOutputFile=, where a
+  # relative name beginning with a dash or a percent sign would be misread.
+  OUTPUT_PDF=$(realpath -m -- "$OUTPUT_PDF") || die 22 "invalid --output value ${OUTPUT_PDF@Q}"
+  [[ -d ${OUTPUT_PDF%/*} ]] || die 3 "no such directory for --output: ${OUTPUT_PDF%/*}"
+  readonly OUTPUT_PDF
   # Both reach the stylesheet as "${size}pt", so they are held to a number.
   [[ -z $size || $size =~ ^[0-9]+(\.[0-9]+)?$ ]] || die 22 "invalid --size value ${size@Q}"
   [[ -z $lead || $lead =~ ^[0-9]+(\.[0-9]+)?$ ]] || die 22 "invalid --lead value ${lead@Q}"
