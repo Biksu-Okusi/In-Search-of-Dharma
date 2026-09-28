@@ -118,6 +118,37 @@ main() {
     | grep -c -x -E ' *https://github\.com/Biksu-Okusi/In-Search-of-Dharma' || true)
   expect 'chapters whose Research notes open with the two lines' "$notes" 9
 
+  # A build that fails its preflight leaves the file at --output as it found
+  # it. Tried in a tree of links to the book beside a copy of the script, where
+  # the checker is a stand-in that measures as the real one does and fails
+  # every check.
+  echo '== a build that fails its preflight =='
+  local -- box=$TMP/box src kept=$TMP/kept.pdf
+  mkdir -- "$box" || die 5 'failed to create the build tree'
+  for src in "$ROOT"/[0-9]-*.md "$ROOT"/the-better-ones.md "$ROOT"/print-imprint.md \
+             "$ROOT"/print-endorsements.md "$ROOT"/fonts "$ROOT"/images "$ROOT"/lib; do
+    cp -Rs -- "$src" "$box"/ || die 5 "failed to link ${src@Q}"
+  done
+  cp -- "$ROOT"/mk-print.sh "$box"/ || die 5 'failed to copy mk-print.sh'
+  rm -- "$box"/lib/pdfcheck.py || die 5 'failed to unlink the checker'
+  cat >"$box"/lib/pdfcheck.py <<STUB || die 5 'failed to write the stand-in checker'
+#!/bin/bash
+[[ \${1:-} != check ]] || { >&2 echo '✗ forced: this build fails its preflight'; exit 1; }
+exec "$CHECK" "\$@"
+STUB
+  chmod +x -- "$box"/lib/pdfcheck.py || die 5 'failed to mark the stand-in checker executable'
+  printf 'the proof that was here before\n' >"$kept" || die 5 'failed to write the fixture'
+  local -i rc=0
+  "$box"/mk-print.sh --quiet --output "$kept" >"$log" 2>&1 || rc=$?
+  ((rc == 1)) && grep -q -F 'preflight failed' "$log" \
+    && ok 'the build stops with exit 1 and says its preflight failed' \
+    || bad "the build did not fail as set up: exit $rc, $(tail -n 2 "$log" | tr '\n' ' ')"
+  [[ -f $kept && $(<"$kept") == 'the proof that was here before' ]] \
+    && ok 'the file at --output is as it was' \
+    || bad 'the failed build wrote over, or removed, the file at --output'
+  [[ -z $(find "$box" -maxdepth 1 -name '*.pdf' -print -quit) ]] \
+    && ok 'and no interior is left beside the script' || bad 'the failed build left an interior behind'
+
   ((FAILED == 0)) || exit 1
 }
 

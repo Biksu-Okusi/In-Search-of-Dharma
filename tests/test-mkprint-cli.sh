@@ -62,6 +62,18 @@ main() {
   fi
   [[ $("$MKPRINT" --help) == *'--output FILE'* ]] && ok 'the help lists --output' \
     || bad 'the help does not list --output'
+  # The interior is a PDF and is written as one: a name of any other kind is
+  # most likely a slip, and could be one of the book's own sources.
+  printf 'a source\n' >"$TMP"/part.md || die 5 'failed to write the fixture'
+  rc=0
+  out=$("$MKPRINT" --quiet --output "$TMP"/part.md 2>&1) || rc=$?
+  if ((rc == 22)) && [[ $out == *'.pdf'* ]]; then
+    ok '--output refuses a name that does not end .pdf'
+  else
+    bad "--output with a .md name: exit $rc, output: ${out%%$'\n'*}"
+  fi
+  [[ $(<"$TMP"/part.md) == 'a source' ]] && ok 'and leaves the file of that name as it was' \
+    || bad '--output wrote over a file that is not a PDF'
 
   ((FAILED == 0)) || exit 1
 }

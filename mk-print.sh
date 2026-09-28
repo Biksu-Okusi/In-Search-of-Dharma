@@ -333,6 +333,8 @@ main() {
   # Absolute: Ghostscript is handed the name inside -sOutputFile=, where a
   # relative name beginning with a dash or a percent sign would be misread.
   OUTPUT_PDF=$(realpath -m -- "$OUTPUT_PDF") || die 22 "invalid --output value ${OUTPUT_PDF@Q}"
+  # A name of any other kind is most likely a slip, and could be a source.
+  [[ $OUTPUT_PDF == *.pdf ]] || die 22 "--output wants a name ending .pdf, not ${OUTPUT_PDF##*/}"
   [[ -d ${OUTPUT_PDF%/*} ]] || die 3 "no such directory for --output: ${OUTPUT_PDF%/*}"
   readonly OUTPUT_PDF
   # Both reach the stylesheet as "${size}pt", so they are held to a number.
@@ -533,22 +535,38 @@ main() {
   # 100% K, and IngramSpark's B&W interior rules forbid ICC profiles.
   # Ghostscript converts the whole file to DeviceGray while keeping every font
   # embedded and subset, and preserves the trim to two decimals.
+  # Written and checked in the build directory, and put in place only once it
+  # conforms. Ghostscript reads a percent sign in its output name as a page
+  # number pattern, which a name of the build's own choosing cannot contain.
+  local -r finished="$TMP_DIR"/interior.pdf
   info 'converting to DeviceGray'
   gs -q -dBATCH -dNOPAUSE -dSAFER -sDEVICE=pdfwrite \
      -dProcessColorModel=/DeviceGray -sColorConversionStrategy=Gray \
      -dCompatibilityLevel=1.6 -dPDFSETTINGS=/prepress \
      -dSubsetFonts=true -dEmbedAllFonts=true -dAutoRotatePages=/None \
      -dDetectDuplicateImages=true \
-     -sOutputFile="$OUTPUT_PDF" "$padded" \
+     -sOutputFile="$finished" "$padded" \
     || die 1 'greyscale conversion failed'
 
   info 'running preflight'
-  "$PDFCHECK" check \
-    --trim "${PRINT_TRIM_W_MM}x${PRINT_TRIM_H_MM}" \
-    --measure "$PRINT_MEASURE_MM" --inner "$PRINT_INNER_MM" \
-    --require-even --require-blank-last -- "$OUTPUT_PDF" \
-    || { rm -f -- "$OUTPUT_PDF"
-         die 1 'preflight failed; no file was written for upload'; }
+  if ! "$PDFCHECK" check \
+         --trim "${PRINT_TRIM_W_MM}x${PRINT_TRIM_H_MM}" \
+         --measure "$PRINT_MEASURE_MM" --inner "$PRINT_INNER_MM" \
+         --require-even --require-blank-last -- "$finished"; then
+    # The interior under its own name is this script's work and nobody else's:
+    # an earlier one is removed, so that what lies there can never be mistaken
+    # for the build that has just failed. A file named with --output is the
+    # caller's, and is left as it was found.
+    [[ $OUTPUT_PDF != "$DEFAULT_OUTPUT_PDF" ]] || rm -f -- "$OUTPUT_PDF"
+    die 1 'preflight failed; no file was written for upload'
+  fi
+  # Copied beside its destination and renamed into place, so the destination
+  # holds either the file that was there or the whole of the new one.
+  local -r staged="$OUTPUT_PDF".part
+  if ! cp -- "$finished" "$staged" || ! mv -f -- "$staged" "$OUTPUT_PDF"; then
+    rm -f -- "$staged"
+    die 5 "failed to write ${OUTPUT_PDF@Q}"
+  fi
 
   info "done: $OUTPUT_PDF ($(du -h --apparent-size -- "$OUTPUT_PDF" | cut -f1))"
   ((KEEP_TEMP == 0)) || info "build directory kept: $TMP_DIR"
