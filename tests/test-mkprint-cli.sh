@@ -75,6 +75,15 @@ main() {
   [[ $(<"$TMP"/part.md) == 'a source' ]] && ok 'and leaves the file of that name as it was' \
     || bad '--output wrote over a file that is not a PDF'
 
+  # Short options may be run together: -qV is -q and -V.
+  rc=0
+  out=$("$MKPRINT" -qV 2>&1) || rc=$?
+  if ((rc == 0)) && [[ $out == 'mk-print.sh '[0-9]* ]]; then
+    ok 'short options run together are taken one by one'
+  else
+    bad "-qV: exit $rc, output: ${out%%$'\n'*}"
+  fi
+
   # xml_escape writes titles into raw HTML. It is tried on its own, lifted from
   # the script, since nothing in the book yet holds a character it must escape:
   # the day a title gains a quotation mark is no day to find out.

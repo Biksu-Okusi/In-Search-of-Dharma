@@ -394,6 +394,10 @@ main() {
         [[ -n ${2:-} ]] || die 2 '--output requires a file'
         shift
         output=$1 ;;
+      # Short options run together (-qV) are taken apart and read one by one.
+      -[hqV]?*)
+        set -- "${1:0:2}" "-${1:2}" "${@:2}"
+        continue ;;
       *)
         die 2 "unknown argument ${1@Q}; usage: $SCRIPT_NAME [epub|pdf|all] [--audio none|link]" \
               '[--fonts SET] [--edition ED] [--cover FILE] [--output FILE]' ;;
@@ -479,7 +483,7 @@ main() {
   for n in {0..9}; do
     match=("$SCRIPT_DIR/$n"-*.md)
     (( ${#match[@]} == 1 )) || die 3 "expected exactly one file for essay $n, found ${#match[@]}"
-    [[ -f ${match[0]} ]] || die 3 "essay $n source not found: ${match[0]}"
+    [[ -f ${match[0]} ]] || die 3 "essay $n source not found ${match[0]@Q}"
     sources+=("${match[0]}")
   done
   local -r APPENDIX="$SCRIPT_DIR"/the-better-ones.md
@@ -792,7 +796,7 @@ CSS
     fi
     if command -v ace &>/dev/null; then
       info 'running DAISY ace accessibility check'
-      ace -o "$TMP_DIR"/ace "$OUTPUT" || info 'ace reported issues (informational)'
+      ace -o "$TMP_DIR"/ace -- "$OUTPUT" || info 'ace reported issues (informational)'
     fi
   fi
 

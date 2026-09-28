@@ -74,6 +74,10 @@ assert s.count("<div class=\"rn\">") == 1
 pass() { printf '  ✓ %s\n' "$1"; }
 fail() { printf '  ✗ %s\n' "$1"; FAILED+=1; }
 
+# stop WHAT : a fixture could not be made or read, so what it would have shown
+# is not known. The test ends there, and says why on stderr.
+stop() { >&2 printf '  ✗ %s\n' "$1"; exit 1; }
+
 for TOOL in pandoc weasyprint jq; do
   command -v "$TOOL" >/dev/null || { >&2 printf '  ✗ required: %s\n' "$TOOL"; exit 18; }
 done
@@ -133,7 +137,7 @@ for SRC in "$ROOT"/[0-8]-*.md; do
 done
 
 echo '== research notes: as printed =='
-TMP=$(mktemp -d) || { fail 'could not make a temporary directory'; exit 1; }
+TMP=$(mktemp -d) || stop 'could not make a temporary directory'
 #shellcheck source=SCRIPTDIR/../lib/fonts.sh
 source -- "$ROOT"/lib/fonts.sh
 font_set_load bonanova-worksans "$ROOT"/fonts
@@ -141,19 +145,19 @@ font_set_load bonanova-worksans "$ROOT"/fonts
 source -- "$ROOT"/lib/print-style.sh
 print_geom_load
 { font_faces_css pdf && print_page_css; } >"$TMP"/print.css \
-  || { fail 'could not write the stylesheet'; exit 1; }
-GOT=$(printf '%s' "$BLOCK" | "$RN") || { fail 'the filter failed on a normal block'; exit 1; }
+  || stop 'could not write the stylesheet'
+GOT=$(printf '%s' "$BLOCK" | "$RN") || stop 'the filter failed on a normal block'
 {
   printf '<!doctype html><html lang="en"><head><meta charset="utf-8">'
   printf '<link rel="stylesheet" href="print.css"></head><body><section class="chapter">'
   printf '<div class="sources">%s</div></section></body></html>\n' "$GOT"
-} >"$TMP"/rn.html || { fail 'could not write the fixture'; exit 1; }
+} >"$TMP"/rn.html || stop 'could not write the fixture'
 # stderr dropped: the renderer's font and anchor warnings are noise in a test
 # log. A failed render is not dropped: it stops the test and says so.
 weasyprint -- "$TMP"/rn.html "$TMP"/rn.pdf 2>/dev/null \
-  || { fail 'weasyprint failed on the fixture'; exit 1; }
+  || stop 'weasyprint failed on the fixture'
 PRINTED=$("$CHECK" baselines --page 1 -- "$TMP"/rn.pdf) \
-  || { fail 'could not read the printed fixture'; exit 1; }
+  || stop 'could not read the printed fixture'
 
 # The two lines follow the label, each a line of its own.
 jq -e --arg a "$LINE1" --arg b "$URL" '
@@ -164,7 +168,7 @@ jq -e --arg a "$LINE1" --arg b "$URL" '
 # The bullet hangs at the margin and the note text stands in 5mm from it.
 INDENT=$(jq -r '[.lines[] | select(.text | startswith("• 1.1"))][0]
   | if . == null then "none" else (.words[1].x0_mm - .words[0].x0_mm) end' <<<"$PRINTED") \
-  || { fail 'could not measure the bullet indent'; exit 1; }
+  || stop 'could not measure the bullet indent'
 awk -v d="$INDENT" 'BEGIN{exit !(d > 4.9 && d < 5.1)}' \
   && pass "printed: the note text stands ${INDENT}mm in from its bullet" \
   || fail "printed: the note text stands ${INDENT}mm in from its bullet, want 5mm"
@@ -173,7 +177,7 @@ awk -v d="$INDENT" 'BEGIN{exit !(d > 4.9 && d < 5.1)}' \
 # made of long words so that, hyphenated, some line would break inside one.
 # WeasyPrint sets its hyphen as U+2010, not the ASCII hyphen-minus.
 BROKEN=$(jq -r '[.lines[] | select(.text | test("[a-z][-‐]$")) | .text] | join(" | ")' <<<"$PRINTED") \
-  || { fail 'could not look for hyphens'; exit 1; }
+  || stop 'could not look for hyphens'
 [[ -z $BROKEN ]] && pass 'printed: no word in the notes is hyphenated' \
   || fail "printed: hyphenated in the notes: $BROKEN"
 

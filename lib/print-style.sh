@@ -130,7 +130,8 @@ print_page_css() {
     'BEGIN{printf "%.2f %.2f %g\n", pad - rise, bot - (pad - rise) - len, lead * 2}') \
     || { >&2 printf '✗ %s: could not work out the stylesheet'"'"'s lengths\n' "${BASH_SOURCE[0]##*/}"
          return 1; }
-  read -r rule_top rule_foot two_lines <<<"$lengths"
+  # The caller's field separator is not this function's to trust.
+  IFS=' ' read -r rule_top rule_foot two_lines <<<"$lengths"
   [[ -n $rule_top && -n $rule_foot && -n $two_lines ]] \
     || { >&2 printf '✗ %s: the stylesheet'"'"'s lengths came back incomplete: %s\n' \
            "${BASH_SOURCE[0]##*/}" "${lengths@Q}"

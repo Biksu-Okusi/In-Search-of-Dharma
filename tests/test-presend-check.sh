@@ -13,19 +13,24 @@ declare -i FAILED=0
 declare -- TMP='' ERR='' TREE='' NAME=''
 
 trap '[[ -z $TMP ]] || rm -rf -- "$TMP"' EXIT
-TMP=$(mktemp -d) || { >&2 echo 'test-presend-check: ✗ cannot create a temp dir'; exit 5; }
+
+# broken WHAT : a fixture could not be set up, so nothing it would show is
+# known. Exit 5, which no failed check gives.
+broken() { >&2 printf 'test-presend-check: ✗ %s\n' "$1"; exit 5; }
+
+TMP=$(mktemp -d) || broken 'cannot create a temp dir'
 
 echo '== presend check =='
 
-printf 'doc\n' >"$TMP"/cover.docx
+printf 'doc\n' >"$TMP"/cover.docx || broken 'cannot write the attachment'
 if "$CHECK" "$TMP"/cover.docx; then
   printf '  ✓ an attachment that is not a print interior passes\n'
 else
   printf '  ✗ a non-interior attachment was refused\n'; FAILED+=1
 fi
 
-printf '%%PDF-1.4 stale\n' >"$TMP"/Book_interior_152x229.pdf
-touch -d '2000-01-01' -- "$TMP"/Book_interior_152x229.pdf
+printf '%%PDF-1.4 stale\n' >"$TMP"/Book_interior_152x229.pdf || broken 'cannot write the stale interior'
+touch -d '2000-01-01' -- "$TMP"/Book_interior_152x229.pdf || broken 'cannot date the stale interior'
 if ERR=$("$CHECK" "$TMP"/Book_interior_152x229.pdf 2>&1); then
   printf '  ✗ a stale interior was accepted\n'; FAILED+=1
 elif [[ $ERR == *'rebuild with mk-print.sh'* ]]; then
@@ -38,9 +43,6 @@ fi
 # Run against a copy of the script in a tree of its own, where each file's age
 # can be set without touching the book: every source older than the interior
 # but the one named.
-# broken WHAT : the tree could not be set up, so nothing it would show is known.
-broken() { >&2 printf 'test-presend-check: ✗ %s\n' "$1"; exit 5; }
-
 TREE=$TMP/tree
 mkdir -p -- "$TREE"/tools "$TREE"/lib || broken "cannot create ${TREE@Q}"
 cp -- "$CHECK" "$TREE"/tools/presend-check.sh || broken "cannot copy ${CHECK@Q}"
@@ -66,7 +68,8 @@ for NAME in print-imprint.md print-endorsements.md; do
     printf '  ✗ an interior older than %s: refused, but said: %s\n' "$NAME" "$ERR"; FAILED+=1
   fi
 done
-rm -f -- "$TREE"/print-imprint.md "$TREE"/print-endorsements.md
+rm -f -- "$TREE"/print-imprint.md "$TREE"/print-endorsements.md \
+  || broken 'cannot remove the imprint and the endorsements'
 # As above: only the verdict is wanted.
 if "$TREE"/tools/presend-check.sh "$TREE"/Book_interior_152x229.pdf 2>/dev/null; then
   printf '  ✓ a book with no imprint or endorsements file still passes\n'

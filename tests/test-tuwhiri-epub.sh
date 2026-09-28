@@ -107,6 +107,13 @@ main() {
   # the build would go on to publish the edition nobody asked for.
   refuses '--cover without the Tuwhiri edition is refused' 2 '--cover' \
     epub --cover "$cover"
+  # Short options may be run together: -qV is -q and -V, and builds nothing.
+  local -- said
+  local -i said_rc=0
+  said=$("$MKBOOK" -qV 2>&1) || said_rc=$?
+  ((said_rc == 0)) && [[ $said == 'mk-book.sh '[0-9]* ]] \
+    && ok 'short options run together are taken one by one' \
+    || bad "-qV: exit $said_rc, said: ${said%%$'\n'*}"
   left=$(find -- "$box" -maxdepth 1 -name '*.epub' -print -quit) || die 1 "could not search ${box@Q}"
   [[ -z $left ]] && ok 'a refused build writes nothing' || bad "a refused build left ${left@Q}"
 

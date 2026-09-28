@@ -327,6 +327,8 @@ main() {
       --keep-temp) KEEP_TEMP=1; shift ;;
       -h|--help)   show_help; return 0 ;;
       -V|--version) printf '%s %s\n' "$SCRIPT_NAME" "$VERSION"; return 0 ;;
+      # Short options run together (-qV) are taken apart and read one by one.
+      -[qhV]?*)    set -- "${1:0:2}" "-${1:2}" "${@:2}" ;;
       *) die 2 "unknown option ${1@Q} (try --help)" ;;
     esac
   done

@@ -296,7 +296,7 @@ HTML
   #   p1 front matter, p2 opener (full), p3 31 lines, p4 30 lines then text,
   #   p5 25 lines then a subhead, p6 subhead and 10 lines then a chapter,
   #   p7 the last chapter's opener, which ends the book.
-  local -- body='' n
+  local -- body='' short_pages
   run_of() { local -i k; for ((k = 1; k <= $1; k+=1)); do body+="<p>Line $k of the run.</p>"; done; }
   body+='<div class="front"><p>Contents</p><p>Preface</p></div>'
   body+='<h1>One</h1>';                                   run_of 29
@@ -321,9 +321,9 @@ h2{font:600 12pt/16pt "Work Sans";margin:0}
 HTML
   render "$TMP/lines.html" "$TMP/lines.pdf"
   found=$("$CHECK" lines -- "$TMP/lines.pdf" 2>/dev/null) || found='{}'
-  n=$(jq -c '[.short[]?.page]' <<<"$found") || die 1 'could not read the report on lines'
-  [[ $n == '[4]' ]] && ok 'lines flags the one page that is short with no excuse' \
-    || bad "lines flagged $n, want [4]: $(jq -c '.pages' <<<"$found")"
+  short_pages=$(jq -c '[.short[]?.page]' <<<"$found") || die 1 'could not read the report on lines'
+  [[ $short_pages == '[4]' ]] && ok 'lines flags the one page that is short with no excuse' \
+    || bad "lines flagged $short_pages, want [4]: $(jq -c '.pages' <<<"$found")"
   jq -e '.short[0].short_by == 1' <<<"$found" >/dev/null \
     && ok 'lines says the page is one line short' \
     || bad "lines misjudged how short page 4 is: $(jq -c '.short' <<<"$found")"
