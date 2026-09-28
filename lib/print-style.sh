@@ -79,6 +79,7 @@ declare -- PRINT_SIZE_PT='' PRINT_LEAD_PT='' PRINT_SUB_PT='' PRINT_SRC_PT=''
 declare -- PRINT_TOP_MM='' PRINT_BOT_MM='' PRINT_HEADPAD_MM='' PRINT_FOLIOPAD_MM=''
 declare -- PRINT_H1PAD_MM='' PRINT_H1GAP_MM='' PRINT_DROP_FS='' PRINT_DROP_LH=''
 declare -- PRINT_FOLIORULE_MM='' PRINT_FOLIORISE_MM='' PRINT_FOLIOGAP_MM=''
+declare -- PRINT_DROP_DY_MM=''
 
 # The shipping setting, and the constants solved for it.
 print_geom_load() {
@@ -94,6 +95,11 @@ print_geom_load() {
   PRINT_HEADPAD_MM=13.35 PRINT_FOLIOPAD_MM=6.80
   PRINT_H1PAD_MM=55.34 PRINT_H1GAP_MM=12.60
   PRINT_DROP_FS=3.200 PRINT_DROP_LH=0.688
+  # How far the cap is moved down to stand on the second line's baseline
+  # (Ramsey, 2026-09-28). PRINT_DROP_LH was solved against pdftotext's boxes,
+  # whose feet lie a descent below the baseline: 0.268em, so 2mm further for
+  # the 32pt cap than for the 10pt line, and the cap stood that much high.
+  PRINT_DROP_DY_MM=2.00
   # The folio's rule (Ramsey, 2026-09-28, after What is this?): 5mm long, rising
   # PRINT_FOLIORISE_MM above the top of the folio's line, which PRINT_FOLIOPAD_MM
   # still places, so the numeral keeps its baseline. The numeral stands
@@ -226,9 +232,12 @@ ul > li::before{content:"\\2022";position:absolute;left:-10mm}
 
 /* The two-line drop cap. It hangs on p.op, which lib/dropcap.py marks: a
    chapter's opening paragraph is not the element after the h1, because the
-   watercolour and the epigraph come between them. */
+   watercolour and the epigraph come between them. The cap is moved down by a
+   relative offset, which shifts the letter and leaves the float where it was,
+   so the two lines beside it are set exactly as before. */
 p.op .dc{float:left;font-size:${PRINT_DROP_FS}em;
-  line-height:${PRINT_DROP_LH};padding:0 0.06em 0 0}
+  line-height:${PRINT_DROP_LH};padding:0 0.06em 0 0;
+  position:relative;top:${PRINT_DROP_DY_MM}mm}
 .sc{font-variant-caps:small-caps;letter-spacing:0.02em}
 
 /* Ramsey's point 3: a run of two or more capitals is set in small capitals.

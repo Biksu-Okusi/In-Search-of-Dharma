@@ -9,6 +9,7 @@ Usage:
   pdfcheck.py measure FILE
   pdfcheck.py baselines FILE [--page N]
   pdfcheck.py rules FILE [--page N]
+  pdfcheck.py ink FILE [--page N] --box X0,Y0,X1,Y1
   pdfcheck.py check FILE [--trim WxH] [--require-even] [--require-blank-last]
                          [--measure MM --inner MM]
 """
@@ -41,6 +42,7 @@ MEASURE_LIST_MAX = 10  # overruns named one by one before the rest are counted
 # 0.25mm wide in Bona Nova Regular and some 0.8mm in Work Sans SemiBold, while
 # the book's hairlines are 0.4pt (0.14mm).
 RULE_DPI = 600
+INK_DPI = 1200       # one pixel is 0.02mm: fine enough to hold 0.1mm tolerances
 RULE_MIN_MM = 4.0
 RULE_MAX_W_MM = 0.2
 
@@ -324,6 +326,37 @@ def rules(path, page, dpi=RULE_DPI):
   return {'rules': out}
 
 
+def ink(path, page, box, dpi=INK_DPI):
+  """The extent of the ink inside a box, all in mm from the trim's top left.
+
+  pdftotext reports a word's box from its font's metrics, so the foot of that
+  box lies a descent below the baseline, and further below for larger type. A
+  32pt drop cap and the 10pt line beside it cannot be compared by their boxes.
+  Their ink can: a letter with no descender stands on its baseline.
+  """
+  x0, y0, x1, y1 = box
+  px = dpi / 25.4
+  tmp_dir = tempfile.mkdtemp(prefix='pdfcheck-')
+  try:
+    run('pdftoppm', '-r', str(dpi), '-f', str(page), '-l', str(page), '-gray', '-png',
+        '-x', str(int(x0 * px)), '-y', str(int(y0 * px)),
+        '-W', str(int((x1 - x0) * px)), '-H', str(int((y1 - y0) * px)),
+        path, os.path.join(tmp_dir, 'p'))
+    pngs = [n for n in os.listdir(tmp_dir) if n.endswith('.png')]
+    if not pngs:
+      raise RuntimeError(f'page {page} did not render')
+    dark = np.asarray(Image.open(os.path.join(tmp_dir, pngs[0])).convert('L')) < 128
+  finally:
+    shutil.rmtree(tmp_dir, ignore_errors=True)
+  ys, xs = np.nonzero(dark)
+  if not len(ys):
+    return {'ink': None}
+  ox, oy = int(x0 * px) / px, int(y0 * px) / px
+  return {'ink': {'x0_mm': round(ox + xs.min() / px, 2), 'y0_mm': round(oy + ys.min() / px, 2),
+                  'x1_mm': round(ox + (xs.max() + 1) / px, 2),
+                  'y1_mm': round(oy + (ys.max() + 1) / px, 2)}}
+
+
 def check(path, trim, require_even, require_blank_last, text_block=None):
   m = measure(path)
   fail, warn = [], []
@@ -390,9 +423,11 @@ def check(path, trim, require_even, require_blank_last, text_block=None):
 
 def main():
   ap = argparse.ArgumentParser(description=__doc__)
-  ap.add_argument('action', choices=('measure', 'baselines', 'rules', 'check'))
+  ap.add_argument('action', choices=('measure', 'baselines', 'rules', 'ink', 'check'))
   ap.add_argument('file')
   ap.add_argument('--page', type=int, default=1)
+  ap.add_argument('--box', metavar='X0,Y0,X1,Y1',
+                  help='for ink: the box to look in, in mm from the top left of the trim')
   ap.add_argument('--trim', default='152x229')
   ap.add_argument('--require-even', action='store_true')
   ap.add_argument('--require-blank-last', action='store_true')
@@ -413,6 +448,13 @@ def main():
       print(json.dumps(baselines(a.file, a.page), indent=2))
     elif a.action == 'rules':
       print(json.dumps(rules(a.file, a.page), indent=2))
+    elif a.action == 'ink':
+      if not a.box:
+        ap.error('ink needs --box X0,Y0,X1,Y1')
+      box = tuple(float(v) for v in a.box.split(','))
+      if len(box) != 4 or box[2] <= box[0] or box[3] <= box[1]:
+        ap.error('--box wants X0,Y0,X1,Y1 in mm, with X1 > X0 and Y1 > Y0')
+      print(json.dumps(ink(a.file, a.page, box), indent=2))
     else:
       w, h = (float(v) for v in a.trim.split('x'))
       text_block = None if a.measure is None else (a.inner, a.measure)

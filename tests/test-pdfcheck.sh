@@ -272,6 +272,19 @@ HTML
     && ok 'rules reports the 71mm rule at x 35mm' \
     || bad "rules misplaced the 71mm rule: $(jq -c '.rules[1]' <<<"$found")"
 
+  # ink: the extent of the ink inside a box given in mm, which is how a drop
+  # cap's foot is measured. A box around the 5mm rule returns the rule; a box
+  # over white paper returns null.
+  found=$("$CHECK" ink "$TMP/rules.pdf" --page 1 --box 28,205,32,220 2>/dev/null) || found='{}'
+  jq -e '.ink | (.y0_mm - 210 | fabs) < 0.05 and (.y1_mm - 215 | fabs) < 0.05
+         and (.x0_mm - 30 | fabs) < 0.05' <<<"$found" >/dev/null \
+    && ok 'ink reports the extent of the ink inside a box' \
+    || bad "ink misreported the rule inside the box: $(jq -c . <<<"$found")"
+  found=$("$CHECK" ink "$TMP/rules.pdf" --page 1 --box 100,150,120,170 2>/dev/null) || found='{}'
+  jq -e 'has("ink") and .ink == null' <<<"$found" >/dev/null \
+    && ok 'ink reports null for a box of white paper' \
+    || bad "ink did not report null for white paper: $(jq -c . <<<"$found")"
+
   ((FAILED == 0)) || exit 1
 }
 

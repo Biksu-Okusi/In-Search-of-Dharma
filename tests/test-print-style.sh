@@ -135,6 +135,45 @@ else
   printf '  ✗ no Work Sans Regular in the fixture: the folio is not regular weight\n'; FAILED+=1
 fi
 
+echo '== drop cap =='
+# Ramsey (2026-09-28): the cap stands on the baseline of the second line. The
+# two are compared by their ink, not by pdftotext's boxes, whose feet lie a
+# descent below the baseline and so further below for 32pt type than for 10pt.
+# The fixture's lines hold no letter with a descender and no comma, so the
+# foot of a line's ink is its baseline.
+cat > "$TMP"/cap.html <<'HTML'
+<!doctype html><html lang="en"><head><meta charset="utf-8">
+<link rel="stylesheet" href="print.css"></head><body>
+<section class="chapter"><h1>Coda</h1>
+<p class="op"><span class="dc">M</span><span class="sc">ost books</span> hold more than one creed in them. A
+teacher hands down a course laid out before him: old rules bound into old
+books. Another hand takes them on and alters what it finds there. The old rules
+bend a little in each mind which holds them. Hills wear down: rivers move: a
+creed does no less. No book can hold it still.</p>
+</section></body></html>
+HTML
+weasyprint "$TMP"/cap.html "$TMP"/cap.pdf 2>/dev/null
+declare -- cap_lines cap_w l1 l2 l3 cap_foot l2_foot
+cap_lines=$("$ROOT"/lib/pdfcheck.py baselines "$TMP"/cap.pdf --page 1)
+cap_w=$(jq -c '[.lines[] | select(.text == "M")][0]' <<<"$cap_lines")
+# The three lines beside and below the cap, in order, the cap's own excluded.
+read -r l1 l2 l3 < <(jq -r '[.lines[] | select(.text != "M" and .text != "Coda" and .y_mm < 200)]
+  | .[0:3] | map(tojson) | join(" ")' <<<"$cap_lines" | tr -d ' ' | sed 's/}{/} {/g')
+ink_foot() { "$ROOT"/lib/pdfcheck.py ink "$TMP"/cap.pdf --page 1 --box "$1" | jq -r '.ink.y1_mm // "none"'; }
+cap_foot=$(ink_foot "$(jq -r --argjson l1 "$l1" --argjson l2 "$l2" \
+  '"\(.x0_mm - 0.3),\($l1.y_mm - 9),\(.x1_mm),\($l2.y_mm + 0.3)"' <<<"$cap_w")")
+l2_foot=$(ink_foot "$(jq -r '"\(.x0_mm),\(.y_mm - 4),\(.x1_mm + 0.1),\(.y_mm + 0.3)"' <<<"$l2")")
+if awk -v c="$cap_foot" -v l="$l2_foot" -v t="$TOL" 'BEGIN{exit !(c != "none" && l != "none" && c-l < t && l-c < t)}'; then
+  printf '  ✓ the cap stands on the second line'"'"'s baseline (%s, line %s)\n' "$cap_foot" "$l2_foot"
+else
+  printf '  ✗ the cap'"'"'s foot is at %s, the second line'"'"'s baseline at %s\n' "$cap_foot" "$l2_foot"; FAILED+=1
+fi
+# Two lines stand in beside the cap and the third returns to the margin.
+jq -n -e --argjson l1 "$l1" --argjson l2 "$l2" --argjson l3 "$l3" --argjson c "$cap_w" \
+  '$l1.x0_mm > $c.x1_mm and $l2.x0_mm > $c.x1_mm and ($l3.x0_mm - $c.x0_mm | fabs) < 0.1' >/dev/null \
+  && printf '  ✓ two lines stand beside the cap and the third returns to the margin\n' \
+  || { printf '  ✗ the cap does not span two lines: %s %s %s\n' "$l1" "$l2" "$l3"; FAILED+=1; }
+
 echo '== blank verso =='
 # A chapter that ends on a recto leaves the next opener's verso blank. Ramsey
 # (2026-09-28): a blank verso carries the running head too. It still carries no
