@@ -10,7 +10,7 @@ declare -r SCRIPT_PATH=$(realpath -- "${BASH_SOURCE[0]}")
 declare -r TEST_DIR=${SCRIPT_PATH%/*}
 declare -r CHECK=$TEST_DIR/../tools/presend-check.sh
 declare -i FAILED=0
-declare -- TMP='' ERR=''
+declare -- TMP='' ERR='' TREE='' NAME=''
 
 trap '[[ -z $TMP ]] || rm -rf -- "$TMP"' EXIT
 TMP=$(mktemp -d) || { >&2 echo 'test-presend-check: ✗ cannot create a temp dir'; exit 5; }
@@ -38,30 +38,37 @@ fi
 # Run against a copy of the script in a tree of its own, where each file's age
 # can be set without touching the book: every source older than the interior
 # but the one named.
-declare -- tree=$TMP/tree name
-mkdir -p -- "$tree"/tools "$tree"/lib
-cp -- "$CHECK" "$tree"/tools/presend-check.sh
-printf '#!/bin/bash\nexit 0\n' >"$tree"/mk-print.sh && chmod +x "$tree"/mk-print.sh
-printf 'x\n' | tee "$tree"/1-part.md "$tree"/the-better-ones.md "$tree"/lib/a.sh "$tree"/lib/a.py \
-  "$tree"/print-imprint.md "$tree"/print-endorsements.md >/dev/null
-printf '%%PDF-1.4\n' >"$tree"/Book_interior_152x229.pdf
-for name in print-imprint.md print-endorsements.md; do
-  find "$tree" -type f -exec touch -d '2001-01-01' -- {} +
-  touch -d '2002-01-01' -- "$tree"/Book_interior_152x229.pdf
-  if ! "$tree"/tools/presend-check.sh "$tree"/Book_interior_152x229.pdf 2>/dev/null; then
+# broken WHAT : the tree could not be set up, so nothing it would show is known.
+broken() { >&2 printf 'test-presend-check: ✗ %s\n' "$1"; exit 5; }
+
+TREE=$TMP/tree
+mkdir -p -- "$TREE"/tools "$TREE"/lib || broken "cannot create ${TREE@Q}"
+cp -- "$CHECK" "$TREE"/tools/presend-check.sh || broken "cannot copy ${CHECK@Q}"
+printf '#!/bin/bash\nexit 0\n' >"$TREE"/mk-print.sh || broken 'cannot write the stand-in mk-print.sh'
+chmod -- +x "$TREE"/mk-print.sh || broken 'cannot mark the stand-in mk-print.sh executable'
+printf 'x\n' | tee -- "$TREE"/1-part.md "$TREE"/the-better-ones.md "$TREE"/lib/a.sh "$TREE"/lib/a.py \
+  "$TREE"/print-imprint.md "$TREE"/print-endorsements.md >/dev/null || broken 'cannot write the sources'
+printf '%%PDF-1.4\n' >"$TREE"/Book_interior_152x229.pdf || broken 'cannot write the interior'
+for NAME in print-imprint.md print-endorsements.md; do
+  find -- "$TREE" -type f -exec touch -d '2001-01-01' -- {} + || broken 'cannot age the sources'
+  touch -d '2002-01-01' -- "$TREE"/Book_interior_152x229.pdf || broken 'cannot date the interior'
+  # What the check says when it refuses is read in the next step; here only
+  # its verdict is wanted.
+  if ! "$TREE"/tools/presend-check.sh "$TREE"/Book_interior_152x229.pdf 2>/dev/null; then
     printf '  ✗ an interior newer than all its sources was refused\n'; FAILED+=1; continue
   fi
-  touch -d '2003-01-01' -- "$tree/$name"
-  if ERR=$("$tree"/tools/presend-check.sh "$tree"/Book_interior_152x229.pdf 2>&1); then
-    printf '  ✗ an interior older than %s was accepted\n' "$name"; FAILED+=1
-  elif [[ $ERR == *"older than $name"* ]]; then
-    printf '  ✓ an interior older than %s is refused\n' "$name"
+  touch -d '2003-01-01' -- "$TREE/$NAME" || broken "cannot date ${NAME@Q}"
+  if ERR=$("$TREE"/tools/presend-check.sh "$TREE"/Book_interior_152x229.pdf 2>&1); then
+    printf '  ✗ an interior older than %s was accepted\n' "$NAME"; FAILED+=1
+  elif [[ $ERR == *"older than $NAME"* ]]; then
+    printf '  ✓ an interior older than %s is refused\n' "$NAME"
   else
-    printf '  ✗ an interior older than %s: refused, but said: %s\n' "$name" "$ERR"; FAILED+=1
+    printf '  ✗ an interior older than %s: refused, but said: %s\n' "$NAME" "$ERR"; FAILED+=1
   fi
 done
-rm -f -- "$tree"/print-imprint.md "$tree"/print-endorsements.md
-if "$tree"/tools/presend-check.sh "$tree"/Book_interior_152x229.pdf 2>/dev/null; then
+rm -f -- "$TREE"/print-imprint.md "$TREE"/print-endorsements.md
+# As above: only the verdict is wanted.
+if "$TREE"/tools/presend-check.sh "$TREE"/Book_interior_152x229.pdf 2>/dev/null; then
   printf '  ✓ a book with no imprint or endorsements file still passes\n'
 else
   printf '  ✗ a book with no imprint or endorsements file was refused\n'; FAILED+=1

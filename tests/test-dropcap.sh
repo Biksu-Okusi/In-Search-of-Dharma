@@ -8,19 +8,77 @@
 # <em>in search of dharma</em>").
 set -euo pipefail
 shopt -s inherit_errexit
+# Fixed PATH: every external tool must resolve from system locations only.
+declare -rx PATH=/usr/local/bin:/usr/bin:/bin
 
 #shellcheck disable=SC2155  # exit-on-error catches realpath failure
 declare -r SCRIPT_PATH=$(realpath -- "${BASH_SOURCE[0]}")
 declare -r TEST_DIR=${SCRIPT_PATH%/*}
 declare -r ROOT=${TEST_DIR%/*}
 declare -r DC=$ROOT/lib/dropcap.py
+# lib/preprocess.sh wants both of these declared before it is sourced.
+declare -r REPO_URL=https://github.com/Biksu-Okusi/In-Search-of-Dharma
+declare -r REPO_BLOB="$REPO_URL"/blob/main
 declare -i FAILED=0
+declare -- SRC='' VERDICT=''
 
-echo '== drop cap =='
+# The fixtures: what pandoc makes of an opening, and what the filter is to
+# make of that.
+declare -r EPIGRAPH='<blockquote>
+<p><em>Eight parts of searching have earned one plain definition.</em></p>
+</blockquote>
+'
+declare -r CODA='<h1 id="coda">Coda</h1>
+'"$EPIGRAPH"'<p>A <strong>dharma</strong> is a way of living that tells a person or
+group how to act.</p>
+<p>A dharma is not necessarily a religion.</p>
+'
+declare -r CODA_WANT='<p class="op"><span class="dc">A</span>'\
+'<span class="sc"> <strong>dharma</strong></span> is a way'
+declare -r APPENDIX='<h1 id="appendix">Appendix: Dharmas, the better ones</h1>
+<p>Throughout <em>in search of dharma</em> I have insisted that dharmas
+are <em>made</em>, plural, and unprivileged.</p>
+<p>Part 8 answers this.</p>
+<p>A dharma is to be judged by two tests.</p>
+'
+declare -r APPENDIX_WANT='<p class="op"><span class="dc">T</span>'\
+'<span class="sc">hroughout</span> <em>in search of dharma</em> I have'
+# SC1112: the typographic quotation marks are the fixture: an opening that does
+# not begin with a letter.
+#shellcheck disable=SC1112  # the quotation marks are the text under test
+declare -r QUOTED='<p>‘Quoted’ is how this one opens.</p>
+<p>Plain words follow here.</p>
+'
+#shellcheck disable=SC1112  # the quotation marks are the text under test
+declare -r QUOTED_WANT='<p class="op">‘Quoted’ is how'
+declare -r CAPTIONED="$EPIGRAPH"'<figure>
+<p>caption text</p>
+</figure>
+<p>Here it begins.</p>
+'
+# Reads a chapter as the filter leaves it and says whether its first body
+# paragraph, a bare <p> outside any figure, quotation or list, carries the cap.
+# It reads to the end of its input, so the filter ahead of it in the pipe is
+# never cut off in mid-write.
+declare -r FIRST_PARAGRAPH='
+import re, sys
+depth, verdict = 0, "no paragraph found"
+for line in sys.stdin.read().splitlines():
+  depth += len(re.findall(r"<(figure|blockquote|table|ul|ol|div)\b", line))
+  depth -= len(re.findall(r"</(figure|blockquote|table|ul|ol|div)>", line))
+  depth = max(depth, 0)
+  if depth == 0 and re.match(r"\s*<p( class=\"op\")?>", line):
+    marked = line.lstrip().startswith("<p class=\"op\"><span class=\"dc\">")
+    verdict = "ok" if marked else "first paragraph unmarked: " + line.strip()[:60]
+    break
+print(verdict)
+'
 
 # check <name> <input> <expected substring>
 check() {
   local -- name=$1 input=$2 want=$3 got
+  # The filter warns on stderr of an opening it gives no cap to, which one
+  # fixture is there to provoke; what it writes on stdout is what is judged.
   got=$(printf '%s' "$input" | "$DC" 2>/dev/null) \
     || { printf '  ✗ %s: filter failed\n' "$name"; FAILED+=1; return; }
   if [[ $got == *"$want"* ]]; then
@@ -36,10 +94,13 @@ check() {
 check_count() {
   local -- name=$1 input=$2 needle=$3 got
   local -i want=$4 n
+  # stderr dropped for the reason given in check().
   got=$(printf '%s' "$input" | "$DC" 2>/dev/null) \
     || { printf '  ✗ %s: filter failed\n' "$name"; FAILED+=1; return; }
-  # grep exits 1 on no match, which pipefail would turn into an abort.
-  n=$({ grep -o -F -- "$needle" <<<"$got" || true; } | wc -l)
+  # grep exits 1 when the substring is nowhere, and a count of none is an
+  # answer here; wc counts the lines either way.
+  n=$({ grep -o -F -- "$needle" <<<"$got" ||:; } | wc -l) \
+    || { printf '  ✗ %s: could not count\n' "$name"; FAILED+=1; return; }
   if ((n == want)); then
     printf '  ✓ %s\n' "$name"
   else
@@ -48,28 +109,13 @@ check_count() {
   fi
 }
 
-declare -r EPIGRAPH='<blockquote>
-<p><em>Eight parts of searching have earned one plain definition.</em></p>
-</blockquote>
-'
+echo '== drop cap =='
 
-declare -r CODA="<h1 id=\"coda\">Coda</h1>
-${EPIGRAPH}<p>A <strong>dharma</strong> is a way of living that tells a person or
-group how to act.</p>
-<p>A dharma is not necessarily a religion.</p>
-"
-check 'Coda: the cap is on the first paragraph' \
-  "$CODA" '<p class="op"><span class="dc">A</span><span class="sc"> <strong>dharma</strong></span> is a way'
+check 'Coda: the cap is on the first paragraph' "$CODA" "$CODA_WANT"
 check_count 'Coda: only one paragraph carries the cap' "$CODA" 'class="op"' 1
 
-declare -r APPENDIX='<h1 id="appendix">Appendix: Dharmas, the better ones</h1>
-<p>Throughout <em>in search of dharma</em> I have insisted that dharmas
-are <em>made</em>, plural, and unprivileged.</p>
-<p>Part 8 answers this.</p>
-<p>A dharma is to be judged by two tests.</p>
-'
 check 'Appendix: a multi-word italic title leaves the lead-in at one word' \
-  "$APPENDIX" '<p class="op"><span class="dc">T</span><span class="sc">hroughout</span> <em>in search of dharma</em> I have'
+  "$APPENDIX" "$APPENDIX_WANT"
 check_count 'Appendix: only one paragraph carries the cap' "$APPENDIX" 'class="op"' 1
 
 check 'Part 8: a one-letter first word is the whole cap' \
@@ -93,53 +139,32 @@ check 'a one-word paragraph takes the cap on its only word' \
 # An opening that is not a letter gets no cap -- a cap on a quotation mark
 # reads as a mistake -- but it still marks the first paragraph, so the cap
 # never lands on a later one.
-declare -r QUOTED="<p>‘Quoted’ is how this one opens.</p>
-<p>Plain words follow here.</p>
-"
-check 'a quotation-mark opening is marked, without a cap' \
-  "$QUOTED" "<p class=\"op\">‘Quoted’ is how"
+check 'a quotation-mark opening is marked, without a cap' "$QUOTED" "$QUOTED_WANT"
 check_count 'a quotation-mark opening keeps the cap off the next paragraph' \
   "$QUOTED" 'class="dc"' 0
 
 check 'a paragraph inside a figure or blockquote is passed over' \
-  "${EPIGRAPH}<figure>
-<p>caption text</p>
-</figure>
-<p>Here it begins.</p>
-" '<p class="op"><span class="dc">H</span><span class="sc">ere it</span> begins'
+  "$CAPTIONED" '<p class="op"><span class="dc">H</span><span class="sc">ere it</span> begins'
 
 # The whole book, through the same pipe mk-print.sh runs: in every chapter the
 # first body paragraph (a bare <p>, not a label or a figure's) is the one
 # carrying the cap.
 echo '== drop cap: every chapter =='
-declare -r REPO_URL=https://github.com/Biksu-Okusi/In-Search-of-Dharma
-declare -r REPO_BLOB="$REPO_URL"/blob/main
+command -v pandoc >/dev/null || { >&2 printf '  ✗ required: pandoc\n'; exit 18; }
 #shellcheck source=SCRIPTDIR/../lib/preprocess.sh
-source "$ROOT"/lib/preprocess.sh
+source -- "$ROOT"/lib/preprocess.sh
 
-declare -- src verdict
-for src in "$ROOT"/[0-9]-*.md "$ROOT"/the-better-ones.md; do
-  verdict=$( cd -- "$ROOT" && preprocess "${src##*/}" \
+for SRC in "$ROOT"/[0-9]-*.md "$ROOT"/the-better-ones.md; do
+  [[ -e $SRC ]] || { printf '  ✗ no chapter at %s\n' "${SRC@Q}"; FAILED+=1; continue; }
+  VERDICT=$( cd -- "$ROOT" && preprocess "${SRC##*/}" \
     | pandoc --from=markdown-yaml_metadata_block --to=html5 \
     | "$DC" \
-    | python3 -c '
-import re, sys
-depth = 0
-for line in sys.stdin:
-  depth += len(re.findall(r"<(figure|blockquote|table|ul|ol|div)\b", line))
-  depth -= len(re.findall(r"</(figure|blockquote|table|ul|ol|div)>", line))
-  depth = max(depth, 0)
-  if depth == 0 and re.match(r"\s*<p( class=\"op\")?>", line):
-    ok = line.lstrip().startswith("<p class=\"op\"><span class=\"dc\">")
-    print("ok" if ok else "first paragraph unmarked: " + line.strip()[:60])
-    break
-else:
-  print("no paragraph found")
-' )
-  if [[ $verdict == ok ]]; then
-    printf '  ✓ %s\n' "${src##*/}"
+    | python3 -c "$FIRST_PARAGRAPH" ) \
+    || { printf '  ✗ %s: the pipe failed\n' "${SRC##*/}"; FAILED+=1; continue; }
+  if [[ $VERDICT == ok ]]; then
+    printf '  ✓ %s\n' "${SRC##*/}"
   else
-    printf '  ✗ %s: %s\n' "${src##*/}" "$verdict"; FAILED+=1
+    printf '  ✗ %s: %s\n' "${SRC##*/}" "$VERDICT"; FAILED+=1
   fi
 done
 

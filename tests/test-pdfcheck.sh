@@ -51,7 +51,7 @@ gs_gray() {
   gs -q -dBATCH -dNOPAUSE -dSAFER -sDEVICE=pdfwrite -dProcessColorModel=/DeviceGray \
      -sColorConversionStrategy=Gray -dCompatibilityLevel=1.6 -dSubsetFonts=true \
      -dEmbedAllFonts=true -dAutoRotatePages=/None \
-     -sOutputFile="$2" "$1" || die 1 "greyscale conversion failed on ${1@Q}"
+     -sOutputFile="$2" -- "$1" || die 1 "greyscale conversion failed on ${1@Q}"
 }
 
 # Build a minimal conforming interior: N pages, 152x229mm, black text, blank
@@ -109,7 +109,7 @@ main() {
   echo '== pdfcheck =='
 
   local -- cmd
-  for cmd in python3 weasyprint gs pdfinfo convert mutool pdftotext; do
+  for cmd in python3 weasyprint gs pdfinfo convert mutool pdftotext jq; do
     command -v "$cmd" >/dev/null || die 18 "required: ${cmd@Q}"
   done
   TMP=$(mktemp -d) || die 5 'failed to create temp dir'
@@ -200,14 +200,16 @@ HTML
 showpage
 PS
   gs -q -dBATCH -dNOPAUSE -dSAFER -sDEVICE=pdfwrite -dEmbedAllFonts=false \
-     -sOutputFile="$TMP/noembed.pdf" "$TMP/noembed.ps" \
+     -sOutputFile="$TMP/noembed.pdf" -- "$TMP/noembed.ps" \
     || die 1 'failed to build the unembedded-font fixture'
   assert_fails 'check rejects a non-embedded font' "$TMP/noembed.pdf" 'is not embedded'
 
   # check rejects a colour image, and separately its low resolution: a 100x100
   # red square placed at 20mm is both RGB and, at ~127ppi, under the 300ppi
   # floor -- one fixture, two independent rule failures to grep for.
-  convert -size 100x100 xc:red "$TMP/rgb.png" || die 1 'failed to build the colour-image fixture'
+  # ImageMagick has no end-of-options marker, so the file is named by its
+  # format first.
+  convert -size 100x100 xc:red png:"$TMP"/rgb.png || die 1 'failed to build the colour-image fixture'
   cat >"$TMP/rgbimg.html" <<HTML
 <!doctype html><html lang="en"><head><meta charset="utf-8"><style>
 @page{size:152mm 229mm;margin:25mm 20mm}
@@ -259,8 +261,11 @@ p{position:absolute;left:40mm;top:100mm;width:80mm;margin:0;font-size:20pt}
 </body></html>
 HTML
   render "$TMP/rules.html" "$TMP/rules.pdf"
+  # In this and the readings below, a checker that fails is given an empty
+  # answer, which the checks that follow then report by name; what it wrote to
+  # stderr would only repeat that.
   local -- found
-  found=$("$CHECK" rules "$TMP/rules.pdf" --page 1 2>/dev/null) || found='{"rules":[]}'
+  found=$("$CHECK" rules --page 1 -- "$TMP/rules.pdf" 2>/dev/null) || found='{"rules":[]}'
   jq -e '.rules | length == 2' <<<"$found" >/dev/null \
     && ok 'rules finds the two hairlines and no letter stem' \
     || bad "rules did not find exactly the two hairlines: $(jq -c . <<<"$found")"
@@ -275,12 +280,12 @@ HTML
   # ink: the extent of the ink inside a box given in mm, which is how a drop
   # cap's foot is measured. A box around the 5mm rule returns the rule; a box
   # over white paper returns null.
-  found=$("$CHECK" ink "$TMP/rules.pdf" --page 1 --box 28,205,32,220 2>/dev/null) || found='{}'
+  found=$("$CHECK" ink --page 1 --box 28,205,32,220 -- "$TMP/rules.pdf" 2>/dev/null) || found='{}'
   jq -e '.ink | (.y0_mm - 210 | fabs) < 0.05 and (.y1_mm - 215 | fabs) < 0.05
          and (.x0_mm - 30 | fabs) < 0.05' <<<"$found" >/dev/null \
     && ok 'ink reports the extent of the ink inside a box' \
     || bad "ink misreported the rule inside the box: $(jq -c . <<<"$found")"
-  found=$("$CHECK" ink "$TMP/rules.pdf" --page 1 --box 100,150,120,170 2>/dev/null) || found='{}'
+  found=$("$CHECK" ink --page 1 --box 100,150,120,170 -- "$TMP/rules.pdf" 2>/dev/null) || found='{}'
   jq -e 'has("ink") and .ink == null' <<<"$found" >/dev/null \
     && ok 'ink reports null for a box of white paper' \
     || bad "ink did not report null for white paper: $(jq -c . <<<"$found")"
@@ -315,8 +320,8 @@ h2{font:600 12pt/16pt "Work Sans";margin:0}
 </style></head><body>$body</body></html>
 HTML
   render "$TMP/lines.html" "$TMP/lines.pdf"
-  found=$("$CHECK" lines "$TMP/lines.pdf" 2>/dev/null) || found='{}'
-  n=$(jq -c '[.short[]?.page]' <<<"$found")
+  found=$("$CHECK" lines -- "$TMP/lines.pdf" 2>/dev/null) || found='{}'
+  n=$(jq -c '[.short[]?.page]' <<<"$found") || die 1 'could not read the report on lines'
   [[ $n == '[4]' ]] && ok 'lines flags the one page that is short with no excuse' \
     || bad "lines flagged $n, want [4]: $(jq -c '.pages' <<<"$found")"
   jq -e '.short[0].short_by == 1' <<<"$found" >/dev/null \
@@ -325,10 +330,12 @@ HTML
   jq -e '[.pages[] | select(.page == 2 or .page == 3) | .short_by] == [0, 0]' <<<"$found" >/dev/null \
     && ok 'lines finds an opener and a text page full' \
     || bad "lines misjudged the full pages: $(jq -c '[.pages[] | select(.page < 4)]' <<<"$found")"
-  jq -e '[.pages[] | select(.page == 5)][0] | .short_by == 6 and (.excused | test("subhead"))' <<<"$found" >/dev/null \
+  jq -e '[.pages[] | select(.page == 5)][0] | .short_by == 6 and (.excused | test("subhead"))' \
+    <<<"$found" >/dev/null \
     && ok 'lines excuses a page before a subhead' \
     || bad "lines did not excuse page 5: $(jq -c '[.pages[] | select(.page == 5)]' <<<"$found")"
-  jq -e '[.pages[] | select(.page == 6)][0] | .short_by > 0 and (.excused | test("chapter"))' <<<"$found" >/dev/null \
+  jq -e '[.pages[] | select(.page == 6)][0] | .short_by > 0 and (.excused | test("chapter"))' \
+    <<<"$found" >/dev/null \
     && ok 'lines excuses the last page of a chapter' \
     || bad "lines did not excuse page 6: $(jq -c '[.pages[] | select(.page == 6)]' <<<"$found")"
   jq -e '([.pages[].page] | index(1)) == null' <<<"$found" >/dev/null \
