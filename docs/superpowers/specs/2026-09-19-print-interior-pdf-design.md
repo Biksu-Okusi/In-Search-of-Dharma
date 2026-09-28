@@ -119,7 +119,7 @@ Tuwhiri page looks like.
 | Subheads | Work Sans SemiBold | 12 pt | 16 pt |
 | Chapter titles | Work Sans SemiBold | 20 pt | — |
 | Running heads | Work Sans SemiBold | 9 pt | — |
-| Folios | Work Sans SemiBold | 8 pt | — |
+| Folios | Work Sans Regular | 8 pt | — |
 | Sources and further reading | Bona Nova Regular | 9 pt | 16 pt |
 
 Measured extents for the whole body text, should the setting be revisited:
@@ -137,7 +137,10 @@ Measured extents for the whole body text, should the setting be revisited:
 - **Lining figures** (`font-variant-numeric: lining-nums`). Bona Nova defaults
   to oldstyle, which sets "Part 1" as something a reader takes for "Part I".
 - Ligatures and kerning on; discretionary ligatures off in body text.
-- Widows and orphans: 2 minimum.
+- Widows and orphans: 1. Every page runs to its full 31 lines, except before a
+  subhead or at a chapter's end; widows, orphans and runts are put right by
+  hand at the very end. (Amended 2026-09-28 at the publisher's request; the
+  minimum was 2, which left some pages a line short.)
 - Real small caps from the font's `smcp` feature, never synthesised.
 
 ✓ No new font file is needed. The vendored `fonts/bonanova/BonaNova-Regular.ttf`
@@ -159,22 +162,32 @@ of Part 1. (Amended 2026-09-28 at the publisher's request; the sequence
 originally restarted at the Preface.) Until the publisher names the pages that
 show a roman numeral, the half-title, the title page and the imprint show none.
 
-1. Half-title
-2. Title page
-3. Imprint (copy supplied by Ramsey; see §9)
-4. Contents, with real page numbers and leader dots
+1. Endorsements, where the book has any (added 2026-09-28), on page i
+2. Half-title, on the next recto
+3. Title page, on the recto after it
+4. Imprint (copy supplied by Ramsey; see §9), on the back of the title
+5. Contents, with real page numbers and leader dots
+
+Blank pages in the preliminaries, the one before Part 1 included, carry
+nothing.
 
 ### Body
 
 - Chapters open **recto**. A blank verso is inserted where needed, carrying
-  neither running head nor folio.
+  the running head and no folio. (Amended 2026-09-28 at the publisher's
+  request; it carried neither.)
+- The folio stands on the left of every page, recto and verso alike, beside a
+  5 mm hairline rule that stands 10 mm in from the left edge of the text, the
+  paragraph indent, after Tuwhiri's *What is this?*. (Amended 2026-09-28; it
+  stood at the outer margin.)
 - A chapter opener carries the Okusi logo, the vertical rule, and the chapter
   title, and suppresses its running head. It keeps its folio.
 - Verso running head: the book title. Recto running head: the chapter title.
 - First paragraph after a chapter title, a subhead or a block quote is
   unindented. Every subsequent paragraph indents 10 mm.
-- A chapter's opening paragraph begins with a two-line drop cap, with the first
-  two words after it in small caps.
+- A chapter's opening paragraph begins with a two-line drop cap, standing on
+  the baseline of the second line, with the first two words after it in small
+  caps.
 - `Sources & further reading` sets at 9pt on the same 16pt leading.
 - `the-better-ones.md` closes the book as the appendix, as it already does in
   the EPUB and reading PDF.
