@@ -30,9 +30,7 @@ audio:
 
 > *Why does every society grow a dharma, and why did so many of the greatest ones appear, in different worlds, at almost the same moment? It starts with a problem that arrives the day your village gets too big to know.*
 
-Picture two human worlds, separated by ten thousand years.
-
-In the first, a few dozen people move together through a landscape they know by heart. They are bound, sometimes by blood, always by a lifetime of shared meals, shared danger, shared everything. There are no written rules, no scriptures, no judges, no police. Yet there is unmistakably a moral order: food is shared, boasting is slapped down, the bully is brought to heel, and everyone knows, without being told, what counts as decent and what counts as disgraceful. It works, and it has worked for longer than we can comfortably imagine.
+Picture two human worlds, separated by ten thousand years. In the first, a few dozen people move together through a landscape they know by heart. They are bound, sometimes by blood, always by a lifetime of shared meals, shared danger, shared everything. There are no written rules, no scriptures, no judges, no police. Yet there is unmistakably a moral order: food is shared, boasting is slapped down, the bully is brought to heel, and everyone knows, without being told, what counts as decent and what counts as disgraceful. It works, and it has worked for longer than we can comfortably imagine.
 
 In the second world, tens of thousands of people are packed into a single city. Most of them will never meet. The woman who sold you a loaf of bread this morning you may never lay eyes on again; the man three streets over is, for all practical purposes, a stranger to you forever. It is here that the easy morality of the small band, the kind that runs on everyone knowing everyone, simply cannot reach. And yet, for the most part, the city does not dissolve into a war of all against all. Something holds it together.
 

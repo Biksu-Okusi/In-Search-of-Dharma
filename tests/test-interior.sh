@@ -206,6 +206,14 @@ main() {
     awk -v d="$above" 'BEGIN{exit !(d > 10.9 && d < 11.7)}' \
       && ok "a line space stands above the signature (${above}mm from the line before)" \
       || bad "the signature stands ${above}mm under the line before it, want two linefeeds"
+    # The name upright, the author's choice of the two Tuwhiri offered
+    # (2026-09-28): no italic of the bold face stands on the page. mutool
+    # shortens that face's name to "Work-Sans-Semi-Bold-Ital".
+    local -- sig_faces
+    sig_faces=$("$CHECK" faces --page "$signed_pg" -- "$PDF" | jq -r '[.faces[].font] | join(" ")') \
+      || die 1 'could not read the faces of the signature page'
+    [[ $sig_faces != *Semi-Bold-Ital* ]] && ok 'the name in the signature stands upright' \
+      || bad 'the name in the signature is set in italic'
   else
     bad 'the signature was not found in the Preface'
   fi

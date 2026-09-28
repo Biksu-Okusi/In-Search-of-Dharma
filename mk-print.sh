@@ -477,13 +477,13 @@ main() {
     # "<p>" and takes the first two words, which a <span> inserted ahead of it
     # would hide. researchnotes.py sets the Research notes block for paper
     # (Ramsey, 2026-09-28) and finds it by that label, so it runs after the sed.
-    # The second sed marks the signature that closes the Preface, a paragraph
-    # wholly in italics that opens on the author's name in bold; it reads the
+    # The second sed marks the signature that closes the Preface, the author's
+    # name in bold, upright, and the place and date in italics; it reads the
     # fragment as one line (-z), since pandoc may wrap the paragraph. nobreak.py
     # runs last, over the words as every other filter has left them.
     frag=$(pandoc --from=markdown-yaml_metadata_block --to=html5 -- "$dst" \
              | sed -E 's|^<p><strong>([^<]*)</strong></p>$|<p class="label">\1</p>|' \
-             | sed -z -E "s|<p>(<em><strong>$AUTHOR</strong>,[^<]*</em>)</p>|<p class=\"signature\">\1</p>|" \
+             | sed -z -E "s|<p>(<strong>$AUTHOR</strong>, <em>[^<]*</em>)</p>|<p class=\"signature\">\1</p>|" \
              | "$SCRIPT_DIR"/lib/dropcap.py \
              | "$SCRIPT_DIR"/lib/smallcaps.py \
              | "$SCRIPT_DIR"/lib/researchnotes.py \

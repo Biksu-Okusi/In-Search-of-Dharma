@@ -74,7 +74,7 @@ And the machines, since they are where this project is ultimately headed. Delphi
 
 ## The objections
 
-**'You brought it along'.** The sharpest objection says revisability is just liberalism smuggled in as a meta-standard: one more Western thick dharma flattering itself that it is a neutral referee.
+**'You brought it along.'** The sharpest objection says revisability is just liberalism smuggled in as a meta-standard: one more Western thick dharma flattering itself that it is a neutral referee.
 
 Half of this must simply be conceded. The criterion is a commitment, not a discovery; there is no view from nowhere, this project has one point of view like everything else, and an avowed commitment is the only defensible kind. But the other half should be resisted, because the criterion is thinner than the liberalism it is accused of being. It demands no elections, no individualism, no rights-talk, no separation of powers. It demands only that the capacity to revise exist and sit with the bound, and traditions have built that organ in forms liberalism would not recognise as its own. *Musyawarah*, deliberation toward consensus, is a revision organ. *Ijtihad*, the labour of fresh interpretation in Islamic law, is a revision organ, and the centuries-long argument over whether its 'gate' ever closed is itself an argument about this very criterion, conducted entirely inside the tradition. The *wong sikep* revised a refusal most of a century old without a ballot in sight.
 
@@ -86,7 +86,7 @@ The challenge is real and I will not pretend to dissolve it in a paragraph. I wi
 
 An option with a stated price does not refute the floor. It stands as a reminder that the floor must be argued for, never assumed. That is, again, why the pen matters more than the placement.
 
-**'Revisability just measures churn'.** No. The criterion names a capacity, not a rate. A dharma may stand substantially unchanged for a century and pass, because the bound held the pen throughout and chose, year after year, not to use it; consent renewed is not stagnation. Another may change every quarter and fail, because every change was the centre's. What is measured is where the capacity lives, not how often it is exercised. A grip you cannot open is not a hold; it is a trap -- and the test for a trap is not whether it is currently moving.
+**'Revisability just measures churn.'** No. The criterion names a capacity, not a rate. A dharma may stand substantially unchanged for a century and pass, because the bound held the pen throughout and chose, year after year, not to use it; consent renewed is not stagnation. Another may change every quarter and fail, because every change was the centre's. What is measured is where the capacity lives, not how often it is exercised. A grip you cannot open is not a hold; it is a trap -- and the test for a trap is not whether it is currently moving.
 
 **'Can a dharma revise itself shut?'** Yes, and the paradox is more apparent than real. A community may use its living revision organ to weld the hatch: entrench a canon, close a gate, criminalise the question. The criterion does not forbid this in advance, and it does not need to. It is a test applied to the dharma as it now stands, not a licence granted in perpetuity to whatever the dharma once was. The community that froze itself by a free act is now a frozen community; the freedom of the welding does not unweld the hatch. Popper saw the same structure in tolerance, and the resolution is the same: the standard judges states, not pedigrees.
 

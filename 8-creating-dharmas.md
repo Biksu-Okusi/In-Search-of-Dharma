@@ -3,7 +3,7 @@ part: 8
 title: "Creating dharmas"
 slug: creating-dharmas
 status: done
-words: 6927
+words: 6928
 reading_level: year-12
 updated: 2026-09-23
 draws_on: ["8.1", "8.2", "8.3", "8.4", "8.5", "3.4", "4.1", "7.4", "7.5", "7.7"]
@@ -62,7 +62,7 @@ Return to the Samin. At the centre of their handmade dharma sat a flat refusal: 
 
 For the first time, the pressure comes with an instrument panel. Earth-system scientists have mapped nine 'planetary boundaries', the limits within which humanity can operate safely, and the most recent health check finds seven already crossed, ocean acidification the latest to fall: the very commons the Samin's conviction was just stretched over. That is an *is*, not an *ought*: the science can tell us where the edges are, but cannot, by itself, generate the obligation to stay inside them.
 
-Planetary problems carry a specific cruelty. Human cooperation runs on a tribal engine: we bond fiercely *in here* in part by defining a *them* out there. But climate change is the rare collective problem that excludes nobody. The tribal engine still fires, of course; climate politics manufactures enemies daily, the rich emitters and the rising ones, the deniers and the doom-mongers. The cruelty is that none of them is the enemy whose defeat would solve anything: there is no tribe outside the problem, because the species *is* the unit that has to cooperate. The hard conclusion follows from the evolutionary logic Athena Aktipis draws out: humanity has never had the shared history that would let cooperation evolve at the level of the whole species. A planetary dharma cannot be waited for; there is no competing planet to select it into being. It must be built consciously, or it will not exist at all.
+Planetary problems carry a specific cruelty. Human cooperation runs on a tribal engine: we bond fiercely *in here* in part by defining a *them* out there. But the climate crisis is the rare collective problem that excludes nobody. The tribal engine still fires, of course; climate politics manufactures enemies daily, the rich emitters and the rising ones, the deniers and the doom-mongers. The cruelty is that none of them is the enemy whose defeat would solve anything: there is no tribe outside the problem, because the species *is* the unit that has to cooperate. The hard conclusion follows from the evolutionary logic Athena Aktipis draws out: humanity has never had the shared history that would let cooperation evolve at the level of the whole species. A planetary dharma cannot be waited for; there is no competing planet to select it into being. It must be built consciously, or it will not exist at all.
 
 What should we build? Not, I am convinced, a single global ethic. That way lies the flattening in civilisational form. The answer the evidence keeps pointing to is a *thin* shared layer over a *thick* plurality: a few commitments narrow enough to be affirmed from within many traditions. The political philosopher John Rawls called this an 'overlapping consensus': agreement reached from within very different deep worldviews, no one surrendering theirs.
 

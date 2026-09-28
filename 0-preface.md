@@ -3,7 +3,7 @@ part: 0
 title: "Preface"
 slug: preface
 status: done
-words: 4556
+words: 4555
 reading_level: year-12
 updated: 2026-09-22
 draws_on: ["0.1", "0.2", "0.3", "0.4", "0.5", "0.6", "0.7"]
@@ -66,7 +66,7 @@ But the lasting thing the retreats gave me was people. In that course I first me
 
 We made around fifty of them. They were never polished and were never going to find a wide audience, but they were the laboratory where much of what is in this book was first said out loud, argued over, and knocked into better shape. The question this book started from, whether dharma can be defined at all, grew up inside those meetings.
 
-Around that small core sits a wider circle I owe a good deal to. What I had wandered into was a scattering of people in several countries, all working the same seam without any one centre. The publishing end of it, for me, is the [Tuwhiri Project](https://tuwhiri.org), a small New Zealand house run by Ramsey Margolis and built for books that take ethics seriously and have no further use for religion. Around it are others coming at the same thing from their own directions: the [Secular Buddhist Network](https://secularbuddhistnetwork.org/), and Mike Slott, whose *Mindful Solidarity* ties contemplative practice back to politics; Winton Higgins, who wrote the workbook to *After Buddhism*; and a scatter of newsletters and reading groups, all of them trying to keep the wisdom traditions alive without asking anyone to believe six impossible things before breakfast.
+Around that small core sits a wider circle I owe a good deal to. What I had wandered into was a scattering of people in several countries, all working the same seam without any one centre. The publishing end of it, for me, is [The Tuwhiri Project](https://tuwhiri.org), a small New Zealand house run by Ramsey Margolis and built for books that take ethics seriously and have no further use for religion. Around it are others coming at the same thing from their own directions: [Secular Buddhist Network](https://secularbuddhistnetwork.org/), and Mike Slott, whose *Mindful Solidarity* ties contemplative practice back to politics; Winton Higgins, who wrote the workbook to *After Buddhism*; and a scatter of newsletters and reading groups, all of them trying to keep the wisdom traditions alive without asking anyone to believe six impossible things before breakfast.
 
 I will not dress up any of these people or organisations as the source of my argument, which is set out plainly above and is mine to answer for; what they gave me was readers, counter-arguments, and the sense that the work was not merely eccentric. I am an unsociable person by temperament, and I have not always been an easy member of any of these circles, but I did not arrive at these ideas alone.
 
@@ -144,7 +144,7 @@ This refusal is not woolly relativism. Once the looking is done I do judge, by t
 
 So: that is where all this comes from, who helped make it, and how it was built. The throat-clearing is over.
 
-***Biksu Okusi**, August 2026, Bali, Indonesia*
+**Biksu Okusi**, *August 2026, Bali, Indonesia*
 
 <!--audio stop-->
 
@@ -165,7 +165,7 @@ Research notes used in this book are published on [GitHub](https://github.com/Bi
 - [0.1 Life & Formation](0-preface/0.1-life-and-formation.md) -- Perth origins, the migration to Indonesia and citizenship, the temperament, the name on the cover, and the personal history sketched here.
 - [0.2 Politics & Anarchism](0-preface/0.2-politics-and-anarchism.md) -- the Communist Party and anarchist years, and the 'anarchism as plain natural history' thread.
 - [0.3 The Sangha & the Retreat](0-preface/0.3-sangha-and-retreat.md) -- Bodhi College, the 2018 retreats, Stephen Batchelor, and the 'a secular dharma?' conversations with Rupert Bozeat and Elfie Klinger.
-- [0.4 Network & Publishing](0-preface/0.4-network-and-publishing.md) -- the secular-dharma publishing network: the Tuwhiri Project, the Secular Buddhist Network and Mike Slott's *Mindful Solidarity*, Winton Higgins, and the lapsed `seculardharma.net`, with Ramsey Margolis as one node.
+- [0.4 Network & Publishing](0-preface/0.4-network-and-publishing.md) -- the secular-dharma publishing network: Tuwhiri, Secular Buddhist Network and Mike Slott's *Mindful Solidarity*, Winton Higgins, and the lapsed `seculardharma.net`, with Ramsey Margolis as one node.
 - [0.5 The Thesis](0-preface/0.5-thesis-evolved-dharma.md) -- dharma as evolved cultural technology, and the convergence of Batchelor and Graeber.
 - [0.6 The Knowledgebase as Method](0-preface/0.6-knowledgebase-as-method.md) -- the forty-year collection, the RAG knowledgebase, and the two-stage method.
 - [0.7 Influences & Acknowledgements](0-preface/0.7-influences-and-acknowledgments.md) -- the real network behind the book and the knowledgebase, set in proportion: Irfan Kortschak's source-texts, Paul Stange and Java's Sumarah movement, the Bodhi College teachers and the wider cohort, and the Tuwhiri / Secular Buddhist Network cluster with Ramsey Margolis as one node.
