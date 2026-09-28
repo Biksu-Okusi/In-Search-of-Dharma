@@ -85,7 +85,7 @@ declare -r PDFCHECK="$SCRIPT_DIR"/lib/pdfcheck.py
 
 # Script-scope state, declared before any function (BCS0105).
 declare -i VERBOSE=1 KEEP_TEMP=0
-declare -- TMP_DIR='' OUTPUT_PDF=$DEFAULT_OUTPUT_PDF LIB=''
+declare -- TMP_DIR='' STAGED='' OUTPUT_PDF=$DEFAULT_OUTPUT_PDF LIB=''
 
 # Messaging (BCS0703). error() is unconditional; die() takes the exit code
 # first, then an optional message.
@@ -94,6 +94,14 @@ info()  { ((VERBOSE)) || return 0; _msg '◉' "$@"; }
 warn()  { _msg '▲' "$@"; }
 error() { _msg '✗' "$@"; }
 die()   { (($# < 2)) || error "${@:2}"; exit "${1:-0}"; }
+
+# What the build leaves behind it, removed however the script ends: the file
+# staged beside the destination, if it never reached its place, and the build
+# directory, unless it was asked for.
+cleanup() {
+  [[ -z $STAGED ]] || rm -f -- "$STAGED"
+  ((KEEP_TEMP)) || [[ -z $TMP_DIR ]] || rm -rf -- "$TMP_DIR"
+}
 
 # Sourced at file scope, not from a function: the libraries declare their
 # globals with plain `declare`, which inside a function would make them local.
@@ -392,7 +400,7 @@ main() {
 
   # Install the cleanup trap before creating the temp dir, so a signal landing
   # between the two cannot leak it.
-  trap '((KEEP_TEMP)) || rm -rf -- "$TMP_DIR"' EXIT
+  trap cleanup EXIT
   trap 'exit 130' SIGINT
   trap 'exit 143' SIGTERM
   TMP_DIR=$(mktemp -d -t mkprint.XXXXXX) || die 5 'failed to create temp dir'
@@ -565,12 +573,18 @@ main() {
     die 1 'preflight failed; no file was written for upload'
   fi
   # Copied beside its destination and renamed into place, so the destination
-  # holds either the file that was there or the whole of the new one.
-  local -r staged="$OUTPUT_PDF".part
-  if ! cp -- "$finished" "$staged" || ! mv -f -- "$staged" "$OUTPUT_PDF"; then
-    rm -f -- "$staged"
-    die 5 "failed to write ${OUTPUT_PDF@Q}"
-  fi
+  # holds either the file that was there or the whole of the new one. The name
+  # it is staged under is mktemp's: one that could be guessed could be taken
+  # first, by a link that the copy would then write through. mktemp makes its
+  # file private, so it is given the permissions any new file would have.
+  local -- mode
+  STAGED=$(mktemp -- "$OUTPUT_PDF".XXXXXX) \
+    || die 5 "failed to create a staging file beside ${OUTPUT_PDF@Q}"
+  printf -v mode '%04o' $(( 0666 & ~$(umask) ))
+  cp -- "$finished" "$STAGED" || die 5 "failed to copy the interior to ${STAGED@Q}"
+  chmod -- "$mode" "$STAGED" || die 5 "failed to set the permissions of ${STAGED@Q}"
+  mv -f -- "$STAGED" "$OUTPUT_PDF" || die 5 "failed to write ${OUTPUT_PDF@Q}"
+  STAGED=''
 
   info "done: $OUTPUT_PDF ($(du -h --apparent-size -- "$OUTPUT_PDF" | cut -f1))"
   ((KEEP_TEMP == 0)) || info "build directory kept: $TMP_DIR"

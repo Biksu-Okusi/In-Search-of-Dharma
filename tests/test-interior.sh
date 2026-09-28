@@ -87,11 +87,30 @@ main() {
   echo '== the interior as built =='
   TMP=$(mktemp -d) || die 5 'failed to create temp dir'
   PDF=$TMP/interior.pdf
-  local -- log=$TMP/build.log
+  local -- log=$TMP/build.log bystander=$TMP/bystander.txt fresh=$TMP/fresh strays
+  # The build stages its file beside the destination before renaming it into
+  # place. A link standing at a name the build could be guessed to use must
+  # not be written through: it points here at a file that is none of its
+  # business.
+  printf 'untouched\n' >"$bystander" || die 5 "failed to write ${bystander@Q}"
+  ln -s -- "$bystander" "$PDF".part || die 5 "failed to plant a link at ${PDF@Q}.part"
+  : >"$fresh" || die 5 "failed to write ${fresh@Q}"
   "$ROOT"/mk-print.sh --quiet --output "$PDF" &>"$log" \
     || die 1 "the build failed: $(tail -n 3 -- "$log" | tr '\n' ' ')"
   [[ -s $PDF ]] && ok 'mk-print.sh --output writes the named file' \
-    || die 1 'the build wrote no file'
+    || die 1 "the build did not write ${PDF@Q}"
+  [[ $(<"$bystander") == untouched ]] \
+    && ok 'a link planted beside the destination is not written through' \
+    || bad 'the build wrote through a link planted beside its destination'
+  [[ ! -L $PDF ]] && ok 'the interior is a file of its own, not a link' \
+    || bad 'the interior is a link to another file'
+  strays=$(find -- "$TMP" -maxdepth 1 -name 'interior.pdf.*' ! -name 'interior.pdf.part' -print) \
+    || die 1 "could not search ${TMP@Q}"
+  [[ -z $strays ]] && ok 'no staging file is left beside the interior' \
+    || bad "a staging file was left behind: ${strays@Q}"
+  [[ $(stat -c %a -- "$PDF") == "$(stat -c %a -- "$fresh")" ]] \
+    && ok 'the interior has the permissions of any newly made file' \
+    || bad "the interior's permissions are $(stat -c %a -- "$PDF"), a new file's $(stat -c %a -- "$fresh")"
 
   # The front matter, in order: the endorsements on i, the half-title on iii,
   # the title on v with the imprint on its back, the contents on vii. None of
