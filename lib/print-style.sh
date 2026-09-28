@@ -159,6 +159,9 @@ print_page_css() {
    title sets it, which is the opener. */
 @page prelim{@bottom-left{content:counter(page,lower-roman);$folio}}
 @page prelim:right{@top-right{content:string(chaptitle,first-except)}}
+/* The Preface's versos name the book outright, not through the booktitle
+   string, which stays unset until Part 1 (see section.chapter > h1 below). */
+@page prelim:left{@top-left{content:"in search of dharma"}}
 /* Which front-matter pages go without a folio. Ramsey will name the pages that
    show a roman numeral; until he does, the half-title, the title page and the
    imprint show none, and the numbering appears from the contents on. They are
@@ -166,12 +169,15 @@ print_page_css() {
    (section.front ... {page:bare}); nothing else needs touching. */
 @page bare{@top-left{content:none}@top-right{content:none}
   @bottom-left{content:none}@bottom-right{content:none}}
-/* A blank in the front matter or the prelims carries nothing, folio included.
-   It has to be said again here, after the rules above: they match a blank
-   front page as well as @page:blank does, and the later rule wins. */
+/* A blank inside the front matter carries nothing, folio included. It has to
+   be said again here, after the rules above: they match a blank front page as
+   well as @page:blank does, and the later rule wins. This reaches only a blank
+   between two parts of section.front, which takes that section's page name.
+   The blank before the Preface and the blank before Part 1 stand between
+   sections, and the renderer (WeasyPrint 69) gives such a page no name at all,
+   so no named rule can reach them; they are kept empty by leaving the
+   booktitle string unset until Part 1. */
 @page front:blank{@top-left{content:none}@top-right{content:none}
-  @bottom-left{content:none}@bottom-right{content:none}}
-@page prelim:blank{@top-left{content:none}@top-right{content:none}
   @bottom-left{content:none}@bottom-right{content:none}}
 
 /* Every page runs to its full 31 lines (Ramsey, 2026-09-28), so a paragraph may
@@ -304,13 +310,15 @@ section.chapter h1::after{content:"";position:absolute;
   background:url(images/dharma-eye.svg) no-repeat center/contain}
 
 /* The verso running head: the title in lowercase, as the title pages set it
-   (TITLE_TYPESET in mk-print.sh). It is set at each chapter's title rather
-   than once on the body, so that it is still unset on the blank verso between
-   the contents and the Preface. That page is a blank verso like any other to
-   the renderer -- a page made by a forced recto break has no page name, so
-   front:blank cannot reach it -- and a blank verso now keeps its running head.
-   Both strings are named here, since this rule replaces h1's own string-set. */
+   (TITLE_TYPESET in mk-print.sh). It is set at each chapter's title from Part
+   1 on, rather than once on the body, so that it is still unset through the
+   preliminaries. A blank verso keeps its running head, and the two blank
+   versos of the preliminaries, before the Preface and before Part 1, are blank
+   versos like any other to the renderer; with the string unset they carry
+   nothing. Both strings are named in the first rule, since it replaces h1's
+   own string-set. The Preface sets its title alone. */
 section.chapter > h1{string-set:chaptitle content(),booktitle "in search of dharma"}
+section.chapter.prelim > h1{string-set:chaptitle content()}
 section.front{page:front}
 section.front .endorsements,section.front .halftitle,section.front .titlepage,
 section.front .imprint{page:bare}

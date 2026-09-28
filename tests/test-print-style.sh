@@ -290,15 +290,15 @@ expect 'Preface verso folio' "$(at_y $((preface_pg + 1)) "${TARGET[folio]}")" 'v
 expect 'Preface verso head' "$(at_y $((preface_pg + 1)) "${TARGET[head]}")" 'in search of dharma'
 expect 'Preface recto head' "$(at_y $((preface_pg + 2)) "${TARGET[head]}")" 'Preface'
 expect 'Part 1 opener folio' "$(at_y "$part1_pg" "${TARGET[folio]}")" '1'
-# The blank verso between the contents and the Preface belongs to the front
-# matter and carries nothing; the one before Part 1 is a blank verso like any
-# between chapters, with its running head and no folio.
+# The preliminaries' blank versos carry nothing: neither the one between the
+# contents and the Preface nor the one before Part 1. The running head on a
+# blank verso belongs to the text, from Part 1 on.
 expect 'blank before the Preface: head' "$(at_y $((preface_pg - 1)) "${TARGET[head]}")" ''
 expect 'blank before the Preface: folio' "$(at_y $((preface_pg - 1)) "${TARGET[folio]}")" ''
 # pdftotext ends each page with a form feed, which is not text.
 if [[ -z $(pdftotext -f $((part1_pg - 1)) -l $((part1_pg - 1)) "$TMP"/roman.pdf - | tr -d '\f' \
            | grep -v -x -e 'in search of dharma' -e '' || true) ]]; then
-  expect 'blank before Part 1: head' "$(at_y $((part1_pg - 1)) "${TARGET[head]}")" 'in search of dharma'
+  expect 'blank before Part 1: head' "$(at_y $((part1_pg - 1)) "${TARGET[head]}")" ''
   expect 'blank before Part 1: folio' "$(at_y $((part1_pg - 1)) "${TARGET[folio]}")" ''
 else
   printf '  ✗ the fixture left no blank verso before Part 1: resize the Preface\n'; FAILED+=1
