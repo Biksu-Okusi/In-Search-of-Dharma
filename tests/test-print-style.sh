@@ -61,7 +61,8 @@ depth_of() {
   "$CHECK" lines --top "$PRINT_TOP_MM" --lead "$PRINT_LEAD_PT" -- "$TMP/$1".pdf 2>/dev/null
 }
 
-b() { page_lines fixture "$1"; }
+# fixture_lines N : the lines of page N of the first fixture.
+fixture_lines() { page_lines fixture "$1"; }
 
 assert_near() {
   local -- name=$1 got=$2 want=${TARGET[$1]}
@@ -154,7 +155,7 @@ main() {
 
   { font_faces_css pdf && print_page_css; } >"$TMP"/print.css || stop 'could not write the stylesheet'
 
-  cat > "$TMP"/fixture.html <<'HTML'
+  cat > "$TMP"/fixture.html <<'HTML' || stop 'could not write fixture.html'
 <!doctype html><html lang="en"><head><meta charset="utf-8">
 <link rel="stylesheet" href="print.css"></head><body>
 <section class="chapter"><h1>Preface</h1>
@@ -196,15 +197,15 @@ HTML
   fi
 
   echo '== print geometry =='
-  assert_near title  "$(b 1 | jq -r '.lines[] | select(.text=="Preface") | .y_mm')"
+  assert_near title  "$(fixture_lines 1 | jq -r '.lines[] | select(.text=="Preface") | .y_mm')"
   # The opening line is found by its small-caps lead-in, which lib/dropcap.py
   # emits as <span class="dc">M</span><span class="sc">ost books</span>. The
   # floated drop cap sits on its own baseline, so the line to measure is the one
   # carrying the lead-in text, not the cap.
-  assert_near opener "$(b 1 | jq -r '[.lines[] | select(.text|startswith("ost books"))][0].y_mm')"
-  assert_near head   "$(b 2 | jq -r '.lines[0].y_mm')"
-  assert_near first  "$(b 2 | jq -r '.lines[1].y_mm')"
-  assert_near folio  "$(b 2 | jq -r '.lines[-1].y_mm')"
+  assert_near opener "$(fixture_lines 1 | jq -r '[.lines[] | select(.text|startswith("ost books"))][0].y_mm')"
+  assert_near head   "$(fixture_lines 2 | jq -r '.lines[0].y_mm')"
+  assert_near first  "$(fixture_lines 2 | jq -r '.lines[1].y_mm')"
+  assert_near folio  "$(fixture_lines 2 | jq -r '.lines[-1].y_mm')"
 
   echo '== folio =='
   local -- rule folio_x side
@@ -220,7 +221,7 @@ HTML
     assert_near rule_top "$(jq -r .y0_mm <<<"$rule")"
     # The numeral stands just after the rule: 0.65mm of padding, and What is
     # this? shows 0.8mm of white between rule and figure.
-    folio_x=$(b "$pg" | jq -r '.lines[-1].x0_mm') || stop "could not find the folio on page $pg"
+    folio_x=$(fixture_lines "$pg" | jq -r '.lines[-1].x0_mm') || stop "could not find the folio on page $pg"
     awk -v f="$folio_x" -v r="$(jq -r .x1_mm <<<"$rule")" 'BEGIN{d=f-r; exit !(d>0.5 && d<1.0)}' \
       && printf '  ✓ %s: the numeral stands just after the rule (%s)\n' "$side" "$folio_x" \
       || { printf '  ✗ %s: the numeral at %s is not just after the rule %s\n' "$side" "$folio_x" "$rule"; FAILED+=1; }
@@ -238,7 +239,7 @@ HTML
   # descent below the baseline and so further below for 32pt type than for 10pt.
   # The fixture's lines hold no letter with a descender and no comma, so the
   # foot of a line's ink is its baseline.
-  cat > "$TMP"/cap.html <<'HTML'
+  cat > "$TMP"/cap.html <<'HTML' || stop 'could not write cap.html'
 <!doctype html><html lang="en"><head><meta charset="utf-8">
 <link rel="stylesheet" href="print.css"></head><body>
 <section class="chapter"><h1>Coda</h1>
@@ -290,7 +291,7 @@ HTML
   three+='words enough to run past two lines of the measure and into a third.</p>'
   local -- run=''
   for ((i_ = 0; i_ < 45; i_+=1)); do run+=$three; done
-  cat > "$TMP"/full.html <<HTML
+  cat > "$TMP"/full.html <<HTML || stop 'could not write full.html'
 <!doctype html><html lang="en"><head><meta charset="utf-8">
 <link rel="stylesheet" href="print.css"></head><body>
 <section class="chapter"><h1>One</h1>$run</section></body></html>
@@ -310,7 +311,7 @@ HTML
   entry+='long enough to run past two lines of the measure and into a third.</li>'
   run=''
   for ((i_ = 0; i_ < 40; i_+=1)); do run+=$entry; done
-  cat > "$TMP"/fullsrc.html <<HTML
+  cat > "$TMP"/fullsrc.html <<HTML || stop 'could not write fullsrc.html'
 <!doctype html><html lang="en"><head><meta charset="utf-8">
 <link rel="stylesheet" href="print.css"></head><body>
 <section class="chapter"><h1>One</h1><p>The text.</p>
@@ -330,7 +331,7 @@ HTML
   # (2026-09-28): a blank verso carries the running head and the page number,
   # set as on any other page. mk-print.sh ends Part 1 with the element that
   # carries the number onto the blank pages after it.
-  cat > "$TMP"/blank.html <<'HTML'
+  cat > "$TMP"/blank.html <<'HTML' || stop 'could not write blank.html'
 <!doctype html><html lang="en"><head><meta charset="utf-8">
 <link rel="stylesheet" href="print.css"></head><body>
 <section class="chapter first"><h1>One</h1><p>A chapter one page long.</p>
@@ -363,7 +364,7 @@ HTML
   # text goes from 12pt to 11pt, one below it from 10pt to 9pt, and a label in
   # the Sources from 10pt to 9pt. The chapter title keeps its 20pt. Read on
   # pages that carry no running head, which is Work Sans SemiBold too.
-  cat > "$TMP"/heads.html <<'HTML'
+  cat > "$TMP"/heads.html <<'HTML' || stop 'could not write heads.html'
 <!doctype html><html lang="en"><head><meta charset="utf-8">
 <link rel="stylesheet" href="print.css"></head><body>
 <section class="chapter"><h1>One</h1><p>Text.</p><h2>A subhead</h2><p>Text.</p>
@@ -384,7 +385,7 @@ HTML
   # Ramsey (2026-09-28, the Coda): every line of a bullet stands 10mm in. A
   # list with blank lines between its entries reaches the stylesheet with each
   # entry wrapped in a paragraph, which must not add its own first-line indent.
-  cat > "$TMP"/list.html <<'HTML'
+  cat > "$TMP"/list.html <<'HTML' || stop 'could not write list.html'
 <!doctype html><html lang="en"><head><meta charset="utf-8">
 <link rel="stylesheet" href="print.css"></head><body>
 <section class="chapter"><h1>One</h1><p>Text.</p>
@@ -422,7 +423,7 @@ HTML
   # Fifteen paragraphs end the Preface on a recto, so a blank verso stands
   # before Part 1.
   for ((i_ = 0; i_ < 15; i_+=1)); do preface_body+=$para; done
-  cat > "$TMP"/roman.html <<HTML
+  cat > "$TMP"/roman.html <<HTML || stop 'could not write roman.html'
 <!doctype html><html lang="en"><head><meta charset="utf-8">
 <link rel="stylesheet" href="print.css"></head><body>
 <section class="front">
@@ -491,7 +492,7 @@ HTML
   # measure and margins, from the widest body line on the verso: the first line
   # may open an indented paragraph, the last may be a short one.
   local -- measure x0 x1
-  measure=$(b 2 | jq -r '.lines[1:-1] | max_by(.x1_mm - .x0_mm) | [.x0_mm, .x1_mm] | @tsv') \
+  measure=$(fixture_lines 2 | jq -r '.lines[1:-1] | max_by(.x1_mm - .x0_mm) | [.x0_mm, .x1_mm] | @tsv') \
     || stop 'could not measure the text block'
   read -r x0 x1 <<<"$measure"
   awk -v a="$x0" -v b="$x1" 'BEGIN{w=b-a; exit !(w>106.5 && w<107.5)}' \

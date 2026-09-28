@@ -193,7 +193,8 @@ main() {
       || bad "the signature stands at $(jq -r .at.x0_mm <<<"$signed")mm"
     # Measured from the words in italic that follow the name: the bold of the
     # name is another face, whose box ends a little higher.
-    above=$(jq -r '.rest.y_mm - .above.y_mm | . * 100 | round / 100' <<<"$signed")
+    above=$(jq -r '.rest.y_mm - .above.y_mm | . * 100 | round / 100' <<<"$signed") \
+      || die 1 'could not measure the space above the signature'
     awk -v d="$above" 'BEGIN{exit !(d > 10.9 && d < 11.7)}' \
       && ok "a line space stands above the signature (${above}mm from the line before)" \
       || bad "the signature stands ${above}mm under the line before it, want two linefeeds"

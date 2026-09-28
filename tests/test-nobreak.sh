@@ -20,8 +20,8 @@ declare -r ROOT=${TEST_DIR%/*}
 declare -r NB=$ROOT/lib/nobreak.py
 declare -r CHECK=$ROOT/lib/pdfcheck.py
 declare -r OPEN='<span class="nb">' SHUT='</span>'
-declare -i FAILED=0
-declare -- TMP='' TOOL='' FOUND=''
+declare -i FAILED=0 K
+declare -- TMP='' TOOL='' FOUND='' PARAS='' WORDS=''
 trap '[[ -z $TMP ]] || rm -rf -- "$TMP"' EXIT
 
 pass() { printf '  ✓ %s\n' "$1"; }
@@ -45,38 +45,38 @@ done
 echo '== no break: filter =='
 gives 'a word that has a hyphen is kept whole, and the last word too' \
   '<p>a half-conscious creed of a kind</p>' \
-  "<p>a ${OPEN}half-conscious${SHUT} creed of a ${OPEN}kind${SHUT}</p>"
+  "<p>a ${OPEN}half-conscious$SHUT creed of a ${OPEN}kind$SHUT</p>"
 gives 'the last word keeps the full stop that follows it outside' \
   '<p>each half deaf to the other.</p>' \
-  "<p>each half deaf to the ${OPEN}other${SHUT}.</p>"
+  "<p>each half deaf to the ${OPEN}other$SHUT.</p>"
 gives 'the last word is found inside the emphasis that closes a paragraph' \
   '<p>it was never <em>the dharma</em>.</p>' \
-  "<p>it was never <em>the ${OPEN}dharma${SHUT}</em>.</p>"
+  "<p>it was never <em>the ${OPEN}dharma$SHUT</em>.</p>"
 gives 'a named word is kept whole' \
   '<p>So the Abrahamic covenant comes last, as it must.</p>' \
-  "<p>So the ${OPEN}Abrahamic${SHUT} covenant comes last, as it ${OPEN}must${SHUT}.</p>"
+  "<p>So the ${OPEN}Abrahamic$SHUT covenant comes last, as it ${OPEN}must$SHUT.</p>"
 gives 'a capital alone does not protect a word' \
   '<p>In New Zealand and in Indonesia both.</p>' \
-  "<p>In New Zealand and in Indonesia ${OPEN}both${SHUT}.</p>"
+  "<p>In New Zealand and in Indonesia ${OPEN}both$SHUT.</p>"
 gives 'a list entry ends as a paragraph does' \
   '<li>Kane, History of Dharmashastra.</li>' \
-  "<li>Kane, History of ${OPEN}Dharmashastra${SHUT}.</li>"
+  "<li>Kane, History of ${OPEN}Dharmashastra$SHUT.</li>"
 gives 'a tag and its attributes are left alone' \
   '<p><a href="https://example.org/a-b">the self-same place</a></p>' \
-  "<p><a href=\"https://example.org/a-b\">the ${OPEN}self-same${SHUT} ${OPEN}place${SHUT}</a></p>"
+  "<p><a href=\"https://example.org/a-b\">the ${OPEN}self-same$SHUT ${OPEN}place$SHUT</a></p>"
 gives 'a heading is left alone' \
   '<h2 id="x">A self-made thing</h2>' \
   '<h2 id="x">A self-made thing</h2>'
 gives 'a dash between words is not a hyphen in a word' \
   '<p>the rule – one of three – holds</p>' \
-  "<p>the rule – one of three – ${OPEN}holds${SHUT}</p>"
+  "<p>the rule – one of three – ${OPEN}holds$SHUT</p>"
 gives 'a paragraph that wraps over lines is read as one' \
   '<p>a creed that is
 half-conscious and
 old</p>' \
   "<p>a creed that is
-${OPEN}half-conscious${SHUT} and
-${OPEN}old${SHUT}</p>"
+${OPEN}half-conscious$SHUT and
+${OPEN}old$SHUT</p>"
 
 echo '== no break: as printed =='
 TMP=$(mktemp -d) || stop 'could not make a temporary directory'
@@ -89,8 +89,6 @@ print_geom_load
 { font_faces_css pdf && print_page_css; } >"$TMP"/print.css || stop 'could not write the stylesheet'
 # A chapter of paragraphs built to tempt the renderer: long compounds and
 # long last words, set in the book's measure, where unprotected they divide.
-declare -- PARAS='' WORDS
-declare -i K
 for ((K = 0; K < 40; K+=1)); do
   printf -v WORDS '%*s' "$K" ''
   PARAS+="<p>${WORDS// /a }A paragraph set to show that a creed held half-consciously, "
