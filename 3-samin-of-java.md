@@ -3,7 +3,7 @@ part: 3
 title: "The dharmas of the Samin of Java"
 slug: samin-of-java
 status: done
-words: 5636
+words: 5641
 reading_level: year-12
 updated: 2026-09-23
 draws_on: ["4.1", "1.3", "7.3", "8.1"]
@@ -42,11 +42,11 @@ So I went looking for what connected them, and what I found was a dharma.
 
 The story so far has been very large and very abstract: civilisations, millennia, the Axial Age. I wanted the opposite. I wanted a dharma I could almost touch: small enough to see all the way around, recent enough that we know the names of the people who built it, and humble enough that no one had spent two thousand years polishing it into something grand and untouchable.
 
-Not a world religion with a billion followers, in other words. Something hand-made.
+Not a world religion with a billion followers, in other words. Something handmade.
 
 The Samin of Java are exactly that. Their dharma was assembled, more or less in front of the historical record, by a single farmer and his neighbours, beginning around 1890. We know roughly when it started, what set it off, what it asked of people, and how it spread. We can watch it being made. And because we can watch it being made, it tells us something the ancient traditions cannot, not because it is wiser than they are, but because the machinery has not yet been hidden behind a curtain of scripture and the fog of time.
 
-So this part is a close-up. One dharma, in a few hundred square kilometres of teak forest, held up to the light.
+So this part is a close up. One dharma, in a few hundred square kilometres of teak forest, held up to the light.
 
 ## An illiterate farmer in the teak forests
 
@@ -104,7 +104,7 @@ Which brings us to the language.
 
 To feel how radical the *wong sikep* really were, you have to see what they were rebelling against, and it was not only the Dutch. It was the entire intricate hierarchy of Javanese culture itself.
 
-The classic map of that culture comes from anthropologist Clifford Geertz, who in 1960 divided Javanese society into three streams: the *abangan*, the syncretic peasant majority who blended Islam with older mystical and animist traditions; the *santri*, the devout, orthodox Muslims; and the *priyayi*, the refined aristocratic-bureaucratic class tied to the courts. Scholars have argued about this scheme ever since (it is an ideal-type, not a perfect description), but it gives us the lay of the land.
+The classic map of that culture comes from anthropologist Clifford Geertz, who in 1960 divided Javanese society into three streams: the *abangan*, the syncretic peasant majority who blended Islam with older mystical and animist traditions; the *santri*, the devout, orthodox Muslims; and the *priyayi*, the refined aristocratic-bureaucratic class tied to the courts. Scholars have argued about this scheme ever since (it is an ideal type, not a perfect description), but it gives us the lay of the land.
 
 And running through all of it was an exquisitely graded etiquette, encoded in the Javanese language itself. Javanese has levels. There is *ngoko*, blunt and low, the speech you use with intimates and inferiors; there is *krama*, high and refined, the speech you use to show respect to your superiors; and there is a middle register between them. In ordinary life, you perform your place in the social order every time you open your mouth. You address the person above you in deferential *krama*, and you receive *ngoko* in return, and the whole hierarchy is rehearsed, sentence by sentence, all day long.
 
@@ -114,7 +114,7 @@ They went further. Mainstream Javanese culture prized the ideal of *halus* (the 
 
 They minimised the ceremonial life, the elaborate ritual meals and observances, that gave mainstream Javanese religion its texture. And, following old Samin Sepuh's example, they refused the whole aristocratic-bureaucratic order: no tax, no forced labour, no marriage registration, no census.
 
-But this creed was Java's own. The Sedulur Sikep were agrarian, mystical, and rooted in the very same peasant world they were reforming; their suspicion of orthodox Islam was itself steeped in heterodox Javanese mysticism. They took Java's own materials and used them against Java's own hierarchy. The best name for that is not rebellion from without but *heresy from within*: an internal reform that knows the tradition intimately, because it is made of it.
+But this creed was Java's own. The Sedulur Sikep were agrarian, mystical and rooted in the very same peasant world they were reforming; their suspicion of orthodox Islam was itself steeped in heterodox Javanese mysticism. They took Java's own materials and used them against Java's own hierarchy. The best name for that is not rebellion from without but *heresy from within*: an internal reform that knows the tradition intimately, because it is made of it.
 
 A dharma, in other words, can be grown at home, out of the same soil, in deliberate argument with the culture that surrounds it.
 
@@ -134,7 +134,7 @@ There is an older current here too, one we have already met. Christopher Boehm's
 
 I have been building a case, and before I finish it, three warnings are in order, because a dharma is exactly the kind of thing it is easy to romanticise, and I have been as charmed by this one as anyone.
 
-The first is about the evidence. Almost everything we 'know' about Samin doctrine comes to us second-hand, and often third-hand, from outsiders: Dutch colonial officials and, later, ethnographers. The reason is the very thing that makes the movement so striking: the Samin themselves wrote almost nothing down. The historians Harry Benda and Lance Castles, in their foundational scholarly study, make this their central caution and note that the accounts we do have were frequently written by hostile or baffled observers. We are watching this dharma through a series of other people's windows, some of them grimy. This chapter adds a window of its own, and the reader should know what kind: a reading of the archive and of the scholars who did the fieldwork, not a report of conversations of my own.
+The first is about the evidence. Almost everything we 'know' about Samin doctrine comes to us second hand, and often third hand, from outsiders: Dutch colonial officials and, later, ethnographers. The reason is the very thing that makes the movement so striking: the Samin themselves wrote almost nothing down. The historians Harry Benda and Lance Castles, in their foundational scholarly study, make this their central caution and note that the accounts we do have were frequently written by hostile or baffled observers. We are watching this dharma through a series of other people's windows, some of them grimy. This chapter adds a window of its own, and the reader should know what kind: a reading of the archive and of the scholars who did the fieldwork, not a report of conversations of my own.
 
 There is one window that is less grimy than the rest, and what can be seen through it should adjust the whole picture. The historian Takashi Shiraishi dug out of the colonial archive the minutes of the interrogation of Dangir, a twenty-five-year-old follower arrested in 1928, who answered a native official's questions about his faith at length and in his own idiom: how he was initiated with five aphorisms about walking; why the ritual meal that sealed it could be paid for only with money from his own farm labour, never from trade, 'because traders usually get profit by cheating'; what an honest man may and may not do. It is the nearest thing we have to a Samin speaking, and even it reaches us, as Shiraishi says, doubly alienated, filtered through the official who wrote it down. But a voice it is, and it says something startling: Dangir denied being a 'Samin' at all. The word meant nothing to him; it was the government's label. He called himself *wong sikep*, a man who embraces, living the religion of Adam he had learned from a neighbouring teacher he could name.
 
@@ -154,7 +154,7 @@ The strongest proof that the *wong sikep* built a real dharma, and not a one-gen
 
 The century in between was not quiet, and it shows what the refusal was really aimed at. When the Dutch left, the refusal stayed, since the thing being refused had never really been the Dutch; it was the state's claim to name and number people. Anthropologist Amrih Widodo, who has followed the community for decades, records what that meant under Suharto's New Order: pressure to fill in the religion column on the identity card, since the religion of Adam was not on the official list; mass wedding ceremonies arranged to pull unregistered Sikep marriages into the books of the religious bureaucracy; and, for those who declined, the threat of transmigration off Java altogether. The flags had changed and the census came anyway, and the Sedulur Sikep answered the independent republic much as they had answered the empire.
 
-Travel to the Kendeng mountains today, and you will find the Sedulur Sikep still there, still honest, still stubborn, and now fighting a new enemy. The Kendeng is karst country: soft, porous limestone that soaks up rain and feeds the springs and rivers the farmers below depend on. Since the 2000s, they have been at the forefront of non-violent resistance across the districts of Rembang, Pati, and Grobogan against limestone quarrying and a large cement plant operated by the company PT Semen Indonesia. Their argument is the very same one their great-grandparents made to the Dutch foresters: that land, water, and forest are common property, and that protecting the karst, the rock that holds the region's water, is a sacred duty, not a thing to be blasted away for profit.
+Travel to the Kendeng mountains today, and you will find the Sedulur Sikep still there, still honest, still stubborn, and now fighting a new enemy. The Kendeng is karst country: soft, porous limestone that soaks up rain and feeds the springs and rivers the farmers below depend on. Since the 2000s, they have been at the forefront of non-violent resistance across the districts of Rembang, Pati, and Grobogan against limestone quarrying and a large cement plant operated by the company PT Semen Indonesia. Their argument is the very same one their great-grandparents made to the Dutch foresters: that land, water and forest are common property, and that protecting the karst, the rock that holds the region's water, is a sacred duty, not a thing to be blasted away for profit.
 
 And in 2016, and again in 2017, they made that argument in the most physical way imaginable: nine women at the gates of the Presidential Palace, with wet cement poured around their feet. They are remembered as the *Kartini Kendeng*. The image is almost unbearably apt: the *wong cilik*, the 'little people', literally encased in the very substance the industry wanted to make from their mountains, immobilised in the capital to dramatise the immobilising of their land. They held there in the heat and the noise. Patmi did not long survive the second of those protests: the night after the cement came off her feet, her heart gave out.
 
@@ -174,7 +174,7 @@ That is the thing the great traditions can no longer easily show us, and the *wo
 
 If even one small, poor, unlettered community in the forests of Java could build a whole ethical world without scripture, clergy, or institutional machinery, and defend it for a hundred years, then dharmas are not relics we inherit. They are things people make. Which means that, eventually, they are things *we* could make, too.
 
-But the *wong sikep* are only one. Having seen a dharma assembled this clearly, in this much close-up, you start to notice them everywhere, and they are not all alike: a single South African word that contains an entire theory of the self; a Roman emperor's private notebook; a song that maps a thousand kilometres of desert; a promise made in another desert, half a world away, that founded three religions. The teak forest was one country. Next, we cross into the others.
+But the *wong sikep* are only one. Having seen a dharma assembled this clearly, in this much close up, you start to notice them everywhere, and they are not all alike: a single South African word that contains an entire theory of the self; a Roman emperor's private notebook; a song that maps a thousand kilometres of desert; a promise made in another desert, half a world away, that founded three religions. The teak forest was one country. Next, we cross into the others.
 
 <!--audio stop-->
 

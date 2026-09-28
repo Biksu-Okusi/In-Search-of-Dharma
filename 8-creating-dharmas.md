@@ -58,7 +58,7 @@ But say out loud that dharmas can be built, and the terrible follow-up questions
 
 The largest scale first, where the pressure to build a single shared ethic is most intense.
 
-Return to the Samin. At the centre of their hand-made dharma sat a flat refusal: the forest, the water, the land are not anyone's to own or sell, but a commons held by everyone and no one. Stretch that conviction over the entire planet and it starts sounding like the only sane description of our situation. The atmosphere is a commons. The oceans are a commons. The stable climate that every economy takes for granted is a commons, and we are burning through it as a village burns through a shared forest when no one's dharma tells them to stop.
+Return to the Samin. At the centre of their handmade dharma sat a flat refusal: the forest, the water, the land are not anyone's to own or sell, but a commons held by everyone and no one. Stretch that conviction over the entire planet and it starts sounding like the only sane description of our situation. The atmosphere is a commons. The oceans are a commons. The stable climate that every economy takes for granted is a commons, and we are burning through it as a village burns through a shared forest when no one's dharma tells them to stop.
 
 For the first time, the pressure comes with an instrument panel. Earth-system scientists have mapped nine 'planetary boundaries', the limits within which humanity can operate safely, and the most recent health check finds seven already crossed, ocean acidification the latest to fall: the very commons the Samin's conviction was just stretched over. That is an *is*, not an *ought*: the science can tell us where the edges are, but cannot, by itself, generate the obligation to stay inside them.
 
