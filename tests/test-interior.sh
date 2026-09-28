@@ -171,6 +171,60 @@ main() {
     && ok 'the contents give the Preface as ix and Part 1 as 1' \
     || bad "the contents give other numbers: $(grep -E -- 'Preface|1: ' <<<"$text" | tr '\n' ' ')"
 
+  # The signature that closes the Preface: flush left, which on a verso is the
+  # 20mm outer margin and on a recto the 25mm gutter, and a line space below
+  # the text, so two linefeeds of 5.64mm under the line before it. It opens on
+  # the name, in bold, whose box is reported as a line of its own.
+  local -- signed above
+  local -i signed_pg=0 n
+  for ((n = preface; n < part1; n+=1)); do
+    signed=$("$CHECK" baselines --page "$n" -- "$PDF" \
+      | jq -c '([.lines[] | select(.text | test("^Biksu Okusi"))][0]) as $name
+          | ([.lines[] | select(.text | test("August 2026, Bali"))][0]) as $rest
+          | if $name == null or $rest == null then empty
+            else {at: $name, rest: $rest, above: ([.lines[] | select(.y_mm < $rest.y_mm - 1.5)] | last)} end') \
+      || die 1 "could not read page $n for the signature"
+    [[ -z $signed ]] || { signed_pg=$n; break; }
+  done
+  if ((signed_pg)); then
+    jq -e --argjson left "$(( signed_pg % 2 ? 25 : 20 ))" \
+      '(.at.x0_mm - $left | fabs) < 0.3' <<<"$signed" >/dev/null \
+      && ok 'the signature stands flush left' \
+      || bad "the signature stands at $(jq -r .at.x0_mm <<<"$signed")mm"
+    # Measured from the words in italic that follow the name: the bold of the
+    # name is another face, whose box ends a little higher.
+    above=$(jq -r '.rest.y_mm - .above.y_mm | . * 100 | round / 100' <<<"$signed")
+    awk -v d="$above" 'BEGIN{exit !(d > 10.9 && d < 11.7)}' \
+      && ok "a line space stands above the signature (${above}mm from the line before)" \
+      || bad "the signature stands ${above}mm under the line before it, want two linefeeds"
+  else
+    bad 'the signature was not found in the Preface'
+  fi
+
+  # Blank versos: those of the text carry the running head and their number.
+  local -- blank_text
+  local -i blanks=0 numbered=0 pages
+  pages=$(pdfinfo -- "$PDF" | awk '/^Pages:/{print $2}') || die 1 "could not count the pages of ${PDF@Q}"
+  for ((n = part1 + 1; n < pages - 1; n+=1)); do
+    blank_text=$(page_text "$n" | tr -s ' \n' ' ') || die 1 "could not read page $n"
+    [[ $blank_text =~ ^\ ?in\ search\ of\ dharma\ ([0-9]+)\ ?$ ]] || continue
+    blanks+=1
+    ((BASH_REMATCH[1] == n - part1 + 1)) && numbered+=1 ||:  # counted below
+  done
+  ((blanks > 0 && blanks == numbered)) \
+    && ok "the $blanks blank versos of the text carry the running head and their own number" \
+    || bad "$numbered of $blanks blank versos carry the running head and their own number"
+
+  # Divided words: none that already has a hyphen, no fragment ending a
+  # paragraph, and not the name Tuwhiri marked. Capitalised words may divide.
+  local -- divided
+  # stderr dropped: the checker sums up there what its report already holds.
+  divided=$("$CHECK" breaks -- "$PDF" 2>/dev/null) || die 1 "could not look for divided words in ${PDF@Q}"
+  jq -e '[.breaks[] | select(.kind != "capital" or (.word | test("Abra")))] == []' <<<"$divided" >/dev/null \
+    && ok 'no compound is divided, no paragraph ends on a fragment, and Abrahamic is whole' \
+    || bad "divided against house style: $(jq -c '[.breaks[] | select(.kind != "capital"
+         or (.word | test("Abra"))) | [.page, .kind, .word]] | .[0:8]' <<<"$divided")"
+
   # Research notes: the two lines as Ramsey wrote them, in the Preface and all
   # eight Parts.
   local -- whole

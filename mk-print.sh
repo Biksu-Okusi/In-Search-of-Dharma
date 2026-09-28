@@ -477,19 +477,29 @@ main() {
     # "<p>" and takes the first two words, which a <span> inserted ahead of it
     # would hide. researchnotes.py sets the Research notes block for paper
     # (Ramsey, 2026-09-28) and finds it by that label, so it runs after the sed.
+    # The second sed marks the signature that closes the Preface, a paragraph
+    # wholly in italics that opens on the author's name in bold; it reads the
+    # fragment as one line (-z), since pandoc may wrap the paragraph. nobreak.py
+    # runs last, over the words as every other filter has left them.
     frag=$(pandoc --from=markdown-yaml_metadata_block --to=html5 -- "$dst" \
              | sed -E 's|^<p><strong>([^<]*)</strong></p>$|<p class="label">\1</p>|' \
+             | sed -z -E "s|<p>(<em><strong>$AUTHOR</strong>,[^<]*</em>)</p>|<p class=\"signature\">\1</p>|" \
              | "$SCRIPT_DIR"/lib/dropcap.py \
              | "$SCRIPT_DIR"/lib/smallcaps.py \
-             | "$SCRIPT_DIR"/lib/researchnotes.py) \
-      || die 1 "pandoc failed for ${dst@Q}"
+             | "$SCRIPT_DIR"/lib/researchnotes.py \
+             | "$SCRIPT_DIR"/lib/nobreak.py) \
+      || die 1 "a filter failed for ${dst@Q}"
     # The Preface (chapter 0) is a preliminary, numbered in roman with the
     # front matter; Part 1 (chapter 1) is where the arabic sequence starts.
     # Each carries a class for the stylesheet, since no CSS selector can count
     # sections: section.front is also a <section>.
     case $chapter_n in
       0) cls=' prelim' ;;
-      1) cls=' first' ;;
+      # Part 1 ends with the element that carries the page number onto the
+      # blank versos after it (see @page:blank in lib/print-style.sh). At its
+      # end, not its head: set at its head it would be in reach of the blank
+      # page before Part 1, which belongs to the preliminaries.
+      1) cls=' first'; frag+=$'\n''<div class="blank-folio"></div>' ;;
       *) cls='' ;;
     esac
     printf '<section class="chapter%s">\n%s\n</section>\n' "$cls" "$frag" >>"$body_html" \

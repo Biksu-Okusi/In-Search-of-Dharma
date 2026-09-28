@@ -342,6 +342,47 @@ HTML
     && ok 'lines leaves the front matter out' \
     || bad 'lines reported on the front matter'
 
+  # faces: the faces and sizes of the type on a page, which is how a subhead's
+  # size is read. The lines fixture sets its text in Bona Nova at 10pt, its
+  # subhead in Work Sans SemiBold at 12pt and its title at 20pt.
+  found=$("$CHECK" faces --page 6 -- "$TMP/lines.pdf" 2>/dev/null) || found='{}'
+  jq -e '[.faces[] | select(.font | test("Semi")) | .size] == [12]' <<<"$found" >/dev/null \
+    && ok 'faces reads the size a subhead is set in' \
+    || bad "faces misread the subhead on page 6: $(jq -c . <<<"$found")"
+  jq -e '[.faces[] | select(.font | test("Semi") | not) | .size] | unique == [8, 9, 10]' <<<"$found" >/dev/null \
+    && ok 'faces reads the text, the running head and the folio' \
+    || bad "faces misread the other type on page 6: $(jq -c . <<<"$found")"
+
+  # breaks: the words a line divides that house style would not have divided:
+  # one that already has a hyphen, one that begins with a capital, and one
+  # whose remainder stands alone as a paragraph's last line. The fixture breaks
+  # each word where it is told to, at a soft hyphen, in a column too narrow
+  # for the whole word.
+  cat >"$TMP/breaks.html" <<HTML
+<!doctype html><html lang="en"><head><meta charset="utf-8"><style>
+@font-face{font-family:BN;src:url(file://$ROOT/fonts/bonanova/BonaNova-Regular.ttf)}
+@page{size:152mm 229mm;margin:25mm 20mm}
+body{font-family:BN;font-size:10pt;line-height:16pt;margin:0;hyphens:manual}
+p{margin:0 0 16pt 0;width:29mm;text-align:left}
+</style></head><body>
+<p>xxxx half-con&shy;scious creed of a small kind.</p>
+<p>xxxxx the Abra&shy;hamic covenant comes last.</p>
+<p>xxxxxx to the oth&shy;er.</p>
+<p>xxxxxx an under&shy;standing of the plain kind here.</p>
+</body></html>
+HTML
+  render "$TMP/breaks.html" "$TMP/breaks.pdf"
+  found=$("$CHECK" breaks -- "$TMP/breaks.pdf" 2>/dev/null) || found='{}'
+  jq -e '[.breaks[] | .kind] == ["compound", "capital", "fragment"]' <<<"$found" >/dev/null \
+    && ok 'breaks finds a divided compound, a divided capitalised word and a fragment' \
+    || bad "breaks found: $(jq -c '[.breaks[]? | [.kind, .word]]' <<<"$found")"
+  jq -e '[.breaks[] | .word] == ["half-con‐scious", "Abra‐hamic", "oth‐er."]' <<<"$found" >/dev/null \
+    && ok 'breaks names each word as it was divided' \
+    || bad "breaks named: $(jq -c '[.breaks[]? | .word]' <<<"$found")"
+  jq -e '[.breaks[] | select(.word | test("under"))] == []' <<<"$found" >/dev/null \
+    && ok 'breaks lets an ordinary word be divided' \
+    || bad 'breaks objected to an ordinary divided word'
+
   ((FAILED == 0)) || exit 1
 }
 

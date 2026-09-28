@@ -113,6 +113,21 @@ expect_at() {
   expect "$1" "$got" "$4"
 }
 
+# faces_of NAME N [FACE] : the faces and sizes of the type on page N of
+# $TMP/NAME.pdf, smallest first, as "face size|face size"; with FACE, those
+# whose name holds it.
+faces_of() {
+  "$CHECK" faces --page "$2" -- "$TMP/$1".pdf \
+    | jq -r --arg f "${3:-}" '[.faces[] | select(.font | contains($f)) | "\(.font) \(.size | round)"] | join("|")'
+}
+
+# expect_no_rule NAME N : page N of the roman fixture carries no hairline.
+expect_no_rule() {
+  local -- n
+  n=$(page_rules roman "$2" | jq '.rules | length') || stop "could not look for rules on page $2"
+  expect "$1" "$n" 0
+}
+
 # rule_in SHEET REGEX : the first thing in a stylesheet that matches, for a
 # failure's message; 'no such rule' where nothing does.
 rule_in() {
@@ -312,25 +327,88 @@ HTML
 
   echo '== blank verso =='
   # A chapter that ends on a recto leaves the next opener's verso blank. Ramsey
-  # (2026-09-28): a blank verso carries the running head too. It still carries no
-  # folio: he asked for the head alone.
+  # (2026-09-28): a blank verso carries the running head and the page number,
+  # set as on any other page. mk-print.sh ends Part 1 with the element that
+  # carries the number onto the blank pages after it.
   cat > "$TMP"/blank.html <<'HTML'
 <!doctype html><html lang="en"><head><meta charset="utf-8">
 <link rel="stylesheet" href="print.css"></head><body>
-<section class="chapter"><h1>One</h1><p>A chapter one page long.</p></section>
+<section class="chapter first"><h1>One</h1><p>A chapter one page long.</p>
+<div class="blank-folio"></div></section>
 <section class="chapter"><h1>Two</h1><p>The next opener, on a recto.</p></section>
 </body></html>
 HTML
   render blank
-  local -- blank_lines blank_rules
+  local -- blank_lines blank_rule
   blank_lines=$(page_lines blank 2) || stop 'could not read the blank verso'
-  blank_rules=$(page_rules blank 2 | jq '.rules | length') || stop 'could not look for rules on the blank verso'
-  [[ $(jq -r '[.lines[].text] | join("|")' <<<"$blank_lines") == 'in search of dharma' ]] \
-    && printf '  ✓ the blank verso carries the running head and nothing else\n' \
+  blank_rule=$(page_rules blank 2 | jq -c '.rules[0]') || stop 'could not look for rules on the blank verso'
+  [[ $(jq -r '[.lines[].text] | join("|")' <<<"$blank_lines") == 'in search of dharma|2' ]] \
+    && printf '  ✓ the blank verso carries the running head and its page number\n' \
     || { printf '  ✗ the blank verso reads: %s\n' "$(jq -c '[.lines[].text]' <<<"$blank_lines")"; FAILED+=1; }
-  [[ $blank_rules == 0 ]] \
-    && printf '  ✓ the blank verso has no folio rule\n' \
-    || { printf '  ✗ the blank verso carries a folio rule\n'; FAILED+=1; }
+  assert_near head  "$(jq -r '.lines[0].y_mm' <<<"$blank_lines")"
+  assert_near folio "$(jq -r '.lines[-1].y_mm' <<<"$blank_lines")"
+  if [[ $blank_rule == null ]]; then
+    printf '  ✗ the blank verso has no rule beside its folio\n'; FAILED+=1
+  else
+    assert_near rule_verso_x "$(jq -r .x0_mm <<<"$blank_rule")"
+    assert_near rule_len "$(jq -r .len_mm <<<"$blank_rule")"
+    assert_near rule_top "$(jq -r .y0_mm <<<"$blank_rule")"
+  fi
+  [[ $(faces_of blank 2) == *'Work-Sans 8'* ]] \
+    && printf '  ✓ the folio of the blank verso is set in Work Sans Regular, 8pt\n' \
+    || { printf '  ✗ the type on the blank verso is: %s\n' "$(faces_of blank 2)"; FAILED+=1; }
+
+  echo '== subheads =='
+  # Ramsey (2026-09-28): all Work Sans subheads 1pt smaller. A subhead in the
+  # text goes from 12pt to 11pt, one below it from 10pt to 9pt, and a label in
+  # the Sources from 10pt to 9pt. The chapter title keeps its 20pt. Read on
+  # pages that carry no running head, which is Work Sans SemiBold too.
+  cat > "$TMP"/heads.html <<'HTML'
+<!doctype html><html lang="en"><head><meta charset="utf-8">
+<link rel="stylesheet" href="print.css"></head><body>
+<section class="chapter"><h1>One</h1><p>Text.</p><h2>A subhead</h2><p>Text.</p>
+<h3>A lesser subhead</h3><p>Text.</p></section>
+<section class="chapter"><h1>Two</h1>
+<div class="sources" style="break-before:auto"><p class="label">Key works</p><ul><li>A work.</li></ul></div>
+</section></body></html>
+HTML
+  render heads
+  [[ $(faces_of heads 1 Semi) == 'Work-Sans-Semi-Bold 9|Work-Sans-Semi-Bold 11|Work-Sans-Semi-Bold 20' ]] \
+    && printf '  ✓ subheads are set at 11pt and 9pt under a 20pt title\n' \
+    || { printf '  ✗ the SemiBold sizes on the page are: %s\n' "$(faces_of heads 1 Semi)"; FAILED+=1; }
+  [[ $(faces_of heads 3 Semi) == 'Work-Sans-Semi-Bold 9|Work-Sans-Semi-Bold 20' ]] \
+    && printf '  ✓ a label in the Sources is set at 9pt\n' \
+    || { printf '  ✗ the SemiBold sizes on the Sources page are: %s\n' "$(faces_of heads 3 Semi)"; FAILED+=1; }
+
+  echo '== lists =='
+  # Ramsey (2026-09-28, the Coda): every line of a bullet stands 10mm in. A
+  # list with blank lines between its entries reaches the stylesheet with each
+  # entry wrapped in a paragraph, which must not add its own first-line indent.
+  cat > "$TMP"/list.html <<'HTML'
+<!doctype html><html lang="en"><head><meta charset="utf-8">
+<link rel="stylesheet" href="print.css"></head><body>
+<section class="chapter"><h1>One</h1><p>Text.</p>
+<ul><li><p><strong>Comprehensive</strong> – it governs a whole life, or a whole domain of one, not a
+single slice of behaviour, which is to say a good deal.</p></li>
+<li><p>A second entry.</p></li></ul>
+</section></body></html>
+HTML
+  render list
+  local -- list_lines first_in next_in
+  list_lines=$(page_lines list 1) || stop 'could not read the list fixture'
+  # The entry opens on a word in bold, whose box ends a hair above the line's
+  # and so is reported on its own; the page is a recto, its text 25mm in.
+  first_in=$(jq -r '[.lines[] | select(.text | startswith("Comprehensive"))][0].x0_mm - 25
+    | . * 100 | round / 100' <<<"$list_lines") || stop 'could not find the first line of the entry'
+  # The entry's second line is the one under its bullet, wherever the first
+  # happens to break.
+  next_in=$(jq -r '(.lines | map(.text | startswith("• –")) | index(true)) as $i
+    | .lines[$i + 1].x0_mm - 25 | . * 100 | round / 100' <<<"$list_lines") \
+    || stop 'could not find the second line of the entry'
+  awk -v a="$first_in" -v b="$next_in" 'BEGIN{exit !(a > 9.9 && a < 10.1 && b > 9.9 && b < 10.1)}' \
+    && printf '  ✓ every line of a bullet stands 10mm in (%s, %s)\n' "$first_in" "$next_in" \
+    || { printf '  ✗ a bullet stands %smm in on its first line and %smm on its next\n' \
+           "$first_in" "$next_in"; FAILED+=1; }
 
   echo '== front matter and Preface in roman; page 1 is Part 1 =='
   # Ramsey (2026-09-28): page 1 is the first page of Part 1, and the pages before
@@ -357,7 +435,8 @@ HTML
 </div></nav>
 </section>
 <section class="chapter prelim"><h1 id="preface">Preface</h1>$preface_body</section>
-<section class="chapter first"><h1 id="part-1">Part 1</h1><p>Part 1 opens here.</p></section>
+<section class="chapter first"><h1 id="part-1">Part 1</h1><p>Part 1 opens here.</p>
+<div class="blank-folio"></div></section>
 </body></html>
 HTML
   render roman
@@ -386,6 +465,7 @@ HTML
   # blank verso belongs to the text, from Part 1 on.
   expect_at 'blank before the Preface: head' $((preface_pg - 1)) "${TARGET[head]}" ''
   expect_at 'blank before the Preface: folio' $((preface_pg - 1)) "${TARGET[folio]}" ''
+  expect_no_rule 'blank before the Preface: rule' $((preface_pg - 1))
   # The page before Part 1 must be a blank one for the two checks to mean
   # anything. pdftotext ends each page with a form feed, which is not text.
   local -- before_part1 other
@@ -396,6 +476,7 @@ HTML
   if [[ -z $other ]]; then
     expect_at 'blank before Part 1: head' $((part1_pg - 1)) "${TARGET[head]}" ''
     expect_at 'blank before Part 1: folio' $((part1_pg - 1)) "${TARGET[folio]}" ''
+    expect_no_rule 'blank before Part 1: rule' $((part1_pg - 1))
   else
     printf '  ✗ the fixture left no blank verso before Part 1: resize the Preface\n'; FAILED+=1
   fi

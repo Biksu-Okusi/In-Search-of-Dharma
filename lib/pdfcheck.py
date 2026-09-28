@@ -11,6 +11,8 @@ Usage:
   pdfcheck.py rules FILE [--page N]
   pdfcheck.py ink FILE [--page N] --box X0,Y0,X1,Y1
   pdfcheck.py lines FILE [--top MM] [--lead PT] [--want N]
+  pdfcheck.py faces FILE [--page N]
+  pdfcheck.py breaks FILE
   pdfcheck.py check FILE [--trim WxH] [--require-even] [--require-blank-last]
                          [--measure MM --inner MM]
 """
@@ -51,6 +53,14 @@ INK_DPI = 1200       # one pixel is 0.02mm: fine enough to hold 0.1mm tolerances
 LINE_BASE_PT = 11.32
 TITLE_MIN_PT = 18.0  # a chapter title is 20pt; nothing else in the text exceeds 12pt
 HEAD_MIN_PT = 9.9    # subheads and labels are 10pt and 12pt; bold in the text is 9.4pt
+# The text block, in mm from the trim top: what lies above is the running head
+# and what lies below is the folio.
+BLOCK_TOP_MM = 24.0
+BLOCK_FOOT_MM = 206.0
+SOFT_BREAK = '\u2010'  # the hyphen the renderer sets where it divides a word
+# A word whose box stands taller than this is display type, a title or a drop
+# cap, and no part of a line of text: 10pt text stands 12pt, a 20pt title 24pt.
+TEXT_MAX_PT = 18.0
 RULE_MIN_MM = 4.0
 RULE_MAX_W_MM = 0.2
 
@@ -365,7 +375,7 @@ def ink(path, page, box, dpi=INK_DPI):
                   'y1_mm': round(oy + (ys.max() + 1) / px, 2)}}
 
 
-def text_rows(path):
+def text_rows(path, only=None):
   """Yield (page, [row]) for every page, a row being the text on one baseline:
   {'y': baseline in points from the page top, 'spans': [(font, size)]}.
 
@@ -373,9 +383,11 @@ def text_rows(path):
   the baseline itself, where pdftotext gives only the foot of a word's box --
   and the face and size it is set in.
   """
-  proc = subprocess.Popen(['mutool', 'draw', '-F', 'stext', '-o', '-', path],
-                          stdout=subprocess.PIPE, stderr=subprocess.DEVNULL, text=True)
-  page, spans, font, fresh = 0, [], None, False
+  cmd = ['mutool', 'draw', '-F', 'stext', '-o', '-', path]
+  if only:
+    cmd.append(str(only))
+  proc = subprocess.Popen(cmd, stdout=subprocess.PIPE, stderr=subprocess.DEVNULL, text=True)
+  page, spans, font, fresh = (only - 1 if only else 0), [], None, False
   try:
     for line in proc.stdout:
       if line.startswith('<char'):
@@ -472,6 +484,74 @@ def lines(path, top_mm, lead_pt, want):
   return {'want': want, 'pages': out, 'short': short}
 
 
+def faces(path, page):
+  """The faces and sizes of the type on one page, each pair once."""
+  seen = set()
+  for _page, rows in text_rows(path, only=page):
+    for row in rows:
+      for name, size in row['spans']:
+        seen.add((re.sub(r'^[A-Z]{6}\+', '', name), round(size, 1)))
+  return {'faces': [{'font': n, 'size': s} for n, s in sorted(seen, key=lambda f: (f[1], f[0]))]}
+
+
+def body_lines(path):
+  """Yield (page, [line]) for every page, a line being the words of the text
+  block that share a baseline, left to right."""
+  by_page = {}
+  for page, x0, y0, _x1, y1, text in words(path):
+    # A drop cap is left out: its box ends between two lines of the text, and
+    # read as a line it would stand between a divided word and its remainder.
+    if BLOCK_TOP_MM < y1 * PT_MM < BLOCK_FOOT_MM and y1 - y0 < TEXT_MAX_PT:
+      by_page.setdefault(page, []).append((y1, x0, text))
+  for page in sorted(by_page):
+    rows = []
+    for y, x, text in sorted(by_page[page]):
+      # bold and italic in a line end a little above or below the roman
+      if rows and y - rows[-1][0] < 3.5:
+        rows[-1][1].append((x, text))
+      else:
+        rows.append([y, [(x, text)]])
+    yield page, [[t for _x, t in sorted(r[1])] for r in rows]
+
+
+def breaks(path):
+  """Words a line divides that house style would not have divided.
+
+  Three kinds, after Tuwhiri's marks of 2026-09-28: a word that already has a
+  hyphen ('compound'), a word that begins with a capital ('capital'), and a
+  word whose remainder is all there is of the next line ('fragment'). A break
+  at a hyphen the word already has is no fault, and ends in that hyphen, not
+  in the one the renderer sets.
+  """
+  pages = list(body_lines(path))
+  flat = [(page, line) for page, lines in pages for line in lines]
+  found = []
+  for i, (page, line) in enumerate(flat[:-1]):
+    head = html_unescape(line[-1])
+    if not head.endswith(SOFT_BREAK):
+      continue
+    rest = [html_unescape(w) for w in flat[i + 1][1]]
+    whole = head + rest[0]
+    bare = head.lstrip('‘“(\'"')
+    if '-' in head[:-1] or '-' in rest[0].rstrip('.,;:!?’”)'):
+      kind = 'compound'
+    elif bare[:1].isupper():
+      kind = 'capital'
+    elif len(rest) == 1:
+      kind = 'fragment'
+    else:
+      continue
+    found.append({'page': page, 'kind': kind, 'word': whole})
+  return {'breaks': found}
+
+
+def html_unescape(text):
+  """pdftotext -bbox writes its words as HTML."""
+  for a, b in (('&amp;', '&'), ('&lt;', '<'), ('&gt;', '>'), ('&quot;', '"'), ('&apos;', "'")):
+    text = text.replace(a, b)
+  return text
+
+
 def check(path, trim, require_even, require_blank_last, text_block=None):
   m = measure(path)
   fail, warn = [], []
@@ -538,7 +618,8 @@ def check(path, trim, require_even, require_blank_last, text_block=None):
 
 def main():
   ap = argparse.ArgumentParser(description=__doc__)
-  ap.add_argument('action', choices=('measure', 'baselines', 'rules', 'ink', 'lines', 'check'))
+  ap.add_argument('action', choices=('measure', 'baselines', 'rules', 'ink', 'lines', 'faces',
+                                      'breaks', 'check'))
   ap.add_argument('file')
   ap.add_argument('--page', type=int, default=1)
   ap.add_argument('--box', metavar='X0,Y0,X1,Y1',
@@ -579,6 +660,17 @@ def main():
               f"{', '.join(str(s['page']) for s in report['short'])}", file=sys.stderr)
       else:
         print(f"✓ every page runs to {a.want} lines or is excused", file=sys.stderr)
+    elif a.action == 'faces':
+      print(json.dumps(faces(a.file, a.page), indent=2))
+    elif a.action == 'breaks':
+      report = breaks(a.file)
+      print(json.dumps(report, ensure_ascii=False, indent=2))
+      if report['breaks']:
+        n = len(report['breaks'])
+        print(f"▲ {n} {'word is' if n == 1 else 'words are'} divided against house style",
+              file=sys.stderr)
+      else:
+        print('✓ no word is divided against house style', file=sys.stderr)
     elif a.action == 'ink':
       if not a.box:
         ap.error('ink needs --box X0,Y0,X1,Y1')

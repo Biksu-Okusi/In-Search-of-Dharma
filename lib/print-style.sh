@@ -59,7 +59,7 @@ declare -ar PRINT_TITLE_FACES=(
 
 # Populated by print_geom_load. Declared here so a `set -u` script may reference
 # them before the call.
-declare -- PRINT_SIZE_PT='' PRINT_LEAD_PT='' PRINT_SUB_PT='' PRINT_SRC_PT=''
+declare -- PRINT_SIZE_PT='' PRINT_LEAD_PT='' PRINT_SUB_PT='' PRINT_SUB2_PT='' PRINT_SRC_PT=''
 declare -- PRINT_TOP_MM='' PRINT_BOT_MM='' PRINT_HEADPAD_MM='' PRINT_FOLIOPAD_MM=''
 declare -- PRINT_H1PAD_MM='' PRINT_H1GAP_MM='' PRINT_DROP_FS='' PRINT_DROP_LH=''
 declare -- PRINT_FOLIORULE_MM='' PRINT_FOLIORISE_MM='' PRINT_FOLIOGAP_MM=''
@@ -92,7 +92,10 @@ print_geom_load() {
 'will sit off the grid.\n' \
       "${BASH_SOURCE[0]##*/}" "$PRINT_SIZE_PT" "$PRINT_LEAD_PT"
   fi
-  PRINT_SUB_PT=12 PRINT_SRC_PT=9
+  # Subheads are Work Sans SemiBold, each a point smaller than first set
+  # (Ramsey, 2026-09-28): 11pt for a subhead, 9pt for one below it and for a
+  # label in the Sources. Their leading is the text's, so the grid holds.
+  PRINT_SUB_PT=11 PRINT_SUB2_PT=9 PRINT_SRC_PT=9
   PRINT_TOP_MM=24.58 PRINT_BOT_MM=24.5
   PRINT_HEADPAD_MM=13.35 PRINT_FOLIOPAD_MM=6.80
   PRINT_H1PAD_MM=55.34 PRINT_H1GAP_MM=12.60
@@ -136,9 +139,14 @@ print_page_css() {
     || { >&2 printf '✗ %s: the stylesheet'"'"'s lengths came back incomplete: %s\n' \
            "${BASH_SOURCE[0]##*/}" "${lengths@Q}"
          return 1; }
-  folio="font:400 8pt/1 \"$FONT_SANS_FAMILY\";vertical-align:top;text-align:left;
-    margin:${rule_top}mm 0 ${rule_foot}mm 10mm;border-left:0.4pt solid #000;
+  # In two parts, since a blank page takes them apart: where the box stands,
+  # and the rule and the numeral's place beside it.
+  local -- folio_box folio_rule
+  folio_box="font:400 8pt/1 \"$FONT_SANS_FAMILY\";vertical-align:top;text-align:left;
+    margin:${rule_top}mm 0 ${rule_foot}mm 10mm"
+  folio_rule="border-left:0.4pt solid #000;
     padding:${PRINT_FOLIORISE_MM}mm 0 0 ${PRINT_FOLIOGAP_MM}mm"
+  folio="$folio_box;$folio_rule"
   cat <<CSS
 @page{size:${PRINT_TRIM_W_MM}mm ${PRINT_TRIM_H_MM}mm;
   margin:${PRINT_TOP_MM}mm ${PRINT_OUTER_MM}mm ${PRINT_BOT_MM}mm ${PRINT_INNER_MM}mm;
@@ -152,11 +160,19 @@ print_page_css() {
   @top-right{content:string(chaptitle);font:600 9pt/1 "$FONT_SANS_FAMILY";
     vertical-align:top;padding-top:${PRINT_HEADPAD_MM}mm}
   @bottom-left{content:counter(page);$folio}}
-/* A blank verso keeps its running head (Ramsey, 2026-09-28) and loses only its
-   folio: he asked for the head, not the number. :blank outranks :left, so the
-   head declared there survives unless it is named again here. */
+/* A blank verso carries its running head and its page number (Ramsey,
+   2026-09-28), but only in the text: the blank pages of the preliminaries
+   carry nothing. The renderer gives a page made by a forced recto break no
+   name, so no rule can tell a blank of the text from one of the preliminaries.
+   The number is therefore not the page's own but a running element,
+   div.blank-folio, which mk-print.sh sets at the end of Part 1: until then
+   there is no such element and the box stays empty; from then on every blank
+   page finds it. The rule belongs to the element, not to the box, or an empty
+   box would still draw it. :blank outranks :left, so the head declared there
+   survives unless it is named again here. */
 @page:blank{@top-right{content:none}
-  @bottom-left{content:none}@bottom-right{content:none}}
+  @bottom-left{content:element(blankfolio);$folio_box;border:none;padding:0}
+  @bottom-right{content:none}}
 @page chapopen{@top-left{content:none}@top-right{content:none}}
 @page firstbody{counter-reset:page 1;
   @top-left{content:none}@top-right{content:none}}
@@ -214,7 +230,7 @@ h1{page:chapopen;break-before:recto;margin:0 0 0 10mm;position:relative;
   string-set:chaptitle content()}
 h2{font:600 ${PRINT_SUB_PT}pt/${PRINT_LEAD_PT}pt "$FONT_SANS_FAMILY";
   margin:${PRINT_LEAD_PT}pt 0 0 0;break-after:avoid}
-h3{font:600 ${PRINT_SIZE_PT}pt/${PRINT_LEAD_PT}pt "$FONT_SANS_FAMILY";
+h3{font:600 ${PRINT_SUB2_PT}pt/${PRINT_LEAD_PT}pt "$FONT_SANS_FAMILY";
   margin:${PRINT_LEAD_PT}pt 0 0 0;break-after:avoid}
 
 p{margin:0;text-align:justify;text-indent:10mm}
@@ -225,6 +241,9 @@ blockquote p{text-indent:0}
    title's own padding already is the two line spaces, and the margin on top of
    it would make three. */
 h1 + blockquote{margin-top:0}
+/* The signature that closes the Preface stands flush left, a line space below
+   the text (Ramsey, 2026-09-28). mk-print.sh marks the paragraph. */
+p.signature{text-indent:0;text-align:left;margin-top:${PRINT_LEAD_PT}pt}
 p.attrib{text-indent:20mm;font:600 9pt/${PRINT_LEAD_PT}pt "$FONT_SANS_FAMILY"}
 ul,ol{margin:${PRINT_LEAD_PT}pt 0;padding-left:10mm}
 /* The bullet hangs at the left margin and the text stands in by the paragraph
@@ -232,6 +251,11 @@ ul,ol{margin:${PRINT_LEAD_PT}pt 0;padding-left:10mm}
    outside the text instead, a few points in from nowhere in particular. */
 ul{list-style:none}
 ul > li{position:relative;text-align:left}
+/* A list written with a blank line between its entries arrives with each
+   entry wrapped in a paragraph. It is the entry that is indented, not the
+   paragraph: left its first-line indent, the first line of every bullet stood
+   20mm in and the rest 10mm (the Coda, Ramsey, 2026-09-28). */
+li > p{text-indent:0;text-align:left}
 ul > li::before{content:"\\2022";position:absolute;left:-10mm}
 
 /* Sources & further reading is reference matter, not narrative, and is set as
@@ -243,7 +267,7 @@ ul > li::before{content:"\\2022";position:absolute;left:-10mm}
    merely contains one. */
 .sources{font-size:${PRINT_SRC_PT}pt}
 .sources p{text-indent:0}
-.sources p.label{font:600 ${PRINT_SIZE_PT}pt/${PRINT_LEAD_PT}pt "$FONT_SANS_FAMILY";
+.sources p.label{font:600 ${PRINT_SUB2_PT}pt/${PRINT_LEAD_PT}pt "$FONT_SANS_FAMILY";
   margin-top:${PRINT_LEAD_PT}pt;text-align:left;break-after:avoid}
 .sources h2 + p.label{margin-top:0}
 .sources ul,.sources ol{margin:0}
@@ -267,6 +291,11 @@ p.op .dc{float:left;font-size:${PRINT_DROP_FS}em;
   line-height:$PRINT_DROP_LH;padding:0 0.06em 0 0;
   position:relative;top:${PRINT_DROP_DY_MM}mm}
 .sc{font-variant-caps:small-caps;letter-spacing:0.02em}
+
+/* Words a line is not to divide: lib/nobreak.py wraps each. A line may still
+   end at a hyphen the word already has; it is the renderer's own hyphenation
+   that is turned off. */
+.nb{hyphens:manual}
 
 /* Ramsey's point 3: a run of two or more capitals is set in small capitals.
    No selector can reach an element by what it contains, so lib/smallcaps.py
@@ -324,6 +353,9 @@ section.chapter h1::after{content:"";position:absolute;
   left:0;top:40.4mm;width:12mm;height:12mm;
   background:url(images/dharma-eye.svg) no-repeat center/contain}
 
+div.blank-folio{position:running(blankfolio);font:400 8pt/1 "$FONT_SANS_FAMILY";text-align:left;
+  box-sizing:border-box;height:${PRINT_FOLIORULE_MM}mm;$folio_rule}
+div.blank-folio::before{content:counter(page)}
 /* The verso running head: the title in lowercase, as the title pages set it
    (TITLE_TYPESET in mk-print.sh). It is set at each chapter's title from Part
    1 on, rather than once on the body, so that it is still unset through the
