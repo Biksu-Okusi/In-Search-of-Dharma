@@ -18,8 +18,16 @@ declare -r TOL=0.1
 # Target baselines in mm from the trim top, measured from the model book --
 # except the opener, which the publisher set: two line spaces under the title,
 # so three 5.644mm linefeeds below its 87.59 baseline.
+#
+# The folio, as Ramsey asked (2026-09-28) after Tuwhiri's What is this?: on the
+# left of every page, beside a 5mm hairline that stands 10mm in from the text's
+# left edge, the paragraph indent -- 30mm from the trim on a verso, 35mm on a
+# recto. The numeral keeps its baseline. The rule rises 1.24mm above the top of
+# a lining figure and runs 1.9mm below the baseline, the proportions of What is
+# this? (1.2-1.5mm and 2.0-2.2mm there, measured at 600dpi).
 declare -rA TARGET=(
   [title]=87.59 [opener]=104.52 [head]=16.80 [first]=29.53 [folio]=214.38
+  [rule_verso_x]=30.00 [rule_recto_x]=35.00 [rule_len]=5.00 [rule_top]=210.54
 )
 
 declare -- TMP=''
@@ -97,6 +105,35 @@ assert_near opener "$(b 1 | jq -r '[.lines[] | select(.text|startswith("ost book
 assert_near head   "$(b 2 | jq -r '.lines[0].y_mm')"
 assert_near first  "$(b 2 | jq -r '.lines[1].y_mm')"
 assert_near folio  "$(b 2 | jq -r '.lines[-1].y_mm')"
+
+echo '== folio =='
+# The folio's rule is the one in the foot; an opener also carries a 71mm rule
+# above its title.
+foot_rule() { "$ROOT"/lib/pdfcheck.py rules "$TMP"/fixture.pdf --page "$1" | jq -c '[.rules[] | select(.y0_mm > 200)][0]'; }
+declare -- rule folio_x side
+declare -i pg
+for side in verso recto; do
+  if [[ $side == verso ]]; then pg=2; else pg=1; fi
+  rule=$(foot_rule "$pg")
+  if [[ $rule == null ]]; then
+    printf '  ✗ %s: no rule beside the folio\n' "$side"; FAILED+=1; continue
+  fi
+  assert_near "rule_${side}_x" "$(jq -r .x0_mm <<<"$rule")"
+  assert_near rule_len "$(jq -r .len_mm <<<"$rule")"
+  assert_near rule_top "$(jq -r .y0_mm <<<"$rule")"
+  # The numeral stands just after the rule: 0.65mm of padding, and What is
+  # this? shows 0.8mm of white between rule and figure.
+  folio_x=$(b "$pg" | jq -r '.lines[-1].x0_mm')
+  awk -v f="$folio_x" -v r="$(jq -r .x1_mm <<<"$rule")" 'BEGIN{d=f-r; exit !(d>0.5 && d<1.0)}' \
+    && printf '  ✓ %s: the numeral stands just after the rule (%s)\n' "$side" "$folio_x" \
+    || { printf '  ✗ %s: the numeral at %s is not just after the rule %s\n' "$side" "$folio_x" "$rule"; FAILED+=1; }
+done
+# Regular, not bold: the folio is the fixture's only Work Sans Regular text.
+if grep -E -q -- '^[A-Z]{6}\+Work-Sans(-Regular)? ' <<<"$embedded"; then
+  printf '  ✓ the folio is set in Work Sans Regular\n'
+else
+  printf '  ✗ no Work Sans Regular in the fixture: the folio is not regular weight\n'; FAILED+=1
+fi
 
 # measure and margins, from the widest body line on the verso: the first line
 # may open an indented paragraph, the last may be a short one.

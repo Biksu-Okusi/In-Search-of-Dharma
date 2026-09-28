@@ -242,6 +242,36 @@ HTML
     && ok 'check --measure tolerates 0.03mm, inside its 0.05mm tolerance' \
     || bad 'check --measure rejected a 0.03mm overrun'
 
+  # rules: vertical hairlines, found by their ink. A 5mm folio rule and a 71mm
+  # opener rule are reported; text beside them, whose stems are short or wide,
+  # is not.
+  cat >"$TMP/rules.html" <<HTML
+<!doctype html><html lang="en"><head><meta charset="utf-8"><style>
+@font-face{font-family:BN;src:url(file://$ROOT/fonts/bonanova/BonaNova-Regular.ttf)}
+@page{size:152mm 229mm;margin:0}
+body{margin:0;font-family:BN;font-size:10pt;line-height:16pt}
+div.r{position:absolute;width:0;border-left:0.4pt solid #000}
+p{position:absolute;left:40mm;top:100mm;width:80mm;margin:0;font-size:20pt}
+</style></head><body>
+<div class="r" style="left:30mm;top:210mm;height:5mm"></div>
+<div class="r" style="left:35mm;top:15mm;height:71mm"></div>
+<p>Lifelong ledger: filled halls, bold kilns.</p>
+</body></html>
+HTML
+  render "$TMP/rules.html" "$TMP/rules.pdf"
+  local -- found
+  found=$("$CHECK" rules "$TMP/rules.pdf" --page 1 2>/dev/null) || found='{"rules":[]}'
+  jq -e '.rules | length == 2' <<<"$found" >/dev/null \
+    && ok 'rules finds the two hairlines and no letter stem' \
+    || bad "rules did not find exactly the two hairlines: $(jq -c . <<<"$found")"
+  jq -e '.rules[0] | (.x0_mm - 30 | fabs) < 0.1 and (.y0_mm - 210 | fabs) < 0.1
+         and (.len_mm - 5 | fabs) < 0.1' <<<"$found" >/dev/null \
+    && ok 'rules reports a 5mm rule at x 30mm, from 210mm down' \
+    || bad "rules misplaced the 5mm rule: $(jq -c '.rules[0]' <<<"$found")"
+  jq -e '.rules[1] | (.x0_mm - 35 | fabs) < 0.1 and (.len_mm - 71 | fabs) < 0.1' <<<"$found" >/dev/null \
+    && ok 'rules reports the 71mm rule at x 35mm' \
+    || bad "rules misplaced the 71mm rule: $(jq -c '.rules[1]' <<<"$found")"
+
   ((FAILED == 0)) || exit 1
 }
 

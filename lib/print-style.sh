@@ -78,6 +78,7 @@ print_title_faces_css() {
 declare -- PRINT_SIZE_PT='' PRINT_LEAD_PT='' PRINT_SUB_PT='' PRINT_SRC_PT=''
 declare -- PRINT_TOP_MM='' PRINT_BOT_MM='' PRINT_HEADPAD_MM='' PRINT_FOLIOPAD_MM=''
 declare -- PRINT_H1PAD_MM='' PRINT_H1GAP_MM='' PRINT_DROP_FS='' PRINT_DROP_LH=''
+declare -- PRINT_FOLIORULE_MM='' PRINT_FOLIORISE_MM='' PRINT_FOLIOGAP_MM=''
 
 # The shipping setting, and the constants solved for it.
 print_geom_load() {
@@ -93,11 +94,30 @@ print_geom_load() {
   PRINT_HEADPAD_MM=13.35 PRINT_FOLIOPAD_MM=6.80
   PRINT_H1PAD_MM=55.34 PRINT_H1GAP_MM=12.60
   PRINT_DROP_FS=3.200 PRINT_DROP_LH=0.688
+  # The folio's rule (Ramsey, 2026-09-28, after What is this?): 5mm long, rising
+  # PRINT_FOLIORISE_MM above the top of the folio's line, which PRINT_FOLIOPAD_MM
+  # still places, so the numeral keeps its baseline. The numeral stands
+  # PRINT_FOLIOGAP_MM after the rule.
+  PRINT_FOLIORULE_MM=5.00 PRINT_FOLIORISE_MM=0.76 PRINT_FOLIOGAP_MM=0.65
 }
 
 # The complete print stylesheet. Written after font_faces_css pdf, which binds
 # every face by absolute file:// URL.
 print_page_css() {
+  # The folio, set as Ramsey asked (2026-09-28) after Tuwhiri's What is this?:
+  # on the left of every page, recto and verso alike, in regular weight, beside
+  # a 5mm hairline standing 10mm in from the text's left edge, the paragraph
+  # indent. The margin box begins at that edge; its left border is the rule, and
+  # its vertical margins shrink it to the rule's length. vertical-align:top
+  # keeps the numeral at the head of the box, PRINT_FOLIORISE_MM below the
+  # rule's top.
+  local -- rule_top rule_foot folio
+  read -r rule_top rule_foot < <(awk -v pad="$PRINT_FOLIOPAD_MM" -v rise="$PRINT_FOLIORISE_MM" \
+    -v len="$PRINT_FOLIORULE_MM" -v bot="$PRINT_BOT_MM" \
+    'BEGIN{printf "%.2f %.2f\n", pad - rise, bot - (pad - rise) - len}')
+  folio="font:400 8pt/1 \"$FONT_SANS_FAMILY\";vertical-align:top;text-align:left;
+    margin:${rule_top}mm 0 ${rule_foot}mm 10mm;border-left:0.4pt solid #000;
+    padding:${PRINT_FOLIORISE_MM}mm 0 0 ${PRINT_FOLIOGAP_MM}mm"
   cat <<CSS
 @page{size:${PRINT_TRIM_W_MM}mm ${PRINT_TRIM_H_MM}mm;
   margin:${PRINT_TOP_MM}mm ${PRINT_OUTER_MM}mm ${PRINT_BOT_MM}mm ${PRINT_INNER_MM}mm;
@@ -106,26 +126,20 @@ print_page_css() {
 @page:left{margin-left:${PRINT_OUTER_MM}mm;margin-right:${PRINT_INNER_MM}mm;
   @top-left{content:string(booktitle);font:600 9pt/1 "$FONT_SANS_FAMILY";
     vertical-align:top;padding-top:${PRINT_HEADPAD_MM}mm}
-  @bottom-left{content:counter(page);font:600 8pt/1 "$FONT_SANS_FAMILY";
-    vertical-align:top;padding-top:${PRINT_FOLIOPAD_MM}mm}}
+  @bottom-left{content:counter(page);$folio}}
 @page:right{margin-left:${PRINT_INNER_MM}mm;margin-right:${PRINT_OUTER_MM}mm;
   @top-right{content:string(chaptitle);font:600 9pt/1 "$FONT_SANS_FAMILY";
     vertical-align:top;padding-top:${PRINT_HEADPAD_MM}mm}
-  @bottom-right{content:counter(page);font:600 8pt/1 "$FONT_SANS_FAMILY";
-    vertical-align:top;padding-top:${PRINT_FOLIOPAD_MM}mm}}
+  @bottom-left{content:counter(page);$folio}}
 @page:blank{@top-left{content:none}@top-right{content:none}
   @bottom-left{content:none}@bottom-right{content:none}}
 @page chapopen{@top-left{content:none}@top-right{content:none}}
 @page firstbody{counter-reset:page 1;
   @top-left{content:none}@top-right{content:none}}
 @page front:left{@top-left{content:none}@top-right{content:none}
-  @bottom-right{content:none}
-  @bottom-left{content:counter(page,lower-roman);font:600 8pt/1 "$FONT_SANS_FAMILY";
-    vertical-align:top;padding-top:${PRINT_FOLIOPAD_MM}mm}}
+  @bottom-left{content:counter(page,lower-roman);$folio}}
 @page front:right{@top-left{content:none}@top-right{content:none}
-  @bottom-left{content:none}
-  @bottom-right{content:counter(page,lower-roman);font:600 8pt/1 "$FONT_SANS_FAMILY";
-    vertical-align:top;padding-top:${PRINT_FOLIOPAD_MM}mm}}
+  @bottom-left{content:counter(page,lower-roman);$folio}}
 /* A blank in the front matter carries nothing, folio included. It has to be
    said again here, after the two rules above: they match a blank front page as
    well as @page:blank does, and the later rule wins. */

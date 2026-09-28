@@ -8,6 +8,7 @@ finished file, never against intent.
 Usage:
   pdfcheck.py measure FILE
   pdfcheck.py baselines FILE [--page N]
+  pdfcheck.py rules FILE [--page N]
   pdfcheck.py check FILE [--trim WxH] [--require-even] [--require-blank-last]
                          [--measure MM --inner MM]
 """
@@ -20,6 +21,7 @@ import subprocess
 import sys
 import tempfile
 
+import numpy as np
 from PIL import Image
 
 PT_MM = 25.4 / 72.0
@@ -34,6 +36,13 @@ INK_THRESHOLD = 255  # any pixel darker than pure white counts as ink
 # measured 0.07mm.
 MEASURE_TOL_MM = 0.05
 MEASURE_LIST_MAX = 10  # overruns named one by one before the rest are counted
+# A vertical rule, told from a letter by its ink: at least this long, and no
+# wider than this. A 10pt ascender stands about 2.6mm, and a 20pt stem is
+# 0.25mm wide in Bona Nova Regular and some 0.8mm in Work Sans SemiBold, while
+# the book's hairlines are 0.4pt (0.14mm).
+RULE_DPI = 600
+RULE_MIN_MM = 4.0
+RULE_MAX_W_MM = 0.2
 
 
 def run(*args):
@@ -267,6 +276,54 @@ def baselines(path, page):
   return {'lines': out}
 
 
+def rules(path, page, dpi=RULE_DPI):
+  """Vertical hairline rules on one page, left to right, in mm from the trim.
+
+  Found by rasterising, not by reading the drawing: a border reaches the file
+  as a filled rectangle from WeasyPrint and in whatever form Ghostscript then
+  rewrites it, but the ink is the same either way. Each column's longest run
+  of ink is taken, so where two rules share a column only the longer counts.
+  """
+  tmp_dir = tempfile.mkdtemp(prefix='pdfcheck-')
+  try:
+    run('pdftoppm', '-r', str(dpi), '-f', str(page), '-l', str(page), '-gray',
+        '-png', path, os.path.join(tmp_dir, 'p'))
+    pngs = [n for n in os.listdir(tmp_dir) if n.endswith('.png')]
+    if not pngs:
+      raise RuntimeError(f'page {page} did not render')
+    ink = np.asarray(Image.open(os.path.join(tmp_dir, pngs[0])).convert('L')) < 128
+  finally:
+    shutil.rmtree(tmp_dir, ignore_errors=True)
+  px_mm = 25.4 / dpi
+  # The longest vertical run of ink in every column, and the row it ends on.
+  cur = np.zeros(ink.shape[1], dtype=np.int32)
+  best = np.zeros_like(cur)
+  end = np.zeros_like(cur)
+  for y, row in enumerate(ink):
+    cur = (cur + 1) * row
+    longer = cur > best
+    best[longer] = cur[longer]
+    end[longer] = y
+  tall = np.flatnonzero(best * px_mm >= RULE_MIN_MM)
+  out = []
+  # Adjacent tall columns ending on (nearly) the same row are one rule.
+  groups = []
+  for x in tall:
+    if groups and x == groups[-1][-1] + 1 and abs(int(end[x]) - int(end[groups[-1][-1]])) <= 2:
+      groups[-1].append(x)
+    else:
+      groups.append([x])
+  for g in groups:
+    if len(g) * px_mm > RULE_MAX_W_MM:
+      continue
+    y1 = max(int(end[x]) for x in g) + 1
+    y0 = y1 - max(int(best[x]) for x in g)
+    out.append({'x0_mm': round(g[0] * px_mm, 2), 'x1_mm': round((g[-1] + 1) * px_mm, 2),
+                'y0_mm': round(y0 * px_mm, 2), 'y1_mm': round(y1 * px_mm, 2),
+                'len_mm': round((y1 - y0) * px_mm, 2)})
+  return {'rules': out}
+
+
 def check(path, trim, require_even, require_blank_last, text_block=None):
   m = measure(path)
   fail, warn = [], []
@@ -333,7 +390,7 @@ def check(path, trim, require_even, require_blank_last, text_block=None):
 
 def main():
   ap = argparse.ArgumentParser(description=__doc__)
-  ap.add_argument('action', choices=('measure', 'baselines', 'check'))
+  ap.add_argument('action', choices=('measure', 'baselines', 'rules', 'check'))
   ap.add_argument('file')
   ap.add_argument('--page', type=int, default=1)
   ap.add_argument('--trim', default='152x229')
@@ -354,6 +411,8 @@ def main():
       print(json.dumps(measure(a.file), indent=2))
     elif a.action == 'baselines':
       print(json.dumps(baselines(a.file, a.page), indent=2))
+    elif a.action == 'rules':
+      print(json.dumps(rules(a.file, a.page), indent=2))
     else:
       w, h = (float(v) for v in a.trim.split('x'))
       text_block = None if a.measure is None else (a.inner, a.measure)
