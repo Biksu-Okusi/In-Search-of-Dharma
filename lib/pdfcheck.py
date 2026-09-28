@@ -52,7 +52,11 @@ INK_DPI = 1200       # one pixel is 0.02mm: fine enough to hold 0.1mm tolerances
 # within a point of this, are read correctly.
 LINE_BASE_PT = 11.32
 TITLE_MIN_PT = 18.0  # a chapter title is 20pt; nothing else in the text exceeds 12pt
-HEAD_MIN_PT = 9.9    # subheads and labels are 10pt and 12pt; bold in the text is 9.4pt
+# Subheads are 11pt, and 9pt for the lesser ones and the labels of the Sources.
+# Bold in the text is the same face at 0.94 of the text's size: 9.4pt, and
+# 8.46pt in the Sources. A line wholly in bold is not thereby a subhead.
+HEAD_MIN_PT = 8.9
+BOLD_IN_TEXT_PT = 9.4
 # The text block, in mm from the trim top: what lies above is the running head
 # and what lies below is the folio.
 BLOCK_TOP_MM = 24.0
@@ -438,7 +442,9 @@ def _opens_with(rows):
   size = max(size for _name, size in spans)
   if size >= TITLE_MIN_PT:
     return 'title'
-  return 'subhead' if size >= HEAD_MIN_PT else 'text'
+  if size < HEAD_MIN_PT or abs(size - BOLD_IN_TEXT_PT) < 0.06:
+    return 'text'
+  return 'subhead'
 
 
 def lines(path, top_mm, lead_pt, want):

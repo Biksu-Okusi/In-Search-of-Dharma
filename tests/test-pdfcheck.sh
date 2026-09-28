@@ -316,7 +316,7 @@ body{font-family:BN;font-size:10pt;line-height:16pt;margin:0}
 p{margin:0;widows:1;orphans:1}
 .front{break-after:page}
 h1{font:600 20pt/32pt "Work Sans";margin:0;break-before:page}
-h2{font:600 12pt/16pt "Work Sans";margin:0}
+h2{font:600 9pt/16pt "Work Sans";margin:0}
 </style></head><body>$body</body></html>
 HTML
   render "$TMP/lines.html" "$TMP/lines.pdf"
@@ -344,9 +344,10 @@ HTML
 
   # faces: the faces and sizes of the type on a page, which is how a subhead's
   # size is read. The lines fixture sets its text in Bona Nova at 10pt, its
-  # subhead in Work Sans SemiBold at 12pt and its title at 20pt.
+  # subhead in Work Sans SemiBold at 9pt, the size of the book's lesser
+  # subheads and of the labels in its Sources, and its title at 20pt.
   found=$("$CHECK" faces --page 6 -- "$TMP/lines.pdf" 2>/dev/null) || found='{}'
-  jq -e '[.faces[] | select(.font | test("Semi")) | .size] == [12]' <<<"$found" >/dev/null \
+  jq -e '[.faces[] | select(.font | test("Semi")) | .size] == [9]' <<<"$found" >/dev/null \
     && ok 'faces reads the size a subhead is set in' \
     || bad "faces misread the subhead on page 6: $(jq -c . <<<"$found")"
   jq -e '[.faces[] | select(.font | test("Semi") | not) | .size] | unique == [8, 9, 10]' <<<"$found" >/dev/null \
