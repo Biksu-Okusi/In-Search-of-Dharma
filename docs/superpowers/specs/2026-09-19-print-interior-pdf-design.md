@@ -116,7 +116,8 @@ Tuwhiri page looks like.
 | Body | Bona Nova Regular | 10 pt | 16 pt |
 | Body italic | Bona Nova Italic | 10 pt | 16 pt |
 | Small caps | Bona Nova, `smcp` | 10 pt | 16 pt |
-| Subheads | Work Sans SemiBold | 12 pt | 16 pt |
+| Subheads | Work Sans SemiBold | 11 pt | 16 pt |
+| Lesser subheads, and labels in the Sources | Work Sans SemiBold | 9 pt | 16 pt |
 | Chapter titles | Work Sans SemiBold | 20 pt | — |
 | Running heads | Work Sans SemiBold | 9 pt | — |
 | Folios | Work Sans Regular | 8 pt | — |
@@ -133,7 +134,12 @@ Measured extents for the whole body text, should the setting be revisited:
 
 ### Typographic rules
 
-- Justified, with automatic hyphenation (`hyphens: auto`, `lang="en"`).
+- Justified, with automatic hyphenation (`hyphens: auto`, `lang="en"`), which
+  three kinds of word are kept out of (added 2026-09-28, from the publisher's
+  proof reading): a word that already has a hyphen divides only at that
+  hyphen; the last word of a paragraph is not divided, so no paragraph ends on
+  a fragment; and a word the publisher names is kept whole. Subheads were a
+  point larger until the same date.
 - **Lining figures** (`font-variant-numeric: lining-nums`). Bona Nova defaults
   to oldstyle, which sets "Part 1" as something a reader takes for "Part I".
 - Ligatures and kerning on; discretionary ligatures off in body text.
@@ -174,8 +180,9 @@ nothing.
 ### Body
 
 - Chapters open **recto**. A blank verso is inserted where needed, carrying
-  the running head and no folio. (Amended 2026-09-28 at the publisher's
-  request; it carried neither.)
+  the running head and its folio. (Amended 2026-09-28 at the publisher's
+  request; it carried neither.) The blank pages of the preliminaries carry
+  nothing.
 - The folio stands on the left of every page, recto and verso alike, beside a
   5 mm hairline rule that stands 10 mm in from the left edge of the text, the
   paragraph indent, after Tuwhiri's *What is this?*. (Amended 2026-09-28; it
