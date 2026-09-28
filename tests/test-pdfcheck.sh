@@ -285,6 +285,56 @@ HTML
     && ok 'ink reports null for a box of white paper' \
     || bad "ink did not report null for white paper: $(jq -c . <<<"$found")"
 
+  # lines: how many lines a page falls short of the full 31 at its foot, and
+  # whether that is excused. Ramsey's rule (2026-09-28): 31 lines a page, except
+  # where the next page opens with a subhead or starts a new chapter.
+  #   p1 front matter, p2 opener (full), p3 31 lines, p4 30 lines then text,
+  #   p5 25 lines then a subhead, p6 subhead and 10 lines then a chapter,
+  #   p7 the last chapter's opener, which ends the book.
+  local -- body='' n
+  run_of() { local -i k; for ((k = 1; k <= $1; k+=1)); do body+="<p>Line $k of the run.</p>"; done; }
+  body+='<div class="front"><p>Contents</p><p>Preface</p></div>'
+  body+='<h1>One</h1>';                                   run_of 29
+  run_of 31
+  run_of 30
+  body+='<p style="break-before:page">A new page.</p>';   run_of 24
+  body+='<h2 style="break-before:page">A subhead</h2>';   run_of 10
+  body+='<h1>Two</h1>';                                   run_of 3
+  cat >"$TMP/lines.html" <<HTML
+<!doctype html><html lang="en"><head><meta charset="utf-8"><style>
+@font-face{font-family:BN;src:url(file://$ROOT/fonts/bonanova/BonaNova-Regular.ttf)}
+@font-face{font-family:"Work Sans";font-weight:600;src:url(file://$ROOT/fonts/worksans/WorkSans-SemiBold.ttf)}
+@page{size:152mm 229mm;margin:24.58mm 20mm 24.5mm 25mm;
+  @top-left{content:"running head";font:9pt BN;vertical-align:top;padding-top:13.35mm}
+  @bottom-left{content:counter(page);font:8pt BN;vertical-align:top;padding-top:6.8mm}}
+body{font-family:BN;font-size:10pt;line-height:16pt;margin:0}
+p{margin:0;widows:1;orphans:1}
+.front{break-after:page}
+h1{font:600 20pt/32pt "Work Sans";margin:0;break-before:page}
+h2{font:600 12pt/16pt "Work Sans";margin:0}
+</style></head><body>$body</body></html>
+HTML
+  render "$TMP/lines.html" "$TMP/lines.pdf"
+  found=$("$CHECK" lines "$TMP/lines.pdf" 2>/dev/null) || found='{}'
+  n=$(jq -c '[.short[]?.page]' <<<"$found")
+  [[ $n == '[4]' ]] && ok 'lines flags the one page that is short with no excuse' \
+    || bad "lines flagged $n, want [4]: $(jq -c '.pages' <<<"$found")"
+  jq -e '.short[0].short_by == 1' <<<"$found" >/dev/null \
+    && ok 'lines says the page is one line short' \
+    || bad "lines misjudged how short page 4 is: $(jq -c '.short' <<<"$found")"
+  jq -e '[.pages[] | select(.page == 2 or .page == 3) | .short_by] == [0, 0]' <<<"$found" >/dev/null \
+    && ok 'lines finds an opener and a text page full' \
+    || bad "lines misjudged the full pages: $(jq -c '[.pages[] | select(.page < 4)]' <<<"$found")"
+  jq -e '[.pages[] | select(.page == 5)][0] | .short_by == 6 and (.excused | test("subhead"))' <<<"$found" >/dev/null \
+    && ok 'lines excuses a page before a subhead' \
+    || bad "lines did not excuse page 5: $(jq -c '[.pages[] | select(.page == 5)]' <<<"$found")"
+  jq -e '[.pages[] | select(.page == 6)][0] | .short_by > 0 and (.excused | test("chapter"))' <<<"$found" >/dev/null \
+    && ok 'lines excuses the last page of a chapter' \
+    || bad "lines did not excuse page 6: $(jq -c '[.pages[] | select(.page == 6)]' <<<"$found")"
+  jq -e '([.pages[].page] | index(1)) == null' <<<"$found" >/dev/null \
+    && ok 'lines leaves the front matter out' \
+    || bad 'lines reported on the front matter'
+
   ((FAILED == 0)) || exit 1
 }
 

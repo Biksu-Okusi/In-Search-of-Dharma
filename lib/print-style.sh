@@ -174,8 +174,15 @@ print_page_css() {
 @page prelim:blank{@top-left{content:none}@top-right{content:none}
   @bottom-left{content:none}@bottom-right{content:none}}
 
+/* Every page runs to its full 31 lines (Ramsey, 2026-09-28), so a paragraph may
+   leave one line at the foot of a page or carry one over to the head of the
+   next. Widows, orphans and runts are put right by hand at the very end, once
+   the pagination has settled; "pdfcheck.py lines" lists the pages to look at.
+   A subhead still stays with the text under it, which is his stated exception.
+   Both properties are inherited and are set here, at the root, so that they
+   reach a list entry as well as a paragraph: the Sources are lists. */
 html{font-family:"$FONT_SERIF_FAMILY",serif;font-size:${PRINT_SIZE_PT}pt;
-  line-height:${PRINT_LEAD_PT}pt;color:#000;hyphens:auto;
+  line-height:${PRINT_LEAD_PT}pt;color:#000;hyphens:auto;widows:1;orphans:1;
   font-variant-numeric:oldstyle-nums;
   font-feature-settings:"onum" 1,"liga" 1,"kern" 1}
 body{margin:0}
@@ -189,7 +196,7 @@ h2{font:600 ${PRINT_SUB_PT}pt/${PRINT_LEAD_PT}pt "$FONT_SANS_FAMILY";
 h3{font:600 ${PRINT_SIZE_PT}pt/${PRINT_LEAD_PT}pt "$FONT_SANS_FAMILY";
   margin:${PRINT_LEAD_PT}pt 0 0 0;break-after:avoid}
 
-p{margin:0;text-align:justify;text-indent:10mm;widows:2;orphans:2}
+p{margin:0;text-align:justify;text-indent:10mm}
 p.op,h1+p,h2+p,h3+p,blockquote+p{text-indent:0}
 blockquote{margin:${PRINT_LEAD_PT}pt 0 ${PRINT_LEAD_PT}pt 8mm;font-style:italic}
 blockquote p{text-indent:0}

@@ -10,6 +10,7 @@ Usage:
   pdfcheck.py baselines FILE [--page N]
   pdfcheck.py rules FILE [--page N]
   pdfcheck.py ink FILE [--page N] --box X0,Y0,X1,Y1
+  pdfcheck.py lines FILE [--top MM] [--lead PT] [--want N]
   pdfcheck.py check FILE [--trim WxH] [--require-even] [--require-blank-last]
                          [--measure MM --inner MM]
 """
@@ -43,6 +44,13 @@ MEASURE_LIST_MAX = 10  # overruns named one by one before the rest are counted
 # the book's hairlines are 0.4pt (0.14mm).
 RULE_DPI = 600
 INK_DPI = 1200       # one pixel is 0.02mm: fine enough to hold 0.1mm tolerances
+# Where a 10pt Bona Nova baseline falls in its 16pt line box, from the top:
+# half the leading left over by the 1.2em content area, then the 0.932em ascent.
+# lines() rounds to the nearest line, so other faces and sizes, which stand
+# within a point of this, are read correctly.
+LINE_BASE_PT = 11.32
+TITLE_MIN_PT = 18.0  # a chapter title is 20pt; nothing else in the text exceeds 12pt
+HEAD_MIN_PT = 9.9    # subheads and labels are 10pt and 12pt; bold in the text is 9.4pt
 RULE_MIN_MM = 4.0
 RULE_MAX_W_MM = 0.2
 
@@ -357,6 +365,113 @@ def ink(path, page, box, dpi=INK_DPI):
                   'y1_mm': round(oy + (ys.max() + 1) / px, 2)}}
 
 
+def text_rows(path):
+  """Yield (page, [row]) for every page, a row being the text on one baseline:
+  {'y': baseline in points from the page top, 'spans': [(font, size)]}.
+
+  Read from mutool's structured text, which gives each character's origin --
+  the baseline itself, where pdftotext gives only the foot of a word's box --
+  and the face and size it is set in.
+  """
+  proc = subprocess.Popen(['mutool', 'draw', '-F', 'stext', '-o', '-', path],
+                          stdout=subprocess.PIPE, stderr=subprocess.DEVNULL, text=True)
+  page, spans, font, fresh = 0, [], None, False
+  try:
+    for line in proc.stdout:
+      if line.startswith('<char'):
+        if fresh:  # one character places the span; the rest share its baseline
+          m = re.search(r' y="([-\d.]+)"', line)
+          if m:
+            spans.append((float(m.group(1)), font[0], font[1]))
+            fresh = False
+      elif line.startswith('<font'):
+        m = re.search(r'name="([^"]*)" size="([\d.]+)"', line)
+        font, fresh = (m.group(1), float(m.group(2))), True
+      elif line.startswith('<page'):
+        if page:
+          yield page, _rows(spans)
+        page, spans = page + 1, []
+    if page:
+      yield page, _rows(spans)
+  finally:
+    proc.stdout.close()
+    if proc.wait() != 0:
+      raise RuntimeError('mutool could not read the text')
+
+
+def _rows(spans):
+  rows = []
+  for y, name, size in sorted(spans):
+    if rows and y - rows[-1]['y'] < 2.0:
+      rows[-1]['spans'].append((name, size))
+    else:
+      rows.append({'y': y, 'spans': [(name, size)]})
+  return rows
+
+
+def _is_head_face(name):
+  """Work Sans SemiBold, upright or italic, however the file spells it."""
+  plain = re.sub(r'^[A-Z]{6}\+', '', name)
+  plain = re.sub(r'[^a-z]', '', plain.lower())
+  return plain.startswith('worksanssemibold')
+
+
+def _opens_with(rows):
+  """What a page's first line is: 'title', 'subhead', 'text', or 'blank'."""
+  if not rows:
+    return 'blank'
+  spans = rows[0]['spans']
+  if not all(_is_head_face(name) for name, _size in spans):
+    return 'text'
+  size = max(size for _name, size in spans)
+  if size >= TITLE_MIN_PT:
+    return 'title'
+  return 'subhead' if size >= HEAD_MIN_PT else 'text'
+
+
+def lines(path, top_mm, lead_pt, want):
+  """How far each page of the text falls short of a full page at its foot.
+
+  A page is full when its last line stands on the last line of the grid, which
+  is not the same as holding `want` lines of type: a subhead's space counts. The
+  rule is Tuwhiri's (2026-09-28): every page runs to the full depth, except
+  where the next page opens with a subhead or starts a new chapter. The front
+  matter, everything before the first chapter title, is left out.
+  """
+  top = top_mm / PT_MM
+  foot = top + want * lead_pt          # the foot of the last line box
+  depth = lead_pt - LINE_BASE_PT       # from a baseline to the foot of its box
+  pages = []
+  for page, rows in text_rows(path):
+    # The running head stands above the text and the folio below it. A chapter
+    # opener hangs from its title, not from the grid, and may end part of a
+    # line lower than other pages do.
+    body = [r for r in rows if top < r['y'] < foot + 0.6 * lead_pt]
+    pages.append((page, body))
+  start = next((i for i, (_p, body) in enumerate(pages) if _opens_with(body) == 'title'), None)
+  if start is None:
+    raise RuntimeError('no chapter title found, so no text to measure')
+  pages = pages[start:]
+  last_inked = max(i for i, (_p, body) in enumerate(pages) if body)
+  out, short = [], []
+  for i, (page, body) in enumerate(pages):
+    if not body:
+      continue
+    short_by = max(0, round((foot - (body[-1]['y'] + depth)) / lead_pt))
+    follows = _opens_with(pages[i + 1][1]) if i < last_inked else 'blank'
+    excused = None
+    if short_by:
+      if follows in ('title', 'blank'):
+        excused = 'ends a chapter'
+      elif follows == 'subhead':
+        excused = 'the next page opens with a subhead'
+    out.append({'page': page, 'lines': len(body), 'short_by': short_by,
+                'opens': _opens_with(body), 'excused': excused})
+    if short_by and not excused:
+      short.append({'page': page, 'short_by': short_by})
+  return {'want': want, 'pages': out, 'short': short}
+
+
 def check(path, trim, require_even, require_blank_last, text_block=None):
   m = measure(path)
   fail, warn = [], []
@@ -423,11 +538,17 @@ def check(path, trim, require_even, require_blank_last, text_block=None):
 
 def main():
   ap = argparse.ArgumentParser(description=__doc__)
-  ap.add_argument('action', choices=('measure', 'baselines', 'rules', 'ink', 'check'))
+  ap.add_argument('action', choices=('measure', 'baselines', 'rules', 'ink', 'lines', 'check'))
   ap.add_argument('file')
   ap.add_argument('--page', type=int, default=1)
   ap.add_argument('--box', metavar='X0,Y0,X1,Y1',
                   help='for ink: the box to look in, in mm from the top left of the trim')
+  ap.add_argument('--top', type=float, default=24.58, metavar='MM',
+                  help='for lines: the top margin, where the grid begins')
+  ap.add_argument('--lead', type=float, default=16.0, metavar='PT',
+                  help='for lines: the leading')
+  ap.add_argument('--want', type=int, default=31, metavar='N',
+                  help='for lines: the lines a full page holds')
   ap.add_argument('--trim', default='152x229')
   ap.add_argument('--require-even', action='store_true')
   ap.add_argument('--require-blank-last', action='store_true')
@@ -448,6 +569,16 @@ def main():
       print(json.dumps(baselines(a.file, a.page), indent=2))
     elif a.action == 'rules':
       print(json.dumps(rules(a.file, a.page), indent=2))
+    elif a.action == 'lines':
+      report = lines(a.file, a.top, a.lead, a.want)
+      print(json.dumps(report, indent=2))
+      if report['short']:
+        n = len(report['short'])
+        print(f"▲ {n} {'page falls' if n == 1 else 'pages fall'} short of {a.want} lines "
+              f"with no subhead or chapter after: "
+              f"{', '.join(str(s['page']) for s in report['short'])}", file=sys.stderr)
+      else:
+        print(f"✓ every page runs to {a.want} lines or is excused", file=sys.stderr)
     elif a.action == 'ink':
       if not a.box:
         ap.error('ink needs --box X0,Y0,X1,Y1')

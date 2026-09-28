@@ -12,7 +12,7 @@ shopt -s inherit_errexit
 declare -r SCRIPT_PATH=$(realpath -- "${BASH_SOURCE[0]}")
 declare -r TEST_DIR=${SCRIPT_PATH%/*}
 declare -r ROOT=${TEST_DIR%/*}
-declare -i FAILED=0
+declare -i FAILED=0 i_
 declare -r TOL=0.1
 
 # Target baselines in mm from the trim top, measured from the model book --
@@ -174,6 +174,46 @@ jq -n -e --argjson l1 "$l1" --argjson l2 "$l2" --argjson l3 "$l3" --argjson c "$
   && printf '  ✓ two lines stand beside the cap and the third returns to the margin\n' \
   || { printf '  ✗ the cap does not span two lines: %s %s %s\n' "$l1" "$l2" "$l3"; FAILED+=1; }
 
+echo '== 31 lines a page =='
+# Ramsey (2026-09-28): every page runs to 31 lines; widows and orphans are dealt
+# with by hand at the very end. A three-line paragraph cannot be split at all
+# while widows and orphans are both held to two lines, so a chapter made of
+# them leaves a page short wherever a page ends inside one.
+declare -- three='<p>A paragraph of three lines, which a page may have to end inside: it holds words enough to run past two lines of the measure and into a third.</p>'
+declare -- run=''
+for ((i_ = 0; i_ < 45; i_+=1)); do run+=$three; done
+cat > "$TMP"/full.html <<HTML
+<!doctype html><html lang="en"><head><meta charset="utf-8">
+<link rel="stylesheet" href="print.css"></head><body>
+<section class="chapter"><h1>One</h1>$run</section></body></html>
+HTML
+weasyprint "$TMP"/full.html "$TMP"/full.pdf 2>/dev/null
+declare -- depth
+depth=$("$ROOT"/lib/pdfcheck.py lines "$TMP"/full.pdf --top "$PRINT_TOP_MM" --lead "$PRINT_LEAD_PT" 2>/dev/null)
+if jq -e '(.pages | length) >= 4 and .short == []' <<<"$depth" >/dev/null; then
+  printf '  ✓ every page of a chapter of three-line paragraphs runs to 31 lines\n'
+else
+  printf '  ✗ pages fall short: %s\n' "$(jq -c '[.pages[] | {page, lines, short_by}]' <<<"$depth")"; FAILED+=1
+fi
+
+# The same holds in the Sources, whose entries are list items, not paragraphs.
+declare -- entry='<li>An Author, A Title of Some Length (1999) – a note on what the work is drawn on for here, long enough to run past two lines of the measure and into a third.</li>'
+run=''
+for ((i_ = 0; i_ < 40; i_+=1)); do run+=$entry; done
+cat > "$TMP"/fullsrc.html <<HTML
+<!doctype html><html lang="en"><head><meta charset="utf-8">
+<link rel="stylesheet" href="print.css"></head><body>
+<section class="chapter"><h1>One</h1><p>The text.</p>
+<div class="sources"><h2 id="sources">Sources</h2><ul>$run</ul></div></section></body></html>
+HTML
+weasyprint "$TMP"/fullsrc.html "$TMP"/fullsrc.pdf 2>/dev/null
+depth=$("$ROOT"/lib/pdfcheck.py lines "$TMP"/fullsrc.pdf --top "$PRINT_TOP_MM" --lead "$PRINT_LEAD_PT" 2>/dev/null)
+if jq -e '(.pages | length) >= 4 and .short == []' <<<"$depth" >/dev/null; then
+  printf '  ✓ every page of a list of three-line entries runs to 31 lines\n'
+else
+  printf '  ✗ pages of the list fall short: %s\n' "$(jq -c '[.pages[] | {page, lines, short_by}]' <<<"$depth")"; FAILED+=1
+fi
+
 echo '== blank verso =='
 # A chapter that ends on a recto leaves the next opener's verso blank. Ramsey
 # (2026-09-28): a blank verso carries the running head too. It still carries no
@@ -202,7 +242,6 @@ echo '== front matter and Preface in roman; page 1 is Part 1 =='
 # Preface do. The Preface's pages carry running heads like any chapter's.
 declare -- para='<p>The Preface runs on across several pages, so that its later pages, and the blank before Part 1, have somewhere to appear. The Preface runs on across several pages, so that its later pages have somewhere to appear.</p>'
 declare -- preface_body=''
-declare -i i_
 # Fifteen paragraphs end the Preface on a recto, so a blank verso stands
 # before Part 1.
 for ((i_ = 0; i_ < 15; i_+=1)); do preface_body+=$para; done
