@@ -156,6 +156,82 @@ blank_lines=$("$ROOT"/lib/pdfcheck.py baselines "$TMP"/blank.pdf --page 2)
   && printf '  ✓ the blank verso has no folio rule\n' \
   || { printf '  ✗ the blank verso carries a folio rule\n'; FAILED+=1; }
 
+echo '== front matter and Preface in roman; page 1 is Part 1 =='
+# Ramsey (2026-09-28): page 1 is the first page of Part 1, and the pages before
+# it take roman numerals. Which of them show one he will say; until then the
+# half-title, title page and imprint show none, and the contents and the
+# Preface do. The Preface's pages carry running heads like any chapter's.
+declare -- para='<p>The Preface runs on across several pages, so that its later pages, and the blank before Part 1, have somewhere to appear. The Preface runs on across several pages, so that its later pages have somewhere to appear.</p>'
+declare -- preface_body=''
+declare -i i_
+# Fifteen paragraphs end the Preface on a recto, so a blank verso stands
+# before Part 1.
+for ((i_ = 0; i_ < 15; i_+=1)); do preface_body+=$para; done
+cat > "$TMP"/roman.html <<HTML
+<!doctype html><html lang="en"><head><meta charset="utf-8">
+<link rel="stylesheet" href="print.css"></head><body>
+<section class="front">
+<div class="halftitle"><p class="ht-title">in search of dharma</p></div>
+<div class="titlepage"><p class="tp-title">in search of dharma</p></div>
+<div class="imprint"><p>Imprint.</p></div>
+<nav class="contents"><h1>Contents</h1><div class="toc-entries">
+<p class="roman"><a href="#preface">Preface</a></p>
+<p><a href="#part-1">Part 1</a></p>
+</div></nav>
+</section>
+<section class="chapter prelim"><h1 id="preface">Preface</h1>$preface_body</section>
+<section class="chapter first"><h1 id="part-1">Part 1</h1><p>Part 1 opens here.</p></section>
+</body></html>
+HTML
+weasyprint "$TMP"/roman.html "$TMP"/roman.pdf 2>/dev/null
+declare -i roman_pages
+roman_pages=$(pdfinfo "$TMP"/roman.pdf | awk '/^Pages:/{print $2}')
+# The text at a page's folio and running-head positions, "" where none.
+at_y() { "$ROOT"/lib/pdfcheck.py baselines "$TMP"/roman.pdf --page "$1" \
+  | jq -r --argjson y "$2" '[.lines[] | select((.y_mm - $y | fabs) < 0.5) | .text] | join(" ")'; }
+page_of() { # the first page whose text includes $1
+  local -i n
+  for ((n = 1; n <= roman_pages; n+=1)); do
+    pdftotext -f "$n" -l "$n" "$TMP"/roman.pdf - | grep -q -F -- "$1" && { echo "$n"; return; }
+  done
+  echo 0
+}
+expect() { # expect <name> <got> <want>
+  [[ $2 == "$3" ]] && printf '  ✓ %s: %s\n' "$1" "${3:-(none)}" \
+    || { printf '  ✗ %s: got %s, want %s\n' "$1" "${2:-(none)}" "${3:-(none)}"; FAILED+=1; }
+}
+declare -i contents_pg preface_pg part1_pg
+contents_pg=$(page_of 'Contents') preface_pg=$(page_of 'Preface runs on') part1_pg=$(page_of 'Part 1 opens')
+expect 'half-title folio' "$(at_y 1 "${TARGET[folio]}")" ''
+expect 'title page folio' "$(at_y 3 "${TARGET[folio]}")" ''
+expect 'imprint folio' "$(at_y 4 "${TARGET[folio]}")" ''
+expect 'contents folio' "$(at_y "$contents_pg" "${TARGET[folio]}")" 'v'
+expect 'Preface opener folio' "$(at_y "$preface_pg" "${TARGET[folio]}")" 'vii'
+expect 'Preface opener head' "$(at_y "$preface_pg" "${TARGET[head]}")" ''
+expect 'Preface verso folio' "$(at_y $((preface_pg + 1)) "${TARGET[folio]}")" 'viii'
+expect 'Preface verso head' "$(at_y $((preface_pg + 1)) "${TARGET[head]}")" 'in search of dharma'
+expect 'Preface recto head' "$(at_y $((preface_pg + 2)) "${TARGET[head]}")" 'Preface'
+expect 'Part 1 opener folio' "$(at_y "$part1_pg" "${TARGET[folio]}")" '1'
+# The blank verso between the contents and the Preface belongs to the front
+# matter and carries nothing; the one before Part 1 is a blank verso like any
+# between chapters, with its running head and no folio.
+expect 'blank before the Preface: head' "$(at_y $((preface_pg - 1)) "${TARGET[head]}")" ''
+expect 'blank before the Preface: folio' "$(at_y $((preface_pg - 1)) "${TARGET[folio]}")" ''
+# pdftotext ends each page with a form feed, which is not text.
+if [[ -z $(pdftotext -f $((part1_pg - 1)) -l $((part1_pg - 1)) "$TMP"/roman.pdf - | tr -d '\f' \
+           | grep -v -x -e 'in search of dharma' -e '' || true) ]]; then
+  expect 'blank before Part 1: head' "$(at_y $((part1_pg - 1)) "${TARGET[head]}")" 'in search of dharma'
+  expect 'blank before Part 1: folio' "$(at_y $((part1_pg - 1)) "${TARGET[folio]}")" ''
+else
+  printf '  ✗ the fixture left no blank verso before Part 1: resize the Preface\n'; FAILED+=1
+fi
+declare -- toc
+toc=$(pdftotext -f "$contents_pg" -l "$contents_pg" -layout "$TMP"/roman.pdf - | tr -s ' .' ' ')
+[[ $toc == *'Preface vii'* ]] && printf '  ✓ the contents give the Preface in roman: vii\n' \
+  || { printf '  ✗ the contents do not give the Preface as vii: %s\n' "$(grep Preface <<<"$toc")"; FAILED+=1; }
+[[ $toc == *'Part 1 1'* ]] && printf '  ✓ the contents give Part 1 as page 1\n' \
+  || { printf '  ✗ the contents do not give Part 1 as page 1: %s\n' "$(grep 'Part 1' <<<"$toc")"; FAILED+=1; }
+
 # measure and margins, from the widest body line on the verso: the first line
 # may open an indented paragraph, the last may be a short one.
 measure=$(b 2 | jq -r '.lines[1:-1] | max_by(.x1_mm - .x0_mm) | [.x0_mm, .x1_mm] | @tsv')

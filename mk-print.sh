@@ -187,14 +187,18 @@ stage_images() {
     || die 5 "logo tinting failed ${LOGO_SRC@Q}"
 }
 
-# The four front-matter pages: half-title, title, imprint, contents. Roman
-# folios, no running heads; the arabic sequence restarts at the Preface. The
+# The four front-matter pages: half-title, title, imprint, contents. No
+# running heads; roman folios, shown from the contents on (see the bare page in
+# lib/print-style.sh). The Preface follows in the same roman sequence, and the
+# arabic sequence starts at Part 1, as Tuwhiri asked (2026-09-28). The
 # contents entries carry no page numbers here -- target-counter in
 # lib/print-style.sh resolves them at render time, so they cannot drift from
-# the pages they point at.
+# the pages they point at. The first entry, the Preface's, is marked to read
+# its number in roman.
 front_matter() {
   local -n _titles=$1
   local -- t id
+  local -i k=0
   printf '<section class="front">\n'
   local -- stack
   printf -v stack '<span class="t-lead">%s</span><span class="t-name">%s</span>' \
@@ -233,7 +237,9 @@ front_matter() {
   printf '<nav class="contents"><h1>Contents</h1>\n<div class="toc-entries">\n'
   for t in "${_titles[@]}"; do
     id=$(slugify "$t")
-    printf '<p><a href="#%s">%s</a></p>\n' "$id" "$(xml_escape "$t")"
+    printf '<p%s><a href="#%s">%s</a></p>\n' \
+      "$( ((k)) || printf ' class="roman"' )" "$id" "$(xml_escape "$t")"
+    k+=1
   done
   printf '</div>\n</nav>\n</section>\n'
 }
@@ -424,7 +430,7 @@ main() {
   # pandoc is run per file rather than once over all of them, because a single
   # invocation emits one flat document with no chapter boundary to target.
   info "rendering ${#inputs[@]} chapters"
-  local -- frag
+  local -- frag cls
   local -i chapter_n=0
   local -r body_html="$TMP_DIR"/body.html
   : >"$body_html" || die 5 "failed to create ${body_html@Q}"
@@ -441,12 +447,16 @@ main() {
              | "$SCRIPT_DIR"/lib/smallcaps.py \
              | "$SCRIPT_DIR"/lib/researchnotes.py) \
       || die 1 "pandoc failed for ${dst@Q}"
-    # The first chapter carries an extra class: the stylesheet restarts the
-    # arabic page sequence there, and no CSS selector can find "the first
-    # section that is a chapter" on its own, because section.front is also a
-    # <section> and so takes :first-of-type.
-    printf '<section class="chapter%s">\n%s\n</section>\n' \
-      "$( ((chapter_n)) || printf ' first' )" "$frag" >>"$body_html" \
+    # The Preface (chapter 0) is a preliminary, numbered in roman with the
+    # front matter; Part 1 (chapter 1) is where the arabic sequence starts.
+    # Each carries a class for the stylesheet, since no CSS selector can count
+    # sections: section.front is also a <section>.
+    case $chapter_n in
+      0) cls=' prelim' ;;
+      1) cls=' first' ;;
+      *) cls='' ;;
+    esac
+    printf '<section class="chapter%s">\n%s\n</section>\n' "$cls" "$frag" >>"$body_html" \
       || die 5 "failed to append to ${body_html@Q}"
     chapter_n+=1
   done

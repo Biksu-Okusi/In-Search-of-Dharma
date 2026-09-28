@@ -143,19 +143,36 @@ print_page_css() {
   @bottom-left{content:counter(page,lower-roman);$folio}}
 @page front:right{@top-left{content:none}@top-right{content:none}
   @bottom-left{content:counter(page,lower-roman);$folio}}
-/* A blank in the front matter carries nothing, folio included. It has to be
-   said again here, after the two rules above: they match a blank front page as
-   well as @page:blank does, and the later rule wins. */
+/* The Preface is a preliminary, numbered on in lower-roman from the front
+   matter (Ramsey, 2026-09-28: page 1 is the first page of Part 1). Its pages
+   carry running heads like a chapter's; its opener, like a chapter opener,
+   does not. mk-print.sh marks it section.chapter.prelim. The opener cannot
+   have a page name of its own, as a chapter's does: a change of name between
+   the title and the paragraph after it forces a page break there. It shares
+   the name, and first-except empties the recto head on the page where the
+   title sets it, which is the opener. */
+@page prelim{@bottom-left{content:counter(page,lower-roman);$folio}}
+@page prelim:right{@top-right{content:string(chaptitle,first-except)}}
+/* Which front-matter pages go without a folio. Ramsey will name the pages that
+   show a roman numeral; until he does, the half-title, the title page and the
+   imprint show none, and the numbering appears from the contents on. They are
+   still counted. To change the set, change this page's selector list below
+   (section.front ... {page:bare}); nothing else needs touching. */
+@page bare{@top-left{content:none}@top-right{content:none}
+  @bottom-left{content:none}@bottom-right{content:none}}
+/* A blank in the front matter or the prelims carries nothing, folio included.
+   It has to be said again here, after the rules above: they match a blank
+   front page as well as @page:blank does, and the later rule wins. */
 @page front:blank{@top-left{content:none}@top-right{content:none}
+  @bottom-left{content:none}@bottom-right{content:none}}
+@page prelim:blank{@top-left{content:none}@top-right{content:none}
   @bottom-left{content:none}@bottom-right{content:none}}
 
 html{font-family:"$FONT_SERIF_FAMILY",serif;font-size:${PRINT_SIZE_PT}pt;
   line-height:${PRINT_LEAD_PT}pt;color:#000;hyphens:auto;
   font-variant-numeric:oldstyle-nums;
   font-feature-settings:"onum" 1,"liga" 1,"kern" 1}
-/* The verso running head: the title in lowercase, as the title pages set it
-   (TITLE_TYPESET in mk-print.sh). */
-body{margin:0;string-set:booktitle "in search of dharma"}
+body{margin:0}
 
 h1{page:chapopen;break-before:recto;margin:0 0 0 10mm;position:relative;
   font:600 20pt/1 "$FONT_SANS_FAMILY";
@@ -270,12 +287,23 @@ section.chapter h1::after{content:"";position:absolute;
   left:0;top:40.4mm;width:12mm;height:12mm;
   background:url(images/dharma-eye.svg) no-repeat center/contain}
 
+/* The verso running head: the title in lowercase, as the title pages set it
+   (TITLE_TYPESET in mk-print.sh). It is set at each chapter's title rather
+   than once on the body, so that it is still unset on the blank verso between
+   the contents and the Preface. That page is a blank verso like any other to
+   the renderer -- a page made by a forced recto break has no page name, so
+   front:blank cannot reach it -- and a blank verso now keeps its running head.
+   Both strings are named here, since this rule replaces h1's own string-set. */
+section.chapter > h1{string-set:chaptitle content(),booktitle "in search of dharma"}
 section.front{page:front}
+section.front .halftitle,section.front .titlepage,section.front .imprint{page:bare}
+section.chapter.prelim{page:prelim}
+section.chapter.prelim > h1{page:prelim}
 section.front h1{break-before:auto;page:front;padding-top:0;
   padding-bottom:${PRINT_LEAD_PT}pt;margin-left:0;font-size:14pt}
-/* The arabic sequence restarts at the first chapter. ":first-of-type" cannot
-   do this: section.front is also a <section>, so it is the first of its type
-   and no .chapter element ever matches. mk-print.sh tags the first chapter. */
+/* The arabic sequence restarts at Part 1. ":first-of-type" cannot find it:
+   section.front is also a <section>, and the Preface is a chapter too, so
+   mk-print.sh tags Part 1 section.chapter.first. */
 /* The arabic sequence restarts at the first chapter, via a named page that
    exists only to carry the reset. WeasyPrint ignores counter-reset:page on an
    ELEMENT (verified: it renumbers nothing), and putting the reset on a shared
@@ -347,6 +375,8 @@ section.front .imprint .placeholder{font:600 8.5pt/12pt "$FONT_SANS_FAMILY"}
 
 nav.contents a{text-decoration:none;color:#000}
 nav.contents a::after{content:leader('.') target-counter(attr(href), page)}
+/* The Preface's entry points into the roman sequence. */
+nav.contents p.roman a::after{content:leader('.') target-counter(attr(href), page, lower-roman)}
 /* The entries must not inherit the body's 10mm first-line indent: the leader
    computes its fill against the un-indented line width, so an indent pushes
    the page number past the measure and into the trim margin. */

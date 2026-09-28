@@ -153,8 +153,11 @@ introduces one fails the build rather than printing a blank.
 
 ### Front matter
 
-Roman folios, no running heads, restarting the arabic sequence at 1 on the
-first page of the Preface.
+Roman folios, no running heads. The Preface continues the roman sequence, with
+running heads of its own, and the arabic sequence starts at 1 on the first page
+of Part 1. (Amended 2026-09-28 at the publisher's request; the sequence
+originally restarted at the Preface.) Until the publisher names the pages that
+show a roman numeral, the half-title, the title page and the imprint show none.
 
 1. Half-title
 2. Title page
