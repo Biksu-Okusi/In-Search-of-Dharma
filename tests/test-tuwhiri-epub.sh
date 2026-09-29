@@ -1,9 +1,10 @@
 #!/bin/bash
 #shellcheck disable=SC2015  # ok()/bad() only printf+append; A&&B||C is safe here
 # tests/test-tuwhiri-epub.sh - mk-book.sh --edition tuwhiri builds Tuwhiri's
-# ePub: the publisher's cover in place of the author's, Tuwhiri's ISBN and name
-# in the package, the chapter watercolours kept and still declared, and nothing
-# published.
+# ePub and PDF: the publisher's cover in place of the author's, Tuwhiri's ISBN
+# and name in the package, no other image (no chapter watercolours, no
+# back-cover plate, and nothing in the colophon about them), and nothing
+# published. The default edition keeps its watercolours.
 #
 # Built over a stand-in cover, so the test needs none of Tuwhiri's artwork, and
 # in a tree of its own: links to the book's sources beside a copy of the
@@ -24,7 +25,7 @@ declare -r ISBN=9798998067617
 declare -r OWN_ID='>https://garydean.id/books/in-search-of-dharma</dc:identifier>'
 declare -r GUARD_EDITION='publish skipped: the tuwhiri edition is never published from here'
 declare -r GUARD_OUTPUT='publish skipped: --output names a file of its own'
-declare -r AI_IMAGES='watercolour-style images generated with AI:grok-imagine-image-quality'
+declare -r AI_IMAGES='AI:grok-imagine-image-quality'
 declare -i FAILED=0
 declare -- TMP='' MKBOOK='' LOG=''
 trap '[[ -z $TMP ]] || rm -rf -- "$TMP"' EXIT
@@ -73,7 +74,7 @@ plain() { sed -e 's/<[^>]*>//g' -- "$1" | tr -s ' \n' ' '; }
 
 main() {
   local -- tool
-  for tool in convert identify unzip; do
+  for tool in convert identify unzip pdfimages pdftotext; do
     command -v "$tool" >/dev/null || die 18 "required: ${tool@Q}"
   done
 
@@ -92,15 +93,14 @@ main() {
   done
   cp -- "$ROOT"/mk-book.sh "$box"/ || die 5 "failed to copy mk-book.sh into ${box@Q}"
   MKBOOK=$box/mk-book.sh
-  local -- epub=$box/${OWN_NAME}_tuwhiri.epub cover=$TMP/cover.jpg left
+  local -- epub=$box/${OWN_NAME}_tuwhiri.epub pdf=$box/${OWN_NAME}_tuwhiri.pdf
+  local -- cover=$TMP/cover.jpg left
   # A stand-in cover of a size no image in the book has. ImageMagick has no
   # end-of-options marker, so the file is named by its format first.
   convert -size 613x917 xc:'#d9d7d7' jpg:"$cover" || die 5 "failed to make ${cover@Q}"
 
   refuses 'an unknown edition is refused' 22 'edition' \
     epub --edition nonesuch
-  refuses 'the Tuwhiri edition is an ePub only: a PDF is refused' 22 'ePub' \
-    pdf --edition tuwhiri --cover "$cover"
   refuses 'a missing cover stops the build and is named' 3 'nowhere.jpg' \
     epub --edition tuwhiri --cover "$TMP"/nowhere.jpg
   # A cover handed to the default edition would be dropped without a word, and
@@ -114,14 +114,17 @@ main() {
   ((said_rc == 0)) && [[ $said == 'mk-book.sh '[0-9]* ]] \
     && ok 'short options run together are taken one by one' \
     || bad "-qV: exit $said_rc, said: ${said%%$'\n'*}"
-  left=$(find -- "$box" -maxdepth 1 -name '*.epub' -print -quit) || die 1 "could not search ${box@Q}"
+  left=$(find -- "$box" -maxdepth 1 \( -name '*.epub' -o -name '*.pdf' \) -print -quit) \
+    || die 1 "could not search ${box@Q}"
   [[ -z $left ]] && ok 'a refused build writes nothing' || bad "a refused build left ${left@Q}"
 
-  # The edition under its own name, with no --output: only the edition's guard
-  # stands between this build and the publish step.
-  "$MKBOOK" epub --edition tuwhiri --cover "$cover" &>"$LOG" \
+  # The edition under its own name, with no target and no --output: it is
+  # both files, and only the edition's guard stands between this build and the
+  # publish step.
+  "$MKBOOK" --edition tuwhiri --cover "$cover" &>"$LOG" \
     || die 1 "the build failed: $(last_said 3)"
-  [[ -s $epub ]] && ok "the edition is written as ${epub##*/}" || die 1 "the build did not write ${epub@Q}"
+  [[ -s $epub ]] && ok "the ePub is written as ${epub##*/}" || die 1 "the build did not write ${epub@Q}"
+  [[ -s $pdf ]] && ok "the PDF is written as ${pdf##*/}" || die 1 "the build did not write ${pdf@Q}"
   holds "$LOG" "$GUARD_EDITION" \
     && ok 'the Tuwhiri edition stops before the publish step' \
     || bad "the guard on the edition did not stop the publish step: $(last_said 2)"
@@ -156,26 +159,44 @@ main() {
   [[ -z $default_cover ]] && ok 'the front cover of the default edition is not in the file' \
     || bad "the front cover of the default edition is still in the file: ${default_cover@Q}"
 
-  # The ten chapter watercolours and the back-cover plate stay.
+  # No image but the cover: the chapter watercolours and the back-cover plate
+  # are left out (Tuwhiri's wish, 2026-09-29).
   local -i art
   art=$(find -- "$TMP"/x -name '*.jpg' ! -path "*/$cover_href" | wc -l) \
     || die 1 "could not count the images under ${TMP@Q}/x"
-  ((art == 11)) && ok 'the ten chapter watercolours and the back-cover plate are kept' \
-    || bad "the file holds $art images besides the cover, want 11"
+  ((art == 0)) && ok 'no watercolour and no back-cover plate in the ePub' \
+    || bad "the ePub holds $art images besides the cover, want none"
+  holds "$opf" 'watercolour' \
+    && bad "the accessibility summary still speaks of watercolours: $(shown "$opf" 'accessibilitySummary[^<]*')" \
+    || ok 'the accessibility summary no longer speaks of watercolours'
 
-  # The colophon, the page that says how the book was typeset, no longer calls
-  # the cover an AI image, still declares the watercolours, and credits the
-  # cover. grep exits 1 when no page says it, and the next line reports that.
+  # The PDF likewise: one picture, the cover, and nothing in it about AI images.
+  # pdfimages lists a soft mask as an image of its own, so masks are not counted.
+  local -i pdf_art
+  pdf_art=$(pdfimages -list -- "$pdf" | awk 'NR > 2 && $3 != "smask"' | wc -l) \
+    || die 1 "could not list the images in ${pdf@Q}"
+  ((pdf_art == 1)) && ok 'the PDF holds one picture, the cover' \
+    || bad "the PDF holds $pdf_art pictures, want 1"
+  local -- pdf_text
+  pdf_text=$(pdftotext -- "$pdf" - | tr -s ' \n' ' ') || die 1 "could not read ${pdf@Q}"
+  [[ $pdf_text != *"$AI_IMAGES"* && $pdf_text == *'minimum graphics'* ]] \
+    && ok 'the PDF credits the cover and says nothing of AI images' \
+    || bad 'the colophon of the PDF is not the edition'"'"'s'
+
+  # The colophon, the page that says how the book was typeset, credits the
+  # cover and no longer speaks of AI images, while it still declares the AI
+  # used in the research. grep exits 1 when no page says it, and the next line
+  # reports that.
   local -- colophon page
   page=$(grep -l -r -F --include='*.xhtml' -- 'typeset from Markdown' "$TMP"/x | head -n 1) ||:
   [[ -f $page ]] || die 3 "no colophon page in ${epub@Q}"
   colophon=$(plain "$page") || die 1 "could not read ${page@Q}"
-  [[ $colophon != *'The cover and chapter illustrations'* ]] \
-    && ok 'the colophon no longer calls the cover an AI image' \
-    || bad 'the colophon still calls the cover an AI image'
-  [[ $colophon == *'chapter illustrations'*"$AI_IMAGES"* ]] \
-    && ok 'the colophon still declares the watercolours as AI images' \
-    || bad "the colophon does not declare the watercolours: ${colophon:0:300}"
+  [[ $colophon != *"$AI_IMAGES"* && $colophon != *'illustrations'* ]] \
+    && ok 'the colophon says nothing of AI images' \
+    || bad "the colophon still speaks of AI images: ${colophon:0:300}"
+  [[ $colophon == *'Research notes assisted with'* ]] \
+    && ok 'the colophon still declares the AI used in the research' \
+    || bad "the colophon lost its research declaration: ${colophon:0:300}"
   [[ $colophon == *'minimum graphics'* ]] && ok 'the colophon credits the cover to minimum graphics' \
     || bad 'the colophon does not credit the cover'
 
@@ -202,6 +223,10 @@ main() {
   default_cover=$(first_found "$TMP"/y 'defining-dharma-cover-title*') || exit 1
   [[ -n $default_cover ]] && ok 'the default edition keeps its own cover' \
     || bad 'the default edition lost its cover'
+  art=$(find -- "$TMP"/y -name '*.jpg' ! -name 'defining-dharma-cover-title*' | wc -l) \
+    || die 1 "could not count the images under ${TMP@Q}/y"
+  ((art == 11)) && ok 'the default edition keeps its ten watercolours and back-cover plate' \
+    || bad "the default edition holds $art images besides its cover, want 11"
   # As above: no page found is reported by the check, not by grep's exit 1.
   page=$(grep -l -r -F --include='*.xhtml' -- 'typeset from Markdown' "$TMP"/y | head -n 1) ||:
   [[ -f $page ]] || die 3 "no colophon page in ${own@Q}"

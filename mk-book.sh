@@ -3,7 +3,7 @@
 # essays 0..9 + the companion essay the-better-ones.md as appendix.
 #
 #   ./mk-book.sh [epub|pdf|all] [--audio none|link]   (defaults: all, link)
-#   ./mk-book.sh epub --edition tuwhiri               (the publisher's ePub)
+#   ./mk-book.sh --edition tuwhiri                    (the publisher's ePub + PDF)
 #
 # Audio narration (one MP3 per chapter, 0..9) is referenced at the top of each
 # chapter. Modes (--audio):
@@ -72,14 +72,16 @@ declare -r OUTPUT_BASE="$SCRIPT_DIR"/In-Search-of-Dharma_Biksu-Okusi_2026.epub
 declare -- OUTPUT=$OUTPUT_BASE
 declare -- OUTPUT_PDF="${OUTPUT%.epub}".pdf
 
-# Tuwhiri's ePub (--edition tuwhiri), the edition the publisher sells. It is the
-# same book under the publisher's own front cover, identified by Tuwhiri's ISBN
-# and carrying Tuwhiri's name. The chapter watercolours and the back-cover plate
-# stay, and the colophon still declares them (the author's decision,
-# 2026-09-28). An ePub only; never published from here, since the publish step
-# belongs to the author's own edition. The cover is Tuwhiri's artwork, not this
-# repository's to license, so it lives in the untracked print/ folder with the
-# publisher's other material.
+# Tuwhiri's edition (--edition tuwhiri), the ePub and PDF the publisher sells.
+# It is the same text under the publisher's own front cover, identified by
+# Tuwhiri's ISBN and carrying Tuwhiri's name, with no other image: the chapter
+# watercolours and the back-cover plate are left out, and the colophon says
+# nothing of them, so IngramSpark's checks have no AI image to stop on
+# (Tuwhiri's wish, 2026-09-29, at the author's word). The author's own edition
+# keeps them. Never published from here, since the publish step belongs to the
+# author's own edition. The cover is Tuwhiri's artwork, not this repository's
+# to license, so it lives in the untracked print/ folder with the publisher's
+# other material.
 declare -r TUWHIRI_ISBN=979-8-9980676-1-7
 declare -r TUWHIRI_PUBLISHER='The Tuwhiri Project'
 declare -r TUWHIRI_PUB_DATE=2026
@@ -194,7 +196,7 @@ $SCRIPT_NAME $VERSION - build "$TITLE" as an EPUB3 and/or PDF.
 
 Usage:
   $SCRIPT_NAME [epub|pdf|all] [--audio none|link] [--fonts SET] [--output FILE]
-  $SCRIPT_NAME epub --edition tuwhiri [--cover FILE] [--output FILE]
+  $SCRIPT_NAME [epub|pdf|all] --edition tuwhiri [--cover FILE] [--output FILE]
   $SCRIPT_NAME -h|--help
   $SCRIPT_NAME -V|--version
 
@@ -221,9 +223,10 @@ Options:
                    bonanova-solo  Bona Nova throughout, headings in its Bold
   --edition ED   Which edition to build (default: own):
                    own      the author's edition, under its own cover
-                   tuwhiri  the publisher's ePub: Tuwhiri's cover, ISBN
-                            $TUWHIRI_ISBN and name. An ePub only, written
-                            with a _tuwhiri suffix and never published.
+                   tuwhiri  the publisher's ePub and PDF: Tuwhiri's cover,
+                            ISBN $TUWHIRI_ISBN and name, and no
+                            other image. Written with a _tuwhiri suffix and
+                            never published.
   --cover FILE   The front cover of the Tuwhiri edition
                  (default: ${TUWHIRI_COVER#"$SCRIPT_DIR"/})
   --output FILE  Write the EPUB to FILE, and a PDF beside it under the same
@@ -307,10 +310,11 @@ inflect_h1() {
 # so we splice them in after the fact and repackage. The claims are truthful for
 # this book: a linear text reading order, a table of contents, and text
 # alternatives on every illustrative image (the <image> shortcode's ALT field).
+# IMAGES is the summary's sentence on the images, which differ by edition.
 # Repackaging keeps mimetype as the first, stored (uncompressed) entry, as the
 # EPUB OCF spec requires. See https://standardebooks.org/manual (accessibility).
 inject_accessibility_metadata() {
-  local -- epub=$1 tmpdir=$2
+  local -- epub=$1 tmpdir=$2 images=$3
   # Work under the caller's already-trapped temp dir, so it is cleaned on any
   # exit/signal without this function owning a second trap.
   local -- work
@@ -321,8 +325,8 @@ inject_accessibility_metadata() {
   [[ -f $opf ]] || die 3 "OPF not found inside ${epub@Q}"
 
   local -- meta
-  # Unquoted so the long summary line can be \-continued (BCS1201); the body
-  # contains nothing the shell would expand.
+  # Unquoted so the long summary line can be \-continued (BCS1201) and takes
+  # the images sentence; nothing else in the body would expand.
   meta=$(cat <<META
     <meta property="schema:accessMode">textual</meta>
     <meta property="schema:accessMode">visual</meta>
@@ -332,8 +336,7 @@ inject_accessibility_metadata() {
     <meta property="schema:accessibilityFeature">alternativeText</meta>
     <meta property="schema:accessibilityHazard">none</meta>
     <meta property="schema:accessibilitySummary">This publication conforms to a linear text reading order \
-with a navigable table of contents. Illustrations are decorative watercolour-style images carrying text \
-alternatives, and the book contains no flashing, motion, or sound hazards.</meta>
+with a navigable table of contents. $images, and the book contains no flashing, motion, or sound hazards.</meta>
 META
 )
   # Splice the block in just before </metadata>.
@@ -416,10 +419,7 @@ main() {
       target=${target:-all} ;;
     tuwhiri)
       cover_src=${cover_src:-$TUWHIRI_COVER}
-      # Asked for with no target, the edition is its ePub; a PDF is refused
-      # rather than quietly left out.
-      target=${target:-epub}
-      [[ $target == epub ]] || die 22 "the tuwhiri edition is an ePub only, not ${target@Q}"
+      target=${target:-all}
       [[ -f $cover_src ]] || die 3 "the tuwhiri edition's front cover is missing: ${cover_src@Q}" ;;
     *) die 22 "invalid --edition ${edition@Q} (want: ${EDITIONS[*]})" ;;
   esac
@@ -454,7 +454,8 @@ main() {
     command -v unzip &>/dev/null || die 18 'unzip not found (apt install unzip)'
   fi
   [[ $edition != own || -f $COVER_IMAGE ]] || die 3 "cover image missing ${COVER_IMAGE@Q}"
-  [[ -f $BACK_IMAGE ]] || die 3 "back cover image missing ${BACK_IMAGE@Q} (run images/defining-dharma-genback.sh)"
+  [[ $edition != own || -f $BACK_IMAGE ]] \
+    || die 3 "back cover image missing ${BACK_IMAGE@Q} (run images/defining-dharma-genback.sh)"
   local -- font
   for font in "${FONT_FILES[@]}"; do
     [[ -f $font ]] \
@@ -531,7 +532,8 @@ main() {
   # The staged back cover, likewise named relative to $img_stage.
   local -- back_rel=${BACK_IMAGE#"$SCRIPT_DIR"/}
   back_rel=${back_rel%.png}.jpg
-  [[ -f "$img_stage"/$back_rel ]] || die 3 "staged back-cover JPEG not produced ${back_rel@Q}"
+  [[ $edition != own || -f "$img_stage"/$back_rel ]] \
+    || die 3 "staged back-cover JPEG not produced ${back_rel@Q}"
   # SVGs (the title-page ornament) are copied verbatim; EPUB3 and weasyprint
   # both render them natively, and they are tiny.
   cp -- "$SCRIPT_DIR"/images/*.svg "$img_stage"/images/ \
@@ -564,6 +566,14 @@ main() {
         || die 1 "appendix headnote strip failed for ${dst@Q}"
       ! grep -q -- 'Stage-1\|question registry' "$dst" \
         || die 1 "appendix headnote still present in ${dst@Q} (headnote wording changed in ${APPENDIX@Q}?)"
+    fi
+    if [[ $edition == tuwhiri ]]; then
+      # The publisher's edition has no chapter watercolours. Each is a line of
+      # its own after preprocess; a watercolour left anywhere stops the build.
+      sed -i -E '/^!\[[^]]*\]\(images\/[^)]*_watercolor\.jpg\)$/d' -- "$dst" \
+        || die 1 "failed to take the watercolour out of ${dst@Q}"
+      ! grep -q -- '_watercolor' "$dst" \
+        || die 1 "a watercolour is left in ${dst@Q} (image line changed in ${src@Q}?)"
     fi
     if [[ $audio_mode != none ]] && ((i >= 1 && i <= 10)); then
       block=$(audio_block "$((i - 1))")
@@ -629,16 +639,15 @@ main() {
     # the output is a single paragraph.
     printf 'This ebook was typeset from Markdown with pandoc, in %s. ' "$FONT_COLOPHON_EN"
     # What the declaration covers follows the edition: the publisher's cover is
-    # a designer's work and is credited as such; the watercolours inside are
-    # declared in both editions.
+    # a designer's work and is credited as such, and its edition has no other
+    # image; the author's cover and watercolours are AI images, declared.
     if [[ $edition == tuwhiri ]]; then
-      printf 'The cover is by %s. ' "$TUWHIRI_COVER_CREDIT"
-      printf 'The chapter illustrations and the back-cover plate are watercolour-style images generated with '
+      printf 'The cover is by %s.\n\n' "$TUWHIRI_COVER_CREDIT"
     else
       printf 'The cover and chapter illustrations are watercolour-style images generated with '
+      printf '[AI:grok-imagine-image-quality](https://docs.x.ai/developers/models/grok-imagine-image-quality), '
+      printf 'from prompts written, iterated, and selected by the author.\n\n'
     fi
-    printf '[AI:grok-imagine-image-quality](https://docs.x.ai/developers/models/grok-imagine-image-quality), '
-    printf 'from prompts written, iterated, and selected by the author.\n\n'
     printf 'Research notes assisted with '
     printf '[AI:fable-5](https://www.anthropic.com/claude-fable-5-mythos-5-system-card), '
     printf '[AI:opus-5](https://www.anthropic.com/claude-opus-5-system-card), '
@@ -655,20 +664,23 @@ main() {
   inflect_h1 "$colophon" 'backmatter colophon'
   inputs+=("$colophon")
 
-  # The lettered back cover closes the book, mirroring the front. The heading
-  # exists only to give pandoc a split point (its own XHTML page in the EPUB)
-  # and is hidden by both stylesheets; the .pagebreak div starts the page in
-  # the PDF, where a display:none heading cannot carry the break.
-  local -- backcover="$TMP_DIR"/backcover.md
-  {
-    printf '# Back Cover {.unlisted .backcover}\n\n'
-    printf '<div class="pagebreak"></div>\n\n'
-    # Trailing backslash (hard line break) stops pandoc's implicit_figures from
-    # dressing the lone image as a <figure> with a visible "Back cover" caption.
-    printf '![Back cover](%s)\\\n' "$back_rel"
-  } >"$backcover" || die 5 "failed to write ${backcover@Q}"
-  inflect_h1 "$backcover" 'backmatter'
-  inputs+=("$backcover")
+  # The lettered back cover closes the author's edition, mirroring the front;
+  # the publisher's edition has none. The heading exists only to give pandoc a
+  # split point (its own XHTML page in the EPUB) and is hidden by both
+  # stylesheets; the .pagebreak div starts the page in the PDF, where a
+  # display:none heading cannot carry the break.
+  if [[ $edition == own ]]; then
+    local -- backcover="$TMP_DIR"/backcover.md
+    {
+      printf '# Back Cover {.unlisted .backcover}\n\n'
+      printf '<div class="pagebreak"></div>\n\n'
+      # Trailing backslash (hard line break) stops pandoc's implicit_figures from
+      # dressing the lone image as a <figure> with a visible "Back cover" caption.
+      printf '![Back cover](%s)\\\n' "$back_rel"
+    } >"$backcover" || die 5 "failed to write ${backcover@Q}"
+    inflect_h1 "$backcover" 'backmatter'
+    inputs+=("$backcover")
+  fi
 
   # EPUB package metadata pandoc will merge in (dc:* elements). A stable
   # identifier, the licence as dc:rights, and the subjects. Accessibility
@@ -773,7 +785,10 @@ CSS
         --resource-path="$img_stage" \
         -o "$OUTPUT" \
         -- "${inputs[@]}" ) || die 1 'pandoc EPUB build failed'
-    inject_accessibility_metadata "$OUTPUT" "$TMP_DIR"
+    # What the summary says of the images follows the edition, as the colophon does.
+    local -- images='Illustrations are decorative watercolour-style images carrying text alternatives'
+    [[ $edition == own ]] || images='The only image is the cover'
+    inject_accessibility_metadata "$OUTPUT" "$TMP_DIR" "$images"
     BUILT+=("$OUTPUT")
     info "done: $OUTPUT ($(du -h --apparent-size -- "$OUTPUT" | cut -f1))"
     # Validate: epubcheck is the arbiter of EPUB conformance. Fail the build on

@@ -41,7 +41,7 @@ The ten parts are also assembled into a single book, *in search of dharma* — s
 ```bash
 ./mk-book.sh [epub|pdf|all] [--audio none|link]   # defaults: all, link
 ./mk-book.sh epub --output FILE                   # build somewhere else; never published
-./mk-book.sh epub --edition tuwhiri --cover FILE  # the publisher's ePub
+./mk-book.sh --edition tuwhiri --cover FILE       # the publisher's ePub and PDF
 ```
 
 The script preprocesses each part (frontmatter, image shortcodes), then stitches them into an EPUB3 with pandoc and a PDF via weasyprint, with embedded fonts and optional per-chapter audio narration (`link` adds hyperlinks to the hosted MP3s; `none` omits them). The companion essay [`the-better-ones.md`](the-better-ones.md), which states and stress-tests the project's two-test standard for judging dharmas, closes the book as its appendix. The built books are tracked in the repository (`--audio embed` also produces a self-contained EPUB with the MP3s bundled in, about 75 MB, which is built locally and not tracked):
@@ -51,7 +51,7 @@ The script preprocesses each part (frontmatter, image shortcodes), then stitches
 
 An Indonesian edition, *Mencari Dharma*, is built the same way in [`id/`](id/): [`Mencari-Dharma_Biksu-Okusi_2026.epub`](id/Mencari-Dharma_Biksu-Okusi_2026.epub) and [`Mencari-Dharma_Biksu-Okusi_2026.pdf`](id/Mencari-Dharma_Biksu-Okusi_2026.pdf). Milestone versions of the books are also published via [GitHub Releases](https://github.com/Biksu-Okusi/In-Search-of-Dharma/releases).
 
-`--edition tuwhiri` builds the ePub that Tuwhiri, the book's publisher, sells: the same text under the publisher's own front cover, identified in its package by Tuwhiri's ePub ISBN and carrying Tuwhiri's name. The chapter watercolours stay, and its colophon declares them as the default edition's does. It is an ePub only, and the publish step never touches it.
+`--edition tuwhiri` builds the ePub and PDF that Tuwhiri, the book's publisher, sells: the same text under the publisher's own front cover, identified in the ePub's package by Tuwhiri's ePub ISBN and carrying Tuwhiri's name. It has no other image: the chapter watercolours and the back-cover plate are left out, and its colophon credits the cover instead of declaring AI images. The publish step never touches it.
 
 Building needs no configuration. Copying the finished files to a web-root, and mirroring them to another host, is optional and off by default: [`deploy.conf.example`](deploy.conf.example) lists the settings that enable it.
 
