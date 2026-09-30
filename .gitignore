@@ -104,3 +104,16 @@ cover text In search of dharma.*
 # Derived from print-cover-text.md for correspondents who cannot open Markdown.
 print-cover-text.docx
 
+
+# Mail copies written by the persona tools (mailsend.py writes <body>.eml,
+# attachments included); correspondence belongs in wip/, never the repo.
+*.eml
+
+# Secrets, never committed (none are kept here; a guard)
+.env
+*.token
+*.key
+
+# Tool caches
+.ruff_cache/
+.pytest_cache/
