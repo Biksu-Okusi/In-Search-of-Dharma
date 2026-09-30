@@ -122,7 +122,7 @@ You may have noticed that this test has soft edges, and those edges are part of 
 
 But what about environmentalism, with its values, its disciplines of consumption, its story about humanity and nature, and its converts who genuinely reorganise their lives around it? What about the ethos of a demanding profession, medicine or the military, that tells its members who to become and drills them until they are it? What about a subculture like punk, with its code and its refusals?
 
-Run the four features over each of these and you will find them scoring two or three out of four, hovering right at the threshold. I do not think there is a hidden fact that settles such cases, and chasing one would lead us away from what matters. The features are a tool for seeing family resemblance, not a border guard stamping passports. What they let us do is *compare*: to notice that a profession, a religion, and a peasant movement can be doing recognisably the same work, holding a life together in recognisably the same way, even when none of them would never dream of calling itself a dharma.
+Run the four features over each of these and you will find them scoring two or three out of four, hovering right at the threshold. I do not think there is a hidden fact that settles such cases, and chasing one would lead us away from what matters. The features are a tool for seeing family resemblance, not a border guard stamping passports. What they let us do is *compare*: to notice that a profession, a religion, and a peasant movement can be doing recognisably the same work, holding a life together in recognisably the same way, even when none of them would ever dream of calling itself a dharma.
 
 ## A definition is a tool, not a truth
 
