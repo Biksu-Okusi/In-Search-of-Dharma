@@ -112,21 +112,23 @@ main() {
     && ok 'the interior has the permissions of any newly made file' \
     || bad "the interior's permissions are $(stat -c %a -- "$PDF"), a new file's $(stat -c %a -- "$fresh")"
 
-  # The front matter, in order: the dedication on i, the half-title on iii,
-  # the title on v with the imprint on its back, the contents on vii. None of
-  # the first four printed pages shows a folio. The dedication is the author's
-  # (2026-09-28), set whole on page i and centred on the page's text block,
-  # which on a recto runs from 25mm to 132mm.
-  local -r dedication='Paul Stange, Irfan Kortschak, Peter Kropotkin, David Graeber, Pa Kettle, '\
+  # The front matter, in Tuwhiri's running order (Ramsey, 2026-09-30): the
+  # half-title on i, the title on iii with the imprint on its back, the
+  # dedication on v, the contents on vii. None of the seven shows a folio. The
+  # dedication is the author's (2026-09-28), opening "For" at Tuwhiri's
+  # request, set whole on page v and centred on the page's text block, which on
+  # a recto runs from 25mm to 132mm.
+  local -r ded_page=5
+  local -r dedication='For Paul Stange, Irfan Kortschak, Peter Kropotkin, David Graeber, Pa Kettle, '\
 'Robert Sapolsky, Stephen Batchelor, Elfie Klinger and Rupert Bozeat; and Sukinah and the women '\
 'of Kendeng; for their inspiration, and for their ideas which have been brought together in this work.'
   local -- text front off_centre
-  text=$(page_text 1 | tr -s ' \n' ' ') || die 1 'could not read page 1'
+  text=$(page_text "$ded_page" | tr -s ' \n' ' ') || die 1 "could not read page $ded_page"
   text=${text# }
   [[ ${text% } == "$dedication" ]] \
-    && ok 'page i carries the dedication, word for word, and nothing else' \
-    || bad "page i reads: ${text:0:160}"
-  off_centre=$("$CHECK" baselines --page 1 -- "$PDF" \
+    && ok 'page v carries the dedication, word for word, and nothing else' \
+    || bad "page v reads: ${text:0:160}"
+  off_centre=$("$CHECK" baselines --page "$ded_page" -- "$PDF" \
     | jq -r '[.lines[] | ((.x0_mm + .x1_mm) / 2 - 78.5) | fabs] | max') \
     || die 1 'could not measure the dedication'
   awk -v d="$off_centre" 'BEGIN{exit !(d < 0.3)}' \
@@ -134,7 +136,7 @@ main() {
     || bad "a line of the dedication stands ${off_centre}mm off the centre of the page"
   # No name is divided between two lines.
   local -- ded_lines name split=''
-  ded_lines=$("$CHECK" baselines --page 1 -- "$PDF" | jq -r '.lines[].text') \
+  ded_lines=$("$CHECK" baselines --page "$ded_page" -- "$PDF" | jq -r '.lines[].text') \
     || die 1 'could not read the lines of the dedication'
   for name in 'Paul Stange' 'Irfan Kortschak' 'Peter Kropotkin' 'David Graeber' 'Pa Kettle' \
               'Robert Sapolsky' 'Stephen Batchelor' 'Elfie Klinger' 'Rupert Bozeat' 'of Kendeng'; do
@@ -149,15 +151,24 @@ main() {
   [[ $front != *'concise and compelling'* ]] \
     && ok 'the endorsement is no longer in the front matter; it stands on the cover' \
     || bad 'the front matter still carries the endorsement'
+  expect_on 'the half-title is on page i, "in search of" over "DHARMA"' 1 'in search of DHARMA'
   expect_at 'page i folio' 1 "$FOLIO_Y" ''
   expect_blank 'page ii is blank' 2
-  expect_on 'the half-title is on page iii' 3 'in search of dharma'
+  expect_on 'the title page is on page iii' 3 'What holds a life'
+  expect_on 'the title page sets "in search of" over "DHARMA"' 3 'in search of DHARMA'
   expect_at 'page iii folio' 3 "$FOLIO_Y" ''
-  expect_blank 'page iv is blank' 4
-  expect_on 'the title page is on page v' 5 'What holds a life'
-  expect_on 'the imprint is on page vi, the back of the title' 6 'ISBN 979-8-9980676-0-0'
+  expect_on 'the imprint is on page iv, the back of the title' 4 'ISBN 979-8-9980676-0-0'
+  expect_at 'page iv folio' 4 "$FOLIO_Y" ''
+  # Tuwhiri's copy of 2026-09-30.
+  expect_on 'the imprint names Tuwhiri without "USA"' 4 'Tuwhiri, a 501c3 nonprofit'
+  expect_on 'the imprint carries the Library of Congress number' 4 \
+    'Library of Congress Control Number: 2026925543'
+  expect_on 'the imprint credits the cover image' 4 \
+    'Cover image by Honey Yanibel Minaya Cruz on Unsplash'
+  expect_at 'page v folio' "$ded_page" "$FOLIO_Y" ''
+  expect_blank 'page vi is blank' 6
   expect_on 'the contents are on page vii' 7 'Contents'
-  expect_at 'contents folio' 7 "$FOLIO_Y" 'vii'
+  expect_at 'contents folio' 7 "$FOLIO_Y" ''
 
   # The Preface follows in roman, and Part 1 opens the arabic sequence.
   local -i preface part1
@@ -165,18 +176,21 @@ main() {
   # capitals and comes back from the file in mixed case.
   preface=$(page_of 'that refer to the word') || die 1 'could not search for the Preface'
   part1=$(page_of 'yoga studio in nearly every city') || die 1 'could not search for Part 1'
-  expect 'the Preface opens on PDF page' "$preface" 9
+  # The Preface opens on viii, the verso of the contents, with its number and
+  # without a running head; its recto heads name it, its versos the book.
+  expect 'the Preface opens on PDF page' "$preface" 8
   ((preface && part1)) || die 1 'the Preface or Part 1 was not found, so their folios cannot be read'
-  expect_at 'Preface opener folio' "$preface" "$FOLIO_Y" 'ix'
-  expect_at 'Preface verso head' $((preface + 1)) "$HEAD_Y" 'in search of dharma'
-  expect_at 'Preface recto head' $((preface + 2)) "$HEAD_Y" 'Preface'
+  expect_at 'Preface opener folio' "$preface" "$FOLIO_Y" 'viii'
+  expect_at 'Preface opener head' "$preface" "$HEAD_Y" ''
+  expect_at 'Preface recto head' $((preface + 1)) "$HEAD_Y" 'Preface'
+  expect_at 'Preface verso head' $((preface + 2)) "$HEAD_Y" 'In search of dharma'
   ((part1 % 2)) && ok "Part 1 opens on a recto (PDF page $part1)" \
     || bad "Part 1 opens on PDF page $part1, which is not a recto"
   expect_at 'Part 1 opener folio' "$part1" "$FOLIO_Y" '1'
   expect_at 'Part 1 second page folio' $((part1 + 1)) "$FOLIO_Y" '2'
   text=$(page_text 7 | tr -s ' .' ' ') || die 1 'could not read page 7'
-  [[ $text == *'Preface ix'* && $text == *'1: Defining dharma 1'* ]] \
-    && ok 'the contents give the Preface as ix and Part 1 as 1' \
+  [[ $text == *'Preface viii'* && $text == *'1: Defining dharma 1'* ]] \
+    && ok 'the contents give the Preface as viii and Part 1 as 1' \
     || bad "the contents give other numbers: $(grep -E -- 'Preface|1: ' <<<"$text" | tr '\n' ' ')"
 
   # The signature that closes the Preface: flush left, which on a verso is the
@@ -224,7 +238,7 @@ main() {
   pages=$(pdfinfo -- "$PDF" | awk '/^Pages:/{print $2}') || die 1 "could not count the pages of ${PDF@Q}"
   for ((n = part1 + 1; n < pages - 1; n+=1)); do
     blank_text=$(page_text "$n" | tr -s ' \n' ' ') || die 1 "could not read page $n"
-    [[ $blank_text =~ ^\ ?in\ search\ of\ dharma\ ([0-9]+)\ ?$ ]] || continue
+    [[ $blank_text =~ ^\ ?In\ search\ of\ dharma\ ([0-9]+)\ ?$ ]] || continue
     blanks+=1
     ((BASH_REMATCH[1] == n - part1 + 1)) && numbered+=1 ||:  # counted below
   done

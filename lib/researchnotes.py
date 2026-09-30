@@ -17,6 +17,11 @@ wraps the block -- the label, that sentence and the notes list -- in div.rn,
 which lib/print-style.sh sets without hyphenation and with the narrower
 bullet indent.
 
+Key works is set the same way (Ramsey, 2026-09-30: "Indeed yes, with a 5mm
+indent and no hyphenation"): its label and list are wrapped in div.rn.kw, so
+the two lists of a Sources block match. It needs no rewriting, only the wrap,
+and a chapter may have one without the other.
+
 Reads a chapter's HTML fragment on stdin, after mk-print.sh has marked the
 bold label paragraph p.label, and writes it on stdout. A chapter with no
 Research notes passes through untouched. One whose label is followed by a
@@ -35,6 +40,8 @@ INTRO = re.compile(r'<p>' + r'\s+'.join(map(re.escape, LEAD.split())) + r'\s+'
                    r'<a\s+href="([^"]+)">GitHub</a>'
                    r'<span\s+class="repo-url">\s*[–—]\s*(\S+)</span>\.(.*?)</p>', re.S)
 BLOCK = re.compile(re.escape(LABEL) + r'.*?</ul>', re.S)
+KW_LABEL = '<p class="label">Key works</p>'
+KW_BLOCK = re.compile(re.escape(KW_LABEL) + r'\s*<ul>.*?</ul>', re.S)
 
 
 def intro(m):
@@ -48,6 +55,10 @@ def intro(m):
 
 
 def rewrite(fragment):
+  if KW_LABEL in fragment:
+    fragment, n = KW_BLOCK.subn(lambda m: f'<div class="rn kw">\n{m.group(0)}\n</div>', fragment)
+    if n != 1:
+      raise ValueError('the Key works label is not followed by its list')
   if LABEL not in fragment:
     return fragment
   fragment, n = INTRO.subn(intro, fragment)

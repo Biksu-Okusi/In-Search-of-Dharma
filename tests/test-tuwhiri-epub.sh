@@ -140,7 +140,7 @@ main() {
   holds "$opf" ">urn:isbn:$ISBN</dc:identifier>" \
     && ok "the package is identified by the ePub ISBN, $ISBN" \
     || bad "the package identifier is not the ePub ISBN: $(shown "$opf" '<dc:identifier[^<]*')"
-  holds "$opf" '<dc:publisher>The Tuwhiri Project</dc:publisher>' \
+  holds "$opf" '<dc:publisher>Tuwhiri</dc:publisher>' \
     && ok 'the package names Tuwhiri as the publisher' \
     || bad "the package does not name Tuwhiri as publisher: $(shown "$opf" '<dc:publisher[^<]*')"
   holds "$opf" 'garydean.id/books' \
@@ -199,6 +199,9 @@ main() {
     || bad "the colophon lost its research declaration: ${colophon:0:300}"
   [[ $colophon == *'minimum graphics'* ]] && ok 'the colophon credits the cover to minimum graphics' \
     || bad 'the colophon does not credit the cover'
+  [[ $colophon == *'Honey Yanibel Minaya Cruz on Unsplash'* ]] \
+    && ok 'the colophon credits the cover image as the imprint does' \
+    || bad 'the colophon does not credit the cover image'
 
   # The default edition, written elsewhere: only the --output guard stands
   # between this build and the publish step. It is also the edition the switch

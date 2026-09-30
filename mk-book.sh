@@ -83,10 +83,14 @@ declare -- OUTPUT_PDF="${OUTPUT%.epub}".pdf
 # to license, so it lives in the untracked print/ folder with the publisher's
 # other material.
 declare -r TUWHIRI_ISBN=979-8-9980676-1-7
-declare -r TUWHIRI_PUBLISHER='The Tuwhiri Project'
+# "Tuwhiri", simply: the publisher is phasing out "The Tuwhiri Project"
+# (Ramsey, 2026-09-30), and this is the form it asked for the ePub's field.
+declare -r TUWHIRI_PUBLISHER='Tuwhiri'
 declare -r TUWHIRI_PUB_DATE=2026
 declare -r TUWHIRI_COVER="$SCRIPT_DIR"/print/tuwhiri-cover-front.jpg
+# The cover's credits, as the print imprint gives them (Tuwhiri, 2026-09-30).
 declare -r TUWHIRI_COVER_CREDIT='minimum graphics'
+declare -r TUWHIRI_COVER_IMAGE='Honey Yanibel Minaya Cruz on Unsplash'
 declare -r -a EDITIONS=(own tuwhiri)
 
 # Chapter narration. One MP3 per chapter, named N-<stem>.mp3 (N = 0..9), living
@@ -642,7 +646,7 @@ main() {
     # a designer's work and is credited as such, and its edition has no other
     # image; the author's cover and watercolours are AI images, declared.
     if [[ $edition == tuwhiri ]]; then
-      printf 'The cover is by %s.\n\n' "$TUWHIRI_COVER_CREDIT"
+      printf 'The cover is by %s, with an image by %s.\n\n' "$TUWHIRI_COVER_CREDIT" "$TUWHIRI_COVER_IMAGE"
     else
       printf 'The cover and chapter illustrations are watercolour-style images generated with '
       printf '[AI:grok-imagine-image-quality](https://docs.x.ai/developers/models/grok-imagine-image-quality), '

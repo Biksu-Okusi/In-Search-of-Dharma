@@ -101,6 +101,20 @@ python3 -c "$BLOCK_SHAPE" "$GOT" 2>/dev/null \
   && pass 'div.rn holds the label, the intro and the notes list, and nothing after' \
   || fail 'div.rn is misplaced'
 
+# Key works is set like the Research notes (Ramsey, 2026-09-30), in a block of
+# its own: div.rn.kw, the label and its list, and nothing else.
+python3 -c '
+import re, sys
+s = sys.argv[1]
+m = re.search(r"<div class=\"rn kw\">\n(.*?)\n</div>", s, re.S)
+assert m and s.count("<div class=\"rn kw\">") == 1
+inner = m.group(1)
+assert inner.startswith("<p class=\"label\">Key works</p>") and inner.rstrip().endswith("</ul>")
+assert "Research notes" not in inner
+' "$GOT" 2>/dev/null \
+  && pass 'div.rn.kw holds the Key works label and its list, and nothing else' \
+  || fail 'Key works is not wrapped in div.rn.kw'
+
 # $(...) drops the fragment's final newline, so compare without it.
 GOT=$(printf '%s' "$PLAIN" | "$RN") && [[ $GOT == "${PLAIN%$'\n'}" ]] \
   && pass 'a chapter with no Research notes passes through unchanged' \
@@ -134,6 +148,8 @@ for SRC in "$ROOT"/[0-8]-*.md; do
     | "$RN" ) || { fail "${SRC##*/}: the filter failed"; continue; }
   [[ $GOT == *'<div class="rn">'* && $GOT == *"$LINE1<br />"* ]] \
     && pass "${SRC##*/}" || fail "${SRC##*/}: Research notes not rewritten"
+  [[ $GOT != *'<p class="label">Key works</p>'* || $GOT == *'<div class="rn kw">'* ]] \
+    && pass "${SRC##*/}: Key works" || fail "${SRC##*/}: Key works not wrapped"
 done
 
 echo '== research notes: as printed =='
@@ -172,6 +188,14 @@ INDENT=$(jq -r '[.lines[] | select(.text | startswith("• 1.1"))][0]
 awk -v d="$INDENT" 'BEGIN{exit !(d > 4.9 && d < 5.1)}' \
   && pass "printed: the note text stands ${INDENT}mm in from its bullet" \
   || fail "printed: the note text stands ${INDENT}mm in from its bullet, want 5mm"
+
+# Key works: the same 5mm between bullet and text.
+INDENT=$(jq -r '[.lines[] | select(.text | startswith("• Kane"))][0]
+  | if . == null then "none" else (.words[1].x0_mm - .words[0].x0_mm) end' <<<"$PRINTED") \
+  || stop 'could not measure the Key works indent'
+awk -v d="$INDENT" 'BEGIN{exit !(d > 4.9 && d < 5.1)}' \
+  && pass "printed: a Key works entry stands ${INDENT}mm in from its bullet" \
+  || fail "printed: a Key works entry stands ${INDENT}mm in from its bullet, want 5mm"
 
 # Hyphenation off: no line of the notes ends in a hyphen. The second note is
 # made of long words so that, hyphenated, some line would break inside one.

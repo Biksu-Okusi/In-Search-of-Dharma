@@ -34,15 +34,18 @@ declare -r SCRIPT_PATH=$(realpath -- "$0")
 declare -r SCRIPT_DIR=${SCRIPT_PATH%/*} SCRIPT_NAME=${SCRIPT_PATH##*/}
 
 declare -r TITLE='In search of dharma'
-# The half-title and title page set the title all in lowercase, as the cover
-# does (the author's decision, 2026-09-23), stacked in two parts: the lead-in
-# over the name. TITLE keeps its capital as the bibliographic form, used for
-# the HTML document's own <title>.
-declare -r TITLE_LEAD='in search of' TITLE_NAME='dharma'
+# The half-title and title page stack the title in two parts, the lead-in over
+# the name, as the cover does: "in search of" over "DHARMA", the two lines the
+# same width and the name letterspaced +5% (Ramsey, 2026-09-30; the author
+# leaves every surface but the cover to Tuwhiri's direction). TITLE keeps its
+# capital as the bibliographic form, used for the HTML document's own <title>.
+declare -r TITLE_LEAD='in search of' TITLE_NAME='DHARMA'
 declare -r TITLE_TYPESET="$TITLE_LEAD $TITLE_NAME"
 declare -r SUBTITLE='What holds a life, a people, a world together'
 declare -r AUTHOR='Biksu Okusi'
-declare -r PUBLISHER='The Tuwhiri Project'
+# "Tuwhiri", simply: the publisher is phasing out "The Tuwhiri Project"
+# (Ramsey, 2026-09-30). The name of its company in the imprint is its own.
+declare -r PUBLISHER='Tuwhiri'
 declare -r LICENSE_NAME='Creative Commons Attribution 4.0 International (CC BY 4.0)'
 declare -r LICENSE_URL='https://creativecommons.org/licenses/by/4.0/'
 # preprocess() rewrites research-note links to absolute repository URLs and
@@ -60,8 +63,9 @@ declare -r DEFAULT_OUTPUT_PDF="$SCRIPT_DIR"/In-Search-of-Dharma_interior_152x229
 # Optional imprint copy from Tuwhiri. Absent, a deliberately visible placeholder
 # is set instead, so a proof cannot be sent without the omission being obvious.
 declare -r IMPRINT_SRC="$SCRIPT_DIR"/print-imprint.md
-# The optional dedication, set on page i ahead of the half-title. Absent, the
-# interior opens on the half-title.
+# The optional dedication, set on page v after the imprint, a recto with a
+# blank behind it (Ramsey's running order, 2026-09-30). Absent, the contents
+# follow the imprint.
 declare -r DEDICATION_SRC="$SCRIPT_DIR"/print-dedication.md
 # The Okusi mark, set on the rule above each chapter title in place of the
 # roundel Tuwhiri uses in its own books.
@@ -203,11 +207,12 @@ stage_images() {
     || die 5 "logo tinting failed ${LOGO_SRC@Q}"
 }
 
-# The front matter: the dedication if there is one, then half-title,
-# title, imprint and contents. No
-# running heads; roman folios, shown from the contents on (see the bare page in
-# lib/print-style.sh). The Preface follows in the same roman sequence, and the
-# arabic sequence starts at Part 1, as Tuwhiri asked (2026-09-28). The
+# The front matter, in Tuwhiri's running order (Ramsey, 2026-09-30): i
+# half-title, ii blank, iii title, iv imprint, v dedication, vi blank, vii
+# contents. None of it carries a running head or a page number, though every
+# page is counted (see the bare page in lib/print-style.sh). The Preface starts
+# on viii, the contents' verso, with its roman page number, and the arabic
+# sequence starts at Part 1 (2026-09-28). The
 # contents entries carry no page numbers here -- target-counter in
 # lib/print-style.sh resolves them at render time, so they cannot drift from
 # the pages they point at. The first entry, the Preface's, is marked to read
@@ -217,14 +222,6 @@ front_matter() {
   local -- t id
   local -i k=0
   printf '<section class="front">\n'
-  # The dedication runs through smallcaps.py like the text, so that a run of
-  # capitals in it would be set as the house style has it.
-  if [[ -f $DEDICATION_SRC ]]; then
-    printf '<div class="dedication">\n'
-    pandoc --from=markdown --to=html5 -- "$DEDICATION_SRC" | "$SCRIPT_DIR"/lib/smallcaps.py \
-      || die 1 "dedication conversion failed ${DEDICATION_SRC@Q}"
-    printf '</div>\n'
-  fi
   local -- stack
   printf -v stack '<span class="t-lead">%s</span><span class="t-name">%s</span>' \
     "$(xml_escape "$TITLE_LEAD")" "$(xml_escape "$TITLE_NAME")"
@@ -254,6 +251,14 @@ front_matter() {
     printf '<p class="placeholder">[%s]</p>\n' "$(xml_escape "$LICENSE_URL")"
   fi
   printf '</div>\n'
+  # The dedication runs through smallcaps.py like the text, so that a run of
+  # capitals in it would be set as the house style has it.
+  if [[ -f $DEDICATION_SRC ]]; then
+    printf '<div class="dedication">\n'
+    pandoc --from=markdown --to=html5 -- "$DEDICATION_SRC" | "$SCRIPT_DIR"/lib/smallcaps.py \
+      || die 1 "dedication conversion failed ${DEDICATION_SRC@Q}"
+    printf '</div>\n'
+  fi
   # The entries sit inside their own div, so the contents heading is never
   # immediately followed by a <p>. The drop-cap rule is `h1 + p::first-letter`,
   # and a floated first letter inside a paragraph carrying a leader() and a
@@ -560,6 +565,11 @@ main() {
   # Written and checked in the build directory, and put in place only once it
   # conforms. Ghostscript reads a percent sign in its output name as a page
   # number pattern, which a name of the build's own choosing cannot contain.
+  # Downsampling is off. /prepress resamples any image above 450ppi to 300, and
+  # rounding in the resample lands just under it: Tuwhiri's word mark, set 25mm
+  # wide from 1958 pixels (2026-09-30), came out at 298ppi and failed the 300ppi
+  # floor. The mark is the only raster image in the interior (the watercolours
+  # are off), so leaving it at full resolution costs a few kilobytes.
   local -r finished="$TMP_DIR"/interior.pdf
   info 'converting to DeviceGray'
   gs -q -dBATCH -dNOPAUSE -dSAFER -sDEVICE=pdfwrite \
@@ -567,6 +577,7 @@ main() {
      -dCompatibilityLevel=1.6 -dPDFSETTINGS=/prepress \
      -dSubsetFonts=true -dEmbedAllFonts=true -dAutoRotatePages=/None \
      -dDetectDuplicateImages=true \
+     -dDownsampleGrayImages=false -dDownsampleColorImages=false \
      -sOutputFile="$finished" "$padded" \
     || die 1 'greyscale conversion failed'
 

@@ -2,10 +2,11 @@
      Tuwhiri's "In search of dharma opening pages.docx" (2026-09-23), with its
      line breaks and grouping; the licence is CC BY 4.0 at Tuwhiri's word
      (2026-09-24), and "Production BiksuBot" loses its query mark at their
-     request. "TO COME" marks what Tuwhiri has still to supply. -->
+     request. The Library of Congress number, the cover image credit and
+     "Tuwhiri" without "USA" on the second line are Tuwhiri's, 2026-09-30. -->
 
 First published in 2026 by\
-Tuwhiri USA, a 501c3 nonprofit\
+Tuwhiri, a 501c3 nonprofit\
 701 Ozier Drive, Batavia, IL 60510, USA\
 and The Tuwhiri Project Ltd\
 13 Leith Street, Gisborne 4010, Aotearoa New Zealand
@@ -20,7 +21,7 @@ ISBN 979-8-9980676-0-0 paperback\
 ISBN 979-8-9980676-1-7 ePub\
 ISBN 979-8-9980676-2-4 audiobook
 
-US Library of Congress Control Number TO COME
+Library of Congress Control Number: 2026925543
 
 Ongoing support from Aotearoa Buddhist Education Trust in\
 New Zealand, as well as from Secular Buddhist Network and\
@@ -31,7 +32,7 @@ gratefully acknowledge this support.
 Book design Ramsey Margolis\
 Production BiksuBot\
 Cover minimum graphics\
-Cover image TO COME
+Cover image by Honey Yanibel Minaya Cruz on Unsplash
 
 Set in Bona Nova by Capitalics, Mateusz Machalski *&* Andrzej Heidrich\
 and Work Sans by Wei Huang\

@@ -45,9 +45,9 @@ declare -r PRINT_TRIM_W_MM=152 PRINT_TRIM_H_MM=229
 declare -r PRINT_MEASURE_MM=107 PRINT_INNER_MM=25 PRINT_OUTER_MM=20
 
 # The book's title, on the half-title and the title page, is set in Cascadia
-# Code: "in search of" in its Light Italic above "dharma" in its Light, all
-# lowercase, as the cover sets it (Tuwhiri's choice, 2026-09-23; Gary's
-# lowercase, the same day). Vendored in fonts/cascadia (OFL, fsType 0, so
+# Code: "in search of" in its Light Italic above "DHARMA" in its Light, as the
+# cover sets it (Tuwhiri's choice of face, 2026-09-23; the capitals and the
+# matched widths, 2026-09-30). Vendored in fonts/cascadia (OFL, fsType 0, so
 # embeddable). These faces belong to the print title pages alone, so they stay
 # out of lib/fonts.sh, whose sets are embedded whole in the EPUB.
 declare -r PRINT_TITLE_FAMILY='Cascadia Code'
@@ -190,14 +190,15 @@ print_page_css() {
    title sets it, which is the opener. */
 @page prelim{@bottom-left{content:counter(page,lower-roman);$folio}}
 @page prelim:right{@top-right{content:string(chaptitle,first-except)}}
-/* The Preface's versos name the book outright, not through the booktitle
-   string, which stays unset until Part 1 (see section.chapter > h1 below). */
-@page prelim:left{@top-left{content:"in search of dharma"}}
-/* Which front-matter pages go without a folio. Ramsey will name the pages that
-   show a roman numeral; until he does, the half-title, the title page and the
-   imprint show none, and the numbering appears from the contents on. They are
-   still counted. To change the set, change this page's selector list below
-   (section.front ... {page:bare}); nothing else needs touching. */
+/* The Preface's versos name the book through a string of their own, not the
+   booktitle string, which stays unset until Part 1 (see section.chapter > h1
+   below). The Preface opens on a verso (viii, Ramsey, 2026-09-30), so this
+   head too is emptied on the opener by first-except. */
+@page prelim:left{@top-left{content:string(prelimbook,first-except)}}
+/* Which front-matter pages go without a folio: all of them, i to vii (Ramsey,
+   2026-09-30). They are still counted, so the Preface opens on viii. To change
+   the set, change this page's selector list below (section.front ...
+   {page:bare}); nothing else needs touching. */
 @page bare{@top-left{content:none}@top-right{content:none}
   @bottom-left{content:none}@bottom-right{content:none}}
 /* A blank inside the front matter carries nothing, folio included. It has to
@@ -356,22 +357,23 @@ section.chapter h1::after{content:"";position:absolute;
 div.blank-folio{position:running(blankfolio);font:400 8pt/1 "$FONT_SANS_FAMILY";text-align:left;
   box-sizing:border-box;height:${PRINT_FOLIORULE_MM}mm;$folio_rule}
 div.blank-folio::before{content:counter(page)}
-/* The verso running head: the title in lowercase, as the title pages set it
-   (TITLE_TYPESET in mk-print.sh). It is set at each chapter's title from Part
+/* The verso running head: "In search of dharma", with its capital (Ramsey,
+   2026-09-30). It is set at each chapter's title from Part
    1 on, rather than once on the body, so that it is still unset through the
    preliminaries. A blank verso keeps its running head, and the two blank
    versos of the preliminaries, before the Preface and before Part 1, are blank
    versos like any other to the renderer; with the string unset they carry
    nothing. Both strings are named in the first rule, since it replaces h1's
    own string-set. The Preface sets its title alone. */
-section.chapter > h1{string-set:chaptitle content(),booktitle "in search of dharma"}
-section.chapter.prelim > h1{string-set:chaptitle content()}
+section.chapter > h1{string-set:chaptitle content(),booktitle "In search of dharma"}
+section.chapter.prelim > h1{string-set:chaptitle content(),prelimbook "In search of dharma"}
 section.front{page:front}
 section.front .dedication,section.front .halftitle,section.front .titlepage,
-section.front .imprint{page:bare}
+section.front .imprint,section.front nav.contents{page:bare}
 section.chapter.prelim{page:prelim}
-section.chapter.prelim > h1{page:prelim}
-section.front h1{break-before:auto;page:front;padding-top:0;
+/* The Preface starts on the contents' verso, not the next recto. */
+section.chapter.prelim > h1{page:prelim;break-before:page}
+section.front h1{break-before:auto;page:bare;padding-top:0;
   padding-bottom:${PRINT_LEAD_PT}pt;margin-left:0;font-size:14pt}
 /* The arabic sequence restarts at Part 1. ":first-of-type" cannot find it:
    section.front is also a <section>, and the Preface is a chapter too, so
@@ -407,16 +409,13 @@ section.chapter figure img{max-width:70%}
    contents. Without this they flow together and the whole of the front matter
    lands on page i. */
 section.front > div,section.front > nav{break-after:page}
-/* The title page is a recto with the imprint on its back, as in the model
-   book: half-title i, blank ii, title iii, imprint iv, contents v. Without
-   this the title fell on ii, a left-hand page, facing its own imprint. */
-section.front .titlepage{break-before:recto}
+/* Tuwhiri's running order (Ramsey, 2026-09-30): i half-title, ii blank, iii
+   title, iv imprint, v dedication, vi blank, vii contents, and the Preface
+   from viii. The title page is a recto with the imprint on its back; the
+   dedication and the contents are rectos too. */
+section.front .titlepage,section.front .dedication,section.front nav.contents{break-before:recto}
 section.front .halftitle{padding-top:60mm}
-/* The dedication, where the book has one, stands on page i with the
-   half-title on the next recto: i dedication, ii blank, iii half-title, iv
-   blank, v title, vi imprint, vii contents. Each is its words and, under them,
-   who said them, set ragged and unhyphenated inside the paragraph indent. */
-section.front .halftitle{break-before:recto}
+/* The dedication is set ragged and unhyphenated inside the paragraph indent. */
 section.front .dedication{padding-top:55mm}
 section.front .dedication p{text-indent:0;text-align:center;font-style:italic;hyphens:none;
   margin:0 12mm}
@@ -427,22 +426,31 @@ section.front .dedication p{text-indent:0;text-align:center;font-style:italic;hy
 section.front .titlepage{padding-top:55mm;text-align:center;box-sizing:border-box;
   height:179mm;position:relative}
 section.front .halftitle p,section.front .titlepage p{text-indent:0;text-align:center}
-/* The title stacks: "in search of" in Cascadia Code Light Italic over "dharma"
-   in Light, the lead-in about a third the size of the name, as on the cover. */
+/* The title stacks: "in search of" in Cascadia Code Light Italic over "DHARMA"
+   in Light, the two lines the same width and the name letterspaced +5%
+   (Ramsey, 2026-09-30). Cascadia is monospaced, every character 1200/2048em
+   wide, so the widths are exact: DHARMA is 6 x 0.5859 + 5 x 0.05 = 3.7656em of
+   its size, "in search of" 12 x 0.5859 = 7.0313em of its own, so by advance
+   the lead-in is 0.5356 of the name's size. The letters' side bearings differ,
+   and the eye reads ink, not advance: measured at 300ppi, the lead-in's ink ran
+   1.5% wider, so it is set at 0.527 of the name (12.64pt against 24pt, 21.08pt
+   against 40pt). The last letter's spacing is taken back by a negative margin,
+   so the name is centred on its ink. */
 section.front .ht-title,section.front .tp-title{font-family:"$PRINT_TITLE_FAMILY";font-weight:300;
   line-height:1.1}
 section.front .t-lead{display:block;font-style:italic}
-section.front .t-name{display:block}
-section.front .ht-title .t-lead{font-size:10pt}
+section.front .t-name{display:block;letter-spacing:0.05em;margin-right:-0.05em}
+section.front .ht-title .t-lead{font-size:12.64pt}
 section.front .ht-title .t-name{font-size:24pt}
 section.front .tp-title{margin-bottom:6mm}
-section.front .tp-title .t-lead{font-size:14pt}
+section.front .tp-title .t-lead{font-size:21.08pt}
 section.front .tp-title .t-name{font-size:40pt}
 section.front .tp-sub{font-style:italic;margin-bottom:24mm}
-section.front .tp-author{font:600 12pt/1.4 "$FONT_SANS_FAMILY";margin-bottom:3mm}
+/* The author in Work Sans Regular, as on the cover (Ramsey, 2026-09-30). */
+section.front .tp-author{font:400 12pt/1.4 "$FONT_SANS_FAMILY";margin-bottom:3mm}
 section.front .tp-imprint{font:600 10pt/1.4 "$FONT_SANS_FAMILY"}
-/* Tuwhiri's word mark, at the width Tuwhiri's opening pages give it. */
-section.front .tp-mark{width:60mm;height:auto}
+/* Tuwhiri's word mark, 25mm wide (Ramsey, 2026-09-30). */
+section.front .tp-mark{width:25mm;height:auto}
 section.front .tp-imprint{position:absolute;bottom:0;left:0;right:0;margin:0}
 /* The imprint stands at the foot of its page, as a copyright page does, so it
    fits however many lines Tuwhiri's copy runs to. 179mm is the text area
@@ -453,10 +461,14 @@ section.front .imprint{height:179mm;display:flex;flex-direction:column;justify-c
 section.front .imprint p{text-indent:0;text-align:left;margin-bottom:6pt}
 section.front .imprint .placeholder{font:600 8.5pt/12pt "$FONT_SANS_FAMILY"}
 
+/* The contents have no dotted leaders and a line space between entries
+   (Ramsey, 2026-09-30). A leader of spaces still carries each page number to
+   the right-hand edge. The space is one line of the grid. */
 nav.contents a{text-decoration:none;color:#000}
-nav.contents a::after{content:leader('.') target-counter(attr(href), page)}
+nav.contents a::after{content:leader(' ') target-counter(attr(href), page)}
 /* The Preface's entry points into the roman sequence. */
-nav.contents p.roman a::after{content:leader('.') target-counter(attr(href), page, lower-roman)}
+nav.contents p.roman a::after{content:leader(' ') target-counter(attr(href), page, lower-roman)}
+nav.contents p{margin-bottom:${PRINT_LEAD_PT}pt}
 /* The entries must not inherit the body's 10mm first-line indent: the leader
    computes its fill against the un-indented line width, so an indent pushes
    the page number past the measure and into the trim margin. */

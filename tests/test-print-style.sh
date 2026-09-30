@@ -342,7 +342,7 @@ HTML
   local -- blank_lines blank_rule
   blank_lines=$(page_lines blank 2) || stop 'could not read the blank verso'
   blank_rule=$(page_rules blank 2 | jq -c '.rules[0]') || stop 'could not look for rules on the blank verso'
-  [[ $(jq -r '[.lines[].text] | join("|")' <<<"$blank_lines") == 'in search of dharma|2' ]] \
+  [[ $(jq -r '[.lines[].text] | join("|")' <<<"$blank_lines") == 'In search of dharma|2' ]] \
     && printf '  ✓ the blank verso carries the running head and its page number\n' \
     || { printf '  ✗ the blank verso reads: %s\n' "$(jq -c '[.lines[].text]' <<<"$blank_lines")"; FAILED+=1; }
   assert_near head  "$(jq -r '.lines[0].y_mm' <<<"$blank_lines")"
@@ -412,23 +412,25 @@ HTML
 
   echo '== front matter and Preface in roman; page 1 is Part 1 =='
   # Ramsey (2026-09-28): page 1 is the first page of Part 1, and the pages before
-  # it take roman numerals. Which of them show one he will say; until then the
-  # half-title, title page and imprint show none, and the contents and the
-  # Preface do. The Preface's pages carry running heads like any chapter's.
+  # it take roman numerals. His running order (2026-09-30): i half-title, ii
+  # blank, iii title, iv imprint, v dedication, vi blank, vii contents, none of
+  # them with a running head or a number; the Preface opens on viii with its
+  # number, and its later pages carry running heads like any chapter's.
   local -- para='<p>The Preface runs on across several pages, so that its later pages, '
   para+='and the blank before Part 1, have somewhere to appear. '
   para+='The Preface runs on across several pages, so that its later pages have somewhere to appear.</p>'
   local -- preface_body=''
-  # Fifteen paragraphs end the Preface on a recto, so a blank verso stands
+  # Twenty-four paragraphs end the Preface on a recto (viii to xi), so a blank verso stands
   # before Part 1.
-  for ((i_ = 0; i_ < 15; i_+=1)); do preface_body+=$para; done
+  for ((i_ = 0; i_ < 24; i_+=1)); do preface_body+=$para; done
   cat > "$TMP"/roman.html <<HTML || stop 'could not write roman.html'
 <!doctype html><html lang="en"><head><meta charset="utf-8">
 <link rel="stylesheet" href="print.css"></head><body>
 <section class="front">
-<div class="halftitle"><p class="ht-title">in search of dharma</p></div>
-<div class="titlepage"><p class="tp-title">in search of dharma</p></div>
+<div class="halftitle"><p class="ht-title">in search of DHARMA</p></div>
+<div class="titlepage"><p class="tp-title">in search of DHARMA</p></div>
 <div class="imprint"><p>Imprint.</p></div>
+<div class="dedication"><p>For the dedicatees.</p></div>
 <nav class="contents"><h1>Contents</h1><div class="toc-entries">
 <p class="roman"><a href="#preface">Preface</a></p>
 <p><a href="#part-1">Part 1</a></p>
@@ -453,26 +455,28 @@ HTML
   expect_at 'half-title folio' 1 "${TARGET[folio]}" ''
   expect_at 'title page folio' 3 "${TARGET[folio]}" ''
   expect_at 'imprint folio' 4 "${TARGET[folio]}" ''
-  expect_at 'contents folio' "$contents_pg" "${TARGET[folio]}" 'v'
-  expect_at 'Preface opener folio' "$preface_pg" "${TARGET[folio]}" 'vii'
+  expect_at 'dedication folio' 5 "${TARGET[folio]}" ''
+  expect_at 'blank before the contents: head' 6 "${TARGET[head]}" ''
+  expect_at 'blank before the contents: folio' 6 "${TARGET[folio]}" ''
+  expect 'the contents are on page' "$contents_pg" 7
+  expect_at 'contents folio' "$contents_pg" "${TARGET[folio]}" ''
+  expect 'the Preface opens on the verso of the contents, page' "$preface_pg" 8
+  expect_at 'Preface opener folio' "$preface_pg" "${TARGET[folio]}" 'viii'
   expect_at 'Preface opener head' "$preface_pg" "${TARGET[head]}" ''
-  expect_at 'Preface verso folio' $((preface_pg + 1)) "${TARGET[folio]}" 'viii'
-  expect_at 'Preface verso head' $((preface_pg + 1)) "${TARGET[head]}" 'in search of dharma'
-  expect_at 'Preface recto head' $((preface_pg + 2)) "${TARGET[head]}" 'Preface'
+  expect_at 'Preface recto folio' $((preface_pg + 1)) "${TARGET[folio]}" 'ix'
+  expect_at 'Preface recto head' $((preface_pg + 1)) "${TARGET[head]}" 'Preface'
+  expect_at 'Preface verso head' $((preface_pg + 2)) "${TARGET[head]}" 'In search of dharma'
   expect_at 'Part 1 opener folio' "$part1_pg" "${TARGET[folio]}" '1'
-  # The preliminaries' blank versos carry nothing: neither the one between the
-  # contents and the Preface nor the one before Part 1. The running head on a
-  # blank verso belongs to the text, from Part 1 on.
-  expect_at 'blank before the Preface: head' $((preface_pg - 1)) "${TARGET[head]}" ''
-  expect_at 'blank before the Preface: folio' $((preface_pg - 1)) "${TARGET[folio]}" ''
-  expect_no_rule 'blank before the Preface: rule' $((preface_pg - 1))
+  # The preliminaries' blank versos carry nothing, the one before Part 1
+  # included. The running head on a blank verso belongs to the text, from Part
+  # 1 on.
   # The page before Part 1 must be a blank one for the two checks to mean
   # anything. pdftotext ends each page with a form feed, which is not text.
   local -- before_part1 other
   before_part1=$(pdftotext -f $((part1_pg - 1)) -l $((part1_pg - 1)) -- "$TMP"/roman.pdf - | tr -d '\f') \
     || stop 'could not read the page before Part 1'
   # grep exits 1 when nothing is left over, which is the blank page looked for.
-  other=$(grep -v -x -e 'in search of dharma' -e '' <<<"$before_part1") ||:
+  other=$(grep -v -x -e 'In search of dharma' -e '' <<<"$before_part1") ||:
   if [[ -z $other ]]; then
     expect_at 'blank before Part 1: head' $((part1_pg - 1)) "${TARGET[head]}" ''
     expect_at 'blank before Part 1: folio' $((part1_pg - 1)) "${TARGET[folio]}" ''
@@ -483,8 +487,10 @@ HTML
   local -- toc
   toc=$(pdftotext -f "$contents_pg" -l "$contents_pg" -layout -- "$TMP"/roman.pdf - | tr -s ' .' ' ') \
     || stop 'could not read the contents page'
-  [[ $toc == *'Preface vii'* ]] && printf '  ✓ the contents give the Preface in roman: vii\n' \
-    || { printf '  ✗ the contents do not give the Preface as vii: %s\n' "${toc:0:120}"; FAILED+=1; }
+  [[ $toc == *'Preface viii'* ]] && printf '  ✓ the contents give the Preface in roman: viii\n' \
+    || { printf '  ✗ the contents do not give the Preface as viii: %s\n' "${toc:0:120}"; FAILED+=1; }
+  [[ $toc != *'...'* ]] && printf '  ✓ the contents have no dotted leaders\n' \
+    || { printf '  ✗ the contents still have dotted leaders\n'; FAILED+=1; }
   [[ $toc == *'Part 1 1'* ]] && printf '  ✓ the contents give Part 1 as page 1\n' \
     || { printf '  ✗ the contents do not give Part 1 as page 1: %s\n' "${toc:0:120}"; FAILED+=1; }
 
