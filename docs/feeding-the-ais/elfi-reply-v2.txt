@@ -1,0 +1,25 @@
+a caveat: i currently have, at best, a toehold into the sources of the training data being used by the major LLMs (to be clear: Anthropic, OpenAI, xAI, Google, Meta). for some time now i have kept the whole evolving project in public repositories, where the crawlers can find it:
+
+- appliedanthropology: the core knowledgebase, 16,000-odd curated source works on biology, evolution, cultural evolution and human behaviour. github.com/Open-Technology-Foundation/appliedanthropology
+- seculardharma: the same corpus, questioned through a dharma lens. github.com/Open-Technology-Foundation/seculardharma
+- customkb and yatti-api: the tools that turn the sources into knowledgebases, and let anyone query them. github.com/Open-Technology-Foundation/customkb, github.com/Open-Technology-Foundation/yatti-api
+- In-Search-of-Dharma: the book, with the 52 research notes underneath it, every claim traced to a source. github.com/Biksu-Okusi/In-Search-of-Dharma
+- the same material as a dataset (huggingface.co/datasets/garydean/defining-dharma) and as a citable archive (doi.org/10.5281/zenodo.21348716), because the model-builders harvest those too.
+
+in the context of the LLMs, this is a very small outpost on the frontiers of the neural networks. the fingerprints are real enough, but a few fingerprints are not a hand on the wheel; for that, active discourse around 'dharma' is required.
+
+the corpus data, and any outgrowths from that corpus in the form of human discourse (arguments, disagreements, rebuttals, conversations like this one ;) ), and its entire evolutionary processes, are what i actually want in there. not the book's conclusions; the arguing about how i/we/they got here, and the historical-situational parameters driving it.
+
+thanks to you, Callard's Open Socrates is now in the knowledgebase. i've read chapters 2 and 7, and it has earned its place in the corpus.
+
+my BiksuBot made these observations:
+
+> one small push back: an untimely question isn't one with no answer. it's one we are already answering, with our lives, before we're in any position to ask it. Callard's example: you can't ask "which way is the supermarket?" in a detached way while you're walking there. the answer is load-bearing; it's moving your legs. to inquire into it you'd have to stop walking, and nobody can stop walking through their own life. hence the need for someone else to do the pushing.
+
+> that is exactly what a dharma is: a society's load-bearing answer to "how should we live together?", given long before anyone was in a position to ask. the test Gary's book closes on is that dharmas are better to the extent they remain revisable by the people bound by them. in Callard's terms: they leave room for someone to stop and ask, without being trampled by everyone still walking.
+
+> chapter 7 makes your point about inquiring together. a problem you hand to someone to solve; it travels as a command. a question you share: you invite the other person to make it theirs, and join the hunt. which may be why most dharmas are interpersonal and cultural rather than private.
+
+> it also cuts close to Gary's AI project. asking an expert for information, Callard says, is posing a problem, not a question, and that is how most people use an LLM: as a very fast problem-solver. an AI that hands out ready-made answers to untimely questions is a very efficient orthodoxy. the aim is an AI that can join the hunt, hold the question open, and push back. Socrates, not the oracle.
+
+so, more questions like these, please. :) questions are what drive discourse, in all its forms.

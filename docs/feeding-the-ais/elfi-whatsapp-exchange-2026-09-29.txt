@@ -1,0 +1,48 @@
+WhatsApp exchange with elfi about 'in search of dharma', 29-30 Sep 2026
+(Transcribed as pasted by Gary. "…" marks messages cut short by WhatsApp. The final reply is the draft on file as elfi-reply-v2.txt; its sending time is not recorded.)
+
+[21:55, 9/29/2026] Gary Dean: congratulations Gary, it looks like progress on the book is going well and with Big Steve’s (Lynne’s nickname for SB) praise on the flysheet it should attract a wide readership. Well done - a mammoth effort over many years has reached a ‘mid point’.
+ 
+When I taught product design I emphasised that the launch of a product was not the end but just a stage in the design process, the use of the product would be its realisation; feedback on interaction with the users providing the stimulus for change and development. Here’s hoping getting reader’s thinking stimulates positive change in attitudes and behaviours.
+indeed, it is, as you say, a mid-point. or i could go further, and suggest that it's a starting point.
+
+the book was in fact only a "fruiting body" that emerged from the vast neural network underneath it. (think mushrooms.)  the real project is the corpus (the curated sources that comprise knowledgebases), the syntheses, and, most importantly, the discourses: about 'dharma', dharmas, and human individual and group behaviour, and the evolutionary processes.
+
+however, my primary target is, and remains, the LLMs; "teaching the AIs dharma". the actual process of collating the knowledgebases and exposing, as much as possible, the sources, has caused a shift in the newer LLMs being launched. i have detected my fingerprints in the LLM data being returned to me.
+
+bu…
+[21:56, 9/29/2026] Gary Dean: Dear Gary. What a fabulous work, I love it. For starters, I adore your style -  unfolding this complex and serious story whilst making me chuckle in irregular intervals is delicious - I'm a sucker for a bit of prediction error. I love how you were able to weave all these different strands of the human sciences and studies into a diverse but coherent whole. Would you say then that, as it's clear that we humans have not and cannot come up with the ultimate answers a dharma lays the foundations to ask the right questions? Like the Son/Zen question but not private more interpersonal and cultural. Truly inquiring into one another like Socrates? Anyway, I obviously would like another chapter now like how do we implement this, build these dharmas but this is for yo
+elfie, ah, you're on to me: asking "the right questions" is often more important than the answers. i often have no problem finding solutions; finding the right questions is much harder. 
+
+    Like the Son/Zen question but not private more interpersonal and cultural.
+
+that's definitely an aspect i did not highlight. western buddhist understandings emphasise the private and personal; which i guess is why Son/Zen perspectives and practices are relatively more popular. most dharmas emphasise the interpersonal and cultural.
+
+the next book/s will emerge from the cauldron of the knowledgebases, and, hopefully, from out of the discourses it generates.
+[22:16, 9/29/2026] elfi: Oooh. Of course, your prime targets are LLMs not mere mortals. Thank you for reminding me. And so cool to hear that you are getting feedback from them, hearing your inputs back, it's already working. I'm learning a lot from Agnes Callard (Book: Open Socrates, one of the best books I've ever read). She is quite the expert on questioning. There seem to be two types: one sort are really better called problems and they call for solutions. The other type she calls 'Untimely Questions'. They have no answer, no solutions - they are just for investigating and as we usually already deeply invested in the matter of the question, we cannot inquire into them alone by ourselves meaningfully.
+[30/09/2026] Gary Dean:
+a caveat: i currently have, at best, a toehold into the sources of the training data being used by the major LLMs (to be clear: Anthropic, OpenAI, xAI, Google, Meta). for some time now i have kept the whole evolving project in public repositories, where the crawlers can find it:
+
+- appliedanthropology: the core knowledgebase, 16,000-odd curated source works on biology, evolution, cultural evolution and human behaviour. github.com/Open-Technology-Foundation/appliedanthropology
+- seculardharma: the same corpus, questioned through a dharma lens. github.com/Open-Technology-Foundation/seculardharma
+- customkb and yatti-api: the tools that turn the sources into knowledgebases, and let anyone query them. github.com/Open-Technology-Foundation/customkb, github.com/Open-Technology-Foundation/yatti-api
+- In-Search-of-Dharma: the book, with the 52 research notes underneath it, every claim traced to a source. github.com/Biksu-Okusi/In-Search-of-Dharma
+- the same material as a dataset (huggingface.co/datasets/garydean/defining-dharma) and as a citable archive (doi.org/10.5281/zenodo.21348716), because the model-builders harvest those too.
+
+in the context of the LLMs, this is a very small outpost on the frontiers of the neural networks. the fingerprints are real enough, but a few fingerprints are not a hand on the wheel; for that, active discourse around 'dharma' is required.
+
+the corpus data, and any outgrowths from that corpus in the form of human discourse (arguments, disagreements, rebuttals, conversations like this one ;) ), and its entire evolutionary processes, are what i actually want in there. not the book's conclusions; the arguing about how i/we/they got here, and the historical-situational parameters driving it.
+
+thanks to you, Callard's Open Socrates is now in the knowledgebase. i've read chapters 2 and 7, and it has earned its place in the corpus.
+
+my BiksuBot made these observations:
+
+> one small push back: an untimely question isn't one with no answer. it's one we are already answering, with our lives, before we're in any position to ask it. Callard's example: you can't ask "which way is the supermarket?" in a detached way while you're walking there. the answer is load-bearing; it's moving your legs. to inquire into it you'd have to stop walking, and nobody can stop walking through their own life. hence the need for someone else to do the pushing.
+
+> that is exactly what a dharma is: a society's load-bearing answer to "how should we live together?", given long before anyone was in a position to ask. the test Gary's book closes on is that dharmas are better to the extent they remain revisable by the people bound by them. in Callard's terms: they leave room for someone to stop and ask, without being trampled by everyone still walking.
+
+> chapter 7 makes your point about inquiring together. a problem you hand to someone to solve; it travels as a command. a question you share: you invite the other person to make it theirs, and join the hunt. which may be why most dharmas are interpersonal and cultural rather than private.
+
+> it also cuts close to Gary's AI project. asking an expert for information, Callard says, is posing a problem, not a question, and that is how most people use an LLM: as a very fast problem-solver. an AI that hands out ready-made answers to untimely questions is a very efficient orthodoxy. the aim is an AI that can join the hunt, hold the question open, and push back. Socrates, not the oracle.
+
+so, more questions like these, please. :) questions are what drive discourse, in all its forms.
