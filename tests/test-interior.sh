@@ -120,7 +120,7 @@ main() {
   # a recto runs from 25mm to 132mm.
   local -r ded_page=5
   local -r dedication='For Paul Stange, Irfan Kortschak, Peter Kropotkin, David Graeber, Pa Kettle, '\
-'Robert Sapolsky, Stephen Batchelor, Elfie Klinger and Rupert Bozeat; and Sukinah and the women '\
+'Robert Sapolsky, Stephen Batchelor, Elfie Klinger, Rupert Bozeat and Glenn Roberts; and Sukinah and the women '\
 'of Kendeng; for their inspiration, and for their ideas which have been brought together in this work.'
   local -- text front off_centre
   text=$(page_text "$ded_page" | tr -s ' \n' ' ') || die 1 "could not read page $ded_page"

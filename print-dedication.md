@@ -5,4 +5,4 @@
      line divides one, and the last three words, so that it does not end on one
      word alone. -->
 
-For Paul Stange, Irfan Kortschak, Peter Kropotkin, David Graeber, Pa Kettle, Robert Sapolsky, Stephen Batchelor, Elfie Klinger and Rupert Bozeat; and Sukinah and the women of Kendeng; for their inspiration, and for their ideas which have been brought together in this work.
+For Paul Stange, Irfan Kortschak, Peter Kropotkin, David Graeber, Pa Kettle, Robert Sapolsky, Stephen Batchelor, Elfie Klinger, Rupert Bozeat and Glenn Roberts; and Sukinah and the women of Kendeng; for their inspiration, and for their ideas which have been brought together in this work.
