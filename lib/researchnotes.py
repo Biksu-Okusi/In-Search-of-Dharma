@@ -22,6 +22,13 @@ indent and no hyphenation"): its label and list are wrapped in div.rn.kw, so
 the two lists of a Sources block match. It needs no rewriting, only the wrap,
 and a chapter may have one without the other.
 
+Each Research note's title is bold -- the name alone, not the number before
+it nor the description after (Ramsey, 2026-10-01, by marked example: "0.1" in
+the text face, "Life & Formation" in Work Sans SemiBold). The entry's anchor
+holds "N.N Title", so the title is the anchor text after its number, wrapped
+in strong, which the print stylesheet already sets as the book's bold. Key
+works entries name their works in italic and take no bold.
+
 Reads a chapter's HTML fragment on stdin, after mk-print.sh has marked the
 bold label paragraph p.label, and writes it on stdout. A chapter with no
 Research notes passes through untouched. One whose label is followed by a
@@ -42,6 +49,9 @@ INTRO = re.compile(r'<p>' + r'\s+'.join(map(re.escape, LEAD.split())) + r'\s+'
 BLOCK = re.compile(re.escape(LABEL) + r'.*?</ul>', re.S)
 KW_LABEL = '<p class="label">Key works</p>'
 KW_BLOCK = re.compile(re.escape(KW_LABEL) + r'\s*<ul>.*?</ul>', re.S)
+# A note entry's anchor: its number, then its title. pandoc may break the
+# anchor text anywhere, so any whitespace run stands for one space.
+ENTRY = re.compile(r'(<a\s[^>]*>)\s*(\d+\.\d+(?:\.\d+)?)\s+(.*?)\s*(</a>)', re.S)
 
 
 def intro(m):
@@ -65,10 +75,16 @@ def rewrite(fragment):
   if n != 1:
     raise ValueError(f'found {n} Research notes sentences, want 1, in the form '
                      f'"{LEAD} [GitHub](URL)."')
-  fragment, n = BLOCK.subn(lambda m: f'<div class="rn">\n{m.group(0)}\n</div>', fragment)
+  fragment, n = BLOCK.subn(lambda m: f'<div class="rn">\n{titled(m.group(0))}\n</div>', fragment)
   if n != 1:
     raise ValueError('the Research notes label is not followed by its list')
   return fragment
+
+
+def titled(block):
+  """Each entry's title in bold, its number left in the text face."""
+  return ENTRY.sub(
+    lambda m: f'{m.group(1)}{m.group(2)} <strong>{m.group(3)}</strong>{m.group(4)}', block)
 
 
 def main():

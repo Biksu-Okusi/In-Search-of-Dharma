@@ -101,6 +101,15 @@ python3 -c "$BLOCK_SHAPE" "$GOT" 2>/dev/null \
   && pass 'div.rn holds the label, the intro and the notes list, and nothing after' \
   || fail 'div.rn is misplaced'
 
+# A note's title is bold: the name alone, not the number before it nor the
+# description after (Ramsey, 2026-10-01, by marked example). The entry with no
+# anchor is not an entry and is left alone, as is Key works below.
+[[ $GOT == *'>1.1 <strong>Core Etymology</strong></a> – the root.'* \
+   && $GOT != *'<strong>2.4'* && $GOT != *'2.4 <strong>'* \
+   && $GOT != *'<strong>Kane'* ]] \
+  && pass "an entry's title is bold; its number and description are not" \
+  || fail 'the note titles did not come out as marked'
+
 # Key works is set like the Research notes (Ramsey, 2026-09-30), in a block of
 # its own: div.rn.kw, the label and its list, and nothing else.
 python3 -c '
