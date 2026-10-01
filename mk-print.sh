@@ -533,6 +533,7 @@ main() {
   # font_faces_css would leave a stylesheet with no faces in it.
   { font_faces_css pdf \
       && print_title_faces_css "$SCRIPT_DIR"/fonts \
+      && print_sources_bold_css "$SCRIPT_DIR"/fonts \
       && print_page_css; } >"$css" \
     || die 5 "failed to write ${css@Q}"
   cp -- "$css" "$img_stage"/print.css || die 5 'failed to stage the stylesheet'

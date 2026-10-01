@@ -426,10 +426,13 @@ def _rows(spans):
 
 
 def _is_head_face(name):
-  """Work Sans SemiBold, upright or italic, however the file spells it."""
+  """Work Sans SemiBold or Bold, upright or italic, however the file spells
+  it. The Bold cut belongs to the Sources headings alone (Ramsey,
+  2026-10-01), so a line in it is a heading as surely as one in SemiBold;
+  bold in the text is SemiBold at 0.94em and is turned away by size below."""
   plain = re.sub(r'^[A-Z]{6}\+', '', name)
   plain = re.sub(r'[^a-z]', '', plain.lower())
-  return plain.startswith('worksanssemibold')
+  return plain.startswith(('worksanssemibold', 'worksansbold'))
 
 
 def _opens_with(rows):

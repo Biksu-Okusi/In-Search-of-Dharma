@@ -152,7 +152,8 @@ main() {
   done
   TMP=$(mktemp -d) || stop 'could not make a temporary directory'
 
-  { font_faces_css pdf && print_page_css; } >"$TMP"/print.css || stop 'could not write the stylesheet'
+  { font_faces_css pdf && print_sources_bold_css "$ROOT"/fonts && print_page_css; } >"$TMP"/print.css \
+    || stop 'could not write the stylesheet'
 
   cat > "$TMP"/fixture.html <<'HTML' || stop 'could not write fixture.html'
 <!doctype html><html lang="en"><head><meta charset="utf-8">
@@ -369,15 +370,21 @@ HTML
 <section class="chapter"><h1>One</h1><p>Text.</p><h2>A subhead</h2><p>Text.</p>
 <h3>A lesser subhead</h3><p>Text.</p></section>
 <section class="chapter"><h1>Two</h1>
-<div class="sources" style="break-before:auto"><p class="label">Key works</p><ul><li>A work.</li></ul></div>
+<div class="sources" style="break-before:auto"><h2>Sources &amp; further reading</h2>
+<p class="label">Key works</p><ul><li>A work.</li></ul></div>
 </section></body></html>
 HTML
   render heads
   [[ $(faces_of heads 1 Semi) == 'Work-Sans-Semi-Bold 9|Work-Sans-Semi-Bold 11|Work-Sans-Semi-Bold 20' ]] \
     && printf '  ✓ subheads are set at 11pt and 9pt under a 20pt title\n' \
     || { printf '  ✗ the SemiBold sizes on the page are: %s\n' "$(faces_of heads 1 Semi)"; FAILED+=1; }
-  [[ $(faces_of heads 3 Semi) == 'Work-Sans-Semi-Bold 9|Work-Sans-Semi-Bold 20' ]] \
-    && printf '  ✓ a label in the Sources is set at 9pt\n' \
+  # The Sources headings alone are Work Sans Bold (Ramsey, 2026-10-01); the
+  # chapter title above them keeps its SemiBold.
+  [[ $(faces_of heads 3 Work-Sans-Bold) == 'Work-Sans-Bold 9|Work-Sans-Bold 11' ]] \
+    && printf '  ✓ the Sources heading and label are set in Work Sans Bold, 11pt and 9pt\n' \
+    || { printf '  ✗ the Bold sizes on the Sources page are: %s\n' "$(faces_of heads 3 Work-Sans-Bold)"; FAILED+=1; }
+  [[ $(faces_of heads 3 Semi) == 'Work-Sans-Semi-Bold 20' ]] \
+    && printf '  ✓ nothing else on the Sources page leaves SemiBold\n' \
     || { printf '  ✗ the SemiBold sizes on the Sources page are: %s\n' "$(faces_of heads 3 Semi)"; FAILED+=1; }
 
   echo '== lists =='

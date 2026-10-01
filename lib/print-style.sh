@@ -57,6 +57,15 @@ declare -ar PRINT_TITLE_FACES=(
   '300|italic|cascadia/CascadiaCode-LightItalic.ttf'
 )
 
+# The Sources headings' face: Work Sans Bold, for the section title and the
+# labels of the Sources & further reading pages ("do put the headings into
+# Work Sans Bold", Ramsey, 2026-10-01). Registered here and not in
+# lib/fonts.sh for the title faces' reason: the sets there are embedded whole
+# in the EPUB, where strong carries no explicit weight and would start
+# resolving to this cut instead of the SemiBold the reading editions have
+# always shown.
+declare -r PRINT_SOURCES_BOLD_FACE='worksans/WorkSans-Bold.ttf'
+
 # Populated by print_geom_load. Declared here so a `set -u` script may reference
 # them before the call.
 declare -- PRINT_SIZE_PT='' PRINT_LEAD_PT='' PRINT_SUB_PT='' PRINT_SUB2_PT='' PRINT_SRC_PT=''
@@ -81,6 +90,12 @@ print_title_faces_css() {
     printf '@font-face{font-family:"%s";font-weight:%s;font-style:%s;src:url("file://%s/%s")}\n' \
       "$PRINT_TITLE_FAMILY" "$weight" "$style" "$1" "$path"
   done
+}
+
+# print_sources_bold_css <fonts-root> : the @font-face for that one cut.
+print_sources_bold_css() {
+  printf '@font-face{font-family:"%s";font-weight:700;font-style:normal;src:url("file://%s/%s")}\n' \
+    "$FONT_SANS_FAMILY" "$1" "$PRINT_SOURCES_BOLD_FACE"
 }
 
 # The shipping setting, and the constants solved for it.
@@ -268,7 +283,11 @@ ul > li::before{content:"\\2022";position:absolute;left:-10mm}
    merely contains one. */
 .sources{font-size:${PRINT_SRC_PT}pt}
 .sources p{text-indent:0}
-.sources p.label{font:600 ${PRINT_SUB2_PT}pt/${PRINT_LEAD_PT}pt "$FONT_SANS_FAMILY";
+/* The headings of these pages -- "Sources & further reading" and the labels
+   under it -- are Work Sans Bold where the text subheads are SemiBold: "That
+   will make these sections sing a lot more" (Ramsey, 2026-10-01). */
+.sources h2{font-weight:700}
+.sources p.label{font:700 ${PRINT_SUB2_PT}pt/${PRINT_LEAD_PT}pt "$FONT_SANS_FAMILY";
   margin-top:${PRINT_LEAD_PT}pt;text-align:left;break-after:avoid}
 .sources h2 + p.label{margin-top:0}
 .sources ul,.sources ol{margin:0}
