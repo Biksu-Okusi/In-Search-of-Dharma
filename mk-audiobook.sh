@@ -2,7 +2,7 @@
 # mk-audiobook.sh - Build the single-file "in search of dharma" audiobook, as
 # an MP3 and as an M4B.
 #
-#   ./mk-audiobook.sh [-g SECONDS] [-G FILE]
+#   ./mk-audiobook.sh [-g SECONDS] [-G FILE] [--edition own|tuwhiri]
 #
 # Concatenates the spoken cover plus chapters 0..9 (one TTS-narrated MP3 each,
 # read straight from the garydean.id web-root) into one audiobook, embeds the
@@ -39,14 +39,26 @@
 # same playlist (AAC-LC, 24 kHz mono, M4B_BITRATE). The build is atomic: both
 # outputs are assembled in temp files and moved into place only once both have
 # succeeded, so the pair on the web-root always comes from one run.
+#
+# --edition tuwhiri builds the audiobook the publisher sells, on the pattern of
+# Tuwhiri's other AI-narrated titles: "Tuwhiri presents" (title, narration
+# notice, dedication) in place of the spoken cover, the same ten narrations,
+# then the appendix and the final credits, which the author's own edition does
+# not carry. Those three tracks are narrated by mk-audio-tuwhiri.sh into
+# audio-tuwhiri/tracks. The file takes Tuwhiri's cover, squared by
+# tools/mk-audio-cover.py, a _tuwhiri suffix, and the publisher's imprint in
+# its tags: publisher, audiobook ISBN, narrator, licence. ffmpeg's ID3 writer
+# has no COMM frame and its MP4 writer drops any tag without an iTunes atom,
+# so the comment (MP3) and the narrator, publisher, ISBN, language and
+# subtitle (M4B) are added after the join (add_comm_frame, add_mp4_tags).
 set -euo pipefail
 shopt -s inherit_errexit
 
-# Fixed PATH: every external tool (ffmpeg, ffprobe) must resolve from system
-# locations only.
+# Fixed PATH: every external tool (ffmpeg, ffprobe, python3) must resolve from
+# system locations only.
 declare -rx PATH=/usr/local/bin:/usr/bin:/bin
 
-declare -r VERSION=1.5.0
+declare -r VERSION=1.6.0
 #shellcheck disable=SC2155
 declare -r SCRIPT_PATH=$(realpath -- "$0")
 declare -r SCRIPT_DIR=${SCRIPT_PATH%/*} SCRIPT_NAME=${SCRIPT_PATH##*/}
@@ -57,22 +69,33 @@ declare -r PUB_YEAR=2026
 
 declare -r AUDIO_SRC_DIR=/var/www/vhosts/garydean.id/html/audio
 declare -r AUDIO_STEM=in-search-of-dharma
-declare -r COVER_IMAGE=$SCRIPT_DIR/images/defining-dharma-cover-title.png
-declare -r OUTPUT_BASE=$AUDIO_SRC_DIR/In-Search-of-Dharma_Biksu-Okusi_${PUB_YEAR}_audiobook
-declare -r OUTPUT_MP3=$OUTPUT_BASE.mp3 OUTPUT_M4B=$OUTPUT_BASE.m4b
 # The M4B is a second lossy generation over the ~32 kbps MP3 sources, so it is
 # given headroom rather than a matching bitrate, to keep the two encodes from
 # compounding their artefacts.
 declare -r M4B_BITRATE=48k
 
-# Track order: spoken cover first, then chapters 0..9.
-declare -a SOURCES=("$AUDIO_SRC_DIR/In-Search-of-Dharma_cover.mp3")
-declare -i CHAPTER
-for CHAPTER in {0..9}; do
-  SOURCES+=("$AUDIO_SRC_DIR/$CHAPTER-$AUDIO_STEM.mp3")
-done
-unset -v CHAPTER
-declare -r -a SOURCES
+# Tuwhiri's edition (--edition tuwhiri): the publisher's title casing, cover
+# and imprint, as read in its final credits.
+declare -r TUWHIRI_TITLE='In search of dharma'
+declare -r TUWHIRI_SUBTITLE='What holds a life, a people, a world together?'
+declare -r TUWHIRI_PUBLISHER='Tuwhiri'
+declare -r TUWHIRI_ISBN=979-8-9980676-2-4
+declare -r TUWHIRI_NARRATOR='AI voice (Google Chirp 3 HD Charon)'
+declare -r TUWHIRI_COPYRIGHT="$AUTHOR $PUB_YEAR. Licensed under CC BY 4.0"
+declare -r TUWHIRI_COMMENT="First published $PUB_YEAR by Tuwhiri. Unabridged \
+audiobook produced by Biksu Okusi, published by Tuwhiri $PUB_YEAR. Narrated by \
+an AI voice (Google Cloud Text-to-Speech, Chirp 3 HD Charon). www.tuwhiri.org"
+# NOT named LANGUAGE: that is the GNU gettext environment variable.
+declare -r LANG_CODE=eng
+declare -r TUWHIRI_TRACK_DIR=$SCRIPT_DIR/audio-tuwhiri/tracks
+declare -r TUWHIRI_COVER=$SCRIPT_DIR/print/tuwhiri-cover-audio_2000x2000.jpg
+declare -r -a EDITIONS=(own tuwhiri)
+
+# Set by configure_edition: the tracks in play order, one chapter title per
+# track, the cover and the two output paths.
+declare -- EDITION=own
+declare -a SOURCES=() TITLES=()
+declare -- COVER_IMAGE='' OUTPUT_MP3='' OUTPUT_M4B=''
 
 declare -i VERBOSE=1
 declare -i GAP=4
@@ -100,10 +123,9 @@ $SCRIPT_NAME $VERSION - build the '$TITLE' audiobook (MP3 and M4B)
 
 Usage: $SCRIPT_NAME [OPTIONS]
 
-Joins ${#SOURCES[@]} chapter MP3s from $AUDIO_SRC_DIR
-into $OUTPUT_MP3
- and $OUTPUT_M4B
-each with embedded cover art, tags, and per-section chapter markers.
+Joins the narration MP3s in $AUDIO_SRC_DIR
+into one audiobook there, as an MP3 and as an M4B, each with embedded cover
+art, tags, and per-section chapter markers.
 
 Options:
   -g|--gap SECONDS   silence inserted between sections (default $GAP; 0 disables
@@ -112,6 +134,11 @@ Options:
                      next section starts (each break runs gap + chime length),
                      and bookend the audiobook: chime + gap before the opening
                      cover, gap + chime after the closing section
+  -e|--edition NAME  own (default): the author's edition, spoken cover first.
+                     tuwhiri: the publisher's, with "Tuwhiri presents", the
+                     appendix and the final credits (narrate those first with
+                     mk-audio-tuwhiri.sh), Tuwhiri's cover and imprint tags,
+                     written with a _tuwhiri suffix
   -v|--verbose       progress messages (default on)
   -q|--quiet         suppress progress messages
   -h|--help          show this help
@@ -124,6 +151,8 @@ check_prerequisites() {
   for tool in ffmpeg ffprobe; do
     command -v "$tool" >/dev/null || die 18 "required tool ${tool@Q} not found"
   done
+  [[ $EDITION != tuwhiri ]] || python3 -c 'import mutagen' 2>/dev/null \
+    || die 18 'python3 mutagen module required for --edition tuwhiri'
   [[ -f $COVER_IMAGE ]] || die 3 "cover image missing ${COVER_IMAGE@Q}"
   for src in "${SOURCES[@]}"; do
     [[ -f $src ]] || die 3 "source audio missing ${src@Q}"
@@ -206,6 +235,117 @@ chapter_title() {
   printf '%s' "${title:-Chapter $n}"
 }
 
+# Fix the edition's tracks, chapter titles, cover and output paths. The ten
+# narrations (Preface, Parts 1-8, Coda) are common to both; the author's
+# edition opens on the spoken cover, Tuwhiri's is wrapped in the publisher's
+# opening and credits and carries the appendix.
+configure_edition() {
+  local -- base=$AUDIO_SRC_DIR/In-Search-of-Dharma_Biksu-Okusi_$PUB_YEAR
+  local -i n
+  local -a parts=() part_titles=()
+  for n in {0..9}; do
+    parts+=("$AUDIO_SRC_DIR/$n-$AUDIO_STEM.mp3")
+    part_titles+=("$(chapter_title "$n")")
+  done
+  case $EDITION in
+    own)
+      SOURCES=("$AUDIO_SRC_DIR/In-Search-of-Dharma_cover.mp3" "${parts[@]}")
+      TITLES=('Cover' "${part_titles[@]}")
+      COVER_IMAGE=$SCRIPT_DIR/images/defining-dharma-cover-title.png
+      base+=_audiobook ;;
+    tuwhiri)
+      SOURCES=("$TUWHIRI_TRACK_DIR"/00_Tuwhiri-Presents.mp3 "${parts[@]}"
+               "$TUWHIRI_TRACK_DIR"/11_Appendix.mp3
+               "$TUWHIRI_TRACK_DIR"/99_Final-Credits.mp3)
+      TITLES=('Tuwhiri presents' "${part_titles[@]}"
+              'Appendix: Dharmas: the better ones' 'Final credits')
+      COVER_IMAGE=$TUWHIRI_COVER
+      base+=_tuwhiri_audiobook ;;
+    *) die 22 "internal: unknown edition ${EDITION@Q}" ;;
+  esac
+  OUTPUT_MP3=$base.mp3 OUTPUT_M4B=$base.m4b
+  readonly SOURCES TITLES COVER_IMAGE OUTPUT_MP3 OUTPUT_M4B
+}
+
+# ffmpeg's ID3 writer emits only four-character T*** text frames verbatim and
+# routes every other key to a TXXX user-defined frame, so `-metadata comment=`
+# produces TXXX:comment rather than the COMM frame players actually read.
+# Inject a real one: keep every existing frame byte-for-byte, drop the trailing
+# padding, append COMM, restore the padding, and rewrite the tag header size.
+add_comm_frame() {
+  local -- file=$1 text=$2
+  python3 - "$file" "$text" <<'PY' \
+    || die 1 "failed to inject COMM frame into ${file@Q}"
+import os, sys, tempfile
+
+path, text = sys.argv[1], sys.argv[2]
+with open(path, 'rb') as fh:
+  head = fh.read(10)
+  if head[:3] != b'ID3' or head[3] != 3:
+    sys.exit('expected an ID3v2.3 tag, found %r' % (head[:4],))
+  size = (head[6] << 21) | (head[7] << 14) | (head[8] << 7) | head[9]
+  body = fh.read(size)
+  if len(body) != size:
+    sys.exit('truncated ID3 tag')
+  # walk to the first null frame id: everything from there is padding
+  pos = 0
+  while pos + 10 <= size and body[pos:pos + 4] != b'\0' * 4:
+    pos += 10 + int.from_bytes(body[pos + 4:pos + 8], 'big')
+  if pos > size:
+    sys.exit('malformed ID3 frame table')
+  # COMM payload: encoding 0x00 (ISO-8859-1, the only single-byte encoding
+  # valid in v2.3, and what ffmpeg itself writes), language, empty short
+  # description, then the text.
+  payload = b'\x00eng\x00' + text.encode('latin-1', 'replace')
+  frame = b'COMM' + len(payload).to_bytes(4, 'big') + b'\0\0' + payload
+  total = size + len(frame)
+  header = head[:6] + bytes(((total >> 21) & 0x7f, (total >> 14) & 0x7f,
+                             (total >> 7) & 0x7f, total & 0x7f))
+  tmp = tempfile.NamedTemporaryFile(dir=os.path.dirname(path) or '.',
+                                    delete=False)
+  try:
+    tmp.write(header)
+    tmp.write(body[:pos])
+    tmp.write(frame)
+    tmp.write(body[pos:])
+    while True:
+      chunk = fh.read(1 << 20)
+      if not chunk:
+        break
+      tmp.write(chunk)
+    tmp.close()
+    os.replace(tmp.name, path)
+  except BaseException:
+    tmp.close()
+    os.unlink(tmp.name)
+    raise
+PY
+}
+
+# Narrator ((c)nrt) and publisher ((c)pub) are iTunes atoms ffmpeg does not
+# write; ISBN, language and subtitle have none and use the iTunes free-form
+# atom that Apple Books, Audiobookshelf and the usual taggers all read.
+# mutagen rewrites the moov atom in place and fixes the chunk offsets
+# faststart depends on.
+add_mp4_tags() {
+  local -- file=$1
+  python3 - "$file" "$TUWHIRI_NARRATOR" "$TUWHIRI_PUBLISHER" "$TUWHIRI_ISBN" \
+    "$LANG_CODE" "$TUWHIRI_SUBTITLE" <<'PY' \
+    || die 1 "failed to add MP4 tags to ${file@Q}"
+import sys
+from mutagen.mp4 import MP4, MP4FreeForm, AtomDataType
+
+path, narrator, publisher, isbn, lang, subtitle = sys.argv[1:7]
+mp4 = MP4(path)
+mp4.tags['\xa9nrt'] = [narrator]
+mp4.tags['\xa9pub'] = [publisher]
+for name, value in (('ISBN', isbn), ('LANGUAGE', lang), ('SUBTITLE', subtitle)):
+  mp4.tags['----:com.apple.iTunes:' + name] = [
+    MP4FreeForm(value.encode('utf-8'), dataformat=AtomDataType.UTF8)]
+mp4.save()
+PY
+}
+
 # Walk PLAYLIST accumulating item durations and emit an ffmetadata file with
 # one [CHAPTER] per source track. Spacers (minted in WORK_DIR) are not
 # chapters — each extends the chapter before it, so a marker lands on the
@@ -219,11 +359,7 @@ write_chapters_meta() {
     ms=$(duration_ms "$item") || die 1 "ffprobe failed on ${item@Q}"
     if [[ $item != "$WORK_DIR"/* ]]; then
       starts+=("$pos")
-      if ((track == 0)); then
-        titles+=('Cover')
-      else
-        titles+=("$(chapter_title $((track - 1)))")
-      fi
+      titles+=("${TITLES[track]}")
       track+=1
     fi
     ((pos += ms))
@@ -306,6 +442,29 @@ build_audiobook() {
     -metadata date="$PUB_YEAR"
     -metadata genre=Audiobook
   )
+  # The publisher's imprint; the ID3 and iTunes halves differ (TIT3 is ID3's
+  # subtitle frame, and the comment maps to an MP4 atom but not to COMM).
+  local -a mp3_tags=() m4b_tags=()
+  if [[ $EDITION == tuwhiri ]]; then
+    tags=(
+      -metadata title="$TUWHIRI_TITLE"
+      -metadata artist="$AUTHOR"
+      -metadata album_artist="$AUTHOR"
+      -metadata album="$TUWHIRI_TITLE: $TUWHIRI_SUBTITLE"
+      -metadata publisher="$TUWHIRI_PUBLISHER"
+      -metadata composer="$TUWHIRI_NARRATOR"
+      -metadata performer="$TUWHIRI_NARRATOR"
+      -metadata date="$PUB_YEAR"
+      -metadata language="$LANG_CODE"
+      -metadata track=1/1
+      -metadata copyright="$TUWHIRI_COPYRIGHT"
+      -metadata ISBN="$TUWHIRI_ISBN"
+      -metadata genre=Audiobook
+    )
+    mp3_tags=(-write_id3v1 0 -metadata TIT3="$TUWHIRI_SUBTITLE")
+    m4b_tags=(-metadata comment="$TUWHIRI_COMMENT" -metadata gapless_playback=1
+              -metadata:s:a language="$LANG_CODE")
+  fi
 
   info "joining ${#SOURCES[@]} tracks (stream copy, $gap_desc) into the MP3, with cover and chapter markers"
   ffmpeg -hide_banner -loglevel error -y \
@@ -313,7 +472,7 @@ build_audiobook() {
     -c:a copy -c:v copy \
     -disposition:v attached_pic \
     -id3v2_version 3 \
-    "${tags[@]}" \
+    "${tags[@]}" "${mp3_tags[@]}" \
     -metadata:s:v title='Album cover' \
     -metadata:s:v comment='Cover (front)' \
     "$tmp_mp3" || die 1 'ffmpeg MP3 join failed'
@@ -328,9 +487,14 @@ build_audiobook() {
     -c:a aac -b:a "$M4B_BITRATE" -c:v copy \
     -disposition:v attached_pic \
     -movflags +faststart \
-    "${tags[@]}" \
+    "${tags[@]}" "${m4b_tags[@]}" \
     -metadata media_type=2 \
     "$tmp_m4b" || die 1 'ffmpeg M4B encode failed'
+
+  if [[ $EDITION == tuwhiri ]]; then
+    add_comm_frame "$tmp_mp3" "$TUWHIRI_COMMENT"
+    add_mp4_tags "$tmp_m4b"
+  fi
 
   install_output "$tmp_mp3" "$OUTPUT_MP3"
   install_output "$tmp_m4b" "$OUTPUT_M4B"
@@ -373,6 +537,10 @@ main() {
                     [[ -f $optarg ]] \
                       || die 3 "gong file missing ${optarg@Q}"
                     GONG=$optarg; shift ;;
+      -e|--edition) optarg=${2:-}
+                    [[ " ${EDITIONS[*]} " == *" $optarg "* ]] \
+                      || die 22 "--edition is one of: ${EDITIONS[*]}; got ${optarg@Q}"
+                    EDITION=$optarg; shift ;;
       -v|--verbose) VERBOSE=1 ;;
       -q|--quiet)   VERBOSE=0 ;;
       -h|--help)    usage; exit 0 ;;
@@ -381,8 +549,9 @@ main() {
     esac
     shift
   done
-  readonly VERBOSE GAP GONG
+  readonly VERBOSE GAP GONG EDITION
 
+  configure_edition
   check_prerequisites
   WORK_DIR=$(mktemp -d) || die 1 'failed to create work directory'
   build_audiobook

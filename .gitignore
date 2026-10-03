@@ -117,3 +117,9 @@ print-cover-text.docx
 # Tool caches
 .ruff_cache/
 .pytest_cache/
+
+# Tuwhiri's audiobook (`./mk-audio-tuwhiri.sh`): the three narrated tracks only
+# that edition carries, and the narration copy of the appendix, rewritten from
+# the-better-ones.md on every run.
+audio-tuwhiri/tracks/
+audio-tuwhiri/11-appendix.md
