@@ -75,6 +75,13 @@ declare -r LOGO_SRC="$SCRIPT_DIR"/images/dharma-eye.svg
 # this repository's to license, so it lives in the untracked print/ folder with
 # the publisher's other material. Absent, the name is set instead, with a warning.
 declare -r WORDMARK_SRC="$SCRIPT_DIR"/print/tuwhiri-wordmark-black.jpg
+# Tuwhiri's own last page, listing its other titles, as the publisher supplied
+# it: a finished one-page PDF at the trim (Ramsey Margolis, 2026-10-04: place
+# as it is, with no folio and no running head). It is set as a recto straight
+# after the last page of text, and the blank final page follows it. Like the
+# word mark it is the publisher's material and lives in the untracked print/
+# folder. Absent, the book ends on its blank pages, with a warning.
+declare -r BACKPAGE_SRC="$SCRIPT_DIR"/print/tuwhiri-final-page.pdf
 # Part watercolours in the printed interior. Off: in greyscale on a 107mm
 # measure they take a large part of an opener and earn little, and they
 # compete with the rule and the mark that open each chapter. The reading PDF
@@ -86,6 +93,7 @@ declare -r FONT_LIB="$SCRIPT_DIR"/lib/fonts.sh
 declare -r PREPROCESS_LIB="$SCRIPT_DIR"/lib/preprocess.sh
 declare -r STYLE_LIB="$SCRIPT_DIR"/lib/print-style.sh
 declare -r PDFCHECK="$SCRIPT_DIR"/lib/pdfcheck.py
+declare -r SPOTGRAY="$SCRIPT_DIR"/lib/spotgray.py
 
 # Script-scope state, declared before any function (BCS0105).
 declare -i VERBOSE=1 KEEP_TEMP=0
@@ -284,6 +292,68 @@ front_matter() {
 #   odd  + last blank -> one blank (even, still ends blank)
 #   even + last inked -> two blanks (even, ends blank)
 #   odd  + last inked -> one blank (even, ends blank)
+# One blank page at the trim, rendered once into the build directory; prints
+# its path.
+blank_page() {
+  local -- blank="$TMP_DIR"/blank.pdf
+  if [[ ! -f $blank ]]; then
+    {
+      printf '<!doctype html><html lang="en"><head><meta charset="utf-8">' \
+        && printf '<style>@page{size:%smm %smm;margin:0}</style></head><body></body></html>' \
+             "$PRINT_TRIM_W_MM" "$PRINT_TRIM_H_MM"
+    } >"$TMP_DIR"/blank.html || die 5 'failed to write the blank page source'
+    weasyprint -- "$TMP_DIR"/blank.html "$blank" || die 1 'blank-page render failed'
+  fi
+  printf '%s\n' "$blank"
+}
+
+# Append the publisher's last page (BACKPAGE_SRC) to the typeset book, on a
+# recto: the pages are numbered from the half-title, a recto, so a recto is an
+# odd page, and a book of odd length gets a blank first. pad_to_even then adds
+# the blank final page behind it. With no such file the book is left as it is.
+add_back_page() {
+  local -- src=$1 out=$2
+  if [[ ! -f $BACKPAGE_SRC ]]; then
+    warn "no publisher's page at ${BACKPAGE_SRC@Q}: the book ends on its blank pages"
+    cp -- "$src" "$out" || die 5 "failed to copy ${src@Q}"
+    return 0
+  fi
+  local -- back_info size
+  local -i pages back_pages
+  back_info=$(pdfinfo -- "$BACKPAGE_SRC") || die 1 "pdfinfo failed for ${BACKPAGE_SRC@Q}"
+  [[ $back_info =~ Pages:[[:space:]]+([0-9]+) ]] \
+    || die 1 "no page count read from ${BACKPAGE_SRC@Q}"
+  back_pages=${BASH_REMATCH[1]}
+  ((back_pages == 1)) \
+    || die 1 "the publisher's page ${BACKPAGE_SRC@Q} has $back_pages pages, want 1"
+  # pdfinfo prints points; the trim is in mm. Compare to a tenth of a millimetre.
+  size=$(awk -v w="$PRINT_TRIM_W_MM" -v h="$PRINT_TRIM_H_MM" '
+    /^Page size:/ { dw = $3 * 25.4 / 72 - w; dh = $5 * 25.4 / 72 - h
+                    if (dw < 0) dw = -dw; if (dh < 0) dh = -dh
+                    print (dw < 0.1 && dh < 0.1) ? "ok" : "off:" $3 "x" $5 " pt" }' <<<"$back_info")
+  [[ $size == ok ]] \
+    || die 1 "the publisher's page is not ${PRINT_TRIM_W_MM}x${PRINT_TRIM_H_MM} mm (${size#off:})"
+  pages=$(pdfinfo -- "$src" | awk '/^Pages:/{print $2}') \
+    || die 1 "pdfinfo failed for ${src@Q}"
+  ((pages > 0)) || die 1 "no page count read from ${src@Q}"
+  local -a parts=("$src")
+  local -i at=pages+1
+  if ((pages % 2)); then
+    local -- blank
+    blank=$(blank_page)
+    parts+=("$blank")
+    at+=1
+  fi
+  # Its images are in the black spot colour, which Ghostscript's greyscale
+  # conversion leaves alone and the preflight refuses (see lib/spotgray.py).
+  local -- grey="$TMP_DIR"/publisher-page.pdf
+  "$SPOTGRAY" "$BACKPAGE_SRC" "$grey" >/dev/null \
+    || die 1 "could not set the publisher's page in greyscale"
+  parts+=("$grey")
+  pdfunite -- "${parts[@]}" "$out" || die 1 'pdfunite failed'
+  info "set the publisher's page as page $at"
+}
+
 pad_to_even() {
   local -- src=$1 out=$2
   local -i pages last_blank=0 add=0
@@ -313,13 +383,8 @@ pad_to_even() {
     info "page count $pages is even and ends blank; nothing to pad"
     return 0
   fi
-  local -- blank="$TMP_DIR"/blank.pdf
-  {
-    printf '<!doctype html><html lang="en"><head><meta charset="utf-8">' \
-      && printf '<style>@page{size:%smm %smm;margin:0}</style></head><body></body></html>' \
-           "$PRINT_TRIM_W_MM" "$PRINT_TRIM_H_MM"
-  } >"$TMP_DIR"/blank.html || die 5 'failed to write the blank page source'
-  weasyprint -- "$TMP_DIR"/blank.html "$blank" || die 1 'blank-page render failed'
+  local -- blank
+  blank=$(blank_page)
   local -a parts=("$src")
   local -i j
   for ((j = 0; j < add; j+=1)); do parts+=("$blank"); done
@@ -374,6 +439,8 @@ main() {
     command -v "$tool" &>/dev/null || die 18 "$tool not found"
   done
   [[ -x $PDFCHECK ]] || die 3 "missing or non-executable ${PDFCHECK@Q}"
+  [[ -x $SPOTGRAY ]] || die 3 "missing or non-executable ${SPOTGRAY@Q}"
+  python3 -c 'import pikepdf' 2>/dev/null || die 18 'python3 module pikepdf required'
 
   font_set_load "$font_set" "$SCRIPT_DIR"/fonts || die 22 "invalid --fonts value ${font_set@Q}"
   # Both arguments always, empty for "default": with an unset size dropped from
@@ -556,8 +623,11 @@ main() {
   weasyprint --base-url "$img_stage"/ -- "$doc" "$raw_pdf" \
     || die 1 'weasyprint failed'
 
+  local -r backed="$TMP_DIR"/backed.pdf
+  add_back_page "$raw_pdf" "$backed"
+
   local -r padded="$TMP_DIR"/padded.pdf
-  pad_to_even "$raw_pdf" "$padded"
+  pad_to_even "$backed" "$padded"
 
   # WeasyPrint writes black as DeviceRGB 0 0 0. The model book sets its text in
   # 100% K, and IngramSpark's B&W interior rules forbid ICC profiles.

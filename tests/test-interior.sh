@@ -265,6 +265,30 @@ main() {
   notes=$(grep -A1 -F -- "$NOTES_LINE" <<<"$whole" | grep -c -x -E -- "$NOTES_URL") ||:
   expect 'openings of Research notes that read as the two lines' "$notes" 9
 
+  # The publisher's own last page, when it has been supplied (it is the
+  # publisher's material, in the untracked print/ folder): a recto straight
+  # after the last page of text, bare of folio and running head, with the
+  # blank final page behind it. The text before it is not moved by it.
+  if [[ -f $ROOT/print/tuwhiri-final-page.pdf ]]; then
+    local -i last_folio
+    local -- last_text
+    last_folio=$((pages - 2 - part1 + 1))
+    last_text=$(page_text $((pages - 2)) | tr -s ' \n' ' ') || die 1 'could not read the last page of text'
+    [[ $last_text == *'In search of dharma'* && $last_text =~ (^|[^0-9])$last_folio([^0-9]|$) ]] \
+      && ok "the last page of text is folio $last_folio, its head and number as before" \
+      || bad "page $((pages - 2)) is not the last page of text, folio $last_folio"
+    expect_on 'the page from the publisher follows it' $((pages - 1)) 'revealing … making known …'
+    ((pages % 2 == 0 && (pages - 1) % 2 == 1)) && ok "the page from the publisher is page $((pages - 1)), odd, a recto" \
+      || bad "the page from the publisher is page $((pages - 1)) of $pages"
+    local -- back_text
+    back_text=$(page_text $((pages - 1)) | tr -s ' \n' ' ') || die 1 "could not read page $((pages - 1))"
+    [[ $back_text != *'In search of dharma'* ]] && ok 'and it carries no running head' \
+      || bad 'the publisher page carries the running head'
+    expect_blank 'the final page is blank' "$pages"
+  else
+    ok 'no page from the publisher supplied: its place in the build is not tested'
+  fi
+
   # A build that fails its preflight leaves the file at --output as it found
   # it. Tried in a tree of links to the book beside a copy of the script, where
   # the checker is a stand-in that measures as the real one does and fails
