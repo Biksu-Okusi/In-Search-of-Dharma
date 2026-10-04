@@ -3,7 +3,7 @@ part: 0
 title: "Preface"
 slug: preface
 status: done
-words: 4555
+words: 4553
 reading_level: year-12
 updated: 2026-09-22
 draws_on: ["0.1", "0.2", "0.3", "0.4", "0.5", "0.6", "0.7"]
@@ -90,7 +90,7 @@ That second irony probably deserves better than a parenthesis. The moral centre 
 
 Three decades of processing what the state actually demands of those who comply is a daily education in seeing like a state, and it is why the refusers impress me and why I cannot romanticise them: a man who files the paperwork knows precisely what declining it costs. But the distance is real too. The *wong sikep* pay for their dharma in schooling forgone and feet set in cement; I pay for mine with fees, invoiced monthly. I admire a refusal I have never had to afford, and a reader should correct for that: expect this author to feel the romance of exit more keenly than the quiet goods of compliance. What I will say for the day job is what a pragmatist is entitled to say: I have to earn a living; and my firm gives a living to hundreds of people, directly and indirectly; and the companies it has set up are real businesses that have provided livelihoods to tens of thousands of Indonesians. The contradiction, apparent or real, is not one I have resolved. It is part of the workshop this lens was ground in, and I put it on the record with the rest.
 
-Living inside Indonesian society did the deepest work on the lens. I do not write about dharma as a Westerner reaching for the exotic East. I live in a country whose language and cosmology are saturated with Sanskrit, where *dharma* is an ordinary, slightly worn loanword rather than a sacred mystery, and where the deep Indic substratum beneath a nominally Muslim surface is never very far from view. The word is furniture to me, not incense.
+Living inside Indonesian society did the deepest work on the lens. I do not write about dharma as a Westerner reaching for the exotic East. I live in a country whose language and cosmology are saturated with Sanskrit, where *dharma* is an ordinary, slightly worn loanword rather than a sacred mystery, and where the deep Indic substratum beneath a Muslim surface is never very far from view. The word is furniture to me, not incense.
 
 In my late thirties I went back to university for a specialist degree in Indonesian anthropology at Murdoch University, including a year at Universitas Gadjah Mada in Yogyakarta on the ACICIS programme. It was there that its resident director, Paul Stange, my Asian Studies lecturer and a scholar of Javanese mysticism, brought my attention to Sumarah: a quiet Javanese movement that calls itself a philosophy of life, a practice of surrender with no fixed guru, no creed, and no demand that you believe anything at all. It was inevitably bound up with elements of traditional Javanese culture I did not always share, but it gave me something I had no name for at the time: a working example of a contemplative and ethical path carried within a culture rather than a church, mosque or temple.
 
