@@ -94,6 +94,10 @@ declare -r PREPROCESS_LIB="$SCRIPT_DIR"/lib/preprocess.sh
 declare -r STYLE_LIB="$SCRIPT_DIR"/lib/print-style.sh
 declare -r PDFCHECK="$SCRIPT_DIR"/lib/pdfcheck.py
 declare -r SPOTGRAY="$SCRIPT_DIR"/lib/spotgray.py
+# Ghostscript rewrites a glyph's three-character text mapping (ffi, ffl) as
+# two, so copy and search read "ofÏcial"; lib/ligmap.py puts the mappings
+# back from the file as it was before Ghostscript (Paul Regan, 2026-10-07).
+declare -r LIGMAP="$SCRIPT_DIR"/lib/ligmap.py
 # The words taken down from the line ends Tuwhiri marked (2026-10-06), read by
 # lib/takedown.py; see the file for the form of a rule.
 declare -r TAKEDOWN="$SCRIPT_DIR"/lib/takedown.py
@@ -470,6 +474,7 @@ main() {
   done
   [[ -x $PDFCHECK ]] || die 3 "missing or non-executable ${PDFCHECK@Q}"
   [[ -x $SPOTGRAY ]] || die 3 "missing or non-executable ${SPOTGRAY@Q}"
+  [[ -x $LIGMAP ]] || die 3 "missing or non-executable ${LIGMAP@Q}"
   [[ -x $TAKEDOWN ]] || die 3 "missing or non-executable ${TAKEDOWN@Q}"
   ((marks == 0)) || [[ -x $CROPMARKS ]] || die 3 "missing or non-executable ${CROPMARKS@Q}"
   python3 -c 'import pikepdf' 2>/dev/null || die 18 'python3 module pikepdf required'
@@ -736,6 +741,9 @@ main() {
      -dDownsampleGrayImages=false -dDownsampleColorImages=false \
      -sOutputFile="$finished" "$padded" \
     || die 1 'greyscale conversion failed'
+  # The text layer, as WeasyPrint wrote it, back over Ghostscript's.
+  "$LIGMAP" "$padded" "$finished" "$finished".lig || die 1 'ligature mapping repair failed'
+  mv -- "$finished".lig "$finished" || die 5 "failed to write ${finished@Q}"
 
   info 'running preflight'
   if ! "$PDFCHECK" check \
