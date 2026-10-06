@@ -41,7 +41,7 @@ declare -r TITLE='In search of dharma'
 # capital as the bibliographic form, used for the HTML document's own <title>.
 declare -r TITLE_LEAD='in search of' TITLE_NAME='DHARMA'
 declare -r TITLE_TYPESET="$TITLE_LEAD $TITLE_NAME"
-declare -r SUBTITLE='What holds a life, a people, a world together'
+declare -r SUBTITLE='What holds a life, a people, a world together?'
 declare -r AUTHOR='Biksu Okusi'
 # "Tuwhiri", simply: the publisher is phasing out "The Tuwhiri Project"
 # (Ramsey, 2026-09-30). The name of its company in the imprint is its own.

@@ -3,7 +3,7 @@ part: 8
 title: "Creating dharmas"
 slug: creating-dharmas
 status: done
-words: 6928
+words: 6929
 reading_level: year-12
 updated: 2026-09-23
 draws_on: ["8.1", "8.2", "8.3", "8.4", "8.5", "3.4", "4.1", "7.4", "7.5", "7.7"]
@@ -98,7 +98,7 @@ A deeper irony takes the romance out of the question. The wisdom traditions actu
 
 What does a well-built post-traditional dharma actually keep? A few features recur. It is *fallibilist*: its claims are revisable rather than fixed revelation, its one straight answer to the grounding problem. It is *naturalist without being scientistic*, finding genuine reverence in the natural world without pretending science can hand us our values; the Dalai Lama's minimal version is hard to improve on: 'our own brain, our own heart is our temple; the philosophy is kindness'. It prizes *practice over doctrine*, keeping the meditation, the ritual, and the ethics that change a person, while loosening its grip on metaphysics.
 
-It stays *reflexive*, aware of its own failure modes, because anything this powerful can curdle. And it counts its losses openly: the secular substitutes, the Sunday Assemblies and humanist associations, have not come close to matching the pull of the communities they set out to replace, while loneliness exacts a health toll ranked alongside smoking and obesity. On its hardest metric, community, the movement is losing, and a well-built dharma has to say so. The commune data behind Part 2 hint that the deficit may be structural: the binding power travelled with the very supernatural warrant the secular versions renounce.
+It stays fully *reflexive*, aware of its own failure modes, because anything this powerful can curdle. And it counts its losses openly: the secular substitutes, the Sunday Assemblies and humanist associations, have not come close to matching the pull of the communities they set out to replace, while loneliness exacts a health toll ranked alongside smoking and obesity. On its hardest metric, community, the movement is losing, and a well-built dharma has to say so. The commune data behind Part 2 hint that the deficit may be structural: the binding power travelled with the very supernatural warrant the secular versions renounce.
 
 That reflexiveness matters most because building from old stone has two opposite ways of betraying the plural. The shallow betrayal is the one the sociologist Robert Bellah named decades ago in a woman who described her private faith as 'Sheilaism', following her 'own little voice'. That is the spiritual supermarket: maximal personalisation, minimal substance, McMindfulness wearing a different outfit. And before we smile at Sheila: the woman on the cushion from Part 7 is one lonely year away from her; the difference has nothing to do with sincerity, only with whether the scraps ever find a community and someone to answer to.
 

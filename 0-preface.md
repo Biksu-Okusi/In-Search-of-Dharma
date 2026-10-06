@@ -3,7 +3,7 @@ part: 0
 title: "Preface"
 slug: preface
 status: done
-words: 4553
+words: 4552
 reading_level: year-12
 updated: 2026-09-22
 draws_on: ["0.1", "0.2", "0.3", "0.4", "0.5", "0.6", "0.7"]
@@ -44,7 +44,7 @@ What marks a dharma off from mere unexamined custom is that it *can* be held up 
 
 ## The one idea
 
-If I were forced to compress what this book argues into a single sentence, it would be this: a dharma is not a revelation but a technology, an evolved cultural technology, worked out by a particular kind of social animal to solve a particular and permanent problem.
+If I were to compress what this book argues into a single sentence, it would be this: a dharma is not a revelation but a technology, an evolved cultural technology, worked out by a particular kind of social animal to solve a particular and permanent problem.
 
 That problem is cooperation. Human beings get far more done together than apart, but every cooperative group has a weak spot: the cheat, the free rider, the one who takes the benefit and skips the cost. A species that found a way to hold cooperation together against its own parasites would inherit the earth, and ours, more or less, did. We evolved, slowly and through both our genes and our cultures, a thick toolkit for the job. A dharma, on this account, is a culture's particular, elaborated version of that toolkit, its worked-out answer to the questions of how to live together and what holds the group steady while it does. From the Vedas down to the working rules of a profession, they are all answers to the same problem, and not the same answer: the differences are real enough to fight over.
 
