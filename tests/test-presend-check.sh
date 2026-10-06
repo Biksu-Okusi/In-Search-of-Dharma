@@ -77,6 +77,33 @@ else
   printf '  ✗ a book with no imprint or dedication file was refused\n'; FAILED+=1
 fi
 
+# A copy with crop marks is judged by the interior beside it: it passes when
+# that interior does and is no newer than the copy, and is refused when the
+# interior is missing or was rebuilt after the copy was made.
+printf '%%PDF-1.4\n' >"$TREE"/Book_interior_152x229_cropmarks.pdf || broken 'cannot write the copy with crop marks'
+touch -d '2004-01-01' -- "$TREE"/Book_interior_152x229_cropmarks.pdf || broken 'cannot date the copy with crop marks'
+if "$TREE"/tools/presend-check.sh "$TREE"/Book_interior_152x229_cropmarks.pdf 2>/dev/null; then
+  printf '  ✓ a copy with crop marks passes with the interior it was made from\n'
+else
+  printf '  ✗ a copy with crop marks beside a good interior was refused\n'; FAILED+=1
+fi
+touch -d '2005-01-01' -- "$TREE"/Book_interior_152x229.pdf || broken 'cannot date the interior'
+if ERR=$("$TREE"/tools/presend-check.sh "$TREE"/Book_interior_152x229_cropmarks.pdf 2>&1); then
+  printf '  ✗ a copy with crop marks older than its interior was accepted\n'; FAILED+=1
+elif [[ $ERR == *'older than the interior beside it'* ]]; then
+  printf '  ✓ a copy with crop marks older than its interior is refused\n'
+else
+  printf '  ✗ an old copy with crop marks: refused, but said: %s\n' "$ERR"; FAILED+=1
+fi
+printf '%%PDF-1.4\n' >"$TREE"/Other_interior_152x229_cropmarks.pdf || broken 'cannot write the lone copy'
+if ERR=$("$TREE"/tools/presend-check.sh "$TREE"/Other_interior_152x229_cropmarks.pdf 2>&1); then
+  printf '  ✗ a copy with crop marks and no interior was accepted\n'; FAILED+=1
+elif [[ $ERR == *'no interior beside it'* ]]; then
+  printf '  ✓ a copy with crop marks and no interior beside it is refused\n'
+else
+  printf '  ✗ a lone copy with crop marks: refused, but said: %s\n' "$ERR"; FAILED+=1
+fi
+
 if ERR=$("$CHECK" 2>&1); then
   printf '  ✗ no argument was accepted\n'; FAILED+=1
 elif [[ $ERR == *usage* ]]; then
