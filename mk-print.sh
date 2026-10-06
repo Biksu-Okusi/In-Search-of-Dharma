@@ -571,11 +571,13 @@ main() {
   # invocation emits one flat document with no chapter boundary to target.
   info "rendering ${#inputs[@]} chapters"
   local -- frag cls
-  # The two openings marked for the printed page (see the filters below): the
+  # The openings marked for the printed page (see the filters below): the
   # Appendix's first words as pandoc sets them, and the Coda's closing
-  # statement, without its full stop so that no regex character is in it.
+  # statement. Each is short enough to stand on the first line pandoc writes
+  # for its paragraph, since pandoc wraps its lines and sed reads them one by
+  # one: a longer one is never found, and the mark is silently not made.
   local -r appx_open='<p>Throughout <em>in search of dharma</em> I have insisted'
-  local -r coda_open='<p><strong>A dharma is a way of living that holds a person or a people together'
+  local -r coda_open='<p><strong>A dharma is a way of living that holds'
   # The paragraph on p.113 that taking "correction" down made a line longer,
   # set a hair tighter (p.tight) to bring its last word, "see.", back up.
   local -r tight_open='<p>Scholars at Harvard'
@@ -614,7 +616,7 @@ main() {
              | sed -E "s|^$appx_open|${appx_open/<em>in /<em>In }|" \
              | sed -E 's|^<h2 id="the-shape-of-the-lens">|<h2 id="the-shape-of-the-lens" class="pagetop">|' \
              | sed -E "s|^$tight_open|<p class=\"tight\">${tight_open#<p>}|" \
-             | sed -z -E "s|<blockquote>\n$coda_open\.|<blockquote class=\"upright\">\n$coda_open.|" \
+             | sed -z -E "s|<blockquote>\n$coda_open|<blockquote class=\"upright\">\n$coda_open|" \
              | "$SCRIPT_DIR"/lib/dropcap.py \
              | "$SCRIPT_DIR"/lib/smallcaps.py \
              | "$SCRIPT_DIR"/lib/researchnotes.py \
@@ -637,6 +639,18 @@ main() {
     printf '<section class="chapter%s">\n%s\n</section>\n' "$cls" "$frag" >>"$body_html" \
       || die 5 "failed to append to ${body_html@Q}"
     chapter_n+=1
+  done
+
+  # Each of the marks made above for the printed page must have been made, and
+  # once: a pattern that no longer fits the text sets nothing and says nothing.
+  local -- mark
+  local -i made
+  for mark in 'class="pagetop"' 'class="upright"' 'class="tight"' \
+              '<em>In search of dharma</em> I have insisted'; do
+    # grep -c exits 1 when it counts none: the count is still printed, and
+    # the next line is what answers for it.
+    made=$(grep -c -F -- "$mark" "$body_html") ||:
+    ((made == 1)) || die 1 "the mark ${mark@Q} was made $made times in the text, not once"
   done
 
   # The words taken down from marked line ends, over the whole book at once:
