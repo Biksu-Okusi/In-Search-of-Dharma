@@ -273,13 +273,21 @@ main() {
   # after the last page of text, bare of folio and running head, with the
   # blank final page behind it. The text before it is not moved by it.
   if [[ -f $ROOT/print/tuwhiri-final-page.pdf ]]; then
-    local -i last_folio
+    # The text ends on the verso before it, or on the recto before that with
+    # a blank verso between, which the build adds so that the page is a recto.
+    local -i last_folio last_page=$((pages - 2))
     local -- last_text
-    last_folio=$((pages - 2 - part1 + 1))
-    last_text=$(page_text $((pages - 2)) | tr -s ' \n' ' ') || die 1 'could not read the last page of text'
-    [[ $last_text == *'In search of dharma'* && $last_text =~ (^|[^0-9])$last_folio([^0-9]|$) ]] \
+    last_text=$(page_text "$last_page" | tr -d '\f' | tr -s ' \n' ' ') || die 1 "could not read page $last_page"
+    if [[ -z ${last_text// /} ]]; then
+      ok "page $last_page is the blank verso that makes the publisher's page a recto"
+      last_page+=-1
+      last_text=$(page_text "$last_page" | tr -s ' \n' ' ') || die 1 "could not read page $last_page"
+    fi
+    last_folio=$((last_page - part1 + 1))
+    [[ $last_text == *'Appendix: Dharmas'* || $last_text == *'In search of dharma'* ]] \
+      && [[ $last_text =~ (^|[^0-9])$last_folio([^0-9]|$) ]] \
       && ok "the last page of text is folio $last_folio, its head and number as before" \
-      || bad "page $((pages - 2)) is not the last page of text, folio $last_folio"
+      || bad "page $last_page is not the last page of text, folio $last_folio"
     expect_on 'the page from the publisher follows it' $((pages - 1)) 'revealing … making known …'
     ((pages % 2 == 0 && (pages - 1) % 2 == 1)) && ok "the page from the publisher is page $((pages - 1)), odd, a recto" \
       || bad "the page from the publisher is page $((pages - 1)) of $pages"

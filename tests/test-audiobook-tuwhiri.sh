@@ -174,7 +174,7 @@ rm -- "$PROJ"/audio-tuwhiri/tracks/11_Appendix.mp3
 SCRIPT=$PROJ/audio-tuwhiri/11-appendix.md
 grep -q -x -- '  output: 11_Appendix.mp3' "$SCRIPT" && ok 'appendix script: audio frontmatter' \
   || bad 'appendix script lacks its output name'
-grep -q -F -- 'It is the standard, applied to itself.' "$SCRIPT" \
+grep -q -F -- 'it is the standard, applied to itself.' "$SCRIPT" \
   && ok 'appendix script: runs to the last sentence' \
   || bad 'appendix script lost its last sentence'
 grep -q -F -- 'Sources & further reading' "$SCRIPT" \

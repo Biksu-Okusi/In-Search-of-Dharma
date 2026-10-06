@@ -102,7 +102,7 @@ For the unborn and the more-than-human the test can only be held in trust, and t
 
 The word this whole project grew from means *that which holds*. The standard, in the end, only spells out what the root already said. The first test asks whether the holding is real and whether it has become a crushing. The second asks the question that tells traps apart from holds: whether the held could loosen the grip, and stayed.
 
-So, in one breath: the better dharmas hold firmly, crush no one -- and keep the pen in the hands of the held. Everything else about them is still to argue about. That the argument never ends is not the flaw in this standard. It is the standard, applied to itself.
+So, in one breath: the better dharmas hold firmly, crush no one -- and keep the pen in the hands of those held. That the argument never ends is not a flaw; it is the standard, applied to itself.
 
 ---
 
