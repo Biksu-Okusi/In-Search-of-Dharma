@@ -94,6 +94,15 @@ declare -r PREPROCESS_LIB="$SCRIPT_DIR"/lib/preprocess.sh
 declare -r STYLE_LIB="$SCRIPT_DIR"/lib/print-style.sh
 declare -r PDFCHECK="$SCRIPT_DIR"/lib/pdfcheck.py
 declare -r SPOTGRAY="$SCRIPT_DIR"/lib/spotgray.py
+# The words taken down from the line ends Tuwhiri marked (2026-10-06), read by
+# lib/takedown.py; see the file for the form of a rule.
+declare -r TAKEDOWN="$SCRIPT_DIR"/lib/takedown.py
+declare -r TAKEDOWNS_SRC="$SCRIPT_DIR"/print-takedowns.txt
+# With --marks, a second copy of the interior for the publisher's eye, each
+# page on a larger sheet with crop marks at the trim (lib/cropmarks.py). Not
+# for upload: the printer's rules forbid marks, and the preflight is not run
+# on it.
+declare -r CROPMARKS="$SCRIPT_DIR"/lib/cropmarks.py
 
 # Script-scope state, declared before any function (BCS0105).
 declare -i VERBOSE=1 KEEP_TEMP=0
@@ -141,6 +150,7 @@ Options:
   --lead PT        leading (default 16)
   --fonts SET      typeface set from lib/fonts.sh (default ${FONT_SETS[0]})
   --output FILE    write the interior to FILE (default ${DEFAULT_OUTPUT_PDF##*/})
+  --marks          also write a copy with crop marks, _cropmarks.pdf beside the interior
   --preflight FILE check an existing PDF against the printer's rules and stop
   -q, --quiet      suppress progress messages
   --keep-temp      leave the build directory in place for inspection
@@ -217,9 +227,10 @@ stage_images() {
 
 # The front matter, in Tuwhiri's running order (Ramsey, 2026-09-30): i
 # half-title, ii blank, iii title, iv imprint, v dedication, vi blank, vii
-# contents. None of it carries a running head or a page number, though every
-# page is counted (see the bare page in lib/print-style.sh). The Preface starts
-# on viii, the contents' verso, with its roman page number, and the arabic
+# contents, viii blank. None of it carries a running head or a page number,
+# though every page is counted (see the bare page in lib/print-style.sh). The
+# Preface starts on ix, the recto after the contents (2026-10-06; it opened on
+# the contents' verso until then), with its roman page number, and the arabic
 # sequence starts at Part 1 (2026-09-28). The
 # contents entries carry no page numbers here -- target-counter in
 # lib/print-style.sh resolves them at render time, so they cannot drift from
@@ -392,8 +403,26 @@ pad_to_even() {
   info "padded $pages -> $((pages + add)) pages"
 }
 
+# put_in_place SRC DST : copy a finished file to its destination. Copied beside
+# the destination and renamed into place, so the destination holds either the
+# file that was there or the whole of the new one. The name it is staged under
+# is mktemp's: one that could be guessed could be taken first, by a link that
+# the copy would then write through. mktemp makes its file private, so it is
+# given the permissions any new file would have.
+put_in_place() {
+  local -- src=$1 dst=$2 mode
+  STAGED=$(mktemp -- "$dst".XXXXXX) \
+    || die 5 "failed to create a staging file beside ${dst@Q}"
+  printf -v mode '%04o' $(( 0666 & ~$(umask) ))
+  cp -- "$src" "$STAGED" || die 5 "failed to copy ${src@Q} to ${STAGED@Q}"
+  chmod -- "$mode" "$STAGED" || die 5 "failed to set the permissions of ${STAGED@Q}"
+  mv -f -- "$STAGED" "$dst" || die 5 "failed to write ${dst@Q}"
+  STAGED=''
+}
+
 main() {
   local -- font_set=${FONT_SETS[0]} size='' lead='' preflight=''
+  local -i marks=0
   while (($#)); do
     case $1 in
       --size)      [[ -n ${2:-} ]] || die 2 '--size needs a value';  size=$2;      shift 2 ;;
@@ -401,6 +430,7 @@ main() {
       --fonts)     [[ -n ${2:-} ]] || die 2 '--fonts needs a value'; font_set=$2;  shift 2 ;;
       --preflight) [[ -n ${2:-} ]] || die 2 '--preflight needs a file'; preflight=$2; shift 2 ;;
       --output)    [[ -n ${2:-} ]] || die 2 '--output needs a file';    OUTPUT_PDF=$2; shift 2 ;;
+      --marks)     marks=1; shift ;;
       -q|--quiet)  VERBOSE=0;   shift ;;
       --keep-temp) KEEP_TEMP=1; shift ;;
       -h|--help)   show_help; return 0 ;;
@@ -440,6 +470,8 @@ main() {
   done
   [[ -x $PDFCHECK ]] || die 3 "missing or non-executable ${PDFCHECK@Q}"
   [[ -x $SPOTGRAY ]] || die 3 "missing or non-executable ${SPOTGRAY@Q}"
+  [[ -x $TAKEDOWN ]] || die 3 "missing or non-executable ${TAKEDOWN@Q}"
+  ((marks == 0)) || [[ -x $CROPMARKS ]] || die 3 "missing or non-executable ${CROPMARKS@Q}"
   python3 -c 'import pikepdf' 2>/dev/null || die 18 'python3 module pikepdf required'
 
   font_set_load "$font_set" "$SCRIPT_DIR"/fonts || die 22 "invalid --fonts value ${font_set@Q}"
@@ -539,6 +571,11 @@ main() {
   # invocation emits one flat document with no chapter boundary to target.
   info "rendering ${#inputs[@]} chapters"
   local -- frag cls
+  # The two openings marked for the printed page (see the filters below): the
+  # Appendix's first words as pandoc sets them, and the Coda's closing
+  # statement, without its full stop so that no regex character is in it.
+  local -r appx_open='<p>Throughout <em>in search of dharma</em> I have insisted'
+  local -r coda_open='<p><strong>A dharma is a way of living that holds a person or a people together'
   local -i chapter_n=0
   local -r body_html="$TMP_DIR"/body.html
   : >"$body_html" || die 5 "failed to create ${body_html@Q}"
@@ -553,12 +590,27 @@ main() {
     # name in bold, upright, and the place and date in italics; it reads the
     # fragment as one line (-z), since pandoc may wrap the paragraph. nobreak.py
     # runs last, over the words as every other filter has left them.
+    # Four marks from Tuwhiri's final corrections (Ramsey, 2026-10-06), each on
+    # one place in the book and for the printed page only, so the sources and
+    # the reading edition keep their own forms: the book's title with its
+    # capital where the Appendix opens on it (the verso heads have it so, the
+    # text otherwise does not); the Preface subhead that falls at the head of
+    # a page, marked to give up its line space (h2.pagetop); the Coda's closing
+    # statement in bold alone (blockquote.upright); and, after researchnotes.py
+    # has set the note titles in bold, the Tongan ʻokina in those titles given
+    # as a left quotation mark, since Work Sans sets the modifier letter with a
+    # space after it ("ʻ Ata") where Bona Nova, in the text, does not.
+    #shellcheck disable=SC1112  # the left quotation mark is the character set
     frag=$(pandoc --from=markdown-yaml_metadata_block --to=html5 -- "$dst" \
              | sed -E 's|^<p><strong>([^<]*)</strong></p>$|<p class="label">\1</p>|' \
              | sed -z -E "s|<p>(<strong>$AUTHOR</strong>, <em>[^<]*</em>)</p>|<p class=\"signature\">\1</p>|" \
+             | sed -E "s|^$appx_open|${appx_open/<em>in /<em>In }|" \
+             | sed -E 's|^<h2 id="the-shape-of-the-lens">|<h2 id="the-shape-of-the-lens" class="pagetop">|' \
+             | sed -z -E "s|<blockquote>\n$coda_open\.|<blockquote class=\"upright\">\n$coda_open.|" \
              | "$SCRIPT_DIR"/lib/dropcap.py \
              | "$SCRIPT_DIR"/lib/smallcaps.py \
              | "$SCRIPT_DIR"/lib/researchnotes.py \
+             | sed -z -E ':a;s|(<strong>[^<]*)ʻ([^<]*</strong>)|\1‘\2|;ta' \
              | "$SCRIPT_DIR"/lib/nobreak.py) \
       || die 1 "a filter failed for ${dst@Q}"
     # The Preface (chapter 0) is a preliminary, numbered in roman with the
@@ -578,6 +630,17 @@ main() {
       || die 5 "failed to append to ${body_html@Q}"
     chapter_n+=1
   done
+
+  # The words taken down from marked line ends, over the whole book at once:
+  # each rule must be found exactly once in the text, and only the whole book
+  # can say so. The filter stops the build when one is not.
+  if [[ -f $TAKEDOWNS_SRC ]]; then
+    "$TAKEDOWN" "$TAKEDOWNS_SRC" <"$body_html" >"$body_html".td \
+      || die 1 "take-downs failed: see ${TAKEDOWNS_SRC@Q}"
+    mv -- "$body_html".td "$body_html" || die 5 'take-down move failed'
+  else
+    warn "no take-downs at ${TAKEDOWNS_SRC@Q}: the marked line ends stand as the renderer divides them"
+  fi
 
   # Sources & further reading sets smaller. Wrap from that h2 to the end of its
   # own section: open a div at the heading, and close it only in sections that
@@ -664,23 +727,19 @@ main() {
     [[ $OUTPUT_PDF != "$DEFAULT_OUTPUT_PDF" ]] || rm -f -- "$OUTPUT_PDF"
     die 1 'preflight failed; no file was written for upload'
   fi
-  # Copied beside its destination and renamed into place, so the destination
-  # holds either the file that was there or the whole of the new one. The name
-  # it is staged under is mktemp's: one that could be guessed could be taken
-  # first, by a link that the copy would then write through. mktemp makes its
-  # file private, so it is given the permissions any new file would have.
-  local -- mode
-  STAGED=$(mktemp -- "$OUTPUT_PDF".XXXXXX) \
-    || die 5 "failed to create a staging file beside ${OUTPUT_PDF@Q}"
-  printf -v mode '%04o' $(( 0666 & ~$(umask) ))
-  cp -- "$finished" "$STAGED" || die 5 "failed to copy the interior to ${STAGED@Q}"
-  chmod -- "$mode" "$STAGED" || die 5 "failed to set the permissions of ${STAGED@Q}"
-  mv -f -- "$STAGED" "$OUTPUT_PDF" || die 5 "failed to write ${OUTPUT_PDF@Q}"
-  STAGED=''
-
+  put_in_place "$finished" "$OUTPUT_PDF"
   info "done: $OUTPUT_PDF ($(du -h --apparent-size -- "$OUTPUT_PDF" | cut -f1))"
+
+  if ((marks)); then
+    local -r marked="$TMP_DIR"/cropmarks.pdf marks_pdf="${OUTPUT_PDF%.pdf}"_cropmarks.pdf
+    info 'setting the pages with crop marks'
+    "$CROPMARKS" "$finished" "$marked" || die 1 'crop marks failed'
+    put_in_place "$marked" "$marks_pdf"
+    info "done: $marks_pdf ($(du -h --apparent-size -- "$marks_pdf" | cut -f1))"
+  fi
   ((KEEP_TEMP == 0)) || info "build directory kept: $TMP_DIR"
 }
+
 
 main "$@"
 #fin

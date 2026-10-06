@@ -176,21 +176,24 @@ main() {
   # capitals and comes back from the file in mixed case.
   preface=$(page_of 'that refer to the word') || die 1 'could not search for the Preface'
   part1=$(page_of 'yoga studio in nearly every city') || die 1 'could not search for Part 1'
-  # The Preface opens on viii, the verso of the contents, with its number and
-  # without a running head; its recto heads name it, its versos the book.
-  expect 'the Preface opens on PDF page' "$preface" 8
+  # The Preface opens on ix, the recto after the contents (Ramsey, 2026-10-06),
+  # with its number and without a running head; its recto heads name it, its
+  # versos the book. The contents' verso, viii, is blank and carries nothing.
+  expect_at 'blank after the contents: folio' 8 "$FOLIO_Y" ''
+  expect_at 'blank after the contents: head' 8 "$HEAD_Y" ''
+  expect 'the Preface opens on PDF page' "$preface" 9
   ((preface && part1)) || die 1 'the Preface or Part 1 was not found, so their folios cannot be read'
-  expect_at 'Preface opener folio' "$preface" "$FOLIO_Y" 'viii'
+  expect_at 'Preface opener folio' "$preface" "$FOLIO_Y" 'ix'
   expect_at 'Preface opener head' "$preface" "$HEAD_Y" ''
-  expect_at 'Preface recto head' $((preface + 1)) "$HEAD_Y" 'Preface'
-  expect_at 'Preface verso head' $((preface + 2)) "$HEAD_Y" 'In search of dharma'
+  expect_at 'Preface verso head' $((preface + 1)) "$HEAD_Y" 'In search of dharma'
+  expect_at 'Preface recto head' $((preface + 2)) "$HEAD_Y" 'Preface'
   ((part1 % 2)) && ok "Part 1 opens on a recto (PDF page $part1)" \
     || bad "Part 1 opens on PDF page $part1, which is not a recto"
   expect_at 'Part 1 opener folio' "$part1" "$FOLIO_Y" '1'
   expect_at 'Part 1 second page folio' $((part1 + 1)) "$FOLIO_Y" '2'
   text=$(page_text 7 | tr -s ' .' ' ') || die 1 'could not read page 7'
-  [[ $text == *'Preface viii'* && $text == *'1: Defining dharma 1'* ]] \
-    && ok 'the contents give the Preface as viii and Part 1 as 1' \
+  [[ $text == *'Preface ix'* && $text == *'1: Defining dharma 1'* ]] \
+    && ok 'the contents give the Preface as ix and Part 1 as 1' \
     || bad "the contents give other numbers: $(grep -E -- 'Preface|1: ' <<<"$text" | tr '\n' ' ')"
 
   # The signature that closes the Preface: flush left, which on a verso is the

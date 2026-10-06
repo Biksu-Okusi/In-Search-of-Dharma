@@ -62,6 +62,8 @@ main() {
   fi
   [[ $("$MKPRINT" --help) == *'--output FILE'* ]] && ok 'the help lists --output' \
     || bad 'the help does not list --output'
+  [[ $("$MKPRINT" --help) == *'--marks'* ]] && ok 'the help lists --marks' \
+    || bad 'the help does not list --marks'
   # The interior is a PDF and is written as one: a name of any other kind is
   # most likely a slip, and could be one of the book's own sources.
   printf 'a source\n' >"$TMP"/part.md || die 5 "failed to write ${TMP@Q}/part.md"

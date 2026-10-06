@@ -51,6 +51,14 @@ check 'a plural keeps its s outside' \
 check 'trailing digits stay outside' \
   '<p>during COVID19 here</p>' '<span class="caps">COVID</span>19'
 
+# Capitals joined by a hyphen are one run, so the lone I in Aquinas's I-II is
+# set like the II beside it (Ramsey, 2026-10-06).
+check 'capitals joined by a hyphen are one run' \
+  '<p>Summa Theologiae I-II qq. 90</p>' '<span class="caps">I-II</span> qq. 90'
+
+check 'a run before a hyphenated lowercase word is wrapped as before' \
+  '<p>an AI-driven tool</p>' 'an <span class="caps">AI</span>-driven tool'
+
 # A capital run that runs into lowercase is a word, not an acronym.
 check_absent 'a run followed by lowercase is left alone' \
   '<p>the USAid programme</p>' 'class="caps"'

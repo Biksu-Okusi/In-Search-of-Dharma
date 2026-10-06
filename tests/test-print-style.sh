@@ -421,15 +421,16 @@ HTML
   # Ramsey (2026-09-28): page 1 is the first page of Part 1, and the pages before
   # it take roman numerals. His running order (2026-09-30): i half-title, ii
   # blank, iii title, iv imprint, v dedication, vi blank, vii contents, none of
-  # them with a running head or a number; the Preface opens on viii with its
-  # number, and its later pages carry running heads like any chapter's.
+  # them with a running head or a number; then (2026-10-06) viii blank, and the
+  # Preface opens on the recto ix with its number, and its later pages carry
+  # running heads like any chapter's.
   local -- para='<p>The Preface runs on across several pages, so that its later pages, '
   para+='and the blank before Part 1, have somewhere to appear. '
   para+='The Preface runs on across several pages, so that its later pages have somewhere to appear.</p>'
   local -- preface_body=''
-  # Twenty-four paragraphs end the Preface on a recto (viii to xi), so a blank verso stands
-  # before Part 1.
-  for ((i_ = 0; i_ < 24; i_+=1)); do preface_body+=$para; done
+  # Eighteen paragraphs end the Preface on a recto (ix to xi), so a blank verso
+  # stands before Part 1.
+  for ((i_ = 0; i_ < 18; i_+=1)); do preface_body+=$para; done
   cat > "$TMP"/roman.html <<HTML || stop 'could not write roman.html'
 <!doctype html><html lang="en"><head><meta charset="utf-8">
 <link rel="stylesheet" href="print.css"></head><body>
@@ -467,12 +468,16 @@ HTML
   expect_at 'blank before the contents: folio' 6 "${TARGET[folio]}" ''
   expect 'the contents are on page' "$contents_pg" 7
   expect_at 'contents folio' "$contents_pg" "${TARGET[folio]}" ''
-  expect 'the Preface opens on the verso of the contents, page' "$preface_pg" 8
-  expect_at 'Preface opener folio' "$preface_pg" "${TARGET[folio]}" 'viii'
+  expect_at 'blank after the contents: head' 8 "${TARGET[head]}" ''
+  expect_at 'blank after the contents: folio' 8 "${TARGET[folio]}" ''
+  expect_no_rule 'blank after the contents: rule' 8
+  expect 'the Preface opens on the recto after the contents, page' "$preface_pg" 9
+  expect_at 'Preface opener folio' "$preface_pg" "${TARGET[folio]}" 'ix'
   expect_at 'Preface opener head' "$preface_pg" "${TARGET[head]}" ''
-  expect_at 'Preface recto folio' $((preface_pg + 1)) "${TARGET[folio]}" 'ix'
-  expect_at 'Preface recto head' $((preface_pg + 1)) "${TARGET[head]}" 'Preface'
-  expect_at 'Preface verso head' $((preface_pg + 2)) "${TARGET[head]}" 'In search of dharma'
+  expect_at 'Preface verso folio' $((preface_pg + 1)) "${TARGET[folio]}" 'x'
+  expect_at 'Preface verso head' $((preface_pg + 1)) "${TARGET[head]}" 'In search of dharma'
+  expect_at 'Preface recto folio' $((preface_pg + 2)) "${TARGET[folio]}" 'xi'
+  expect_at 'Preface recto head' $((preface_pg + 2)) "${TARGET[head]}" 'Preface'
   expect_at 'Part 1 opener folio' "$part1_pg" "${TARGET[folio]}" '1'
   # The preliminaries' blank versos carry nothing, the one before Part 1
   # included. The running head on a blank verso belongs to the text, from Part
@@ -494,8 +499,8 @@ HTML
   local -- toc
   toc=$(pdftotext -f "$contents_pg" -l "$contents_pg" -layout -- "$TMP"/roman.pdf - | tr -s ' .' ' ') \
     || stop 'could not read the contents page'
-  [[ $toc == *'Preface viii'* ]] && printf '  ✓ the contents give the Preface in roman: viii\n' \
-    || { printf '  ✗ the contents do not give the Preface as viii: %s\n' "${toc:0:120}"; FAILED+=1; }
+  [[ $toc == *'Preface ix'* ]] && printf '  ✓ the contents give the Preface in roman: ix\n' \
+    || { printf '  ✗ the contents do not give the Preface as ix: %s\n' "${toc:0:120}"; FAILED+=1; }
   [[ $toc != *'...'* ]] && printf '  ✓ the contents have no dotted leaders\n' \
     || { printf '  ✗ the contents still have dotted leaders\n'; FAILED+=1; }
   [[ $toc == *'Part 1 1'* ]] && printf '  ✓ the contents give Part 1 as page 1\n' \

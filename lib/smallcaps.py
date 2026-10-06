@@ -27,8 +27,11 @@ import sys
 # A capital run, bounded by non-letters so COVID19 matches whole and USAid not
 # at all. Digits may follow, which \b would not allow. A plural takes its own
 # lowercase s outside the span -- AIs and NGOs are small capitals plus a roman
-# s, not a small-capital S.
-RUN = re.compile(r'(?<![A-Za-z])[A-Z]{2,}(?:(?=s(?![A-Za-z]))|(?![A-Za-z]))')
+# s, not a small-capital S. Capitals joined by hyphens are one run, however
+# short each part: in "Summa Theologiae I-II" the lone I is set like the II
+# beside it (Ramsey, 2026-10-06), where on its own a single capital is left.
+RUN = re.compile(r'(?<![A-Za-z])(?:[A-Z]+(?:-[A-Z]+)+|[A-Z]{2,})'
+                 r'(?:(?=s(?![A-Za-z]))|(?![A-Za-z]))')
 
 # Elements whose text is left alone, with the depth counted so nesting is safe.
 OPAQUE = ('code', 'pre', 'h1', 'h2', 'h3', 'h4', 'h5', 'h6')

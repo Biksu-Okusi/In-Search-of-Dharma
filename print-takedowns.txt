@@ -1,0 +1,38 @@
+# Words taken down from the line ends Tuwhiri marked in the final corrections
+# (Ramsey Margolis, 2026-10-06), one rule a line, read by lib/takedown.py: the
+# phrase as it stands in the text, with the words to keep on one line in
+# square brackets. Each phrase must occur exactly once in the book. The page
+# given is the one he marked, in the interior of 1 October.
+#
+# p. xiii, last line once the subhead at its head gives up its line space
+runs straight into the [argument], because
+# p. 54: the moral eco-nomy taken down, so that sabot-age two lines on is whole
+gave us the moral [economy], spent
+# p. 59
+[immobilised] in the capital
+# p. 70
+the [argument] it carries runs
+# p. 94
+to wildly [different] settings
+# p. 99
+fixed by kinship in [advance]
+# p. 102
+the traditions that [developed] these methods
+# p. 112
+put the [correction] bluntly
+# p. 129
+the restless, [rootless],
+# p. 148 ("if this is necessary")
+and his [colleagues], found it
+# p. 171
+a system holding [preserved] disagreement
+# p. 177: "And" goes over with the sentence it opens, the last of Part 8
+set themselves. [And it] is, at last, openly
+# p. 194
+That cultures [disagree] about a norm
+not about [bindingness]
+# p. 196
+whatever the [credentialed] say it is
+# p. 197
+authority [he cannot] revoke
+no fixed and constant [authority], but

@@ -207,12 +207,13 @@ print_page_css() {
 @page prelim:right{@top-right{content:string(chaptitle,first-except)}}
 /* The Preface's versos name the book through a string of their own, not the
    booktitle string, which stays unset until Part 1 (see section.chapter > h1
-   below). The Preface opens on a verso (viii, Ramsey, 2026-09-30), so this
-   head too is emptied on the opener by first-except. */
+   below). first-except keeps this head off the opener should the Preface
+   ever open on a verso again, as it did until 2026-10-06. */
 @page prelim:left{@top-left{content:string(prelimbook,first-except)}}
 /* Which front-matter pages go without a folio: all of them, i to vii (Ramsey,
-   2026-09-30). They are still counted, so the Preface opens on viii. To change
-   the set, change this page's selector list below (section.front ...
+   2026-09-30). They are still counted, as is the blank verso viii after the
+   contents, so the Preface opens on ix (Ramsey, 2026-10-06). To change the
+   set, change this page's selector list below (section.front ...
    {page:bare}); nothing else needs touching. */
 @page bare{@top-left{content:none}@top-right{content:none}
   @bottom-left{content:none}@bottom-right{content:none}}
@@ -257,6 +258,15 @@ blockquote p{text-indent:0}
    title's own padding already is the two line spaces, and the margin on top of
    it would make three. */
 h1 + blockquote{margin-top:0}
+/* A subhead that falls at the head of a page gives up its line space, so the
+   text runs from the first line of the grid (Ramsey, 2026-10-06, for the
+   Preface's "The shape of the lens"). The renderer keeps a margin at a page
+   top, and no rule can tell which subheads land there, so mk-print.sh marks
+   the one he named; the rest of the book is left as it was paginated. */
+h2.pagetop{margin-top:0}
+/* The Coda's closing statement, a bold paragraph quoted, in roman: bold alone,
+   not bold italic (Ramsey, 2026-10-06). mk-print.sh marks the blockquote. */
+blockquote.upright{font-style:normal}
 /* The signature that closes the Preface stands flush left, a line space below
    the text (Ramsey, 2026-09-28). mk-print.sh marks the paragraph. */
 p.signature{text-indent:0;text-align:left;margin-top:${PRINT_LEAD_PT}pt}
@@ -316,6 +326,10 @@ p.op .dc{float:left;font-size:${PRINT_DROP_FS}em;
    end at a hyphen the word already has; it is the renderer's own hyphenation
    that is turned off. */
 .nb{hyphens:manual}
+/* Words taken down from a marked line end, or kept together there
+   (Ramsey, 2026-10-06): lib/takedown.py wraps each from print-takedowns.txt.
+   Neither divided nor broken, the span goes over whole to the next line. */
+.td{hyphens:manual;white-space:nowrap}
 
 /* Ramsey's point 3: a run of two or more capitals is set in small capitals.
    No selector can reach an element by what it contains, so lib/smallcaps.py
@@ -390,9 +404,11 @@ section.front{page:front}
 section.front .dedication,section.front .halftitle,section.front .titlepage,
 section.front .imprint,section.front nav.contents{page:bare}
 section.chapter.prelim{page:prelim}
-/* The Preface starts on the contents' verso, not the next recto. */
-section.chapter.prelim > h1{page:prelim;break-before:page}
-section.front h1{break-before:auto;page:bare;padding-top:0;
+/* The Preface opens on a recto, with the contents' verso left blank (Ramsey,
+   2026-10-06; until then it opened on that verso). */
+section.chapter.prelim > h1{page:prelim;break-before:right}
+/* The contents heading stands 30mm down the page (Ramsey, 2026-10-06). */
+section.front h1{break-before:auto;page:bare;padding-top:30mm;
   padding-bottom:${PRINT_LEAD_PT}pt;margin-left:0;font-size:14pt}
 /* The arabic sequence restarts at Part 1. ":first-of-type" cannot find it:
    section.front is also a <section>, and the Preface is a chapter too, so
@@ -429,9 +445,9 @@ section.chapter figure img{max-width:70%}
    lands on page i. */
 section.front > div,section.front > nav{break-after:page}
 /* Tuwhiri's running order (Ramsey, 2026-09-30): i half-title, ii blank, iii
-   title, iv imprint, v dedication, vi blank, vii contents, and the Preface
-   from viii. The title page is a recto with the imprint on its back; the
-   dedication and the contents are rectos too. */
+   title, iv imprint, v dedication, vi blank, vii contents, viii blank, and the
+   Preface from ix (2026-10-06). The title page is a recto with the imprint on
+   its back; the dedication, the contents and the Preface are rectos too. */
 section.front .titlepage,section.front .dedication,section.front nav.contents{break-before:recto}
 section.front .halftitle{padding-top:60mm}
 /* The dedication is set ragged and unhyphenated inside the paragraph indent. */
@@ -464,7 +480,8 @@ section.front .ht-title .t-name{font-size:24pt}
 section.front .tp-title{margin-bottom:6mm}
 section.front .tp-title .t-lead{font-size:21.08pt}
 section.front .tp-title .t-name{font-size:40pt}
-section.front .tp-sub{font-style:italic;margin-bottom:24mm}
+/* The subtitle two points over the text size (Ramsey, 2026-10-06). */
+section.front .tp-sub{font-style:italic;font-size:calc(${PRINT_SIZE_PT}pt + 2pt);margin-bottom:24mm}
 /* The author in Work Sans Regular, as on the cover (Ramsey, 2026-09-30). */
 section.front .tp-author{font:400 12pt/1.4 "$FONT_SANS_FAMILY";margin-bottom:3mm}
 section.front .tp-imprint{font:600 10pt/1.4 "$FONT_SANS_FAMILY"}
