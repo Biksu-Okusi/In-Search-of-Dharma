@@ -576,6 +576,9 @@ main() {
   # statement, without its full stop so that no regex character is in it.
   local -r appx_open='<p>Throughout <em>in search of dharma</em> I have insisted'
   local -r coda_open='<p><strong>A dharma is a way of living that holds a person or a people together'
+  # The paragraph on p.113 that taking "correction" down made a line longer,
+  # set a hair tighter (p.tight) to bring its last word, "see.", back up.
+  local -r tight_open='<p>Scholars at Harvard'
   local -i chapter_n=0
   local -r body_html="$TMP_DIR"/body.html
   : >"$body_html" || die 5 "failed to create ${body_html@Q}"
@@ -600,12 +603,17 @@ main() {
     # has set the note titles in bold, the Tongan ʻokina in those titles given
     # as a left quotation mark, since Work Sans sets the modifier letter with a
     # space after it ("ʻ Ata") where Bona Nova, in the text, does not.
+    # A fifth, from the author (2026-10-06): the take-down on p.112 left the
+    # paragraph it opens one line longer, which moved every page of Part 6 on
+    # by a line and put a divided word and two short lines at page ends the
+    # publisher had passed. That paragraph is marked p.tight.
     #shellcheck disable=SC1112  # the left quotation mark is the character set
     frag=$(pandoc --from=markdown-yaml_metadata_block --to=html5 -- "$dst" \
              | sed -E 's|^<p><strong>([^<]*)</strong></p>$|<p class="label">\1</p>|' \
              | sed -z -E "s|<p>(<strong>$AUTHOR</strong>, <em>[^<]*</em>)</p>|<p class=\"signature\">\1</p>|" \
              | sed -E "s|^$appx_open|${appx_open/<em>in /<em>In }|" \
              | sed -E 's|^<h2 id="the-shape-of-the-lens">|<h2 id="the-shape-of-the-lens" class="pagetop">|' \
+             | sed -E "s|^$tight_open|<p class=\"tight\">${tight_open#<p>}|" \
              | sed -z -E "s|<blockquote>\n$coda_open\.|<blockquote class=\"upright\">\n$coda_open.|" \
              | "$SCRIPT_DIR"/lib/dropcap.py \
              | "$SCRIPT_DIR"/lib/smallcaps.py \

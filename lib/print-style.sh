@@ -264,6 +264,15 @@ h1 + blockquote{margin-top:0}
    top, and no rule can tell which subheads land there, so mk-print.sh marks
    the one he named; the rest of the book is left as it was paginated. */
 h2.pagetop{margin-top:0}
+/* A paragraph whose word spaces may close by 0.4pt at 10pt before a line is
+   full, so that its last word comes back onto the line before and the pages
+   after it fall as the publisher passed them (the author, 2026-10-06). The
+   lines are justified, so what changes is which words each line takes, not
+   the spacing the eye sees. Word spacing, not letter spacing: with the
+   letters closed up the renderer sets lines past the measure, which the
+   preflight refuses. mk-print.sh marks the one paragraph, on p.113; the
+   comment there says what it undoes. */
+p.tight{word-spacing:-0.04em}
 /* The Coda's closing statement, a bold paragraph quoted, in roman: bold alone,
    not bold italic (Ramsey, 2026-10-06). mk-print.sh marks the blockquote. */
 blockquote.upright{font-style:normal}
