@@ -221,6 +221,20 @@ HTML
   assert_fails 'check rejects a colour image' "$TMP/rgbimg.pdf" 'must be grayscale'
   assert_fails 'check rejects a low-resolution image' "$TMP/rgbimg.pdf" 'ppi, want'
 
+  # check rejects a grey image above 600 ppi, which IngramSpark's preflight
+  # flags: 1000 pixels set 20mm wide is 1270 ppi.
+  convert -size 1000x1000 xc:gray50 -colorspace Gray png:"$TMP"/hires.png \
+    || die 1 'failed to build the high-resolution fixture'
+  cat >"$TMP/hires.html" <<HTML
+<!doctype html><html lang="en"><head><meta charset="utf-8"><style>
+@page{size:152mm 229mm;margin:25mm 20mm}
+body{margin:0}
+img{width:20mm;height:20mm}
+</style></head><body><img src="file://$TMP/hires.png"></body></html>
+HTML
+  render "$TMP/hires.html" "$TMP/hires.pdf"
+  assert_fails 'check rejects a grey image above 600 ppi' "$TMP/hires.pdf" 'ppi, want <= 600'
+
   make_spread "$TMP/spread.pdf"
   "$CHECK" check --measure 107 --inner 25 -- "$TMP/spread.pdf" &>/dev/null \
     && ok 'check --measure accepts text set within a mirrored measure' \

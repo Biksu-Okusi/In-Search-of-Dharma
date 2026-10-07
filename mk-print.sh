@@ -220,8 +220,11 @@ stage_images() {
   # SVG is untouched.
   # Tuwhiri's word mark arrives as an sRGB-tagged JPEG of grey pixels: made
   # single-channel grey and stripped of its profile, like every other image.
+  # It is set 25mm wide, and its 1958 pixels came to 1989 ppi there, which
+  # IngramSpark's preflight flags (above 600 ppi, 2026-10-06): it is scaled to
+  # 590 pixels, 599 ppi, as sharp as their limit allows for its small type.
   if [[ -f $WORDMARK_SRC ]]; then
-    convert "$WORDMARK_SRC" -colorspace Gray -strip -quality "$JPEG_QUALITY" \
+    convert "$WORDMARK_SRC" -colorspace Gray -resize 590x -strip -quality "$JPEG_QUALITY" \
       "$stage"/images/"${WORDMARK_SRC##*/}" || die 5 "failed to stage the word mark ${WORDMARK_SRC@Q}"
   fi
   [[ -f $LOGO_SRC ]] || die 3 "logo missing ${LOGO_SRC@Q}"

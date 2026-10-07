@@ -32,6 +32,10 @@ PT_MM = 25.4 / 72.0
 INK_WARN_MM = 13.0   # IngramSpark's stated minimum
 INK_FAIL_MM = 12.0   # below the model book's own 12.20mm, so certainly wrong
 MIN_PPI = 300
+# IngramSpark's own preflight (ColorBookCheck) flags a grey image "higher than
+# 600 pixels per inch" and asks for the file to be corrected (2026-10-06: the
+# publisher's word mark at 1989 ppi).
+MAX_PPI = 600
 RENDER_DPI = 72      # 1 pixel == 1pt at this resolution; no pixel<->point scaling
 INK_THRESHOLD = 255  # any pixel darker than pure white counts as ink
 # How far a word may sit outside the measure before it counts as an overrun.
@@ -597,6 +601,8 @@ def check(path, trim, require_even, require_blank_last, text_block=None):
                              f"want >= {MIN_PPI} ppi"))
     elif im['ppi'] < MIN_PPI:
       fail.append(('images', f"page {im['page']}: {im['ppi']:.0f} ppi, want >= {MIN_PPI}"))
+    elif im['ppi'] > MAX_PPI:
+      fail.append(('images', f"page {im['page']}: {im['ppi']:.0f} ppi, want <= {MAX_PPI}"))
 
   for edge, v in sorted(m['ink_to_trim_mm'].items()):
     if v < INK_FAIL_MM:
