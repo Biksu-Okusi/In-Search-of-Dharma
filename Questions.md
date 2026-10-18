@@ -2,7 +2,7 @@
 
 This is the **master registry** and **status dashboard** for the DD research project. Each question has a stable ID (`category.question`), maps to exactly one research note (`N-<category>/<id>-<slug>.md`), and moves through the status vocabulary `todo` → `in-progress` → `review` → `done`. The per-question workflow is in [`METHODOLOGY.md`](METHODOLOGY.md); the note structure is [`1-foundational/_template.md`](1-foundational/_template.md).
 
-32 core questions (4 per category), plus extension notes where a topic merits its own cited note (e.g. `4.5`). Fifty-two notes in all.
+32 core questions (4 per category), plus extension notes where a topic merits its own cited note (e.g. `4.5`). Fifty-three notes in all (6.6 added 2026-10-18 for the second edition; the published book does not treat sexuality).
 
 ## Status dashboard
 
@@ -48,6 +48,7 @@ This is the **master registry** and **status dashboard** for the DD research pro
 | 6.3 | Economics, Work & Inequality            | done      | [6-contemporary/6.3-economics-work-inequality.md](6-contemporary/6.3-economics-work-inequality.md) |
 | 6.4 | Gender & Dharma                         | done      | [6-contemporary/6.4-gender-and-dharma.md](6-contemporary/6.4-gender-and-dharma.md) |
 | 6.5 | Secularisation & the "Nones"            | done      | [6-contemporary/6.5-secularization-nones.md](6-contemporary/6.5-secularization-nones.md) |
+| 6.6 | Sexuality & Dharma                      | review    | [6-contemporary/6.6-sexuality-and-dharma.md](6-contemporary/6.6-sexuality-and-dharma.md) |
 | 7.1 | Failure Modes                           | done      | [7-critical/7.1-failure-modes.md](7-critical/7.1-failure-modes.md) |
 | 7.2 | Cultural Adaptation & Appropriation     | done      | [7-critical/7.2-appropriation.md](7-critical/7.2-appropriation.md) |
 | 7.3 | Dharma & Power                          | done      | [7-critical/7.3-dharma-and-power.md](7-critical/7.3-dharma-and-power.md) |
@@ -245,6 +246,10 @@ How do dharmic systems encode, enforce, or contest gender roles? Where have dhar
 ### 6.5 Secularisation & the "Nones"
 
 How large and how fast-growing is the "secular age" the essays invoke — the religiously unaffiliated ("nones") and the "spiritual but not religious" — and is it accurate to call it the fastest-growing religious category? *(Demographic-grounding note for the Part 7 essay; external-sourced from Pew because the shared corpus carries the secularisation thesis but not current measurement.)*
+
+### 6.6 Sexuality & Dharma
+
+How do dharmas regulate, use and give meaning to sex — between individuals (the pair-bond, marriage, celibacy, pleasure) and within communities (incest rules, marriage alliance, purity and modesty, the policing of desire, sex as social glue)? Where has sexual regulation held people without crushing them, where has the sexual arena become the site of a dharma's worst abuses, and what do the two tests of [`the-better-ones.md`](the-better-ones.md) — *holds without crushing*, *revisable by those bound* — say about each? *(Added 2026-10-18 for the second edition; the published book does not treat sexuality.)*
 
 ---
 

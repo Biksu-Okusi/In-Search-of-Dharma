@@ -350,6 +350,14 @@ A note's `[S#]` line points here via `[src:<key>]`. No `[S#]` may point at a `st
 - verified: web (globalbuddhism.org, diamond OA)
 - note: attributed summary note with verified page anchors, shared with the Higgins entry. The programmatic founding document of 'secular dharma': three senses of 'secular'; Four Noble Truths recast as four tasks; 'Buddhism 2.0' coined here with a 'touch of irony' (p. 91). ▲ Partisan witness the project is personally close to — flag per bias policy. Distinct work from the KB's Batchelor lecture transcripts.
 
+### batchelor-2017-why-i-quit-guru-yoga
+- status: usable
+- medium: text
+- cite: Stephen Batchelor, "Why I quit guru yoga," stephenbatchelor.org, October 2017; reprinted in *Tricycle* (Winter 2017)
+- kb: `Batchelor_Why-I-Quit-Guru-Yoga_2017.md`
+- verified: web (tricycle.org/magazine/quit-guru-yoga/, posted 6 November 2017, Winter 2017 issue; byline and date at seg 0)
+- note: The 1993 Dharamsala meeting with the Dalai Lama on teacher misconduct, "in most cases … alleged sexual abuse"; the student invests the teacher with authority; *samaya* and "nothing, in principle, that he could not ask of you"; "the problem is systemic"; the unsigned open letter; the lamas' reaction to the Rigpa eight (2017). Interested party: Batchelor is a declared apostate from the Vajrayāna. Cited by DD note 6.6.
+
 ### batchelor-wellington-talk-nirvana-mcmindfulness-ethics
 - status: usable
 - medium: transcript
@@ -1238,6 +1246,14 @@ A note's `[S#]` line points here via `[src:<key>]`. No `[S#]` may point at a `st
 - verified: file ("power produces knowledge" at seg 29; "power produces; it produces reality" at seg 216 with Part Three "Panopticism" heading following)
 - note: Primary for productive/disciplinary power. Does not contain the pastoral-power argument (the word "pastoral" is absent), which remains with the unheld 1979 Tanner lecture.
 
+### fox-1980-flow-of-life
+- status: usable
+- medium: text-ocr
+- cite: James J. Fox (ed.), *The Flow of Life: Essays on Eastern Indonesia* (Cambridge, MA: Harvard University Press, 1980; Harvard Studies in Cultural Anthropology 2), viii + 372 pp., ISBN 0674306759
+- kb: `james-j-fox_the-flow-of-life_essays-on-eastern-indonesia.md`
+- verified: web (HathiTrust and library records; contributors and imprint match seg 0)
+- note: Marriage alliance as the "flow of life" in eastern Indonesia: Fox's own chapter on Thie (Rote) marriage prohibitions (seg 240) and Clamagirand on the Ema four-partner cycle, "the circulation of women" (seg 267). OCR text: quote only after checking. Cited by DD note 6.6.
+
 ### fox-1990-meanings-of-deep-ecology
 - status: usable
 - medium: text
@@ -1888,6 +1904,14 @@ Also: existing entry `curry-mullins-whitehouse-2019-seven-moral-rules` should ad
 - verified: web (live page is a JS shell to curl; Wayback snapshot 20251006194015; fetched 2026-09-03)
 - note: The fullest relay of Danandjaja's eschatology: *mepasah* is the Hindu-Balinese term, no local word found; who is exposed and who buried; seven plots at Sema Wayah with bones moved aside; the married dead "gentayangan" until the *Pengabenan*, then Dalem and rebirth in the *dadia*; the unmarried "serta merta kembali ke kawah (surga)"; the bad dead as *hantu* at latrines; *prerai*, *amben tengah*, the *wadah* sunk in the lake, "Pengabenan dengan Tirta (air)." Cited by DD note 4.1.
 
+### jaini-1979-jaina-path-of-purification
+- status: usable
+- medium: text-ocr
+- cite: Padmanabh S. Jaini, *The Jaina Path of Purification* (Berkeley: University of California Press / Delhi: Motilal Banarsidass, 1979)
+- kb: `Jaini_The-Jaina-Path-of-Purification_1979.md`
+- verified: web (archive.org scan of the Motilal 1979 edition, pp. 176–177 read 2026-10-18; OCR provenance header at seg 0)
+- note: The lay vows (*aṇuvrata*); the fourth, *brahma-vrata*, as "marriage and moderation" — "avoid the wives of others", "content with his own wife" (Ratnakaraṇḍaka-śrāvakācāra iii.13), sexual restraint "one more facet in the universal implementation of ahiṃsā" (pp. 176–177, segs 256–257). Cited by DD note 6.6.
+
 ### james-2018-arnhem-land-funeral-ceremony-filmed-abc-news
 - status: usable
 - medium: text
@@ -2167,6 +2191,14 @@ Also: existing entry `curry-mullins-whitehouse-2019-seven-moral-rules` should ad
 - kb: `Legge_The-Texts-of-Taoism_SBE-39_1891.md` (Part II is `Legge_The-Texts-of-Taoism_SBE-40_1891.md`)
 - verified: file (running head "THE TEXTS OF TAOISM. pt. I" with pagination at :92; chapter numerals 25 and 37 located)
 - note: Public-domain primary text; OCR has broken headings (`###
+
+### roosa-2006-pretext-for-mass-murder
+- status: usable
+- medium: text
+- cite: John Roosa, *Pretext for Mass Murder: The September 30th Movement and Suharto's Coup d'État in Indonesia* (Madison: University of Wisconsin Press, 2006; New Perspectives in Southeast Asian Studies), ISBN 9780299220303
+- kb: `john-roosa_pretext-for-mass-murder_the-september-30th-movement.md`
+- verified: web (publisher and Project MUSE records; title page at seg 0)
+- note: The army's story that Gerwani women danced naked and mutilated the generals at Lubang Buaya was "an absurd fabrication by psychological warfare experts" (seg 67; the castration story "turned out to be a fabrication", seg 112); anticommunism as "the state religion" with its sacred sites (seg 8). Cited by DD note 6.6.
 
 ### sahih-bukhari-1315-hasten-the-funeral
 - status: usable
