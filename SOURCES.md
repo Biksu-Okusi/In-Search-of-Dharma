@@ -150,6 +150,14 @@ A note's `[S#]` line points here via `[src:<key>]`. No `[S#]` may point at a `st
 - verified: unverified
 - note: anonymous YouTube video essay (channel "Ancient Minds", youtube.com watch?v=88xZotShpxY). Popular-science gloss on the evolutionary-niche argument for autistic traits, with no named author and no cited primary research. The 2026-07-24 pass deliberately removed this class of source from load-bearing claims in the 5.6 block; it is barred here to keep it out. Anything it asserts must be re-grounded in the peer-reviewed literature already cited by note 5.6.1.
 
+### anderson-1991-imagined-communities
+- status: usable
+- medium: text
+- cite: Benedict Anderson, *Imagined Communities: Reflections on the Origin and Spread of Nationalism*, revised edition (London: Verso, 1991; first published 1983)
+- kb: `Anderson_Imagined-Communities_1991.md`
+- verified: file (edition note and preface to the second edition at seg 0; chapter footnotes retained)
+- note: The nation as "an imagined political community"; the three paradoxes of nationalism (seg 9); nationalism as "a secular transformation of fatality into continuity" at the dusk of religious thought (seg 16); "unisonance", the anthem sung by strangers (seg 200). Cited by DD note 7.8.
+
 ### anna-prouty-2017-anarcho-taoist-manifesto
 - status: usable
 - medium: text
@@ -517,6 +525,14 @@ A note's `[S#]` line points here via `[src:<key>]`. No `[S#]` may point at a `st
 - kb: `Botero-et-al_The-Ecology-of-Religious-Beliefs_PNAS-2014.md`
 - verified: file (authors and affiliations at seg 0; n = 583 and result sentences at segs 0 and 4)
 - note: Cross-sectional ecological analysis: moralizing high gods more prevalent under ecological duress and in politically complex, property-recognising societies. Not a longitudinal secularisation finding.
+
+### bourchier-hadiz-2003-indonesian-politics-and-society
+- status: usable
+- medium: text
+- cite: David Bourchier & Vedi R. Hadiz (eds), *Indonesian Politics and Society: A Reader* (London: RoutledgeCurzon, 2003)
+- kb: `David-Bourchier+Vedi-R-Hadiz_Indonesian-Politics-and-Society_A-Reader_2003.md`
+- verified: file (document metadata and jacket endorsements at seg 0)
+- note: Primary documents of the New Order: Ali Moertopo (24 May 1980, section 4.3), Pancasila as "our national concept of culture" under which "differences in values are impossible" (seg 237); Suharto on the party law and the one ideology (segs 219–220); the Tanjung Priok rally speech of September 1984 (segs 314–317). Cited by DD note 7.8.
 
 ### bourdieu-1991-language-and-symbolic-power
 - status: usable
@@ -1374,6 +1390,14 @@ A note's `[S#]` line points here via `[src:<key>]`. No `[S#]` may point at a `st
 - verified: web (ISBN 978-0-465-09719-7); quotations verified against the full book scan
 - note: attributed summary note with verified page anchors. The definition Asad attacks, and the position DD's four-feature test structurally occupies. Geertz himself disclaims essence-hunting ('it is notorious that definitions establish nothing,' p. 90). Distinct work from the KB's *Religion of Java*. Full text in DD local archive (scratch/sources/part1/, gitignored); community upload, reading copy only.
 
+### whitehouse-et-al-2014-brothers-in-arms
+- status: usable
+- medium: text
+- cite: Harvey Whitehouse, Brian McQuinn, Michael Buhrmester & William B. Swann Jr, "Brothers in arms: Libyan revolutionaries bond like family," *PNAS* 111:50 (2014): 17783–17785, DOI 10.1073/pnas.1416284111
+- kb: `Whitehouse-et-al_Brothers-in-Arms-Libyan-Revolutionaries_PNAS-2014.md`
+- verified: file (title, authors and editorial dates at seg 0; volume and pages from the published record)
+- note: 179 Libyan fighters in 2011; front-line fighters fused more with their battalion than with their families; fusion as a proximal cause of "parochial altruism". Cited by DD note 7.8.
+
 ### geertz-1973-impact-of-the-concept-of-culture
 - status: usable
 - medium: text
@@ -1525,6 +1549,14 @@ A note's `[S#]` line points here via `[src:<key>]`. No `[S#]` may point at a `st
 - kb: `Emma-Goldman+Mariano-R-Vázquez_The-Fall-of-Barcelona_Letters-Exchanged-by-Emma-Goldman-and-Mariano-R-Vázquez-After-the-Spanish-Civil-War_1939.md`
 - verified: unverified
 - note: a mass movement's death discussed by its participants as it happened; two incompatible post-mortems inside one exchange — contested memory, not causal history.
+
+### gomez-et-al-2023-transcultural-pathways-will-to-fight
+- status: usable
+- medium: text
+- cite: Ángel Gómez, Alexandra Vázquez, Scott Atran et al., "Transcultural pathways to the will to fight," *PNAS* 120:24 (2023): e2303614120, DOI 10.1073/pnas.2303614120
+- kb: `Gomez-Vazquez-Atran_Transcultural-Pathways-to-the-Will-to-Fight_PNAS-2023.md`
+- verified: file (journal masthead and DOI at seg 0)
+- note: Identity fusion with country, leader and a core value ("freedom") predicts costly action for Ukraine; "spiritual formidability" as mediator (seg 27); the "imponderable" will to fight (seg 3). Cited by DD note 7.8.
 
 ### goodyear-et-al-2025-school-phone-policies-smart-schools
 - status: usable
@@ -2191,6 +2223,22 @@ Also: existing entry `curry-mullins-whitehouse-2019-seven-moral-rules` should ad
 - kb: `Legge_The-Texts-of-Taoism_SBE-39_1891.md` (Part II is `Legge_The-Texts-of-Taoism_SBE-40_1891.md`)
 - verified: file (running head "THE TEXTS OF TAOISM. pt. I" with pagination at :92; chapter numerals 25 and 37 located)
 - note: Public-domain primary text; OCR has broken headings (`###
+
+### newson-buhrmester-whitehouse-2016-explaining-lifelong-loyalty
+- status: usable
+- medium: text
+- cite: Martha Newson, Michael Buhrmester & Harvey Whitehouse, "Explaining Lifelong Loyalty: The Role of Identity Fusion and Self-Shaping Group Events," *PLoS ONE* 11:8 (2016): e0160427, DOI 10.1371/journal.pone.0160427
+- kb: `Newson-Buhrmester-Whitehouse_Explaining-Lifelong-Loyalty_PLoSONE-2016.md`
+- verified: file (title, authors and DOI at seg 0 and in the table captions)
+- note: British football fans: identity fusion mediates lifelong loyalty; euphoric shared events. Cited by DD notes 1.5 and 7.8.
+
+### putnam-2020-bowling-alone
+- status: usable
+- medium: text
+- cite: Robert D. Putnam, *Bowling Alone: The Collapse and Revival of American Community*, revised and updated edition (New York: Simon & Schuster, 2020; first published 2000)
+- kb: `Robert-D-Putnam_Bowling-Alone_The-Collapse-and-Revival-of-American-Community.md`
+- verified: file (the kb text cites 2019 sources, so it is the 2020 revised edition; title at seg 0)
+- note: The 2020 afterword on the internet: cyberbalkanisation, Sunstein's "Daily Me", unfriending, Asmolov on campaigns that "dissolve horizontal ties" (segs 503, 505); its notes carry the polarisation literature (Iyengar et al. 2012; Bail et al. 2018; Crockett 2017). Cited by DD note 7.8.
 
 ### roosa-2006-pretext-for-mass-murder
 - status: usable
@@ -5719,7 +5767,7 @@ Also: existing entry `curry-mullins-whitehouse-2019-seven-moral-rules` should ad
 - status: usable
 - medium: text
 - cite: James C. Scott, The Art of Not Being Governed: An Anarchist History of Upland Southeast Asia (Yale University Press, 2009; ISBN 978-0-300-15228-9)
-- kb: `james-c-scott_the-art-of-not-being-governed.md`
+- kb: `james-c-scott_the-art-of-not-being-governed.md`, `the-art-of-not-being-governed.md` (second copy of the same text, different segmentation)
 - verified: web (ISBN 978-0-300-15228-9)
 - note: Well-known monograph; title/publisher/year known with high confidence, ISBN not explicitly re-verified
 

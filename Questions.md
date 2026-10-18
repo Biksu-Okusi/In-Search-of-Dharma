@@ -2,7 +2,7 @@
 
 This is the **master registry** and **status dashboard** for the DD research project. Each question has a stable ID (`category.question`), maps to exactly one research note (`N-<category>/<id>-<slug>.md`), and moves through the status vocabulary `todo` → `in-progress` → `review` → `done`. The per-question workflow is in [`METHODOLOGY.md`](METHODOLOGY.md); the note structure is [`1-foundational/_template.md`](1-foundational/_template.md).
 
-32 core questions (4 per category), plus extension notes where a topic merits its own cited note (e.g. `4.5`). Fifty-four notes in all (1.5 and 6.6 added 2026-10-18 for the second edition; the published book treats neither aesthetics nor sexuality).
+32 core questions (4 per category), plus extension notes where a topic merits its own cited note (e.g. `4.5`). Fifty-five notes in all (1.5, 6.6 and 7.8 added 2026-10-18 for the second edition; the published book treats aesthetics, sexuality and tribalism only in passing).
 
 ## Status dashboard
 
@@ -57,6 +57,7 @@ This is the **master registry** and **status dashboard** for the DD research pro
 | 7.5 | Orientalism                             | done      | [7-critical/7.5-orientalism.md](7-critical/7.5-orientalism.md) |
 | 7.6 | Dogma Undone: The CPA Case              | done      | [7-critical/7.6-cpa-case.md](7-critical/7.6-cpa-case.md) |
 | 7.7 | Dharma by Decree: The Engineered-Dharma Failure Mode | done      | [7-critical/7.7-engineered-dharmas.md](7-critical/7.7-engineered-dharmas.md) |
+| 7.8 | Tribalism & Dharma                      | review    | [7-critical/7.8-tribalism-and-dharma.md](7-critical/7.8-tribalism-and-dharma.md) |
 | 8.1 | Planetary Dharma                        | done      | [8-future/8.1-planetary-dharma.md](8-future/8.1-planetary-dharma.md) |
 | 8.2 | AI & Dharma                             | done      | [8-future/8.2-ai-and-dharma.md](8-future/8.2-ai-and-dharma.md) |
 | 8.3 | Post-Traditional Dharmas                | done      | [8-future/8.3-post-traditional-dharmas.md](8-future/8.3-post-traditional-dharmas.md) |
@@ -287,6 +288,10 @@ Constructed ethical-political orders are usually studied through their catastrop
 ### 7.7 Dharma by Decree: The Engineered-Dharma Failure Mode
 
 What happens when the capacity to build dharmas deliberately is exercised by a state, at speed, against the inherited substrate — the Jacobin cults, the New Soviet Man, the Khmer Rouge's Year Zero? What distinguishes catastrophic construction from benign construction (Ambedkar's Navayāna, the CPA, secular dharma), and what licence does the answer leave for Part 8? *(Extension note — the fourth twin for Part 6's schema, via Scott's authoritarian high modernism; the stress-test that licenses Part 8's constructive turn.)*
+
+### 7.8 Tribalism & Dharma
+
+Every dharma binds an *us*. What is the evolved machinery it binds with, how does a dharma become a badge of membership rather than a path, where has that badge turned lethal, what has the networked age added, and what do dharmas themselves hold against the fence they build? *(Added 2026-10-18 for the second edition; gathers the parochial-altruism material of Parts 2, 5, 6 and 8 and adds the political, religious-badge, heresy and Indonesian cases.)*
 
 ---
 

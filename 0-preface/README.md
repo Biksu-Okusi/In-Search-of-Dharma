@@ -4,7 +4,7 @@ This directory holds the Stage-1 research notes for the **Preface (Part 0)** of 
 *In Search of Dharma* essay series: the author's life, formation, intellectual
 lineage, community, thesis, and the knowledgebase method behind the whole project.
 
-These notes are kept **out of** the 54-question master registry
+These notes are kept **out of** the 55-question master registry
 ([`../Questions.md`](../Questions.md)) **by design**. The registry tracks the
 project's research *questions about dharma*; Part 0 is research about the *author and
 the method* (Gary Dean, a.k.a. Biksu Okusi, and the `appliedanthropology` /

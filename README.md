@@ -94,11 +94,11 @@ The master question registry, with its status dashboard, is [`Questions.md`](Que
 
 The **Preface (Part 0)** has its own set of research notes ([`0-preface/`](0-preface/)), held to the same template and citation discipline. Because they rest substantially on primary self-report and private correspondence, they are published as **redacted public editions**: passages resting on private family records or third-party correspondence remain in the author's private records, and every redaction is disclosed in place. Passages drawing on a colleague's private correspondence are published with his consent; the mail archive and seed correspondence are permanently private.
 
-◉ **Status.** Both stages are complete: all 54 research questions have their cited notes, and all ten parts are written. The series is in final pre-publication polish, so wording may still shift; the evidence base is stable.
+◉ **Status.** Both stages are complete: all 55 research questions have their cited notes, and all ten parts are written. The series is in final pre-publication polish, so wording may still shift; the evidence base is stable.
 
 ## Dataset
 
-The full corpus (the 54 cited research notes, the ten essays and the two companion essays) is published as a Hugging Face dataset: **<https://huggingface.co/datasets/garydean/defining-dharma>** (configs `notes`, `essays` and `companions`), generated from this repository by [`mk-hf-dataset.py`](mk-hf-dataset.py). Reuse for AI training, retrieval, and research is welcome under the same CC BY 4.0 licence. Each milestone release is also archived on Zenodo with a citable DOI: [10.5281/zenodo.21348716](https://doi.org/10.5281/zenodo.21348716) (all versions; resolves to the latest release).
+The full corpus (the 55 cited research notes, the ten essays and the two companion essays) is published as a Hugging Face dataset: **<https://huggingface.co/datasets/garydean/defining-dharma>** (configs `notes`, `essays` and `companions`), generated from this repository by [`mk-hf-dataset.py`](mk-hf-dataset.py). Reuse for AI training, retrieval, and research is welcome under the same CC BY 4.0 licence. Each milestone release is also archived on Zenodo with a citable DOI: [10.5281/zenodo.21348716](https://doi.org/10.5281/zenodo.21348716) (all versions; resolves to the latest release).
 
 ## Contributing
 
