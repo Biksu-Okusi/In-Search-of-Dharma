@@ -2,7 +2,7 @@
 
 This is the **master registry** and **status dashboard** for the DD research project. Each question has a stable ID (`category.question`), maps to exactly one research note (`N-<category>/<id>-<slug>.md`), and moves through the status vocabulary `todo` → `in-progress` → `review` → `done`. The per-question workflow is in [`METHODOLOGY.md`](METHODOLOGY.md); the note structure is [`1-foundational/_template.md`](1-foundational/_template.md).
 
-32 core questions (4 per category), plus extension notes where a topic merits its own cited note (e.g. `4.5`). Fifty-three notes in all (6.6 added 2026-10-18 for the second edition; the published book does not treat sexuality).
+32 core questions (4 per category), plus extension notes where a topic merits its own cited note (e.g. `4.5`). Fifty-four notes in all (1.5 and 6.6 added 2026-10-18 for the second edition; the published book treats neither aesthetics nor sexuality).
 
 ## Status dashboard
 
@@ -12,6 +12,7 @@ This is the **master registry** and **status dashboard** for the DD research pro
 | 1.2 | Universal Patterns                      | done      | [1-foundational/1.2-universal-patterns.md](1-foundational/1.2-universal-patterns.md) |
 | 1.3 | Boundary & Definition                   | done      | [1-foundational/1.3-boundary-definition.md](1-foundational/1.3-boundary-definition.md) |
 | 1.4 | Cross-cultural Cognates                  | done      | [1-foundational/1.4-cross-cultural-cognates.md](1-foundational/1.4-cross-cultural-cognates.md) |
+| 1.5 | Aesthetics & Dharma                     | review    | [1-foundational/1.5-aesthetics-and-dharma.md](1-foundational/1.5-aesthetics-and-dharma.md) |
 | 2.1 | Axial Age Catalyst                      | done      | [2-historical/2.1-axial-age.md](2-historical/2.1-axial-age.md) |
 | 2.2 | Urban Complexity                        | done      | [2-historical/2.2-urban-complexity.md](2-historical/2.2-urban-complexity.md) |
 | 2.3 | Pre-Axial / Pre-literate Ethics         | done      | [2-historical/2.3-pre-axial-ethics.md](2-historical/2.3-pre-axial-ethics.md) |
@@ -81,6 +82,10 @@ What makes something a *dharma* as opposed to mere custom, law, etiquette, or id
 ### 1.4 Cross-cultural Cognates
 
 How does dharma compare with cognate ordering concepts from other traditions — Greek *nomos* and *logos*, Chinese *Tao*, Vedic *ṛta*, Egyptian *ma'at*, and Western *natural law*? What is genuinely shared across them, and what is distinct to each?
+
+### 1.5 Aesthetics & Dharma
+
+What aesthetic does a dharma express — its look, sound, manner, material culture and the sensibility it trains in its carriers — and is it true, as the author asserts, that people adopt a dharma's aesthetic as much as, or before, its philosophy? What follows for how dharmas spread, hold, and fail, and for the two tests of [`the-better-ones.md`](the-better-ones.md)? *(Added 2026-10-18 for the second edition; the published book treats aesthetics only in passing.)*
 
 ---
 
