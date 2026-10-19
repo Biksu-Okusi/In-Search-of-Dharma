@@ -12,7 +12,7 @@ This is the **master registry** and **status dashboard** for the DD research pro
 | 1.2 | Universal Patterns                      | done      | [1-foundational/1.2-universal-patterns.md](1-foundational/1.2-universal-patterns.md) |
 | 1.3 | Boundary & Definition                   | done      | [1-foundational/1.3-boundary-definition.md](1-foundational/1.3-boundary-definition.md) |
 | 1.4 | Cross-cultural Cognates                  | done      | [1-foundational/1.4-cross-cultural-cognates.md](1-foundational/1.4-cross-cultural-cognates.md) |
-| 1.5 | Aesthetics & Dharma                     | review    | [1-foundational/1.5-aesthetics-and-dharma.md](1-foundational/1.5-aesthetics-and-dharma.md) |
+| 1.5 | Aesthetics & Dharma                     | done      | [1-foundational/1.5-aesthetics-and-dharma.md](1-foundational/1.5-aesthetics-and-dharma.md) |
 | 2.1 | Axial Age Catalyst                      | done      | [2-historical/2.1-axial-age.md](2-historical/2.1-axial-age.md) |
 | 2.2 | Urban Complexity                        | done      | [2-historical/2.2-urban-complexity.md](2-historical/2.2-urban-complexity.md) |
 | 2.3 | Pre-Axial / Pre-literate Ethics         | done      | [2-historical/2.3-pre-axial-ethics.md](2-historical/2.3-pre-axial-ethics.md) |
@@ -49,7 +49,7 @@ This is the **master registry** and **status dashboard** for the DD research pro
 | 6.3 | Economics, Work & Inequality            | done      | [6-contemporary/6.3-economics-work-inequality.md](6-contemporary/6.3-economics-work-inequality.md) |
 | 6.4 | Gender & Dharma                         | done      | [6-contemporary/6.4-gender-and-dharma.md](6-contemporary/6.4-gender-and-dharma.md) |
 | 6.5 | Secularisation & the "Nones"            | done      | [6-contemporary/6.5-secularization-nones.md](6-contemporary/6.5-secularization-nones.md) |
-| 6.6 | Sexuality & Dharma                      | review    | [6-contemporary/6.6-sexuality-and-dharma.md](6-contemporary/6.6-sexuality-and-dharma.md) |
+| 6.6 | Sexuality & Dharma                      | done      | [6-contemporary/6.6-sexuality-and-dharma.md](6-contemporary/6.6-sexuality-and-dharma.md) |
 | 7.1 | Failure Modes                           | done      | [7-critical/7.1-failure-modes.md](7-critical/7.1-failure-modes.md) |
 | 7.2 | Cultural Adaptation & Appropriation     | done      | [7-critical/7.2-appropriation.md](7-critical/7.2-appropriation.md) |
 | 7.3 | Dharma & Power                          | done      | [7-critical/7.3-dharma-and-power.md](7-critical/7.3-dharma-and-power.md) |
@@ -57,7 +57,7 @@ This is the **master registry** and **status dashboard** for the DD research pro
 | 7.5 | Orientalism                             | done      | [7-critical/7.5-orientalism.md](7-critical/7.5-orientalism.md) |
 | 7.6 | Dogma Undone: The CPA Case              | done      | [7-critical/7.6-cpa-case.md](7-critical/7.6-cpa-case.md) |
 | 7.7 | Dharma by Decree: The Engineered-Dharma Failure Mode | done      | [7-critical/7.7-engineered-dharmas.md](7-critical/7.7-engineered-dharmas.md) |
-| 7.8 | Tribalism & Dharma                      | review    | [7-critical/7.8-tribalism-and-dharma.md](7-critical/7.8-tribalism-and-dharma.md) |
+| 7.8 | Tribalism & Dharma                      | done      | [7-critical/7.8-tribalism-and-dharma.md](7-critical/7.8-tribalism-and-dharma.md) |
 | 8.1 | Planetary Dharma                        | done      | [8-future/8.1-planetary-dharma.md](8-future/8.1-planetary-dharma.md) |
 | 8.2 | AI & Dharma                             | done      | [8-future/8.2-ai-and-dharma.md](8-future/8.2-ai-and-dharma.md) |
 | 8.3 | Post-Traditional Dharmas                | done      | [8-future/8.3-post-traditional-dharmas.md](8-future/8.3-post-traditional-dharmas.md) |

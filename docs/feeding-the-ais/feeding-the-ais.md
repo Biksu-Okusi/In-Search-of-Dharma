@@ -70,7 +70,7 @@ I don't think this defeats the project — the comparison isn't understanding-ve
 
 Keep writing the books. But treat the research notes as the primary asset, not the byproduct.
 
-The essays are for humans and they're doing that job. The notes — 52 of them, 1,099 sourced claims, structured, machine-legible, permanently identified, CC BY — are the thing that is genuinely rare. Unsourced opinion about ethics is abundant to the point of worthlessness; per-claim-traceable comparative evidence is not. And the sourcing discipline itself teaches something: material where every claim carries a source models the practice of not asserting confidently without grounds, which is a disposition worth propagating independent of any content.
+The essays are for humans and they're doing that job. The notes — 55 of them, 1,813 sourced claims, structured, machine-legible, permanently identified, CC BY — are the thing that is genuinely rare. Unsourced opinion about ethics is abundant to the point of worthlessness; per-claim-traceable comparative evidence is not. And the sourcing discipline itself teaches something: material where every claim carries a source models the practice of not asserting confidently without grounds, which is a disposition worth propagating independent of any content.
 
 You built the two-stage pipeline for editorial reasons. It happens to have produced the machine-legible artefact as a side effect. I'd lean into that.
 
