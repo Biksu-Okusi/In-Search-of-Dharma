@@ -28,6 +28,11 @@ ok()   { printf '  ✓ %s\n' "$1"; }
 bad()  { printf '  ✗ %s\n' "$1"; FAILED+=1; }
 die()  { >&2 printf '  ✗ %s\n' "${*:2}"; exit "$1"; }
 
+declare -- cmd
+for cmd in weasyprint pdfinfo pdfimages pdftoppm pdftotext jq python3; do
+  command -v "$cmd" >/dev/null || die 18 "Required: ${cmd@Q}"
+done
+
 # book N OUT : N pages at 152 x 229 mm, each with its number as text.
 book() {
   local -- html=$TMP/book-$1.html
@@ -75,11 +80,14 @@ PY
 
 # spotgray.py.
 if "$SPOTGRAY" "$TMP"/publisher.pdf "$TMP"/grey.pdf >/dev/null; then
-  GOT=$(pdfimages -list -- "$TMP"/grey.pdf | awk 'NR > 2 {print $6}')
+  GOT=$(pdfimages -list -- "$TMP"/grey.pdf | awk 'NR > 2 {print $6}') \
+    || die 1 'could not list the images of the grey page'
   [[ $GOT == gray ]] && ok 'a black spot image is set as DeviceGray' \
     || bad "the image is ${GOT:-(none)} after spotgray, want gray"
-  pdftoppm -r 40 -gray -png -- "$TMP"/publisher.pdf "$TMP"/before
-  pdftoppm -r 40 -gray -png -- "$TMP"/grey.pdf "$TMP"/after
+  pdftoppm -r 40 -gray -png -- "$TMP"/publisher.pdf "$TMP"/before \
+    || die 1 'could not rasterise the publisher page'
+  pdftoppm -r 40 -gray -png -- "$TMP"/grey.pdf "$TMP"/after \
+    || die 1 'could not rasterise the grey page'
   python3 - "$TMP"/before-1.png "$TMP"/after-1.png <<'PY' \
     && ok 'it looks as it did: the grey ramp is not turned into its negative' \
     || bad 'the page looks different once its spot image is grey'
@@ -102,19 +110,24 @@ weasyprint -- "$TMP"/small.html "$TMP"/small.pdf 2>/dev/null || die 1 'failed to
 # add_back_page and the blank it needs, lifted from mk-print.sh.
 #shellcheck disable=SC2034,SC2329  # read and called by the sourced functions
 (
-  TMP_DIR=$TMP
-  PRINT_TRIM_W_MM=152 PRINT_TRIM_H_MM=229 PRINT_BACKPAGE_SHIFT_MM=5
-  PAGESHIFT=$ROOT/lib/pageshift.py
-  BACKPAGE_SRC=$TMP/publisher.pdf
+  declare -- TMP_DIR=$TMP
+  declare -i PRINT_TRIM_W_MM=152 PRINT_TRIM_H_MM=229 PRINT_BACKPAGE_SHIFT_MM=5
+  declare -- PAGESHIFT=$ROOT/lib/pageshift.py
+  declare -- BACKPAGE_SRC=$TMP/publisher.pdf
   warn() { >&2 printf 'warn: %s\n' "$*"; }
   info() { >&2 printf 'info: %s\n' "$*"; }
   die()  { >&2 printf 'die: %s\n' "${*:2}"; exit "$1"; }
+  declare -- lifted
+  lifted=$(sed -n -- '/^blank_page() {$/,/^}$/p;/^add_back_page() {$/,/^}$/p' "$ROOT"/mk-print.sh) \
+    || die 1 'could not read mk-print.sh'
+  [[ $lifted == *'blank_page() {'* && $lifted == *'add_back_page() {'* ]] \
+    || die 1 'blank_page and add_back_page were not both found in mk-print.sh'
   #shellcheck disable=SC1090  # the functions are cut from the script at run time
-  source <(sed -n -- '/^blank_page() {$/,/^}$/p;/^add_back_page() {$/,/^}$/p' "$ROOT"/mk-print.sh)
+  source <(printf '%s\n' "$lifted")
 
   for N in 6 7; do
     book "$N" "$TMP"/book.pdf
-    add_back_page "$TMP"/book.pdf "$TMP"/out-"$N".pdf 2>"$LOG" || { >&2 cat -- "$LOG"; exit 1; }
+    add_back_page "$TMP"/book.pdf "$TMP"/out-"$N".pdf 2>"$LOG" || die 1 "$(<"$LOG")"
   done
   # An absent file, a file of several pages, a page of the wrong size. The last
   # two must be refused: the call exits non-zero and says why, which is read
@@ -129,13 +142,17 @@ weasyprint -- "$TMP"/small.html "$TMP"/small.pdf 2>/dev/null || die 1 'failed to
 
 # Six pages end on a verso, so the next page is a recto: his page is page 7.
 # Seven end on a recto, so a blank stands in between: his page is page 9.
-[[ $(pages "$TMP"/out-6.pdf) == 7 ]] && ok 'a book of 6 pages: the publisher page is page 7, a recto' \
-  || bad "a book of 6 pages made $(pages "$TMP"/out-6.pdf) pages, want 7"
-[[ $(pages "$TMP"/out-7.pdf) == 9 ]] && ok 'a book of 7 pages: a blank, then the page, as page 9' \
-  || bad "a book of 7 pages made $(pages "$TMP"/out-7.pdf) pages, want 9"
-GOT=$(pdftotext -f 8 -l 8 -- "$TMP"/out-7.pdf - | tr -d '[:space:]')
+GOT=$(pages "$TMP"/out-6.pdf) || die 1 'could not count the pages of the six-page book'
+[[ $GOT == 7 ]] && ok 'a book of 6 pages: the publisher page is page 7, a recto' \
+  || bad "a book of 6 pages made $GOT pages, want 7"
+GOT=$(pages "$TMP"/out-7.pdf) || die 1 'could not count the pages of the seven-page book'
+[[ $GOT == 9 ]] && ok 'a book of 7 pages: a blank, then the page, as page 9' \
+  || bad "a book of 7 pages made $GOT pages, want 9"
+GOT=$(pdftotext -f 8 -l 8 -- "$TMP"/out-7.pdf - | tr -d '[:space:]') \
+  || die 1 'could not read page 8 of the seven-page book'
 [[ -z $GOT ]] && ok 'the page in between is blank' || bad "the page in between holds ${GOT@Q}"
-GOT=$(pdfimages -list -f 9 -l 9 -- "$TMP"/out-7.pdf | awk 'NR > 2 {print $6}')
+GOT=$(pdfimages -list -f 9 -l 9 -- "$TMP"/out-7.pdf | awk 'NR > 2 {print $6}') \
+  || die 1 'could not list the images of page 9'
 [[ $GOT == gray ]] && ok 'the publisher page is in the book as greyscale' \
   || bad "the publisher page's image is ${GOT:-(none)} in the book"
 # In the book the page's ink begins 5mm further right than on the page as
@@ -147,9 +164,11 @@ WAS=$("$CHECK" ink --page 1 --box 0,0,152,229 -- "$TMP"/publisher.pdf | jq -r '.
 awk -v a="$WAS" -v b="$GOT" 'BEGIN{d=b-a; exit !(d > 4.7 && d < 5.3)}' \
   && ok "the publisher page's content stands 5mm further from the spine (ink from ${WAS}mm to ${GOT}mm)" \
   || bad "the publisher page's ink moved from ${WAS}mm to ${GOT}mm, want 5mm to the right"
-GOT=$(pdfinfo -- "$TMP"/out-6.pdf | awk '/^Page size:/{printf "%.0f x %.0f", $3 * 25.4 / 72, $5 * 25.4 / 72}')
+GOT=$(pdfinfo -- "$TMP"/out-6.pdf | awk '/^Page size:/{printf "%.0f x %.0f", $3 * 25.4 / 72, $5 * 25.4 / 72}') \
+  || die 1 'could not read the page size of the six-page book'
 [[ $GOT == '152 x 229' ]] && ok 'the book is still at the trim' || bad "the book's trim is $GOT mm"
-[[ $(pages "$TMP"/out-absent.pdf) == 7 ]] && grep -q -- 'no publisher' "$TMP"/log-absent \
+GOT=$(pages "$TMP"/out-absent.pdf) || die 1 'could not count the pages of the book without a publisher page'
+[[ $GOT == 7 ]] && grep -q -- 'no publisher' "$TMP"/log-absent \
   && ok 'no publisher page: the book is as it was, with a warning' \
   || bad 'an absent publisher page did not leave the book as it was with a warning'
 grep -q -- 'has 7 pages, want 1' "$TMP"/log-wrong && ok 'a publisher file of several pages is refused' \
@@ -157,5 +176,5 @@ grep -q -- 'has 7 pages, want 1' "$TMP"/log-wrong && ok 'a publisher file of sev
 grep -q -- 'is not 152x229 mm' "$TMP"/log-small && ok 'a publisher page that is not at the trim is refused' \
   || bad "a page of the wrong size was not refused: $(<"$TMP"/log-small)"
 
-((FAILED == 0)) || { printf '  %d failed\n' "$FAILED"; exit 1; }
+((FAILED == 0)) || die 1 "$FAILED failed"
 #fin
