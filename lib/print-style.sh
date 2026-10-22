@@ -38,11 +38,20 @@
 [[ ${BASH_SOURCE[0]} != "$0" ]] \
   || { >&2 echo "✗ ${BASH_SOURCE[0]##*/} is a library: source it, do not run it"; exit 2; }
 
-# Trim and margins, in mm. Measured from the model book and confirmed against
-# Ramsey's marked-up recto and verso scans. The gutter is the larger of the two
-# because a perfect-bound spine swallows part of it.
+# Trim and margins, in mm. The measure was measured from the model book and
+# confirmed against Ramsey's marked-up recto and verso scans; the margins were
+# 25 and 20 until, with the proof copy in his hands, Ramsey asked for the text
+# block further from the spine (2026-10-22). It moved 5mm, not the 7 he named:
+# 15mm outside keeps the running heads 1.9mm clear of the printer's 13mm
+# minimum, which absorbs its 1.5mm trim tolerance; 13mm would have sat on it.
+# The gutter is the larger of the two because a perfect-bound spine swallows
+# part of it. The measure is unchanged, so the pagination is too.
 declare -r PRINT_TRIM_W_MM=152 PRINT_TRIM_H_MM=229
-declare -r PRINT_MEASURE_MM=107 PRINT_INNER_MM=25 PRINT_OUTER_MM=20
+declare -r PRINT_MEASURE_MM=107 PRINT_INNER_MM=30 PRINT_OUTER_MM=15
+# The publisher's own last page (mk-print.sh, add_back_page) was set to the
+# 25mm gutter and ignores this stylesheet, so the build moves its content the
+# same 5mm towards the fore-edge to keep it in line with the text block.
+declare -r PRINT_BACKPAGE_SHIFT_MM=5
 
 # The book's title, on the half-title and the title page, is set in Cascadia
 # Code: "in search of" in its Light Italic above "DHARMA" in its Light, as the

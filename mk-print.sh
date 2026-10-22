@@ -94,6 +94,7 @@ declare -r PREPROCESS_LIB="$SCRIPT_DIR"/lib/preprocess.sh
 declare -r STYLE_LIB="$SCRIPT_DIR"/lib/print-style.sh
 declare -r PDFCHECK="$SCRIPT_DIR"/lib/pdfcheck.py
 declare -r SPOTGRAY="$SCRIPT_DIR"/lib/spotgray.py
+declare -r PAGESHIFT="$SCRIPT_DIR"/lib/pageshift.py
 # Ghostscript rewrites a glyph's three-character text mapping (ffi, ffl) as
 # two, so copy and search read "ofÏcial"; lib/ligmap.py puts the mappings
 # back from the file as it was before Ghostscript (Paul Regan, 2026-10-07).
@@ -367,6 +368,15 @@ add_back_page() {
   local -- grey="$TMP_DIR"/publisher-page.pdf
   "$SPOTGRAY" "$BACKPAGE_SRC" "$grey" >/dev/null \
     || die 1 "could not set the publisher's page in greyscale"
+  # It was set to the earlier 25mm gutter: move its content with the text
+  # block (PRINT_BACKPAGE_SHIFT_MM, lib/print-style.sh). It stands on a recto,
+  # so towards the fore-edge is to the right.
+  if [[ ${PRINT_BACKPAGE_SHIFT_MM:-0} != 0 ]]; then
+    local -- shifted="$TMP_DIR"/publisher-page-shifted.pdf
+    "$PAGESHIFT" "$grey" "$shifted" "$PRINT_BACKPAGE_SHIFT_MM" >/dev/null \
+      || die 1 "could not move the publisher's page ${PRINT_BACKPAGE_SHIFT_MM}mm"
+    grey=$shifted
+  fi
   parts+=("$grey")
   pdfunite -- "${parts[@]}" "$out" || die 1 'pdfunite failed'
   info "set the publisher's page as page $at"

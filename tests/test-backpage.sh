@@ -4,7 +4,8 @@
 # recto straight after the text whatever the length of the book, refused when
 # it is not one page at the trim, skipped with a warning when absent; and
 # lib/spotgray.py, which sets its black spot images in greyscale as the
-# printer's rules want.
+# printer's rules want; and lib/pageshift.py, which moves the page's content
+# towards the fore-edge by PRINT_BACKPAGE_SHIFT_MM, in line with the text block.
 #
 # The two functions are lifted out of mk-print.sh and run on stand-in books of
 # one-line pages: nothing is typeset and no interior is built.
@@ -18,8 +19,9 @@ declare -r TEST_PATH=$(realpath -- "${BASH_SOURCE[0]}")
 declare -r TEST_DIR=${TEST_PATH%/*}
 declare -r ROOT=${TEST_DIR%/*}
 declare -r SPOTGRAY=$ROOT/lib/spotgray.py
+declare -r CHECK=$ROOT/lib/pdfcheck.py
 declare -i FAILED=0 N
-declare -- TMP='' LOG='' GOT=''
+declare -- TMP='' LOG='' GOT='' WAS=''
 trap '[[ -z $TMP ]] || rm -rf -- "$TMP"' EXIT
 
 ok()   { printf '  ✓ %s\n' "$1"; }
@@ -101,7 +103,8 @@ weasyprint -- "$TMP"/small.html "$TMP"/small.pdf 2>/dev/null || die 1 'failed to
 #shellcheck disable=SC2034,SC2329  # read and called by the sourced functions
 (
   TMP_DIR=$TMP
-  PRINT_TRIM_W_MM=152 PRINT_TRIM_H_MM=229
+  PRINT_TRIM_W_MM=152 PRINT_TRIM_H_MM=229 PRINT_BACKPAGE_SHIFT_MM=5
+  PAGESHIFT=$ROOT/lib/pageshift.py
   BACKPAGE_SRC=$TMP/publisher.pdf
   warn() { >&2 printf 'warn: %s\n' "$*"; }
   info() { >&2 printf 'info: %s\n' "$*"; }
@@ -135,6 +138,15 @@ GOT=$(pdftotext -f 8 -l 8 -- "$TMP"/out-7.pdf - | tr -d '[:space:]')
 GOT=$(pdfimages -list -f 9 -l 9 -- "$TMP"/out-7.pdf | awk 'NR > 2 {print $6}')
 [[ $GOT == gray ]] && ok 'the publisher page is in the book as greyscale' \
   || bad "the publisher page's image is ${GOT:-(none)} in the book"
+# In the book the page's ink begins 5mm further right than on the page as
+# supplied: the ramp runs from white to black, so where its ink is first seen
+# depends on the checker's threshold, and only the move is asserted.
+WAS=$("$CHECK" ink --page 1 --box 0,0,152,229 -- "$TMP"/publisher.pdf | jq -r '.ink.x0_mm') \
+  && GOT=$("$CHECK" ink --page 7 --box 0,0,152,229 -- "$TMP"/out-6.pdf | jq -r '.ink.x0_mm') \
+  || die 1 'could not find the ink of the publisher page'
+awk -v a="$WAS" -v b="$GOT" 'BEGIN{d=b-a; exit !(d > 4.7 && d < 5.3)}' \
+  && ok "the publisher page's content stands 5mm further from the spine (ink from ${WAS}mm to ${GOT}mm)" \
+  || bad "the publisher page's ink moved from ${WAS}mm to ${GOT}mm, want 5mm to the right"
 GOT=$(pdfinfo -- "$TMP"/out-6.pdf | awk '/^Page size:/{printf "%.0f x %.0f", $3 * 25.4 / 72, $5 * 25.4 / 72}')
 [[ $GOT == '152 x 229' ]] && ok 'the book is still at the trim' || bad "the book's trim is $GOT mm"
 [[ $(pages "$TMP"/out-absent.pdf) == 7 ]] && grep -q -- 'no publisher' "$TMP"/log-absent \

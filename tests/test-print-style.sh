@@ -24,13 +24,14 @@ declare -r TOL=0.1
 #
 # The folio, as Ramsey asked (2026-09-28) after Tuwhiri's What is this?: on the
 # left of every page, beside a 5mm hairline that stands 10mm in from the text's
-# left edge, the paragraph indent -- 30mm from the trim on a verso, 35mm on a
-# recto. The numeral keeps its baseline. The rule rises 1.24mm above the top of
+# left edge, the paragraph indent -- 25mm from the trim on a verso, 40mm on a
+# recto (since 2026-10-22; 30 and 35 before the text block moved 5mm from the
+# spine). The numeral keeps its baseline. The rule rises 1.24mm above the top of
 # a lining figure and runs 1.9mm below the baseline, the proportions of What is
 # this? (1.2-1.5mm and 2.0-2.2mm there, measured at 600dpi).
 declare -rA TARGET=(
   [title]=87.59 [opener]=104.52 [head]=16.80 [first]=29.53 [folio]=214.38
-  [rule_verso_x]=30.00 [rule_recto_x]=35.00 [rule_len]=5.00 [rule_top]=210.54
+  [rule_verso_x]=25.00 [rule_recto_x]=40.00 [rule_len]=5.00 [rule_top]=210.54
 )
 
 declare -- TMP=''
@@ -404,13 +405,13 @@ HTML
   local -- list_lines first_in next_in
   list_lines=$(page_lines list 1) || stop 'could not read the list fixture'
   # The entry opens on a word in bold, whose box ends a hair above the line's
-  # and so is reported on its own; the page is a recto, its text 25mm in.
-  first_in=$(jq -r '[.lines[] | select(.text | startswith("Comprehensive"))][0].x0_mm - 25
+  # and so is reported on its own; the page is a recto, its text 30mm in.
+  first_in=$(jq -r '[.lines[] | select(.text | startswith("Comprehensive"))][0].x0_mm - 30
     | . * 100 | round / 100' <<<"$list_lines") || stop 'could not find the first line of the entry'
   # The entry's second line is the one under its bullet, wherever the first
   # happens to break.
   next_in=$(jq -r '(.lines | map(.text | startswith("• –")) | index(true)) as $i
-    | .lines[$i + 1].x0_mm - 25 | . * 100 | round / 100' <<<"$list_lines") \
+    | .lines[$i + 1].x0_mm - 30 | . * 100 | round / 100' <<<"$list_lines") \
     || stop 'could not find the second line of the entry'
   awk -v a="$first_in" -v b="$next_in" 'BEGIN{exit !(a > 9.9 && a < 10.1 && b > 9.9 && b < 10.1)}' \
     && printf '  ✓ every line of a bullet stands 10mm in (%s, %s)\n' "$first_in" "$next_in" \

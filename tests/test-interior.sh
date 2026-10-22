@@ -117,7 +117,7 @@ main() {
   # dedication on v, the contents on vii. None of the seven shows a folio. The
   # dedication is the author's (2026-09-28), opening "For" at Tuwhiri's
   # request, set whole on page v and centred on the page's text block, which on
-  # a recto runs from 25mm to 132mm.
+  # a recto runs from 30mm to 137mm (2026-10-22).
   local -r ded_page=5
   local -r dedication='For Paul Stange, Irfan Kortschak, Peter Kropotkin, David Graeber, Pa Kettle, '\
 'Robert Sapolsky, Stephen Batchelor, Elfie Klinger, Rupert Bozeat and Glenn Roberts; and Sukinah and the women '\
@@ -129,7 +129,7 @@ main() {
     && ok 'page v carries the dedication, word for word, and nothing else' \
     || bad "page v reads: ${text:0:160}"
   off_centre=$("$CHECK" baselines --page "$ded_page" -- "$PDF" \
-    | jq -r '[.lines[] | ((.x0_mm + .x1_mm) / 2 - 78.5) | fabs] | max') \
+    | jq -r '[.lines[] | ((.x0_mm + .x1_mm) / 2 - 83.5) | fabs] | max') \
     || die 1 'could not measure the dedication'
   awk -v d="$off_centre" 'BEGIN{exit !(d < 0.3)}' \
     && ok 'every line of the dedication is centred' \
@@ -197,7 +197,7 @@ main() {
     || bad "the contents give other numbers: $(grep -E -- 'Preface|1: ' <<<"$text" | tr '\n' ' ')"
 
   # The signature that closes the Preface: flush left, which on a verso is the
-  # 20mm outer margin and on a recto the 25mm gutter, and a line space below
+  # 15mm outer margin and on a recto the 30mm gutter, and a line space below
   # the text, so two linefeeds of 5.64mm under the line before it. It opens on
   # the name, in bold, whose box is reported as a line of its own.
   local -- signed above
@@ -212,7 +212,7 @@ main() {
     [[ -z $signed ]] || { signed_pg=$n; break; }
   done
   if ((signed_pg)); then
-    jq -e --argjson left "$(( signed_pg % 2 ? 25 : 20 ))" \
+    jq -e --argjson left "$(( signed_pg % 2 ? 30 : 15 ))" \
       '(.at.x0_mm - $left | fabs) < 0.3' <<<"$signed" >/dev/null \
       && ok 'the signature stands flush left' \
       || bad "the signature stands at $(jq -r .at.x0_mm <<<"$signed")mm"
