@@ -51,7 +51,7 @@ The script preprocesses each part (frontmatter, image shortcodes), then stitches
 
 An Indonesian edition, *Mencari Dharma*, is built the same way in [`id/`](id/): [`Mencari-Dharma_Biksu-Okusi_2026.epub`](id/Mencari-Dharma_Biksu-Okusi_2026.epub) and [`Mencari-Dharma_Biksu-Okusi_2026.pdf`](id/Mencari-Dharma_Biksu-Okusi_2026.pdf). Milestone versions of the books are also published via [GitHub Releases](https://github.com/Biksu-Okusi/In-Search-of-Dharma/releases).
 
-`--edition tuwhiri` builds the ePub and PDF that Tuwhiri, the book's publisher, sells: the same text under the publisher's own front cover, identified in the ePub's package by Tuwhiri's ePub ISBN and carrying Tuwhiri's name. It has no other image: the chapter watercolours and the back-cover plate are left out, and its colophon credits the cover instead of declaring AI images. The publish step never touches it.
+`--edition tuwhiri` builds the ePub and PDF that Tuwhiri, the book's publisher, sells: the same text under the publisher's own front cover, identified in the ePub's package by Tuwhiri's ePub ISBN and carrying Tuwhiri's name, with the printed imprint page (`print-imprint.md`) on its title page in place of the author's copyright block. It has no other image: the chapter watercolours and the back-cover plate are left out, and its colophon credits the cover instead of declaring AI images. The publish step never touches it.
 
 Building needs no configuration. Copying the finished files to a web-root, and mirroring them to another host, is optional and off by default: [`deploy.conf.example`](deploy.conf.example) lists the settings that enable it.
 

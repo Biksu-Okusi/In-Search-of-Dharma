@@ -2,9 +2,10 @@
 #shellcheck disable=SC2015  # ok()/bad() only printf+append; A&&B||C is safe here
 # tests/test-tuwhiri-epub.sh - mk-book.sh --edition tuwhiri builds Tuwhiri's
 # ePub and PDF: the publisher's cover in place of the author's, Tuwhiri's ISBN
-# and name in the package, no other image (no chapter watercolours, no
+# and name in the package, the printed imprint page on the title page in place
+# of the author's copyright block, no other image (no chapter watercolours, no
 # back-cover plate, and nothing in the colophon about them), and nothing
-# published. The default edition keeps its watercolours.
+# published. The default edition keeps its watercolours and its copyright block.
 #
 # Built over a stand-in cover, so the test needs none of Tuwhiri's artwork, and
 # in a tree of its own: links to the book's sources beside a copy of the
@@ -87,7 +88,7 @@ main() {
   # its images with find, which does not go down into a directory that is
   # itself a link.
   for src in "$ROOT"/[0-9]-*.md "$ROOT"/the-better-ones.md "$ROOT"/cover.md \
-             "$ROOT"/fonts "$ROOT"/images "$ROOT"/lib; do
+             "$ROOT"/print-imprint.md "$ROOT"/fonts "$ROOT"/images "$ROOT"/lib; do
     [[ -e $src ]] || die 3 "nothing at ${src@Q}"
     cp -Rs -- "$src" "$box"/ || die 5 "failed to link ${src@Q}"
   done
@@ -143,6 +144,20 @@ main() {
   holds "$opf" '<dc:publisher>Tuwhiri</dc:publisher>' \
     && ok 'the package names Tuwhiri as the publisher' \
     || bad "the package does not name Tuwhiri as publisher: $(shown "$opf" '<dc:publisher[^<]*')"
+
+  # The title page carries the printed imprint, page iv of the interior, where
+  # the author's edition has its copyright block. grep exits 1 when no page
+  # says it, and the next line reports that.
+  local -- imprint_page imprint
+  imprint_page=$(grep -l -r -F --include='*.xhtml' -- 'First published in 2026 by' "$TMP"/x | head -n 1) ||:
+  [[ -f $imprint_page ]] || die 3 "no imprint page in ${epub@Q}"
+  imprint=$(plain "$imprint_page") || die 1 "could not read ${imprint_page@Q}"
+  [[ $imprint == *'Tuwhiri, a 501c3 nonprofit'* && $imprint == *'ISBN 979-8-9980676-1-7 ePub'* ]] \
+    && ok 'the title page carries the printed imprint, with the ePub ISBN' \
+    || bad "the imprint on the title page is not the printed one: ${imprint:0:300}"
+  [[ $imprint != *'© 2026 Biksu Okusi'* ]] \
+    && ok 'the author'"'"'s copyright block has made way for the imprint' \
+    || bad 'the title page still carries the author'"'"'s copyright block beside the imprint'
   holds "$opf" 'garydean.id/books' \
     && bad 'the package still carries the identifier of the default edition' \
     || ok 'the identifier of the default edition is gone'
@@ -182,6 +197,10 @@ main() {
   [[ $pdf_text != *"$AI_IMAGES"* && $pdf_text == *'minimum graphics'* ]] \
     && ok 'the PDF credits the cover and says nothing of AI images' \
     || bad 'the colophon of the PDF is not the edition'"'"'s'
+  [[ $pdf_text == *'First published in 2026 by Tuwhiri, a 501c3 nonprofit'* \
+     && $pdf_text != *'© 2026 Biksu Okusi'* ]] \
+    && ok 'the PDF carries the printed imprint in place of the copyright block' \
+    || bad 'the title page of the PDF does not carry the printed imprint'
 
   # The colophon, the page that says how the book was typeset, credits the
   # cover and no longer speaks of AI images, while it still declares the AI
@@ -236,6 +255,16 @@ main() {
   colophon=$(plain "$page") || die 1 "could not read ${page@Q}"
   [[ $colophon == *'The cover and chapter illustrations are watercolour-style images'* ]] \
     && ok 'the default edition keeps its colophon' || bad 'the colophon of the default edition has changed'
+  page=$(grep -l -r -F --include='*.xhtml' -- '© 2026 Biksu Okusi' "$TMP"/y | head -n 1) ||:
+  [[ -f $page ]] && ! holds "$page" 'First published in 2026 by' \
+    && ok 'the default edition keeps its copyright block and carries no imprint' \
+    || bad 'the title page of the default edition has changed'
+
+  # Without the imprint page the Tuwhiri edition is refused before anything is
+  # built, and the missing file is named.
+  rm -- "$box"/print-imprint.md || die 5 "failed to remove ${box@Q}/print-imprint.md"
+  refuses 'a missing imprint page stops the Tuwhiri build and is named' 3 'print-imprint.md' \
+    epub --edition tuwhiri --cover "$cover"
 
   ((FAILED == 0)) || exit 1
 }

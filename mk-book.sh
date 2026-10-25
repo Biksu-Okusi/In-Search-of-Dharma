@@ -78,7 +78,11 @@ declare -- OUTPUT_PDF="${OUTPUT%.epub}".pdf
 # watercolours and the back-cover plate are left out, and the colophon says
 # nothing of them, so IngramSpark's checks have no AI image to stop on
 # (Tuwhiri's wish, 2026-09-29, at the author's word). The author's own edition
-# keeps them. Never published from here, since the publish step belongs to the
+# keeps them. Its title page carries the publisher's imprint, the print
+# interior's page iv word for word, in place of the author's copyright block:
+# Tuwhiri's own ePubs carry the printed imprint, and a "Tuwhiri PDF" that never
+# names Tuwhiri is no such thing (Ramsey, 2026-10-26). Never published from
+# here, since the publish step belongs to the
 # author's own edition. The cover is Tuwhiri's artwork, not this repository's
 # to license, so it lives in the untracked print/ folder with the publisher's
 # other material.
@@ -91,6 +95,9 @@ declare -r TUWHIRI_COVER="$SCRIPT_DIR"/print/tuwhiri-cover-front.jpg
 # The cover's credits, as the print imprint gives them (Tuwhiri, 2026-09-30).
 declare -r TUWHIRI_COVER_CREDIT='minimum graphics'
 declare -r TUWHIRI_COVER_IMAGE='Honey Yanibel Minaya Cruz on Unsplash'
+# The imprint page of the print interior (read by mk-print.sh too), set on the
+# edition's title page in place of the author's copyright block.
+declare -r TUWHIRI_IMPRINT="$SCRIPT_DIR"/print-imprint.md
 declare -r -a EDITIONS=(own tuwhiri)
 
 # Chapter narration. One MP3 per chapter, named N-<stem>.mp3 (N = 0..9), living
@@ -228,9 +235,9 @@ Options:
   --edition ED   Which edition to build (default: own):
                    own      the author's edition, under its own cover
                    tuwhiri  the publisher's ePub and PDF: Tuwhiri's cover,
-                            ISBN $TUWHIRI_ISBN and name, and no
-                            other image. Written with a _tuwhiri suffix and
-                            never published.
+                            imprint page, ISBN $TUWHIRI_ISBN and
+                            name, and no other image. Written with a _tuwhiri
+                            suffix and never published.
   --cover FILE   The front cover of the Tuwhiri edition
                  (default: ${TUWHIRI_COVER#"$SCRIPT_DIR"/})
   --output FILE  Write the EPUB to FILE, and a PDF beside it under the same
@@ -251,6 +258,35 @@ slugify() {
   s=${s// /-}
   while [[ -n $s && ! $s =~ ^[a-z] ]]; do s=${s:1}; done
   printf '%s' "$s"
+}
+
+# tuwhiri_imprint FILE : set the publisher's imprint on the preprocessed title
+# page FILE, in place of the author's copyright block. The imprint is the print
+# interior's page iv (print-imprint.md) with its source comment gone, inside the
+# same .copyright div so the page keeps its measure, and on a page of its own:
+# it runs to thirty lines, which with the epigraph above it spills two lines
+# and the audiobook link onto a page by themselves. The spacers that held the
+# block below the epigraph go with it. Exact-match replace + check: a title
+# page or an imprint that has changed shape stops the build instead of
+# shipping the author's block under the publisher's name.
+tuwhiri_imprint() {
+  local -- file=$1
+  python3 - "$file" "$TUWHIRI_IMPRINT" <<'PY' || die 1 "failed to set the imprint on ${file@Q}"
+import re, sys
+page, imprint = sys.argv[1], sys.argv[2]
+text = open(page, encoding='utf-8').read()
+body = open(imprint, encoding='utf-8').read()
+body = re.sub(r'\A\s*<!--.*?-->\s*', '', body, count=1, flags=re.S).strip()
+if 'ISBN' not in body or 'Tuwhiri' not in body:
+  sys.exit('%s: the imprint names no ISBN or no Tuwhiri' % imprint)
+block = re.compile(r'(?:<br/>\n)*\n*<div class="copyright">\n.*?\n</div>\n', re.S)
+found = block.findall(text)
+if len(found) != 1:
+  sys.exit('%s: expected one copyright block, found %d' % (page, len(found)))
+page_of_its_own = '<div class="pagebreak"></div>\n\n<div class="copyright">\n\n%s\n\n</div>\n' % body
+text = block.sub(lambda m: page_of_its_own, text)
+open(page, 'w', encoding='utf-8').write(text)
+PY
 }
 
 # Emit the audio link for chapter n (0..9), to be spliced in just below the
@@ -424,7 +460,12 @@ main() {
     tuwhiri)
       cover_src=${cover_src:-$TUWHIRI_COVER}
       target=${target:-all}
-      [[ -f $cover_src ]] || die 3 "the tuwhiri edition's front cover is missing: ${cover_src@Q}" ;;
+      [[ -f $cover_src ]] || die 3 "the tuwhiri edition's front cover is missing: ${cover_src@Q}"
+      # Absolute, so a name starting with '-' cannot reach convert as an option:
+      # ImageMagick has no end-of-options marker.
+      cover_src=$(realpath -- "$cover_src") || die 3 "cannot resolve the front cover ${cover_src@Q}"
+      [[ -f $TUWHIRI_IMPRINT ]] \
+        || die 3 "the tuwhiri edition's imprint page is missing: ${TUWHIRI_IMPRINT@Q}" ;;
     *) die 22 "invalid --edition ${edition@Q} (want: ${EDITIONS[*]})" ;;
   esac
   readonly edition cover_src VERBOSE
@@ -448,6 +489,9 @@ main() {
 
   command -v pandoc &>/dev/null || die 18 'pandoc not found (apt install pandoc)'
   command -v convert &>/dev/null || die 18 "ImageMagick 'convert' not found (apt install imagemagick)"
+  # python3 sets the publisher's imprint on the title page of the Tuwhiri edition.
+  [[ $edition != tuwhiri ]] || command -v python3 &>/dev/null \
+    || die 18 'python3 not found, needed for the Tuwhiri imprint (apt install python3)'
   # rsync mirrors the finished artefacts to the remote host in the publish step.
   [[ -z $DEPLOY_HOST ]] || command -v rsync &>/dev/null || die 18 'rsync not found (apt install rsync)'
   [[ $target == epub ]] || command -v weasyprint &>/dev/null \
@@ -553,6 +597,10 @@ main() {
   for src in "${sources[@]}"; do
     printf -v dst '%s/%02d-%s' "$TMP_DIR" "$i" "${src##*/}"
     preprocess "$src" >"$dst" || die 1 "preprocessing failed for ${src@Q}"
+    if [[ $edition == tuwhiri ]] && ((i == 0)); then
+      # The publisher's imprint page in place of the author's copyright block.
+      tuwhiri_imprint "$dst"
+    fi
     if [[ $src == "$APPENDIX" ]]; then
       # Label the companion as the book's appendix at build time, so the
       # canonical file keeps its unprefixed title for the repository and
