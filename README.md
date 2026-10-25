@@ -46,7 +46,7 @@ The ten parts are also assembled into a single book, *in search of dharma* — s
 
 The script preprocesses each part (frontmatter, image shortcodes), then stitches them into an EPUB3 with pandoc and a PDF via weasyprint, with embedded fonts and optional per-chapter audio narration (`link` adds hyperlinks to the hosted MP3s; `none` omits them). The companion essay [`the-better-ones.md`](the-better-ones.md), which states and stress-tests the project's two-test standard for judging dharmas, closes the book as its appendix. The built books are tracked in the repository (`--audio embed` also produces a self-contained EPUB with the MP3s bundled in, about 75 MB, which is built locally and not tracked):
 
-- [`In-Search-of-Dharma_Biksu-Okusi_2026.epub`](In-Search-of-Dharma_Biksu-Okusi_2026.epub) — EPUB3, with links to the hosted chapter narrations (~3.6 MB)
+- [`In-Search-of-Dharma_Biksu-Okusi_2026.epub`](In-Search-of-Dharma_Biksu-Okusi_2026.epub) — EPUB3, with links to the hosted chapter narrations (~3.0 MB)
 - [`In-Search-of-Dharma_Biksu-Okusi_2026.pdf`](In-Search-of-Dharma_Biksu-Okusi_2026.pdf) — A4 reading PDF (~2.4 MB)
 
 An Indonesian edition, *Mencari Dharma*, is built the same way in [`id/`](id/): [`Mencari-Dharma_Biksu-Okusi_2026.epub`](id/Mencari-Dharma_Biksu-Okusi_2026.epub) and [`Mencari-Dharma_Biksu-Okusi_2026.pdf`](id/Mencari-Dharma_Biksu-Okusi_2026.pdf). Milestone versions of the books are also published via [GitHub Releases](https://github.com/Biksu-Okusi/In-Search-of-Dharma/releases).
@@ -94,7 +94,7 @@ The master question registry, with its status dashboard, is [`Questions.md`](Que
 
 The **Preface (Part 0)** has its own set of research notes ([`0-preface/`](0-preface/)), held to the same template and citation discipline. Because they rest substantially on primary self-report and private correspondence, they are published as **redacted public editions**: passages resting on private family records or third-party correspondence remain in the author's private records, and every redaction is disclosed in place. Passages drawing on a colleague's private correspondence are published with his consent; the mail archive and seed correspondence are permanently private.
 
-◉ **Status.** Both stages are complete: all 55 research questions have their cited notes, and all ten parts are written. The series is in final pre-publication polish, so wording may still shift; the evidence base is stable.
+◉ **Status.** Both stages are complete: all 55 research questions have their cited notes, and all ten parts are written. The text is final and frozen for this edition: Tuwhiri publishes the paperback on 24 November 2026, and the ePub, PDF and audiobook are already on sale at <https://tuwhiri.org/pages/in-search-of-dharma>; later corrections are parked for a second edition.
 
 ## Dataset
 
