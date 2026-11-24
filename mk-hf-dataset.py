@@ -32,6 +32,10 @@ LICENCE = 'CC BY 4.0'
 LICENCE_URL = 'https://creativecommons.org/licenses/by/4.0/'
 HOMEPAGE = 'https://garydean.id/works/0-in-search-of-dharma'
 SOURCE_REPO = 'https://github.com/Biksu-Okusi/In-Search-of-Dharma'
+# The published book: the publisher's page (the only place named for buying)
+# and the Zenodo concept DOI, which always resolves to the newest deposit.
+PUBLISHER_URL = 'https://tuwhiri.org/pages/in-search-of-dharma'
+DOI = '10.5281/zenodo.21348716'
 
 FRONTMATTER_RE = re.compile(r'\A---\n(.*?)\n---\n', re.DOTALL)
 NOTE_FILE_RE = re.compile(r'^\d+(\.\d+)*-')
@@ -229,6 +233,16 @@ The corpus has three configs serving different purposes:
   (the problem of definition; the project's two-test criterion for judging
   dharmas). Reflective pieces: exempt from the per-claim citation rule,
   sources named inline.
+
+## The book
+
+The book written from these notes, *in search of dharma: What holds a life, a
+people, a world together* by Biksu Okusi, was published by Tuwhiri on
+24 November 2026, as a paperback (ISBN 979-8-9980676-0-0), an ePub
+(ISBN 979-8-9980676-1-7) and an audiobook (ISBN 979-8-9980676-2-4):
+<{PUBLISHER_URL}>. The `essays` config holds its preface, eight parts and
+coda. The book and this corpus are archived together on Zenodo under one
+citable DOI: [{DOI}](https://doi.org/{DOI}).
 
 ## Methodology
 

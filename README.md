@@ -94,7 +94,7 @@ The master question registry, with its status dashboard, is [`Questions.md`](Que
 
 The **Preface (Part 0)** has its own set of research notes ([`0-preface/`](0-preface/)), held to the same template and citation discipline. Because they rest substantially on primary self-report and private correspondence, they are published as **redacted public editions**: passages resting on private family records or third-party correspondence remain in the author's private records, and every redaction is disclosed in place. Passages drawing on a colleague's private correspondence are published with his consent; the mail archive and seed correspondence are permanently private.
 
-◉ **Status.** Both stages are complete: all 55 research questions have their cited notes, and all ten parts are written. The text is final and frozen for this edition: Tuwhiri publishes the paperback on 24 November 2026, and the ePub, PDF and audiobook are already on sale at <https://tuwhiri.org/pages/in-search-of-dharma>; later corrections are parked for a second edition.
+◉ **Status.** Both stages are complete: all 55 research questions have their cited notes, and all ten parts are written. The text is final and frozen for this edition: Tuwhiri published it on 24 November 2026, and the paperback, ePub, PDF and audiobook are on sale at <https://tuwhiri.org/pages/in-search-of-dharma>; later corrections are parked for a second edition.
 
 ## Dataset
 
